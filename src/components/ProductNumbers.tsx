@@ -44,7 +44,7 @@ export function ProductNumbers() {
                     <dd className="mt-6 font-display text-4xl font-bold tracking-tight text-primary-foreground">
                       {n.value ? (
                         <>
-                          <CountUp value={n.value} />
+                          <CountUp to={Number(n.value.replace(/,/g, ""))} />
                           {n.suffix ? <span className="text-gold">{n.suffix}</span> : null}
                         </>
                       ) : (
