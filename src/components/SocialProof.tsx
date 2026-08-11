@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { voices, type Voice } from "@/content/trust";
+import { isDemoContent, voices, type Voice } from "@/content/trust";
 
 const kindLabel: Record<Voice["kind"], string> = {
   aspirant: "Aspirant",
@@ -28,7 +28,7 @@ function Initials({ name }: { name: string }) {
 function VoiceCard({ v, featured }: { v: Voice; featured?: boolean }) {
   return (
     <figure
-      className={`flex h-full flex-col rounded-2xl border border-border bg-card p-8 ${
+      className={`card-lift group flex h-full flex-col rounded-2xl border border-border bg-card p-8 ${
         featured ? "shadow-elevated sm:p-10" : "shadow-card"
       }`}
     >
@@ -80,6 +80,7 @@ export function SocialProof() {
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Real voices</p>
+          {isDemoContent ? <p className="demo-badge mt-4">Demo content · sample voices</p> : null}
           <h2 className="mt-5 text-display-lg text-primary">
             Built for students.
             <br />
@@ -134,8 +135,9 @@ export function SocialProof() {
 
         <Reveal>
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            We do not publish ratings, review counts or unnamed quotes. Until these spaces are filled with real,
-            attributable feedback, they stay visibly empty.
+            The voices shown above are demo content used while the product is in early access. We do not publish
+            ratings, review counts or unnamed quotes — every quote here will be replaced with real, attributed
+            feedback given with permission.
           </p>
         </Reveal>
       </div>
