@@ -185,62 +185,103 @@ function Home() {
 
 function Hero() {
   const stats = [
-    { value: "1.6M+", label: "Questions" },
-    { value: "5,000+", label: "Mock Tests" },
-    { value: "3", label: "Exams Covered" },
-    { value: "AI", label: "Diagnosis Engine" },
+    { to: 1.6, decimals: 1, suffix: "M+", label: "Tagged Questions" },
+    { to: 5000, suffix: "+", label: "Mock Tests" },
+    { to: 3, label: "Exams Covered" },
+    { to: 24, suffix: "/7", label: "AI Diagnosis Engine" },
   ];
   return (
     <section id="home" className="bg-navy-gradient relative overflow-hidden text-primary-foreground">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-grid-faint" />
+        <div className="absolute inset-0 bg-dots-faint opacity-60" />
         <div className="absolute -right-32 top-10 size-[36rem] rounded-full bg-white/5 blur-3xl" />
         <div className="absolute -left-24 bottom-0 size-96 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute right-24 top-40 hidden size-64 rotate-12 rounded-3xl border border-gold/30 lg:block" />
-        <div className="absolute right-52 top-64 hidden size-64 rotate-45 rounded-3xl border border-white/15 lg:block" />
+        <div className="absolute right-24 top-40 hidden size-64 rotate-12 rounded-3xl border border-gold/25 lg:block" />
+        <div className="absolute right-52 top-64 hidden size-64 rotate-45 rounded-3xl border border-white/10 lg:block" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-deep/70 to-transparent" />
       </div>
 
-      <div className="container-page relative flex min-h-screen flex-col justify-center pb-20 pt-32">
+      <div className="container-page relative flex min-h-[88vh] flex-col justify-center pb-16 pt-32">
         <Reveal className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             <Sparkles className="size-3.5" aria-hidden="true" /> AI-Powered Exam Prep
           </span>
-          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-5xl leading-[0.98] sm:text-7xl lg:text-[5.25rem]">
             Prepare Smarter.
             <br />
-            Rank Higher.
+            Rank <span className="text-gold">Higher.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
             India's AI-powered mock test platform for JEE, NEET and NDA. We don't just tell you what you scored — we
-            tell you why, and what to fix next.
+            trace every lost mark to the concept behind it, and hand you the drill that fixes it.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href={p("Start Free Test")}
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
+              className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
             >
               Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
             </a>
             <a
-              href="#platforms"
-              className="inline-flex items-center rounded-lg border border-white/40 px-7 py-3.5 text-sm font-bold transition-colors hover:bg-white/10"
+              href="#showcase"
+              className="btn-press inline-flex items-center rounded-lg border border-white/40 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
             >
-              Explore Platforms
+              See the AI Diagnosis
             </a>
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="mt-16">
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 lg:grid-cols-4">
+        <Reveal delay={150} className="mt-14">
+          <dl className="glow-inner grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="bg-navy-deep/70 px-6 py-6 backdrop-blur">
                 <dt className="sr-only">{s.label}</dt>
                 <dd>
-                  <span className="block font-display text-2xl font-extrabold text-gold sm:text-3xl">{s.value}</span>
+                  <CountUp
+                    to={s.to}
+                    decimals={s.decimals ?? 0}
+                    suffix={s.suffix ?? ""}
+                    className="block font-display text-2xl font-extrabold text-gold sm:text-3xl"
+                  />
                   <span className="mt-1 block text-sm text-primary-foreground/70">{s.label}</span>
                 </dd>
               </div>
             ))}
           </dl>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Credibility() {
+  const badges = [
+    { icon: Crosshair, label: "IIT-Pattern Content" },
+    { icon: BookOpenCheck, label: "NEET NCERT-Mapped" },
+    { icon: ShieldCheck, label: "UPSC-Aligned NDA" },
+    { icon: Cpu, label: "AI-Powered Analytics" },
+    { icon: Smartphone, label: "Works on Low-End Phones" },
+  ];
+  return (
+    <section aria-label="Credibility" className="border-b border-border bg-background py-8">
+      <div className="container-page">
+        <Reveal className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+          <p className="flex items-center gap-3 text-sm font-semibold text-primary">
+            <span className="h-px w-8 bg-gold" aria-hidden="true" />
+            Built by educators from India's top institutes
+          </p>
+          <ul className="flex flex-wrap items-center justify-center gap-2.5">
+            {badges.map((b) => (
+              <li
+                key={b.label}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-2 text-xs font-semibold text-foreground/75"
+              >
+                <b.icon className="size-3.5 text-gold" aria-hidden="true" />
+                {b.label}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>
