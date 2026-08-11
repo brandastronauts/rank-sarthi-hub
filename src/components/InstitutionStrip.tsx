@@ -10,7 +10,7 @@ export function InstitutionStrip() {
   const hasLogos = institutions.length > 0;
 
   return (
-    <section aria-label="Educator review circle" className="border-y border-border bg-paleblue py-14 sm:py-20">
+    <section aria-label="Educator review circle" className="border-b border-border bg-background py-14 sm:py-20">
       <div className="container-page">
         <Reveal className="flex flex-col items-center">
           <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
