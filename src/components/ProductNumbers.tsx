@@ -12,6 +12,13 @@ export function ProductNumbers() {
         <Reveal>
           <p className="eyebrow text-accent">Product depth</p>
         </Reveal>
+        <Reveal delay={60}>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+            The scale of the content and diagnostic engine behind Rank Sarthi — counted from the
+            system itself, and updated as the question bank expands. No student, rank or result
+            claims.
+          </p>
+        </Reveal>
         <dl className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {productNumbers.map((n, i) => (
             <Reveal key={n.label} delay={i * 80}>
