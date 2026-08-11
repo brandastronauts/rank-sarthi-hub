@@ -150,7 +150,7 @@ export function SiteHeader() {
             onClick={() => setMobileOpen((v) => !v)}
             className="inline-flex size-10 items-center justify-center rounded-lg border border-white/20 text-primary-foreground lg:hidden"
           >
-            {mobileOpen ? <Menu className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
+            {mobileOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
         </div>
       </nav>
@@ -265,13 +265,14 @@ export function SiteHeader() {
 function Dropdown({ item, onNavigate }: { item: NavItem; onNavigate: () => void }) {
   const tint = item.tint ? tintStyles[item.tint] : null;
 
-  if (item.simple) {
+  const simple = item.simple;
+  if (simple) {
     return (
       <div className="menu-in absolute left-0 top-full w-64 pt-3">
         <div className="overflow-hidden rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-menu">
           <span className={`block h-1 rounded-full ${tint?.bar ?? "bg-gold"} mb-2`} aria-hidden="true" />
           <ul>
-            {item.simple.map((l) => (
+            {simple.map((l) => (
               <li key={l.label}>
                 <a
                   href={l.href}
