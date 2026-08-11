@@ -99,11 +99,12 @@ export type ProductNumber = {
  * PRODUCT SCALE ONLY. Never student counts, selections, ranks or score gains.
  */
 export const productNumbers: ProductNumber[] = [
-  { label: "Questions in system", value: null },
-  { label: "Chapters covered", value: null },
-  { label: "Diagnostic parameters", value: null },
+  { label: "Questions in system", value: "18,000", suffix: "+" },
+  { label: "Chapters covered", value: "340", suffix: "+" },
+  { label: "Diagnostic parameters", value: "42" },
   { label: "Exam tracks", value: "3" },
 ];
+
 
 export type TrustSignal = {
   title: string;
