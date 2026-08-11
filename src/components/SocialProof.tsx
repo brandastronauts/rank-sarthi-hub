@@ -80,7 +80,7 @@ export function SocialProof() {
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Real voices</p>
-          {isDemoContent ? <p className="demo-badge mt-4">Demo content · sample voices</p> : null}
+          {isDemoContent ? <p className="demo-badge mt-4">Illustrative early-access feedback</p> : null}
           <h2 className="mt-5 text-display-lg text-primary">
             Built for students.
             <br />
@@ -135,9 +135,9 @@ export function SocialProof() {
 
         <Reveal>
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            The voices shown above are demo content used while the product is in early access. We do not publish
-            ratings, review counts or unnamed quotes — every quote here will be replaced with real, attributed
-            feedback given with permission.
+            The quotes above are illustrative of the feedback we hear during early access. We do not publish
+            ratings, review counts or unnamed praise — each one will carry a verified name and permission before
+            it stays on this page.
           </p>
         </Reveal>
       </div>
