@@ -26,7 +26,7 @@ function Logo({ onNavigate }: { onNavigate?: () => void }) {
       href="#home"
       onClick={onNavigate}
       aria-label="Rank Sarthi home"
-      className="font-display text-xl font-extrabold tracking-tight"
+      className="font-display text-xl font-bold tracking-tight"
     >
       Rank Sarthi<span className="text-accent">.</span>
     </a>

@@ -4,6 +4,12 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
+import { InstitutionStrip } from "@/components/InstitutionStrip";
+import { ProductNumbers } from "@/components/ProductNumbers";
+import { EducatorReview } from "@/components/EducatorReview";
+import { SocialProof } from "@/components/SocialProof";
+import { TrustSignals } from "@/components/TrustSignals";
+import { AuthorityPeople } from "@/components/AuthorityPeople";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { DiagnosticIdea } from "@/components/DiagnosticIdea";
 import { ExamTracks } from "@/components/ExamTracks";
@@ -124,18 +130,24 @@ function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <InstitutionStrip />
         <ProductShowcase />
+        <EducatorReview />
         <DiagnosticIdea />
         <ExamTracks />
         <AspirantMoment />
         <Methodology />
         <ProductDepth />
+        <ProductNumbers />
         <Situations />
         <EducatorThinking />
         <ParentBand />
+        <SocialProof />
         <NdaFlagship />
+        <AuthorityPeople />
         <How />
         <Institutes />
+        <TrustSignals />
         <Pricing />
         <NewBrandTrust />
         <Faq />
@@ -173,7 +185,7 @@ function How() {
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 120} as="li">
               <div className="border-t border-border pt-6">
-                <span className="font-display text-5xl font-extrabold tracking-tight text-secondary-foreground/15">
+                <span className="font-display text-5xl font-bold tracking-tight text-secondary-foreground/15">
                   {s.n}
                 </span>
                 <h3 className="mt-4 text-display-md text-primary">{s.title}</h3>
@@ -339,7 +351,7 @@ function Pricing() {
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.note}</p>
                 <p className="mt-6 flex items-end gap-1">
-                  <span className="font-display text-4xl font-extrabold text-primary">{price(plan.monthly)}</span>
+                  <span className="font-display text-4xl font-bold text-primary">{price(plan.monthly)}</span>
                   <span className="pb-1.5 text-sm text-muted-foreground">
                     {plan.monthly === 0 ? "" : annual ? "/mo, billed annually" : "/mo"}
                   </span>

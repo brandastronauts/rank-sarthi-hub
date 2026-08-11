@@ -54,7 +54,7 @@ export function ProductShowcase() {
                         Full-length diagnostic · Attempt 14
                       </p>
                       <p className="mt-1.5 flex items-end gap-1.5">
-                        <span className="font-display text-5xl font-extrabold leading-none text-primary">212</span>
+                        <span className="font-display text-5xl font-bold leading-none text-primary">212</span>
                         <span className="pb-1.5 text-sm text-muted-foreground">/ 300</span>
                       </p>
                     </div>

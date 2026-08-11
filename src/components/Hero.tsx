@@ -3,7 +3,7 @@ import { Reveal } from "@/components/Reveal";
 import { placeholder as p } from "@/components/nav-data";
 import heroStudent from "@/assets/hero-student.jpg";
 
-const reassurance = ["Find weak areas", "Understand error patterns", "Know what to work on next"];
+const reassurance = ["Built for JEE • NEET • NDA", "See your diagnosis", "Know what to work on next"];
 
 export function Hero() {
   return (
@@ -23,7 +23,7 @@ export function Hero() {
             <br />
             <span className="text-gold">Find it before exam day.</span>
           </h1>
-          <p className="mt-7 max-w-xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
+          <p className="mt-7 text-lede text-primary-foreground/75">
             Rank Sarthi analyses how you solve, where you lose marks and what deserves your attention next —
             across JEE, NEET and NDA preparation.
           </p>
