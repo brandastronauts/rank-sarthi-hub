@@ -138,6 +138,11 @@ export const trustSignals: TrustSignal[] = [
   },
 ];
 
+import personAcademicLead from "@/assets/person-academic-lead.jpg";
+import personMathsFaculty from "@/assets/person-maths-faculty.jpg";
+import personNdaSpecialist from "@/assets/person-nda-specialist.jpg";
+import personProductData from "@/assets/person-product-data.jpg";
+
 export type Person = {
   name: string;
   role: string;
@@ -151,6 +156,7 @@ export type Person = {
 export const people: Person[] = [
   {
     name: "Dr. Ananya Iyer",
+    photo: personAcademicLead,
     role: "Academic Lead",
     qualification: "PhD, Physics",
     experience: "12 years teaching JEE Physics",
@@ -158,6 +164,7 @@ export const people: Person[] = [
   },
   {
     name: "Mohit Bansal",
+    photo: personMathsFaculty,
     role: "Subject Faculty — Mathematics",
     qualification: "B.Tech",
     experience: "9 years in competitive Maths",
@@ -165,6 +172,7 @@ export const people: Person[] = [
   },
   {
     name: "Cdr. Vikram Singh (Retd.)",
+    photo: personNdaSpecialist,
     role: "NDA Specialist",
     qualification: "Ex-Armed Forces",
     experience: "8 years mentoring NDA aspirants",
@@ -172,6 +180,7 @@ export const people: Person[] = [
   },
   {
     name: "Priya Nair",
+    photo: personProductData,
     role: "Product & Data",
     qualification: "M.Sc, Data Science",
     experience: "7 years in learning analytics",
