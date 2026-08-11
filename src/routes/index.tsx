@@ -94,10 +94,10 @@ const platforms = [
   },
 ] as const;
 
-const tintClass: Record<string, { border: string; text: string; bg: string }> = {
-  jee: { border: "hover:border-jee", text: "text-jee", bg: "bg-jee/10" },
-  neet: { border: "hover:border-neet", text: "text-neet", bg: "bg-neet/10" },
-  nda: { border: "hover:border-nda", text: "text-nda", bg: "bg-nda/15" },
+const tintClass: Record<string, { border: string; text: string; bg: string; bar: string }> = {
+  jee: { border: "hover:border-jee/60", text: "text-jee", bg: "bg-jee/10", bar: "bg-jee" },
+  neet: { border: "hover:border-neet/60", text: "text-neet", bg: "bg-neet/10", bar: "bg-neet" },
+  nda: { border: "hover:border-gold/70", text: "text-nda", bg: "bg-nda/15", bar: "bg-gold" },
 };
 
 export const Route = createFileRoute("/")({
@@ -300,32 +300,46 @@ function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: strin
 
 function Platforms() {
   return (
-    <section id="platforms" className="bg-background py-24">
+    <section id="platforms" className="bg-background py-20 sm:py-24">
       <div className="container-page">
         <SectionHeading
           eyebrow="Our Platforms"
-          title="One Platform. Three Paths."
-          sub="Three focused products, one diagnosis engine. Pick your exam and start with a free full-length test."
+          title="One Engine. Three Exams."
+          sub="Three focused products sharing one diagnosis engine. Pick your exam and start with a free full-length test."
         />
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
           {platforms.map((pl, i) => {
             const t = tintClass[pl.tint]!;
+            const featured = "featured" in pl && pl.featured;
             return (
-              <Reveal key={pl.name} delay={i * 110} as="article">
+              <Reveal
+                key={pl.name}
+                delay={i * 110}
+                as="article"
+                className={featured ? "lg:-mt-6 lg:-mb-6" : ""}
+              >
                 <div
-                  className={`flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated ${t.border}`}
+                  className={`card-lift relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card ${
+                    featured ? "border-gold/50 p-8 lg:p-10 shadow-elevated" : "border-border p-8"
+                  } ${t.border}`}
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <span className={`absolute inset-x-0 top-0 h-1 ${t.bar}`} aria-hidden="true" />
+                  {featured && "badge" in pl && pl.badge && (
+                    <span className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-gold">
+                      <Sparkles className="size-3" aria-hidden="true" /> {pl.badge}
+                    </span>
+                  )}
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className={`rounded-full px-3 py-1 text-xs font-bold ${t.bg} ${t.text}`}>{pl.exam}</span>
-                    {"badge" in pl && pl.badge && (
-                      <span className="rounded-full bg-gold/15 px-3 py-1 text-[11px] font-bold text-gold">
-                        {pl.badge}
-                      </span>
-                    )}
+                    <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
+                      {pl.stat}
+                    </span>
                   </div>
-                  <h3 className="mt-6 text-2xl font-extrabold text-primary">{pl.name}</h3>
+                  <h3 className={`mt-5 font-extrabold text-primary ${featured ? "text-3xl" : "text-2xl"}`}>
+                    {pl.name}
+                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pl.line}</p>
-                  <ul className="mt-6 space-y-3">
+                  <ul className="mt-6 flex-1 space-y-3">
                     {pl.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/80">
                         <Check className={`mt-0.5 size-4 shrink-0 ${t.text}`} aria-hidden="true" />
@@ -335,10 +349,14 @@ function Platforms() {
                   </ul>
                   <a
                     href={p(pl.name)}
-                    className="mt-8 inline-flex items-center gap-2 self-start rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-navy-soft"
+                    className={`btn-press mt-8 inline-flex items-center gap-2 self-start rounded-lg px-5 py-2.5 text-sm font-bold ${
+                      featured
+                        ? "bg-accent text-accent-foreground"
+                        : "bg-primary text-primary-foreground hover:bg-navy-soft"
+                    }`}
                     aria-label={`Explore ${pl.name}`}
                   >
-                    Explore <ArrowRight className="size-4" aria-hidden="true" />
+                    Explore {pl.name} <ArrowRight className="size-4" aria-hidden="true" />
                   </a>
                 </div>
               </Reveal>
@@ -356,39 +374,113 @@ function Why() {
       icon: Brain,
       title: "AI Weakness Mapping",
       body: "Our engine clusters your errors into concept groups and ranks them by the marks they are costing you, so revision starts where it pays most.",
+      example:
+        "e.g. You scored 68 in Physics. We show you 22 of those lost marks came from just 3 chapters — and give you a 40-question drill targeting exactly those.",
     },
     {
       icon: Timer,
       title: "Exam-Accurate Simulation",
       body: "Real interface, real timer, real marking scheme and real difficulty distribution — so exam day feels like your hundredth attempt, not your first.",
+      example:
+        "e.g. Your NDA Maths paper is timed at 150 minutes with UPSC's exact 2.5/-0.83 marking, and we flag the 9 questions where you burned over 3 minutes each.",
     },
     {
       icon: Target,
-      title: "Track Every Wrong Answer to Its Concept",
-      body: "Each mistake is traced to the exact chapter, concept and error type — silly slip, formula gap or time pressure — with a fix suggested for each.",
+      title: "Every Wrong Answer Traced to a Concept",
+      body: "Each mistake is tied to the exact chapter, concept and error type — silly slip, formula gap or time pressure — with a specific fix attached to each.",
+      example:
+        "e.g. Of 14 wrong answers in Chemistry, 8 were formula recall and 6 were reading errors — so you get a formula sprint, not another full mock.",
     },
   ];
   return (
-    <section id="why" className="bg-secondary py-24">
+    <section id="why" className="bg-secondary py-20 sm:py-24">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Why Rank Sarthi"
+          eyebrow="How the Diagnosis Works"
           title="Diagnosis, Not Just Scores."
-          sub="A score tells you where you stand. A diagnosis tells you what to do on Monday morning."
+          sub="A score tells you where you stand. A diagnosis tells you what to open on Monday morning."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {items.map((it, i) => (
             <Reveal key={it.title} delay={i * 110}>
-              <div className="h-full rounded-2xl border border-border bg-card p-8 transition-shadow hover:shadow-elevated">
+              <div className="card-lift relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8">
+                <span className="absolute inset-x-0 top-0 h-1 bg-gold/70" aria-hidden="true" />
                 <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                   <it.icon className="size-6" aria-hidden="true" />
                 </span>
                 <h3 className="mt-6 text-lg font-bold text-primary">{it.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.body}</p>
+                <p className="mt-5 border-l-2 border-gold/60 pl-4 text-sm italic leading-relaxed text-foreground/70">
+                  {it.example}
+                </p>
               </div>
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function TrustMethod() {
+  const cols = [
+    {
+      icon: ShieldCheck,
+      title: "Exam-Accurate",
+      body: "Papers are modelled on the real UPSC and NTA blueprints — section counts, timing, marking scheme and difficulty spread. Nothing is invented for convenience.",
+      points: ["Official marking schemes", "Real paper timing", "Post-cycle pattern refresh"],
+    },
+    {
+      icon: Compass,
+      title: "Diagnosis-First",
+      body: "We built the analysis engine before the content library. Every question exists because it can be tagged to a concept, a difficulty band and a known error type.",
+      points: ["Concept-tagged question bank", "Error-type classification", "Auto-generated fix-lists"],
+    },
+    {
+      icon: Smartphone,
+      title: "Built for Bharat",
+      body: "Designed for the aspirant in a Tier-3 town on a ₹8,000 phone and patchy data, not just for metro students on fast Wi-Fi.",
+      points: ["Hindi language support", "Low-bandwidth, lightweight tests", "Free tier that is genuinely usable"],
+    },
+  ];
+  return (
+    <section id="trust" className="relative overflow-hidden bg-navy-gradient-soft py-20 text-primary-foreground sm:py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-70" />
+      <div className="container-page relative">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">The Method</p>
+          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Why aspirants trust the method.</h2>
+          <p className="mt-4 text-base leading-relaxed text-primary-foreground/70">
+            We are new, and we would rather earn your trust with substance than with borrowed faces. Here is exactly
+            what the product stands on.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {cols.map((c, i) => (
+            <Reveal key={c.title} delay={i * 110}>
+              <div className="h-full rounded-2xl border border-white/12 bg-white/5 p-8 backdrop-blur transition-colors hover:border-gold/40">
+                <span className="inline-flex size-12 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 text-gold">
+                  <c.icon className="size-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-6 text-lg font-bold">{c.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{c.body}</p>
+                <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5">
+                  {c.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-sm text-primary-foreground/80">
+                      <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={200} className="mt-8">
+          <p className="rounded-xl border border-dashed border-white/20 px-6 py-4 text-center text-sm text-primary-foreground/60">
+            Student results and testimonials coming soon — we will publish them only once they are real and verified.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -401,7 +493,7 @@ function How() {
     { n: "03", title: "Fix & Improve", body: "Follow a generated fix-list of drills and revision targets, then retest to confirm the gain." },
   ];
   return (
-    <section id="how" className="bg-background py-24">
+    <section id="how" className="bg-background py-20 sm:py-24">
       <div className="container-page">
         <SectionHeading eyebrow="How It Works" title="Three Steps to a Better Rank" />
         <ol className="relative mt-14 grid gap-8 md:grid-cols-3">
@@ -428,7 +520,7 @@ function How() {
 
 function Institutes() {
   return (
-    <section id="institutes" className="bg-secondary py-20">
+    <section id="institutes" className="bg-secondary py-16 sm:py-20">
       <div className="container-page">
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 rounded-2xl border border-border bg-card p-10 lg:flex-row lg:items-center">
@@ -444,7 +536,7 @@ function Institutes() {
             </div>
             <a
               href={p("Request a Demo")}
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground transition-transform hover:-translate-y-0.5"
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground btn-press"
             >
               Request a Demo <ArrowRight className="size-4" aria-hidden="true" />
             </a>
@@ -498,7 +590,7 @@ function Pricing() {
   const price = (m: number) => (m === 0 ? "₹0" : `₹${annual ? Math.round(m * 0.67) : m}`);
 
   return (
-    <section id="pricing" className="bg-background py-24">
+    <section id="pricing" className="bg-background py-20 sm:py-24">
       <div className="container-page">
         <SectionHeading
           eyebrow="Pricing"
@@ -540,7 +632,7 @@ function Pricing() {
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 110}>
               <div
-                className={`flex h-full flex-col rounded-2xl bg-card p-8 transition-shadow hover:shadow-elevated ${
+                className={`flex h-full flex-col rounded-2xl bg-card p-8 card-lift ${
                   plan.popular ? "border-2 border-accent shadow-elevated" : "border border-border"
                 }`}
               >
@@ -589,7 +681,7 @@ function Pricing() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-secondary py-24">
+    <section id="faq" className="bg-secondary py-20 sm:py-24">
       <div className="container-page">
         <SectionHeading eyebrow="FAQ" title="Questions, Answered." />
         <div className="mx-auto mt-12 max-w-3xl space-y-3">
@@ -634,7 +726,7 @@ function Faq() {
 
 function FinalCta() {
   return (
-    <section id="cta" className="bg-navy-gradient py-24 text-primary-foreground">
+    <section id="cta" className="bg-navy-gradient py-20 text-primary-foreground sm:py-24">
       <div className="container-page text-center">
         <Reveal>
           <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">
@@ -645,7 +737,7 @@ function FinalCta() {
           </p>
           <a
             href={p("Start Free Test")}
-            className="mt-9 inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
+            className="mt-9 inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated btn-press"
           >
             Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
           </a>
