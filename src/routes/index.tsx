@@ -18,9 +18,15 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ProductShowcase } from "@/components/ProductShowcase";
+import { StudentStories } from "@/components/StudentStories";
+import { Faculty } from "@/components/Faculty";
+import { ParentBand } from "@/components/ParentBand";
+import { CommunityBand } from "@/components/CommunityBand";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
 import { placeholder as p } from "@/components/nav-data";
+import heroStudent from "@/assets/hero-student.jpg";
+
 
 const faqs = [
   {
@@ -172,9 +178,14 @@ function Home() {
         <Platforms />
         <Why />
         <TrustMethod />
+        <StudentStories />
+        <Faculty />
+        <ParentBand />
+        <CommunityBand />
         <How />
         <Institutes />
         <Pricing />
+
         <Faq />
         <FinalCta />
       </main>
@@ -203,34 +214,66 @@ function Hero() {
       </div>
 
       <div className="container-page relative flex min-h-[88vh] flex-col justify-center pb-16 pt-32">
-        <Reveal className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            <Sparkles className="size-3.5" aria-hidden="true" /> AI-Powered Exam Prep
-          </span>
-          <h1 className="mt-6 text-5xl leading-[0.98] sm:text-7xl lg:text-[5.25rem]">
-            Prepare Smarter.
-            <br />
-            Rank <span className="text-gold">Higher.</span>
-          </h1>
-          <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
-            India's AI-powered mock test platform for JEE, NEET and NDA. We don't just tell you what you scored — we
-            trace every lost mark to the concept behind it, and hand you the drill that fixes it.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href={p("Start Free Test")}
-              className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
-            >
-              Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
-            <a
-              href="#showcase"
-              className="btn-press inline-flex items-center rounded-lg border border-white/40 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
-            >
-              See the AI Diagnosis
-            </a>
-          </div>
-        </Reveal>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <Reveal className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              <Sparkles className="size-3.5" aria-hidden="true" /> AI-Powered Exam Prep
+            </span>
+            <h1 className="mt-6 text-5xl leading-[0.98] sm:text-7xl lg:text-[4.5rem]">
+              Prepare Smarter.
+              <br />
+              Rank <span className="text-gold">Higher.</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
+              You are already working hard. Rank Sarthi makes sure that effort turns into a rank instead of
+              disappearing into the dark — every lost mark traced to the concept behind it, and the exact drill that
+              fixes it.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a
+                href={p("Start Free Test")}
+                className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
+              >
+                Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
+              <a
+                href="#showcase"
+                className="btn-press inline-flex items-center rounded-lg border border-white/40 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
+              >
+                See the AI Diagnosis
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={180} className="relative hidden lg:block">
+            <div
+              aria-hidden="true"
+              className="absolute -right-6 -top-6 size-40 rounded-3xl border border-gold/30"
+            />
+            <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-elevated">
+              <img
+                src={heroStudent}
+                alt="An Indian student preparing for competitive exams on a laptop"
+                width={1024}
+                height={1280}
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy/20 to-transparent"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <p className="text-sm font-semibold text-primary-foreground">
+                  “I finally know what to fix tonight.”
+                </p>
+                <p className="mt-1 text-xs text-primary-foreground/60">
+                  Representative image — sample aspirant sentiment
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
 
         <Reveal delay={150} className="mt-14">
           <dl className="glow-inner grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 lg:grid-cols-4">
