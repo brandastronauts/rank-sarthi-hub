@@ -40,7 +40,7 @@ export function Situations() {
                 <span className="w-fit rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold">
                   Example scenario
                 </span>
-                <p className="mt-5 font-display text-xl font-bold tracking-tight text-primary">
+                <p className="mt-5 font-display text-xl font-semibold tracking-tight text-primary">
                   &ldquo;{s.q}&rdquo;
                 </p>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{s.a}</p>

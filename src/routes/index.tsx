@@ -185,7 +185,7 @@ function How() {
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 120} as="li">
               <div className="border-t border-border pt-6">
-                <span className="font-display text-5xl font-extrabold tracking-tight text-secondary-foreground/15">
+                <span className="font-display text-5xl font-bold tracking-tight text-secondary-foreground/15">
                   {s.n}
                 </span>
                 <h3 className="mt-4 text-display-md text-primary">{s.title}</h3>
@@ -351,7 +351,7 @@ function Pricing() {
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.note}</p>
                 <p className="mt-6 flex items-end gap-1">
-                  <span className="font-display text-4xl font-extrabold text-primary">{price(plan.monthly)}</span>
+                  <span className="font-display text-4xl font-bold text-primary">{price(plan.monthly)}</span>
                   <span className="pb-1.5 text-sm text-muted-foreground">
                     {plan.monthly === 0 ? "" : annual ? "/mo, billed annually" : "/mo"}
                   </span>

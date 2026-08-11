@@ -24,7 +24,7 @@ function ComingSoon() {
       <main className="bg-navy-gradient flex min-h-screen items-center justify-center px-5 text-primary-foreground">
         <div className="max-w-xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Rank Sarthi</p>
-          <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">This page is on the way</h1>
+          <h1 className="mt-4 text-4xl font-bold sm:text-5xl">This page is on the way</h1>
           <p className="mt-4 text-primary-foreground/75">
             We are building this section right now. Head back to the homepage to explore JeeRankUp, NeetRankUp and
             NDARankUp.

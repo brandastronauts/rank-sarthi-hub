@@ -43,7 +43,7 @@ export function SiteFooter() {
       <div className="container-page py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <p className="font-display text-xl font-extrabold">
+            <p className="font-display text-xl font-bold">
               Rank Sarthi<span className="text-accent">.</span>
             </p>
             <p className="mt-3 max-w-xs text-sm text-primary-foreground/65">
