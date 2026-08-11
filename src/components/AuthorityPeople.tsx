@@ -38,7 +38,9 @@ export function AuthorityPeople() {
                       src={person.photo}
                       alt={person.name}
                       loading="lazy"
-                      className="size-16 rounded-full object-cover"
+                      width={640}
+                      height={640}
+                      className="icon-rise size-16 rounded-full object-cover"
                     />
                   ) : (
                     <span className="icon-rise flex size-16 items-center justify-center rounded-full bg-secondary font-display text-lg font-bold text-primary">
