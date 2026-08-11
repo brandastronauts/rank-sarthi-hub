@@ -73,6 +73,7 @@ function VoiceCard({ v, featured }: { v: Voice; featured?: boolean }) {
  */
 export function SocialProof() {
   const [featured, ...rest] = voices;
+  const firstSlot = placeholderSlots[0]!;
 
   return (
     <section id="voices" className="section-pad bg-ivory">
@@ -94,7 +95,7 @@ export function SocialProof() {
         {voices.length > 0 ? (
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
             <Reveal>
-              <VoiceCard v={featured} featured />
+              <VoiceCard v={featured!} featured />
             </Reveal>
             <div className="grid gap-6">
               {rest.slice(0, 2).map((v, i) => (
@@ -109,10 +110,10 @@ export function SocialProof() {
             <Reveal>
               <div className="flex h-full min-h-[18rem] flex-col justify-between rounded-2xl border border-border bg-card p-10 shadow-card">
                 <span className="w-fit rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gold">
-                  Featured voice — {kindLabel[placeholderSlots[0].kind]}
+                  Featured voice — {kindLabel[firstSlot.kind]}
                 </span>
                 <p className="placeholder-slot mt-8 px-6 py-10 text-center">[Real content required]</p>
-                <p className="mt-8 text-sm text-muted-foreground">{placeholderSlots[0].hint}</p>
+                <p className="mt-8 text-sm text-muted-foreground">{firstSlot.hint}</p>
               </div>
             </Reveal>
             <div className="grid gap-6">
