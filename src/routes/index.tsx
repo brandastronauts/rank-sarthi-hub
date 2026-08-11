@@ -8,10 +8,18 @@ import {
   Check,
   ChevronDown,
   Sparkles,
+  ShieldCheck,
+  BookOpenCheck,
+  Compass,
+  Cpu,
+  Smartphone,
+  Crosshair,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ProductShowcase } from "@/components/ProductShowcase";
 import { Reveal } from "@/components/Reveal";
+import { CountUp } from "@/components/CountUp";
 import { placeholder as p } from "@/components/nav-data";
 
 const faqs = [
@@ -46,23 +54,43 @@ const platforms = [
     name: "JeeRankUp",
     exam: "JEE Main & Advanced",
     tint: "jee",
-    line: "Engineering-grade practice built around the real JEE difficulty curve.",
-    features: ["Main + Advanced pattern mocks", "Chapter-wise PYQ engine", "Rank & college predictor"],
+    stat: "1.6M+ tagged questions",
+    line: "Engineering-grade practice built around the real JEE difficulty curve, from Main-level speed sets to Advanced-level multi-concept problems.",
+    features: [
+      "Main + Advanced pattern full mocks",
+      "Chapter-wise PYQ engine (2010 onwards)",
+      "Rank & college predictor",
+      "Concept-level accuracy heatmap",
+    ],
   },
   {
     name: "NeetRankUp",
     exam: "NEET UG",
     tint: "neet",
-    line: "Every question mapped straight back to the NCERT line it came from.",
-    features: ["NCERT-mapped question bank", "Biology accuracy tracker", "Score & rank calculator"],
+    stat: "100% NCERT-mapped",
+    line: "Every question mapped straight back to the NCERT line it came from, so revision always has an exact page to return to.",
+    features: [
+      "NCERT-mapped question bank",
+      "Biology line-by-line accuracy tracker",
+      "Score & rank calculator",
+      "Negative-marking risk analysis",
+    ],
   },
   {
     name: "NDARankUp",
     exam: "NDA & SSB",
     tint: "nda",
+    featured: true,
     badge: "India's First AI NDA Platform",
-    line: "Written exam mastery plus structured SSB interview preparation.",
-    features: ["Maths + GAT full mocks", "Current affairs drills", "SSB & PABT guidance"],
+    stat: "900+ NDA mock tests",
+    line: "The flagship. Written exam mastery across Mathematics and GAT, plus a structured SSB interview track that most NDA prep simply skips.",
+    features: [
+      "Maths + GAT full-length mocks",
+      "Daily current affairs drills",
+      "SSB, PPDT & PABT guidance",
+      "Officer-Like-Qualities self-assessment",
+      "Eligibility & physical standards guide (incl. women candidates)",
+    ],
   },
 ] as const;
 
@@ -139,8 +167,11 @@ function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <Credibility />
+        <ProductShowcase />
         <Platforms />
         <Why />
+        <TrustMethod />
         <How />
         <Institutes />
         <Pricing />
