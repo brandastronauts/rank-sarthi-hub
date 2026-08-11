@@ -1,134 +1,85 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Brain,
-  Target,
-  Timer,
-  ArrowRight,
-  Check,
-  ChevronDown,
-  Sparkles,
-  ShieldCheck,
-  BookOpenCheck,
-  Compass,
-  Cpu,
-  Smartphone,
-  Crosshair,
-} from "lucide-react";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Hero } from "@/components/Hero";
 import { ProductShowcase } from "@/components/ProductShowcase";
-import { StudentStories } from "@/components/StudentStories";
-import { Faculty } from "@/components/Faculty";
+import { DiagnosticIdea } from "@/components/DiagnosticIdea";
+import { ExamTracks } from "@/components/ExamTracks";
+import { AspirantMoment } from "@/components/AspirantMoment";
+import { Methodology } from "@/components/Methodology";
+import { ProductDepth } from "@/components/ProductDepth";
+import { Situations } from "@/components/Situations";
+import { EducatorThinking } from "@/components/EducatorThinking";
 import { ParentBand } from "@/components/ParentBand";
-import { CommunityBand } from "@/components/CommunityBand";
+import { NdaFlagship } from "@/components/NdaFlagship";
+import { NewBrandTrust } from "@/components/NewBrandTrust";
 import { Reveal } from "@/components/Reveal";
-import { CountUp } from "@/components/CountUp";
 import { placeholder as p } from "@/components/nav-data";
-import heroStudent from "@/assets/hero-student.jpg";
-
 
 const faqs = [
   {
-    q: "What exactly is Rank Sarthi?",
-    a: "Rank Sarthi is an AI-powered exam preparation brand running three platforms — JeeRankUp for JEE, NeetRankUp for NEET and NDARankUp for NDA. Each one gives you exam-accurate mock tests plus an AI diagnosis of why you lost marks and what to fix next.",
+    q: "Is Rank Sarthi another online coaching platform?",
+    a: "No. Rank Sarthi is a preparation-intelligence layer above testing. You attempt a diagnostic, and the product explains where marks were lost, why the pattern exists and what deserves attention next.",
   },
   {
-    q: "How does the AI diagnosis actually work?",
-    a: "Every question is tagged to a concept, a difficulty band and a common error type. When you submit a test, our engine maps each wrong answer back to its underlying concept, compares your timing against toppers' benchmarks and produces a ranked list of the weaknesses costing you the most marks.",
+    q: "Does Rank Sarthi replace my coaching institute?",
+    a: "It is designed to sit alongside your coaching or self-study. Your classes build the syllabus; Rank Sarthi tells you which parts of it are actually costing you marks.",
   },
   {
-    q: "Which exams are covered?",
-    a: "JEE Main and JEE Advanced, NEET UG, and the NDA written exam including Mathematics and GAT, with dedicated SSB interview preparation material.",
+    q: "How is this different from a normal mock-test score?",
+    a: "A score is a single number. Rank Sarthi breaks that number down by subject, chapter, topic, question type, error type and attempt behaviour, and converts it into a preparation priority.",
   },
   {
-    q: "Is there a free plan?",
-    a: "Yes. The Starter plan is free forever and includes full-length sample mock tests, basic score reports and access to our free resource library. No card required to begin.",
+    q: "How does Rank Sarthi decide what I should work on next?",
+    a: "Every question is tagged to a concept, a difficulty band and a likely error type. Your attempt is analysed against those tags, and gaps are ranked by the marks they are costing rather than by how many mistakes they produced.",
   },
   {
-    q: "Can girls prepare for the NDA exam here?",
-    a: "Absolutely. Following the 2021 Supreme Court ruling, women are eligible to appear for the NDA examination. NDARankUp includes eligibility guidance, physical standards and SSB preparation for women candidates.",
+    q: "Can I use Rank Sarthi with another coaching institute?",
+    a: "Yes. Rank Sarthi is exam-pattern based and independent of any single syllabus schedule, so it works whether you study at an institute, online or on your own.",
   },
   {
-    q: "How often are new tests added?",
-    a: "New full-length mocks and topic tests are published every week, and the question bank is refreshed after every official exam cycle so that patterns, weightage and difficulty stay current.",
+    q: "Does Rank Sarthi support JEE, NEET and NDA?",
+    a: "Yes — through JeeRankUp, NeetRankUp and NDARankUp. All three share one diagnostic engine, with exam-specific analysis for each pattern.",
+  },
+  {
+    q: "What can parents see?",
+    a: "Parents get a plain-language view of preparation: which areas are strong, which need attention, whether accuracy is trending up and what the current priority is. It is visibility, not surveillance.",
+  },
+  {
+    q: "How does NDARankUp work?",
+    a: "NDARankUp analyses Mathematics and GAT performance with attention to speed, accuracy and attempt strategy, then highlights the part of preparation that deserves attention next.",
+  },
+  {
+    q: "Can coaching institutes use Rank Sarthi?",
+    a: "Yes. Institutes can use the diagnostic layer across batches to see performance patterns, common weak areas and where academic intervention is needed. Get in touch for a walkthrough.",
   },
 ];
-
-const platforms = [
-  {
-    name: "JeeRankUp",
-    exam: "JEE Main & Advanced",
-    tint: "jee",
-    stat: "1.6M+ tagged questions",
-    line: "Engineering-grade practice built around the real JEE difficulty curve, from Main-level speed sets to Advanced-level multi-concept problems.",
-    features: [
-      "Main + Advanced pattern full mocks",
-      "Chapter-wise PYQ engine (2010 onwards)",
-      "Rank & college predictor",
-      "Concept-level accuracy heatmap",
-    ],
-  },
-  {
-    name: "NeetRankUp",
-    exam: "NEET UG",
-    tint: "neet",
-    stat: "100% NCERT-mapped",
-    line: "Every question mapped straight back to the NCERT line it came from, so revision always has an exact page to return to.",
-    features: [
-      "NCERT-mapped question bank",
-      "Biology line-by-line accuracy tracker",
-      "Score & rank calculator",
-      "Negative-marking risk analysis",
-    ],
-  },
-  {
-    name: "NDARankUp",
-    exam: "NDA & SSB",
-    tint: "nda",
-    featured: true,
-    badge: "India's First AI NDA Platform",
-    stat: "900+ NDA mock tests",
-    line: "The flagship. Written exam mastery across Mathematics and GAT, plus a structured SSB interview track that most NDA prep simply skips.",
-    features: [
-      "Maths + GAT full-length mocks",
-      "Daily current affairs drills",
-      "SSB, PPDT & PABT guidance",
-      "Officer-Like-Qualities self-assessment",
-      "Eligibility & physical standards guide (incl. women candidates)",
-    ],
-  },
-] as const;
-
-const tintClass: Record<string, { border: string; text: string; bg: string; bar: string }> = {
-  jee: { border: "hover:border-jee/60", text: "text-jee", bg: "bg-jee/10", bar: "bg-jee" },
-  neet: { border: "hover:border-neet/60", text: "text-neet", bg: "bg-neet/10", bar: "bg-neet" },
-  nda: { border: "hover:border-gold/70", text: "text-nda", bg: "bg-nda/15", bar: "bg-gold" },
-};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rank Sarthi | AI Mock Tests for JEE, NEET & NDA" },
+      { title: "Rank Sarthi | Preparation Intelligence for JEE, NEET & NDA" },
       {
         name: "description",
         content:
-          "India's AI-powered mock test platform for JEE, NEET & NDA. Get diagnosis, not just scores. Start free.",
+          "Rank Sarthi analyses how you solve, where you lose marks and what to work on next across JEE, NEET and NDA preparation. Take your first diagnostic.",
       },
-      { property: "og:title", content: "Rank Sarthi | AI Mock Tests for JEE, NEET & NDA" },
+      { property: "og:title", content: "Rank Sarthi | Preparation Intelligence for JEE, NEET & NDA" },
       {
         property: "og:description",
         content:
-          "India's AI-powered mock test platform for JEE, NEET & NDA. Get diagnosis, not just scores. Start free.",
+          "Your rank has a reason. Rank Sarthi shows where marks are lost, why the pattern exists and what deserves attention next.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { property: "og:site_name", content: "Rank Sarthi" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Rank Sarthi | AI Mock Tests for JEE, NEET & NDA" },
+      { name: "twitter:title", content: "Rank Sarthi | Preparation Intelligence for JEE, NEET & NDA" },
       {
         name: "twitter:description",
-        content: "AI mock tests for JEE, NEET and NDA. Diagnosis, not just scores.",
+        content: "Diagnostic preparation intelligence for JEE, NEET and NDA aspirants.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -141,7 +92,7 @@ export const Route = createFileRoute("/")({
           name: "Rank Sarthi",
           url: "/",
           description:
-            "India's AI-powered mock test platform for JEE, NEET & NDA. Get diagnosis, not just scores.",
+            "Preparation intelligence for JEE, NEET and NDA aspirants — diagnostic analysis of where marks are lost and what to work on next.",
           brand: [
             { "@type": "Brand", name: "JeeRankUp" },
             { "@type": "Brand", name: "NeetRankUp" },
@@ -173,19 +124,20 @@ function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <Credibility />
         <ProductShowcase />
-        <Platforms />
-        <Why />
-        <TrustMethod />
-        <StudentStories />
-        <Faculty />
+        <DiagnosticIdea />
+        <ExamTracks />
+        <AspirantMoment />
+        <Methodology />
+        <ProductDepth />
+        <Situations />
+        <EducatorThinking />
         <ParentBand />
-        <CommunityBand />
+        <NdaFlagship />
         <How />
         <Institutes />
         <Pricing />
-
+        <NewBrandTrust />
         <Faq />
         <FinalCta />
       </main>
@@ -194,363 +146,37 @@ function Home() {
   );
 }
 
-function Hero() {
-  const stats = [
-    { to: 1.6, decimals: 1, suffix: "M+", label: "Tagged Questions" },
-    { to: 5000, suffix: "+", label: "Mock Tests" },
-    { to: 3, label: "Exams Covered" },
-    { to: 24, suffix: "/7", label: "AI Diagnosis Engine" },
-  ];
-  return (
-    <section id="home" className="bg-navy-gradient relative overflow-hidden text-primary-foreground">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-grid-faint" />
-        <div className="absolute inset-0 bg-dots-faint opacity-60" />
-        <div className="absolute -right-32 top-10 size-[36rem] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute -left-24 bottom-0 size-96 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute right-24 top-40 hidden size-64 rotate-12 rounded-3xl border border-gold/25 lg:block" />
-        <div className="absolute right-52 top-64 hidden size-64 rotate-45 rounded-3xl border border-white/10 lg:block" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-deep/70 to-transparent" />
-      </div>
-
-      <div className="container-page relative flex min-h-[88vh] flex-col justify-center pb-16 pt-32">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <Reveal className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-              <Sparkles className="size-3.5" aria-hidden="true" /> AI-Powered Exam Prep
-            </span>
-            <h1 className="mt-6 text-5xl leading-[0.98] sm:text-7xl lg:text-[4.5rem]">
-              Prepare Smarter.
-              <br />
-              Rank <span className="text-gold">Higher.</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
-              You are already working hard. Rank Sarthi makes sure that effort turns into a rank instead of
-              disappearing into the dark — every lost mark traced to the concept behind it, and the exact drill that
-              fixes it.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a
-                href={p("Start Free Test")}
-                className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
-              >
-                Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
-              </a>
-              <a
-                href="#showcase"
-                className="btn-press inline-flex items-center rounded-lg border border-white/40 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
-              >
-                See the AI Diagnosis
-              </a>
-            </div>
-          </Reveal>
-
-          <Reveal delay={180} className="relative hidden lg:block">
-            <div
-              aria-hidden="true"
-              className="absolute -right-6 -top-6 size-40 rounded-3xl border border-gold/30"
-            />
-            <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-elevated">
-              <img
-                src={heroStudent}
-                alt="An Indian student preparing for competitive exams on a laptop"
-                width={1024}
-                height={1280}
-                className="aspect-[4/5] w-full object-cover"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy/20 to-transparent"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <p className="text-sm font-semibold text-primary-foreground">
-                  “I finally know what to fix tonight.”
-                </p>
-                <p className="mt-1 text-xs text-primary-foreground/60">
-                  Representative image — sample aspirant sentiment
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
-
-        <Reveal delay={150} className="mt-14">
-          <dl className="glow-inner grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-navy-deep/70 px-6 py-6 backdrop-blur">
-                <dt className="sr-only">{s.label}</dt>
-                <dd>
-                  <CountUp
-                    to={s.to}
-                    decimals={s.decimals ?? 0}
-                    suffix={s.suffix ?? ""}
-                    className="block font-display text-2xl font-extrabold text-gold sm:text-3xl"
-                  />
-                  <span className="mt-1 block text-sm text-primary-foreground/70">{s.label}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function Credibility() {
-  const badges = [
-    { icon: Crosshair, label: "IIT-Pattern Content" },
-    { icon: BookOpenCheck, label: "NEET NCERT-Mapped" },
-    { icon: ShieldCheck, label: "UPSC-Aligned NDA" },
-    { icon: Cpu, label: "AI-Powered Analytics" },
-    { icon: Smartphone, label: "Works on Low-End Phones" },
-  ];
-  return (
-    <section aria-label="Credibility" className="border-b border-border bg-background py-8">
-      <div className="container-page">
-        <Reveal className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
-          <p className="flex items-center gap-3 text-sm font-semibold text-primary">
-            <span className="h-px w-8 bg-gold" aria-hidden="true" />
-            Built by educators from India's top institutes
-          </p>
-          <ul className="flex flex-wrap items-center justify-center gap-2.5">
-            {badges.map((b) => (
-              <li
-                key={b.label}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-2 text-xs font-semibold text-foreground/75"
-              >
-                <b.icon className="size-3.5 text-gold" aria-hidden="true" />
-                {b.label}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
-  return (
-    <Reveal className="mx-auto max-w-2xl text-center">
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-extrabold text-primary sm:text-4xl">{title}</h2>
-      {sub && <p className="mt-4 text-base leading-relaxed text-muted-foreground">{sub}</p>}
-    </Reveal>
-  );
-}
-
-function Platforms() {
-  return (
-    <section id="platforms" className="bg-background py-20 sm:py-24">
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Our Platforms"
-          title="One Engine. Three Exams."
-          sub="Three focused products sharing one diagnosis engine. Pick your exam and start with a free full-length test."
-        />
-        <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
-          {platforms.map((pl, i) => {
-            const t = tintClass[pl.tint]!;
-            const featured = "featured" in pl && pl.featured;
-            return (
-              <Reveal
-                key={pl.name}
-                delay={i * 110}
-                as="article"
-                className={featured ? "lg:-mt-6 lg:-mb-6" : ""}
-              >
-                <div
-                  className={`card-lift relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card ${
-                    featured ? "border-gold/50 p-8 lg:p-10 shadow-elevated" : "border-border p-8"
-                  } ${t.border}`}
-                >
-                  <span className={`absolute inset-x-0 top-0 h-1 ${t.bar}`} aria-hidden="true" />
-                  {featured && "badge" in pl && pl.badge && (
-                    <span className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-gold">
-                      <Sparkles className="size-3" aria-hidden="true" /> {pl.badge}
-                    </span>
-                  )}
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className={`rounded-full px-3 py-1 text-xs font-bold ${t.bg} ${t.text}`}>{pl.exam}</span>
-                    <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted-foreground">
-                      {pl.stat}
-                    </span>
-                  </div>
-                  <h3 className={`mt-5 font-extrabold text-primary ${featured ? "text-3xl" : "text-2xl"}`}>
-                    {pl.name}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pl.line}</p>
-                  <ul className="mt-6 flex-1 space-y-3">
-                    {pl.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <Check className={`mt-0.5 size-4 shrink-0 ${t.text}`} aria-hidden="true" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={p(pl.name)}
-                    className={`btn-press mt-8 inline-flex items-center gap-2 self-start rounded-lg px-5 py-2.5 text-sm font-bold ${
-                      featured
-                        ? "bg-accent text-accent-foreground"
-                        : "bg-primary text-primary-foreground hover:bg-navy-soft"
-                    }`}
-                    aria-label={`Explore ${pl.name}`}
-                  >
-                    Explore {pl.name} <ArrowRight className="size-4" aria-hidden="true" />
-                  </a>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Why() {
-  const items = [
-    {
-      icon: Brain,
-      title: "AI Weakness Mapping",
-      body: "Our engine clusters your errors into concept groups and ranks them by the marks they are costing you, so revision starts where it pays most.",
-      example:
-        "e.g. You scored 68 in Physics. We show you 22 of those lost marks came from just 3 chapters — and give you a 40-question drill targeting exactly those.",
-    },
-    {
-      icon: Timer,
-      title: "Exam-Accurate Simulation",
-      body: "Real interface, real timer, real marking scheme and real difficulty distribution — so exam day feels like your hundredth attempt, not your first.",
-      example:
-        "e.g. Your NDA Maths paper is timed at 150 minutes with UPSC's exact 2.5/-0.83 marking, and we flag the 9 questions where you burned over 3 minutes each.",
-    },
-    {
-      icon: Target,
-      title: "Every Wrong Answer Traced to a Concept",
-      body: "Each mistake is tied to the exact chapter, concept and error type — silly slip, formula gap or time pressure — with a specific fix attached to each.",
-      example:
-        "e.g. Of 14 wrong answers in Chemistry, 8 were formula recall and 6 were reading errors — so you get a formula sprint, not another full mock.",
-    },
-  ];
-  return (
-    <section id="why" className="bg-secondary py-20 sm:py-24">
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="How the Diagnosis Works"
-          title="Diagnosis, Not Just Scores."
-          sub="A score tells you where you stand. A diagnosis tells you what to open on Monday morning."
-        />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {items.map((it, i) => (
-            <Reveal key={it.title} delay={i * 110}>
-              <div className="card-lift relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8">
-                <span className="absolute inset-x-0 top-0 h-1 bg-gold/70" aria-hidden="true" />
-                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                  <it.icon className="size-6" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 text-lg font-bold text-primary">{it.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.body}</p>
-                <p className="mt-5 border-l-2 border-gold/60 pl-4 text-sm italic leading-relaxed text-foreground/70">
-                  {it.example}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TrustMethod() {
-  const cols = [
-    {
-      icon: ShieldCheck,
-      title: "Exam-Accurate",
-      body: "Papers are modelled on the real UPSC and NTA blueprints — section counts, timing, marking scheme and difficulty spread. Nothing is invented for convenience.",
-      points: ["Official marking schemes", "Real paper timing", "Post-cycle pattern refresh"],
-    },
-    {
-      icon: Compass,
-      title: "Diagnosis-First",
-      body: "We built the analysis engine before the content library. Every question exists because it can be tagged to a concept, a difficulty band and a known error type.",
-      points: ["Concept-tagged question bank", "Error-type classification", "Auto-generated fix-lists"],
-    },
-    {
-      icon: Smartphone,
-      title: "Built for Bharat",
-      body: "Designed for the aspirant in a Tier-3 town on a ₹8,000 phone and patchy data, not just for metro students on fast Wi-Fi.",
-      points: ["Hindi language support", "Low-bandwidth, lightweight tests", "Free tier that is genuinely usable"],
-    },
-  ];
-  return (
-    <section id="trust" className="relative overflow-hidden bg-navy-gradient-soft py-20 text-primary-foreground sm:py-24">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-70" />
-      <div className="container-page relative">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">The Method</p>
-          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Why aspirants trust the method.</h2>
-          <p className="mt-4 text-base leading-relaxed text-primary-foreground/70">
-            We are new, and we would rather earn your trust with substance than with borrowed faces. Here is exactly
-            what the product stands on.
-          </p>
-        </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {cols.map((c, i) => (
-            <Reveal key={c.title} delay={i * 110}>
-              <div className="h-full rounded-2xl border border-white/12 bg-white/5 p-8 backdrop-blur transition-colors hover:border-gold/40">
-                <span className="inline-flex size-12 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 text-gold">
-                  <c.icon className="size-6" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 text-lg font-bold">{c.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{c.body}</p>
-                <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5">
-                  {c.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5 text-sm text-primary-foreground/80">
-                      <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={200} className="mt-8">
-          <p className="rounded-xl border border-dashed border-white/20 px-6 py-4 text-center text-sm text-primary-foreground/60">
-            Student results and testimonials coming soon — we will publish them only once they are real and verified.
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function How() {
   const steps = [
-    { n: "01", title: "Take a Test", body: "Choose a full-length mock or a targeted topic test in the exact exam interface." },
-    { n: "02", title: "Get AI Diagnosis", body: "Within seconds, see the concepts, timing habits and error types behind every lost mark." },
-    { n: "03", title: "Fix & Improve", body: "Follow a generated fix-list of drills and revision targets, then retest to confirm the gain." },
+    { n: "01", title: "Attempt", body: "Take a Rank Sarthi diagnostic or a supported assessment in exam conditions." },
+    {
+      n: "02",
+      title: "Diagnose",
+      body: "Understand the concepts, mistakes and performance patterns influencing your score.",
+    },
+    {
+      n: "03",
+      title: "Improve",
+      body: "Focus preparation on what deserves attention next, then measure whether it actually changed.",
+    },
   ];
   return (
-    <section id="how" className="bg-background py-20 sm:py-24">
+    <section id="how" className="section-pad bg-background">
       <div className="container-page">
-        <SectionHeading eyebrow="How It Works" title="Three Steps to a Better Rank" />
-        <ol className="relative mt-14 grid gap-8 md:grid-cols-3">
-          <span
-            aria-hidden="true"
-            className="absolute left-0 right-0 top-8 hidden h-px bg-border md:block"
-          />
+        <Reveal className="max-w-2xl">
+          <p className="eyebrow text-accent">How it works</p>
+          <h2 className="mt-5 text-display-lg text-primary">
+            Test. Diagnose. <span className="text-accent">Improve.</span>
+          </h2>
+        </Reveal>
+        <ol className="mt-14 grid gap-10 md:grid-cols-3">
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 130} as="li" className="relative">
-              <div className="relative">
-                <span className="relative z-10 inline-flex size-16 items-center justify-center rounded-full bg-primary font-display text-lg font-extrabold text-gold ring-8 ring-background">
+            <Reveal key={s.n} delay={i * 120} as="li">
+              <div className="border-t border-border pt-6">
+                <span className="font-display text-5xl font-extrabold tracking-tight text-secondary-foreground/15">
                   {s.n}
                 </span>
-                <h3 className="mt-6 text-lg font-bold text-primary">{s.title}</h3>
+                <h3 className="mt-4 text-display-md text-primary">{s.title}</h3>
                 <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
             </Reveal>
@@ -562,28 +188,49 @@ function How() {
 }
 
 function Institutes() {
+  const points = [
+    "Batch-level performance patterns",
+    "Student segmentation by weak area",
+    "Chapter weakness trends across a cohort",
+    "Common error patterns before the next test",
+  ];
   return (
-    <section id="institutes" className="bg-secondary py-16 sm:py-20">
-      <div className="container-page">
+    <section id="institutes" className="section-pad bg-ivory">
+      <div className="container-page grid items-center gap-12 lg:grid-cols-[1fr_0.85fr]">
         <Reveal>
-          <div className="flex flex-col items-start justify-between gap-8 rounded-2xl border border-border bg-card p-10 lg:flex-row lg:items-center">
-            <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent">For Institutes</p>
-              <h2 className="mt-3 text-2xl font-extrabold text-primary sm:text-3xl">
-                Run a coaching institute? Get a white-label test platform under your brand.
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Your logo, your batches, your analytics — powered by the Rank Sarthi question bank and AI diagnosis
-                engine.
-              </p>
-            </div>
+          <p className="eyebrow text-accent">For institutes</p>
+          <h2 className="mt-5 text-display-lg text-primary">
+            Know which student needs what — before the next test.
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+            Rank Sarthi gives institutes a diagnostic layer above conventional test results, helping academic
+            teams understand performance patterns across students and batches.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href={p("Rank Sarthi for Institutes")}
+              className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
+            >
+              Explore Rank Sarthi for institutes <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
             <a
               href={p("Request a Demo")}
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground btn-press"
+              className="btn-press inline-flex items-center rounded-lg border border-border px-6 py-3.5 text-sm font-bold text-primary hover:bg-background"
             >
-              Request a Demo <ArrowRight className="size-4" aria-hidden="true" />
+              Request a demo
             </a>
           </div>
+        </Reveal>
+
+        <Reveal delay={140}>
+          <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-background">
+            {points.map((pt) => (
+              <li key={pt} className="flex items-start gap-3 px-6 py-5 text-sm font-semibold text-foreground/80">
+                <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />
+                {pt}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>
@@ -596,9 +243,9 @@ function Pricing() {
     {
       name: "Starter",
       monthly: 0,
-      note: "Free forever",
-      features: ["2 full-length mock tests / month", "Basic score report", "Free resource library", "Community access"],
-      cta: "Start Free",
+      note: "Experience the diagnostic",
+      features: ["2 full-length tests / month", "Core diagnostic report", "Free resource library"],
+      cta: "Start free",
       popular: false,
     },
     {
@@ -606,11 +253,11 @@ function Pricing() {
       monthly: 499,
       note: "For serious aspirants",
       features: [
-        "Unlimited mock tests",
-        "Full AI weakness mapping",
-        "Previous year paper engine",
-        "Rank & college predictor",
-        "Weekly new tests",
+        "Unlimited tests",
+        "Full diagnostic analysis",
+        "Chapter and error-pattern insights",
+        "Preparation priorities",
+        "Progress tracking",
       ],
       cta: "Go Pro",
       popular: true,
@@ -618,12 +265,12 @@ function Pricing() {
     {
       name: "Premium",
       monthly: 1499,
-      note: "Everything, plus mentoring",
+      note: "Everything, plus guidance",
       features: [
         "Everything in Pro",
-        "Personalised study plan",
-        "1:1 mentor review calls",
-        "SSB / interview prep module",
+        "Personalised preparation plan",
+        "Mentor review sessions",
+        "Parent visibility",
         "Priority support",
       ],
       cta: "Get Premium",
@@ -633,15 +280,18 @@ function Pricing() {
   const price = (m: number) => (m === 0 ? "₹0" : `₹${annual ? Math.round(m * 0.67) : m}`);
 
   return (
-    <section id="pricing" className="bg-background py-20 sm:py-24">
+    <section id="pricing" className="section-pad bg-background">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Pricing"
-          title="Simple, Honest Pricing."
-          sub="Start free. Upgrade only when the diagnosis is moving your score."
-        />
+        <Reveal className="max-w-2xl">
+          <p className="eyebrow text-accent">Pricing</p>
+          <h2 className="mt-5 text-display-lg text-primary">
+            Start with diagnosis.
+            <br />
+            Upgrade when you need more.
+          </h2>
+        </Reveal>
 
-        <Reveal className="mt-10 flex justify-center">
+        <Reveal className="mt-9">
           <div
             role="group"
             aria-label="Billing period"
@@ -675,15 +325,15 @@ function Pricing() {
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 110}>
               <div
-                className={`flex h-full flex-col rounded-2xl bg-card p-8 card-lift ${
+                className={`card-lift flex h-full flex-col rounded-2xl bg-card p-8 ${
                   plan.popular ? "border-2 border-accent shadow-elevated" : "border border-border"
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-primary">{plan.name}</h3>
                   {plan.popular && (
-                    <span className="rounded-full bg-accent px-3 py-1 text-[11px] font-bold text-accent-foreground">
-                      Most Popular
+                    <span className="rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-accent-foreground">
+                      Recommended
                     </span>
                   )}
                 </div>
@@ -704,9 +354,9 @@ function Pricing() {
                 </ul>
                 <a
                   href={p(`${plan.name} plan`)}
-                  className={`mt-8 rounded-lg px-5 py-3 text-center text-sm font-bold transition-colors ${
+                  className={`btn-press mt-8 rounded-lg px-5 py-3 text-center text-sm font-bold ${
                     plan.popular
-                      ? "bg-accent text-accent-foreground hover:opacity-90"
+                      ? "bg-accent text-accent-foreground"
                       : "bg-primary text-primary-foreground hover:bg-navy-soft"
                   }`}
                 >
@@ -724,15 +374,18 @@ function Pricing() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-secondary py-20 sm:py-24">
-      <div className="container-page">
-        <SectionHeading eyebrow="FAQ" title="Questions, Answered." />
-        <div className="mx-auto mt-12 max-w-3xl space-y-3">
+    <section id="faq" className="section-pad bg-ivory">
+      <div className="container-page grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+        <Reveal>
+          <p className="eyebrow text-accent">FAQ</p>
+          <h2 className="mt-5 text-display-lg text-primary">Questions, answered.</h2>
+        </Reveal>
+        <div className="space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <Reveal key={f.q} delay={i * 60}>
-                <div className="overflow-hidden rounded-xl border border-border bg-card">
+              <Reveal key={f.q} delay={i * 45}>
+                <div className="overflow-hidden rounded-xl border border-border bg-background">
                   <h3>
                     <button
                       type="button"
@@ -769,21 +422,34 @@ function Faq() {
 
 function FinalCta() {
   return (
-    <section id="cta" className="bg-navy-gradient py-20 text-primary-foreground sm:py-24">
-      <div className="container-page text-center">
+    <section id="cta" className="relative overflow-hidden bg-navy-gradient py-24 text-primary-foreground sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60" />
+      <div className="container-page relative text-center">
         <Reveal>
-          <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">
-            Your rank starts with the first test.
+          <p className="eyebrow text-gold">Your next score shouldn&rsquo;t be a surprise.</p>
+          <h2 className="mx-auto mt-6 max-w-3xl text-display-lg">
+            Know what&rsquo;s holding your rank back.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/70">
-            Take a free full-length mock today and see your first AI diagnosis in minutes.
+          <p className="mx-auto mt-6 max-w-xl text-base text-primary-foreground/70">
+            One diagnostic can show you where your preparation deserves attention next.
           </p>
-          <a
-            href={p("Start Free Test")}
-            className="mt-9 inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated btn-press"
-          >
-            Start Free Test <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <a
+              href={p("Take your first diagnostic")}
+              className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
+            >
+              Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href="#product"
+              className="btn-press inline-flex items-center rounded-lg border border-white/35 px-8 py-4 text-sm font-bold hover:bg-white/10"
+            >
+              See how it works
+            </a>
+          </div>
+          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground/45">
+            JeeRankUp • NeetRankUp • NDARankUp
+          </p>
         </Reveal>
       </div>
     </section>
