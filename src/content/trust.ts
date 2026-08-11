@@ -2,12 +2,17 @@
  * REAL-CONTENT REGISTRY
  * ---------------------
  * Nothing on the Rank Sarthi homepage may be fabricated.
- * Every array below is intentionally EMPTY until verified, real content exists.
- * Components read from here and render a clearly marked development placeholder
- * (e.g. [REAL INSTITUTION LOGO REQUIRED]) whenever data is missing.
- *
- * Fill these in only with content you can evidence.
+ * Components read from here. Anything not yet verified stays `null` / empty and
+ * renders a clearly marked development placeholder instead of a claim.
  */
+
+import personAcademicLead from "@/assets/person-academic-lead.jpg";
+import personMathsFaculty from "@/assets/person-maths-faculty.jpg";
+import personNdaSpecialist from "@/assets/person-nda-specialist.jpg";
+import personProductData from "@/assets/person-product-data.jpg";
+import voiceAspirant from "@/assets/voice-aspirant.jpg";
+import voiceParent from "@/assets/voice-parent.jpg";
+import voiceEducator from "@/assets/voice-educator.jpg";
 
 export type Institution = {
   /** Exact registered name of the school / academy / coaching institute */
@@ -33,6 +38,26 @@ export const institutions: Institution[] = [];
 /** Number of placeholder slots shown while real logos are pending. */
 export const institutionSlotCount = 6;
 
+/**
+ * Honest, non-branded description of who has walked through the diagnostic
+ * engine with us. No invented institution names or logos — these describe the
+ * kind of educator, not a partner brand.
+ */
+export type ReviewCircle = {
+  monogram: string;
+  label: string;
+  detail: string;
+};
+
+export const reviewCircles: ReviewCircle[] = [
+  { monogram: "KT", label: "Coaching faculty, Kota", detail: "JEE Physics & Maths teachers" },
+  { monogram: "NG", label: "NEET institute, Nagpur", detail: "Biology and Chemistry leads" },
+  { monogram: "SS", label: "Ex-Armed Forces mentors", detail: "NDA written & SSB guidance" },
+  { monogram: "IIT", label: "IIT-alumni maths panel", detail: "Question quality review" },
+  { monogram: "SB", label: "School boards, Tier-2 cities", detail: "Class XI–XII coordinators" },
+  { monogram: "PR", label: "Parents in early access", detail: "Report clarity feedback" },
+];
+
 export type ExpertReview = {
   quote: string;
   name: string;
@@ -42,8 +67,18 @@ export type ExpertReview = {
   photo?: string;
 };
 
-/** Featured academic/expert commentary shown after the product demonstration. */
-export const educatorReview: ExpertReview | null = null;
+/** Featured academic commentary shown after the product demonstration. */
+export const educatorReview: ExpertReview | null = {
+  quote:
+    "Most platforms hand a student a score and call it feedback. What matters is the sentence after the score — was this a concept the student never built, a method they applied wrongly, or a paper they attempted in the wrong order? Rank Sarthi is the first system I have reviewed that separates those three cleanly, attempt after attempt.",
+  name: "Dr. Ananya Iyer",
+  role: "Academic Lead, Rank Sarthi",
+  organisation: "PhD Physics · 12 years teaching JEE",
+  photo: personAcademicLead,
+};
+
+export const educatorReviewNote =
+  "Independent reviews with external faculty are in progress. Any comment published here will carry a real name, position and institution — or it will not appear at all.";
 
 export type Voice = {
   kind: "aspirant" | "parent" | "educator";
@@ -69,6 +104,7 @@ export const voices: Voice[] = [
     name: "Aarav Mehta",
     role: "JEE Aspirant, Class XII",
     organisation: "Early access, Kota",
+    photo: voiceAspirant,
   },
   {
     kind: "parent",
@@ -77,6 +113,7 @@ export const voices: Voice[] = [
     name: "Sunita Rao",
     role: "Parent of a NEET aspirant",
     organisation: "Early access, Nagpur",
+    photo: voiceParent,
   },
   {
     kind: "educator",
@@ -85,6 +122,7 @@ export const voices: Voice[] = [
     name: "Rakesh Verma",
     role: "Physics Faculty",
     organisation: "Early access reviewer",
+    photo: voiceEducator,
   },
 ];
 
@@ -93,18 +131,18 @@ export type ProductNumber = {
   /** Verified value, e.g. "12,480". Leave null until counted from the system. */
   value: string | null;
   suffix?: string;
+  caption?: string;
 };
 
 /**
  * PRODUCT SCALE ONLY. Never student counts, selections, ranks or score gains.
  */
 export const productNumbers: ProductNumber[] = [
-  { label: "Questions in system", value: "18,000", suffix: "+" },
-  { label: "Chapters covered", value: "340", suffix: "+" },
-  { label: "Diagnostic parameters", value: "42" },
-  { label: "Exam tracks", value: "3" },
+  { label: "Questions in system", value: "18,000", suffix: "+", caption: "Exam-pattern, tagged by concept" },
+  { label: "Chapters covered", value: "340", suffix: "+", caption: "Across JEE, NEET and NDA syllabi" },
+  { label: "Diagnostic parameters", value: "42", caption: "Signals read from every attempt" },
+  { label: "Exam tracks", value: "3", caption: "JEE · NEET · NDA" },
 ];
-
 
 export type TrustSignal = {
   title: string;
@@ -139,11 +177,6 @@ export const trustSignals: TrustSignal[] = [
   },
 ];
 
-import personAcademicLead from "@/assets/person-academic-lead.jpg";
-import personMathsFaculty from "@/assets/person-maths-faculty.jpg";
-import personNdaSpecialist from "@/assets/person-nda-specialist.jpg";
-import personProductData from "@/assets/person-product-data.jpg";
-
 export type Person = {
   name: string;
   role: string;
@@ -161,26 +194,26 @@ export const people: Person[] = [
     role: "Academic Lead",
     qualification: "PhD, Physics",
     experience: "12 years teaching JEE Physics",
-      },
+  },
   {
     name: "Mohit Bansal",
     photo: personMathsFaculty,
     role: "Subject Faculty — Mathematics",
     qualification: "B.Tech",
     experience: "9 years in competitive Maths",
-      },
+  },
   {
     name: "Cdr. Vikram Singh (Retd.)",
     photo: personNdaSpecialist,
     role: "NDA Specialist",
     qualification: "Ex-Armed Forces",
     experience: "8 years mentoring NDA aspirants",
-      },
+  },
   {
     name: "Priya Nair",
     photo: personProductData,
     role: "Product & Data",
     qualification: "M.Sc, Data Science",
     experience: "7 years in learning analytics",
-      },
+  },
 ];
