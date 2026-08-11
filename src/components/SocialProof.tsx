@@ -50,7 +50,11 @@ function VoiceCard({ v, featured }: { v: Voice; featured?: boolean }) {
             src={v.photo}
             alt={v.name}
             loading="lazy"
-            className="size-12 shrink-0 rounded-full object-cover"
+            width={640}
+            height={640}
+            className={`shrink-0 rounded-full object-cover ring-2 ring-gold/30 transition-transform duration-300 group-hover:scale-105 ${
+              featured ? "size-20" : "size-14"
+            }`}
           />
         ) : (
           <Initials name={v.name} />
