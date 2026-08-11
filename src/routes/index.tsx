@@ -4,6 +4,12 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
+import { InstitutionStrip } from "@/components/InstitutionStrip";
+import { ProductNumbers } from "@/components/ProductNumbers";
+import { EducatorReview } from "@/components/EducatorReview";
+import { SocialProof } from "@/components/SocialProof";
+import { TrustSignals } from "@/components/TrustSignals";
+import { AuthorityPeople } from "@/components/AuthorityPeople";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { DiagnosticIdea } from "@/components/DiagnosticIdea";
 import { ExamTracks } from "@/components/ExamTracks";
@@ -124,18 +130,24 @@ function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <InstitutionStrip />
         <ProductShowcase />
+        <EducatorReview />
         <DiagnosticIdea />
         <ExamTracks />
         <AspirantMoment />
         <Methodology />
         <ProductDepth />
+        <ProductNumbers />
         <Situations />
         <EducatorThinking />
         <ParentBand />
+        <SocialProof />
         <NdaFlagship />
+        <AuthorityPeople />
         <How />
         <Institutes />
+        <TrustSignals />
         <Pricing />
         <NewBrandTrust />
         <Faq />

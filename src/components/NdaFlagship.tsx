@@ -1,9 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { placeholder as p } from "@/components/nav-data";
+import { voices } from "@/content/trust";
 import ndaAspirant from "@/assets/nda-aspirant.jpg";
 
 export function NdaFlagship() {
+  const ndaVoice = voices.find((v) => v.kind === "aspirant" && /NDA/i.test(v.role));
   return (
     <section id="nda" className="relative overflow-hidden bg-navy-deep text-primary-foreground">
       <img
@@ -44,6 +46,26 @@ export function NdaFlagship() {
               Take NDA diagnostic
             </a>
           </div>
+
+          {ndaVoice ? (
+            <figure className="mt-12 max-w-xl border-l-2 border-gold pl-6">
+              <blockquote className="text-lg font-medium leading-relaxed text-primary-foreground/90">
+                &ldquo;{ndaVoice.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-sm text-primary-foreground/55">
+                {ndaVoice.name} · {ndaVoice.role}
+              </figcaption>
+            </figure>
+          ) : (
+            <div className="mt-12 max-w-xl border-l-2 border-white/20 pl-6">
+              <p className="inline-block rounded-lg border border-dashed border-white/30 px-4 py-3 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-primary-foreground/50">
+                [Real NDA aspirant comment required]
+              </p>
+              <p className="mt-3 text-sm text-primary-foreground/55">
+                No selections, no defence-academy claims — only a real aspirant&rsquo;s words, once we have them.
+              </p>
+            </div>
+          )}
         </Reveal>
       </div>
     </section>
