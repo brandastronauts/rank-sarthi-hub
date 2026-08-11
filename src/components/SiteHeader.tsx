@@ -202,7 +202,7 @@ export function SiteHeader() {
                               <div key={col.title}>
                                 <p
                                   className={`text-xs font-bold uppercase tracking-widest ${
-                                    item.tint ? tintStyles[item.tint].heading : "text-gold"
+                                    (item.tint ? tintStyles[item.tint]?.heading : null) ?? "text-gold"
                                   }`}
                                 >
                                   {col.title}
