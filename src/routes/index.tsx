@@ -18,9 +18,15 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ProductShowcase } from "@/components/ProductShowcase";
+import { StudentStories } from "@/components/StudentStories";
+import { Faculty } from "@/components/Faculty";
+import { ParentBand } from "@/components/ParentBand";
+import { CommunityBand } from "@/components/CommunityBand";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
 import { placeholder as p } from "@/components/nav-data";
+import heroStudent from "@/assets/hero-student.jpg";
+
 
 const faqs = [
   {
