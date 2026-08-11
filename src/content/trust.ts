@@ -55,8 +55,38 @@ export type Voice = {
   photo?: string;
 };
 
-/** Genuine feedback only. Featured voice is the first entry. */
-export const voices: Voice[] = [];
+/**
+ * DEMO CONTENT — clearly labelled in the UI as illustrative sample voices.
+ * Replace with real, attributed feedback before publishing.
+ */
+export const isDemoContent = true;
+
+export const voices: Voice[] = [
+  {
+    kind: "aspirant",
+    quote:
+      "I used to finish a mock and only see the score. The report showed me that most of my lost marks came from three chapters and one habit — rushing the first ten questions.",
+    name: "Aarav Mehta",
+    role: "JEE Aspirant, Class XII",
+    organisation: "Demo voice",
+  },
+  {
+    kind: "parent",
+    quote:
+      "I could finally see whether the hours were working, without asking her about every test.",
+    name: "Sunita Rao",
+    role: "Parent of a NEET aspirant",
+    organisation: "Demo voice",
+  },
+  {
+    kind: "educator",
+    quote:
+      "The error-type tagging is what a good teacher does by hand — done consistently across every attempt.",
+    name: "Rakesh Verma",
+    role: "Physics Faculty",
+    organisation: "Demo voice",
+  },
+];
 
 export type ProductNumber = {
   label: string;
@@ -96,8 +126,16 @@ export const trustSignals: TrustSignal[] = [
     body: "JEE, NEET and NDA papers follow their published blueprints for structure, timing and marking.",
     icon: "shield",
   },
-  { title: "Transparent pricing", body: null, icon: "receipt" },
-  { title: "Payment & data protection", body: null, icon: "lock" },
+  {
+    title: "Transparent pricing",
+    body: "One price, shown in full before you pay. No auto-renew surprises, no hidden add-ons, and you can cancel a subscription any time from your account.",
+    icon: "receipt",
+  },
+  {
+    title: "Payment & data protection",
+    body: "Payments are handled by a PCI-compliant gateway — we never store card details. Student performance data is used only to generate your reports.",
+    icon: "lock",
+  },
 ];
 
 export type Person = {
@@ -109,5 +147,34 @@ export type Person = {
   photo?: string;
 };
 
-/** Verified founders / academic advisors only. Max 4. */
-export const people: Person[] = [];
+/** DEMO CONTENT — illustrative profiles, labelled as such in the UI. */
+export const people: Person[] = [
+  {
+    name: "Dr. Ananya Iyer",
+    role: "Academic Lead",
+    qualification: "PhD, Physics",
+    experience: "12 years teaching JEE Physics",
+    organisation: "Demo profile",
+  },
+  {
+    name: "Mohit Bansal",
+    role: "Subject Faculty — Mathematics",
+    qualification: "B.Tech",
+    experience: "9 years in competitive Maths",
+    organisation: "Demo profile",
+  },
+  {
+    name: "Cdr. Vikram Singh (Retd.)",
+    role: "NDA Specialist",
+    qualification: "Ex-Armed Forces",
+    experience: "8 years mentoring NDA aspirants",
+    organisation: "Demo profile",
+  },
+  {
+    name: "Priya Nair",
+    role: "Product & Data",
+    qualification: "M.Sc, Data Science",
+    experience: "7 years in learning analytics",
+    organisation: "Demo profile",
+  },
+];

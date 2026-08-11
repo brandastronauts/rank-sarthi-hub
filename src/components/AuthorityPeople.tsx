@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { people } from "@/content/trust";
+import { isDemoContent, people } from "@/content/trust";
 
 /**
  * Intellectual authority, not a corporate team page.
@@ -13,13 +13,15 @@ export function AuthorityPeople() {
       <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className="eyebrow text-accent">People behind the platform</p>
+          {isDemoContent ? <p className="demo-badge mt-4">Demo content · sample profiles</p> : null}
           <h2 className="mt-5 text-display-lg text-primary">
             Built with people who understand the exam journey.
           </h2>
           <div className="mt-6 w-28 rule-gold" />
           <p className="mt-6 text-lede text-muted-foreground">
             Diagnostic design is an academic judgement before it is a technical one. The people shaping that
-            judgement will be named here with their real qualifications and experience.
+            judgement are shown here as demo profiles for now, and will be replaced with real names,
+            qualifications and experience once confirmed.
           </p>
         </Reveal>
 
@@ -27,7 +29,10 @@ export function AuthorityPeople() {
           {hasPeople ? (
             <ul className="grid gap-6 sm:grid-cols-2">
               {people.slice(0, 4).map((person) => (
-                <li key={person.name} className="rounded-2xl border border-border bg-card p-7 shadow-card">
+                <li
+                  key={person.name}
+                  className="card-lift group rounded-2xl border border-border bg-card p-7 shadow-card"
+                >
                   {person.photo ? (
                     <img
                       src={person.photo}
@@ -36,7 +41,7 @@ export function AuthorityPeople() {
                       className="size-16 rounded-full object-cover"
                     />
                   ) : (
-                    <span className="flex size-16 items-center justify-center rounded-full bg-secondary font-display text-lg font-bold text-primary">
+                    <span className="icon-rise flex size-16 items-center justify-center rounded-full bg-secondary font-display text-lg font-bold text-primary">
                       {person.name
                         .split(" ")
                         .map((w) => w[0])

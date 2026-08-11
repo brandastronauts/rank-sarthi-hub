@@ -26,8 +26,8 @@ export function TrustSignals() {
             const Icon = icons[s.icon];
             return (
               <Reveal key={s.title} delay={i * 80}>
-                <div className="h-full rounded-2xl border border-border bg-background p-6">
-                  <Icon className="size-5 text-gold" aria-hidden="true" />
+                <div className="card-lift group h-full rounded-2xl border border-border bg-background p-6">
+                  <Icon className="icon-rise size-5 text-gold" aria-hidden="true" />
                   <h3 className="mt-4 text-base font-bold text-primary">{s.title}</h3>
                   {s.body ? (
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
