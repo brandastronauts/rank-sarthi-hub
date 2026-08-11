@@ -100,8 +100,11 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   --gradient-navy: linear-gradient(160deg, var(--navy-deep), var(--navy) 55%, oklch(0.3 0.095 268));
+  --gradient-navy-soft: linear-gradient(180deg, oklch(0.225 0.08 265.5), var(--navy) 60%, oklch(0.235 0.082 267));
   --shadow-elevated: 0 24px 60px -28px color-mix(in oklab, var(--navy) 55%, transparent);
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--navy) 8%, transparent), 0 12px 30px -18px color-mix(in oklab, var(--navy) 35%, transparent);
   --shadow-menu: 0 30px 70px -30px color-mix(in oklab, var(--navy) 45%, transparent);
+
 }
 
 .dark {
