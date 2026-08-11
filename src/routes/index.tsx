@@ -178,9 +178,14 @@ function Home() {
         <Platforms />
         <Why />
         <TrustMethod />
+        <StudentStories />
+        <Faculty />
+        <ParentBand />
+        <CommunityBand />
         <How />
         <Institutes />
         <Pricing />
+
         <Faq />
         <FinalCta />
       </main>
