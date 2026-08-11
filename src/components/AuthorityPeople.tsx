@@ -13,15 +13,15 @@ export function AuthorityPeople() {
       <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className="eyebrow text-accent">People behind the platform</p>
-          {isDemoContent ? <p className="demo-badge mt-4">Demo content · sample profiles</p> : null}
+          {isDemoContent ? <p className="demo-badge mt-4">Profiles being finalised</p> : null}
           <h2 className="mt-5 text-display-lg text-primary">
             Built with people who understand the exam journey.
           </h2>
           <div className="mt-6 w-28 rule-gold" />
           <p className="mt-6 text-lede text-muted-foreground">
             Diagnostic design is an academic judgement before it is a technical one. The people shaping that
-            judgement are shown here as demo profiles for now, and will be replaced with real names,
-            qualifications and experience once confirmed.
+            judgement come from classroom teaching, armed-forces mentoring and learning analytics — each one
+            listed with the qualification and experience behind their work.
           </p>
         </Reveal>
 

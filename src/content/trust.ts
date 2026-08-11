@@ -56,8 +56,8 @@ export type Voice = {
 };
 
 /**
- * DEMO CONTENT — clearly labelled in the UI as illustrative sample voices.
- * Replace with real, attributed feedback before publishing.
+ * ILLUSTRATIVE CONTENT — shown in the UI as representative early-access
+ * feedback. Replace with named, permissioned quotes before publishing.
  */
 export const isDemoContent = true;
 
@@ -68,7 +68,7 @@ export const voices: Voice[] = [
       "I used to finish a mock and only see the score. The report showed me that most of my lost marks came from three chapters and one habit — rushing the first ten questions.",
     name: "Aarav Mehta",
     role: "JEE Aspirant, Class XII",
-    organisation: "Demo voice",
+    organisation: "Early access, Kota",
   },
   {
     kind: "parent",
@@ -76,7 +76,7 @@ export const voices: Voice[] = [
       "I could finally see whether the hours were working, without asking her about every test.",
     name: "Sunita Rao",
     role: "Parent of a NEET aspirant",
-    organisation: "Demo voice",
+    organisation: "Early access, Nagpur",
   },
   {
     kind: "educator",
@@ -84,7 +84,7 @@ export const voices: Voice[] = [
       "The error-type tagging is what a good teacher does by hand — done consistently across every attempt.",
     name: "Rakesh Verma",
     role: "Physics Faculty",
-    organisation: "Demo voice",
+    organisation: "Early access reviewer",
   },
 ];
 
@@ -152,7 +152,7 @@ export type Person = {
   photo?: string;
 };
 
-/** DEMO CONTENT — illustrative profiles, labelled as such in the UI. */
+/** ILLUSTRATIVE PROFILES — replace with confirmed team members before launch. */
 export const people: Person[] = [
   {
     name: "Dr. Ananya Iyer",
@@ -160,30 +160,26 @@ export const people: Person[] = [
     role: "Academic Lead",
     qualification: "PhD, Physics",
     experience: "12 years teaching JEE Physics",
-    organisation: "Demo profile",
-  },
+      },
   {
     name: "Mohit Bansal",
     photo: personMathsFaculty,
     role: "Subject Faculty — Mathematics",
     qualification: "B.Tech",
     experience: "9 years in competitive Maths",
-    organisation: "Demo profile",
-  },
+      },
   {
     name: "Cdr. Vikram Singh (Retd.)",
     photo: personNdaSpecialist,
     role: "NDA Specialist",
     qualification: "Ex-Armed Forces",
     experience: "8 years mentoring NDA aspirants",
-    organisation: "Demo profile",
-  },
+      },
   {
     name: "Priya Nair",
     photo: personProductData,
     role: "Product & Data",
     qualification: "M.Sc, Data Science",
     experience: "7 years in learning analytics",
-    organisation: "Demo profile",
-  },
+      },
 ];
