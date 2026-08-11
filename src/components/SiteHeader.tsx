@@ -139,7 +139,7 @@ export function SiteHeader() {
               href="/coming-soon?topic=Start%20Free%20Test"
               className="rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
             >
-              Start Free Test
+              Take a Diagnostic
             </a>
           </div>
 
@@ -245,7 +245,7 @@ export function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="block rounded-lg bg-accent px-5 py-3 text-center text-sm font-bold text-accent-foreground"
               >
-                Start Free Test
+                Take a Diagnostic
               </a>
               <a
                 href="/coming-soon?topic=Log%20In"
