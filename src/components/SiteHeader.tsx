@@ -100,7 +100,11 @@ export function SiteHeader() {
                       type="button"
                       aria-expanded={openIndex === i}
                       aria-haspopup="true"
-                      onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                      onClick={(e) =>
+                        // Keyboard activation (detail 0) toggles; pointer clicks
+                        // only open, because hover has already opened the menu.
+                        e.detail === 0 ? setOpenIndex(openIndex === i ? null : i) : open(i)
+                      }
                       className="flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-semibold text-primary-foreground/85 transition-colors hover:bg-white/10 hover:text-primary-foreground"
                     >
                       {item.label}
