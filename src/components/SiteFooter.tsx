@@ -1,79 +1,42 @@
 import { NavLinkOrText } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
-import { builtPlatforms } from "@/content/platforms";
-import { builtUrls } from "@/content/registry";
+import { footerGroups } from "@/components/nav-data";
 import { site } from "@/content/site";
 import { BrandLogo } from "@/components/BrandLogo";
 
 /**
- * Footer links come from the URL registry: only pages with buildStatus
- * "built" are rendered. Planned pages are simply absent — the footer never
- * ships dead links or placeholder routes.
+ * The footer communicates the full information architecture. Visibility comes
+ * from footerGroups (IA); clickability comes from destinations.nav
+ * (availability). A category is never dropped just because its routes are
+ * still planned, and a planned route is never rendered as an anchor.
  */
-function useFooterColumns() {
-  const platformLinks = builtPlatforms().map((p) => destinations.platformHome(p.slug));
-
-  const legal = builtUrls()
-    .filter((r) => r.parent === "/legal" || r.url.startsWith("/legal"))
-    .map((r) => destinations.page(r.name, r.url));
-
-  const company = ["/about", "/contact", "/how-it-works"].map((url) =>
-    destinations.page(url.replace("/", "").replace(/-/g, " "), url),
-  );
-
-  return [
-    { title: "Platforms", links: platformLinks },
-    { title: "Company", links: company },
-    { title: "Legal", links: legal },
-  ].filter((col) => col.links.some((d) => d.kind !== "hidden"));
-}
+const BRAND_BLURB =
+  "Preparation Intelligence for JEE, NEET and NDA aspirants. Understand why marks are being lost, what deserves attention next and whether preparation is actually improving.";
 
 export function SiteFooter() {
-  const columns = useFooterColumns();
-  const sections = [
-    { label: "How it works", href: "/#how" },
-    { label: "For institutes", href: "/#institutes" },
-    { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
-  ];
-
   return (
     <footer className="bg-navy-deep text-primary-foreground">
       <div className="container-page py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
+          <div className="lg:col-span-2">
             <BrandLogo height={44} surface="dark" />
-            <p className="mt-3 max-w-xs text-sm text-primary-foreground/65">{site.tagline}</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/65">{BRAND_BLURB}</p>
           </div>
 
-          <nav aria-label="On this site">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-gold">Rank Sarthi</h2>
-            <ul className="mt-4 space-y-2.5">
-              {sections.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-                  >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {columns.map((col) => (
-            <nav key={col.title} aria-label={col.title}>
-              <h2 className="text-xs font-bold uppercase tracking-widest text-gold">{col.title}</h2>
+          {footerGroups.map((group) => (
+            <nav key={group.title} aria-label={group.title}>
+              <h2 className="text-xs font-bold uppercase tracking-widest text-gold">{group.title}</h2>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((d, i) => (
-                  <li key={`${col.title}-${i}`}>
-                    <NavLinkOrText
-                      d={d}
-                      className="text-sm capitalize text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-                    />
-                  </li>
-                ))}
+                {group.links
+                  .filter((l) => !l.suppressed)
+                  .map((l) => (
+                    <li key={l.label}>
+                      <NavLinkOrText
+                        d={destinations.nav(l.label, l.href)}
+                        className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+                      />
+                    </li>
+                  ))}
               </ul>
             </nav>
           ))}
