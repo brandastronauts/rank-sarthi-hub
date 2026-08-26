@@ -4,6 +4,21 @@ import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 import ndaAspirant from "@/assets/nda-aspirant.jpg";
 
+/**
+ * JEE and NEET tracks exist as brand promises, not as pages yet. Their CTA is
+ * rendered disabled with an honest reason instead of linking to a thin page.
+ */
+function trackDestination(slug: "jee" | "neet", name: string) {
+  const live = destinations.platformHome(slug);
+  if (live.kind === "live") return live;
+  return destinations.notYet(
+    `Explore ${name}`,
+    `${name} opens after the NDA track. NDARankUp is live today.`,
+  );
+}
+
+
+
 const cards = [
   {
     name: "JeeRankUp",
