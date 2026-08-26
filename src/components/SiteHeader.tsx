@@ -234,22 +234,13 @@ export function SiteHeader() {
               })}
             </ul>
 
-            <div className="mt-8 space-y-3">
-              <a
-                href="/coming-soon?topic=Start%20Free%20Test"
-                onClick={() => setMobileOpen(false)}
+            <div className="mt-8">
+              <CtaLink
+                d={destinations.diagnostic("Take a diagnostic")}
                 className="block rounded-lg bg-accent px-5 py-3 text-center text-sm font-bold text-accent-foreground"
-              >
-                Take a Diagnostic
-              </a>
-              <a
-                href="/coming-soon?topic=Log%20In"
-                onClick={() => setMobileOpen(false)}
-                className="block rounded-lg border border-white/25 px-5 py-3 text-center text-sm font-semibold"
-              >
-                Log In
-              </a>
+              />
             </div>
+
           </nav>
         </div>
       </div>
