@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems, type NavItem } from "./nav-data";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 
 const tintStyles: Record<string, { bar: string; heading: string; chip: string }> = {
   jee: {
@@ -23,7 +25,7 @@ const tintStyles: Record<string, { bar: string; heading: string; chip: string }>
 function Logo({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <a
-      href="#home"
+      href="/"
       onClick={onNavigate}
       aria-label="Rank Sarthi home"
       className="font-display text-xl font-bold tracking-tight"
@@ -129,18 +131,11 @@ export function SiteHeader() {
           </ul>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <a
-              href="/coming-soon?topic=Log%20In"
-              className="text-sm font-semibold text-primary-foreground/85 transition-colors hover:text-primary-foreground"
-            >
-              Log In
-            </a>
-            <a
-              href="/coming-soon?topic=Start%20Free%20Test"
+            <CtaLink
+              d={destinations.diagnostic("Take a diagnostic")}
               className="rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
-            >
-              Take a Diagnostic
-            </a>
+              disabledClassName="hover:translate-y-0"
+            />
           </div>
 
           <button
