@@ -47,6 +47,11 @@
   --color-navy-deep: var(--navy-deep);
   --color-navy-soft: var(--navy-soft);
   --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --color-ice: var(--paleblue);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-red-hover: var(--red-hover);
   --color-jee: var(--jee);
   --color-neet: var(--neet);
   --color-nda: var(--nda);
@@ -68,36 +73,41 @@
 :root {
   --radius: 0.75rem;
 
-  --navy: oklch(0.263 0.089 265.5);
-  --navy-deep: oklch(0.205 0.075 265.5);
-  --navy-soft: oklch(0.36 0.085 265);
-  --gold: oklch(0.745 0.098 85.5);
-  --jee: oklch(0.55 0.13 258);
-  --neet: oklch(0.55 0.11 158);
-  --nda: oklch(0.7 0.12 76);
-  --ivory: oklch(0.978 0.011 85);
-  --paleblue: oklch(0.973 0.011 250);
+  /* Rank Sarthi design system — exact brand hexes (locked) */
+  --navy: #101f4c;
+  --navy-deep: #09163e;
+  --navy-soft: #1e264b;
+  --gold: #cca760;
+  --ink: #141a2b;
+  --red-hover: #9d281f;
+  --success: #277a52;
+  --warning: #c57b20;
+  --jee: #2f5bd0;
+  --neet: #1f8a5b;
+  --nda: #cca760;
+  --ivory: #fbf7f0;
+  --paleblue: #f1f7fd;
 
-  --background: oklch(1 0 0);
+  --background: #ffffff;
 
-  --foreground: oklch(0.24 0.045 265);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.045 265);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.045 265);
-  --primary: oklch(0.263 0.089 265.5);
-  --primary-foreground: oklch(0.99 0.003 250);
-  --secondary: oklch(0.968 0.008 250);
-  --secondary-foreground: oklch(0.263 0.089 265.5);
-  --muted: oklch(0.968 0.008 250);
-  --muted-foreground: oklch(0.53 0.035 258);
-  --accent: oklch(0.522 0.176 29.5);
-  --accent-foreground: oklch(0.99 0.005 60);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0.003 250);
-  --border: oklch(0.918 0.012 255);
-  --input: oklch(0.918 0.012 255);
-  --ring: oklch(0.522 0.176 29.5);
+  --foreground: #141a2b;
+  --card: #ffffff;
+  --card-foreground: #141a2b;
+  --popover: #ffffff;
+  --popover-foreground: #141a2b;
+  --primary: #101f4c;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f7fd;
+  --secondary-foreground: #101f4c;
+  --muted: #f4f6fa;
+  --muted-foreground: #667085;
+  --accent: #b93024;
+  --accent-foreground: #ffffff;
+  --destructive: #b93024;
+  --destructive-foreground: #ffffff;
+  --border: #e6e9ef;
+  --input: #e6e9ef;
+  --ring: #b93024;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -258,7 +268,7 @@
 
   margin-inline: auto;
   width: 100%;
-  max-width: 80rem;
+  max-width: 77.5rem; /* 1240px main container */
   padding-inline: 1.25rem;
 }
 
