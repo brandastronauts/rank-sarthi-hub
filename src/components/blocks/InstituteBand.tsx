@@ -8,9 +8,9 @@ import { institutePoints } from "@/content/home";
 export function InstituteBand({ id = "institutes" }: { id?: string }) {
   const explore = destinations.notYet(
     "Explore Rank Sarthi for institutes",
-    "The institute programme opens with early access.",
+    "This is not available yet.",
   );
-  const demo = destinations.notYet("Request a demo", "Institute demos open with early access.");
+  const demo = destinations.notYet("Request a demo", "This is not available yet.");
 
   return (
     <section id={id} className="section-pad bg-ivory">

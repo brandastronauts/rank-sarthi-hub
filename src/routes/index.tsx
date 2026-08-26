@@ -4,8 +4,7 @@ import { PageFrame } from "@/components/shell/PageFrame";
 import { RecipeRenderer } from "@/lib/recipe";
 import { homeRecipe } from "@/content/recipes/home";
 import { buildHead } from "@/lib/seo";
-import { faqSchema, organizationSchema, websiteSchema } from "@/lib/schema";
-import { homeFaqs } from "@/content/home";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 /**
  * T01 — Brand homepage.
@@ -22,7 +21,9 @@ export const Route = createFileRoute("/")({
       ogDescription:
         "Your rank has a reason. Rank Sarthi shows where marks are lost, why the pattern exists and what deserves attention next.",
       ogType: "website",
-      jsonLd: [websiteSchema(), organizationSchema(), faqSchema(homeFaqs)],
+      // Locked requirement: the homepage emits WebSite + Organization only.
+      // Visible FAQs render for users; no FAQPage JSON-LD is emitted here.
+      jsonLd: [websiteSchema(), organizationSchema()],
     }),
   component: Home,
 });
