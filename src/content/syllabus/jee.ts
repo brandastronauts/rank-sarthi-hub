@@ -77,5 +77,4 @@ export const jeeSyllabus: SyllabusContent = {
       ],
     },
   ],
-  lastVerified: undefined,
 };
