@@ -3,6 +3,7 @@ import { destinations } from "@/content/destinations";
 import { builtPlatforms } from "@/content/platforms";
 import { builtUrls } from "@/content/registry";
 import { site } from "@/content/site";
+import { BrandLogo } from "@/components/BrandLogo";
 
 /**
  * Footer links come from the URL registry: only pages with buildStatus
@@ -41,9 +42,7 @@ export function SiteFooter() {
       <div className="container-page py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-xl font-bold">
-              Rank Sarthi<span className="text-accent">.</span>
-            </p>
+            <BrandLogo height={44} surface="dark" />
             <p className="mt-3 max-w-xs text-sm text-primary-foreground/65">{site.tagline}</p>
           </div>
 

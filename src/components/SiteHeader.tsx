@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems, type NavItem } from "./nav-data";
 import { CtaLink } from "@/components/CtaLink";
+import { BrandLogo } from "@/components/BrandLogo";
 import { destinations } from "@/content/destinations";
 
 const tintStyles: Record<string, { bar: string; heading: string; chip: string }> = {
