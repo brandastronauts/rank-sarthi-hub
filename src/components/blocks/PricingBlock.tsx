@@ -84,7 +84,7 @@ export function PricingBlock({ id = "pricing" }: { id?: string }) {
                   ))}
                 </ul>
                 <CtaLink
-                  d={destinations.notYet(plan.cta, "Plans open when early access begins.")}
+                  d={destinations.notYet(plan.cta, "This plan is not available yet.")}
                   className={`btn-press mt-8 block rounded-lg px-5 py-3 text-center text-sm font-bold ${
                     plan.popular
                       ? "bg-accent text-accent-foreground"

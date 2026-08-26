@@ -30,7 +30,7 @@ export const destinations = {
   diagnostic: (label = "Take a diagnostic"): Destination =>
     featureFlags.diagnosticLive
       ? { kind: "live", href: "/jee/ai-diagnosis", label }
-      : { kind: "disabled", label, reason: "The diagnostic opens with early access." },
+      : { kind: "disabled", label, reason: "This feature is not available yet." },
 
   /** Any action that is deliberately visible but not yet available. */
   notYet: (label: string, reason: string): Destination => ({ kind: "disabled", label, reason }),

@@ -13,7 +13,7 @@ function trackDestination(slug: "jee" | "neet", name: string) {
   if (live.kind === "live") return live;
   return destinations.notYet(
     `Explore ${name}`,
-    `${name} opens after the NDA track. NDARankUp is live today.`,
+    `${name} is not available yet.`,
   );
 }
 

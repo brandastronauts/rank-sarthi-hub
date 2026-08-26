@@ -34,7 +34,7 @@ export function ParentBand() {
           <CtaLink
             d={destinations.notYet(
               "See what parents can track",
-              "The parent view ships with the first NDA cohort.",
+              "This feature is not available yet.",
             )}
             className="btn-press mt-8 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground"
           >
