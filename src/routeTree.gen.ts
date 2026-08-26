@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComingSoonRouteImport } from './routes/coming-soon'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,44 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlatformIndexRoute = PlatformIndexRouteImport.update({
+  id: '/$platform/',
+  path: '/$platform/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coming-soon': typeof ComingSoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform/': typeof PlatformIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coming-soon': typeof ComingSoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform': typeof PlatformIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/coming-soon': typeof ComingSoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform/': typeof PlatformIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/coming-soon' | '/sitemap.xml'
+  fullPaths: '/' | '/coming-soon' | '/sitemap.xml' | '/$platform/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/coming-soon' | '/sitemap.xml'
-  id: '__root__' | '/' | '/coming-soon' | '/sitemap.xml'
+  to: '/' | '/coming-soon' | '/sitemap.xml' | '/$platform'
+  id: '__root__' | '/' | '/coming-soon' | '/sitemap.xml' | '/$platform/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComingSoonRoute: typeof ComingSoonRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  PlatformIndexRoute: typeof PlatformIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$platform/': {
+      id: '/$platform/'
+      path: '/$platform'
+      fullPath: '/$platform/'
+      preLoaderRoute: typeof PlatformIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComingSoonRoute: ComingSoonRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  PlatformIndexRoute: PlatformIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
