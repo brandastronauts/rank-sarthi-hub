@@ -122,8 +122,9 @@ export interface PlatformData {
   pathway?: { id: string; stage: string; body: string }[];
   /** Registry paths this platform links onward to, when they are built. */
   relatedUrls?: string[];
-  /** Platform-specific FAQs. */
-  faqs?: FaqItem[];
+  /** Platform-specific FAQs (plain text, rendered by B22). */
+  faqs?: { q: string; a: string }[];
+
   /** Provenance line for the exam-structure content. */
   sourceStatus?: string;
 }
