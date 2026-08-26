@@ -47,6 +47,11 @@
   --color-navy-deep: var(--navy-deep);
   --color-navy-soft: var(--navy-soft);
   --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --color-ice: var(--paleblue);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-red-hover: var(--red-hover);
   --color-jee: var(--jee);
   --color-neet: var(--neet);
   --color-nda: var(--nda);
