@@ -27,7 +27,6 @@ export const Route = createFileRoute("/$platform/")({
     }
     const { platform } = loaderData;
     const url = `/${params.platform}`;
-    const record = getUrl(url);
     const title = `${platform.productName} | ${platform.examName} Preparation Intelligence | Rank Sarthi`;
     const description = platform.deck ?? platform.tagline;
 
@@ -49,7 +48,6 @@ export const Route = createFileRoute("/$platform/")({
         breadcrumbSchema(url),
       ].filter(Boolean),
       ogTitle: `${platform.productName} — ${platform.tagline}`,
-      ...(record ? {} : {}),
     });
   },
   component: PlatformHome,
