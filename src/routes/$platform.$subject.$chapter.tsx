@@ -6,7 +6,6 @@ import { RecipeRenderer, activeSlots } from "@/lib/recipe";
 import { chapterRecipe } from "@/content/recipes/chapter";
 import { getChapter } from "@/content/chapters";
 import { getUrl } from "@/content/registry";
-import { getPerson } from "@/content/people";
 import { buildHead } from "@/lib/seo";
 import { articleSchema, breadcrumbSchema, learningResourceSchema } from "@/lib/schema";
 import { jumpItemsFor } from "@/lib/jump-nav";
@@ -30,9 +29,6 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
       return { meta: [{ title: "Not found | Rank Sarthi" }, { name: "robots", content: "noindex" }] };
     }
     const { content } = loaderData;
-    const author = getPerson(content.authorId);
-    const reviewer = getPerson(content.reviewerId);
-
     return buildHead({
       url: content.url,
       title: content.meta.title,
@@ -45,15 +41,16 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
           url: content.url,
           headline: content.meta.title,
           description: content.meta.description,
-          ...(content.updated ? { dateModified: content.updated } : {}),
-          ...(author ? { authorName: author.name } : {}),
-          ...(reviewer ? { reviewerName: reviewer.name } : {}),
+          ...(content.updated ? { updated: content.updated } : {}),
+          ...(content.authorId ? { authorId: content.authorId } : {}),
+          ...(content.reviewerId ? { reviewerId: content.reviewerId } : {}),
         }),
         learningResourceSchema({
           url: content.url,
           name: `${content.chapter} — ${content.exam} ${content.subject}`,
           description: content.meta.description,
-          educationalLevel: content.exam,
+          subject: content.subject,
+          exam: content.exam,
         }),
         breadcrumbSchema(content.url),
       ],
