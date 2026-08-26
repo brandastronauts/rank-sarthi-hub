@@ -7,8 +7,10 @@ export function Breadcrumbs({ url, tone = "light" }: { url: string; tone?: "ligh
   const record = getUrl(url);
   if (!record || record.url === "/") return null;
 
-  const home = getUrl("/");
-  const trail = [...(home ? [home] : []), ...ancestorsOf(url)];
+  const ancestors = ancestorsOf(url);
+  const home = ancestors.some((a) => a.url === "/") ? undefined : getUrl("/");
+  const trail = [...(home ? [home] : []), ...ancestors];
+
   const muted = tone === "dark" ? "text-white/60" : "text-muted-foreground";
   const current = tone === "dark" ? "text-white" : "text-primary";
 

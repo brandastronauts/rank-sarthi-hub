@@ -106,7 +106,29 @@ export interface PlatformData {
   tagline: string;
   intro: RichText;
   subjects: string[];
+
+  /* --- T02 optional content. Every field is omittable; blocks disappear
+        cleanly when the data is absent. ------------------------------- */
+
+  /** Short masthead deck line under the H1. */
+  deck?: string;
+  /** Conducting body, only when factually verified. */
+  conductingBody?: string;
+  /** Non-cycle-dependent paper structure. No marks, dates or cutoffs. */
+  papers?: { id: string; name: string; covers: string[]; note?: string }[];
+  /** How the diagnostic reads this exam, in exam-specific language. */
+  diagnosticLenses?: { title: string; body: string }[];
+  /** Selection pathway stages (structure only, never statistics). */
+  pathway?: { id: string; stage: string; body: string }[];
+  /** Registry paths this platform links onward to, when they are built. */
+  relatedUrls?: string[];
+  /** Platform-specific FAQs (plain text, rendered by B22). */
+  faqs?: { q: string; a: string }[];
+
+  /** Provenance line for the exam-structure content. */
+  sourceStatus?: string;
 }
+
 
 export interface ExamData {
   id: string;

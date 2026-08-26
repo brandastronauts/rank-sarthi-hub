@@ -124,3 +124,17 @@ export function learningResourceSchema(opts: {
     },
   };
 }
+
+/** FAQPage — only ever emitted from questions actually rendered on the page. */
+export function faqSchema(items: { q: string; a: string }[]) {
+  if (!items.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}

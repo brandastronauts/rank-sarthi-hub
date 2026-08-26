@@ -1,6 +1,7 @@
 import { ArrowRight, BookOpenCheck, MonitorPlay, PlayCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { placeholder as p } from "@/components/nav-data";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 
 const pillars = [
   {
@@ -50,12 +51,14 @@ export function NewBrandTrust() {
         </div>
 
         <Reveal delay={220} className="mt-10">
-          <a
-            href={p("Take your first diagnostic")}
+          <CtaLink
+            d={destinations.diagnostic("Try Rank Sarthi")}
             className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
           >
-            Try Rank Sarthi <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+            <span className="inline-flex items-center gap-2">
+              Try Rank Sarthi <ArrowRight className="size-4" aria-hidden="true" />
+            </span>
+          </CtaLink>
         </Reveal>
       </div>
     </section>

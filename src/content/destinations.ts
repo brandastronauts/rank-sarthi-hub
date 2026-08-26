@@ -23,15 +23,22 @@ function internal(label: string, url: string): Destination {
 }
 
 export const destinations = {
-  /** Product diagnostic — hidden until the engine is live. */
-  diagnostic: (): Destination =>
+  /**
+   * Product diagnostic. Rendered as an explicitly disabled action with an
+   * honest reason until the engine is live — never as a placeholder page.
+   */
+  diagnostic: (label = "Take a diagnostic"): Destination =>
     featureFlags.diagnosticLive
-      ? { kind: "live", href: "/jee/ai-diagnosis", label: "Take a diagnostic" }
-      : HIDDEN,
+      ? { kind: "live", href: "/jee/ai-diagnosis", label }
+      : { kind: "disabled", label, reason: "The diagnostic opens with early access." },
+
+  /** Any action that is deliberately visible but not yet available. */
+  notYet: (label: string, reason: string): Destination => ({ kind: "disabled", label, reason }),
 
   /** Mock tests — hidden until the test engine exists. */
   mockTests: (platform: "jee" | "neet" | "nda"): Destination =>
     featureFlags.testEngineLive ? internal("Mock tests", `/${platform}/mock-tests`) : HIDDEN,
+
 
   pricing: (platform?: "jee" | "neet" | "nda"): Destination =>
     internal("Pricing", platform ? `/${platform}/pricing` : "/pricing"),

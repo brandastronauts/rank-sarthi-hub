@@ -1,7 +1,23 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { placeholder as p } from "@/components/nav-data";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 import ndaAspirant from "@/assets/nda-aspirant.jpg";
+
+/**
+ * JEE and NEET tracks exist as brand promises, not as pages yet. Their CTA is
+ * rendered disabled with an honest reason instead of linking to a thin page.
+ */
+function trackDestination(slug: "jee" | "neet", name: string) {
+  const live = destinations.platformHome(slug);
+  if (live.kind === "live") return live;
+  return destinations.notYet(
+    `Explore ${name}`,
+    `${name} opens after the NDA track. NDARankUp is live today.`,
+  );
+}
+
+
 
 const cards = [
   {
@@ -126,12 +142,15 @@ export function ExamTracks() {
                     ))}
                   </ul>
 
-                  <a
-                    href={p(c.name)}
+                  <CtaLink
+                    d={trackDestination(c.mark.toLowerCase() as "jee" | "neet", c.name)}
                     className="btn-press mt-8 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
                   >
-                    Explore {c.name} <ArrowRight className="size-4" aria-hidden="true" />
-                  </a>
+                    <span className="inline-flex items-center gap-2">
+                      Explore {c.name} <ArrowRight className="size-4" aria-hidden="true" />
+                    </span>
+                  </CtaLink>
+
                 </div>
               </div>
             </Reveal>
@@ -184,18 +203,18 @@ export function ExamTracks() {
               </dl>
 
               <div className="mt-9 flex flex-wrap gap-3">
-                <a
-                  href={p("NDARankUp")}
+                <CtaLink
+                  d={destinations.platformHome("nda")}
                   className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-bold text-accent-foreground"
                 >
-                  Explore NDA RankUp <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-                <a
-                  href={p("NDA diagnostic")}
+                  <span className="inline-flex items-center gap-2">
+                    Explore NDARankUp <ArrowRight className="size-4" aria-hidden="true" />
+                  </span>
+                </CtaLink>
+                <CtaLink
+                  d={destinations.diagnostic("Take NDA diagnostic")}
                   className="btn-press inline-flex items-center rounded-lg border border-white/35 px-6 py-3 text-sm font-bold hover:bg-white/10"
-                >
-                  Take NDA diagnostic
-                </a>
+                />
               </div>
             </div>
             <div className="relative min-h-64">
