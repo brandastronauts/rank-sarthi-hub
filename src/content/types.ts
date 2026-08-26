@@ -152,6 +152,10 @@ export interface SyllabusUnit {
   id: string;
   name: string;
   topics: string[];
+  /** Official documents that verify this unit's topic list. */
+  sourceRefs?: string[];
+  /** Where verified, which paper this unit belongs to. */
+  variant?: "main" | "advanced" | "both";
   /** Chapter page slugs that exist for this unit, for internal linking. */
   chapterSlugs?: string[];
   note?: string;
@@ -166,6 +170,10 @@ export interface SyllabusSection {
 
 export interface SyllabusContent {
   exam: string;
+  /** Structure-only until the Content Engine supplies verified topics. */
+  contentStatus: ContentStatus;
+  /** Editorial interpretation blocks — never a substitute for the syllabus. */
+  interpretation?: { id: string; title: string; body: RichText }[];
   platform: Exclude<Platform, "main">;
   title: string;
   intro: RichText;
@@ -226,13 +234,55 @@ export interface TrendRecord {
   lastVerified?: string;
 }
 
+/**
+ * Preparation Intelligence v1.1 taxonomy. The Content Engine classifies every
+ * mistake with one of these; the UI never infers or invents a classification.
+ */
+export type PreparationIntelligenceTag =
+  | "knowledge-gap"
+  | "recall-gap"
+  | "execution-error"
+  | "decision-error"
+  | "needs-review";
+
 export interface MistakeRecord {
   id: string;
   mistake: string;
   why: RichText;
   fix: RichText;
-  errorType: "concept" | "execution" | "strategy";
+  /** Supplied by the Content Engine, never derived in the template. */
+  errorType: PreparationIntelligenceTag;
+  sourceRefs?: string[];
 }
+
+/** Worked example — rendered only when the Content Engine supplies one. */
+export interface WorkedExample {
+  id: string;
+  prompt: string;
+  steps: RichText;
+  answer?: string;
+  sourceRef?: string;
+}
+
+/**
+ * Chapter priority signal (B28). Every entry must carry its basis and
+ * confidence; an unsourced priority claim is not renderable.
+ */
+export interface PriorityRecord {
+  label: string;
+  value: string;
+  basis: string;
+  confidence: Confidence;
+  sourceRefs?: string[];
+  lastVerified?: string;
+}
+
+/**
+ * Content lifecycle, separate from buildStatus and indexation.
+ * "scaffold" = structure only, "draft" = Content Engine copy under review,
+ * "verified" = passed the unique-content and source gate.
+ */
+export type ContentStatus = "scaffold" | "draft" | "verified";
 
 export interface FaqItem {
   question: string;
@@ -249,6 +299,8 @@ export interface LinkContract {
 
 export interface ChapterContent {
   exam: string;
+  /** JEE Main vs Advanced etc., when the distinction is verified. */
+  examVariant?: string;
   platform: Exclude<Platform, "main">;
   subject: string;
   subjectSlug: string;
@@ -274,6 +326,14 @@ export interface ChapterContent {
   authorId?: string;
   updated?: string;
   faqs?: FaqItem[];
+  workedExamples?: WorkedExample[];
+  priority?: PriorityRecord[];
+  /** Extra internal links beyond prerequisites/related. */
+  links?: LinkContract[];
+  /** Optional block toggles the Content Engine may set per chapter. */
+  contentFlags?: string[];
+  /** Gates indexation: only "verified" chapters may be marked index. */
+  contentStatus: ContentStatus;
   meta: PageMeta;
 }
 

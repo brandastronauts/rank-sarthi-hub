@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
+import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabus'
+import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +30,69 @@ const PlatformIndexRoute = PlatformIndexRouteImport.update({
   path: '/$platform/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlatformSyllabusRoute = PlatformSyllabusRouteImport.update({
+  id: '/$platform/syllabus',
+  path: '/$platform/syllabus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlatformSubjectChapterRoute = PlatformSubjectChapterRouteImport.update({
+  id: '/$platform/$subject/$chapter',
+  path: '/$platform/$subject/$chapter',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform': typeof PlatformIndexRoute
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/$platform/'
+  fullPaths:
+    | '/'
+    | '/sitemap.xml'
+    | '/$platform/syllabus'
+    | '/$platform/'
+    | '/$platform/$subject/$chapter'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/$platform'
-  id: '__root__' | '/' | '/sitemap.xml' | '/$platform/'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/$platform/syllabus'
+    | '/$platform'
+    | '/$platform/$subject/$chapter'
+  id:
+    | '__root__'
+    | '/'
+    | '/sitemap.xml'
+    | '/$platform/syllabus'
+    | '/$platform/'
+    | '/$platform/$subject/$chapter'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  PlatformSyllabusRoute: typeof PlatformSyllabusRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
+  PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,13 +118,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$platform/syllabus': {
+      id: '/$platform/syllabus'
+      path: '/$platform/syllabus'
+      fullPath: '/$platform/syllabus'
+      preLoaderRoute: typeof PlatformSyllabusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$platform/$subject/$chapter': {
+      id: '/$platform/$subject/$chapter'
+      path: '/$platform/$subject/$chapter'
+      fullPath: '/$platform/$subject/$chapter'
+      preLoaderRoute: typeof PlatformSubjectChapterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  PlatformSyllabusRoute: PlatformSyllabusRoute,
   PlatformIndexRoute: PlatformIndexRoute,
+  PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

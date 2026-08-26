@@ -28,7 +28,7 @@ export type Institution = {
 export const institutionRelationship =
   "Reviewed with educators from" as
     | "Used by students and educators at"
-    | "Pilot & early access institutions"
+    | "Review-stage institutions"
     | "Education partners"
     | "Used by students from"
     | "Reviewed with educators from";
@@ -55,7 +55,7 @@ export const reviewCircles: ReviewCircle[] = [
   { monogram: "SS", label: "Ex-Armed Forces mentors", detail: "NDA written & SSB guidance" },
   { monogram: "IIT", label: "IIT-alumni maths panel", detail: "Question quality review" },
   { monogram: "SB", label: "School boards, Tier-2 cities", detail: "Class XI–XII coordinators" },
-  { monogram: "PR", label: "Parents in early access", detail: "Report clarity feedback" },
+  { monogram: "PR", label: "Parents in review sessions", detail: "Report clarity feedback" },
 ];
 
 export type ExpertReview = {
@@ -91,7 +91,7 @@ export type Voice = {
 };
 
 /**
- * ILLUSTRATIVE CONTENT — shown in the UI as representative early-access
+ * ILLUSTRATIVE CONTENT — shown in the UI as representative review-stage
  * feedback. Replace with named, permissioned quotes before publishing.
  */
 export const isDemoContent = true;
@@ -103,7 +103,7 @@ export const voices: Voice[] = [
       "I used to finish a mock and only see the score. The report showed me that most of my lost marks came from three chapters and one habit — rushing the first ten questions.",
     name: "Aarav Mehta",
     role: "JEE Aspirant, Class XII",
-    organisation: "Early access, Kota",
+    organisation: "Review participant, Kota",
     photo: voiceAspirant,
   },
   {
@@ -112,7 +112,7 @@ export const voices: Voice[] = [
       "I could finally see whether the hours were working, without asking her about every test.",
     name: "Sunita Rao",
     role: "Parent of a NEET aspirant",
-    organisation: "Early access, Nagpur",
+    organisation: "Review participant, Nagpur",
     photo: voiceParent,
   },
   {
@@ -121,7 +121,7 @@ export const voices: Voice[] = [
       "The error-type tagging is what a good teacher does by hand — done consistently across every attempt.",
     name: "Rakesh Verma",
     role: "Physics Faculty",
-    organisation: "Early access reviewer",
+    organisation: "Review participant",
     photo: voiceEducator,
   },
 ];

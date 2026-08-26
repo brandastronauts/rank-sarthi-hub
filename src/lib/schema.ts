@@ -36,12 +36,12 @@ export function breadcrumbSchema(url: string) {
   if (!record || record.url === "/") return undefined;
   const chain: UrlRecord[] = [...ancestorsOf(url), record];
   const home = getUrl("/");
-  const items = (home && chain[0]?.url !== "/" ? [home, ...chain] : chain).map((r, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: r.name,
-    item: absolute(r.url),
-  }));
+  const items = (home && chain[0]?.url !== "/" ? [home, ...chain] : chain).map((r, i) => {
+    const entry: Record<string, unknown> = { "@type": "ListItem", position: i + 1, name: r.name };
+    // Only reference URLs that actually resolve; unbuilt ancestors stay name-only.
+    if (r.buildStatus === "built") entry["item"] = absolute(r.url);
+    return entry;
+  });
   return { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items };
 }
 

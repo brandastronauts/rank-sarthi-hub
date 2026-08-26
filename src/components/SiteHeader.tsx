@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems, type NavItem } from "./nav-data";
 import { CtaLink } from "@/components/CtaLink";
+import { BrandLogo } from "@/components/BrandLogo";
 import { destinations } from "@/content/destinations";
 
 const tintStyles: Record<string, { bar: string; heading: string; chip: string }> = {
@@ -24,16 +25,12 @@ const tintStyles: Record<string, { bar: string; heading: string; chip: string }>
 
 function Logo({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <a
-      href="/"
-      onClick={onNavigate}
-      aria-label="Rank Sarthi home"
-      className="font-display text-xl font-bold tracking-tight"
-    >
-      Rank Sarthi<span className="text-accent">.</span>
+    <a href="/" onClick={onNavigate} aria-label="Rank Sarthi home" className="inline-flex items-center">
+      <BrandLogo height={40} surface="dark" priority />
     </a>
   );
 }
+
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);

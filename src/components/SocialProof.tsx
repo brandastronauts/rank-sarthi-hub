@@ -8,7 +8,7 @@ const kindLabel: Record<Voice["kind"], string> = {
 };
 
 const placeholderSlots: { kind: Voice["kind"]; hint: string }[] = [
-  { kind: "aspirant", hint: "Aspirant — JEE / NEET / NDA, early access student" },
+  { kind: "aspirant", hint: "Aspirant — JEE / NEET / NDA" },
   { kind: "parent", hint: "Parent — parent of a Class XI or XII aspirant" },
   { kind: "educator", hint: "Educator — faculty, academic advisor or institute owner" },
 ];
@@ -84,7 +84,7 @@ export function SocialProof() {
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Real voices</p>
-          {isDemoContent ? <p className="demo-badge mt-4">Illustrative early-access feedback</p> : null}
+          {isDemoContent ? <p className="demo-badge mt-4">Illustrative feedback</p> : null}
           <h2 className="mt-5 text-display-lg text-primary">
             Built for students.
             <br />
@@ -139,7 +139,7 @@ export function SocialProof() {
 
         <Reveal>
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            The quotes above are illustrative of the feedback we hear during early access. We do not publish
+            The quotes above are illustrative of the feedback we hear in review sessions. We do not publish
             ratings, review counts or unnamed praise — each one will carry a verified name and permission before
             it stays on this page.
           </p>

@@ -35,7 +35,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead }: Page
           </>
         ) : (
           <>
-            <div className="border-b border-border bg-ivory">
+            <div className="border-b border-border bg-ivory pt-16 md:pt-20">
               <div className="container-page">
                 <Breadcrumbs url={url} />
               </div>

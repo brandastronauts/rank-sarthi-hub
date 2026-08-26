@@ -25,6 +25,22 @@ import { PricingBlock } from "@/components/blocks/PricingBlock";
 import { FaqBlock } from "@/components/blocks/FaqBlock";
 import { FinalCta } from "@/components/blocks/FinalCta";
 
+/* Academic document blocks (T05 / T06) */
+import { DocumentMasthead } from "@/components/blocks/DocumentMasthead";
+import { JumpNavBlock } from "@/components/blocks/JumpNavBlock";
+import { DataTable } from "@/components/blocks/DataTable";
+import { SyllabusExplorer } from "@/components/blocks/SyllabusExplorer";
+import { TrendTable } from "@/components/blocks/TrendTable";
+import { PriorityMap } from "@/components/blocks/PriorityMap";
+import { FormulaSheet } from "@/components/blocks/FormulaSheet";
+import { CommonMistakes } from "@/components/blocks/CommonMistakes";
+import { DiagnosticCtaInline } from "@/components/blocks/DiagnosticCtaInline";
+import { PyqBrowser } from "@/components/blocks/PyqBrowser";
+import { PyqTrendAnalysis } from "@/components/blocks/PyqTrendAnalysis";
+import { ConceptSections } from "@/components/blocks/ConceptSections";
+import { RelatedRail } from "@/components/blocks/RelatedRail";
+import { SourcesBox } from "@/components/blocks/SourcesBox";
+
 /* Platform template blocks (B38–B43) */
 import { PlatformMasthead } from "@/components/platform/PlatformMasthead";
 import { PlatformIntro } from "@/components/platform/PlatformIntro";
@@ -41,6 +57,20 @@ import { PlatformLinks } from "@/components/platform/PlatformLinks";
  */
 registerBlocks({
   B01: Hero,
+  B23: JumpNavBlock,
+  B25: DataTable,
+  B26: SyllabusExplorer,
+  B27: TrendTable,
+  B28: PriorityMap,
+  B29: FormulaSheet,
+  B30: CommonMistakes,
+  B31: DiagnosticCtaInline,
+  B32: PyqBrowser,
+  B33: PyqTrendAnalysis,
+  B34: DocumentMasthead,
+  B35: ConceptSections,
+  B36: RelatedRail,
+  B37: SourcesBox,
   B02: InstitutionStrip,
   B03: ProductShowcase,
   B04: EducatorReview,
