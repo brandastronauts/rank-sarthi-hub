@@ -23,7 +23,7 @@ export function ConceptSections({
       <div className="mt-6 space-y-10">
         {concepts.map((c) => (
           <article key={c.id} id={c.id} className="scroll-mt-28">
-            <h3 className="text-lg font-bold text-primary">{c.title}</h3>
+            {c.title ? <h3 className="text-lg font-bold text-primary">{c.title}</h3> : null}
             {c.keyIdea ? (
               <p className="mt-2 border-l-2 border-accent pl-4 text-sm font-medium text-ink">{c.keyIdea}</p>
             ) : null}

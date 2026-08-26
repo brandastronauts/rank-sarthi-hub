@@ -58,7 +58,7 @@ export function syllabusRecipe(content: SyllabusContent, jumpItems: { id: string
       ...(content.interpretation ?? []).map((i) => ({
         block: "B35" as const,
         id: i.id,
-        props: { heading: i.title, concepts: [{ id: `${i.id}-body`, title: i.title, body: i.body }] },
+        props: { heading: i.title, concepts: [{ id: `${i.id}-body`, title: "", body: i.body }] },
       })),
       {
         block: "B31",
