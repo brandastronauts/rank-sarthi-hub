@@ -19,9 +19,14 @@ export function Breadcrumbs({ url, tone = "light" }: { url: string; tone?: "ligh
       <ol className={`flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm ${muted}`}>
         {trail.map((crumb) => (
           <li key={crumb.url} className="flex items-center gap-1.5">
-            <Link to={crumb.url} className="transition-colors hover:text-accent">
-              {crumb.name}
-            </Link>
+            {crumb.buildStatus === "built" ? (
+              <Link to={crumb.url} className="transition-colors hover:text-accent">
+                {crumb.name}
+              </Link>
+            ) : (
+              /* Never link to a page that does not exist yet. */
+              <span className="opacity-70">{crumb.name}</span>
+            )}
             <ChevronRight className="size-3.5 opacity-50" aria-hidden />
           </li>
         ))}
