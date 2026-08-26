@@ -3,7 +3,7 @@ import type { Platform, TemplateId, UrlRecord } from "./types";
 
 const byUrl = new Map<string, UrlRecord>(urlRecords.map((r) => [r.url, r]));
 
-export const SITE_ORIGIN = "https://ranksarthi.in";
+export const SITE_ORIGIN = "https://ranksarthi.com";
 
 export function allUrls(): UrlRecord[] {
   return urlRecords;
