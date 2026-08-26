@@ -90,7 +90,7 @@ export function SiteHeader() {
                   className="relative"
                   onMouseEnter={() => (hasMenu ? open(i) : setOpenIndex(null))}
                   onMouseLeave={scheduleClose}
-                  onFocus={() => (hasMenu ? open(i) : setOpenIndex(null))}
+                  onFocus={() => (hasMenu ? undefined : setOpenIndex(null))}
                   onBlur={(e) => {
                     if (!e.currentTarget.contains(e.relatedTarget as Node)) scheduleClose();
                   }}
