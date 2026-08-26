@@ -127,12 +127,15 @@ export function ExamTracks() {
                     ))}
                   </ul>
 
-                  <a
-                    href={p(c.name)}
+                  <CtaLink
+                    d={trackDestination(c.mark.toLowerCase() as "jee" | "neet", c.name)}
                     className="btn-press mt-8 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
                   >
-                    Explore {c.name} <ArrowRight className="size-4" aria-hidden="true" />
-                  </a>
+                    <span className="inline-flex items-center gap-2">
+                      Explore {c.name} <ArrowRight className="size-4" aria-hidden="true" />
+                    </span>
+                  </CtaLink>
+
                 </div>
               </div>
             </Reveal>
