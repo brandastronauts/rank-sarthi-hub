@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Clock, Crosshair, TrendingDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { placeholder as p } from "@/components/nav-data";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 import heroStudent from "@/assets/hero-student.jpg";
 
 const reassurance = ["Built for JEE • NEET • NDA", "See your diagnosis", "Know what to work on next"];
@@ -29,12 +30,14 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href={p("Take your first diagnostic")}
+            <CtaLink
+              d={destinations.diagnostic("Take your first diagnostic")}
               className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
             >
-              Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
+              <span className="inline-flex items-center gap-2">
+                Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
+              </span>
+            </CtaLink>
             <a
               href="#product"
               className="btn-press inline-flex items-center rounded-lg border border-white/35 px-7 py-3.5 text-sm font-bold hover:bg-white/10"

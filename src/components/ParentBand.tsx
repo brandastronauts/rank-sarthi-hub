@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { placeholder as p } from "@/components/nav-data";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 import { voices } from "@/content/trust";
 import parentChild from "@/assets/parent-child.jpg";
 
@@ -30,12 +31,17 @@ export function ParentBand() {
           <p className="mt-8 font-display text-xl font-semibold tracking-tight text-primary">
             Visibility without micromanagement.
           </p>
-          <a
-            href={p("Parent visibility")}
+          <CtaLink
+            d={destinations.notYet(
+              "See what parents can track",
+              "The parent view ships with the first NDA cohort.",
+            )}
             className="btn-press mt-8 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-accent-foreground"
           >
-            See what parents can track <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+            <span className="inline-flex items-center gap-2">
+              See what parents can track <ArrowRight className="size-4" aria-hidden="true" />
+            </span>
+          </CtaLink>
 
           {parentVoice ? (
             <figure className="mt-10 border-l-2 border-gold pl-6">
