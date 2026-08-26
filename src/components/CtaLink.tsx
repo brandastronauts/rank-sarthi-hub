@@ -36,6 +36,15 @@ export function CtaLink({
 
   if (!isLinkable(d)) return null;
 
+  // In-page anchors are plain anchors: the router has no route for "/#id".
+  if (d.href.includes("#")) {
+    return (
+      <a href={d.href} className={className}>
+        {content}
+      </a>
+    );
+  }
+
   if (d.kind === "external") {
     return (
       <a href={d.href} rel={relFor(d)} target="_blank" className={className}>
