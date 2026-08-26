@@ -57,6 +57,39 @@ export const destinations = {
   page: (label: string, url: string): Destination => internal(label, url),
 
   external: (label: string, href: string): Destination => ({ kind: "external", href, label }),
+
+  /**
+   * Navigation/footer resolution.
+   *
+   * Visibility is decided by the IA (nav-data.ts); this only decides
+   * availability. In-page anchors are always live, external URLs are
+   * external, registry pages are live when built, and everything else is
+   * visible-but-disabled. Built-but-noindex pages are clickable only when
+   * navPolicy.linkBuiltNoindex allows it (development preview), so staging
+   * scaffolds never become public navigation targets.
+   */
+  nav: (label: string, href: string): Destination => {
+    if (href.startsWith("http")) return { kind: "external", href, label };
+    if (href.includes("#")) return { kind: "live", href, label };
+
+    const record = getUrl(href);
+    if (record?.buildStatus === "built") {
+      if (record.indexation === "index" || navPolicy.linkBuiltNoindex) {
+        return { kind: "live", href, label };
+      }
+      return { kind: "disabled", label, reason: "This page is not published yet." };
+    }
+    return { kind: "disabled", label, reason: "This page is not available yet." };
+  },
+} as const;
+
+/**
+ * Destination policy that is environment-dependent rather than content
+ * dependent. Built + noindex scaffolds stay reachable in the development
+ * preview for internal review, and stay non-clickable in production.
+ */
+export const navPolicy = {
+  linkBuiltNoindex: import.meta.env.DEV,
 } as const;
 
 /** True when a destination should render a clickable anchor. */

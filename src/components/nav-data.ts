@@ -237,7 +237,7 @@ export const footerGroups: MenuColumn[] = [
     title: "Rank Sarthi",
     links: [
       { label: "How it works", href: "/#how" },
-      { label: "Preparation Intelligence", href: "/#intelligence" },
+      { label: "Preparation Intelligence", href: "/#idea" },
       { label: "For parents", href: "/#parents" },
       { label: "For institutes", href: "/#institutes" },
       { label: "Blog", href: "/blog" },
