@@ -114,20 +114,105 @@ export interface PlatformData {
   deck?: string;
   /** Conducting body, only when factually verified. */
   conductingBody?: string;
-  /** Non-cycle-dependent paper structure. No marks, dates or cutoffs. */
-  papers?: { id: string; name: string; covers: string[]; note?: string }[];
+  /**
+   * Masthead overrides (B38). When present the masthead uses this exact
+   * copy instead of the generic product framing. In-page actions only;
+   * product actions still resolve through the destination contract.
+   */
+  hero?: {
+    eyebrow?: string;
+    heading?: string;
+    support?: string;
+    chips?: string[];
+    primary?: { label: string; href: string };
+    secondary?: { label: string; href: string };
+    /** Product CTA label; state is decided by destinations.diagnostic(). */
+    productCtaLabel?: string;
+  };
+  /**
+   * Current-cycle snapshot (B03). Cycle-dependent facts always travel with
+   * their verification date, source refs and refresh trigger.
+   */
+  cycleSnapshot?: {
+    eyebrow?: string;
+    heading: string;
+    rows: { label: string; value: string }[];
+    note: string;
+    verifiedOn: string;
+    sourceRefs?: string[];
+    refreshTrigger?: string;
+  };
+  /** Task-based routing groups (B39). Destinations resolve via the registry. */
+  taskGroups?: {
+    id: string;
+    title: string;
+    body: string;
+    links: { label: string; url: string }[];
+  }[];
+  /** Non-cycle-dependent paper structure. */
+  papers?: {
+    id: string;
+    name: string;
+    covers: string[];
+    note?: string;
+    marks?: string;
+    duration?: string;
+  }[];
+  /** Structure-block overrides (B40). */
+  structure?: {
+    eyebrow?: string;
+    heading?: string;
+    intro?: string;
+    /** Official composition table, e.g. GAT Part B proportions. */
+    table?: { heading: string; caption?: string; columns: [string, string]; rows: [string, string][] };
+    /** Official rules that apply to the whole written stage. */
+    rules?: string[];
+    /** What the structure means for preparation. */
+    implications?: { heading: string; points: string[] };
+  };
   /** How the diagnostic reads this exam, in exam-specific language. */
   diagnosticLenses?: { title: string; body: string }[];
+  /** Error taxonomy table rendered with the diagnosis block (B41). */
+  errorTaxonomy?: {
+    heading?: string;
+    columns: [string, string, string];
+    rows: { signal: string; category: string; action: string }[];
+    note?: string;
+  };
   /** Selection pathway stages (structure only, never statistics). */
-  pathway?: { id: string; stage: string; body: string }[];
+  pathway?: {
+    id: string;
+    stage: string;
+    body: string;
+    links?: { label: string; url: string }[];
+  }[];
+  /** Pathway block copy overrides (B42). */
+  pathwayIntro?: { heading?: string; body?: string };
   /** Registry paths this platform links onward to, when they are built. */
   relatedUrls?: string[];
+  /** Pricing block (B19) stays hidden until commercial terms are verified. */
+  showPricing?: boolean;
   /** Platform-specific FAQs (plain text, rendered by B22). */
   faqs?: { q: string; a: string }[];
+  /** Closing band copy (B24). */
+  finalCta?: {
+    eyebrow?: string;
+    heading?: string;
+    body?: string;
+    secondaryHref?: string;
+    secondaryLabel?: string;
+  };
+  /** Per-page metadata overrides used by the T02 route head(). */
+  seo?: { title?: string; description?: string; ogTitle?: string; ogDescription?: string };
 
   /** Provenance line for the exam-structure content. */
   sourceStatus?: string;
+  /** Source ids (see content/sources.ts) backing structural claims. */
+  sourceRefs?: string[];
+  /** Verification date for the sourced content on this page. */
+  lastVerified?: string;
 }
+
 
 
 export interface ExamData {

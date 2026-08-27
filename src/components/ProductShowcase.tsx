@@ -1,5 +1,8 @@
 import { Reveal } from "@/components/Reveal";
+import { CycleSnapshot } from "@/components/platform/CycleSnapshot";
+import type { PlatformData } from "@/content/types";
 import { Clock, TrendingDown } from "lucide-react";
+
 
 const weaknesses = [
   { concept: "Rotational Motion", subject: "Physics", lost: 6, pct: 82, bar: "bg-accent", fix: "Concept gap" },
@@ -15,9 +18,20 @@ const callouts = [
   { t: "Priority action", b: "What deserves attention next." },
 ];
 
-export function ProductShowcase() {
+/**
+ * B03 — product/state showcase slot.
+ *
+ * When a platform record carries a verified current-cycle snapshot, this slot
+ * renders that factual table instead of the brand product visual. No product
+ * screenshot is fabricated for a platform page.
+ */
+export function ProductShowcase({ id, platform }: { id?: string; platform?: PlatformData } = {}) {
+  if (platform?.cycleSnapshot) return <CycleSnapshot id={id ?? "snapshot"} platform={platform} />;
+  if (platform) return null;
+
   return (
     <section id="product" className="section-pad bg-paleblue">
+
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Not just another score</p>
