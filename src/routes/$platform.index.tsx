@@ -50,7 +50,7 @@ export const Route = createFileRoute("/$platform/")({
         breadcrumbSchema(url),
       ].filter(Boolean),
       ogTitle: platform.seo?.ogTitle ?? `${platform.productName} — ${platform.tagline}`,
-      ogDescription: platform.seo?.ogDescription,
+      ogDescription: platform.seo?.ogDescription ?? description,
     });
 
   },
