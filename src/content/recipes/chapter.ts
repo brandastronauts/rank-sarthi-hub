@@ -1,5 +1,5 @@
 import type { PageRecipe } from "@/lib/recipe";
-import type { ChapterContent } from "@/content/types";
+import type { ChapterContent, ChapterSlot } from "@/content/types";
 
 /**
  * T06 — Chapter recipe.
@@ -12,6 +12,31 @@ export function chapterRecipe(
   content: ChapterContent,
   jumpItems: { id: string; label: string }[] = [],
 ): PageRecipe {
+  /** Structured tables + extra concept groups attached to an anchor point. */
+  const at = (slot: ChapterSlot): PageRecipe["slots"] => [
+    ...(content.tables ?? [])
+      .filter((t) => t.slot === slot)
+      .map((t) => ({
+        block: "B25" as const,
+        id: t.id,
+        props: {
+          caption: t.heading,
+          intro: t.intro,
+          columns: t.columns,
+          rows: t.rows,
+          note: t.note,
+          jumpHidden: !t.jump,
+        },
+      })),
+    ...(content.sections ?? [])
+      .filter((s) => s.slot === slot)
+      .map((s) => ({
+        block: "B35" as const,
+        id: s.id,
+        props: { heading: s.heading, concepts: s.concepts, jumpHidden: !s.jump },
+      })),
+  ];
+
   return {
     template: "T06",
     url: content.url,
@@ -31,6 +56,7 @@ export function chapterRecipe(
             { label: "Syllabus unit", value: content.syllabusMapping.unit },
             ...(content.updated ? [{ label: "Updated", value: content.updated }] : []),
           ],
+          chips: content.heroChips ?? [],
         },
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
@@ -44,24 +70,28 @@ export function chapterRecipe(
         },
         when: content.syllabusMapping.topics.length > 0,
       },
+      ...at("scope"),
       {
         block: "B36",
         id: "prerequisites",
         props: { links: content.prerequisites, heading: "Before this chapter" },
         when: content.prerequisites.length > 0,
       },
+      ...at("prerequisites"),
       {
         block: "B35",
         id: "concepts",
         props: { concepts: content.conceptBlocks },
         when: content.conceptBlocks.length > 0,
       },
+      ...at("concepts"),
       {
         block: "B29",
         id: "formulas",
         props: { formulas: content.formulas ?? [] },
         when: !!content.formulas?.length,
       },
+      ...at("formulas"),
       {
         block: "B35",
         id: "worked-examples",
@@ -82,6 +112,8 @@ export function chapterRecipe(
         props: { mistakes: content.mistakes ?? [] },
         when: !!content.mistakes?.length,
       },
+      ...at("mistakes"),
+      ...at("diagnosis"),
       {
         block: "B32",
         id: "pyqs",
@@ -94,6 +126,7 @@ export function chapterRecipe(
         props: { pyqs: content.pyqs ?? [], trends: content.trends ?? [] },
         when: !!content.pyqs?.length,
       },
+      ...at("practice"),
       {
         block: "B27",
         id: "trends",
@@ -128,6 +161,7 @@ export function chapterRecipe(
         props: { links: [...content.relatedChapters, ...(content.links ?? [])] },
         when: content.relatedChapters.length + (content.links?.length ?? 0) > 0,
       },
+      ...at("related"),
       {
         block: "B37",
         id: "sources",
@@ -136,6 +170,8 @@ export function chapterRecipe(
           reviewerId: content.reviewerId,
           authorId: content.authorId,
           updated: content.updated,
+          note: content.sourceNote,
+          contributorPolicy: content.contributorPolicy ?? [],
         },
       },
     ],
