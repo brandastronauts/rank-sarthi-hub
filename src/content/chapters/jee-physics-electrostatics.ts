@@ -353,6 +353,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "official-syllabus",
+      jump: true,
       slot: "scope",
       heading: "Official JEE syllabus mapping for Electrostatics",
       intro:
@@ -400,6 +401,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "prerequisite-check",
+      jump: true,
       slot: "prerequisites",
       heading: "Prerequisites: what you should know before Electrostatics",
       columns: ["Prerequisite", "You are ready if you can…", "If not, repair this first"],
@@ -489,6 +491,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "method-selector",
+      jump: true,
       slot: "concepts",
       heading: "Choose the method before calculating",
       intro: "Five decisions cover most Electrostatics questions. Select the representation before any algebra.",
@@ -563,6 +566,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "pi-diagnosis",
+      jump: true,
       slot: "diagnosis",
       heading: "Diagnose your Electrostatics weakness with evidence",
       intro:
@@ -759,6 +763,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "official-papers",
+      jump: true,
       slot: "practice",
       heading: "Use official previous papers without inventing chapter trends",
       concepts: [
@@ -833,6 +838,7 @@ export const jeePhysicsElectrostatics: ChapterContent = {
     },
     {
       id: "next-step",
+      jump: true,
       slot: "related",
       heading: "Your next useful step",
       concepts: [

@@ -47,7 +47,10 @@ export function jumpItemsFor(slots: BlockSlot[]): { id: string; label: string }[
     const id = slot.id;
     if (!id || EXCLUDED.has(id) || seen.has(id)) continue;
     seen.add(id);
-    const props = slot.props as { heading?: string; caption?: string; title?: string } | undefined;
+    const props = slot.props as
+      | { heading?: string; caption?: string; title?: string; jumpHidden?: boolean }
+      | undefined;
+    if (props?.jumpHidden) continue;
     const label = LABELS[id] ?? props?.heading ?? props?.caption ?? props?.title;
     if (!label) continue;
     items.push({ id, label });

@@ -25,6 +25,7 @@ export function chapterRecipe(
           columns: t.columns,
           rows: t.rows,
           note: t.note,
+          jumpHidden: !t.jump,
         },
       })),
     ...(content.sections ?? [])
@@ -32,7 +33,7 @@ export function chapterRecipe(
       .map((s) => ({
         block: "B35" as const,
         id: s.id,
-        props: { heading: s.heading, concepts: s.concepts },
+        props: { heading: s.heading, concepts: s.concepts, jumpHidden: !s.jump },
       })),
   ];
 

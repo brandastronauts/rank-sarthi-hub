@@ -163,6 +163,7 @@ export const chapterTableSchema = z.object({
   columns: z.array(z.string()).min(2),
   rows: z.array(z.array(z.string())).min(1),
   note: z.string().optional(),
+  jump: z.boolean().optional(),
 });
 
 export const chapterSectionSchema = z.object({
@@ -170,6 +171,7 @@ export const chapterSectionSchema = z.object({
   slot: chapterSlotSchema,
   heading: z.string(),
   concepts: z.array(conceptBlockSchema).min(1),
+  jump: z.boolean().optional(),
 });
 
 export const chapterContentSchema = z.object({
