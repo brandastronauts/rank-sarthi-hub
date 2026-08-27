@@ -31,29 +31,64 @@ export function PlatformMasthead({ id = "top", platform }: { id?: string; platfo
 
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <Reveal>
-            <p className={`eyebrow ${accent}`}>{platform.productName} — a Rank Sarthi platform</p>
-            <h1 className="mt-5 max-w-2xl text-display-xl">{platform.tagline}</h1>
-            {platform.deck && (
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/70">{platform.deck}</p>
+            <p className={`eyebrow ${accent}`}>
+              {platform.hero?.eyebrow ?? `${platform.productName} — a Rank Sarthi platform`}
+            </p>
+            <h1 className="mt-5 max-w-2xl text-display-xl">{platform.hero?.heading ?? platform.tagline}</h1>
+            {(platform.hero?.support ?? platform.deck) && (
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/70">
+                {platform.hero?.support ?? platform.deck}
+              </p>
             )}
 
             <div className="mt-9 flex flex-wrap gap-3">
-              <CtaLink
-                d={destinations.diagnostic(`Take an ${wordmark} diagnostic`)}
-                className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
-              >
-                <span className="inline-flex items-center gap-2">
-                  Take an {wordmark} diagnostic <ArrowRight className="size-4" aria-hidden="true" />
-                </span>
-              </CtaLink>
+              {platform.hero?.primary ? (
+                <a
+                  href={platform.hero.primary.href}
+                  className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
+                >
+                  {platform.hero.primary.label} <ArrowRight className="size-4" aria-hidden="true" />
+                </a>
+              ) : (
+                <CtaLink
+                  d={destinations.diagnostic(`Take an ${wordmark} diagnostic`)}
+                  className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    Take an {wordmark} diagnostic <ArrowRight className="size-4" aria-hidden="true" />
+                  </span>
+                </CtaLink>
+              )}
               <a
-                href="#structure"
+                href={platform.hero?.secondary?.href ?? "#structure"}
                 className="btn-press inline-flex items-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
               >
-                See how the exam is read
+                {platform.hero?.secondary?.label ?? "See how the exam is read"}
               </a>
+              {platform.hero?.productCtaLabel && (
+                <CtaLink
+                  d={destinations.diagnostic(platform.hero.productCtaLabel)}
+                  className="btn-press inline-flex items-center rounded-lg border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-bold"
+                >
+                  {platform.hero.productCtaLabel}
+                </CtaLink>
+              )}
             </div>
+
+            {platform.hero?.chips?.length ? (
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {platform.hero.chips.map((chip) => (
+                  <li
+                    key={chip}
+                    className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold"
+                  >
+                    {chip}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </Reveal>
+
 
           <Reveal delay={120} className="relative">
             <span
