@@ -28,20 +28,30 @@ export const Route = createFileRoute("/$platform/syllabus")({
     }
     const { content } = loaderData;
     const url = `/${params.platform}/syllabus`;
-    const title = `${content.title} — subject, unit and topic structure | Rank Sarthi`;
-    const description = `The ${content.exam} syllabus as structured data: subjects, units, topics and the chapter pages that map to each unit, referenced against the official ${content.officialSource.publisher} document.`;
+    const title =
+      content.seo?.title ?? `${content.title} — subject, unit and topic structure | Rank Sarthi`;
+    const description =
+      content.seo?.description ??
+      `The ${content.exam} syllabus as structured data: subjects, units, topics and the chapter pages that map to each unit, referenced against the official ${content.officialSource.publisher} document.`;
+    /* ItemList reflects only the visible top-level subject groups. */
+    const subjects = (content.hierarchies?.[0]?.sections ?? content.sections).map((s) => ({
+      name: s.subject,
+      url: `${url}#${s.id}`,
+    }));
 
     return buildHead({
       url,
       title,
       description,
+      ogTitle: content.seo?.ogTitle,
+      ogDescription: content.seo?.ogDescription,
       ogType: "website",
       jsonLd: [
         collectionPageSchema({
           url,
           name: content.title,
           description,
-          items: content.sections.map((s) => ({ name: s.subject, url: `${url}#${s.id}` })),
+          items: subjects,
         }),
         breadcrumbSchema(url),
       ],
@@ -62,7 +72,7 @@ function SyllabusPage() {
       aside={<JumpNav items={jump} />}
     >
       <div className="space-y-12 md:space-y-16">
-        <RecipeRenderer recipe={syllabusRecipe(content, [])} />
+        <RecipeRenderer recipe={syllabusRecipe(content, jump)} />
       </div>
     </PageFrame>
   );
