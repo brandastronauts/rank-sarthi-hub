@@ -43,8 +43,8 @@ export const Route = createFileRoute("/$platform/syllabus")({
       url,
       title,
       description,
-      ogTitle: content.seo?.ogTitle,
-      ogDescription: content.seo?.ogDescription,
+      ...(content.seo?.ogTitle ? { ogTitle: content.seo.ogTitle } : {}),
+      ...(content.seo?.ogDescription ? { ogDescription: content.seo.ogDescription } : {}),
       ogType: "website",
       jsonLd: [
         collectionPageSchema({
