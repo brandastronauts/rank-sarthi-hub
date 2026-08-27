@@ -27,6 +27,10 @@ function mainUnit(
   return { id, group, name, scope, topics: [], variant: "main", sourceRefs: S1, ...(chapterSlugs ? { chapterSlugs } : {}) };
 }
 
+function faq(question: string, answer: string) {
+  return { question, answer: [{ type: "paragraph" as const, children: [{ text: answer }] }] };
+}
+
 function advUnit(id: string, group: string, name: string, scope: string): SyllabusUnit {
   return { id, group, name, scope, topics: [], variant: "advanced", sourceRefs: S3 };
 }
@@ -526,42 +530,42 @@ export const jeeSyllabus: SyllabusContent = {
   ],
 
   faqs: [
-    {
-      q: "What is the latest official JEE syllabus?",
-      a: "On 27 August 2026, the latest syllabus documents listed on the official portals were JEE Main 2026 and JEE Advanced 2026. The JEE Advanced document states that its 2026 syllabus remains the same as 2025.",
-    },
-    {
-      q: "Is the JEE 2027 syllabus officially released?",
-      a: "No 2027 syllabus was listed on the official JEE Main or JEE Advanced syllabus pages checked on 27 August 2026. Use the latest official 2026 documents as a temporary planning baseline and recheck when the authorities publish the next cycle.",
-    },
-    {
-      q: "How many units are in JEE Main Paper 1?",
-      a: "The official 2026 Paper 1 syllabus contains 14 Mathematics units, 20 Physics units and 20 Chemistry units, for 54 units in total.",
-    },
-    {
-      q: "Are JEE Main and JEE Advanced syllabi the same?",
-      a: "No. They overlap substantially across Physics, Chemistry and Mathematics, but the official documents use different headings and include differences in listed scope. Use the exam-specific explorer and official source for exclusions.",
-    },
-    {
-      q: "Does this page cover JEE Main B.Arch and B.Planning?",
-      a: "No. This explorer is for Paper 1 B.E./B.Tech and JEE Advanced. The official NTA syllabus also contains Paper 2A B.Arch and Paper 2B B.Planning, which include aptitude plus drawing or planning scope.",
-    },
-    {
-      q: "Which chapters have the highest official weightage?",
-      a: "The official syllabus does not publish chapter-level weightage. Historical analysis can show what appeared in a defined paper sample, but it must not be presented as guaranteed or official.",
-    },
-    {
-      q: "Should I complete the syllabus in the official PDF order?",
-      a: "Not necessarily. The official document defines scope, not the best learning sequence for every student. Use prerequisites to avoid studying a dependent chapter before its foundation.",
-    },
-    {
-      q: "How should I track syllabus completion?",
-      a: "Use evidence-based states: not started, learning, practice ready, timed ready and revision due. Do not mark a chapter complete only because a lecture or chapter has been watched once.",
-    },
-    {
-      q: "Can I prepare for Advanced only from the JEE Main list?",
-      a: "No. Use the separate JEE Advanced syllabus. The official Advanced document includes named scope that does not appear as JEE Main 2026 units, especially in Chemistry.",
-    },
+    faq(
+      "What is the latest official JEE syllabus?",
+      "On 27 August 2026, the latest syllabus documents listed on the official portals were JEE Main 2026 and JEE Advanced 2026. The JEE Advanced document states that its 2026 syllabus remains the same as 2025.",
+    ),
+    faq(
+      "Is the JEE 2027 syllabus officially released?",
+      "No 2027 syllabus was listed on the official JEE Main or JEE Advanced syllabus pages checked on 27 August 2026. Use the latest official 2026 documents as a temporary planning baseline and recheck when the authorities publish the next cycle.",
+    ),
+    faq(
+      "How many units are in JEE Main Paper 1?",
+      "The official 2026 Paper 1 syllabus contains 14 Mathematics units, 20 Physics units and 20 Chemistry units, for 54 units in total.",
+    ),
+    faq(
+      "Are JEE Main and JEE Advanced syllabi the same?",
+      "No. They overlap substantially across Physics, Chemistry and Mathematics, but the official documents use different headings and include differences in listed scope. Use the exam-specific explorer and official source for exclusions.",
+    ),
+    faq(
+      "Does this page cover JEE Main B.Arch and B.Planning?",
+      "No. This explorer is for Paper 1 B.E./B.Tech and JEE Advanced. The official NTA syllabus also contains Paper 2A B.Arch and Paper 2B B.Planning, which include aptitude plus drawing or planning scope.",
+    ),
+    faq(
+      "Which chapters have the highest official weightage?",
+      "The official syllabus does not publish chapter-level weightage. Historical analysis can show what appeared in a defined paper sample, but it must not be presented as guaranteed or official.",
+    ),
+    faq(
+      "Should I complete the syllabus in the official PDF order?",
+      "Not necessarily. The official document defines scope, not the best learning sequence for every student. Use prerequisites to avoid studying a dependent chapter before its foundation.",
+    ),
+    faq(
+      "How should I track syllabus completion?",
+      "Use evidence-based states: not started, learning, practice ready, timed ready and revision due. Do not mark a chapter complete only because a lecture or chapter has been watched once.",
+    ),
+    faq(
+      "Can I prepare for Advanced only from the JEE Main list?",
+      "No. Use the separate JEE Advanced syllabus. The official Advanced document includes named scope that does not appear as JEE Main 2026 units, especially in Chemistry.",
+    ),
   ],
 
   seo: {
