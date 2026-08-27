@@ -8,11 +8,21 @@ import type { SourceRef } from "./types";
 export const sources: Record<string, SourceRef> = {
   "nta-jee-syllabus": {
     id: "nta-jee-syllabus",
-    label: "JEE (Main) Syllabus",
+    label: "Syllabus for JEE (Main) 2026",
     publisher: "National Testing Agency (NTA)",
-    url: "https://jeemain.nta.nic.in/",
+    url: "https://jeemain.nta.nic.in/document/syllabus-2026/",
     sourceType: "official",
+    lastVerified: "27 August 2026",
   },
+  "jee-advanced-syllabus": {
+    id: "jee-advanced-syllabus",
+    label: "JEE (Advanced) 2026 Syllabus (PDF)",
+    publisher: "JEE (Advanced) 2026, organising institute IIT Roorkee",
+    url: "https://jeeadv.ac.in/documents/jee-advanced-2026-syllabus.pdf",
+    sourceType: "official-pdf",
+    lastVerified: "27 August 2026",
+  },
+
   "upsc-nda-notification": {
     id: "upsc-nda-notification",
     label: "NDA & NA Examination (II), 2026 notification (PDF)",
