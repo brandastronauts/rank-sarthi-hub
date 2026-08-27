@@ -27,8 +27,10 @@ export const Route = createFileRoute("/$platform/")({
     }
     const { platform } = loaderData;
     const url = `/${params.platform}`;
-    const title = `${platform.productName} | ${platform.examName} Preparation Intelligence | Rank Sarthi`;
-    const description = platform.deck ?? platform.tagline;
+    const title =
+      platform.seo?.title ??
+      `${platform.productName} | ${platform.examName} Preparation Intelligence | Rank Sarthi`;
+    const description = platform.seo?.description ?? platform.deck ?? platform.tagline;
 
     return buildHead({
       url,
@@ -38,7 +40,7 @@ export const Route = createFileRoute("/$platform/")({
       jsonLd: [
         collectionPageSchema({
           url,
-          name: `${platform.productName} — ${platform.examName}`,
+          name: platform.seo?.ogTitle ?? `${platform.productName} — ${platform.examName}`,
           description,
           items: (platform.relatedUrls ?? [])
             .map((u) => ({ u, r: getUrl(u) }))
@@ -47,8 +49,10 @@ export const Route = createFileRoute("/$platform/")({
         }),
         breadcrumbSchema(url),
       ].filter(Boolean),
-      ogTitle: `${platform.productName} — ${platform.tagline}`,
+      ogTitle: platform.seo?.ogTitle ?? `${platform.productName} — ${platform.tagline}`,
+      ogDescription: platform.seo?.ogDescription,
     });
+
   },
   component: PlatformHome,
 });
