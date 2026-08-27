@@ -122,6 +122,7 @@ export function syllabusRecipe(
           readingNotes: h.readingNotes,
           sourceRefs: h.sourceRefs,
           verifiedOn: h.verifiedOn,
+          hideVariants: true,
         },
         when: h.sections.length > 0,
       })),

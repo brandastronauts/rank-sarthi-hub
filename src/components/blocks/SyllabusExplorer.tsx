@@ -23,6 +23,7 @@ export function SyllabusExplorer({
   readingNotes = [],
   sourceRefs = [],
   verifiedOn,
+  hideVariants = false,
 }: {
   id?: string;
   sections?: SyllabusSection[];
@@ -33,6 +34,8 @@ export function SyllabusExplorer({
   readingNotes?: string[];
   sourceRefs?: string[];
   verifiedOn?: string;
+  /** Exam-scoped explorers already state their exam; per-unit badges add noise. */
+  hideVariants?: boolean;
 }) {
   if (!sections.length) return null;
   const refs = getSources(sourceRefs);
@@ -105,15 +108,12 @@ export function SyllabusExplorer({
                     {unit.group ? (
                       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
                         {unit.group}
-                        <span className="ml-1 font-normal normal-case tracking-normal text-muted-foreground">
-                          (Rank Sarthi grouping)
-                        </span>
                       </p>
                     ) : null}
 
                     <div className="mt-1 flex flex-wrap items-baseline justify-between gap-2">
                       <p className="text-sm font-bold text-primary">{unit.name}</p>
-                      {unit.variant && unit.variant !== "both" ? (
+                      {!hideVariants && unit.variant && unit.variant !== "both" ? (
                         <span className="rounded-full bg-ice px-2 py-0.5 text-[11px] font-semibold uppercase text-primary">
                           {unit.variant}
                         </span>
