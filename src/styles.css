@@ -295,7 +295,8 @@
 }
 
 .reveal {
-  opacity: 0;
+  /* Content must never depend on JavaScript/IntersectionObserver to render. */
+  opacity: 1;
 }
 
 .reveal.is-visible {
