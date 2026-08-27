@@ -18,21 +18,33 @@ export function platformRecipe(platform: PlatformData): PageRecipe {
     frame: "F1",
     slots: [
       { block: "B38", id: "top", props },
-      { block: "B39", id: "positioning", props, when: platform.intro.length > 0 },
+      { block: "B03", id: "snapshot", props, when: !!platform.cycleSnapshot },
+      {
+        block: "B39",
+        id: "positioning",
+        props,
+        when: platform.intro.length > 0 || !!platform.taskGroups?.length,
+      },
       { block: "B40", id: "structure", props, when: !!platform.papers?.length },
-      { block: "B41", id: "diagnosis", props, when: !!platform.diagnosticLenses?.length },
-      { block: "B03", id: "product" },
+      {
+        block: "B41",
+        id: "diagnosis",
+        props,
+        when: !!platform.diagnosticLenses?.length || !!platform.errorTaxonomy?.rows.length,
+      },
       { block: "B42", id: "pathway", props, when: !!platform.pathway?.length },
       { block: "B09", id: "depth" },
       { block: "B43", id: "explore", props, when: !!platform.relatedUrls?.length },
-      { block: "B19", id: "trust" },
+      // B19 pricing stays out until plans, prices, inclusions, terms and CTA
+      // destinations are commercially verified for this platform.
+      { block: "B19", id: "trust", when: platform.showPricing === true },
       {
         block: "B22",
         id: "faq",
         props: {
           items: platform.faqs ?? [],
           eyebrow: `${platform.productName} FAQ`,
-          heading: `${platform.slug.toUpperCase()} questions, answered.`,
+          heading: `${platform.slug.toUpperCase()} questions students ask first.`,
         },
         when: !!platform.faqs?.length,
       },
@@ -40,14 +52,19 @@ export function platformRecipe(platform: PlatformData): PageRecipe {
         block: "B24",
         id: "cta",
         props: {
-          eyebrow: `${platform.productName}`,
-          heading: `Know what your ${platform.slug.toUpperCase()} score is actually telling you.`,
-          body: "One diagnostic separates concept gaps from execution slips and strategy mistakes.",
-          secondaryHref: "#structure",
-          secondaryLabel: "See how the exam is read",
+          eyebrow: platform.finalCta?.eyebrow ?? platform.productName,
+          heading:
+            platform.finalCta?.heading ??
+            `Know what your ${platform.slug.toUpperCase()} score is actually telling you.`,
+          body:
+            platform.finalCta?.body ??
+            "One diagnostic separates concept gaps from execution slips and strategy mistakes.",
+          secondaryHref: platform.finalCta?.secondaryHref ?? "#structure",
+          secondaryLabel: platform.finalCta?.secondaryLabel ?? "See how the exam is read",
           footnote: platform.examName,
         },
       },
+
     ],
   };
 }
