@@ -27,7 +27,7 @@ export function CtaLink({
       <span
         aria-disabled="true"
         title={d.reason}
-        className={`${className} ${disabledClassName} cursor-not-allowed opacity-55`}
+        className={`${className} ${disabledClassName} cursor-not-allowed opacity-80`}
       >
         {content}
       </span>
@@ -65,7 +65,7 @@ export function NavLinkOrText({ d, className = "" }: { d: Destination; className
   if (d.kind === "hidden") return null;
   if (d.kind === "disabled") {
     return (
-      <span title={d.reason} className={`${className} cursor-default opacity-45`}>
+      <span title={d.reason} className={`${className} cursor-default opacity-70`}>
         {d.label}
       </span>
     );
