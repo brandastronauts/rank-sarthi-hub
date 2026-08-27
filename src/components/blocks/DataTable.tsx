@@ -6,12 +6,14 @@
 export function DataTable({
   id,
   caption,
+  intro,
   columns,
   rows,
   note,
 }: {
   id?: string;
   caption?: string;
+  intro?: string;
   columns: string[];
   rows: string[][];
   note?: string;
@@ -21,6 +23,7 @@ export function DataTable({
   return (
     <section id={id} className="scroll-mt-28">
       {caption ? <h2 className="text-display-md text-primary">{caption}</h2> : null}
+      {intro ? <p className="mt-3 max-w-3xl text-sm text-ink/80">{intro}</p> : null}
 
       {/* Desktop / tablet */}
       <div className="mt-5 hidden overflow-hidden rounded-xl border border-border md:block">

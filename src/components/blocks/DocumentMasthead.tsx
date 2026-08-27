@@ -13,6 +13,7 @@ export function DocumentMasthead({
   answer,
   contentStatus,
   meta,
+  chips,
 }: {
   id?: string;
   eyebrow?: string;
@@ -21,6 +22,7 @@ export function DocumentMasthead({
   answer?: RichTextNodes;
   contentStatus?: ContentStatus;
   meta?: { label: string; value: string }[];
+  chips?: string[];
 }) {
   return (
     <header id={id} className="scroll-mt-28">
@@ -39,6 +41,19 @@ export function DocumentMasthead({
             </div>
           ))}
         </dl>
+      ) : null}
+
+      {chips?.length ? (
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {chips.map((chip) => (
+            <li
+              key={chip}
+              className="rounded-full border border-border bg-ivory px-3 py-1 text-xs font-semibold text-ink/80"
+            >
+              {chip}
+            </li>
+          ))}
+        </ul>
       ) : null}
 
       {contentStatus && contentStatus !== "verified" ? (
