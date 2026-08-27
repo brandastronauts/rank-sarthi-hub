@@ -1,5 +1,8 @@
 import { Reveal } from "@/components/Reveal";
+import { CycleSnapshot } from "@/components/platform/CycleSnapshot";
+import type { PlatformData } from "@/content/types";
 import { Clock, TrendingDown } from "lucide-react";
+
 
 const weaknesses = [
   { concept: "Rotational Motion", subject: "Physics", lost: 6, pct: 82, bar: "bg-accent", fix: "Concept gap" },
