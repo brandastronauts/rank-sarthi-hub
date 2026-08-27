@@ -237,6 +237,17 @@ export interface SyllabusUnit {
   id: string;
   name: string;
   topics: string[];
+  /**
+   * Condensed official scope for the unit, in one student-facing sentence.
+   * Used when the official document defines scope as prose rather than as a
+   * discrete topic list.
+   */
+  scope?: string;
+  /**
+   * Rank Sarthi editorial navigation group. NEVER an official heading; the
+   * explorer labels it as an editorial layer wherever it is rendered.
+   */
+  group?: string;
   /** Official documents that verify this unit's topic list. */
   sourceRefs?: string[];
   /** Where verified, which paper this unit belongs to. */
@@ -251,6 +262,33 @@ export interface SyllabusSection {
   subject: string;
   accent?: "jee" | "neet" | "nda";
   units: SyllabusUnit[];
+  /** e.g. "14 official units" — factual count of the official document. */
+  countLabel?: string;
+}
+
+/** Generic tabular payload rendered through B25. */
+export interface SyllabusTable {
+  id: string;
+  heading: string;
+  intro?: string;
+  columns: string[];
+  rows: string[][];
+  note?: string;
+}
+
+/** One exam-scoped hierarchy (JEE Main Paper 1 or JEE Advanced). */
+export interface SyllabusHierarchy {
+  id: string;
+  heading: string;
+  /** Provenance badge, e.g. "Official syllabus — NTA". */
+  officialLabel: string;
+  /** Editorial-layer badge, e.g. "Rank Sarthi learning structure". */
+  editorialLabel?: string;
+  intro?: string;
+  readingNotes?: string[];
+  sourceRefs?: string[];
+  verifiedOn?: string;
+  sections: SyllabusSection[];
 }
 
 export interface SyllabusContent {
@@ -264,9 +302,45 @@ export interface SyllabusContent {
   intro: RichText;
   officialSource: SourceRef;
   sections: SyllabusSection[];
+
+  /* --- Optional production payload. Every field is omittable; a slot with
+        no data is skipped, never placeholdered. --------------------------- */
+
+  /** Masthead overrides (B34). */
+  hero?: { eyebrow?: string; intent?: string; chips?: string[] };
+  /** Cycle-dependent official status (B25) with its own provenance. */
+  cycleStatus?: SyllabusTable & {
+    verifiedOn: string;
+    sourceRefs?: string[];
+    refreshTrigger?: string;
+    cycleState?: string;
+  };
+  /** Which official document applies to which target (B25). */
+  scopeSelector?: SyllabusTable;
+  /**
+   * Exam-scoped hierarchies (B26). When present these replace the single
+   * `sections` render, so Main and Advanced never merge into one list.
+   */
+  hierarchies?: SyllabusHierarchy[];
+  /** Verified Main vs Advanced differences (B25). */
+  distinctions?: SyllabusTable;
+  /** Editorial prerequisite paths, one table per subject (B25). */
+  prerequisitePaths?: SyllabusTable[];
+  /** Cross-chapter relationship guide (B25). */
+  relationships?: SyllabusTable;
+  /** Five-state coverage model (B25). */
+  coverageModel?: SyllabusTable;
+  /** Onward routes; the rail renders only registry-live destinations (B36). */
+  relatedLinks?: LinkContract[];
+  /** All source ids backing this page, rendered by B37. */
+  sourceRefs?: string[];
+  /** Per-page metadata overrides used by the T05 route head(). */
+  seo?: { title?: string; description?: string; ogTitle?: string; ogDescription?: string };
+
   faqs?: FaqItem[];
   lastVerified?: string;
 }
+
 
 /* ------------------------------------------------------------------ */
 /* Chapter engine (T06 / T07 / T08)                                    */

@@ -192,6 +192,10 @@ export const syllabusUnitSchema = z.object({
   id: z.string(),
   name: z.string(),
   topics: z.array(z.string()),
+  /** Condensed official scope sentence. */
+  scope: z.string().optional(),
+  /** Editorial navigation layer, never an official heading. */
+  group: z.string().optional(),
   chapterSlugs: z.array(z.string()).optional(),
   sourceRefs: z.array(z.string()).optional(),
   variant: z.enum(["main", "advanced", "both"]).optional(),
@@ -203,6 +207,29 @@ export const syllabusSectionSchema = z.object({
   subject: z.string(),
   accent: z.enum(["jee", "neet", "nda"]).optional(),
   units: z.array(syllabusUnitSchema),
+  countLabel: z.string().optional(),
+});
+
+/** Generic tabular payload rendered through B25. */
+export const syllabusTableSchema = z.object({
+  id: z.string(),
+  heading: z.string(),
+  intro: z.string().optional(),
+  columns: z.array(z.string()),
+  rows: z.array(z.array(z.string())),
+  note: z.string().optional(),
+});
+
+export const syllabusHierarchySchema = z.object({
+  id: z.string(),
+  heading: z.string(),
+  officialLabel: z.string(),
+  editorialLabel: z.string().optional(),
+  intro: z.string().optional(),
+  readingNotes: z.array(z.string()).optional(),
+  sourceRefs: z.array(z.string()).optional(),
+  verifiedOn: z.string().optional(),
+  sections: z.array(syllabusSectionSchema),
 });
 
 export const syllabusContentSchema = z.object({
@@ -222,6 +249,46 @@ export const syllabusContentSchema = z.object({
   sections: z.array(syllabusSectionSchema),
   interpretation: z
     .array(z.object({ id: z.string(), title: z.string(), body: richTextSchema }))
+    .optional(),
+  hero: z
+    .object({
+      eyebrow: z.string().optional(),
+      intent: z.string().optional(),
+      chips: z.array(z.string()).optional(),
+    })
+    .optional(),
+  cycleStatus: syllabusTableSchema
+    .extend({
+      verifiedOn: z.string(),
+      sourceRefs: z.array(z.string()).optional(),
+      refreshTrigger: z.string().optional(),
+      cycleState: z.string().optional(),
+    })
+    .optional(),
+  scopeSelector: syllabusTableSchema.optional(),
+  hierarchies: z.array(syllabusHierarchySchema).optional(),
+  distinctions: syllabusTableSchema.optional(),
+  prerequisitePaths: z.array(syllabusTableSchema).optional(),
+  relationships: syllabusTableSchema.optional(),
+  coverageModel: syllabusTableSchema.optional(),
+  relatedLinks: z
+    .array(
+      z.object({
+        label: z.string(),
+        url: z.string(),
+        relation: z.enum(["up", "prerequisite", "related", "same-unit", "next", "forward"]),
+        description: z.string().optional(),
+      }),
+    )
+    .optional(),
+  sourceRefs: z.array(z.string()).optional(),
+  seo: z
+    .object({
+      title: z.string().optional(),
+      description: z.string().optional(),
+      ogTitle: z.string().optional(),
+      ogDescription: z.string().optional(),
+    })
     .optional(),
   faqs: z.array(faqItemSchema).optional(),
   lastVerified: z.string().optional(),
