@@ -16,11 +16,11 @@ const BRAND_BLURB =
 export function SiteFooter() {
   return (
     <footer className="bg-navy-deep text-primary-foreground">
-      <div className="container-page py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
-          <div className="lg:col-span-2">
-            <BrandLogo height={44} surface="dark" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/65">{BRAND_BLURB}</p>
+      <div className="container-page py-10 md:py-12">
+        <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-[minmax(15rem,1.65fr)_repeat(5,minmax(0,1fr))] xl:gap-x-10">
+          <div>
+            <BrandLogo height={40} surface="dark" />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/65">{BRAND_BLURB}</p>
           </div>
 
           {footerGroups.map((group) => (
@@ -42,7 +42,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <p className="mt-14 border-t border-white/10 pt-6 text-sm text-primary-foreground/55">
+        <p className="mt-10 border-t border-white/10 pt-5 text-sm text-primary-foreground/55">
           © {new Date().getFullYear()} {site.legalName}. All rights reserved.
         </p>
       </div>
