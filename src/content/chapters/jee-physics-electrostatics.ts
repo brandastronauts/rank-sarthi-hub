@@ -11,8 +11,8 @@ import type { ChapterContent } from "@/content/types";
  *   blocks do not render.
  * - No PYQ records are asserted; official repositories are linked instead.
  * - No reviewer/author id: no verified person exists yet, so B37 omits them.
-ance * - contentStatus stays "draft" (academic review pending) and the registry
- *   electrostatics on noindex until academic review is recorded.
+ * - contentStatus stays "draft" (academic review pending) and the registry
+ *   keeps /jee/physics/electrostatics on noindex until review is recorded.
  */
 export const jeePhysicsElectrostatics: ChapterContent = {
   exam: "JEE",
