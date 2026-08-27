@@ -27,7 +27,7 @@ export function CycleSnapshot({ id = "snapshot", platform }: { id?: string; plat
         </Reveal>
 
         <Reveal delay={100} className="mt-10">
-          <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-soft">
+          <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-elevated">
             <table className="w-full border-collapse text-left text-sm">
               <caption className="sr-only">{snapshot.heading}</caption>
               <thead>
