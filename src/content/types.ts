@@ -274,8 +274,6 @@ export interface SyllabusTable {
   columns: string[];
   rows: string[][];
   note?: string;
-  /** Surface this anchor in the page jump navigation. */
-  jump?: boolean;
 }
 
 /** One exam-scoped hierarchy (JEE Main Paper 1 or JEE Advanced). */
@@ -482,6 +480,8 @@ export interface ChapterTable {
   columns: string[];
   rows: string[][];
   note?: string;
+  /** Surface this anchor in the page jump navigation. */
+  jump?: boolean;
 }
 
 /** Extra concept group rendered through B35 at a given anchor point. */
