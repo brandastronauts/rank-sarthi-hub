@@ -19,8 +19,8 @@ export function SiteFooter() {
       <div className="container-page py-10 md:py-12">
         <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-[minmax(15rem,1.65fr)_repeat(5,minmax(0,1fr))] xl:gap-x-10">
           <div>
-            <BrandLogo height={40} surface="dark" />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/65">{BRAND_BLURB}</p>
+            <BrandLogo height={62} mobileHeight={54} surface="dark" />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/80">{BRAND_BLURB}</p>
           </div>
 
           {footerGroups.map((group) => (
@@ -33,7 +33,7 @@ export function SiteFooter() {
                     <li key={l.label}>
                       <NavLinkOrText
                         d={destinations.nav(l.label, l.href)}
-                        className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+                        className="text-sm text-primary-foreground/90 transition-colors hover:text-gold"
                       />
                     </li>
                   ))}
@@ -42,7 +42,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <p className="mt-10 border-t border-white/10 pt-5 text-sm text-primary-foreground/55">
+        <p className="mt-10 border-t border-white/10 pt-5 text-sm text-primary-foreground/70">
           © {new Date().getFullYear()} {site.legalName}. All rights reserved.
         </p>
       </div>

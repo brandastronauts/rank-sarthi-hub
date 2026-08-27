@@ -22,10 +22,17 @@ export const site = {
   brand: {
     name: "Rank Sarthi",
     logo: {
-      url: logoAsset.url,
+      /**
+       * The approved mark, margin-trimmed only. The artwork is unchanged —
+       * the square asset simply carried ~30% blank padding, which made the
+       * mark render far smaller than its box at any given height.
+       */
+      url: "/brand/rank-sarthi-logo.png",
       alt: "Rank Sarthi",
-      width: 500,
-      height: 500,
+      width: 351,
+      height: 301,
     },
+    /** Original untrimmed upload, kept for reference. */
+    logoOriginalUrl: logoAsset.url,
   },
 } as const;

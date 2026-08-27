@@ -11,11 +11,15 @@ import { site } from "@/content/site";
  */
 export function BrandLogo({
   height = 40,
+  mobileHeight,
   surface = "light",
   priority = false,
   className = "",
 }: {
+  /** Rendered height from the md breakpoint upward. */
   height?: number;
+  /** Rendered height below md. Defaults to `height`. */
+  mobileHeight?: number;
   /** "dark" adds a light surface behind the unmodified mark for contrast. */
   surface?: "light" | "dark";
   /** True for the above-the-fold header mark: never lazy-loaded. */
@@ -24,7 +28,7 @@ export function BrandLogo({
 }) {
   const { logo, name } = site.brand;
   const ratio = logo.width / logo.height;
-  const width = Math.round(height * ratio);
+  const small = mobileHeight ?? height;
 
   return (
     <span
@@ -35,13 +39,19 @@ export function BrandLogo({
       <img
         src={logo.url}
         alt={logo.alt}
-        width={logo.width}
-        height={logo.height}
-        style={{ height, width, aspectRatio: `${logo.width} / ${logo.height}` }}
+        width={Math.round(height * ratio)}
+        height={height}
+        style={
+          {
+            "--logo-h": `${small}px`,
+            "--logo-h-md": `${height}px`,
+            aspectRatio: `${logo.width} / ${logo.height}`,
+          } as React.CSSProperties
+        }
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : undefined}
         decoding={priority ? "sync" : "async"}
-        className="block object-contain"
+        className="block h-[var(--logo-h)] w-auto object-contain md:h-[var(--logo-h-md)]"
       />
       <span className="sr-only">{name}</span>
     </span>

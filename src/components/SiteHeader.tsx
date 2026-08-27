@@ -21,7 +21,7 @@ function visible(links: NavLink[]) {
 function Logo({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <a href="/" onClick={onNavigate} aria-label="Rank Sarthi home" className="inline-flex items-center">
-      <BrandLogo height={40} surface="dark" priority />
+      <BrandLogo height={70} mobileHeight={48} surface="dark" priority />
     </a>
   );
 }
@@ -78,10 +78,10 @@ export function SiteHeader() {
       }`}
     >
       <nav aria-label="Main navigation" className="container-page">
-        <div className="flex h-18 items-center justify-between gap-4 py-4">
+        <div className="flex items-center justify-between gap-4 py-2.5">
           <Logo />
 
-          <ul className="hidden items-center gap-0.5 lg:flex">
+          <ul className="hidden items-center gap-0.5 min-[900px]:flex">
             {navItems.map((item, i) => {
               const hasMenu = !!(item.columns || item.simple);
               return (
@@ -130,7 +130,7 @@ export function SiteHeader() {
             })}
           </ul>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 min-[900px]:flex">
             <NavLinkOrText
               d={destinations.nav("Log in", "/login")}
               className="rounded-md px-3 py-2 text-sm font-semibold text-primary-foreground/85 transition-colors hover:bg-white/10 hover:text-primary-foreground"
@@ -147,7 +147,7 @@ export function SiteHeader() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="inline-flex size-11 items-center justify-center rounded-lg border border-white/20 text-primary-foreground lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-lg border border-white/20 text-primary-foreground min-[900px]:hidden"
           >
             {mobileOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
@@ -156,13 +156,13 @@ export function SiteHeader() {
 
       {/* Mobile slide-in menu */}
       <div
-        className={`fixed inset-0 z-50 bg-navy-deep text-primary-foreground transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-0 z-50 bg-navy-deep text-primary-foreground transition-transform duration-300 min-[900px]:hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileOpen}
       >
         <div className="flex h-full flex-col">
-          <div className="container-page flex h-18 items-center justify-between py-4">
+          <div className="container-page flex items-center justify-between py-2.5">
             <Logo onNavigate={() => setMobileOpen(false)} />
             <button
               type="button"
