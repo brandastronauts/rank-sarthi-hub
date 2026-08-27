@@ -22,6 +22,38 @@ export const sources: Record<string, SourceRef> = {
     sourceType: "official-pdf",
     lastVerified: "27 August 2026",
   },
+  "ncert-physics-12-p1-ch1": {
+    id: "ncert-physics-12-p1-ch1",
+    label: "NCERT Class 12 Physics Part I, Chapter 1: Electric Charges and Fields (PDF)",
+    publisher: "NCERT",
+    url: "https://ncert.nic.in/textbook/pdf/leph101.pdf",
+    sourceType: "textbook",
+    lastVerified: "27 August 2026",
+  },
+  "ncert-physics-12-p1-ch2": {
+    id: "ncert-physics-12-p1-ch2",
+    label: "NCERT Class 12 Physics Part I, Chapter 2: Electrostatic Potential and Capacitance (PDF)",
+    publisher: "NCERT",
+    url: "https://ncert.nic.in/textbook/pdf/leph102.pdf",
+    sourceType: "textbook",
+    lastVerified: "27 August 2026",
+  },
+  "jee-advanced-paper-archive": {
+    id: "jee-advanced-paper-archive",
+    label: "JEE (Advanced) official past question-paper archive",
+    publisher: "JEE (Advanced), organising institute",
+    url: "https://jeeadv.ac.in/archive.html",
+    sourceType: "official",
+    lastVerified: "27 August 2026",
+  },
+  "nta-jee-main-question-papers": {
+    id: "nta-jee-main-question-papers",
+    label: "JEE (Main) official site, Question Papers section",
+    publisher: "National Testing Agency (NTA)",
+    url: "https://jeemain.nta.nic.in/",
+    sourceType: "official",
+    lastVerified: "27 August 2026",
+  },
 
   "upsc-nda-notification": {
     id: "upsc-nda-notification",

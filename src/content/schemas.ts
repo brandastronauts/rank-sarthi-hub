@@ -144,6 +144,34 @@ export const faqItemSchema = z.object({ question: z.string(), answer: richTextSc
 
 /* ---------------- ChapterContent (T06 contract) ---------------- */
 
+export const chapterSlotSchema = z.enum([
+  "scope",
+  "prerequisites",
+  "concepts",
+  "formulas",
+  "mistakes",
+  "diagnosis",
+  "practice",
+  "related",
+]);
+
+export const chapterTableSchema = z.object({
+  id: z.string(),
+  slot: chapterSlotSchema,
+  heading: z.string(),
+  intro: z.string().optional(),
+  columns: z.array(z.string()).min(2),
+  rows: z.array(z.array(z.string())).min(1),
+  note: z.string().optional(),
+});
+
+export const chapterSectionSchema = z.object({
+  id: z.string(),
+  slot: chapterSlotSchema,
+  heading: z.string(),
+  concepts: z.array(conceptBlockSchema).min(1),
+});
+
 export const chapterContentSchema = z.object({
   exam: z.string(),
   examVariant: z.string().optional(),
@@ -155,6 +183,9 @@ export const chapterContentSchema = z.object({
   url: z.string().startsWith("/"),
   canonicalIntent: z.string(),
   directAnswer: richTextSchema,
+  heroChips: z.array(z.string()).optional(),
+  tables: z.array(chapterTableSchema).optional(),
+  sections: z.array(chapterSectionSchema).optional(),
   prerequisites: z.array(linkContractSchema),
   syllabusMapping: z.object({
     unit: z.string(),
@@ -178,6 +209,8 @@ export const chapterContentSchema = z.object({
   relatedChapters: z.array(linkContractSchema),
   links: z.array(linkContractSchema).optional(),
   sources: z.array(z.string()),
+  sourceNote: z.string().optional(),
+  contributorPolicy: z.array(z.string()).optional(),
   reviewerId: z.string().optional(),
   authorId: z.string().optional(),
   updated: z.string().optional(),

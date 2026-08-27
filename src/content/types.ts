@@ -456,6 +456,40 @@ export interface LinkContract {
   description?: string;
 }
 
+/**
+ * Anchor points a chapter table or extra concept group may attach to.
+ * Keeps structured academic content typed instead of flattened into prose,
+ * without adding chapter-specific components.
+ */
+export type ChapterSlot =
+  | "scope"
+  | "prerequisites"
+  | "concepts"
+  | "formulas"
+  | "mistakes"
+  | "diagnosis"
+  | "practice"
+  | "related";
+
+/** Tabular academic content rendered through B25. */
+export interface ChapterTable {
+  id: string;
+  slot: ChapterSlot;
+  heading: string;
+  intro?: string;
+  columns: string[];
+  rows: string[][];
+  note?: string;
+}
+
+/** Extra concept group rendered through B35 at a given anchor point. */
+export interface ChapterSection {
+  id: string;
+  slot: ChapterSlot;
+  heading: string;
+  concepts: ConceptBlock[];
+}
+
 export interface ChapterContent {
   exam: string;
   /** JEE Main vs Advanced etc., when the distinction is verified. */
@@ -471,6 +505,12 @@ export interface ChapterContent {
   canonicalIntent: string;
   /** Answer-first block shown above the fold. */
   directAnswer: RichText;
+  /** Short factual chips under the masthead answer (no product claims). */
+  heroChips?: string[];
+  /** Structured tables placed at typed anchor points. */
+  tables?: ChapterTable[];
+  /** Additional concept groups placed at typed anchor points. */
+  sections?: ChapterSection[];
   prerequisites: LinkContract[];
   syllabusMapping: { unit: string; topics: string[]; syllabusUrl: string };
   conceptBlocks: ConceptBlock[];
@@ -481,6 +521,10 @@ export interface ChapterContent {
   diagnosticCta?: { destinationId: string; headline: string; body: string };
   relatedChapters: LinkContract[];
   sources: string[];
+  /** Evidence boundary shown with the source list. */
+  sourceNote?: string;
+  /** Contributor requirements shown as policy, never as named people. */
+  contributorPolicy?: string[];
   reviewerId?: string;
   authorId?: string;
   updated?: string;
