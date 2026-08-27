@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { RichText } from "@/components/content/RichText";
+import type { RichText as RichTextNodes } from "@/content/types";
 
+/**
+ * Accepts both the marketing shape ({ q, a }) and the Content Engine shape
+ * ({ question, answer }) so academic templates can reuse this accordion.
+ */
 export interface FaqEntry {
-  q: string;
-  a: string;
+  q?: string;
+  a?: string;
+  question?: string;
+  answer?: RichTextNodes;
 }
 
 /**
@@ -35,8 +43,9 @@ export function FaqBlock({
         <div className="space-y-3">
           {items.map((f, i) => {
             const isOpen = open === i;
+            const q = f.q ?? f.question ?? "";
             return (
-              <Reveal key={f.q} delay={i * 45}>
+              <Reveal key={q || i} delay={i * 45}>
                 <div className="overflow-hidden rounded-xl border border-border bg-background">
                   <h3>
                     <button
@@ -46,7 +55,7 @@ export function FaqBlock({
                       onClick={() => setOpen(isOpen ? null : i)}
                       className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-primary"
                     >
-                      {f.q}
+                      {q}
                       <ChevronDown
                         aria-hidden="true"
                         className={`size-5 shrink-0 text-accent transition-transform duration-200 ${
@@ -60,7 +69,7 @@ export function FaqBlock({
                     hidden={!isOpen}
                     className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground"
                   >
-                    {f.a}
+                    {f.a ?? (f.answer ? <RichText nodes={f.answer} /> : null)}
                   </div>
                 </div>
               </Reveal>
