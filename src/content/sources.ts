@@ -38,6 +38,15 @@ export const sources: Record<string, SourceRef> = {
     sourceType: "textbook",
     lastVerified: "27 August 2026",
   },
+  "ncert-physics-12-p1-ch3": {
+    id: "ncert-physics-12-p1-ch3",
+    label: "NCERT Class 12 Physics Part I, Chapter 3: Current Electricity (PDF)",
+    publisher: "NCERT",
+    url: "https://ncert.nic.in/textbook/pdf/leph103.pdf",
+    sourceType: "textbook",
+    lastVerified: "27 August 2026",
+  },
+
   "jee-advanced-paper-archive": {
     id: "jee-advanced-paper-archive",
     label: "JEE (Advanced) official past question-paper archive",
