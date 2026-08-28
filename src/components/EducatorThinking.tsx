@@ -15,9 +15,9 @@ const pillars = [
   },
 ];
 
-export function EducatorThinking() {
+export function EducatorThinking({ id }: { id?: string }) {
   return (
-    <section className="section-pad bg-ivory">
+    <section id={id} className="section-pad bg-ivory">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Human intelligence</p>

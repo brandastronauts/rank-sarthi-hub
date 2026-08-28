@@ -28,9 +28,9 @@ const territories = [
   },
 ];
 
-export function DiagnosticIdea() {
+export function DiagnosticIdea({ id }: { id?: string }) {
   return (
-    <section id="diagnosis" className="section-pad bg-paleblue">
+    <section id={id ?? "diagnosis"} className="section-pad bg-paleblue">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">The core idea</p>

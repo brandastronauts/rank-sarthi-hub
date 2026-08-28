@@ -6,9 +6,9 @@ import { educatorReview, educatorReviewNote } from "@/content/trust";
  * Editorial expert-commentary moment — deliberately NOT styled like a
  * testimonial card. Academic commentary, not user experience.
  */
-export function EducatorReview() {
+export function EducatorReview({ id }: { id?: string }) {
   return (
-    <section aria-label="An educator's view" className="section-pad bg-ivory">
+    <section id={id} aria-label="An educator's view" className="section-pad bg-ivory">
       <div className="container-page">
         {educatorReview ? (
           <figure className="grid items-center gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">

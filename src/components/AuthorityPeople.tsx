@@ -5,11 +5,11 @@ import { isDemoContent, people } from "@/content/trust";
  * Intellectual authority, not a corporate team page.
  * Only verified names, roles, qualifications and experience. Max 4.
  */
-export function AuthorityPeople() {
+export function AuthorityPeople({ id }: { id?: string }) {
   const hasPeople = people.length > 0;
 
   return (
-    <section aria-label="People behind the platform" className="section-pad bg-background">
+    <section id={id} aria-label="People behind the platform" className="section-pad bg-background">
       <div className="container-page grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className="eyebrow text-accent">People behind the platform</p>

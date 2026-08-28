@@ -23,17 +23,25 @@ const principles = [
   },
 ];
 
-export function Methodology() {
+export function Methodology({ id }: { id?: string }) {
   return (
-    <section id="method" className="section-pad relative overflow-hidden bg-navy-gradient-soft text-primary-foreground">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60" />
+    <section
+      id={id ?? "method"}
+      className="section-pad relative overflow-hidden bg-navy-gradient-soft text-primary-foreground"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60"
+      />
       <div className="container-page relative">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-gold">Methodology</p>
-          <h2 className="mt-5 text-display-lg">Built around how serious aspirants actually improve.</h2>
+          <h2 className="mt-5 text-display-lg">
+            Built around how serious aspirants actually improve.
+          </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/70">
-            Four principles shape everything the diagnostic engine does — and everything it deliberately refuses
-            to do.
+            Four principles shape everything the diagnostic engine does — and everything it
+            deliberately refuses to do.
           </p>
         </Reveal>
 
@@ -44,7 +52,9 @@ export function Methodology() {
                 <span className="font-display text-2xl font-bold text-gold/70">{pr.n}</span>
                 <div>
                   <h3 className="text-display-md">{pr.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-primary-foreground/65">{pr.body}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-primary-foreground/65">
+                    {pr.body}
+                  </p>
                 </div>
               </div>
             </Reveal>

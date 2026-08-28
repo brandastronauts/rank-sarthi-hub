@@ -12,9 +12,9 @@ const icons = {
 };
 
 /** Compact, verified-only trust signals placed next to conversion. */
-export function TrustSignals() {
+export function TrustSignals({ id }: { id?: string }) {
   return (
-    <section aria-label="What you can expect" className="bg-paleblue py-16 sm:py-20">
+    <section id={id} aria-label="What you can expect" className="bg-paleblue py-16 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-2xl">
           <p className="eyebrow text-accent">What you can expect</p>
