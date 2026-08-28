@@ -9,9 +9,9 @@ const icons = [BookOpen, Layers, Sparkles, Target];
  * Product-scale band. Shows only verified product depth — never student
  * counts, selections, ranks or score improvements.
  */
-export function ProductNumbers() {
+export function ProductNumbers({ id }: { id?: string }) {
   return (
-    <section
+    <section id={id}
       aria-label="Product depth"
       className="relative overflow-hidden bg-navy-gradient py-16 text-primary-foreground sm:py-20"
     >

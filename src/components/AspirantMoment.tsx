@@ -3,9 +3,9 @@ import { Reveal } from "@/components/Reveal";
 const without = ["Study", "Test", "Score", "Panic", "Study more", "Test again"];
 const with_ = ["Test", "Diagnose", "Prioritise", "Improve", "Measure"];
 
-export function AspirantMoment() {
+export function AspirantMoment({ id }: { id?: string }) {
   return (
-    <section className="section-pad bg-ivory">
+    <section id={id} className="section-pad bg-ivory">
       <div className="container-page">
         <Reveal className="max-w-4xl">
           <h2 className="text-display-lg text-primary">

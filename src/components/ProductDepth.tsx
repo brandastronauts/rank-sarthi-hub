@@ -28,11 +28,11 @@ const accentColors = [
   "bg-gold/90",
 ];
 
-export function ProductDepth() {
+export function ProductDepth({ id }: { id?: string }) {
   const [active, setActive] = useState(2);
 
   return (
-    <section className="section-pad relative overflow-hidden bg-navy-gradient text-primary-foreground">
+    <section id={id} className="section-pad relative overflow-hidden bg-navy-gradient text-primary-foreground">
       {/* Background texture */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-20" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dots-faint opacity-10" />

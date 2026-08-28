@@ -21,9 +21,9 @@ const pillars = [
   },
 ];
 
-export function NewBrandTrust() {
+export function NewBrandTrust({ id }: { id?: string }) {
   return (
-    <section className="section-pad bg-paleblue">
+    <section id={id} className="section-pad bg-paleblue">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Trust</p>

@@ -6,11 +6,11 @@ import { institutions, institutionRelationship, reviewCircles } from "@/content/
  * supplied in src/content/trust.ts; until then we describe the kind of educator
  * honestly with monogram tiles — never an invented institution brand.
  */
-export function InstitutionStrip() {
+export function InstitutionStrip({ id }: { id?: string }) {
   const hasLogos = institutions.length > 0;
 
   return (
-    <section aria-label="Educator review circle" className="border-b border-border bg-background py-14 sm:py-20">
+    <section id={id} aria-label="Educator review circle" className="border-b border-border bg-background py-14 sm:py-20">
       <div className="container-page">
         <Reveal className="flex flex-col items-center">
           <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">

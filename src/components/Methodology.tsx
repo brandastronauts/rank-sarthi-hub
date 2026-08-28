@@ -23,9 +23,9 @@ const principles = [
   },
 ];
 
-export function Methodology() {
+export function Methodology({ id }: { id?: string }) {
   return (
-    <section id="method" className="section-pad relative overflow-hidden bg-navy-gradient-soft text-primary-foreground">
+    <section id={id ?? "method"} className="section-pad relative overflow-hidden bg-navy-gradient-soft text-primary-foreground">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60" />
       <div className="container-page relative">
         <Reveal className="max-w-3xl">

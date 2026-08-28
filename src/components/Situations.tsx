@@ -21,9 +21,9 @@ const scenarios = [
   },
 ];
 
-export function Situations() {
+export function Situations({ id }: { id?: string }) {
   return (
-    <section className="section-pad bg-background">
+    <section id={id} className="section-pad bg-background">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Example scenarios</p>
