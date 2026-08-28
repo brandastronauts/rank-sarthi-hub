@@ -11,7 +11,8 @@ const icons = [BookOpen, Layers, Sparkles, Target];
  */
 export function ProductNumbers({ id }: { id?: string }) {
   return (
-    <section id={id}
+    <section
+      id={id}
       aria-label="Product depth"
       className="relative overflow-hidden bg-navy-gradient py-16 text-primary-foreground sm:py-20"
     >
@@ -29,8 +30,8 @@ export function ProductNumbers({ id }: { id?: string }) {
             </h2>
             <div className="mt-6 w-20 rule-gold" />
             <p className="mt-6 max-w-md text-sm leading-relaxed text-primary-foreground/70">
-              Counted from the system itself and updated as the question bank expands. No student, rank or
-              result claims — only the scale of what has been built.
+              Counted from the system itself and updated as the question bank expands. No student,
+              rank or result claims — only the scale of what has been built.
             </p>
           </Reveal>
 
@@ -40,7 +41,10 @@ export function ProductNumbers({ id }: { id?: string }) {
               return (
                 <Reveal key={n.label} delay={i * 90} className="bg-navy-deep/60">
                   <div className="group h-full px-6 py-8 transition-colors duration-300 hover:bg-white/5">
-                    <Icon className="size-5 text-gold/80 transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true" />
+                    <Icon
+                      className="size-5 text-gold/80 transition-transform duration-300 group-hover:-translate-y-0.5"
+                      aria-hidden="true"
+                    />
                     <dd className="mt-6 font-display text-4xl font-bold tracking-tight text-primary-foreground">
                       {n.value ? (
                         <>
@@ -53,9 +57,13 @@ export function ProductNumbers({ id }: { id?: string }) {
                         </span>
                       )}
                     </dd>
-                    <dt className="mt-3 text-sm font-semibold text-primary-foreground/85">{n.label}</dt>
+                    <dt className="mt-3 text-sm font-semibold text-primary-foreground/85">
+                      {n.label}
+                    </dt>
                     {n.caption ? (
-                      <p className="mt-1.5 text-xs leading-relaxed text-primary-foreground/55">{n.caption}</p>
+                      <p className="mt-1.5 text-xs leading-relaxed text-primary-foreground/55">
+                        {n.caption}
+                      </p>
                     ) : null}
                   </div>
                 </Reveal>
