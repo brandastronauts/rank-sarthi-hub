@@ -61,6 +61,7 @@ export const Route = createFileRoute("/$platform/syllabus")({
 });
 
 function SyllabusPage() {
+  ensureBlocksRegistered();
   const { content } = Route.useLoaderData();
   const recipe = syllabusRecipe(content);
   const jump = jumpItemsFor(activeSlots(recipe));

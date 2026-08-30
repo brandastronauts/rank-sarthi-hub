@@ -29,6 +29,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  ensureBlocksRegistered();
   return (
     <PageFrame frame="F1" url="/">
       <RecipeRenderer recipe={homeRecipe} />

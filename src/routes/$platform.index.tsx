@@ -58,6 +58,7 @@ export const Route = createFileRoute("/$platform/")({
 });
 
 function PlatformHome() {
+  ensureBlocksRegistered();
   const { platform } = Route.useLoaderData();
   return (
     <PageFrame frame="F1" url={`/${platform.slug}`}>

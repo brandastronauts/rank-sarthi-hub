@@ -60,6 +60,7 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
 });
 
 function ChapterPage() {
+  ensureBlocksRegistered();
   const { content } = Route.useLoaderData();
   const jump = jumpItemsFor(activeSlots(chapterRecipe(content)));
 
