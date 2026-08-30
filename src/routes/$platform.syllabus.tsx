@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import "@/blocks";
+import { ensureBlocksRegistered } from "@/blocks";
 import { PageFrame } from "@/components/shell/PageFrame";
 import { JumpNav } from "@/components/shell/JumpNav";
 import { RecipeRenderer, activeSlots } from "@/lib/recipe";
@@ -61,6 +61,7 @@ export const Route = createFileRoute("/$platform/syllabus")({
 });
 
 function SyllabusPage() {
+  ensureBlocksRegistered();
   const { content } = Route.useLoaderData();
   const recipe = syllabusRecipe(content);
   const jump = jumpItemsFor(activeSlots(recipe));

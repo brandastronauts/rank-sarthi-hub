@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import "@/blocks";
+import { ensureBlocksRegistered } from "@/blocks";
 import { PageFrame } from "@/components/shell/PageFrame";
 import { JumpNav } from "@/components/shell/JumpNav";
 import { RecipeRenderer, activeSlots } from "@/lib/recipe";
@@ -60,6 +60,7 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
 });
 
 function ChapterPage() {
+  ensureBlocksRegistered();
   const { content } = Route.useLoaderData();
   const jump = jumpItemsFor(activeSlots(chapterRecipe(content)));
 
