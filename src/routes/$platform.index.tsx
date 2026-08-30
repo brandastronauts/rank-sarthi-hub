@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import "@/blocks";
+import { ensureBlocksRegistered } from "@/blocks";
 import { PageFrame } from "@/components/shell/PageFrame";
 import { RecipeRenderer } from "@/lib/recipe";
 import { platformRecipe } from "@/content/recipes/platform";
