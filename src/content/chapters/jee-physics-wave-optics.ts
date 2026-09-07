@@ -368,8 +368,7 @@ export const jeePhysicsWaveOptics: ChapterContent = {
           "Ray Optics",
           "Trace rays through mirrors, lenses and refracting surfaces and predict image position.",
           "Revise reflection, refraction, lens and mirror formulas on Ray Optics.",
-          "",
-        ].slice(0, 3),
+        ],
         [
           "Wave motion basics",
           "Describe a wave with amplitude, wavelength, frequency and phase.",
