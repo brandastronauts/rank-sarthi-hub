@@ -1,7 +1,7 @@
 import type { ChapterContent } from "@/content/types";
 
 /**
- * Communication Systems — scope-controlled content.
+ * Communication Systems - scope-controlled content.
  *
  * Verification note: Communication Systems does not appear as a listed unit
  * in the JEE Main syllabus document currently published by NTA
@@ -549,7 +549,7 @@ export const jeePhysicsCommunicationSystems: ChapterContent = {
   ],
 
   meta: {
-    title: "Communication Systems (JEE Physics) — Scope Status and Concept Overview | Rank Sarthi",
+    title: "Communication Systems (JEE Physics) - Scope Status and Concept Overview | Rank Sarthi",
     description:
       "Communication Systems was not found in the JEE Main syllabus document currently published by NTA or in the JEE Advanced 2026 syllabus PDF. This page explains the concepts as background learning only, with no weightage or exam-relevance claims.",
     ogTitle: "Communication Systems: Scope Status and Concepts (JEE Physics)",
