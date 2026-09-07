@@ -606,7 +606,6 @@ export const jeePhysicsKinematics: ChapterContent = {
   /* ------------------------------------------------------------------ */
   /* PI v1.1 diagnosis and official-paper practice (B13/B06, B32)        */
   /* ------------------------------------------------------------------ */
-  tables_notused: undefined,
 
   faqs: [
     {
