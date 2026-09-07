@@ -9,6 +9,16 @@ import { jeePhysicsThermodynamics } from "./jee-physics-thermodynamics";
 import { jeePhysicsMagnetism } from "./jee-physics-magnetism";
 import { jeePhysicsElectromagneticInduction } from "./jee-physics-electromagnetic-induction";
 import { jeePhysicsKinematics } from "./jee-physics-kinematics";
+import { jeePhysicsRayOptics } from "./jee-physics-ray-optics";
+import { jeePhysicsWaveOptics } from "./jee-physics-wave-optics";
+import { jeePhysicsCapacitance } from "./jee-physics-capacitance";
+import { jeePhysicsElectromagneticWaves } from "./jee-physics-electromagnetic-waves";
+import { jeePhysicsKineticTheoryOfGases } from "./jee-physics-kinetic-theory-of-gases";
+import { jeePhysicsThermalProperties } from "./jee-physics-thermal-properties";
+import { jeePhysicsCenterOfMass } from "./jee-physics-center-of-mass";
+import { jeePhysicsElasticity } from "./jee-physics-elasticity";
+import { jeePhysicsSurfaceTension } from "./jee-physics-surface-tension";
+import { jeePhysicsCommunicationSystems } from "./jee-physics-communication-systems";
 
 /**
  * Chapter content registry (T06).
@@ -28,6 +38,16 @@ const chapters: ChapterContent[] = [
   jeePhysicsMagnetism,
   jeePhysicsElectromagneticInduction,
   jeePhysicsKinematics,
+  jeePhysicsRayOptics,
+  jeePhysicsWaveOptics,
+  jeePhysicsCapacitance,
+  jeePhysicsElectromagneticWaves,
+  jeePhysicsKineticTheoryOfGases,
+  jeePhysicsThermalProperties,
+  jeePhysicsCenterOfMass,
+  jeePhysicsElasticity,
+  jeePhysicsSurfaceTension,
+  jeePhysicsCommunicationSystems,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
