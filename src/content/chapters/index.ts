@@ -1,6 +1,7 @@
 import type { ChapterContent } from "@/content/types";
 import { jeePhysicsElectrostatics } from "./jee-physics-electrostatics";
 import { jeePhysicsCurrentElectricity } from "./jee-physics-current-electricity";
+import { jeePhysicsThermodynamics } from "./jee-physics-thermodynamics";
 
 /**
  * Chapter content registry (T06).
@@ -9,7 +10,7 @@ import { jeePhysicsCurrentElectricity } from "./jee-physics-current-electricity"
  * JSX, no CSS. The generic /$platform/$subject/$chapter route resolves the
  * record and the T06 recipe decides which blocks the data supports.
  */
-const chapters: ChapterContent[] = [jeePhysicsElectrostatics, jeePhysicsCurrentElectricity];
+const chapters: ChapterContent[] = [jeePhysicsElectrostatics, jeePhysicsCurrentElectricity, jeePhysicsThermodynamics];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
 
