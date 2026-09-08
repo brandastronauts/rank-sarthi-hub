@@ -1,0 +1,32 @@
+import type { InfoPageContent } from "@/content/types";
+import { jeeMain } from "./jee-main";
+import { jeeAdvanced } from "./jee-advanced";
+import { jeePreviousYearPapers } from "./jee-previous-year-papers";
+import { jeeAnswerKey } from "./jee-answer-key";
+import { jeeAnalysis } from "./jee-analysis";
+import { jeeCutoff } from "./jee-cutoff";
+import { jeeExamDates } from "./jee-exam-dates";
+
+/**
+ * Exam information pages, keyed by registry path. A page renders only when it
+ * is registered here AND its registry record is built.
+ */
+export const infoPages: InfoPageContent[] = [
+  jeeMain,
+  jeeAdvanced,
+  jeePreviousYearPapers,
+  jeeAnswerKey,
+  jeeAnalysis,
+  jeeCutoff,
+  jeeExamDates,
+];
+
+const byUrl = new Map(infoPages.map((p) => [p.url, p]));
+
+export function getInfoPage(platform: string, slug: string): InfoPageContent | undefined {
+  return byUrl.get(`/${platform}/${slug}`);
+}
+
+export function getInfoPageByUrl(url: string): InfoPageContent | undefined {
+  return byUrl.get(url);
+}

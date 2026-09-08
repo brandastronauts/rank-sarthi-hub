@@ -612,3 +612,59 @@ export interface SubjectHubContent {
   lastVerified?: string;
   seo?: PageMeta;
 }
+
+/* ------------------------------------------------------------------ */
+/* Exam information pages (T03 / T10 / T12 family)                     */
+/* ------------------------------------------------------------------ */
+
+/** One ordered content block on an information page. */
+export type InfoBlock =
+  | {
+      kind: "table";
+      id: string;
+      heading: string;
+      intro?: string;
+      columns: string[];
+      rows: string[][];
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      kind: "prose";
+      id: string;
+      heading?: string;
+      concepts: ConceptBlock[];
+      jump?: boolean;
+    };
+
+/**
+ * Generic, platform-agnostic exam information page. Cycle-dependent facts are
+ * never inlined as copy: they travel as FreshnessWatch record ids so the page
+ * always shows the approved value with its authority and verification dates.
+ */
+export interface InfoPageContent {
+  /** Registry path, e.g. "/jee/exam-dates". */
+  url: string;
+  platform: Exclude<Platform, "main">;
+  /** Second path segment, e.g. "exam-dates". */
+  slug: string;
+  exam: string;
+  title: string;
+  eyebrow?: string;
+  intent?: string;
+  answer: RichText;
+  contentStatus: ContentStatus;
+  chips?: string[];
+  meta?: { label: string; value: string }[];
+  /** FreshnessWatch panel (B45). Ids must exist and be approved. */
+  freshness?: { heading?: string; intro?: string; recordIds: string[]; note?: string };
+  /** Ordered page body. */
+  blocks: InfoBlock[];
+  relatedLinks?: LinkContract[];
+  faqs?: FaqItem[];
+  sourceRefs?: string[];
+  sourceNote?: string;
+  contributorPolicy?: string[];
+  lastVerified?: string;
+  seo?: PageMeta;
+}

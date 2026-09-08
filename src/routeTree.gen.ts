@@ -16,6 +16,7 @@ import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
 import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabus'
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
+import { Route as ApiPublicFreshnessRefreshRouteImport } from './routes/api/public/freshness-refresh'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,12 @@ const PlatformSubjectChapterRoute = PlatformSubjectChapterRouteImport.update({
   path: '/$platform/$subject/$chapter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFreshnessRefreshRoute =
+  ApiPublicFreshnessRefreshRouteImport.update({
+    id: '/api/public/freshness-refresh',
+    path: '/api/public/freshness-refresh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +77,7 @@ export interface FileRoutesByTo {
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform': typeof PlatformIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject': typeof PlatformSubjectIndexRoute
 }
 export interface FileRoutesById {
@@ -79,6 +88,7 @@ export interface FileRoutesById {
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +100,7 @@ export interface FileRouteTypes {
     | '/$platform/syllabus'
     | '/$platform/'
     | '/$platform/$subject/$chapter'
+    | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +110,7 @@ export interface FileRouteTypes {
     | '/$platform/syllabus'
     | '/$platform'
     | '/$platform/$subject/$chapter'
+    | '/api/public/freshness-refresh'
     | '/$platform/$subject'
   id:
     | '__root__'
@@ -108,6 +120,7 @@ export interface FileRouteTypes {
     | '/$platform/syllabus'
     | '/$platform/'
     | '/$platform/$subject/$chapter'
+    | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +131,7 @@ export interface RootRouteChildren {
   PlatformSyllabusRoute: typeof PlatformSyllabusRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
   PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
+  ApiPublicFreshnessRefreshRoute: typeof ApiPublicFreshnessRefreshRoute
   PlatformSubjectIndexRoute: typeof PlatformSubjectIndexRoute
 }
 
@@ -172,6 +186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/freshness-refresh': {
+      id: '/api/public/freshness-refresh'
+      path: '/api/public/freshness-refresh'
+      fullPath: '/api/public/freshness-refresh'
+      preLoaderRoute: typeof ApiPublicFreshnessRefreshRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -182,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlatformSyllabusRoute: PlatformSyllabusRoute,
   PlatformIndexRoute: PlatformIndexRoute,
   PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
+  ApiPublicFreshnessRefreshRoute: ApiPublicFreshnessRefreshRoute,
   PlatformSubjectIndexRoute: PlatformSubjectIndexRoute,
 }
 export const routeTree = rootRouteImport

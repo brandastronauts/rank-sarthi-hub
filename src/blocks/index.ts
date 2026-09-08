@@ -27,6 +27,8 @@ import { FinalCta } from "@/components/blocks/FinalCta";
 
 /* Academic document blocks (T05 / T06) */
 import { DocumentMasthead } from "@/components/blocks/DocumentMasthead";
+import { FreshnessPanel } from "@/components/blocks/FreshnessPanel";
+import { ChangeLogBlock } from "@/components/blocks/ChangeLogBlock";
 import { JumpNavBlock } from "@/components/blocks/JumpNavBlock";
 import { DataTable } from "@/components/blocks/DataTable";
 import { SyllabusExplorer } from "@/components/blocks/SyllabusExplorer";
@@ -73,6 +75,8 @@ export function ensureBlocksRegistered() {
     B23: JumpNavBlock,
     B25: DataTable,
     B44: SubjectChapterMap,
+    B45: FreshnessPanel,
+    B46: ChangeLogBlock,
     B26: SyllabusExplorer,
     B27: TrendTable,
     B28: PriorityMap,
