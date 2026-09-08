@@ -10,6 +10,7 @@ const LABELS: Record<string, string> = {
   "syllabus-mapping": "Syllabus mapping",
   syllabus: "Syllabus structure",
   "official-status": "Official status",
+  "what-changed": "What changed",
   scope: "Which syllabus applies",
   "jee-main-syllabus": "JEE Main syllabus",
   "jee-advanced-syllabus": "JEE Advanced syllabus",
