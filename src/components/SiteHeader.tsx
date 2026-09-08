@@ -122,8 +122,8 @@ export function SiteHeader() {
                     />
                   )}
 
-                  {openIndex === i && hasMenu && (
-                    <Dropdown item={item} onNavigate={() => setOpenIndex(null)} />
+                  {openIndex === i && item.simple && (
+                    <SimpleDropdown item={item} onNavigate={() => setOpenIndex(null)} />
                   )}
                 </li>
               );
