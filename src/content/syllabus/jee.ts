@@ -520,9 +520,9 @@ export const jeeSyllabus: SyllabusContent = {
 
   relatedLinks: [
     { label: "JEE overview", url: "/jee", relation: "up", description: "Exam, process and product overview." },
-    { label: "Physics syllabus", url: "/jee/syllabus/physics", relation: "related", description: "Physics-only scope, exclusions and topic notes." },
-    { label: "Chemistry syllabus", url: "/jee/syllabus/chemistry", relation: "related", description: "Chemistry scope with Main and Advanced differences." },
-    { label: "Mathematics syllabus", url: "/jee/syllabus/mathematics", relation: "related", description: "Mathematics-only scope and routing." },
+    { label: "JEE Physics", url: "/jee/physics", relation: "related", description: "Physics subject hub with all mapped chapter pages." },
+    { label: "JEE Chemistry", url: "/jee/chemistry", relation: "related", description: "Chemistry subject hub with all mapped chapter pages." },
+    { label: "JEE Mathematics", url: "/jee/mathematics", relation: "related", description: "Mathematics subject hub with all mapped chapter pages." },
     { label: "Electrostatics", url: "/jee/physics/electrostatics", relation: "forward", description: "Chapter page mapped to the Electrostatics unit." },
     { label: "Current Electricity", url: "/jee/physics/current-electricity", relation: "forward", description: "Chapter page mapped to the Current Electricity unit." },
     { label: "JEE mock tests", url: "/jee/mock-tests", relation: "related", description: "Timed practice across the syllabus." },
