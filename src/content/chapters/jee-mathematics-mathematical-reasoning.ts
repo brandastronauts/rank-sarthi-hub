@@ -142,7 +142,7 @@ export const jeeMathematicsMathematicalReasoning: ChapterContent = {
           type: "paragraph",
           children: [
             {
-              text: "The negation of \u2200x P(x) is \u2203x \u00acP(x), and the negation of \u2203x P(x) is \u2200x \u00acP(x). The domain must stay declared throughout, and only the predicate is negated, not the quantifier's domain.",
+              text: "The negation of ∀x P(x) is ∃x ¬P(x), and the negation of ∃x P(x) is ∀x ¬P(x). The domain must stay declared throughout, and only the predicate is negated, not the quantifier's domain.",
             },
           ],
         },
@@ -243,7 +243,7 @@ export const jeeMathematicsMathematicalReasoning: ChapterContent = {
       expression: "¬[∀x P(x)] ≡ ∃x ¬P(x)",
       meaning: "Negation of a universally quantified statement.",
       variables: [{ symbol: "P(x)", meaning: "predicate over a declared domain" }],
-      useWhen: "Negating an 'for all' statement.",
+      useWhen: "Negating a 'for all' statement.",
       commonTrap: "Missing or dropping the declared domain.",
       accessibleText: "Not (for all x, P of x) is equivalent to there exists x such that not P of x.",
     },
@@ -388,19 +388,12 @@ export const jeeMathematicsMathematicalReasoning: ChapterContent = {
     },
   ],
 
-  relatedLinks: [
-    {
-      label: "Sets Relations",
-      url: "/jee/mathematics/sets-relations",
-      relation: "prerequisite",
-      description: "Mathematical language and set-based reasoning underlying statements and domains.",
-    },
-    {
-      label: "Functions",
-      url: "/jee/mathematics/functions",
-      relation: "related",
-      description: "Lateral topic sharing the mathematical-language foundation.",
-    },
+  relatedChapters: [
+    { label: "Sets Relations", url: "/jee/mathematics/sets-relations", relation: "prerequisite" },
+    { label: "Functions", url: "/jee/mathematics/functions", relation: "related" },
+  ],
+
+  links: [
     {
       label: "Maths Hub",
       url: "/jee/mathematics",
@@ -409,6 +402,20 @@ export const jeeMathematicsMathematicalReasoning: ChapterContent = {
     },
   ],
 
-  sourceRefs: ["nta-jee-syllabus", "jee-advanced-syllabus", "nta-jee-main-2026-syllabus-pdf", "ncert-math-exemplar"],
+  sources: ["nta-jee-syllabus", "jee-advanced-syllabus", "nta-jee-main-2026-syllabus-pdf", "ncert-math-exemplar"],
+  sourceNote:
+    "No current Mathematical Reasoning mapping exists in JEE Main 2026 or JEE Advanced 2026 official syllabus documents. This page is contextual and historical only, with no weightage, frequency or PYQ-count claim.",
+  contributorPolicy: [
+    "Reviewer specialisation: Logic and Discrete Mathematics.",
+    "Minimum: postgraduate Mathematics, Applied Mathematics or equivalent.",
+    "Review scope: propositions, connectives, implication family, quantifiers, logical equivalence and the current-scope warning.",
+  ],
+
   contentStatus: "draft",
-} as ChapterContent;
+
+  meta: {
+    title: "Mathematical Reasoning: Logic and Statements Resource",
+    description:
+      "Contextual Mathematics logic covering statements, implication, converse, contrapositive, quantifiers and equivalence. Not current JEE 2026 syllabus.",
+  },
+};
