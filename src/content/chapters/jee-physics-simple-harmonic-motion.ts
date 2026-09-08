@@ -547,11 +547,6 @@ export const jeePhysicsSimpleHarmonicMotion: ChapterContent = {
     },
   ],
 
-  /* ------------------------------------------------------------------ */
-  /* Diagnosis table (B13/B06) and official-paper handling (B32)         */
-  /* ------------------------------------------------------------------ */
-  tables: undefined,
-
   relatedChapters: [
     { label: "JEE Physics", url: "/jee/physics", relation: "up", description: "Subject hub for the Physics chapter set." },
     { label: "Laws of Motion", url: "/jee/physics/laws-of-motion", relation: "prerequisite", description: "Newton's second law underlies the SHM restoring relation." },
