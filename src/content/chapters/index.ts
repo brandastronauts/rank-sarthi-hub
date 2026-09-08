@@ -67,6 +67,36 @@ import { jeeChemistryThermodynamics } from "./jee-chemistry-thermodynamics";
  * JSX, no CSS. The generic /$platform/$subject/$chapter route resolves the
  * record and the T06 recipe decides which blocks the data supports.
  */
+import { jeeMathematicsThreeDGeometry } from "./jee-mathematics-3d-geometry";
+import { jeeMathematicsAreaUnderCurves } from "./jee-mathematics-area-under-curves";
+import { jeeMathematicsBinomialTheorem } from "./jee-mathematics-binomial-theorem";
+import { jeeMathematicsCalculus } from "./jee-mathematics-calculus";
+import { jeeMathematicsCircles } from "./jee-mathematics-circles";
+import { jeeMathematicsComplexNumbers } from "./jee-mathematics-complex-numbers";
+import { jeeMathematicsConicSections } from "./jee-mathematics-conic-sections";
+import { jeeMathematicsCoordinateGeometry } from "./jee-mathematics-coordinate-geometry";
+import { jeeMathematicsDefiniteIntegrals } from "./jee-mathematics-definite-integrals";
+import { jeeMathematicsDifferentialEquations } from "./jee-mathematics-differential-equations";
+import { jeeMathematicsDifferentiation } from "./jee-mathematics-differentiation";
+import { jeeMathematicsEllipse } from "./jee-mathematics-ellipse";
+import { jeeMathematicsFunctions } from "./jee-mathematics-functions";
+import { jeeMathematicsHyperbola } from "./jee-mathematics-hyperbola";
+import { jeeMathematicsIntegration } from "./jee-mathematics-integration";
+import { jeeMathematicsInverseTrigonometry } from "./jee-mathematics-inverse-trigonometry";
+import { jeeMathematicsLimitsContinuity } from "./jee-mathematics-limits-continuity";
+import { jeeMathematicsMatricesDeterminants } from "./jee-mathematics-matrices-determinants";
+import { jeeMathematicsParabola } from "./jee-mathematics-parabola";
+import { jeeMathematicsPermutationsCombinations } from "./jee-mathematics-permutations-combinations";
+import { jeeMathematicsProbability } from "./jee-mathematics-probability";
+import { jeeMathematicsQuadraticEquations } from "./jee-mathematics-quadratic-equations";
+import { jeeMathematicsSequencesSeries } from "./jee-mathematics-sequences-series";
+import { jeeMathematicsSetsRelations } from "./jee-mathematics-sets-relations";
+import { jeeMathematicsStatistics } from "./jee-mathematics-statistics";
+import { jeeMathematicsStraightLines } from "./jee-mathematics-straight-lines";
+import { jeeMathematicsTrigonometry } from "./jee-mathematics-trigonometry";
+import { jeeMathematicsVectors } from "./jee-mathematics-vectors";
+import { jeeMathematicsApplicationOfDerivatives } from "./jee-mathematics-application-of-derivatives";
+import { jeeMathematicsMathematicalReasoning } from "./jee-mathematics-mathematical-reasoning";
 const chapters: ChapterContent[] = [
   jeePhysicsElectrostatics,
   jeePhysicsCurrentElectricity,
@@ -128,6 +158,36 @@ const chapters: ChapterContent[] = [
   jeeChemistryStatesOfMatter,
   jeeChemistrySurfaceChemistry,
   jeeChemistryThermodynamics,
+  jeeMathematicsThreeDGeometry,
+  jeeMathematicsAreaUnderCurves,
+  jeeMathematicsBinomialTheorem,
+  jeeMathematicsCalculus,
+  jeeMathematicsCircles,
+  jeeMathematicsComplexNumbers,
+  jeeMathematicsConicSections,
+  jeeMathematicsCoordinateGeometry,
+  jeeMathematicsDefiniteIntegrals,
+  jeeMathematicsDifferentialEquations,
+  jeeMathematicsDifferentiation,
+  jeeMathematicsEllipse,
+  jeeMathematicsFunctions,
+  jeeMathematicsHyperbola,
+  jeeMathematicsIntegration,
+  jeeMathematicsInverseTrigonometry,
+  jeeMathematicsLimitsContinuity,
+  jeeMathematicsMatricesDeterminants,
+  jeeMathematicsParabola,
+  jeeMathematicsPermutationsCombinations,
+  jeeMathematicsProbability,
+  jeeMathematicsQuadraticEquations,
+  jeeMathematicsSequencesSeries,
+  jeeMathematicsSetsRelations,
+  jeeMathematicsStatistics,
+  jeeMathematicsStraightLines,
+  jeeMathematicsTrigonometry,
+  jeeMathematicsVectors,
+  jeeMathematicsApplicationOfDerivatives,
+  jeeMathematicsMathematicalReasoning,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
