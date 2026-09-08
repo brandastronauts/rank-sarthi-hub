@@ -19,6 +19,16 @@ import { jeePhysicsCenterOfMass } from "./jee-physics-center-of-mass";
 import { jeePhysicsElasticity } from "./jee-physics-elasticity";
 import { jeePhysicsSurfaceTension } from "./jee-physics-surface-tension";
 import { jeePhysicsCommunicationSystems } from "./jee-physics-communication-systems";
+import { jeePhysicsWorkEnergyPower } from "./jee-physics-work-energy-power";
+import { jeePhysicsRotationalMotion } from "./jee-physics-rotational-motion";
+import { jeePhysicsGravitation } from "./jee-physics-gravitation";
+import { jeePhysicsFluidMechanics } from "./jee-physics-fluid-mechanics";
+import { jeePhysicsSimpleHarmonicMotion } from "./jee-physics-simple-harmonic-motion";
+import { jeePhysicsUnitsAndMeasurements } from "./jee-physics-units-and-measurements";
+import { jeePhysicsAlternatingCurrent } from "./jee-physics-alternating-current";
+import { jeePhysicsDualNatureOfMatter } from "./jee-physics-dual-nature-of-matter";
+import { jeePhysicsAtomsAndNuclei } from "./jee-physics-atoms-and-nuclei";
+import { jeePhysicsSemiconductors } from "./jee-physics-semiconductors";
 
 /**
  * Chapter content registry (T06).
@@ -48,6 +58,16 @@ const chapters: ChapterContent[] = [
   jeePhysicsElasticity,
   jeePhysicsSurfaceTension,
   jeePhysicsCommunicationSystems,
+  jeePhysicsWorkEnergyPower,
+  jeePhysicsRotationalMotion,
+  jeePhysicsGravitation,
+  jeePhysicsFluidMechanics,
+  jeePhysicsSimpleHarmonicMotion,
+  jeePhysicsUnitsAndMeasurements,
+  jeePhysicsAlternatingCurrent,
+  jeePhysicsDualNatureOfMatter,
+  jeePhysicsAtomsAndNuclei,
+  jeePhysicsSemiconductors,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
