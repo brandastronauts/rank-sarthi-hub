@@ -244,8 +244,8 @@ export const jeePreviousYearPapers: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: ["nta-jee-main-question-papers", "jee-advanced-paper-archive"],
-  sourceNote: "The package's structured production record cites additional source ids (NTA-QP-2026, ADV-HOME-2026, ADV-P1-EN-2026, ADV-P1-HI-2026, ADV-P2-EN-2026, ADV-P2-HI-2026) that are not yet present in the source registry; they are not referenced above and must be added before they can be cited.",
+  sourceRefs: ["nta-jee-main-question-papers", "nta-jee-main-documents", "nta-jee-main-p1-record-2026", "jee-advanced-home-2026", "jee-advanced-paper-archive"],
+  sourceNote: "Every paper referenced here is identified from the owning authority's own listing. Question text is not reproduced on Rank Sarthi; each entry routes to the official file.",
   contributorPolicy: [
     "Written by: JEE content librarian or exam-resource editor",
     "Fact-checked by: Exam Process Reviewer",

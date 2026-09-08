@@ -154,7 +154,8 @@ export const jeeAnswerKey: InfoPageContent = {
       ],
     },
   ],
-  sourceNote: "The package's structured production record cites source ids (NTA-DOCS, NTA-FINAL-KEY-S2-P1-2026, NTA-FINAL-KEY-S2-P2-2026, ADV-HOME-2026, ADV-FINAL-KEY-P1-2026, ADV-FINAL-KEY-P2-2026) that are not yet present in the source registry; none are cited above. The monitored key states and their sources are instead carried by the FreshnessWatch records referenced in `freshness.recordIds`.",
+  sourceRefs: ["nta-jee-main-documents", "nta-jee-main-final-key-s2-p1-2026", "nta-jee-main-final-key-p2-2026", "jee-advanced-home-2026"],
+  sourceNote: "Key states shown above are carried by monitored FreshnessWatch records, each with its owning authority and verification date. Answer-key content itself is never reproduced here.",
   contributorPolicy: [
     "Written by: Exam information editor",
     "Fact-checked by: Freshness Editor or Exam Process Reviewer",
