@@ -18,7 +18,6 @@ export const jeeChemistryPolymers: ChapterContent = {
   exam: "JEE",
   platform: "jee",
   examVariant: "JEE Advanced",
-  platformSubjectNote: undefined,
   subject: "Chemistry",
   subjectSlug: "chemistry",
   chapter: "Polymers",

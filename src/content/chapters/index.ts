@@ -29,6 +29,36 @@ import { jeePhysicsAlternatingCurrent } from "./jee-physics-alternating-current"
 import { jeePhysicsDualNatureOfMatter } from "./jee-physics-dual-nature-of-matter";
 import { jeePhysicsAtomsAndNuclei } from "./jee-physics-atoms-and-nuclei";
 import { jeePhysicsSemiconductors } from "./jee-physics-semiconductors";
+import { jeeChemistryAlcoholsPhenolsEthers } from "./jee-chemistry-alcohols-phenols-ethers";
+import { jeeChemistryAldehydesKetones } from "./jee-chemistry-aldehydes-ketones";
+import { jeeChemistryAmines } from "./jee-chemistry-amines";
+import { jeeChemistryAtomicStructure } from "./jee-chemistry-atomic-structure";
+import { jeeChemistryBiomolecules } from "./jee-chemistry-biomolecules";
+import { jeeChemistryCarboxylicAcids } from "./jee-chemistry-carboxylic-acids";
+import { jeeChemistryChemicalBonding } from "./jee-chemistry-chemical-bonding";
+import { jeeChemistryChemicalKinetics } from "./jee-chemistry-chemical-kinetics";
+import { jeeChemistryChemistryEverydayLife } from "./jee-chemistry-chemistry-everyday-life";
+import { jeeChemistryCoordinationCompounds } from "./jee-chemistry-coordination-compounds";
+import { jeeChemistryDAndFBlockElements } from "./jee-chemistry-d-and-f-block-elements";
+import { jeeChemistryElectrochemistry } from "./jee-chemistry-electrochemistry";
+import { jeeChemistryEnvironmentalChemistry } from "./jee-chemistry-environmental-chemistry";
+import { jeeChemistryEquilibrium } from "./jee-chemistry-equilibrium";
+import { jeeChemistryGaseousState } from "./jee-chemistry-gaseous-state";
+import { jeeChemistryHaloalkanesHaloarenes } from "./jee-chemistry-haloalkanes-haloarenes";
+import { jeeChemistryHydrocarbons } from "./jee-chemistry-hydrocarbons";
+import { jeeChemistryIonicEquilibrium } from "./jee-chemistry-ionic-equilibrium";
+import { jeeChemistryMoleConcept } from "./jee-chemistry-mole-concept";
+import { jeeChemistryOrganicBasics } from "./jee-chemistry-organic-basics";
+import { jeeChemistryPBlockElements } from "./jee-chemistry-p-block-elements";
+import { jeeChemistryPeriodicTable } from "./jee-chemistry-periodic-table";
+import { jeeChemistryPolymers } from "./jee-chemistry-polymers";
+import { jeeChemistryRedoxReactions } from "./jee-chemistry-redox-reactions";
+import { jeeChemistrySBlockElements } from "./jee-chemistry-s-block-elements";
+import { jeeChemistrySolidState } from "./jee-chemistry-solid-state";
+import { jeeChemistrySolutions } from "./jee-chemistry-solutions";
+import { jeeChemistryStatesOfMatter } from "./jee-chemistry-states-of-matter";
+import { jeeChemistrySurfaceChemistry } from "./jee-chemistry-surface-chemistry";
+import { jeeChemistryThermodynamics } from "./jee-chemistry-thermodynamics";
 
 /**
  * Chapter content registry (T06).
@@ -68,6 +98,36 @@ const chapters: ChapterContent[] = [
   jeePhysicsDualNatureOfMatter,
   jeePhysicsAtomsAndNuclei,
   jeePhysicsSemiconductors,
+  jeeChemistryAlcoholsPhenolsEthers,
+  jeeChemistryAldehydesKetones,
+  jeeChemistryAmines,
+  jeeChemistryAtomicStructure,
+  jeeChemistryBiomolecules,
+  jeeChemistryCarboxylicAcids,
+  jeeChemistryChemicalBonding,
+  jeeChemistryChemicalKinetics,
+  jeeChemistryChemistryEverydayLife,
+  jeeChemistryCoordinationCompounds,
+  jeeChemistryDAndFBlockElements,
+  jeeChemistryElectrochemistry,
+  jeeChemistryEnvironmentalChemistry,
+  jeeChemistryEquilibrium,
+  jeeChemistryGaseousState,
+  jeeChemistryHaloalkanesHaloarenes,
+  jeeChemistryHydrocarbons,
+  jeeChemistryIonicEquilibrium,
+  jeeChemistryMoleConcept,
+  jeeChemistryOrganicBasics,
+  jeeChemistryPBlockElements,
+  jeeChemistryPeriodicTable,
+  jeeChemistryPolymers,
+  jeeChemistryRedoxReactions,
+  jeeChemistrySBlockElements,
+  jeeChemistrySolidState,
+  jeeChemistrySolutions,
+  jeeChemistryStatesOfMatter,
+  jeeChemistrySurfaceChemistry,
+  jeeChemistryThermodynamics,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
