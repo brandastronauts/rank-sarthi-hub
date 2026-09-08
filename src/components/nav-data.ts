@@ -39,10 +39,10 @@ export const navItems: NavItem[] = [
       {
         title: "Overview",
         links: [
-          { label: "JEE Main", href: "/jee/main" },
-          { label: "JEE Advanced", href: "/jee/advanced" },
-          { label: "How it works", href: "/how-it-works" },
-          { label: "Pricing", href: "/jee/pricing" },
+          { label: "JEE Main", href: "/jee/jee-main" },
+          { label: "JEE Advanced", href: "/jee/jee-advanced" },
+          { label: "How it works", href: "/#how" },
+          { label: "Pricing", href: "/#pricing" },
         ],
       },
       {
@@ -60,7 +60,7 @@ export const navItems: NavItem[] = [
           { label: "Mock tests", href: "/jee/mock-tests" },
           { label: "Previous year papers", href: "/jee/previous-year-papers" },
           { label: "Answer key", href: "/jee/answer-key" },
-          { label: "Paper analysis", href: "/jee/paper-analysis" },
+          { label: "Paper analysis", href: "/jee/analysis" },
         ],
       },
       {
@@ -83,10 +83,10 @@ export const navItems: NavItem[] = [
       {
         title: "Overview",
         links: [
-          { label: "NEET exam", href: "/neet/exam" },
+          { label: "NEET exam", href: "/neet/neet-exam" },
           { label: "NCERT mapping", href: "/neet/ncert-mapping" },
-          { label: "How it works", href: "/how-it-works" },
-          { label: "Pricing", href: "/neet/pricing" },
+          { label: "How it works", href: "/#how" },
+          { label: "Pricing", href: "/#pricing" },
         ],
       },
       {
@@ -105,7 +105,7 @@ export const navItems: NavItem[] = [
           { label: "Mock tests", href: "/neet/mock-tests" },
           { label: "Previous year papers", href: "/neet/previous-year-papers" },
           { label: "Answer key", href: "/neet/answer-key" },
-          { label: "Paper analysis", href: "/neet/paper-analysis" },
+          { label: "Paper analysis", href: "/neet/analysis" },
         ],
       },
       {
@@ -132,17 +132,17 @@ export const navItems: NavItem[] = [
           { label: "NDA exam", href: "/nda" },
           { label: "Selection process", href: "/nda/selection-process" },
           { label: "Eligibility", href: "/nda/eligibility" },
-          { label: "Pricing", href: "/nda/pricing" },
+          { label: "Pricing", href: "/#pricing" },
         ],
       },
       {
         title: "Study",
         links: [
           { label: "NDA Syllabus", href: "/nda/syllabus" },
-          { label: "Mathematics", href: "/nda/mathematics" },
-          { label: "GAT", href: "/nda/gat" },
-          { label: "General knowledge", href: "/nda/general-knowledge" },
-          { label: "Current affairs", href: "/nda/current-affairs" },
+          { label: "Mathematics", href: "/nda/syllabus/mathematics" },
+          { label: "GAT", href: "/nda/syllabus/gat" },
+          { label: "General knowledge", href: "/nda/syllabus/general-knowledge" },
+          { label: "Current affairs", href: "/nda/gat/current-affairs" },
         ],
       },
       {
@@ -150,8 +150,8 @@ export const navItems: NavItem[] = [
         links: [
           { label: "Mock tests", href: "/nda/mock-tests" },
           { label: "Previous year papers", href: "/nda/previous-year-papers" },
-          { label: "Answer key", href: "/nda/answer-key" },
-          { label: "Paper analysis", href: "/nda/paper-analysis" },
+          { label: "Answer key", href: "/nda/answer-key/2026-2" },
+          { label: "Paper analysis", href: "/nda/analysis" },
         ],
       },
       {
@@ -160,8 +160,8 @@ export const navItems: NavItem[] = [
           { label: "SSB interview guide", href: "/nda/ssb-interview" },
           { label: "Physical standards", href: "/nda/physical-standards" },
           { label: "Girls in NDA", href: "/nda/girls-in-nda" },
-          { label: "CPSS (aviation selection)", href: "/nda/cpss" },
-          { label: "Army, Navy & Air Force wings", href: "/nda/wings" },
+          { label: "CPSS / PABT (aviation selection)", href: "/nda/pabt-test" },
+          { label: "Army wing", href: "/nda/wings/army" },
         ],
       },
     ],
@@ -171,7 +171,7 @@ export const navItems: NavItem[] = [
     href: "/institutes",
     simple: [
       { label: "Overview", href: "/#institutes" },
-      { label: "B2B pricing", href: "/institutes/pricing" },
+      { label: "B2B pricing", href: "/#pricing" },
       { label: "Case studies", href: "/institutes/case-studies" },
       { label: "Request a demo", href: "/institutes/request-demo" },
     ],
@@ -184,24 +184,24 @@ export const navItems: NavItem[] = [
         title: "JEE resources",
         links: [
           { label: "JEE Syllabus", href: "/jee/syllabus" },
-          { label: "Formula sheets", href: "/resources/jee/formula-sheets" },
-          { label: "Previous year papers", href: "/resources/jee/pyqs" },
+          { label: "Formula sheets", href: "/resources/jee-formula-sheet" },
+          { label: "Previous year papers", href: "/jee/previous-year-papers" },
         ],
       },
       {
         title: "NEET resources",
         links: [
           { label: "NEET Syllabus", href: "/neet/syllabus" },
-          { label: "NCERT resources", href: "/resources/neet/ncert" },
-          { label: "Previous year papers", href: "/resources/neet/pyqs" },
+          { label: "NCERT resources", href: "/resources/neet-ncert-guide" },
+          { label: "Previous year papers", href: "/neet/previous-year-papers" },
         ],
       },
       {
         title: "NDA resources",
         links: [
           { label: "NDA Syllabus", href: "/nda/syllabus" },
-          { label: "Maths & GAT resources", href: "/resources/nda/maths-gat" },
-          { label: "Previous year papers", href: "/resources/nda/pyqs" },
+          { label: "NDA syllabus PDF", href: "/resources/nda-syllabus-pdf" },
+          { label: "Previous year papers", href: "/nda/previous-year-papers" },
         ],
       },
     ],
@@ -228,8 +228,8 @@ export const footerGroups: MenuColumn[] = [
       { label: "JEE Syllabus", href: "/jee/syllabus" },
       { label: "NEET Syllabus", href: "/neet/syllabus" },
       { label: "NDA Syllabus", href: "/nda/syllabus" },
-      { label: "Previous year papers", href: "/resources/pyqs" },
-      { label: "Mock tests", href: "/mock-tests" },
+      { label: "Previous year papers", href: "/jee/previous-year-papers" },
+      { label: "Mock tests", href: "/jee/mock-tests" },
       { label: "Free resources", href: "/resources" },
     ],
   },
@@ -248,15 +248,15 @@ export const footerGroups: MenuColumn[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
-      { label: "Careers", href: "/careers" },
+      { label: "Careers", href: "/about" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy policy", href: "/legal/privacy" },
-      { label: "Terms of service", href: "/legal/terms" },
-      { label: "Refund policy", href: "/legal/refund" },
+      { label: "Privacy policy", href: "/privacy-policy" },
+      { label: "Terms of service", href: "/terms" },
+      { label: "Refund policy", href: "/refund-policy" },
     ],
   },
 ];

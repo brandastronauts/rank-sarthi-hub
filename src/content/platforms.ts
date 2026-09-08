@@ -376,12 +376,86 @@ export const platforms: Record<string, PlatformData> = {
     slug: "jee",
     productName: "JeeRankUp",
     examName: "JEE Main & Advanced",
-    buildStatus: "planned",
+    buildStatus: "built",
     accent: "jee",
-    tagline: "Concept, execution and strategy diagnosis for JEE aspirants.",
-    intro: [],
+    conductingBody: "National Testing Agency (JEE Main); IIT-conducted (JEE Advanced)",
+    tagline: "One place to route your JEE preparation: syllabus, subjects and next actions",
+    deck: "Start from the official syllabus structure, move into the subject hub you are actually working on, and let evidence — not anxiety — decide what to study next.",
+    hero: {
+      eyebrow: "JeeRankUp · JEE Main and JEE Advanced",
+      chips: ["Official-source checked syllabus", "Physics, Chemistry and Mathematics hubs live", "No invented weightage or trends"],
+      primary: { label: "Open the JEE syllabus", href: "#route-your-preparation" },
+      secondary: { label: "Go to a subject hub", href: "#route-your-preparation" },
+      productCtaLabel: "Analyse your next JEE mock",
+    },
+    intro: [
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "Most JEE preparation breaks down at routing, not effort. A student knows the total score of the last paper but not which chapter, which prerequisite, or which kind of mistake caused it — so the next week is spent revising everything at the same urgency.",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "This hub separates three things that are usually mixed together: what the official syllabus actually defines, what each subject requires chapter by chapter, and what your own evidence says you should do next.",
+          },
+        ],
+      },
+    ],
     subjects: ["Physics", "Chemistry", "Mathematics"],
+
+    taskGroups: [
+      {
+        id: "route-your-preparation",
+        title: "Understand the scope",
+        body: "The official JEE Main 2026 and JEE Advanced 2026 documents define scope, not study order. The syllabus explorer keeps both exams separate and shows which unit maps to which chapter page.",
+        links: [
+          { label: "JEE syllabus explorer", url: "/jee/syllabus" },
+        ],
+      },
+      {
+        id: "subjects",
+        title: "Work inside a subject",
+        body: "Each subject hub lists its chapter pages with prerequisites and scope notes, so a weak downstream chapter can be traced back to the foundation that actually needs work.",
+        links: [
+          { label: "JEE Physics", url: "/jee/physics" },
+          { label: "JEE Chemistry", url: "/jee/chemistry" },
+          { label: "JEE Mathematics", url: "/jee/mathematics" },
+        ],
+      },
+      {
+        id: "next-actions",
+        title: "Decide the next action",
+        body: "Classify lost marks as a knowledge gap, a recall gap, an execution error, or a decision and selection error. Then assign one specific action and retest it before changing the status of that chapter.",
+        links: [
+          { label: "JEE Main overview", url: "/jee/jee-main" },
+          { label: "JEE Advanced overview", url: "/jee/jee-advanced" },
+        ],
+      },
+    ],
+
+    relatedUrls: ["/jee/syllabus", "/jee/physics", "/jee/chemistry", "/jee/mathematics"],
+
+    finalCta: {
+      eyebrow: "JeeRankUp",
+      heading: "Know what your JEE score is actually telling you.",
+      body: "Structure first, evidence second, effort last. Start with the syllabus map, then work inside the subject that your own papers keep pointing at.",
+    },
+
+    seo: {
+      title: "JEE Preparation Hub — syllabus, subjects and next actions | Rank Sarthi",
+      description:
+        "JeeRankUp routes JEE Main and JEE Advanced preparation: the official syllabus structure, Physics, Chemistry and Mathematics subject hubs, and a clear way to decide what to study next.",
+      ogTitle: "JeeRankUp — JEE Main and Advanced preparation hub",
+      ogDescription:
+        "Official-source syllabus structure plus Physics, Chemistry and Mathematics subject hubs for JEE Main and JEE Advanced.",
+    },
   },
+
 
   neet: {
     slug: "neet",
