@@ -1,7 +1,7 @@
 import type { ChapterContent } from "@/content/types";
 
 /**
- * Rotational Motion — T06 production content (Batch 04, 7 September 2026).
+ * Rotational Motion - T06 production content (Batch 04, 7 September 2026).
  *
  * Data only. No chapter-specific JSX, CSS or blocks: every element below maps
  * onto the existing ChapterContent contract and the T06 recipe.
@@ -336,6 +336,63 @@ export const jeePhysicsRotationalMotion: ChapterContent = {
           "Axis shifted from centre of mass",
           "Parallel-axis theorem",
           "Confirm the two axes are parallel",
+        ],
+      ],
+    },
+    {
+      id: "diagnosis-table",
+      jump: true,
+      slot: "diagnosis",
+      heading: "PI v1.1 diagnosis: locate the broken model",
+      intro: "Only these primary labels are used: Knowledge Gap, Recall Gap, Execution Error, Decision / Selection Error, and Needs Review.",
+      columns: ["Primary label", "Evidence", "Corrective action"],
+      rows: [
+        [
+          "Knowledge Gap",
+          "Cannot explain why moment of inertia changes with axis",
+          "Rebuild mass-distribution and perpendicular-distance meaning",
+        ],
+        [
+          "Recall Gap",
+          "Correct axis and model, but a standard-body moment of inertia or theorem is unavailable",
+          "Retrieve the formula together with its axis",
+        ],
+        [
+          "Execution Error",
+          "Cross-product sign, lever arm, or algebra fails",
+          "Redraw the force line and perpendicular distance",
+        ],
+        [
+          "Decision / Selection Error",
+          "Uses force equations where energy is cleaner, or conservation where external torque acts",
+          "Mark constraint and conservation tests first",
+        ],
+        [
+          "Needs Review",
+          "Rolling state, contact force, or impact model is not justified",
+          "Escalate the assumption and diagram for academic review",
+        ],
+      ],
+    },
+    {
+      id: "practice-table",
+      slot: "practice",
+      heading: "Official-paper handling",
+      intro:
+        "Tag official questions only after review for torque, moment of inertia, rolling, equilibrium, angular momentum, or rigid-body collision content.",
+      columns: ["Rule", "Detail"],
+      rows: [
+        [
+          "Scope check before tagging",
+          "A question is tagged to this chapter only after academic review confirms it tests torque, moment of inertia, rolling, equilibrium, angular momentum, or rigid-body collision reasoning.",
+        ],
+        [
+          "Route ownership",
+          "Centre-of-mass-only questions are not merged into this page; they belong to the focused Center of Mass route.",
+        ],
+        [
+          "Evidence limits",
+          "No frequency or weightage counts are published for official questions on this page.",
         ],
       ],
     },
