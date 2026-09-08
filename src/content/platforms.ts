@@ -378,22 +378,35 @@ export const platforms: Record<string, PlatformData> = {
     examName: "JEE Main & Advanced",
     buildStatus: "built",
     accent: "jee",
-    conductingBody: "National Testing Agency (JEE Main); IIT-conducted (JEE Advanced)",
-    tagline: "One place to route your JEE preparation: syllabus, subjects and next actions",
-    deck: "Start from the official syllabus structure, move into the subject hub you are actually working on, and let evidence — not anxiety — decide what to study next.",
+    conductingBody:
+      "National Testing Agency (JEE Main); the organising IIT under the Joint Admission Board framework (JEE Advanced)",
+    tagline: "JEE Preparation That Connects Syllabus, Practice and Diagnosis",
+    deck: "Rank Sarthi's JEE hub organises official exam information, syllabus navigation, subject learning paths, chapter intelligence, practice and mistake review.",
     hero: {
-      eyebrow: "JeeRankUp · JEE Main and JEE Advanced",
-      chips: ["Official-source checked syllabus", "Physics, Chemistry and Mathematics hubs live", "No invented weightage or trends"],
-      primary: { label: "Open the JEE syllabus", href: "#route-your-preparation" },
-      secondary: { label: "Go to a subject hub", href: "#route-your-preparation" },
-      productCtaLabel: "Analyse your next JEE mock",
+      eyebrow: "JeeRankUp — JEE Main and JEE Advanced",
+      heading: "JEE Preparation That Connects Syllabus, Practice and Diagnosis",
+      support:
+        "Start with the official syllabus, learn prerequisites in order, practise at the correct level, classify lost marks, and retest.",
+      chips: [
+        "Official-source syllabus boundary",
+        "Physics, Chemistry and Mathematics subject paths",
+        "PI v1.1 mistake diagnosis",
+      ],
+      primary: { label: "Explore the structured JEE syllabus", href: "/jee/syllabus" },
+      secondary: { label: "Choose the exam task in front of you", href: "#positioning" },
     },
     intro: [
       {
         type: "paragraph",
         children: [
+          { text: "JEE preparation becomes easier to manage when every activity has a clear job." },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
           {
-            text: "Most JEE preparation breaks down at routing, not effort. A student knows the total score of the last paper but not which chapter, which prerequisite, or which kind of mistake caused it — so the next week is spent revising everything at the same urgency.",
+            text: "The syllabus tells you what is examinable. A chapter path tells you what to learn first. Practice shows whether you can recognise and execute a method. A mock test shows whether that method survives selection pressure and time limits. Diagnosis tells you what to repair before you repeat the same mistake.",
           },
         ],
       },
@@ -401,7 +414,7 @@ export const platforms: Record<string, PlatformData> = {
         type: "paragraph",
         children: [
           {
-            text: "This hub separates three things that are usually mixed together: what the official syllabus actually defines, what each subject requires chapter by chapter, and what your own evidence says you should do next.",
+            text: "Rank Sarthi brings those steps into one JEE learning path for Main and Advanced. It does not replace the official NTA or JEE Advanced websites. Use official sites for rules, dates and notices. Use this hub to turn that information into study decisions.",
           },
         ],
       },
@@ -410,11 +423,18 @@ export const platforms: Record<string, PlatformData> = {
 
     taskGroups: [
       {
-        id: "route-your-preparation",
-        title: "Understand the scope",
-        body: "The official JEE Main 2026 and JEE Advanced 2026 documents define scope, not study order. The syllabus explorer keeps both exams separate and shows which unit maps to which chapter page.",
+        id: "map-the-syllabus",
+        title: "Map what you need to study",
+        body: "Use the JEE syllabus before choosing chapters or buying resources. It is the boundary of the preparation plan.",
+        links: [{ label: "JEE syllabus", url: "/jee/syllabus" }],
+      },
+      {
+        id: "understand-the-exam",
+        title: "Choose the exam task in front of you",
+        body: "Use the JEE Main guide for the official paper structure, paper choice, marking rules and a practical preparation sequence. Use the JEE Advanced guide for eligibility, the two-paper structure and the move from routine fluency to multi-concept reasoning.",
         links: [
-          { label: "JEE syllabus explorer", url: "/jee/syllabus" },
+          { label: "JEE Main guide", url: "/jee/jee-main" },
+          { label: "JEE Advanced guide", url: "/jee/jee-advanced" },
         ],
       },
       {
@@ -428,31 +448,177 @@ export const platforms: Record<string, PlatformData> = {
         ],
       },
       {
-        id: "next-actions",
-        title: "Decide the next action",
-        body: "Classify lost marks as a knowledge gap, a recall gap, an execution error, or a decision and selection error. Then assign one specific action and retest it before changing the status of that chapter.",
+        id: "repair-a-chapter",
+        title: "Repair a chapter",
+        body: "Begin with a structured chapter page. Each page connects prerequisites, concepts, formulas, method choice, traps and the next chapter.",
         links: [
-          { label: "JEE Main overview", url: "/jee/jee-main" },
-          { label: "JEE Advanced overview", url: "/jee/jee-advanced" },
+          { label: "Electrostatics", url: "/jee/physics/electrostatics" },
+          { label: "Current Electricity", url: "/jee/physics/current-electricity" },
         ],
       },
     ],
 
+    papers: [
+      {
+        id: "jee-main",
+        name: "JEE Main",
+        covers: [
+          "Official owner: National Testing Agency",
+          "Main role: admission route for NITs, IIITs and other participating institutions, and an eligibility route for Advanced",
+          "Current paper behavior: the official 2026 bulletin specifies paper-wise questions, marks and marking",
+          "Preparation emphasis: coverage, accurate execution and efficient question selection",
+        ],
+        note: "Best relationship: build dependable chapter fluency and paper control.",
+      },
+      {
+        id: "jee-advanced",
+        name: "JEE Advanced",
+        covers: [
+          "Official owner: the organising IIT under the Joint Admission Board framework",
+          "Main role: admission route for IIT undergraduate programmes, subject to admission criteria",
+          "Current paper behavior: the official 2026 brochure specifies two compulsory papers, with detailed marking instructions provided for the paper",
+          "Preparation emphasis: concept integration, instruction reading, analytical reasoning and selective persistence",
+        ],
+        note: "Best relationship: add deeper connections and variable-format decision practice on top of that base.",
+      },
+    ],
+    structure: {
+      eyebrow: "Main and Advanced",
+      heading: "JEE Main and JEE Advanced are connected, not interchangeable",
+      intro:
+        "The overlap in Physics, Chemistry and Mathematics does not mean the two exams reward identical behavior. A student can learn common concepts once, then practise them under two different decision environments.",
+      implications: {
+        heading: "What that means for preparation",
+        points: [
+          "Build shared concept foundations together across Physics, Chemistry and Mathematics.",
+          "Add Advanced-specific depth, instruction reading and multi-concept practice as a distinct layer.",
+          "Near each exam, shift paper practice to that exam's actual behavior.",
+        ],
+      },
+    },
+
+    diagnosticLenses: [
+      {
+        title: "Knowledge Gap",
+        body: "The concept, relationship or method was not understood.",
+      },
+      {
+        title: "Recall Gap",
+        body: "The knowledge existed, but the needed fact, formula or method could not be retrieved.",
+      },
+      {
+        title: "Execution Error",
+        body: "The selected approach was suitable, but algebra, calculation, sign, unit, reading or process execution failed.",
+      },
+      {
+        title: "Decision / Selection Error",
+        body: "The wrong question, approach, order, depth or time investment was chosen.",
+      },
+      {
+        title: "Needs Review",
+        body: "The evidence is mixed or insufficient for a confident label.",
+      },
+      {
+        title: "A low score can hide different problems",
+        body: "Two students can lose the same four marks for entirely different reasons. One may not understand electric potential — a Knowledge Gap needing concept repair. Another may forget the relation between field and potential during a timed set — a Recall Gap needing retrieval practice. A third may choose a long coordinate method where symmetry gives a short solution — a Decision / Selection Error needing method-comparison practice. The score tells you how much was lost. Diagnosis tells you what to do next.",
+      },
+    ],
+    errorTaxonomy: {
+      heading: "Start from your present preparation state",
+      columns: ["Your present state", "Best next action", "Why"],
+      rows: [
+        {
+          signal: "You are starting JEE preparation",
+          category: "Open the syllabus and mark known, learning and not-started units",
+          action: "It prevents random chapter selection.",
+        },
+        {
+          signal: "You understand a chapter but miss questions",
+          category: "Review formulas by condition, then solve a mixed set",
+          action: "Recognition under mixed conditions is different from rereading notes.",
+        },
+        {
+          signal: "You make avoidable mistakes",
+          category: "Classify each loss with PI v1.1",
+          action: "Different causes require different repairs.",
+        },
+        {
+          signal: "You have completed most chapters",
+          category: "Move to part-syllabus and full-paper practice",
+          action: "Isolated chapter success does not prove paper-level selection.",
+        },
+        {
+          signal: "You are preparing for Advanced",
+          category: "Keep Main fluency, then add multi-concept and instruction-sensitive practice",
+          action: "Advanced is not just a longer Main paper.",
+        },
+      ],
+      note: "Optional contributing factors can record pressure, fatigue, notation, language or unfamiliar presentation. Tag Confidence should show how certain the classification is. A label is useful only when it changes the next action.",
+    },
+
+    pathwayIntro: {
+      heading: "The Rank Sarthi learning loop",
+      body: "Each step has one job, and the loop only closes when a repair is retested on a fresh set.",
+    },
+    pathway: [
+      { id: "map", stage: "Map", body: "Confirm the official syllabus boundary and prerequisites." },
+      { id: "learn", stage: "Learn", body: "Build the concept architecture, not a disconnected formula list." },
+      { id: "practise", stage: "Practise", body: "Move from direct application to mixed method selection." },
+      {
+        id: "attempt",
+        stage: "Attempt",
+        body: "Use chapter, part-syllabus or full-paper conditions that match the current goal.",
+      },
+      { id: "diagnose", stage: "Diagnose", body: "Apply one primary PI label and record the evidence." },
+      { id: "repair", stage: "Repair", body: "Choose a response that matches the cause." },
+      { id: "retest", stage: "Retest", body: "Use a fresh set to check whether the repair transferred." },
+    ],
+
     relatedUrls: ["/jee/syllabus", "/jee/physics", "/jee/chemistry", "/jee/mathematics"],
+
+    faqs: [
+      {
+        q: "Where should a new JEE student begin?",
+        a: "Begin with the official syllabus map, then identify prerequisites and select a small first chapter sequence. Do not begin with a predicted weightage list.",
+      },
+      {
+        q: "Should Main and Advanced be prepared separately?",
+        a: "Build shared concept foundations together. Add Advanced-specific depth, instruction reading and multi-concept practice as a distinct layer. Near each exam, shift the paper practice to its actual behavior.",
+      },
+      {
+        q: "Why does this page not publish JEE 2027 dates or pattern claims?",
+        a: "The official sources used here are for the 2026 cycle. The page should update only after the competent authority publishes the next bulletin or notice.",
+      },
+      {
+        q: "What should happen after a mock test?",
+        a: "Review every wrong, skipped and materially slow question, assign a primary PI label, choose the corresponding repair, and retest. A score without a repair plan is incomplete feedback.",
+      },
+      {
+        q: "What should parents look for?",
+        a: "Ask for evidence of process, not only a daily score: which syllabus units are complete, weak or not started; which error category caused the largest avoidable loss this week; what was repaired and whether the repair survived a fresh set; whether the student is practising at the correct level for Main, Advanced or both; and whether official dates and rules are being checked at the official source. These questions create a calmer and more useful conversation than asking only, \"How many marks did you get?\"",
+      },
+    ],
 
     finalCta: {
       eyebrow: "JeeRankUp",
-      heading: "Know what your JEE score is actually telling you.",
-      body: "Structure first, evidence second, effort last. Start with the syllabus map, then work inside the subject that your own papers keep pointing at.",
+      heading: "Start with the official syllabus",
+      body: "Use the structured JEE syllabus to choose the right subject and chapter path. Product actions appear only when their destinations work and their claims have been verified.",
+      secondaryHref: "/jee/syllabus",
+      secondaryLabel: "Open the JEE syllabus",
     },
 
+    sourceStatus:
+      "Structural statements follow the official NTA JEE Main 2026 and JEE Advanced 2026 documents. No 2027 date, pattern, eligibility, cutoff or result claim is published here.",
+    sourceRefs: ["nta-jee-syllabus", "jee-advanced-syllabus"],
+    lastVerified: "27 August 2026",
+
     seo: {
-      title: "JEE Preparation Hub — syllabus, subjects and next actions | Rank Sarthi",
+      title: "JEE Preparation Hub: Main, Advanced, Syllabus and Practice",
       description:
-        "JeeRankUp routes JEE Main and JEE Advanced preparation: the official syllabus structure, Physics, Chemistry and Mathematics subject hubs, and a clear way to decide what to study next.",
-      ogTitle: "JeeRankUp — JEE Main and Advanced preparation hub",
+        "Plan JEE Main and Advanced preparation with official-source exam guides, structured syllabus paths, chapter intelligence, practice and mistake diagnosis.",
+      ogTitle: "JEE Preparation Hub | Rank Sarthi",
       ogDescription:
-        "Official-source syllabus structure plus Physics, Chemistry and Mathematics subject hubs for JEE Main and JEE Advanced.",
+        "Move from official syllabus to chapter learning, practice, diagnosis and revision for JEE Main and JEE Advanced.",
     },
   },
 
