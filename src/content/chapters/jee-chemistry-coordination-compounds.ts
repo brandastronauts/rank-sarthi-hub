@@ -67,6 +67,12 @@ export const jeeChemistryCoordinationCompounds: ChapterContent = {
       description: "Electron configurations for ions and unpaired-electron counts are needed for spin and magnetism.",
     },
     {
+      label: "Classification of Elements and Periodicity in Properties",
+      url: "/jee/chemistry/periodic-table",
+      relation: "prerequisite",
+      description: "Periodic position and block classification orient where transition metals sit and why they form complexes.",
+    },
+    {
       label: "JEE Chemistry",
       url: "/jee/chemistry",
       relation: "up",
