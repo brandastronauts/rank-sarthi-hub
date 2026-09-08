@@ -255,7 +255,7 @@ export const jeeAdvanced: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: ["jee-advanced-syllabus"],
+  sourceRefs: ["jee-advanced-home-2026", "jee-advanced-dates-2026", "jee-advanced-syllabus"],
   contributorPolicy: [
     "Written by: Senior JEE academic editor familiar with official Advanced processes",
     "Fact-checked by: Exam Process Reviewer",

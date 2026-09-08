@@ -229,7 +229,7 @@ export const jeeMain: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: [],
+  sourceRefs: ["nta-jee-main-home", "nta-jee-main-bulletin-2026", "nta-jee-main-documents", "nta-jee-main-public-notices"],
   contributorPolicy: [
     "Written by: Exam information editor with demonstrated JEE process knowledge",
     "Fact-checked by: Freshness Editor or Exam Process Reviewer",
