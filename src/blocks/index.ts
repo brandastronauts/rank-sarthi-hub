@@ -40,6 +40,7 @@ import { PyqTrendAnalysis } from "@/components/blocks/PyqTrendAnalysis";
 import { ConceptSections } from "@/components/blocks/ConceptSections";
 import { RelatedRail } from "@/components/blocks/RelatedRail";
 import { SourcesBox } from "@/components/blocks/SourcesBox";
+import { SubjectChapterMap } from "@/components/blocks/SubjectChapterMap";
 
 /* Platform template blocks (B38–B43) */
 import { PlatformMasthead } from "@/components/platform/PlatformMasthead";
@@ -71,6 +72,7 @@ export function ensureBlocksRegistered() {
     B01: Hero,
     B23: JumpNavBlock,
     B25: DataTable,
+    B44: SubjectChapterMap,
     B26: SyllabusExplorer,
     B27: TrendTable,
     B28: PriorityMap,
