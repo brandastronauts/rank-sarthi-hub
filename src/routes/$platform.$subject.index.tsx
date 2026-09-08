@@ -38,8 +38,8 @@ export const Route = createFileRoute("/$platform/$subject/")({
       title,
       description,
       ogType: content.seo?.ogType ?? "website",
-      ogTitle: content.seo?.ogTitle,
-      ogDescription: content.seo?.ogDescription,
+      ...(content.seo?.ogTitle ? { ogTitle: content.seo.ogTitle } : {}),
+      ...(content.seo?.ogDescription ? { ogDescription: content.seo.ogDescription } : {}),
       jsonLd: [
         collectionPageSchema({
           url,
