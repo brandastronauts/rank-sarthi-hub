@@ -95,6 +95,8 @@ import { jeeMathematicsStatistics } from "./jee-mathematics-statistics";
 import { jeeMathematicsStraightLines } from "./jee-mathematics-straight-lines";
 import { jeeMathematicsTrigonometry } from "./jee-mathematics-trigonometry";
 import { jeeMathematicsVectors } from "./jee-mathematics-vectors";
+import { jeeMathematicsApplicationOfDerivatives } from "./jee-mathematics-application-of-derivatives";
+import { jeeMathematicsMathematicalReasoning } from "./jee-mathematics-mathematical-reasoning";
 const chapters: ChapterContent[] = [
   jeePhysicsElectrostatics,
   jeePhysicsCurrentElectricity,
@@ -184,6 +186,8 @@ const chapters: ChapterContent[] = [
   jeeMathematicsStraightLines,
   jeeMathematicsTrigonometry,
   jeeMathematicsVectors,
+  jeeMathematicsApplicationOfDerivatives,
+  jeeMathematicsMathematicalReasoning,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
