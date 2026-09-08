@@ -1,6 +1,6 @@
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { SubjectHubContent, SyllabusTable } from "@/content/types";
-import { childrenOf, getUrl } from "@/content/registry";
+import { childrenOf } from "@/content/registry";
 import type { ChapterMapEntry } from "@/components/blocks/SubjectChapterMap";
 
 /**
@@ -102,7 +102,13 @@ export function subjectHubRecipe(
               id: "pyq-state",
               props: {
                 heading: `${content.subject} previous-year paper access`,
-                concepts: [{ id: "pyq-state-body", title: "", body: content.pyqNote }],
+                concepts: [
+                  {
+                    id: "pyq-state-body",
+                    title: "",
+                    body: [{ type: "paragraph", children: [{ text: content.pyqNote }] }],
+                  },
+                ],
               },
             },
           ]
@@ -144,6 +150,6 @@ export function subjectHubRecipe(
         },
         when: !!content.sourceRefs?.length,
       },
-    ].filter((slot) => !("url" in slot) || !!getUrl(content.url)) as BlockSlot[],
+    ] as BlockSlot[],
   };
 }
