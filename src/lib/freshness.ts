@@ -29,9 +29,10 @@ export type CheckOutcome =
 export function normaliseValue(value: FreshnessValue): string {
   if (Array.isArray(value)) return value.map((v) => normaliseValue(v)).join("|");
   if (value !== null && typeof value === "object") {
-    return Object.keys(value)
+    const entries = value as Record<string, unknown>;
+    return Object.keys(entries)
       .sort()
-      .map((k) => `${k}=${String((value as Record<string, unknown>[string])[k as never])}`)
+      .map((k) => `${k}=${String(entries[k])}`)
       .join("|");
   }
   return String(value).replace(/\s+/g, " ").trim().toLowerCase();
