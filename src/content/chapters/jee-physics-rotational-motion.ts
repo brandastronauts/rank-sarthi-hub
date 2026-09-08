@@ -632,8 +632,6 @@ export const jeePhysicsRotationalMotion: ChapterContent = {
     },
   ],
 
-  tables_diagnosis_placeholder: undefined as never,
-
   faqs: [
     {
       question: "What determines moment of inertia?",
