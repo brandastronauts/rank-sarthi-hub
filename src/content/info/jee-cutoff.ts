@@ -212,7 +212,7 @@ export const jeeCutoff: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: [],
+  sourceRefs: ["jee-advanced-cutoffs-2026", "jee-advanced-home-2026", "nta-jee-main-result-p1-2026", "josaa-official", "csab-official"],
   sourceNote:
     "No source ids from this section exist yet in content/sources.ts (see report: ADV-CUTOFF-2026, ADV-ELIG-2026, ADV-ADMISSION-2026, NTA-RESULT-P1-2026, JOSAA-ORCR-2026, JOSAA-TOP20-2026, CSAB-HOME-2026 are missing).",
   contributorPolicy: [

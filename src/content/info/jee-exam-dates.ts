@@ -210,7 +210,7 @@ export const jeeExamDates: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: [],
+  sourceRefs: ["nta-jee-main-home", "nta-jee-main-documents", "nta-jee-main-bulletin-2026", "nta-jee-main-p1-record-2026", "nta-jee-main-s2-application-2026", "nta-jee-main-score-p1-s2-2026", "nta-jee-main-score-p2-s2-2026", "jee-advanced-home-2026", "jee-advanced-dates-2026", "josaa-official", "csab-official"],
   sourceNote:
     "No source ids from this section exist yet in content/sources.ts (see report: NTA-HOME, NTA-DOCS, NTA-IB-2026, NTA-P1-COMBINED-2026, NTA-S2-APPLICATION-2026, NTA-SCORE-P1-S2-2026, NTA-SCORE-P2-S2-2026, ADV-HOME-2026, ADV-DATES-2026, JOSAA-HOME-2026, CSAB-HOME-2026 are missing).",
   contributorPolicy: [

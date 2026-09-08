@@ -280,7 +280,7 @@ export const jeeAnalysis: InfoPageContent = {
       ],
     },
   ],
-  sourceRefs: [],
+  sourceRefs: ["nta-jee-main-question-papers", "nta-jee-main-final-key-s2-p1-2026", "jee-advanced-home-2026", "jee-advanced-paper-archive"],
   sourceNote:
     "No source ids from this section exist yet in content/sources.ts (see report: NTA-QP-2026, NTA-FINAL-KEY-S2-P1-2026, ADV-HOME-2026, ADV-FINAL-KEY-P1-2026, ADV-FINAL-KEY-P2-2026 are missing).",
   contributorPolicy: [
