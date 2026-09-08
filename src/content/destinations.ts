@@ -73,12 +73,10 @@ export const destinations = {
     if (href.includes("#")) return { kind: "live", href, label };
 
     const record = getUrl(href);
-    if (record?.buildStatus === "built") {
-      if (record.indexation === "index" || navPolicy.linkBuiltNoindex) {
-        return { kind: "live", href, label };
-      }
-      return { kind: "disabled", label, reason: "This page is not published yet." };
-    }
+    // Navigation availability follows buildStatus ONLY. Indexation is a
+    // search-engine concern handled by the page's robots tag, the sitemap and
+    // rel="nofollow" (see relFor) - it never disables a usable route.
+    if (record?.buildStatus === "built") return { kind: "live", href, label };
     return { kind: "disabled", label, reason: "This page is not available yet." };
   },
 } as const;

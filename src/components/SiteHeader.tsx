@@ -77,7 +77,7 @@ export function SiteHeader() {
           : "bg-transparent text-primary-foreground"
       }`}
     >
-      <nav aria-label="Main navigation" className="container-page">
+      <nav aria-label="Main navigation" className="container-page relative">
         <div className="flex items-center justify-between gap-4 py-2.5">
           <Logo />
 
@@ -122,8 +122,8 @@ export function SiteHeader() {
                     />
                   )}
 
-                  {openIndex === i && hasMenu && (
-                    <Dropdown item={item} onNavigate={() => setOpenIndex(null)} />
+                  {openIndex === i && item.simple && (
+                    <SimpleDropdown item={item} onNavigate={() => setOpenIndex(null)} />
                   )}
                 </li>
               );
@@ -152,6 +152,18 @@ export function SiteHeader() {
             {mobileOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
         </div>
+
+        {/* Mega panel is anchored to the header container, never to the clicked
+            item, so it can never overflow the viewport horizontally. */}
+        {openIndex !== null && navItems[openIndex]?.columns && (
+          <div
+            className="absolute inset-x-0 top-full hidden pt-3 min-[900px]:block"
+            onMouseEnter={() => open(openIndex)}
+            onMouseLeave={scheduleClose}
+          >
+            <MegaPanel item={navItems[openIndex]!} onNavigate={() => setOpenIndex(null)} />
+          </div>
+        )}
       </nav>
 
       {/* Mobile slide-in menu */}
@@ -250,37 +262,43 @@ export function SiteHeader() {
   );
 }
 
-function Dropdown({ item, onNavigate }: { item: NavItem; onNavigate: () => void }) {
+/** Narrow list menu. Clamped so it can never leave the viewport. */
+function SimpleDropdown({ item, onNavigate }: { item: NavItem; onNavigate: () => void }) {
   const tint = item.tint ? tintStyles[item.tint] : null;
-
-  const simple = item.simple;
-  if (simple) {
-    return (
-      <div className="menu-in absolute left-0 top-full w-64 pt-3">
-        <div className="overflow-hidden rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-menu">
-          <span className={`block h-1 rounded-full ${tint?.bar ?? "bg-gold"} mb-2`} aria-hidden="true" />
-          <ul>
-            {visible(simple).map((l) => (
-              <li key={l.label} onClick={onNavigate}>
-                <NavLinkOrText
-                  d={destinations.nav(l.label, l.href)}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    );
-  }
-
+  const simple = item.simple ?? [];
   return (
-    <div className="menu-in absolute left-1/2 top-full w-[min(64rem,90vw)] -translate-x-1/2 pt-3">
+    <div className="menu-in absolute left-0 top-full w-[min(16rem,calc(100vw-2rem))] max-w-[90vw] pt-3">
+      <div className="overflow-hidden rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-menu">
+        <span className={`block h-1 rounded-full ${tint?.bar ?? "bg-gold"} mb-2`} aria-hidden="true" />
+        <ul>
+          {visible(simple).map((l) => (
+            <li key={l.label} onClick={onNavigate}>
+              <NavLinkOrText
+                d={destinations.nav(l.label, l.href)}
+                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Wide mega panel. Rendered at header-container level and stretched to the
+ * container edges, so its left and right edges are always inside the page.
+ * Columns recompose (2 up, 4 from md) instead of clipping.
+ */
+function MegaPanel({ item, onNavigate }: { item: NavItem; onNavigate: () => void }) {
+  const tint = item.tint ? tintStyles[item.tint] : null;
+  return (
+    <div className="menu-in w-full">
       <div className="overflow-hidden rounded-2xl border border-border bg-popover text-popover-foreground shadow-menu">
         <span className={`block h-1 w-full ${tint?.bar ?? "bg-gold"}`} aria-hidden="true" />
-        <div className="grid gap-8 p-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 p-6 md:grid-cols-4 md:gap-8 md:p-8">
           {item.columns?.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} className="min-w-0">
               <h3 className={`text-xs font-bold uppercase tracking-widest ${tint?.heading ?? "text-primary"}`}>
                 {col.title}
               </h3>
@@ -295,7 +313,7 @@ function Dropdown({ item, onNavigate }: { item: NavItem; onNavigate: () => void 
           ))}
         </div>
         {item.blurb && (
-          <p className={`px-8 py-4 text-sm font-medium ${tint?.chip ?? "bg-secondary text-foreground"}`}>
+          <p className={`px-6 py-4 text-sm font-medium md:px-8 ${tint?.chip ?? "bg-secondary text-foreground"}`}>
             {item.blurb}
           </p>
         )}
