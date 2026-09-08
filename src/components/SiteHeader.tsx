@@ -77,7 +77,7 @@ export function SiteHeader() {
           : "bg-transparent text-primary-foreground"
       }`}
     >
-      <nav aria-label="Main navigation" className="container-page">
+      <nav aria-label="Main navigation" className="container-page relative">
         <div className="flex items-center justify-between gap-4 py-2.5">
           <Logo />
 
