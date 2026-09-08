@@ -152,6 +152,18 @@ export function SiteHeader() {
             {mobileOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
         </div>
+
+        {/* Mega panel is anchored to the header container, never to the clicked
+            item, so it can never overflow the viewport horizontally. */}
+        {openIndex !== null && navItems[openIndex]?.columns && (
+          <div
+            className="absolute inset-x-0 top-full hidden pt-3 min-[900px]:block"
+            onMouseEnter={() => open(openIndex)}
+            onMouseLeave={scheduleClose}
+          >
+            <MegaPanel item={navItems[openIndex]!} onNavigate={() => setOpenIndex(null)} />
+          </div>
+        )}
       </nav>
 
       {/* Mobile slide-in menu */}
