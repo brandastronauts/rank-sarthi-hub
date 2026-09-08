@@ -318,6 +318,36 @@ export const jeePhysicsSimpleHarmonicMotion: ChapterContent = {
         ["Driven response", "Forcing, damping, resonance model", "Natural versus driving frequency and damping"],
       ],
     },
+    {
+      id: "pi-diagnosis",
+      jump: true,
+      slot: "diagnosis",
+      heading: "PI v1.1 diagnosis: name the first wrong decision",
+      intro: "Use the evidence in the failed solution to choose one primary label before repeating practice.",
+      columns: ["Primary label", "Evidence in a failed solution", "Corrective action"],
+      rows: [
+        ["Knowledge Gap", "Cannot say why a restoring force proportional to displacement produces sinusoidal motion", "Rebuild the equilibrium and restoring-law definitions before formula work"],
+        ["Recall Gap", "Model chosen correctly, but the period relation or energy expression is unavailable", "Retrieve each relation with its variables, units and validity condition"],
+        ["Execution Error", "Correct model, but phase, radians, amplitude origin or algebra is mishandled", "Rework the same problem with the phase and origin written out explicitly"],
+        ["Decision / Selection Error", "Uses the time equation when an energy relation answers the question, or applies the small-angle pendulum result outside its range", "Mark the question signal in the method selector before calculating"],
+        ["Needs Review", "Assumes a damping, driving or spring-arrangement condition the prompt never established", "Send the assumption and the full solution for academic review"],
+      ],
+      note: "Exactly one primary label per attempt. Contributing factors may be recorded separately.",
+    },
+    {
+      id: "official-paper-handling",
+      jump: true,
+      slot: "practice",
+      heading: "Official-paper handling",
+      intro: "Practice with official papers only, and treat chapter tagging as a reviewed classification rather than an automatic one.",
+      columns: ["Step", "What to do"],
+      rows: [
+        ["Source", "Use the official JEE Main question papers and the official JEE Advanced archive only"],
+        ["Tagging", "Attach a question to this chapter only after academic review confirms the model actually tested"],
+        ["Filters", "Expose filters for SHM identification, spring systems, pendulums, energy and damped or driven response only after reviewer verification"],
+        ["Held back", "No counts, frequency claims, trend charts, predicted weightage or expected-question numbers are published"],
+      ],
+    },
   ],
 
   /* ------------------------------------------------------------------ */
