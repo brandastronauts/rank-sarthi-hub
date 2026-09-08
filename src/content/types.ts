@@ -556,3 +556,59 @@ export interface PageMeta {
   ogImage?: string;
   ogType?: "website" | "article";
 }
+
+/* ------------------------------------------------------------------ */
+/* Subject hub (T04)                                                   */
+/* ------------------------------------------------------------------ */
+
+/** Per-chapter editorial annotation. Names and URLs come from the registry. */
+export interface SubjectChapterNote {
+  /** Registry path of the chapter route. */
+  url: string;
+  /** Official-scope label, e.g. "Both", "Main", "No current mapping". */
+  scope: string;
+  /** Relationship and next-use sentence. */
+  note: string;
+  /** Display order in the chapter map. */
+  order?: number;
+  /** True when the route is NOT current official syllabus scope. */
+  contextual?: boolean;
+}
+
+export interface SubjectHubContent {
+  /** Registry path, e.g. "/jee/physics". */
+  url: string;
+  platform: Exclude<Platform, "main">;
+  /** Route slug, e.g. "physics". */
+  slug: string;
+  subject: string;
+  exam: string;
+  title: string;
+  eyebrow?: string;
+  intent?: string;
+  answer: RichText;
+  contentStatus: ContentStatus;
+  chips?: string[];
+  /** Task-routing table (B25). Destinations are labels, never dead links. */
+  taskTable?: SyllabusTable;
+  /** Concept-architecture table (B25). */
+  architecture?: SyllabusTable;
+  chapterMap: {
+    heading: string;
+    scopeNote?: string;
+    contextualHeading?: string;
+    contextualNote?: string;
+    /** Expected number of built chapter routes; used by QA only. */
+    expectedCount?: number;
+    notes: SubjectChapterNote[];
+  };
+  /** Subject-level PYQ availability statement (plain text, no invented data). */
+  pyqNote?: string;
+  /** Diagnosis table (B25). */
+  diagnosis?: SyllabusTable;
+  relatedLinks?: LinkContract[];
+  faqs?: FaqItem[];
+  sourceRefs?: string[];
+  lastVerified?: string;
+  seo?: PageMeta;
+}
