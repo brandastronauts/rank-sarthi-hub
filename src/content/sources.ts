@@ -142,6 +142,12 @@ export const sources: Record<string, SourceRef> = {
   "josaa-official": { id: "josaa-official", label: "Joint Seat Allocation Authority (JoSAA) official portal", publisher: "JoSAA", url: "https://josaa.nic.in/", sourceType: "official", lastVerified: "9 September 2026" },
   "csab-official": { id: "csab-official", label: "Central Seat Allocation Board (CSAB) official portal", publisher: "CSAB", url: "https://csab.nic.in/", sourceType: "official", lastVerified: "9 September 2026" },
 
+  "nta-neet-documents": { id: "nta-neet-documents", label: "NTA NEET (UG) official documents portal", publisher: "National Testing Agency (NTA)", url: "https://neet.nta.nic.in/documents/", sourceType: "official", lastVerified: "9 September 2026" },
+  "nta-neet-2026-bulletin": { id: "nta-neet-2026-bulletin", label: "NEET (UG) 2026 Information Bulletin, including syllabus appendix and official syllabus FAQ (PDF)", publisher: "National Testing Agency (NTA)", url: "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/202602231394640855.pdf", sourceType: "official-pdf", lastVerified: "9 September 2026" },
+  "nmc-neet-ug-2026-syllabus": { id: "nmc-neet-ug-2026-syllabus", label: "NEET (UG) 2026 syllabus, National Medical Commission / NTA (PDF)", publisher: "National Medical Commission (UGMEB) / NTA", url: "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/202601081066816297.pdf", sourceType: "official-pdf", lastVerified: "9 September 2026" },
+  "ncert-biology-11-contents": { id: "ncert-biology-11-contents", label: "NCERT Biology Class XI, current contents (PDF)", publisher: "NCERT", url: "https://www.ncert.nic.in/textbook/pdf/kebo1ps.pdf", sourceType: "textbook", lastVerified: "9 September 2026" },
+  "ncert-biology-12-contents": { id: "ncert-biology-12-contents", label: "NCERT Biology Class XII, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/lebo1ps.pdf", sourceType: "textbook", lastVerified: "9 September 2026" },
+  "ncert-exemplar-index": { id: "ncert-exemplar-index", label: "NCERT Exemplar Problems index", publisher: "NCERT", url: "https://ncert.nic.in/exemplar-problems.php?ln=en", sourceType: "textbook", lastVerified: "9 September 2026" },
 };
 
 
