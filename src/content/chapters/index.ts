@@ -97,6 +97,45 @@ import { jeeMathematicsTrigonometry } from "./jee-mathematics-trigonometry";
 import { jeeMathematicsVectors } from "./jee-mathematics-vectors";
 import { jeeMathematicsApplicationOfDerivatives } from "./jee-mathematics-application-of-derivatives";
 import { jeeMathematicsMathematicalReasoning } from "./jee-mathematics-mathematical-reasoning";
+import { neetBiologyAnatomyOfPlants } from "./neet-biology-anatomy-of-plants";
+import { neetBiologyAnimalKingdom } from "./neet-biology-animal-kingdom";
+import { neetBiologyBiodiversityConservation } from "./neet-biology-biodiversity-conservation";
+import { neetBiologyBiologicalClassification } from "./neet-biology-biological-classification";
+import { neetBiologyBiomolecules } from "./neet-biology-biomolecules";
+import { neetBiologyBiotechnologyApplications } from "./neet-biology-biotechnology-applications";
+import { neetBiologyBiotechnology } from "./neet-biology-biotechnology";
+import { neetBiologyBodyFluidsCirculation } from "./neet-biology-body-fluids-circulation";
+import { neetBiologyBreathingExchangeGases } from "./neet-biology-breathing-exchange-gases";
+import { neetBiologyCellBiology } from "./neet-biology-cell-biology";
+import { neetBiologyChemicalCoordination } from "./neet-biology-chemical-coordination";
+import { neetBiologyDigestionAbsorption } from "./neet-biology-digestion-absorption";
+import { neetBiologyEcology } from "./neet-biology-ecology";
+import { neetBiologyEcosystem } from "./neet-biology-ecosystem";
+import { neetBiologyEnvironmentalIssues } from "./neet-biology-environmental-issues";
+import { neetBiologyEvolution } from "./neet-biology-evolution";
+import { neetBiologyExcretoryProducts } from "./neet-biology-excretory-products";
+import { neetBiologyGenetics } from "./neet-biology-genetics";
+import { neetBiologyHumanHealthDisease } from "./neet-biology-human-health-disease";
+import { neetBiologyHumanPhysiology } from "./neet-biology-human-physiology";
+import { neetBiologyHumanReproduction } from "./neet-biology-human-reproduction";
+import { neetBiologyLivingWorld } from "./neet-biology-living-world";
+import { neetBiologyLocomotionMovement } from "./neet-biology-locomotion-movement";
+import { neetBiologyMicrobesHumanWelfare } from "./neet-biology-microbes-human-welfare";
+import { neetBiologyMolecularBasisOfInheritance } from "./neet-biology-molecular-basis-of-inheritance";
+import { neetBiologyMorphologyOfPlants } from "./neet-biology-morphology-of-plants";
+import { neetBiologyNeuralControl } from "./neet-biology-neural-control";
+import { neetBiologyOrganismsPopulations } from "./neet-biology-organisms-populations";
+import { neetBiologyPhotosynthesis } from "./neet-biology-photosynthesis";
+import { neetBiologyPlantKingdom } from "./neet-biology-plant-kingdom";
+import { neetBiologyPlantPhysiology } from "./neet-biology-plant-physiology";
+import { neetBiologyPrinciplesOfInheritance } from "./neet-biology-principles-of-inheritance";
+import { neetBiologyReproduction } from "./neet-biology-reproduction";
+import { neetBiologyReproductiveHealth } from "./neet-biology-reproductive-health";
+import { neetBiologyRespirationInPlants } from "./neet-biology-respiration-in-plants";
+import { neetBiologySexualReproductionPlants } from "./neet-biology-sexual-reproduction-plants";
+import { neetBiologyStructuralOrganisationAnimals } from "./neet-biology-structural-organisation-animals";
+import { neetBiologyTransportInPlants } from "./neet-biology-transport-in-plants";
+
 const chapters: ChapterContent[] = [
   jeePhysicsElectrostatics,
   jeePhysicsCurrentElectricity,
@@ -188,6 +227,44 @@ const chapters: ChapterContent[] = [
   jeeMathematicsVectors,
   jeeMathematicsApplicationOfDerivatives,
   jeeMathematicsMathematicalReasoning,
+  neetBiologyAnatomyOfPlants,
+  neetBiologyAnimalKingdom,
+  neetBiologyBiodiversityConservation,
+  neetBiologyBiologicalClassification,
+  neetBiologyBiomolecules,
+  neetBiologyBiotechnologyApplications,
+  neetBiologyBiotechnology,
+  neetBiologyBodyFluidsCirculation,
+  neetBiologyBreathingExchangeGases,
+  neetBiologyCellBiology,
+  neetBiologyChemicalCoordination,
+  neetBiologyDigestionAbsorption,
+  neetBiologyEcology,
+  neetBiologyEcosystem,
+  neetBiologyEnvironmentalIssues,
+  neetBiologyEvolution,
+  neetBiologyExcretoryProducts,
+  neetBiologyGenetics,
+  neetBiologyHumanHealthDisease,
+  neetBiologyHumanPhysiology,
+  neetBiologyHumanReproduction,
+  neetBiologyLivingWorld,
+  neetBiologyLocomotionMovement,
+  neetBiologyMicrobesHumanWelfare,
+  neetBiologyMolecularBasisOfInheritance,
+  neetBiologyMorphologyOfPlants,
+  neetBiologyNeuralControl,
+  neetBiologyOrganismsPopulations,
+  neetBiologyPhotosynthesis,
+  neetBiologyPlantKingdom,
+  neetBiologyPlantPhysiology,
+  neetBiologyPrinciplesOfInheritance,
+  neetBiologyReproduction,
+  neetBiologyReproductiveHealth,
+  neetBiologyRespirationInPlants,
+  neetBiologySexualReproductionPlants,
+  neetBiologyStructuralOrganisationAnimals,
+  neetBiologyTransportInPlants,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));

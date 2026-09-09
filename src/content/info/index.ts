@@ -6,6 +6,10 @@ import { jeeAnswerKey } from "./jee-answer-key";
 import { jeeAnalysis } from "./jee-analysis";
 import { jeeCutoff } from "./jee-cutoff";
 import { jeeExamDates } from "./jee-exam-dates";
+import { neetExam } from "./neet-exam";
+import { neetNcertMapping } from "./neet-ncert-mapping";
+import { neetNcertImportantPages } from "./neet-ncert-important-pages";
+import { neetSyllabusBiology } from "./neet-syllabus-biology";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
@@ -19,6 +23,10 @@ export const infoPages: InfoPageContent[] = [
   jeeAnalysis,
   jeeCutoff,
   jeeExamDates,
+  neetExam,
+  neetNcertMapping,
+  neetNcertImportantPages,
+  neetSyllabusBiology,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));

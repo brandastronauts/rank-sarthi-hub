@@ -627,11 +627,224 @@ export const platforms: Record<string, PlatformData> = {
     slug: "neet",
     productName: "NeetRankUp",
     examName: "NEET (UG)",
-    buildStatus: "planned",
+    buildStatus: "built",
     accent: "neet",
-    tagline: "NCERT-anchored diagnosis for NEET aspirants.",
-    intro: [],
+    conductingBody: "National Testing Agency (NTA)",
+    tagline: "NEET Preparation: Official Syllabus, NCERT Mapping and Subject Learning Paths",
+    deck: "Rank Sarthi NEET routes you from the verified official NEET syllabus into Biology, Physics and Chemistry learning pages, with NCERT-oriented mapping where it can be supported.",
+    hero: {
+      eyebrow: "NEET (UG) 2026 | Latest verified cycle | NEET (UG) 2027 not officially announced",
+      chips: ["Official-source checked", "NCERT-oriented Biology mapping", "No invented weightage or predictions"],
+      primary: { label: "Check current exam status", href: "/neet/neet-exam" },
+      secondary: { label: "Open the official syllabus", href: "/neet/syllabus" },
+      productCtaLabel: "Diagnose your next NEET attempt",
+    },
+    intro: [
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "Rank Sarthi NEET is a preparation hub that routes students from the verified official NEET syllabus into Biology, Physics and Chemistry learning pages, with NCERT-oriented mapping where it can be supported. The latest verified cycle used on this page is NEET UG 2026.",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "NEET UG 2027 date, application schedule, pattern and syllabus details are not officially announced in the official sources checked for this page. Treat any 2027 claim you see elsewhere as unverified until NTA or NMC publishes it.",
+          },
+        ],
+      },
+    ],
     subjects: ["Physics", "Chemistry", "Biology"],
+
+    cycleSnapshot: {
+      eyebrow: "Current cycle",
+      heading: "NEET (UG) 2026 at a glance",
+      rows: [
+        { label: "Conducting body", value: "National Testing Agency (NTA)" },
+        { label: "Latest verified cycle", value: "NEET (UG) 2026" },
+        { label: "Result declared", value: "16 July 2026" },
+        { label: "Examination date used for the declared result", value: "21 June 2026, as reported in NTA's 16 July 2026 result press release" },
+        { label: "NEET (UG) 2027 status", value: "Not officially announced in the official sources checked on 9 September 2026" },
+      ],
+      note: "This snapshot applies to the NEET (UG) 2026 cycle and was verified on 9 September 2026 against official NTA sources. Do not treat a 2026 rule as a 2027 rule until NTA or NMC publishes the next official bulletin.",
+      verifiedOn: "9 September 2026",
+      sourceRefs: ["nta-neet-documents", "nta-neet-2026-bulletin"],
+      refreshTrigger: "Refresh when NTA publishes a new NEET (UG) notice, bulletin, result or syllabus update. Run a monthly cycle check until the 2027 bulletin appears.",
+    },
+
+    taskGroups: [
+      {
+        id: "understand-the-exam",
+        title: "I do not know the current NEET rules yet",
+        body: "Start with the verified official status, the 2026 pattern and marking rules, and the eligibility baseline before choosing any preparation content.",
+        links: [{ label: "NEET exam overview", url: "/neet/neet-exam" }],
+      },
+      {
+        id: "check-syllabus",
+        title: "I need the official academic boundary",
+        body: "Use the official current syllabus to separate what is currently examinable from routes that exist only as site architecture.",
+        links: [
+          { label: "Complete NEET syllabus", url: "/neet/syllabus" },
+          { label: "Biology syllabus", url: "/neet/syllabus/biology" },
+        ],
+      },
+      {
+        id: "biology-led",
+        title: "I am Biology-led and want to start learning",
+        body: "Open the Biology hub and use the current-scope route labels rather than assuming every listed route is current syllabus.",
+        links: [{ label: "Biology hub", url: "/neet/biology" }],
+      },
+      {
+        id: "ncert-relationship",
+        title: "I want to understand the NCERT relationship",
+        body: "See how Rank Sarthi's mapping methodology connects the official syllabus, NCERT Biology and Rank Sarthi learning routes.",
+        links: [{ label: "NCERT mapping methodology", url: "/neet/ncert-mapping" }],
+      },
+      {
+        id: "ncert-important-pages",
+        title: "I am looking for important NCERT pages",
+        body: "This page deliberately uses edition-safe chapter, concept, diagram and terminology references instead of unsupported universal page numbers.",
+        links: [{ label: "NCERT important areas", url: "/neet/ncert-important-pages" }],
+      },
+    ],
+
+    diagnosticLenses: [
+      {
+        title: "Official cycle",
+        body: "What is officially announced right now, and by which authority (NTA/NMC).",
+      },
+      {
+        title: "Official syllabus",
+        body: "What is currently examinable, separated from what a registered route merely names.",
+      },
+      {
+        title: "Learning route",
+        body: "Where a student learns a concept on Rank Sarthi: the Biology, Physics or Chemistry hub and its chapters.",
+      },
+      {
+        title: "Practice/evidence",
+        body: "How a student tests or verifies learning, using only verified product or PYQ evidence, never an inferred question frequency.",
+      },
+    ],
+
+    errorTaxonomy: {
+      heading: "Name the error before choosing the fix",
+      columns: ["What the review shows", "Category", "What to do next"],
+      rows: [
+        {
+          signal: "Assumes every registered route is current syllabus",
+          category: "Decision / Selection Error",
+          action: "Check the Biology syllabus truth map before choosing a chapter.",
+        },
+        {
+          signal: "Reads a chapter but cannot retrieve exact facts",
+          category: "Recall Gap",
+          action: "Use retrieval-focused Biology method rather than re-reading.",
+        },
+        {
+          signal: "Knows terms but not relationships",
+          category: "Knowledge Gap",
+          action: "Use entity/process relationship maps rather than isolated definitions.",
+        },
+        {
+          signal: "Misreads statement options or diagrams",
+          category: "Execution Error",
+          action: "Use precision and diagram checks before selecting an answer.",
+        },
+        {
+          signal: "Finds conflicting syllabus claims online",
+          category: "Needs Review",
+          action: "Return to the visible official-source layer on this hub.",
+        },
+      ],
+    },
+
+    pathwayIntro: {
+      heading: "A syllabus-to-route relationship, not a promise",
+      body: "A registered Rank Sarthi URL is an architecture commitment, not an academic claim. If a route is not explicitly listed in the current official syllabus, Rank Sarthi labels it as contextual or historical rather than implying current exam relevance.",
+    },
+
+    pathway: [
+      {
+        id: "official-cycle",
+        stage: "Official cycle",
+        body: "Confirm the current official status before relying on any date, pattern or eligibility rule.",
+        links: [{ label: "NEET exam overview", url: "/neet/neet-exam" }],
+      },
+      {
+        id: "official-syllabus",
+        stage: "Official syllabus",
+        body: "Separate subject and unit boundaries as published in the current official syllabus.",
+        links: [
+          { label: "NEET syllabus", url: "/neet/syllabus" },
+          { label: "Biology syllabus", url: "/neet/syllabus/biology" },
+        ],
+      },
+      {
+        id: "learning-route",
+        stage: "Learning route",
+        body: "Move into the Biology, Physics or Chemistry hub and choose the chapter that matches your current-scope status.",
+        links: [{ label: "Biology hub", url: "/neet/biology" }],
+      },
+      {
+        id: "ncert-mapping",
+        stage: "NCERT relationship",
+        body: "Understand how Rank Sarthi connects the syllabus, NCERT Biology concepts and Rank Sarthi routes, and where exact-line claims stay hidden until evidenced.",
+        links: [{ label: "NCERT mapping methodology", url: "/neet/ncert-mapping" }],
+      },
+    ],
+
+    relatedUrls: [
+      "/neet/neet-exam",
+      "/neet/syllabus",
+      "/neet/syllabus/biology",
+      "/neet/ncert-mapping",
+      "/neet/ncert-important-pages",
+      "/neet/biology",
+    ],
+
+    showPricing: false,
+
+    faqs: [
+      {
+        q: "What is the latest official NEET cycle used by this page?",
+        a: "NEET UG 2026 is the latest verified completed/current cycle in this package. NTA declared the result on 16 July 2026.",
+      },
+      {
+        q: "Has NEET UG 2027 been officially announced?",
+        a: "Not in the official NTA/NMC sources checked on 9 September 2026. Do not assume a 2027 date, pattern or syllabus yet.",
+      },
+      {
+        q: "Does every Rank Sarthi Biology URL represent a current NEET syllabus chapter?",
+        a: "No. The URL registry is architecture, not syllabus proof. Biology routes are labelled as current, contextual umbrella, partial/merged or historical/not currently listed.",
+      },
+      {
+        q: "Is Rank Sarthi claiming exact NCERT-line mapping here?",
+        a: "No. The page explains the mapping methodology and exposes live product granularity only when verified evidence exists.",
+      },
+    ],
+
+    finalCta: {
+      eyebrow: "NeetRankUp",
+      heading: "Start from verified status, not assumption",
+      body: "Open the current exam overview or the official syllabus before choosing a subject or chapter to study.",
+      secondaryHref: "/neet/neet-exam",
+      secondaryLabel: "Check current exam status",
+    },
+
+    seo: {
+      title: "NEET Preparation: Syllabus, NCERT Mapping & Subjects | Rank Sarthi",
+      description: "Navigate NEET preparation through verified official-cycle status, the current syllabus, Biology, Physics, Chemistry and NCERT-oriented learning paths.",
+      ogTitle: "NEET Preparation: Official Syllabus, NCERT Mapping and Subject Learning Paths",
+      ogDescription: "Verified official-cycle status first, then syllabus, subject and NCERT-oriented learning routes.",
+    },
+
+    sourceStatus: "Verified against official NTA/NMC sources checked on 9 September 2026.",
+    sourceRefs: ["nta-neet-documents", "nta-neet-2026-bulletin", "nmc-neet-ug-2026-syllabus"],
+    lastVerified: "9 September 2026",
   },
 };
 

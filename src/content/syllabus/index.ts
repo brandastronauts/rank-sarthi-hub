@@ -1,5 +1,6 @@
 import type { SyllabusContent } from "@/content/types";
 import { jeeSyllabus } from "./jee";
+import { neetSyllabus } from "./neet";
 
 /**
  * Syllabus content registry (T05). One record per platform; a platform with
@@ -7,6 +8,7 @@ import { jeeSyllabus } from "./jee";
  */
 const syllabi: Record<string, SyllabusContent> = {
   jee: jeeSyllabus,
+  neet: neetSyllabus,
 };
 
 export function getSyllabus(platform: string): SyllabusContent | undefined {
