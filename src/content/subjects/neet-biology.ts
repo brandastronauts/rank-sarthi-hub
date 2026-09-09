@@ -27,7 +27,7 @@ export const neetBiologyHub: SubjectHubContent = {
       type: "paragraph",
       children: [
         {
-          text: "NEET Biology preparation should begin with the current official syllabus, then use NCERT-oriented concept relationships and precise retrieval rather than treating all 38 Rank Sarthi routes as equal chapters. The verified route map contains 29 current-scope routes, 5 contextual umbrellas, 1 partial or merged route and 3 historical or not-currently-listed routes.",
+          text: "NEET Biology preparation should begin with the current official syllabus, then use NCERT-oriented concept relationships and precise retrieval rather than treating all 38 Rank Sarthi routes as equal chapters. The verified route map contains 30 current-scope routes, 4 contextual umbrellas, 1 partial or merged route and 3 historical or not-currently-listed routes.",
         },
       ],
     },
@@ -103,7 +103,7 @@ export const neetBiologyHub: SubjectHubContent = {
       { url: "/neet/biology/evolution", scope: "current official scope", order: 29, note: "Unit 7: Genetics and Evolution. Explicit current topic cluster." },
       { url: "/neet/biology/human-health-disease", scope: "current official scope", order: 30, note: "Unit 8: Biology and Human Welfare. Health and disease topics are explicitly current." },
       { url: "/neet/biology/microbes-human-welfare", scope: "current official scope", order: 31, note: "Unit 8: Biology and Human Welfare. Microbes in human welfare are explicitly current." },
-      { url: "/neet/biology/biotechnology", scope: "contextual umbrella route", order: 32, note: "Concept/process umbrella over Unit 9: Biotechnology and Its Applications; application depth belongs to the focused child route." },
+      { url: "/neet/biology/biotechnology", scope: "current official scope", order: 32, note: "Unit 9: Biotechnology and Its Applications. Current-scope process owner for principles and process of genetic engineering." },
       { url: "/neet/biology/biotechnology-applications", scope: "current official scope", order: 33, note: "Unit 9: Biotechnology and Its Applications. Application topics are explicitly current." },
       { url: "/neet/biology/ecology", scope: "contextual umbrella route", order: 34, note: "Broad routing layer over Unit 10: Ecology and Environment; routes to the focused children below." },
       { url: "/neet/biology/organisms-populations", scope: "current official scope", order: 35, note: "Unit 10: Ecology and Environment. Organisms, environment and population topics are explicitly current." },
