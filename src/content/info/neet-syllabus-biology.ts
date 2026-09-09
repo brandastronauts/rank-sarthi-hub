@@ -9,8 +9,9 @@ import type { InfoPageContent } from "../types";
  * syllabus (10 units) and Rank Sarthi's 38 registered Biology routes. Every
  * route is classified into exactly one of four accepted states, transcribed
  * unflattened from the package's Biology route reconciliation (section E):
- *   CURRENT_OFFICIAL_SCOPE (29), CONTEXTUAL_UMBRELLA (5),
+ *   CURRENT_OFFICIAL_SCOPE (30), CONTEXTUAL_UMBRELLA (4),
  *   PARTIAL_OR_MERGED_SCOPE (1), HISTORICAL_OR_NOT_CURRENTLY_LISTED (3).
+ * Final N05 reconciliation supersedes the earlier N01 29/5 aggregate.
  */
 export const neetSyllabusBiology: InfoPageContent = {
   url: "/neet/syllabus/biology",
@@ -33,7 +34,7 @@ export const neetSyllabusBiology: InfoPageContent = {
       type: "paragraph",
       children: [
         {
-          text: "The official NEET UG 2026 Biology syllabus contains 10 units, from Diversity in Living World through Ecology and Environment. Rank Sarthi has 38 frozen Biology topic routes, but those routes are not all equivalent to current official syllabus headings. In this reconciliation, 29 routes are current official scope, 5 are contextual umbrellas, 1 is partial or merged scope, and 3 are historical or not currently listed.",
+          text: "The official NEET UG 2026 Biology syllabus contains 10 units, from Diversity in Living World through Ecology and Environment. Rank Sarthi has 38 frozen Biology topic routes, but those routes are not all equivalent to current official syllabus headings. In this reconciliation, 30 routes are current official scope, 4 are contextual umbrellas, 1 is partial or merged scope, and 3 are historical or not currently listed.",
         },
       ],
     },
@@ -73,7 +74,7 @@ export const neetSyllabusBiology: InfoPageContent = {
     {
       kind: "table",
       id: "current-official-scope-routes",
-      heading: "Current official scope — 29 routes",
+      heading: "Current official scope — 30 routes",
       intro: "Each route owns content explicitly represented in the current official NEET UG 2026 Biology syllabus.",
       columns: ["Route slug", "Page", "2026 official relationship", "Editorial boundary"],
       rows: [
@@ -102,6 +103,7 @@ export const neetSyllabusBiology: InfoPageContent = {
         ["principles-of-inheritance", "Principles of Inheritance", "Unit 7: Genetics and Evolution", "Heredity, variation and Mendelian inheritance are explicitly current."],
         ["human-health-disease", "Human Health Disease", "Unit 8: Biology and Human Welfare", "Health and disease topics are explicitly current."],
         ["microbes-human-welfare", "Microbes Human Welfare", "Unit 8: Biology and Human Welfare", "Microbes in human welfare are explicitly current."],
+        ["biotechnology", "Biotechnology", "Unit 9: Biotechnology and Its Applications", "Current official scope process owner for principles and process of genetic engineering."],
         ["biotechnology-applications", "Biotechnology Applications", "Unit 9: Biotechnology and Its Applications", "Application topics are explicitly current."],
         ["organisms-populations", "Organisms Populations", "Unit 10: Ecology and Environment", "Organisms, environment and population topics are explicitly current."],
         ["ecosystem", "Ecosystem", "Unit 10: Ecology and Environment", "Ecosystem topics are explicitly current."],
@@ -111,14 +113,14 @@ export const neetSyllabusBiology: InfoPageContent = {
     {
       kind: "table",
       id: "contextual-umbrella-routes",
-      heading: "Contextual umbrella — 5 routes",
+      heading: "Contextual umbrella — 4 routes",
       intro: "Useful learning or routing layers over current official topics; not themselves official syllabus headings.",
       columns: ["Route slug", "Page", "2026 official relationship", "Editorial boundary"],
       rows: [
         ["genetics", "Genetics", "Unit 7: Genetics and Evolution", "Broad routing layer for inheritance, molecular genetics and evolution."],
         ["cell-biology", "Cell Biology", "Unit 3: Cell Structure and Function", "Editorial umbrella aligned to the current cell unit."],
         ["ecology", "Ecology", "Unit 10: Ecology and Environment", "Broad routing layer over current ecology topics."],
-        ["biotechnology", "Biotechnology", "Unit 9: Biotechnology and Its Applications", "Concept/process umbrella; application depth belongs to the focused child route."],
+        
         ["reproduction", "Reproduction", "Unit 6: Reproduction", "Broad routing layer over current reproduction topics."],
       ],
     },
