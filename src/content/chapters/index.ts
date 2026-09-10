@@ -181,6 +181,22 @@ import { neetPhysicsWaveOptics } from "./neet-physics-wave-optics";
 import { neetPhysicsWaves } from "./neet-physics-waves";
 import { neetPhysicsWorkEnergyPower } from "./neet-physics-work-energy-power";
 
+import { neetChemistryOrganicChemistry } from "./neet-chemistry-organic-chemistry";
+import { neetChemistryHydrocarbons } from "./neet-chemistry-hydrocarbons";
+import { neetChemistryHaloalkanesHaloarenes } from "./neet-chemistry-haloalkanes-haloarenes";
+import { neetChemistryAlcoholsPhenolsEthers } from "./neet-chemistry-alcohols-phenols-ethers";
+import { neetChemistryAldehydesKetones } from "./neet-chemistry-aldehydes-ketones";
+import { neetChemistryCarboxylicAcids } from "./neet-chemistry-carboxylic-acids";
+import { neetChemistryAmines } from "./neet-chemistry-amines";
+import { neetChemistryBiomolecules } from "./neet-chemistry-biomolecules";
+import { neetChemistryPolymers } from "./neet-chemistry-polymers";
+import { neetChemistrySolidState } from "./neet-chemistry-solid-state";
+import { neetChemistrySurfaceChemistry } from "./neet-chemistry-surface-chemistry";
+import { neetChemistrySBlockElements } from "./neet-chemistry-s-block-elements";
+import { neetChemistryStatesOfMatter } from "./neet-chemistry-states-of-matter";
+import { neetChemistryEnvironmentalChemistry } from "./neet-chemistry-environmental-chemistry";
+import { neetChemistryChemistryEverydayLife } from "./neet-chemistry-chemistry-everyday-life";
+
 const chapters: ChapterContent[] = [
   jeePhysicsElectrostatics,
   jeePhysicsCurrentElectricity,
@@ -354,6 +370,21 @@ const chapters: ChapterContent[] = [
   neetPhysicsWaveOptics,
   neetPhysicsWaves,
   neetPhysicsWorkEnergyPower,
+  neetChemistryOrganicChemistry,
+  neetChemistryHydrocarbons,
+  neetChemistryHaloalkanesHaloarenes,
+  neetChemistryAlcoholsPhenolsEthers,
+  neetChemistryAldehydesKetones,
+  neetChemistryCarboxylicAcids,
+  neetChemistryAmines,
+  neetChemistryBiomolecules,
+  neetChemistryPolymers,
+  neetChemistrySolidState,
+  neetChemistrySurfaceChemistry,
+  neetChemistrySBlockElements,
+  neetChemistryStatesOfMatter,
+  neetChemistryEnvironmentalChemistry,
+  neetChemistryChemistryEverydayLife,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
