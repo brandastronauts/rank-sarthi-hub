@@ -136,6 +136,51 @@ import { neetBiologySexualReproductionPlants } from "./neet-biology-sexual-repro
 import { neetBiologyStructuralOrganisationAnimals } from "./neet-biology-structural-organisation-animals";
 import { neetBiologyTransportInPlants } from "./neet-biology-transport-in-plants";
 
+import { neetChemistryAtomicStructure } from "./neet-chemistry-atomic-structure";
+import { neetChemistryChemicalBonding } from "./neet-chemistry-chemical-bonding";
+import { neetChemistryChemicalKinetics } from "./neet-chemistry-chemical-kinetics";
+import { neetChemistryCoordinationCompounds } from "./neet-chemistry-coordination-compounds";
+import { neetChemistryDAndFBlockElements } from "./neet-chemistry-d-and-f-block-elements";
+import { neetChemistryElectrochemistry } from "./neet-chemistry-electrochemistry";
+import { neetChemistryEquilibrium } from "./neet-chemistry-equilibrium";
+import { neetChemistryIonicEquilibrium } from "./neet-chemistry-ionic-equilibrium";
+import { neetChemistryPBlockElements } from "./neet-chemistry-p-block-elements";
+import { neetChemistryPeriodicClassification } from "./neet-chemistry-periodic-classification";
+import { neetChemistryRedoxReactions } from "./neet-chemistry-redox-reactions";
+import { neetChemistrySolutions } from "./neet-chemistry-solutions";
+import { neetChemistrySomeBasicConcepts } from "./neet-chemistry-some-basic-concepts";
+import { neetChemistryStructureOfAtom } from "./neet-chemistry-structure-of-atom";
+import { neetChemistryThermodynamics } from "./neet-chemistry-thermodynamics";
+import { neetPhysicsAlternatingCurrent } from "./neet-physics-alternating-current";
+import { neetPhysicsAtoms } from "./neet-physics-atoms";
+import { neetPhysicsCurrentElectricity } from "./neet-physics-current-electricity";
+import { neetPhysicsDualNatureRadiation } from "./neet-physics-dual-nature-radiation";
+import { neetPhysicsElectromagneticInduction } from "./neet-physics-electromagnetic-induction";
+import { neetPhysicsElectromagneticWaves } from "./neet-physics-electromagnetic-waves";
+import { neetPhysicsElectrostatics } from "./neet-physics-electrostatics";
+import { neetPhysicsGravitation } from "./neet-physics-gravitation";
+import { neetPhysicsGravitation2 } from "./neet-physics-gravitation-2";
+import { neetPhysicsKinematics } from "./neet-physics-kinematics";
+import { neetPhysicsKineticTheory } from "./neet-physics-kinetic-theory";
+import { neetPhysicsLawsOfMotion } from "./neet-physics-laws-of-motion";
+import { neetPhysicsMagnetism } from "./neet-physics-magnetism";
+import { neetPhysicsMechanics } from "./neet-physics-mechanics";
+import { neetPhysicsModernPhysics } from "./neet-physics-modern-physics";
+import { neetPhysicsMotionInPlane } from "./neet-physics-motion-in-plane";
+import { neetPhysicsNuclei } from "./neet-physics-nuclei";
+import { neetPhysicsOptics } from "./neet-physics-optics";
+import { neetPhysicsOscillations } from "./neet-physics-oscillations";
+import { neetPhysicsPropertiesOfMatter } from "./neet-physics-properties-of-matter";
+import { neetPhysicsRayOptics } from "./neet-physics-ray-optics";
+import { neetPhysicsRotationalMotion } from "./neet-physics-rotational-motion";
+import { neetPhysicsSemiconductorElectronics } from "./neet-physics-semiconductor-electronics";
+import { neetPhysicsThermalProperties } from "./neet-physics-thermal-properties";
+import { neetPhysicsThermodynamics } from "./neet-physics-thermodynamics";
+import { neetPhysicsUnitsMeasurements } from "./neet-physics-units-measurements";
+import { neetPhysicsWaveOptics } from "./neet-physics-wave-optics";
+import { neetPhysicsWaves } from "./neet-physics-waves";
+import { neetPhysicsWorkEnergyPower } from "./neet-physics-work-energy-power";
+
 const chapters: ChapterContent[] = [
   jeePhysicsElectrostatics,
   jeePhysicsCurrentElectricity,
@@ -265,6 +310,50 @@ const chapters: ChapterContent[] = [
   neetBiologySexualReproductionPlants,
   neetBiologyStructuralOrganisationAnimals,
   neetBiologyTransportInPlants,
+  neetChemistryAtomicStructure,
+  neetChemistryChemicalBonding,
+  neetChemistryChemicalKinetics,
+  neetChemistryCoordinationCompounds,
+  neetChemistryDAndFBlockElements,
+  neetChemistryElectrochemistry,
+  neetChemistryEquilibrium,
+  neetChemistryIonicEquilibrium,
+  neetChemistryPBlockElements,
+  neetChemistryPeriodicClassification,
+  neetChemistryRedoxReactions,
+  neetChemistrySolutions,
+  neetChemistrySomeBasicConcepts,
+  neetChemistryStructureOfAtom,
+  neetChemistryThermodynamics,
+  neetPhysicsAlternatingCurrent,
+  neetPhysicsAtoms,
+  neetPhysicsCurrentElectricity,
+  neetPhysicsDualNatureRadiation,
+  neetPhysicsElectromagneticInduction,
+  neetPhysicsElectromagneticWaves,
+  neetPhysicsElectrostatics,
+  neetPhysicsGravitation,
+  neetPhysicsGravitation2,
+  neetPhysicsKinematics,
+  neetPhysicsKineticTheory,
+  neetPhysicsLawsOfMotion,
+  neetPhysicsMagnetism,
+  neetPhysicsMechanics,
+  neetPhysicsModernPhysics,
+  neetPhysicsMotionInPlane,
+  neetPhysicsNuclei,
+  neetPhysicsOptics,
+  neetPhysicsOscillations,
+  neetPhysicsPropertiesOfMatter,
+  neetPhysicsRayOptics,
+  neetPhysicsRotationalMotion,
+  neetPhysicsSemiconductorElectronics,
+  neetPhysicsThermalProperties,
+  neetPhysicsThermodynamics,
+  neetPhysicsUnitsMeasurements,
+  neetPhysicsWaveOptics,
+  neetPhysicsWaves,
+  neetPhysicsWorkEnergyPower,
 ];
 
 const byUrl = new Map(chapters.map((c) => [c.url, c]));
