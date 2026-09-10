@@ -118,188 +118,188 @@ export const neetSyllabusChemistry: InfoPageContent = {
       "id": "chemistry-route-ownership",
       "heading": "Route ownership: every registered Chemistry route",
       "columns": [
-        "Route",
+        "Route (under /neet/chemistry/)",
         "Status",
         "Official 2026 relationship",
         "Ownership boundary"
       ],
       "rows": [
         [
-          "/neet/chemistry/organic-chemistry",
+          "organic-​chemistry",
           "Contextual Umbrella",
           "Units 13-19",
           "Editorial umbrella over current Organic Chemistry units; C02 owns focused organic routes."
         ],
         [
-          "/neet/chemistry/chemical-bonding",
+          "chemical-​bonding",
           "Current Official Scope",
           "Unit 3",
           "Own the full Chemical Bonding and Molecular Structure unit despite shorter route label."
         ],
         [
-          "/neet/chemistry/thermodynamics",
+          "thermodynamics",
           "Current Official Scope",
           "Unit 4",
           "Own Chemical Thermodynamics."
         ],
         [
-          "/neet/chemistry/equilibrium",
+          "equilibrium",
           "Current Official Scope",
           "Unit 6",
           "Broad owner for physical and chemical equilibrium plus the relationship to ionic equilibrium."
         ],
         [
-          "/neet/chemistry/atomic-structure",
+          "atomic-​structure",
           "Current Official Scope",
           "Unit 2",
           "Canonical content owner for official Atomic Structure."
         ],
         [
-          "/neet/chemistry/chemical-kinetics",
+          "chemical-​kinetics",
           "Current Official Scope",
           "Unit 8",
           "Own Chemical Kinetics."
         ],
         [
-          "/neet/chemistry/electrochemistry",
+          "electrochemistry",
           "Partial Or Merged Scope",
           "Unit 7",
           "Focused split of Redox Reactions and Electrochemistry; owns electrochemical portion only."
         ],
         [
-          "/neet/chemistry/coordination-compounds",
+          "coordination-​compounds",
           "Current Official Scope",
           "Unit 12",
           "Own Co-ordination Compounds."
         ],
         [
-          "/neet/chemistry/p-block-elements",
+          "p-​block-​elements",
           "Current Official Scope",
           "Unit 10",
           "Own the current general Group 13-18 trends scope, not encyclopaedic compound chemistry."
         ],
         [
-          "/neet/chemistry/d-and-f-block-elements",
+          "d-​and-​f-​block-​elements",
           "Current Official Scope",
           "Unit 11",
           "Own first-row transition trends, K2Cr2O7, KMnO4, lanthanoids and actinoids at current depth."
         ],
         [
-          "/neet/chemistry/hydrocarbons",
+          "hydrocarbons",
           "Current Official Scope",
           "Unit 15",
           "Current official Organic Chemistry unit; C02 content owner."
         ],
         [
-          "/neet/chemistry/haloalkanes-haloarenes",
+          "haloalkanes-​haloarenes",
           "Partial Or Merged Scope",
           "Unit 16",
           "Editorial/NCERT naming for the current unit Organic Compounds Containing Halogens."
         ],
         [
-          "/neet/chemistry/alcohols-phenols-ethers",
+          "alcohols-​phenols-​ethers",
           "Partial Or Merged Scope",
           "Unit 17",
           "Focused split of Organic Compounds Containing Oxygen."
         ],
         [
-          "/neet/chemistry/aldehydes-ketones",
+          "aldehydes-​ketones",
           "Partial Or Merged Scope",
           "Unit 17",
           "Focused split of Organic Compounds Containing Oxygen."
         ],
         [
-          "/neet/chemistry/carboxylic-acids",
+          "carboxylic-​acids",
           "Partial Or Merged Scope",
           "Unit 17",
           "Focused split of Organic Compounds Containing Oxygen."
         ],
         [
-          "/neet/chemistry/amines",
+          "amines",
           "Partial Or Merged Scope",
           "Unit 18",
           "Focused route within Organic Compounds Containing Nitrogen; unit also includes diazonium salts."
         ],
         [
-          "/neet/chemistry/biomolecules",
+          "biomolecules",
           "Current Official Scope",
           "Unit 19",
           "Own Biomolecules; C02 content owner."
         ],
         [
-          "/neet/chemistry/polymers",
+          "polymers",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated Polymers unit is not listed in the official 2026 Chemistry syllabus."
         ],
         [
-          "/neet/chemistry/solutions",
+          "solutions",
           "Current Official Scope",
           "Unit 5",
           "Own Solutions."
         ],
         [
-          "/neet/chemistry/solid-state",
+          "solid-​state",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated Solid State unit is not listed in the official 2026 Chemistry syllabus."
         ],
         [
-          "/neet/chemistry/surface-chemistry",
+          "surface-​chemistry",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated Surface Chemistry unit is not listed; practical Unit 20 still mentions sol preparation."
         ],
         [
-          "/neet/chemistry/redox-reactions",
+          "redox-​reactions",
           "Partial Or Merged Scope",
           "Unit 7",
           "Focused split of Redox Reactions and Electrochemistry; owns oxidation/reduction and balancing."
         ],
         [
-          "/neet/chemistry/s-block-elements",
+          "s-​block-​elements",
           "Historical Or Not Currently Listed",
           "Not a dedicated 2026 Chemistry unit",
           "s-block appears as a periodic-table block in Unit 9, but dedicated s-block chemistry is not listed."
         ],
         [
-          "/neet/chemistry/states-of-matter",
+          "states-​of-​matter",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated States of Matter unit is not listed in the official 2026 Chemistry syllabus."
         ],
         [
-          "/neet/chemistry/periodic-classification",
+          "periodic-​classification",
           "Current Official Scope",
           "Unit 9",
           "Editorial short name for Classification of Elements and Periodicity in Properties."
         ],
         [
-          "/neet/chemistry/some-basic-concepts",
+          "some-​basic-​concepts",
           "Current Official Scope",
           "Unit 1",
           "Own Some Basic Concepts in Chemistry."
         ],
         [
-          "/neet/chemistry/ionic-equilibrium",
+          "ionic-​equilibrium",
           "Partial Or Merged Scope",
           "Unit 6",
           "Focused child of Equilibrium for acid-base, buffer, hydrolysis and solubility depth."
         ],
         [
-          "/neet/chemistry/environmental-chemistry",
+          "environmental-​chemistry",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated Environmental Chemistry unit is not listed; specific environmental effects may occur inside current organic scope."
         ],
         [
-          "/neet/chemistry/chemistry-everyday-life",
+          "chemistry-​everyday-​life",
           "Historical Or Not Currently Listed",
           "Not a 2026 Chemistry unit",
           "Dedicated Chemistry in Everyday Life unit is not listed in the official 2026 Chemistry syllabus."
         ],
         [
-          "/neet/chemistry/structure-of-atom",
+          "structure-​of-​atom",
           "Duplicate Intent Review Required",
           "Overlaps Unit 2",
           "Frozen architecture supplies no distinct intent from Atomic Structure. No second near-identical article is authored."

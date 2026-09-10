@@ -245,153 +245,153 @@ export const neetSyllabusPhysics: InfoPageContent = {
       "id": "physics-route-ownership",
       "heading": "Route ownership: every registered Physics route",
       "columns": [
-        "Route",
+        "Route (under /neet/physics/)",
         "Status",
         "Ownership note"
       ],
       "rows": [
         [
-          "/neet/physics/mechanics",
+          "mechanics",
           "Contextual Umbrella",
           "Rank Sarthi mechanics navigation umbrella over current mechanics foundations; not an official unit title."
         ],
         [
-          "/neet/physics/thermodynamics",
+          "thermodynamics",
           "Current Official Scope",
           "Official Unit 8: Thermodynamics."
         ],
         [
-          "/neet/physics/optics",
+          "optics",
           "Current Official Scope",
           "Official Unit 16: Optics. Unit-level owner; focused ray/wave routes split depth."
         ],
         [
-          "/neet/physics/electrostatics",
+          "electrostatics",
           "Current Official Scope",
           "Official Unit 11: Electrostatics."
         ],
         [
-          "/neet/physics/current-electricity",
+          "current-​electricity",
           "Current Official Scope",
           "Official Unit 12: Current Electricity."
         ],
         [
-          "/neet/physics/magnetism",
+          "magnetism",
           "Partial Or Merged Scope",
           "Maps to official Unit 13: Magnetic Effects of Current and Magnetism."
         ],
         [
-          "/neet/physics/modern-physics",
+          "modern-​physics",
           "Contextual Umbrella",
           "Rank Sarthi umbrella over official Units 17-19."
         ],
         [
-          "/neet/physics/waves",
+          "waves",
           "Partial Or Merged Scope",
           "Focused child of official Unit 10: Oscillations and Waves."
         ],
         [
-          "/neet/physics/oscillations",
+          "oscillations",
           "Partial Or Merged Scope",
           "Focused child of official Unit 10: Oscillations and Waves."
         ],
         [
-          "/neet/physics/gravitation",
+          "gravitation",
           "Current Official Scope",
           "Official Unit 6: Gravitation. Canonical content owner."
         ],
         [
-          "/neet/physics/kinematics",
+          "kinematics",
           "Current Official Scope",
           "Official Unit 2: Kinematics. Unit-level owner with Motion in Plane carved out as a focused child."
         ],
         [
-          "/neet/physics/laws-of-motion",
+          "laws-​of-​motion",
           "Current Official Scope",
           "Official Unit 3: Laws of Motion."
         ],
         [
-          "/neet/physics/work-energy-power",
+          "work-​energy-​power",
           "Current Official Scope",
           "Official Unit 4: Work, Energy, and Power."
         ],
         [
-          "/neet/physics/rotational-motion",
+          "rotational-​motion",
           "Current Official Scope",
           "Official Unit 5: Rotational Motion."
         ],
         [
-          "/neet/physics/properties-of-matter",
+          "properties-​of-​matter",
           "Partial Or Merged Scope",
           "Mechanical solids/fluids owner within official Unit 7: Properties of Solids and Liquids."
         ],
         [
-          "/neet/physics/kinetic-theory",
+          "kinetic-​theory",
           "Current Official Scope",
           "Official Unit 9: Kinetic Theory of Gases."
         ],
         [
-          "/neet/physics/electromagnetic-induction",
+          "electromagnetic-​induction",
           "Partial Or Merged Scope",
           "Focused child of official Unit 14: Electromagnetic Induction and Alternating Currents."
         ],
         [
-          "/neet/physics/alternating-current",
+          "alternating-​current",
           "Partial Or Merged Scope",
           "Focused child of official Unit 14: Electromagnetic Induction and Alternating Currents."
         ],
         [
-          "/neet/physics/electromagnetic-waves",
+          "electromagnetic-​waves",
           "Current Official Scope",
           "Official Unit 15: Electromagnetic Waves."
         ],
         [
-          "/neet/physics/ray-optics",
+          "ray-​optics",
           "Partial Or Merged Scope",
           "Geometrical/ray optics portion of official Unit 16: Optics."
         ],
         [
-          "/neet/physics/wave-optics",
+          "wave-​optics",
           "Partial Or Merged Scope",
           "Wave optics portion of official Unit 16: Optics."
         ],
         [
-          "/neet/physics/dual-nature-radiation",
+          "dual-​nature-​radiation",
           "Current Official Scope",
           "Official Unit 17: Dual Nature of Matter and Radiation."
         ],
         [
-          "/neet/physics/atoms",
+          "atoms",
           "Partial Or Merged Scope",
           "Focused child of official Unit 18: Atoms and Nuclei."
         ],
         [
-          "/neet/physics/nuclei",
+          "nuclei",
           "Partial Or Merged Scope",
           "Focused child of official Unit 18: Atoms and Nuclei."
         ],
         [
-          "/neet/physics/semiconductor-electronics",
+          "semiconductor-​electronics",
           "Current Official Scope",
           "Canonical Rank Sarthi owner for official Unit 19: Electronic Devices."
         ],
         [
-          "/neet/physics/units-measurements",
+          "units-​measurements",
           "Current Official Scope",
           "Official Unit 1: Physics and Measurement."
         ],
         [
-          "/neet/physics/motion-in-plane",
+          "motion-​in-​plane",
           "Partial Or Merged Scope",
           "Focused child inside official Unit 2: Kinematics."
         ],
         [
-          "/neet/physics/gravitation-2",
+          "gravitation-​2",
           "Duplicate Intent Review Required",
           "No second official Gravitation unit or separate NCERT Gravitation chapter supports an independent near-duplicate page."
         ],
         [
-          "/neet/physics/thermal-properties",
+          "thermal-​properties",
           "Partial Or Merged Scope",
           "Thermal portion inside official Unit 7: Properties of Solids and Liquids."
         ]
