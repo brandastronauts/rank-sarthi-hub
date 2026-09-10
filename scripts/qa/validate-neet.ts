@@ -41,7 +41,7 @@ for (const url of target) {
 }
 
 // Content presence
-const neetChapters = chapters.filter((c) => c.platform === "neet");
+const neetChapters = chapters.filter((c) => c.platform === "neet" && c.subjectSlug === "biology");
 ok(neetChapters.length === 38, `expected 38 NEET chapter records, got ${neetChapters.length}`);
 for (const url of bioTopics) {
   ok(!!neetChapters.find((c) => c.url === url), `no chapter record for ${url}`);

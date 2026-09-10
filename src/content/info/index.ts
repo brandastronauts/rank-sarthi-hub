@@ -10,6 +10,8 @@ import { neetExam } from "./neet-exam";
 import { neetNcertMapping } from "./neet-ncert-mapping";
 import { neetNcertImportantPages } from "./neet-ncert-important-pages";
 import { neetSyllabusBiology } from "./neet-syllabus-biology";
+import { neetSyllabusPhysics } from "./neet-syllabus-physics";
+import { neetSyllabusChemistry } from "./neet-syllabus-chemistry";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
@@ -27,6 +29,8 @@ export const infoPages: InfoPageContent[] = [
   neetNcertMapping,
   neetNcertImportantPages,
   neetSyllabusBiology,
+  neetSyllabusPhysics,
+  neetSyllabusChemistry,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));
