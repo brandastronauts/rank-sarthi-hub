@@ -43,6 +43,8 @@ import { ConceptSections } from "@/components/blocks/ConceptSections";
 import { RelatedRail } from "@/components/blocks/RelatedRail";
 import { SourcesBox } from "@/components/blocks/SourcesBox";
 import { SubjectChapterMap } from "@/components/blocks/SubjectChapterMap";
+import { ResourceLibrary } from "@/components/blocks/ResourceLibrary";
+
 
 /* Platform template blocks (B38–B43) */
 import { PlatformMasthead } from "@/components/platform/PlatformMasthead";
@@ -77,6 +79,8 @@ export function ensureBlocksRegistered() {
     B44: SubjectChapterMap,
     B45: FreshnessPanel,
     B46: ChangeLogBlock,
+    B47: ResourceLibrary,
+
     B26: SyllabusExplorer,
     B27: TrendTable,
     B28: PriorityMap,

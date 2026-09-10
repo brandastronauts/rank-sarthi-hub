@@ -12,6 +12,10 @@ import { neetNcertImportantPages } from "./neet-ncert-important-pages";
 import { neetSyllabusBiology } from "./neet-syllabus-biology";
 import { neetSyllabusPhysics } from "./neet-syllabus-physics";
 import { neetSyllabusChemistry } from "./neet-syllabus-chemistry";
+import { neetPreviousYearPapers } from "./neet-previous-year-papers";
+import { neetAnswerKey } from "./neet-answer-key";
+import { neetCutoff } from "./neet-cutoff";
+import { neetExamDates } from "./neet-exam-dates";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
@@ -31,6 +35,10 @@ export const infoPages: InfoPageContent[] = [
   neetSyllabusBiology,
   neetSyllabusPhysics,
   neetSyllabusChemistry,
+  neetPreviousYearPapers,
+  neetAnswerKey,
+  neetCutoff,
+  neetExamDates,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));
