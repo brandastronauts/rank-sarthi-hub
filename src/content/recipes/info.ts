@@ -15,32 +15,50 @@ export function infoPageRecipe(
   const freshRecords = content.freshness ? recordsByIds(content.freshness.recordIds) : [];
   const changes = changeLogForPage(content.url);
 
-  const bodySlots: BlockSlot[] = content.blocks.map((block) =>
-    block.kind === "table"
-      ? {
-          block: "B25",
-          id: block.id,
-          props: {
-            caption: block.heading,
-            intro: block.intro,
-            columns: block.columns,
-            rows: block.rows,
-            note: block.note,
-            jumpHidden: block.jump === false,
-          },
-          when: block.rows.length > 0,
-        }
-      : {
-          block: "B35",
-          id: block.id,
-          props: {
-            heading: block.heading,
-            concepts: block.concepts,
-            jumpHidden: block.jump === false,
-          },
-          when: block.concepts.length > 0,
+  const bodySlots: BlockSlot[] = content.blocks.map((block) => {
+    if (block.kind === "table") {
+      return {
+        block: "B25",
+        id: block.id,
+        props: {
+          caption: block.heading,
+          intro: block.intro,
+          columns: block.columns,
+          rows: block.rows,
+          note: block.note,
+          jumpHidden: block.jump === false,
         },
-  );
+        when: block.rows.length > 0,
+      };
+    }
+
+    if (block.kind === "resources") {
+      return {
+        block: "B47",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          rows: block.rows,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+        when: block.rows.length > 0,
+      };
+    }
+
+    return {
+      block: "B35",
+      id: block.id,
+      props: {
+        heading: block.heading,
+        concepts: block.concepts,
+        jumpHidden: block.jump === false,
+      },
+      when: block.concepts.length > 0,
+    };
+  });
+
 
   return {
     template: "T12",
