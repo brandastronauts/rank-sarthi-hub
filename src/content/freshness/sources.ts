@@ -224,6 +224,47 @@ export const freshnessSources: Record<string, FreshnessSource> = {
     trustTier: "PRIMARY_OWNER",
     enabled: true,
   },
+  /* JEE J01 allow-list additions */
+  "NTA-FINAL-KEY-S1-P1-2026": {
+    id: "NTA-FINAL-KEY-S1-P1-2026",
+    authority: "National Testing Agency",
+    sourceUrl:
+      "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf",
+    sourceType: "PDF_NOTICE",
+    platform: "JEE",
+    monitoredSignals: ["document availability", "revision or withdrawal", "official URL change"],
+    expectedUpdateBehaviour: "Stable archival document; correction possible",
+    parserStrategy: "Fingerprint the document; availability check only, never AI summarisation",
+    fallbackStrategy: "Preserve last verified value; route to the official document index",
+    trustTier: "PRIMARY_OWNER",
+    enabled: true,
+  },
+  "NTA-RESULT-NOTICE-2026": {
+    id: "NTA-RESULT-NOTICE-2026",
+    authority: "National Testing Agency",
+    sourceUrl: "https://www.nta.ac.in/Download/Notice/Notice_20260420194021.pdf",
+    sourceType: "PDF_DATA_TABLE",
+    platform: "JEE",
+    monitoredSignals: ["category-wise NTA Score threshold", "candidate counts", "corrected notice"],
+    expectedUpdateBehaviour: "Archival for the cycle; correction possible",
+    parserStrategy: "Labelled table extraction after table QA; unparsable change becomes REVIEW_REQUIRED",
+    fallbackStrategy: "Preserve last verified table; keep the official source link",
+    trustTier: "PRIMARY_OWNER",
+    enabled: true,
+  },
+  "ADV-ARCHIVE": {
+    id: "ADV-ARCHIVE",
+    authority: "JEE Advanced official organising authority",
+    sourceUrl: "https://jeeadv.ac.in/archive.html",
+    sourceType: "HTML_INDEX",
+    platform: "JEE",
+    monitoredSignals: ["past question-paper rows by year, paper and language"],
+    expectedUpdateBehaviour: "New rows after a cycle closes",
+    parserStrategy: "Parse row year, paper number, language and resolved official file URL",
+    fallbackStrategy: "Keep the last verified rows; leave an unverified file inactive",
+    trustTier: "PRIMARY_OWNER",
+    enabled: true,
+  },
 };
 
 

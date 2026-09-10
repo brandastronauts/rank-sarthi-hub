@@ -1,263 +1,426 @@
 import type { InfoPageContent } from "../types";
 
 /**
- * JEE Previous Year Papers: official-source paper library.
- * Transcribed from the approved production copy in
- * "Rank Sarthi JEE Menu Completion and FreshnessWatch v1 Production Package"
- * (production date 9 September 2026), Section 4: Previous Year Papers.
- *
- * Missing source ids (referenced in the package's structured production
- * record but not present in src/content/sources.ts, so NOT used below):
- * NTA-QP-2026, ADV-HOME-2026, ADV-P1-EN-2026, ADV-P1-HI-2026,
- * ADV-P2-EN-2026, ADV-P2-HI-2026. Only "nta-jee-main-question-papers" and
- * "jee-advanced-paper-archive" already exist in the registry and are used.
+ * /jee/previous-year-papers — JEE Main Paper 1 resource finder (J01).
+ * Identity is cycleYear -> session -> exam date -> shift -> paper. A row only
+ * carries an active paper button when an authority-hosted file is verified.
  */
+
 export const jeePreviousYearPapers: InfoPageContent = {
   url: "/jee/previous-year-papers",
   platform: "jee",
   slug: "previous-year-papers",
-  exam: "JEE Main and JEE Advanced",
+  exam: "JEE Main",
+  title: "JEE Main Previous Year Papers: Official Shift-Wise Finder",
+  eyebrow: "Official paper finder",
+  intent: "Find a JEE Main Paper 1 resource by year, session, date and shift",
+  chips: ["Official NTA", "Session and shift separated", "No coaching copies"],
   contentStatus: "draft",
-  title: "JEE Previous Year Papers: Official-Source Paper Library",
-  eyebrow: "JEE Previous Year Papers",
-  intent: "Find an official JEE paper with unambiguous exam, year, paper or session, shift, language and source",
   answer: [
-    {
-      type: "paragraph",
-      children: [
-        {
-          text: "Use a previous year paper only when you can identify its exam, year, paper or session, shift where applicable, language and source. This page links to official paper resources. It does not attach invented chapter weightage, question frequency or difficulty trends.",
-        },
-      ],
-    },
+    { type: "paragraph", children: [{ text: "NTA currently exposes nine official JEE Main 2026 Session 2 Paper 1 shift papers: 2, 4, 5 and 6 April in both shifts and 8 April Shift 2. Session 1 date and shift identity is verified for 21, 22, 23, 24 and 28 January in both shifts, but no exact public authority-hosted question-paper PDF is active for those ten events." }] },
+    { type: "note", tone: "source", children: [{ text: "Where an official paper file is not verified, the row stays inactive and says so. A memory-based or coaching reconstruction is never presented as an official paper." }] },
   ],
+  freshness: { heading: "Official paper archive status", recordIds: ["jee-main-2026-paper-archive", "jee-main-2026-s2-p1-final-key"], note: "Checking runs against the official NTA channel only; a new file is published after human source and rights review." },
   blocks: [
     {
       kind: "table",
-      id: "archive-status",
-      heading: "Archive status",
-      columns: ["Field", "Verified position"],
+      id: "main-pyq-finder",
+      heading: "Find your paper: year, session, date and shift",
+      intro: "Start here, then open the matching session block below.",
+      columns: ["Year", "Session", "Paper 1 exam dates", "Shifts", "Official paper files", "State"],
       rows: [
-        ["Latest verified JEE Main paper set", "2026 Session 2 Paper 1 shift papers listed by NTA"],
-        ["Latest verified JEE Advanced paper set", "2026 Paper 1 and Paper 2, English and Hindi, published by the official authority"],
-        ["Rights approach", "Link to official-hosted files; do not rehost unless permission and provenance review pass"],
-        ["Last verified", "9 September 2026, IST"],
+        ["2026", "Session 2", "2, 4, 5, 6 Apr (both shifts) and 8 Apr (Shift 2)", "2 per date, except 8 Apr", "9 of 9 verified", "Official files active"],
+        ["2026", "Session 1", "21, 22, 23, 24, 28 Jan", "2 per date", "0 of 10 verified", "Paper source verification pending"],
+        ["2027", "Not officially announced", "Not officially announced", "Not officially announced", "None", "No cycle data exists yet"],
       ],
+      note: "Only Paper 1 B.E./B.Tech events reconciled against official NTA records appear here. There is no 8 April Shift 1 Paper 1 event.",
+      jump: true,
     },
     {
-      kind: "prose",
-      id: "select-the-paper-you-need",
-      heading: "Select the paper you actually need",
-      concepts: [
-        {
-          id: "four-questions",
-          title: "Select the paper you actually need",
-          body: [
-            {
-              type: "paragraph",
-              children: [{ text: "Before opening a file, answer four questions:" }],
-            },
-            {
-              type: "list",
-              ordered: true,
-              items: [
-                [{ text: "Are you preparing for JEE Main or JEE Advanced?" }],
-                [{ text: "Which year and cycle do you need?" }],
-                [{ text: "For Main, which session, date and shift are you selecting?" }],
-                [{ text: "Do you need the paper alone, the provisional key, the final key or a reviewed analysis?" }],
-              ],
-            },
-            {
-              type: "paragraph",
-              children: [{ text: "A paper without this identity can lead to the wrong pattern assumptions or an incorrect answer-key pairing." }],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "table",
-      id: "jee-main-2026-s2-p1-catalogue",
-      heading: "JEE Main 2026, Paper 1, Session 2",
-      intro: "NTA's official question-paper navigation lists the following B.E./B.Tech papers. Each paper contains Mathematics, Physics and Chemistry sections. Rank Sarthi should deep-link to the NTA-hosted file only after rendered-link QA.",
-      columns: ["Date", "Shift", "Exam", "Paper", "Subject coverage", "Official source", "Provenance status"],
+      kind: "resources",
+      id: "main-2026-session-2",
+      heading: "JEE Main 2026 Session 2 — official Paper 1 papers",
+      intro: "Nine authority-hosted Paper 1 files, each with its official answer-key state.",
       rows: [
-        ["2 April 2026", "Shift 1", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["2 April 2026", "Shift 2", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["4 April 2026", "Shift 1", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["4 April 2026", "Shift 2", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["5 April 2026", "Shift 1", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["5 April 2026", "Shift 2", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["6 April 2026", "Shift 1", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["6 April 2026", "Shift 2", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
-        ["8 April 2026", "Shift 2", "JEE Main", "Paper 1 B.E./B.Tech", "Mathematics, Physics, Chemistry", "NTA JEE Main question-paper index", "Official-hosted, link only"],
+        {
+          id: "jee-main-2026-s2-20260402-shift1-p1",
+          eventLabel: "2 Apr 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260402-shift2-p1",
+          eventLabel: "2 Apr 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409481957146.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260404-shift1-p1",
+          eventLabel: "4 Apr 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604091916616339.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260404-shift2-p1",
+          eventLabel: "4 Apr 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409432593766.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260405-shift1-p1",
+          eventLabel: "5 Apr 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409828731207.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260405-shift2-p1",
+          eventLabel: "5 Apr 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260406-shift1-p1",
+          eventLabel: "6 Apr 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092007095665.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260406-shift2-p1",
+          eventLabel: "6 Apr 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409725707538.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s2-20260408-shift2-p1",
+          eventLabel: "8 Apr 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 2 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409932754345.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
       ],
-      note: "The NTA source checked for this production package did not list an 8 April Shift 1 Paper 1 file. Do not infer or fabricate a missing file.",
+      note: "Files open on the official NTA channel in a new tab. Rank Sarthi does not rehost them.",
+      jump: true,
     },
     {
-      kind: "table",
-      id: "jee-advanced-2026-catalogue",
-      heading: "JEE Advanced 2026",
-      columns: ["Date", "Paper", "Language", "Official source", "Provenance status"],
+      kind: "resources",
+      id: "main-2026-session-1",
+      heading: "JEE Main 2026 Session 1 — event identity verified, paper source pending",
+      intro: "Ten verified Paper 1 events. The official answer-key resources are active; the paper files are not.",
       rows: [
-        ["17 May 2026", "Paper 1", "English", "Official JEE Advanced 2026 PDF", "Official-hosted, link only"],
-        ["17 May 2026", "Paper 1", "Hindi", "Official JEE Advanced 2026 PDF", "Official-hosted, link only"],
-        ["17 May 2026", "Paper 2", "English", "Official JEE Advanced 2026 paper link", "Official-hosted, link only"],
-        ["17 May 2026", "Paper 2", "Hindi", "Official JEE Advanced 2026 PDF", "Official-hosted, link only"],
+        {
+          id: "jee-main-2026-s1-20260121-shift1-p1",
+          eventLabel: "21 Jan 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260121-shift2-p1",
+          eventLabel: "21 Jan 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260122-shift1-p1",
+          eventLabel: "22 Jan 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260122-shift2-p1",
+          eventLabel: "22 Jan 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260123-shift1-p1",
+          eventLabel: "23 Jan 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260123-shift2-p1",
+          eventLabel: "23 Jan 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260124-shift1-p1",
+          eventLabel: "24 Jan 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260124-shift2-p1",
+          eventLabel: "24 Jan 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260128-shift1-p1",
+          eventLabel: "28 Jan 2026 · Shift 1 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 1",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
+        {
+          id: "jee-main-2026-s1-20260128-shift2-p1",
+          eventLabel: "28 Jan 2026 · Shift 2 · Paper 1 B.E./B.Tech",
+          eventDate: "Session 1 Shift 2",
+          cells: [
+            { label: "Question paper", actions: [
+              { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
+            ] },
+            { label: "Official answer key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+            ] },
+            { label: "Analysis", actions: [
+              { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
+            ] },
+          ],
+        },
       ],
-      note: "The official JEE Advanced website posted these papers on 17 May 2026 and separately published final answer keys on 1 June 2026. Keep question-paper and answer-key links as distinct records.",
+      note: "These rows stay inactive until an exact authority-hosted paper file is verified and rights-reviewed.",
+      jump: true,
     },
     {
       kind: "prose",
-      id: "better-way-to-use-a-paper",
-      heading: "A better way to use an official paper",
+      id: "main-pyq-archive",
+      heading: "Older Main cycles and rights",
       concepts: [
         {
-          id: "pass-1-respect-the-paper",
-          title: "Pass 1: Respect the paper",
+          id: "main-pyq-archive-body",
+          title: "Older Main cycles and rights",
           body: [
-            {
-              type: "paragraph",
-              children: [{ text: "Use its own instructions, time limits and marking rules. Do not import a rule from another year." }],
-            },
-          ],
-        },
-        {
-          id: "pass-2-reconstruct-decisions",
-          title: "Pass 2: Reconstruct decisions",
-          body: [
-            {
-              type: "paragraph",
-              children: [{ text: "For every attempted question, record the concept recognised, the method selected, the condition checked and the point at which your reasoning changed." }],
-            },
-          ],
-        },
-        {
-          id: "pass-3-diagnose-the-miss",
-          title: "Pass 3: Diagnose the miss",
-          body: [
-            {
-              type: "paragraph",
-              children: [{ text: "Use only the approved PI v1.1 categories:" }],
-            },
-            {
-              type: "list",
-              items: [
-                [{ text: "Knowledge Gap", bold: true }, { text: ": the underlying concept or prerequisite was missing." }],
-                [{ text: "Recall Gap", bold: true }, { text: ": the concept was known but a relation, fact or method could not be retrieved." }],
-                [{ text: "Execution Error", bold: true }, { text: ": the plan was suitable but algebra, units, signs, reading or calculation failed." }],
-                [{ text: "Decision / Selection Error", bold: true }, { text: ": the wrong model, method, option or attempt decision was chosen." }],
-                [{ text: "Needs Review", bold: true }, { text: ": the evidence is insufficient to classify confidently." }],
-              ],
-            },
-          ],
-        },
-        {
-          id: "pass-4-return-to-the-chapter",
-          title: "Pass 4: Return to the chapter",
-          body: [
-            {
-              type: "paragraph",
-              children: [{ text: "Use the subject hub and prerequisite links to repair the cause, then retry the question without memorising the answer." }],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "prose",
-      id: "what-this-page-does-not-claim",
-      heading: "What this page intentionally does not claim",
-      concepts: [
-        {
-          id: "non-claims",
-          title: "What this page intentionally does not claim",
-          body: [
-            {
-              type: "list",
-              items: [
-                [{ text: "No chapter weightage or frequency appears without an approved audited dataset." }],
-                [{ text: "No shift is labelled easy, moderate or difficult." }],
-                [{ text: "No future question count or expected-question list is inferred." }],
-                [{ text: "No unofficial reconstruction is presented as an official paper." }],
-                [{ text: "No third-party file is described as official merely because it reproduces an official-looking layout." }],
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "prose",
-      id: "provenance-and-rights",
-      heading: "Provenance and rights",
-      concepts: [
-        {
-          id: "provenance-statement",
-          title: "Provenance and rights statement",
-          body: [
-            {
-              type: "paragraph",
-              children: [{ text: "Each resource is a provenance record, not a bare download. Papers are linked to official-hosted files only; Rank Sarthi does not rehost a paper without permission and a provenance review passing. Treat a file as official only when its provenance leads to the owning exam authority or an authenticated official archive." }],
-            },
+            { type: "paragraph", children: [{ text: "This release does not manufacture a broad Main year archive out of secondary sites. Older cycles will be added under the same provenance model: an authority-hosted file, or an explicitly labelled verified copy, or nothing at all." }] },
+            { type: "note", tone: "source", children: [{ text: "External official files are linked, never copied onto Rank Sarthi hosting. Local rehosting stays RIGHTS_REVIEW_REQUIRED." }] }
           ],
         },
       ],
     },
   ],
   relatedLinks: [
-    { label: "JEE hub", url: "/jee", relation: "up", description: "Return to the JEE hub" },
-    { label: "JEE Main", url: "/jee/jee-main", relation: "related", description: "Confirm exam identity" },
-    { label: "JEE Advanced", url: "/jee/jee-advanced", relation: "related", description: "Confirm exam identity" },
-    { label: "Answer key", url: "/jee/answer-key", relation: "related", description: "Find the matching official key status" },
-    { label: "Analysis", url: "/jee/analysis", relation: "related", description: "See official facts separately from Rank Sarthi analysis" },
-    { label: "Physics", url: "/jee/physics", relation: "forward", description: "Repair diagnosed gaps" },
-    { label: "Chemistry", url: "/jee/chemistry", relation: "forward", description: "Repair diagnosed gaps" },
-    { label: "Mathematics", url: "/jee/mathematics", relation: "forward", description: "Repair diagnosed gaps" },
+    { label: "JEE Home", url: "/jee", relation: "up", description: "Return to the JEE hub" },
+    { label: "JEE Main", url: "/jee/jee-main", relation: "related", description: "Understand the Main paper and result route" },
+    { label: "Answer Key", url: "/jee/answer-key", relation: "related", description: "Open the official provisional and final keys" },
+    { label: "Paper Analysis", url: "/jee/analysis", relation: "related", description: "See what evidence exists before any analysis claim" },
+    { label: "Exam Dates", url: "/jee/exam-dates", relation: "related", description: "Check the official 2026 session timeline" },
+    { label: "Cutoff", url: "/jee/cutoff", relation: "related", description: "See the official Advanced-eligibility NTA Score threshold" },
   ],
   faqs: [
-    {
-      question: "Where should I download JEE papers?",
-      answer: [
-        {
-          type: "paragraph",
-          children: [{ text: "Prefer the NTA JEE Main website for Main papers and the official JEE Advanced website for Advanced papers. Check the year, session, shift, paper and language before downloading." }],
-        },
-      ],
-    },
-    {
-      question: "Is a coaching-site paper the same as an official paper?",
-      answer: [
-        {
-          type: "paragraph",
-          children: [{ text: "Not necessarily. Treat a file as official only when its provenance leads to the owning exam authority or an authenticated official archive." }],
-        },
-      ],
-    },
-    {
-      question: "Does Rank Sarthi provide paper trends here?",
-      answer: [
-        {
-          type: "paragraph",
-          children: [{ text: "No. Trend claims remain hidden until a complete, versioned and reviewed analysis dataset exists." }],
-        },
-      ],
-    },
+    { question: "Why can I not download the January 2026 papers here?", answer: [{ type: "paragraph", children: [{ text: "Because no exact public authority-hosted question-paper PDF was verified for those ten events. The date and shift identity is confirmed from the official final answer key, so the events are listed honestly instead of being filled with a coaching reconstruction." }] }] },
+    { question: "Is there an 8 April 2026 Shift 1 Paper 1?", answer: [{ type: "paragraph", children: [{ text: "No. The official record identifies 8 April Paper 1 as Shift 2, and the official paper menu exposes no 8 April Shift 1 Paper 1 file, so no such event is created here." }] }] },
   ],
-  sourceRefs: ["nta-jee-main-question-papers", "nta-jee-main-documents", "nta-jee-main-p1-record-2026", "jee-advanced-home-2026", "jee-advanced-paper-archive"],
-  sourceNote: "Every paper referenced here is identified from the owning authority's own listing. Question text is not reproduced on Rank Sarthi; each entry routes to the official file.",
+  sourceRefs: ["nta-jee-main-question-papers", "nta-jee-main-s1-final-key-2026", "nta-jee-main-s2-final-key-2026"],
   contributorPolicy: [
-    "Written by: JEE content librarian or exam-resource editor",
-    "Fact-checked by: Exam Process Reviewer",
-    "Minimum qualification: Graduate-level qualification plus demonstrated source-verification and rights/provenance handling experience",
-    "Review scope: File identity, year, session, shift, language, official URL, paper-key pairing and rights status",
+    "Written by: JEE resource and source-verification editor",
+    "Fact-checked by: Exam-process reviewer and Freshness Editor",
+    "Review scope: event identity, provenance tier, CTA state, authority ownership and cycle labelling",
+    "Rights: external official files are linked, never rehosted; local hosting stays RIGHTS_REVIEW_REQUIRED",
+    "Contributor names are not published until the named reviewer is assigned",
   ],
-  lastVerified: "9 September 2026",
+  lastVerified: "11 September 2026",
   seo: {
-    title: "JEE Previous Year Papers: Official Main and Advanced PDFs",
-    description: "Find provenance-checked JEE Main and JEE Advanced papers by year, paper, session, shift and language, with official-source links and usage guidance.",
-    ogTitle: "Official-Source JEE Previous Year Papers",
-    ogDescription: "Choose the correct exam, year, session, shift and language before you practise.",
+    title: "JEE Main Previous Year Papers: Official Shift-Wise PDFs | Rank Sarthi",
+    description: "Find verified JEE Main papers by year, session, date and shift, with official NTA provenance, answer-key state and source-pending labels where a direct paper is not verified.",
+    ogTitle: "JEE Main Previous Year Papers by Session, Date and Shift",
+    ogDescription: "Official NTA Paper 1 files with honest source-pending states.",
     ogType: "article",
   },
 };
