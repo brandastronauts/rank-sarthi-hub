@@ -114,6 +114,18 @@ export const neetBlog: InfoPageContent = {
       note: "Paper analysis, mock tests, the weakness finder and rank prediction are not published yet and are deliberately not linked here.",
     },
   ],
+  relatedLinks: [
+    { label: "NEET exam dates", url: "/neet/exam-dates", relation: "related" },
+    { label: "NEET previous-year papers", url: "/neet/previous-year-papers", relation: "related" },
+    { label: "NEET answer keys", url: "/neet/answer-key", relation: "related" },
+    { label: "NEET qualifying cutoffs", url: "/neet/cutoff", relation: "related" },
+    { label: "NEET syllabus", url: "/neet/syllabus", relation: "related" },
+    { label: "NEET Biology chapters", url: "/neet/biology", relation: "related" },
+    { label: "NEET Physics chapters", url: "/neet/physics", relation: "related" },
+    { label: "NEET Chemistry chapters", url: "/neet/chemistry", relation: "related" },
+    { label: "NEET score calculator", url: "/neet/score-calculator", relation: "related" },
+    { label: "NEET study plan", url: "/neet/study-plan", relation: "related" },
+  ],
   contributorPolicy: [
     "Editorial owner: UNASSIGNED",
     "Hub reviewer: UNASSIGNED",
