@@ -138,17 +138,193 @@ export const neetPhysicsHub: SubjectHubContent = {
   ],
   "contentStatus": "draft",
   "chips": [
-    "0 current official scope routes",
-    "0 registered Physics routes reconciled",
+    "14 current official scope routes",
+    "29 registered Physics routes reconciled",
     "Draft: pending human academic review"
   ],
   "chapterMap": {
-    "heading": "All 0 registered Physics routes",
+    "heading": "All 29 registered Physics routes",
     "scopeNote": "Scope labels follow the accepted route-ownership reconciliation. Current official scope means the route owns content explicit in the official NEET UG 2026 syllabus. Partial or merged official scope means the route covers part of a current unit or merges official wording. Contextual umbrella route means the route is a navigation layer, not an official heading. Not currently listed means the topic is not explicit in the current official syllabus. Duplicate-intent routes are held under route review.",
     "contextualHeading": "Contextual / historical routes",
     "contextualNote": "These routes are not current official NEET UG 2026 headings. They are preserved for context or route control only and must not be treated as current exam scope.",
     "expectedCount": 29,
-    "notes": []
+    "notes": [
+      {
+        "url": "/neet/physics/mechanics",
+        "scope": "contextual umbrella route",
+        "order": 1,
+        "note": "Rank Sarthi mechanics navigation umbrella over current mechanics foundations; not an official unit title."
+      },
+      {
+        "url": "/neet/physics/thermodynamics",
+        "scope": "current official scope",
+        "order": 2,
+        "note": "Official Unit 8: Thermodynamics."
+      },
+      {
+        "url": "/neet/physics/optics",
+        "scope": "current official scope",
+        "order": 3,
+        "note": "Official Unit 16: Optics. Unit-level owner; focused ray/wave routes split depth."
+      },
+      {
+        "url": "/neet/physics/electrostatics",
+        "scope": "current official scope",
+        "order": 4,
+        "note": "Official Unit 11: Electrostatics."
+      },
+      {
+        "url": "/neet/physics/current-electricity",
+        "scope": "current official scope",
+        "order": 5,
+        "note": "Official Unit 12: Current Electricity."
+      },
+      {
+        "url": "/neet/physics/magnetism",
+        "scope": "partial or merged official scope",
+        "order": 6,
+        "note": "Maps to official Unit 13: Magnetic Effects of Current and Magnetism."
+      },
+      {
+        "url": "/neet/physics/modern-physics",
+        "scope": "contextual umbrella route",
+        "order": 7,
+        "note": "Rank Sarthi umbrella over official Units 17-19."
+      },
+      {
+        "url": "/neet/physics/waves",
+        "scope": "partial or merged official scope",
+        "order": 8,
+        "note": "Focused child of official Unit 10: Oscillations and Waves."
+      },
+      {
+        "url": "/neet/physics/oscillations",
+        "scope": "partial or merged official scope",
+        "order": 9,
+        "note": "Focused child of official Unit 10: Oscillations and Waves."
+      },
+      {
+        "url": "/neet/physics/gravitation",
+        "scope": "current official scope",
+        "order": 10,
+        "note": "Official Unit 6: Gravitation. Canonical content owner."
+      },
+      {
+        "url": "/neet/physics/kinematics",
+        "scope": "current official scope",
+        "order": 11,
+        "note": "Official Unit 2: Kinematics. Unit-level owner with Motion in Plane carved out as a focused child."
+      },
+      {
+        "url": "/neet/physics/laws-of-motion",
+        "scope": "current official scope",
+        "order": 12,
+        "note": "Official Unit 3: Laws of Motion."
+      },
+      {
+        "url": "/neet/physics/work-energy-power",
+        "scope": "current official scope",
+        "order": 13,
+        "note": "Official Unit 4: Work, Energy, and Power."
+      },
+      {
+        "url": "/neet/physics/rotational-motion",
+        "scope": "current official scope",
+        "order": 14,
+        "note": "Official Unit 5: Rotational Motion."
+      },
+      {
+        "url": "/neet/physics/properties-of-matter",
+        "scope": "partial or merged official scope",
+        "order": 15,
+        "note": "Mechanical solids/fluids owner within official Unit 7: Properties of Solids and Liquids."
+      },
+      {
+        "url": "/neet/physics/kinetic-theory",
+        "scope": "current official scope",
+        "order": 16,
+        "note": "Official Unit 9: Kinetic Theory of Gases."
+      },
+      {
+        "url": "/neet/physics/electromagnetic-induction",
+        "scope": "partial or merged official scope",
+        "order": 17,
+        "note": "Focused child of official Unit 14: Electromagnetic Induction and Alternating Currents."
+      },
+      {
+        "url": "/neet/physics/alternating-current",
+        "scope": "partial or merged official scope",
+        "order": 18,
+        "note": "Focused child of official Unit 14: Electromagnetic Induction and Alternating Currents."
+      },
+      {
+        "url": "/neet/physics/electromagnetic-waves",
+        "scope": "current official scope",
+        "order": 19,
+        "note": "Official Unit 15: Electromagnetic Waves."
+      },
+      {
+        "url": "/neet/physics/ray-optics",
+        "scope": "partial or merged official scope",
+        "order": 20,
+        "note": "Geometrical/ray optics portion of official Unit 16: Optics."
+      },
+      {
+        "url": "/neet/physics/wave-optics",
+        "scope": "partial or merged official scope",
+        "order": 21,
+        "note": "Wave optics portion of official Unit 16: Optics."
+      },
+      {
+        "url": "/neet/physics/dual-nature-radiation",
+        "scope": "current official scope",
+        "order": 22,
+        "note": "Official Unit 17: Dual Nature of Matter and Radiation."
+      },
+      {
+        "url": "/neet/physics/atoms",
+        "scope": "partial or merged official scope",
+        "order": 23,
+        "note": "Focused child of official Unit 18: Atoms and Nuclei."
+      },
+      {
+        "url": "/neet/physics/nuclei",
+        "scope": "partial or merged official scope",
+        "order": 24,
+        "note": "Focused child of official Unit 18: Atoms and Nuclei."
+      },
+      {
+        "url": "/neet/physics/semiconductor-electronics",
+        "scope": "current official scope",
+        "order": 25,
+        "note": "Canonical Rank Sarthi owner for official Unit 19: Electronic Devices."
+      },
+      {
+        "url": "/neet/physics/units-measurements",
+        "scope": "current official scope",
+        "order": 26,
+        "note": "Official Unit 1: Physics and Measurement."
+      },
+      {
+        "url": "/neet/physics/motion-in-plane",
+        "scope": "partial or merged official scope",
+        "order": 27,
+        "note": "Focused child inside official Unit 2: Kinematics."
+      },
+      {
+        "url": "/neet/physics/gravitation-2",
+        "scope": "duplicate-intent route under review",
+        "order": 28,
+        "note": "No second official Gravitation unit or separate NCERT Gravitation chapter supports an independent near-duplicate page.",
+        "contextual": true
+      },
+      {
+        "url": "/neet/physics/thermal-properties",
+        "scope": "partial or merged official scope",
+        "order": 29,
+        "note": "Thermal portion inside official Unit 7: Properties of Solids and Liquids."
+      }
+    ]
   },
   "faqs": [
     {
