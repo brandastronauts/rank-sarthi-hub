@@ -16,6 +16,9 @@ import { neetPreviousYearPapers } from "./neet-previous-year-papers";
 import { neetAnswerKey } from "./neet-answer-key";
 import { neetCutoff } from "./neet-cutoff";
 import { neetExamDates } from "./neet-exam-dates";
+import { neetBlog } from "./neet-blog";
+import { neetScoreCalculator } from "./neet-score-calculator";
+import { neetStudyPlan } from "./neet-study-plan";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
@@ -39,6 +42,9 @@ export const infoPages: InfoPageContent[] = [
   neetAnswerKey,
   neetCutoff,
   neetExamDates,
+  neetBlog,
+  neetScoreCalculator,
+  neetStudyPlan,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));
