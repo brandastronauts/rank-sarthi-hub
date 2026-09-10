@@ -6,6 +6,10 @@ import { jeeAnswerKey } from "./jee-answer-key";
 import { jeeAnalysis } from "./jee-analysis";
 import { jeeCutoff } from "./jee-cutoff";
 import { jeeExamDates } from "./jee-exam-dates";
+import { jeeAdvancedPreviousYearPapers } from "./jee-advanced-previous-year-papers";
+import { jeeAdvancedAnswerKey } from "./jee-advanced-answer-key";
+import { jeeAdvancedCutoff } from "./jee-advanced-cutoff";
+import { jeeAdvancedExamDates } from "./jee-advanced-exam-dates";
 import { neetExam } from "./neet-exam";
 import { neetNcertMapping } from "./neet-ncert-mapping";
 import { neetNcertImportantPages } from "./neet-ncert-important-pages";
@@ -32,6 +36,10 @@ export const infoPages: InfoPageContent[] = [
   jeeAnalysis,
   jeeCutoff,
   jeeExamDates,
+  jeeAdvancedPreviousYearPapers,
+  jeeAdvancedAnswerKey,
+  jeeAdvancedCutoff,
+  jeeAdvancedExamDates,
   neetExam,
   neetNcertMapping,
   neetNcertImportantPages,
