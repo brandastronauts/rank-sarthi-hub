@@ -47,6 +47,35 @@ export function infoPageRecipe(
       };
     }
 
+    if (block.kind === "links") {
+      return {
+        block: "B48",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          items: block.items,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+        when: block.items.length > 0,
+      };
+    }
+
+    if (block.kind === "tool") {
+      return {
+        block: "B49",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          tool: block.tool,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+      };
+    }
+
     return {
       block: "B35",
       id: block.id,
