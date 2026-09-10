@@ -148,6 +148,13 @@ export const sources: Record<string, SourceRef> = {
   "ncert-biology-11-contents": { id: "ncert-biology-11-contents", label: "NCERT Biology Class XI, current contents (PDF)", publisher: "NCERT", url: "https://www.ncert.nic.in/textbook/pdf/kebo1ps.pdf", sourceType: "textbook", lastVerified: "9 September 2026" },
   "ncert-biology-12-contents": { id: "ncert-biology-12-contents", label: "NCERT Biology Class XII, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/lebo1ps.pdf", sourceType: "textbook", lastVerified: "9 September 2026" },
   "ncert-exemplar-index": { id: "ncert-exemplar-index", label: "NCERT Exemplar Problems index", publisher: "NCERT", url: "https://ncert.nic.in/exemplar-problems.php?ln=en", sourceType: "textbook", lastVerified: "9 September 2026" },
+
+  /* NEET Physics + Chemistry register (P01/P02/C01/C02, checked 10 September 2026) */
+  "nta-neet-portal": { id: "nta-neet-portal", label: "NEET (UG) official portal", publisher: "National Testing Agency (NTA)", url: "https://neet.nta.nic.in/", sourceType: "official", lastVerified: "10 September 2026" },
+  "ncert-physics-11-contents": { id: "ncert-physics-11-contents", label: "NCERT Physics Class XI, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/keph1ps.pdf", sourceType: "textbook", lastVerified: "10 September 2026" },
+  "ncert-physics-12-contents": { id: "ncert-physics-12-contents", label: "NCERT Physics Class XII, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/leph1ps.pdf", sourceType: "textbook", lastVerified: "10 September 2026" },
+  "ncert-chemistry-11-contents": { id: "ncert-chemistry-11-contents", label: "NCERT Chemistry Class XI, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/kech1ps.pdf", sourceType: "textbook", lastVerified: "10 September 2026" },
+  "ncert-chemistry-12-contents": { id: "ncert-chemistry-12-contents", label: "NCERT Chemistry Class XII, current contents (PDF)", publisher: "NCERT", url: "https://ncert.nic.in/textbook/pdf/lech1ps.pdf", sourceType: "textbook", lastVerified: "10 September 2026" },
 };
 
 
