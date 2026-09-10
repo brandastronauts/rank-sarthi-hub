@@ -3,7 +3,7 @@ import { NeetStudyPlanner } from "@/components/tools/NeetStudyPlanner";
 
 export type ToolId = "neet-score-calculator" | "neet-study-planner";
 
-const TOOLS: Record<ToolId, () => JSX.Element> = {
+const TOOLS: Record<ToolId, React.ComponentType> = {
   "neet-score-calculator": NeetScoreCalculator,
   "neet-study-planner": NeetStudyPlanner,
 };
