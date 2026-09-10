@@ -27,7 +27,7 @@ export const freshDataRecords: FreshDataRecord[] = [
     confidence: "HIGH",
     changePolicy: "REVIEW_REQUIRED",
     fallback: {
-      publicValue: "SHOW_LAST_VERIFIED",
+      publicValue: "PRESERVE_LAST_VERIFIED",
       publicMessage: "Official source could not be rechecked. Pending rows stay inactive and no substitute copy is shown.",
       actionState: "ROUTE_TO_SOURCE_INDEX",
     },
@@ -54,7 +54,7 @@ export const freshDataRecords: FreshDataRecord[] = [
     confidence: "HIGH",
     changePolicy: "REVIEW_REQUIRED",
     fallback: {
-      publicValue: "SHOW_LAST_VERIFIED",
+      publicValue: "PRESERVE_LAST_VERIFIED",
       publicMessage: "Official key document could not be rechecked. The last verified key record is preserved.",
       actionState: "ROUTE_TO_SOURCE_INDEX",
     },
@@ -81,7 +81,7 @@ export const freshDataRecords: FreshDataRecord[] = [
     confidence: "HIGH",
     changePolicy: "REVIEW_REQUIRED",
     fallback: {
-      publicValue: "SHOW_LAST_VERIFIED",
+      publicValue: "PRESERVE_LAST_VERIFIED",
       publicMessage: "Official notice could not be rechecked. The last verified threshold table is preserved.",
       actionState: "ROUTE_TO_SOURCE_INDEX",
     },
@@ -108,7 +108,7 @@ export const freshDataRecords: FreshDataRecord[] = [
     confidence: "HIGH",
     changePolicy: "REVIEW_REQUIRED",
     fallback: {
-      publicValue: "SHOW_LAST_VERIFIED",
+      publicValue: "PRESERVE_LAST_VERIFIED",
       publicMessage: "Official notice index could not be rechecked. The last verified milestones are preserved.",
       actionState: "ROUTE_TO_SOURCE_INDEX",
     },
@@ -135,7 +135,7 @@ export const freshDataRecords: FreshDataRecord[] = [
     confidence: "HIGH",
     changePolicy: "REVIEW_REQUIRED",
     fallback: {
-      publicValue: "SHOW_LAST_VERIFIED",
+      publicValue: "PRESERVE_LAST_VERIFIED",
       publicMessage: "Official archive could not be rechecked. Unverified files stay inactive.",
       actionState: "ROUTE_TO_SOURCE_INDEX",
     },
