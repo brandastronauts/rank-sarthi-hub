@@ -265,7 +265,7 @@ export const neetAnswerKey: InfoPageContent = {
     {
       label: "NEET previous year papers",
       url: "/neet/previous-year-papers",
-      relation: "prev",
+      relation: "related",
       description: "Open the paper that matches this key.",
     },
     { label: "NEET cutoff", url: "/neet/cutoff", relation: "next", description: "Compare your score against official qualifying thresholds." },
