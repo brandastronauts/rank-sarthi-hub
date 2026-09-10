@@ -617,6 +617,49 @@ export interface SubjectHubContent {
 /* Exam information pages (T03 / T10 / T12 family)                     */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Provenance of an external exam resource (question paper, key, notice).
+ * Platform-agnostic: JEE and NDA reuse the same four states.
+ */
+export type ResourceProvenance =
+  | "OFFICIAL_AUTHORITY_COPY"
+  | "VERIFIED_TEST_BOOKLET_SCAN"
+  | "VERIFIED_PAPER_RECONSTRUCTION"
+  | "SOURCE_NOT_VERIFIED"
+  | "NOT_AVAILABLE";
+
+/**
+ * One student-facing action on a resource row. A resource with no verified
+ * destination carries no href and renders as an inactive status, never as a
+ * decorative or empty link.
+ */
+export interface ResourceAction {
+  provenance: ResourceProvenance;
+  /** Student-facing resource label, e.g. "Verified Paper Scan". */
+  label: string;
+  /** Short trust badge, e.g. "Official NTA" / "Verified reference". */
+  badge?: string;
+  /** Button text. Rendered only together with a real href. */
+  cta?: string;
+  href?: string;
+  /** Visible owner of the destination file. Required for external copies. */
+  owner?: string;
+  /** Extra visible disclosure, e.g. the reconstruction trust note. */
+  trustNote?: string;
+  /** Structural detail line, e.g. "Code 50 · English". */
+  detail?: string;
+}
+
+/** One event row in a resource library (B47). */
+export interface ResourceRow {
+  id: string;
+  eventLabel: string;
+  eventDate?: string;
+  /** Ordered resource columns for this event. */
+  cells: { label: string; actions: ResourceAction[] }[];
+  note?: string;
+}
+
 /** One ordered content block on an information page. */
 export type InfoBlock =
   | {
@@ -630,12 +673,22 @@ export type InfoBlock =
       jump?: boolean;
     }
   | {
+      kind: "resources";
+      id: string;
+      heading: string;
+      intro?: string;
+      rows: ResourceRow[];
+      note?: string;
+      jump?: boolean;
+    }
+  | {
       kind: "prose";
       id: string;
       heading?: string;
       concepts: ConceptBlock[];
       jump?: boolean;
     };
+
 
 /**
  * Generic, platform-agnostic exam information page. Cycle-dependent facts are
