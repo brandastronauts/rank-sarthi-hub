@@ -687,6 +687,26 @@ export type InfoBlock =
       heading?: string;
       concepts: ConceptBlock[];
       jump?: boolean;
+    }
+  | {
+      /** Editorial link-card grid (B48). Cards resolve through the registry. */
+      kind: "links";
+      id: string;
+      heading: string;
+      intro?: string;
+      items: { url: string; label: string; type: string; description?: string }[];
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Interactive tool mount (B49). The tool id must be registered. */
+      kind: "tool";
+      id: string;
+      heading: string;
+      intro?: string;
+      tool: "neet-score-calculator" | "neet-study-planner";
+      note?: string;
+      jump?: boolean;
     };
 
 

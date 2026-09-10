@@ -44,6 +44,8 @@ import { RelatedRail } from "@/components/blocks/RelatedRail";
 import { SourcesBox } from "@/components/blocks/SourcesBox";
 import { SubjectChapterMap } from "@/components/blocks/SubjectChapterMap";
 import { ResourceLibrary } from "@/components/blocks/ResourceLibrary";
+import { LinkCardGrid } from "@/components/blocks/LinkCardGrid";
+import { ToolBlock } from "@/components/blocks/ToolBlock";
 
 
 /* Platform template blocks (B38–B43) */
@@ -80,6 +82,8 @@ export function ensureBlocksRegistered() {
     B45: FreshnessPanel,
     B46: ChangeLogBlock,
     B47: ResourceLibrary,
+    B48: LinkCardGrid,
+    B49: ToolBlock,
 
     B26: SyllabusExplorer,
     B27: TrendTable,
