@@ -39,7 +39,14 @@ export const jeePreviousYearPapers2025: InfoPageContent = {
     { label: "JEE Main", url: "/jee/jee-main", relation: "related", description: "Understand the JEE Main examination route" },
     { label: "JEE Home", url: "/jee", relation: "up", description: "Return to the JEE hub" },
   ],
-  sourceRefs: [],
+  sourceRefs: [
+    "nta-jee-main-s1-schedule-2025",
+    "nta-jee-main-s2-schedule-2025",
+    "nta-jee-main-s1-provisional-notice-2025",
+    "nta-jee-main-s1-final-key-2025",
+    "nta-jee-main-s2-provisional-notice-2025",
+    "nta-jee-main-s2-final-key-2025",
+  ],
   sourceNote: "Paper access does not establish a reviewed question-level analysis dataset. External resources are linked and not rehosted.",
   contributorPolicy: [
     "Written by: JEE resource and source-verification editor",
