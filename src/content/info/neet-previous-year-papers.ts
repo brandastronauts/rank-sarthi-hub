@@ -239,10 +239,12 @@ export const neetPreviousYearPapers: InfoPageContent = {
               ),
             ]),
             keyCol([
-              officialKey(
-                "Final key · published 30 Jun 2024",
-                "https://exams.nta.ac.in/NEET/images/NEET_2024_RE_EXAM_KEY_30.06.2024.pdf",
-              ),
+              {
+                provenance: "SOURCE_NOT_VERIFIED",
+                label: "Final key",
+                badge: "Source pending",
+                detail: "The previously verified official destination is currently unavailable.",
+              },
             ]),
             analysisCol,
           ],
