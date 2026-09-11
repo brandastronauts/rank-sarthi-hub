@@ -49,8 +49,8 @@ export const jeeAnswerKey: InfoPageContent = {
             { label: "Provisional key workflow", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key and challenge notice", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The provisional keys and recorded responses were exposed inside the NTA candidate workflow. This notice is not a direct answer-key PDF and is not a final key.", detail: "Challenge notice published 4 Feb 2026; challenge window closed 6 Feb 2026, 23:50 IST" }
             ] },
-            { label: "Final answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · used for result compilation" }
+            { label: "Final Answer Key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · used for result compilation" }
             ] },
             { label: "Recorded responses", actions: [
               { provenance: "NOT_AVAILABLE", label: "Recorded response sheet", cta: "Candidate-login resource, not a public key", detail: "A recorded response sheet is a candidate's own answers, never an answer key." }
@@ -63,10 +63,10 @@ export const jeeAnswerKey: InfoPageContent = {
           eventDate: "Paper 1 exams 2, 4, 5, 6 Apr and 8 Apr 2026",
           cells: [
             { label: "Provisional key workflow", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key and challenge notice", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The provisional keys and recorded responses were exposed inside the NTA candidate workflow. This notice is not a direct answer-key PDF and is not a final key.", detail: "Challenge notice published 11 Apr 2026; challenge window closed 13 Apr 2026, 23:50 IST" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The provisional keys and recorded responses were exposed inside the NTA candidate workflow. This notice is not a direct answer-key PDF and is not a final key.", detail: "Challenge notice published 11 Apr 2026; challenge window closed 13 Apr 2026, 23:50 IST" }
             ] },
-            { label: "Final answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · used for result compilation" }
+            { label: "Final Answer Key", actions: [
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · used for result compilation" }
             ] },
             { label: "Recorded responses", actions: [
               { provenance: "NOT_AVAILABLE", label: "Recorded response sheet", cta: "Candidate-login resource, not a public key", detail: "A recorded response sheet is a candidate's own answers, never an answer key." }
