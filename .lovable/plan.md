@@ -5,7 +5,7 @@ Build exactly these two draft, noindex pages:
 - `/jee/previous-year-papers/2026`
 - `/jee/previous-year-papers/2025`
 
-No homepage, PCM, JEE Advanced, NEET, NDA, navigation architecture, B47, FreshnessWatch, T06, CSS, or indexation changes outside these two registry records.
+No homepage, PCM, JEE Advanced, NEET, NDA, navigation architecture, B47, FreshnessWatch, T06, CSS, or indexation changes. Shared JEE Main resource-data extraction, the two new `InfoPageContent` records, their two URL-registry activations, and parent related links are explicitly allowed within J02 scope.
 
 ## Implementation
 1. **Shared JEE Main resource data**
