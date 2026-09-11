@@ -51,7 +51,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -68,7 +68,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409481957146.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -85,7 +85,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604091916616339.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -102,7 +102,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409432593766.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -119,7 +119,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409828731207.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -136,7 +136,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -153,7 +153,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092007095665.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -170,7 +170,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409725707538.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -187,7 +187,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Official Question Paper", badge: "Official NTA", cta: "View Official Paper", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409932754345.pdf", owner: "National Testing Agency", detail: "Paper 1 B.E./B.Tech · authority-hosted file · last verified 11 Sep 2026" }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf", owner: "National Testing Agency", detail: "Published 20 Apr 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604111807208741.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 11 Apr 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -214,7 +214,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -231,7 +231,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -248,7 +248,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -265,7 +265,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -282,7 +282,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -299,7 +299,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -316,7 +316,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -333,7 +333,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -350,7 +350,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
@@ -367,7 +367,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
               { provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official final answer key." }
             ] },
             { label: "Official answer key", actions: [
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final answer key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
