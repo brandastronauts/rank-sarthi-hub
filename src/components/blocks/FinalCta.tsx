@@ -22,17 +22,18 @@ export function FinalCta({
   footnote?: string;
 }) {
   return (
-    <section id={id} className="relative overflow-hidden bg-navy-gradient py-24 text-primary-foreground sm:py-32">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60" />
+    <section id={id} className="relative overflow-hidden bg-navy-deep py-24 text-primary-foreground sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-40" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-accent" />
       <div className="container-page relative text-center">
         <Reveal>
           <p className="eyebrow text-gold">{eyebrow}</p>
-          <h2 className="mx-auto mt-6 max-w-3xl text-display-lg">{heading}</h2>
+          <h2 className="mx-auto mt-6 max-w-4xl text-[clamp(2.5rem,5vw,5rem)] font-bold leading-none">{heading}</h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-primary-foreground/70">{body}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <CtaLink
               d={destinations.diagnostic("Take your first diagnostic")}
-              className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
+              className="btn-press inline-flex items-center gap-2 rounded-md bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
             >
               <span className="inline-flex items-center gap-2">
                 Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
@@ -40,7 +41,7 @@ export function FinalCta({
             </CtaLink>
             <a
               href={secondaryHref}
-              className="btn-press inline-flex items-center rounded-lg border border-white/35 px-8 py-4 text-sm font-bold hover:bg-white/10"
+              className="btn-press inline-flex items-center rounded-md border border-white/35 px-8 py-4 text-sm font-bold hover:bg-white/10"
             >
               {secondaryLabel}
             </a>
