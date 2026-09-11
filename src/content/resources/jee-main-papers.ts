@@ -17,7 +17,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -34,7 +34,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -51,7 +51,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -68,7 +68,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -85,7 +85,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -102,7 +102,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -119,7 +119,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -136,7 +136,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -153,7 +153,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
@@ -170,7 +170,7 @@ const rowsByYearAndSession = {
             ] },
             { label: "Official answer key", actions: [
               { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Final Answer Key", badge: "Official NTA", cta: "View Official Answer Key", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/20260216459398513.pdf", owner: "National Testing Agency", detail: "Published 16 Feb 2026 · session-level PDF carries this date and shift" },
-              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional key workflow", badge: "Official NTA notice", cta: "View Official Provisional Key Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
+              { provenance: "OFFICIAL_AUTHORITY_COPY", label: "Provisional Key / Challenge Notice", badge: "Official NTA notice", cta: "View Official Notice", href: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/02/202602041670681672.pdf", owner: "National Testing Agency", trustNote: "The challenge notice is not itself a direct answer-key PDF.", detail: "Challenge notice published 4 Feb 2026" }
             ] },
             { label: "Analysis", actions: [
               { provenance: "NOT_AVAILABLE", label: "Rank Sarthi analysis", cta: "Analysis pending reviewed ingestion", detail: "No approved question-level dataset exists for this event." }
