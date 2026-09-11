@@ -21,7 +21,7 @@ function visible(links: NavLink[]) {
 function Logo({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <a href="/" onClick={onNavigate} aria-label="Rank Sarthi home" className="inline-flex items-center">
-      <BrandLogo height={70} mobileHeight={48} surface="dark" priority />
+      <BrandLogo height={56} mobileHeight={46} surface="dark" priority />
     </a>
   );
 }
@@ -78,7 +78,7 @@ export function SiteHeader() {
       }`}
     >
       <nav aria-label="Main navigation" className="container-page relative">
-        <div className="flex items-center justify-between gap-4 py-2.5">
+        <div className="flex items-center justify-between gap-4 py-3">
           <Logo />
 
           <ul className="hidden items-center gap-0.5 min-[900px]:flex">
@@ -137,7 +137,7 @@ export function SiteHeader() {
             />
             <CtaLink
               d={destinations.diagnostic("Take a diagnostic")}
-              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
+              className="rounded-md bg-accent px-5 py-2.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
               disabledClassName="hover:translate-y-0"
             />
           </div>

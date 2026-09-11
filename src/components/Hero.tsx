@@ -1,136 +1,96 @@
-import { ArrowRight, Check, Clock, Crosshair, TrendingDown } from "lucide-react";
+import { ArrowRight, Check, Crosshair, TrendingDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 import heroStudent from "@/assets/hero-student.jpg";
 
-const reassurance = ["Built for JEE • NEET • NDA", "See your diagnosis", "Know what to work on next"];
+const reassurance = ["Built for JEE, NEET and NDA", "No generic study plan", "Clear next priorities"];
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-navy-gradient text-primary-foreground">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-grid-faint" />
-        <div className="absolute -right-40 -top-24 size-[42rem] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute -left-32 bottom-0 size-[28rem] rounded-full bg-accent/15 blur-3xl" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-deep/80 to-transparent" />
-      </div>
+    <section id="home" className="relative min-h-[min(880px,100svh)] overflow-hidden bg-navy-deep text-primary-foreground">
+      <img
+        src={heroStudent}
+        alt="An Indian aspirant reviewing a Rank Sarthi diagnostic report while studying"
+        width={1024}
+        height={1280}
+        fetchPriority="high"
+        className="absolute inset-0 size-full object-cover object-[68%_center] sm:object-[72%_center]"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/20" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/35" />
+      <div aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-accent" />
 
-      <div className="container-page relative grid items-center gap-14 pb-20 pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:pb-28 lg:pt-36">
-        <Reveal>
-          <p className="eyebrow text-gold">Preparation Intelligence for JEE • NEET • NDA</p>
-          <h1 className="mt-6 text-display-xl">
-            Your rank has a reason.
-            <br />
-            <span className="text-gold">Find it before exam day.</span>
-          </h1>
-          <p className="mt-7 text-lede text-primary-foreground/75">
-            Rank Sarthi analyses how you solve, where you lose marks and what deserves your attention next —
-            across JEE, NEET and NDA preparation.
-          </p>
+      <div className="container-page relative flex min-h-[min(880px,100svh)] items-center pb-28 pt-32 sm:pt-36 lg:pb-36">
+        <div className="grid w-full items-end gap-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <Reveal className="max-w-4xl">
+            <p className="eyebrow inline-flex items-center gap-3 text-gold">
+              <span className="h-px w-10 bg-gold" aria-hidden="true" />
+              Preparation Intelligence
+            </p>
+            <h1 className="mt-7 max-w-4xl text-[clamp(3.1rem,7vw,6.8rem)] font-bold leading-[0.94]">
+              Your rank has
+              <br />
+              <span className="text-gold">a reason.</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-primary-foreground/78 sm:text-xl">
+              See where marks are being lost, why the pattern exists and what deserves your attention next.
+            </p>
 
-          <div className="mt-9 flex flex-wrap gap-3">
-            <CtaLink
-              d={destinations.diagnostic("Take your first diagnostic")}
-              className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
-            >
-              <span className="inline-flex items-center gap-2">
-                Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
-            </CtaLink>
-            <a
-              href="#product"
-              className="btn-press inline-flex items-center rounded-lg border border-white/35 px-7 py-3.5 text-sm font-bold hover:bg-white/10"
-            >
-              See how it works
-            </a>
-          </div>
-
-          <p className="mt-5 text-sm text-primary-foreground/55">
-            No generic study plan. Your performance decides what comes next.
-          </p>
-
-          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-3">
-            {reassurance.map((r) => (
-              <li key={r} className="flex items-center gap-2 text-sm text-primary-foreground/80">
-                <Check className="size-4 text-gold" aria-hidden="true" />
-                {r}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal delay={160} className="relative">
-          <div className="relative mx-auto max-w-md lg:max-w-none">
-            <div
-              aria-hidden="true"
-              className="absolute -right-5 -top-5 hidden size-40 rounded-2xl border border-gold/30 lg:block"
-            />
-            <div className="relative overflow-hidden rounded-2xl border border-white/12">
-              <img
-                src={heroStudent}
-                alt="An Indian aspirant reviewing a Rank Sarthi diagnostic report while studying"
-                width={1024}
-                height={1280}
-                className="aspect-[4/5] w-full object-cover"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-tr from-navy-deep via-navy-deep/45 to-transparent mix-blend-multiply"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-navy-deep/30"
-              />
-            </div>
-
-            {/* Layered product interface */}
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-6 -left-6 w-[78%] rounded-xl border border-white/12 bg-navy-deep/90 p-4 shadow-elevated backdrop-blur sm:-left-10"
-            >
-              <p className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground/50">
-                Diagnostic summary
-                <span className="inline-flex items-center gap-1 text-gold">
-                  <Crosshair className="size-3" /> Priority
+            <div className="mt-9 flex flex-wrap gap-3">
+              <CtaLink
+                d={destinations.diagnostic("Take your first diagnostic")}
+                className="btn-press inline-flex items-center gap-2 rounded-md bg-accent px-7 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
+              >
+                <span className="inline-flex items-center gap-2">
+                  Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
                 </span>
-              </p>
-              <div className="mt-3 space-y-2.5">
-                {[
-                  { l: "Rotational Motion", w: "82%", c: "bg-accent" },
-                  { l: "Organic Reactions", w: "61%", c: "bg-nda" },
-                  { l: "Definite Integrals", w: "44%", c: "bg-jee" },
-                ].map((b) => (
-                  <div key={b.l}>
-                    <p className="flex justify-between text-[11px] font-semibold text-primary-foreground/80">
-                      <span>{b.l}</span>
-                      <span className="text-primary-foreground/45">concept gap</span>
-                    </p>
-                    <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/10">
-                      <div className={`h-full rounded-full ${b.c}`} style={{ width: b.w }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              </CtaLink>
+              <a
+                href="#product"
+                className="btn-press inline-flex items-center rounded-md border border-white/40 bg-navy-deep/25 px-7 py-4 text-sm font-bold backdrop-blur-sm hover:bg-white/10"
+              >
+                See the diagnosis
+              </a>
             </div>
 
-            <span
-              aria-hidden="true"
-              className="absolute right-2 top-10 hidden items-center gap-2 rounded-lg border border-white/15 bg-navy-deep/90 px-3 py-2 text-[11px] font-semibold text-primary-foreground/85 shadow-elevated backdrop-blur sm:inline-flex"
-            >
-              <TrendingDown className="size-3.5 text-accent" /> Accuracy ↓ Organic Chemistry
-            </span>
-            <span
-              aria-hidden="true"
-              className="absolute -right-2 top-1/2 hidden items-center gap-2 rounded-lg border border-white/15 bg-navy-deep/90 px-3 py-2 text-[11px] font-semibold text-primary-foreground/85 shadow-elevated backdrop-blur lg:inline-flex"
-            >
-              <Clock className="size-3.5 text-gold" /> Time leak: 11 min
-            </span>
-          </div>
-          <p className="mt-10 text-center text-[11px] text-primary-foreground/40 lg:text-right">
-            Interface labels shown are conceptual, not a specific student&rsquo;s result.
-          </p>
-        </Reveal>
+            <ul className="mt-8 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/15 pt-6">
+              {reassurance.map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-primary-foreground/78">
+                  <Check className="size-4 text-gold" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={180} className="hidden lg:block">
+            <div className="border-l border-white/20 bg-navy-deep/70 p-6 shadow-elevated backdrop-blur-md">
+              <div className="flex items-center justify-between text-[0.6875rem] font-bold uppercase text-primary-foreground/55">
+                <span>Diagnostic signal</span>
+                <span className="inline-flex items-center gap-1.5 text-gold">
+                  <Crosshair className="size-3.5" aria-hidden="true" /> Priority 01
+                </span>
+              </div>
+              <p className="mt-5 font-display text-xl font-bold">Rotational Motion</p>
+              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/65">
+                Concept accuracy drops when questions combine torque and rolling motion.
+              </p>
+              <div className="mt-6 h-1.5 overflow-hidden bg-white/10">
+                <div className="h-full w-4/5 bg-accent" />
+              </div>
+              <div className="mt-3 flex items-center justify-between text-xs">
+                <span className="inline-flex items-center gap-1.5 text-primary-foreground/60">
+                  <TrendingDown className="size-3.5 text-accent" aria-hidden="true" /> Repeated pattern
+                </span>
+                <span className="font-bold text-gold">Review concept first</span>
+              </div>
+              <p className="mt-5 border-t border-white/10 pt-4 text-[0.6875rem] text-primary-foreground/45">
+                Illustrative product view — not a student result.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </div>
 
       <HeroFramework />
@@ -142,22 +102,21 @@ const framework = [
   { k: "Diagnose", v: "Find where marks are being lost." },
   { k: "Understand", v: "Know why the pattern exists." },
   { k: "Prioritise", v: "Work on what matters most." },
-  { k: "Improve", v: "Track whether it is actually changing." },
+  { k: "Improve", v: "Measure whether it changed." },
 ];
 
 function HeroFramework() {
   return (
-    <div className="relative border-t border-white/10 bg-navy-deep/50">
+    <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-navy-deep/80 backdrop-blur-md">
       <div className="container-page">
-        <dl className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
-          {framework.map((f, i) => (
-            <Reveal key={f.k} delay={i * 80} className="py-7 lg:px-6 lg:first:pl-0">
-              <dt className="flex items-center gap-3 font-display text-sm font-bold uppercase tracking-[0.16em] text-gold">
-                <span className="text-primary-foreground/30">{`0${i + 1}`}</span>
-                {f.k}
+        <dl className="grid grid-cols-2 lg:grid-cols-4">
+          {framework.map((item, index) => (
+            <div key={item.k} className="border-white/10 py-4 pr-4 even:border-l even:pl-4 lg:border-l lg:px-6 lg:first:border-l-0 lg:first:pl-0">
+              <dt className="flex items-center gap-2 text-xs font-bold uppercase text-gold">
+                <span className="text-primary-foreground/35">0{index + 1}</span> {item.k}
               </dt>
-              <dd className="mt-2 text-sm leading-relaxed text-primary-foreground/65">{f.v}</dd>
-            </Reveal>
+              <dd className="mt-1 hidden text-xs text-primary-foreground/55 sm:block">{item.v}</dd>
+            </div>
           ))}
         </dl>
       </div>

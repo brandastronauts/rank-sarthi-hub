@@ -16,10 +16,10 @@ const BRAND_BLURB =
 export function SiteFooter() {
   return (
     <footer className="bg-navy-deep text-primary-foreground">
-      <div className="container-page py-10 md:py-12">
+      <div className="container-page py-14 md:py-20">
         <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-[minmax(15rem,1.65fr)_repeat(5,minmax(0,1fr))] xl:gap-x-10">
           <div>
-            <BrandLogo height={62} mobileHeight={54} surface="dark" />
+            <BrandLogo height={64} mobileHeight={54} surface="dark" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/80">{BRAND_BLURB}</p>
           </div>
 
@@ -42,9 +42,12 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <p className="mt-10 border-t border-white/10 pt-5 text-sm text-primary-foreground/70">
-          © {new Date().getFullYear()} {site.legalName}. All rights reserved.
-        </p>
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
+          <p className="text-sm text-primary-foreground/70">
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+          </p>
+          <p className="text-xs font-bold uppercase text-gold">Preparation Intelligence</p>
+        </div>
       </div>
     </footer>
   );
