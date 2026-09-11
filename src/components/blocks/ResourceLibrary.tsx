@@ -55,7 +55,7 @@ function ActionCard({ action }: { action: ResourceAction }) {
       {linkable ? (
         <a
           href={action.href}
-          {...(external ? { target: "_blank", rel: "noopener noreferrer nofollow" } : {})}
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="mt-3 inline-flex items-center rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
         >
           {action.cta}
