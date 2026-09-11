@@ -72,8 +72,8 @@ export const jeePreviousYearPapers: InfoPageContent = {
     },
   ],
   relatedLinks: [
-    { label: "JEE Main 2026 Question Papers", url: "/jee/previous-year-papers/2026", relation: "child", description: "Browse the 2026 Paper 1 resource view by session, date and shift" },
-    { label: "JEE Main 2025 Question Papers", url: "/jee/previous-year-papers/2025", relation: "child", description: "Browse the 2025 Paper 1 resource view by session, date and shift" },
+    { label: "JEE Main 2026 Question Papers", url: "/jee/previous-year-papers/2026", relation: "forward", description: "Browse the 2026 Paper 1 resource view by session, date and shift" },
+    { label: "JEE Main 2025 Question Papers", url: "/jee/previous-year-papers/2025", relation: "forward", description: "Browse the 2025 Paper 1 resource view by session, date and shift" },
     { label: "JEE Home", url: "/jee", relation: "up", description: "Return to the JEE hub" },
     { label: "JEE Main", url: "/jee/jee-main", relation: "related", description: "Understand the Main paper and result route" },
     { label: "Answer Key", url: "/jee/answer-key", relation: "related", description: "Open the official provisional and final keys" },
