@@ -2,6 +2,8 @@ import type { InfoPageContent } from "@/content/types";
 import { jeeMain } from "./jee-main";
 import { jeeAdvanced } from "./jee-advanced";
 import { jeePreviousYearPapers } from "./jee-previous-year-papers";
+import { jeePreviousYearPapers2026 } from "./jee-previous-year-papers-2026";
+import { jeePreviousYearPapers2025 } from "./jee-previous-year-papers-2025";
 import { jeeAnswerKey } from "./jee-answer-key";
 import { jeeAnalysis } from "./jee-analysis";
 import { jeeCutoff } from "./jee-cutoff";
@@ -32,6 +34,8 @@ export const infoPages: InfoPageContent[] = [
   jeeMain,
   jeeAdvanced,
   jeePreviousYearPapers,
+  jeePreviousYearPapers2026,
+  jeePreviousYearPapers2025,
   jeeAnswerKey,
   jeeAnalysis,
   jeeCutoff,
