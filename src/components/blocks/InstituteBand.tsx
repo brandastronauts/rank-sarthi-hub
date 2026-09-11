@@ -13,7 +13,7 @@ export function InstituteBand({ id = "institutes" }: { id?: string }) {
   const demo = destinations.notYet("Request a demo", "This is not available yet.");
 
   return (
-    <section id={id} className="section-pad bg-ivory">
+    <section id={id} className="section-pad bg-paleblue">
       <div className="container-page grid items-center gap-12 lg:grid-cols-[1fr_0.85fr]">
         <Reveal>
           <p className="eyebrow text-accent">For institutes</p>
@@ -41,7 +41,7 @@ export function InstituteBand({ id = "institutes" }: { id?: string }) {
         </Reveal>
 
         <Reveal delay={140}>
-          <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-background">
+          <ul className="divide-y divide-border border-y border-border bg-background">
             {institutePoints.map((pt) => (
               <li key={pt} className="flex items-start gap-3 px-6 py-5 text-sm font-semibold text-foreground/80">
                 <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />

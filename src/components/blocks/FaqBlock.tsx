@@ -39,21 +39,24 @@ export function FaqBlock({
         <Reveal>
           <p className="eyebrow text-accent">{eyebrow}</p>
           <h2 className="mt-5 text-display-lg text-primary">{heading}</h2>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            Straight answers about how Rank Sarthi fits into serious exam preparation.
+          </p>
         </Reveal>
-        <div className="space-y-3">
+        <div className="border-t border-primary/15">
           {items.map((f, i) => {
             const isOpen = open === i;
             const q = f.q ?? f.question ?? "";
             return (
               <Reveal key={q || i} delay={i * 45}>
-                <div className="overflow-hidden rounded-xl border border-border bg-background">
+                <div className="border-b border-primary/15">
                   <h3>
                     <button
                       type="button"
                       aria-expanded={isOpen}
                       aria-controls={`${id}-panel-${i}`}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-primary"
+                      className="flex w-full items-center justify-between gap-4 py-6 text-left text-base font-semibold text-primary"
                     >
                       {q}
                       <ChevronDown
@@ -67,7 +70,7 @@ export function FaqBlock({
                   <div
                     id={`${id}-panel-${i}`}
                     hidden={!isOpen}
-                    className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground"
+                    className="max-w-2xl pb-6 pr-10 text-sm leading-relaxed text-muted-foreground"
                   >
                     {f.a ?? (f.answer ? <RichText nodes={f.answer} /> : null)}
                   </div>
