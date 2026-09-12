@@ -25,6 +25,40 @@ import { neetExamDates } from "./neet-exam-dates";
 import { neetBlog } from "./neet-blog";
 import { neetScoreCalculator } from "./neet-score-calculator";
 import { neetStudyPlan } from "./neet-study-plan";
+import { ndaNdaExam } from "./nda-nda-exam";
+import { ndaSelectionProcess } from "./nda-selection-process";
+import { ndaNdaVsCdsVsAfcat } from "./nda-nda-vs-cds-vs-afcat";
+import { ndaEligibility } from "./nda-eligibility";
+import { ndaSyllabusMathematics } from "./nda-syllabus-mathematics";
+import { ndaSyllabusGat } from "./nda-syllabus-gat";
+import { ndaSyllabusPhysics } from "./nda-syllabus-physics";
+import { ndaSyllabusGeneralKnowledge } from "./nda-syllabus-general-knowledge";
+import { ndaSyllabusEnglish } from "./nda-syllabus-english";
+import { ndaMathematicsAlgebra } from "./nda-mathematics-algebra";
+import { ndaMathematicsTrigonometry } from "./nda-mathematics-trigonometry";
+import { ndaMathematicsCalculus } from "./nda-mathematics-calculus";
+import { ndaMathematicsMatricesDeterminants } from "./nda-mathematics-matrices-determinants";
+import { ndaMathematicsAnalyticalGeometry } from "./nda-mathematics-analytical-geometry";
+import { ndaMathematicsDifferentialEquations } from "./nda-mathematics-differential-equations";
+import { ndaMathematicsVectorAlgebra } from "./nda-mathematics-vector-algebra";
+import { ndaMathematicsStatistics } from "./nda-mathematics-statistics";
+import { ndaMathematicsProbability } from "./nda-mathematics-probability";
+import { ndaMathematicsComplexNumbers } from "./nda-mathematics-complex-numbers";
+import { ndaMathematicsQuadraticEquations } from "./nda-mathematics-quadratic-equations";
+import { ndaMathematicsIntegration } from "./nda-mathematics-integration";
+import { ndaSsbInterview } from "./nda-ssb-interview";
+import { ndaPhysicalStandards } from "./nda-physical-standards";
+import { ndaGirlsInNda } from "./nda-girls-in-nda";
+import { ndaPabtTest } from "./nda-pabt-test";
+import { ndaSsbInterviewQuestions } from "./nda-ssb-interview-questions";
+import { ndaPreparationRoadmap } from "./nda-preparation-roadmap";
+import { ndaLifeAfterNda } from "./nda-life-after-nda";
+import { ndaWingsArmy } from "./nda-wings-army";
+import { ndaWingsNavy } from "./nda-wings-navy";
+import { ndaWingsAirForce } from "./nda-wings-air-force";
+import { ndaPhysicalFitness } from "./nda-physical-fitness";
+import { ndaSainikSchool } from "./nda-sainik-school";
+import { ndaFaq } from "./nda-faq";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
@@ -57,6 +91,40 @@ export const infoPages: InfoPageContent[] = [
   neetBlog,
   neetScoreCalculator,
   neetStudyPlan,
+  ndaNdaExam,
+  ndaSelectionProcess,
+  ndaNdaVsCdsVsAfcat,
+  ndaEligibility,
+  ndaSyllabusMathematics,
+  ndaSyllabusGat,
+  ndaSyllabusPhysics,
+  ndaSyllabusGeneralKnowledge,
+  ndaSyllabusEnglish,
+  ndaMathematicsAlgebra,
+  ndaMathematicsTrigonometry,
+  ndaMathematicsCalculus,
+  ndaMathematicsMatricesDeterminants,
+  ndaMathematicsAnalyticalGeometry,
+  ndaMathematicsDifferentialEquations,
+  ndaMathematicsVectorAlgebra,
+  ndaMathematicsStatistics,
+  ndaMathematicsProbability,
+  ndaMathematicsComplexNumbers,
+  ndaMathematicsQuadraticEquations,
+  ndaMathematicsIntegration,
+  ndaSsbInterview,
+  ndaPhysicalStandards,
+  ndaGirlsInNda,
+  ndaPabtTest,
+  ndaSsbInterviewQuestions,
+  ndaPreparationRoadmap,
+  ndaLifeAfterNda,
+  ndaWingsArmy,
+  ndaWingsNavy,
+  ndaWingsAirForce,
+  ndaPhysicalFitness,
+  ndaSainikSchool,
+  ndaFaq,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));
