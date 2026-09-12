@@ -222,6 +222,8 @@ export const sources: Record<string, SourceRef> = {
   "ncert-textbooks-index": { id: "ncert-textbooks-index", label: "NCERT textbooks (Classes I-XII)", publisher: "NCERT", url: "https://ncert.nic.in/textbook.php?ibook=1", sourceType: "textbook", lastVerified: "12 September 2026" },
   "pib-releases": { id: "pib-releases", label: "Press Information Bureau, Government of India", publisher: "Press Information Bureau", url: "https://www.pib.gov.in/", sourceType: "official", lastVerified: "12 September 2026" },
   "rbi-official": { id: "rbi-official", label: "Reserve Bank of India official website", publisher: "Reserve Bank of India", url: "https://rbi.org.in/", sourceType: "official", lastVerified: "12 September 2026" },
+  "jee-advanced-result-2026-press-release": { id: "jee-advanced-result-2026-press-release", label: "JEE (Advanced) 2026 result press release (PDF)", publisher: "JEE (Advanced) 2026 organising authority", url: "https://jeeadv.ac.in/documents/Result2026PressRelease.pdf", sourceType: "official-pdf", lastVerified: "13 September 2026" },
+  "jee-advanced-eligibility-2026": { id: "jee-advanced-eligibility-2026", label: "JEE (Advanced) 2026 eligibility criteria", publisher: "JEE (Advanced) 2026 organising authority", url: "https://jeeadv.ac.in/eligibility.html", sourceType: "official", lastVerified: "13 September 2026" },
 };
 
 
