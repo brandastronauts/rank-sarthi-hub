@@ -138,3 +138,43 @@ export function faqSchema(items: { q: string; a: string }[]) {
     })),
   };
 }
+
+/**
+ * Schema mapping for generic information pages (InfoPageContent).
+ * Resource/link-dominated pages are collections; prose-dominated documents are
+ * articles. Author/reviewer are never emitted: contributors are UNASSIGNED
+ * until human review, so no Person schema is produced.
+ */
+export function infoPageSchema(opts: {
+  url: string;
+  title: string;
+  description: string;
+  blocks?: { kind: string }[];
+  relatedLinks?: { label: string; url: string }[];
+  lastVerified?: string;
+}) {
+  const blocks = opts.blocks ?? [];
+  const listy = blocks.filter((b) => b.kind === "resources" || b.kind === "links").length;
+  const prose = blocks.filter((b) => b.kind === "prose" || b.kind === "table").length;
+  const isCollection = blocks.length === 0 || listy >= prose;
+
+  if (isCollection) {
+    return collectionPageSchema({
+      url: opts.url,
+      name: opts.title,
+      description: opts.description,
+      ...(opts.relatedLinks
+        ? { items: opts.relatedLinks.map((l) => ({ name: l.label, url: l.url })) }
+        : {}),
+    });
+  }
+
+  return articleSchema({
+    url: opts.url,
+    headline: opts.title,
+    description: opts.description,
+    ...(opts.lastVerified && /^\d{4}-\d{2}-\d{2}/.test(opts.lastVerified)
+      ? { updated: opts.lastVerified }
+      : {}),
+  });
+}

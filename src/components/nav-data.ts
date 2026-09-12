@@ -41,7 +41,7 @@ export const navItems: NavItem[] = [
         links: [
           { label: "JEE Main", href: "/jee/jee-main" },
           { label: "JEE Advanced", href: "/jee/jee-advanced" },
-          { label: "How it works", href: "/#how" },
+          { label: "How it works", href: "/how-it-works" },
           { label: "Pricing", href: "/#pricing" },
         ],
       },
@@ -85,7 +85,7 @@ export const navItems: NavItem[] = [
         links: [
           { label: "NEET exam", href: "/neet/neet-exam" },
           { label: "NCERT mapping", href: "/neet/ncert-mapping" },
-          { label: "How it works", href: "/#how" },
+          { label: "How it works", href: "/how-it-works" },
           { label: "Pricing", href: "/#pricing" },
         ],
       },
@@ -236,10 +236,11 @@ export const footerGroups: MenuColumn[] = [
   {
     title: "Rank Sarthi",
     links: [
-      { label: "How it works", href: "/#how" },
+      { label: "How it works", href: "/how-it-works" },
       { label: "Preparation Intelligence", href: "/#idea" },
       { label: "For parents", href: "/#parents" },
-      { label: "For institutes", href: "/#institutes" },
+      { label: "For institutes", href: "/for-institutes" },
+      { label: "FAQ", href: "/faq" },
       { label: "Blog", href: "/blog" },
     ],
   },

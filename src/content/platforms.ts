@@ -574,7 +574,18 @@ export const platforms: Record<string, PlatformData> = {
       { id: "retest", stage: "Retest", body: "Use a fresh set to check whether the repair transferred." },
     ],
 
-    relatedUrls: ["/jee/syllabus", "/jee/physics", "/jee/chemistry", "/jee/mathematics"],
+    relatedUrls: [
+      "/jee/jee-main",
+      "/jee/jee-advanced",
+      "/jee/syllabus",
+      "/jee/physics",
+      "/jee/chemistry",
+      "/jee/mathematics",
+      "/jee/previous-year-papers",
+      "/jee/exam-dates",
+      "/jee/cutoff",
+      "/jee/answer-key",
+    ],
 
     faqs: [
       {
@@ -804,6 +815,15 @@ export const platforms: Record<string, PlatformData> = {
       "/neet/ncert-mapping",
       "/neet/ncert-important-pages",
       "/neet/biology",
+      "/neet/physics",
+      "/neet/chemistry",
+      "/neet/previous-year-papers",
+      "/neet/answer-key",
+      "/neet/cutoff",
+      "/neet/exam-dates",
+      "/neet/score-calculator",
+      "/neet/study-plan",
+      "/neet/blog",
     ],
 
     showPricing: false,

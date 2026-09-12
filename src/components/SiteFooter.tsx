@@ -46,6 +46,10 @@ export function SiteFooter() {
           <p className="text-sm text-primary-foreground/70">
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
+          <NavLinkOrText
+            d={destinations.nav("Site map", "/sitemap")}
+            className="text-sm text-primary-foreground/70 transition-colors hover:text-gold"
+          />
           <p className="text-xs font-bold uppercase text-gold">Preparation Intelligence</p>
         </div>
       </div>
