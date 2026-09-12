@@ -422,34 +422,6 @@ export const ndaMathematicsProbability: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "official-sources",
-      "heading": "Official sources",
-      "concepts": [
-        {
-          "id": "official-sources-intro",
-          "title": "Official sources",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "UPSC NDA & NA Examination (II), 2026 notice: https://www.upsc.gov.in/sites/default/files/Notif-NDA-II-2026-Engl-200526.pdf"
-                  }
-                ],
-                [
-                  {
-                    "text": "UPSC Previous Question Papers: https://www.upsc.gov.in/examinations/previous-question-papers"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
       "id": "reviewer-requirement",
       "heading": "Reviewer requirement",
       "concepts": [
@@ -525,8 +497,8 @@ export const ndaMathematicsProbability: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "upsc-nda-ii-2026-exam-page",
-    "upsc-nda-ii-2026-notification"
+    "upsc-nda-ii-2026-notification",
+    "upsc-previous-question-papers"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
