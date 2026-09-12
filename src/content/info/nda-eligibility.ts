@@ -31,12 +31,12 @@ export const ndaEligibility: InfoPageContent = {
   "blocks": [
     {
       "kind": "prose",
-      "id": "1-date-of-birth-for-nda-ii-2026",
-      "heading": "1. Date of birth for NDA II 2026",
+      "id": "date-of-birth-for-nda-ii-2026",
+      "heading": "Date of birth for NDA II 2026",
       "concepts": [
         {
-          "id": "1-date-of-birth-for-nda-ii-2026-intro",
-          "title": "1. Date of birth for NDA II 2026",
+          "id": "date-of-birth-for-nda-ii-2026-intro",
+          "title": "Date of birth for NDA II 2026",
           "body": [
             {
               "type": "paragraph",
@@ -59,12 +59,12 @@ export const ndaEligibility: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "2-marital-status",
-      "heading": "2. Marital status",
+      "id": "marital-status",
+      "heading": "Marital status",
       "concepts": [
         {
-          "id": "2-marital-status-intro",
-          "title": "2. Marital status",
+          "id": "marital-status-intro",
+          "title": "Marital status",
           "body": [
             {
               "type": "paragraph",
@@ -80,8 +80,8 @@ export const ndaEligibility: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "3-education",
-      "heading": "3. Education",
+      "id": "education",
+      "heading": "Education",
       "concepts": [
         {
           "id": "army-wing",
@@ -129,12 +129,12 @@ export const ndaEligibility: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "4-nationality",
-      "heading": "4. Nationality",
+      "id": "nationality",
+      "heading": "Nationality",
       "concepts": [
         {
-          "id": "4-nationality-intro",
-          "title": "4. Nationality",
+          "id": "nationality-intro",
+          "title": "Nationality",
           "body": [
             {
               "type": "paragraph",
@@ -150,12 +150,12 @@ export const ndaEligibility: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "5-physical-and-medical-fitness",
-      "heading": "5. Physical and medical fitness",
+      "id": "physical-and-medical-fitness",
+      "heading": "Physical and medical fitness",
       "concepts": [
         {
-          "id": "5-physical-and-medical-fitness-intro",
-          "title": "5. Physical and medical fitness",
+          "id": "physical-and-medical-fitness-intro",
+          "title": "Physical and medical fitness",
           "body": [
             {
               "type": "paragraph",
@@ -164,7 +164,8 @@ export const ndaEligibility: InfoPageContent = {
                   "text": "Eligibility on age and education does not waive medical / physical standards. Link to "
                 },
                 {
-                  "text": "/nda/physical-standards"
+                  "text": "/nda/physical-standards",
+                  "code": true
                 },
                 {
                   "text": " for the current source-mapped standards. Do not encourage self-diagnosis from summaries."
@@ -177,12 +178,12 @@ export const ndaEligibility: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "6-appearing-candidates",
-      "heading": "6. Appearing candidates",
+      "id": "appearing-candidates",
+      "heading": "Appearing candidates",
       "concepts": [
         {
-          "id": "6-appearing-candidates-intro",
-          "title": "6. Appearing candidates",
+          "id": "appearing-candidates-intro",
+          "title": "Appearing candidates",
           "body": [
             {
               "type": "paragraph",

@@ -304,160 +304,6 @@ export const ndaGirlsInNda: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "SSB interview guide: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical and medical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "Air Force wing: "
-                  },
-                  {
-                    "text": "/nda/wings/air-force"
-                  }
-                ],
-                [
-                  {
-                    "text": "Sainik School and NDA: "
-                  },
-                  {
-                    "text": "/nda/sainik-school"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " current-source review plus suitable defence subject reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current-source reviewer + suitable defence subject reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC notification for female eligibility/vacancies and service-specific education/medical rules; official service sources for training context."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC and IAF official sources located; no candidate stories used; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current-source and subject review before indexation."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and any service-entry policy change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-entry"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-training"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -484,12 +330,21 @@ export const ndaGirlsInNda: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-careerairforce-gov-in-nda-entry",
+    "nda-www-careerairforce-gov-in-nda-training"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Current-source reviewer + suitable defence subject reviewer",
+    "Evidence Required: Current UPSC notification for female eligibility/vacancies and service-specific education/medical rules; official service sources for training context.",
+    "Current Evidence State: Current UPSC and IAF official sources located; no candidate stories used; reviewer unassigned.",
+    "Publication Blocker: Current-source and subject review before indexation.",
+    "Refresh Trigger: Every NDA notification cycle and any service-entry policy change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

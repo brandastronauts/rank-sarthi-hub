@@ -11,10 +11,19 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
   "slug": "mathematics/complex-numbers",
   "exam": "NDA & NA (II) 2026",
   "contentStatus": "draft",
-  "title": null,
+  "title": "NDA Complex Numbers: Form, Modulus, Argument and Roots",
   "eyebrow": "Complex Numbers",
-  "intent": "",
-  "answer": [],
+  "intent": "Learn the NDA-specific Complex Numbers scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage.",
+  "answer": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "NDA Complex Numbers covers a+ib form, conjugates, modulus, argument and cube roots of unity as part of official Algebra."
+        }
+      ]
+    }
+  ],
   "chips": [
     "Official-source checked",
     "Human review pending"
@@ -22,12 +31,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
   "blocks": [
     {
       "kind": "prose",
-      "id": "1-url",
-      "heading": "1. URL",
+      "id": "url",
+      "heading": "URL",
       "concepts": [
         {
-          "id": "1-url-intro",
-          "title": "1. URL",
+          "id": "url-intro",
+          "title": "URL",
           "body": [
             {
               "type": "paragraph",
@@ -43,12 +52,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "2-frozen-route-name",
-      "heading": "2. Frozen route name",
+      "id": "frozen-route-name",
+      "heading": "Frozen route name",
       "concepts": [
         {
-          "id": "2-frozen-route-name-intro",
-          "title": "2. Frozen route name",
+          "id": "frozen-route-name-intro",
+          "title": "Frozen route name",
           "body": [
             {
               "type": "paragraph",
@@ -64,12 +73,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "3-official-syllabus-ownership",
-      "heading": "3. Official syllabus ownership",
+      "id": "official-syllabus-ownership",
+      "heading": "Official syllabus ownership",
       "concepts": [
         {
-          "id": "3-official-syllabus-ownership-intro",
-          "title": "3. Official syllabus ownership",
+          "id": "official-syllabus-ownership-intro",
+          "title": "Official syllabus ownership",
           "body": [
             {
               "type": "paragraph",
@@ -85,54 +94,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "4-h1",
-      "heading": "4. H1",
+      "id": "exact-nda-relevant-scope",
+      "heading": "Exact NDA-relevant scope",
       "concepts": [
         {
-          "id": "4-h1-intro",
-          "title": "4. H1",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "NDA Complex Numbers: Form, Modulus, Argument and Roots"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "5-direct-answer",
-      "heading": "5. Direct answer",
-      "concepts": [
-        {
-          "id": "5-direct-answer-intro",
-          "title": "5. Direct answer",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "NDA Complex Numbers covers a+ib form, conjugates, modulus, argument and cube roots of unity as part of official Algebra."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "6-exact-nda-relevant-scope",
-      "heading": "6. Exact NDA-relevant scope",
-      "concepts": [
-        {
-          "id": "6-exact-nda-relevant-scope-intro",
-          "title": "6. Exact NDA-relevant scope",
+          "id": "exact-nda-relevant-scope-intro",
+          "title": "Exact NDA-relevant scope",
           "body": [
             {
               "type": "paragraph",
@@ -148,12 +115,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "7-prerequisite-concepts",
-      "heading": "7. Prerequisite concepts",
+      "id": "prerequisite-concepts",
+      "heading": "Prerequisite concepts",
       "concepts": [
         {
-          "id": "7-prerequisite-concepts-intro",
-          "title": "7. Prerequisite concepts",
+          "id": "prerequisite-concepts-intro",
+          "title": "Prerequisite concepts",
           "body": [
             {
               "type": "paragraph",
@@ -169,12 +136,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "8-core-definitions",
-      "heading": "8. Core definitions",
+      "id": "core-definitions",
+      "heading": "Core definitions",
       "concepts": [
         {
-          "id": "8-core-definitions-intro",
-          "title": "8. Core definitions",
+          "id": "core-definitions-intro",
+          "title": "Core definitions",
           "body": [
             {
               "type": "list",
@@ -217,44 +184,50 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "9-formula-set",
-      "heading": "9. Formula set",
+      "id": "formula-set",
+      "heading": "Formula set",
       "concepts": [
         {
-          "id": "9-formula-set-intro",
-          "title": "9. Formula set",
+          "id": "formula-set-intro",
+          "title": "Formula set",
           "body": [
             {
               "type": "list",
               "items": [
                 [
                   {
-                    "text": "If z=a+ib, conjugate zbar=a-ib"
+                    "text": "If z=a+ib, conjugate zbar=a-ib",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "|z|=sqrt(a^2+b^2)"
+                    "text": "|z|=sqrt(a^2+b^2)",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "z zbar=|z|^2"
+                    "text": "z zbar=|z|^2",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "1/z = zbar/|z|^2 for z!=0"
+                    "text": "1/z = zbar/|z|^2 for z!=0",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "i powers cycle: i, -1, -i, 1"
+                    "text": "i powers cycle: i, -1, -i, 1",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "Cube roots of unity: 1, omega, omega^2 with omega^3=1 and 1+omega+omega^2=0"
+                    "text": "Cube roots of unity: 1, omega, omega^2 with omega^3=1 and 1+omega+omega^2=0",
+                    "code": true
                   }
                 ]
               ]
@@ -265,12 +238,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "10-conditions-applicability",
-      "heading": "10. Conditions / applicability",
+      "id": "conditions-applicability",
+      "heading": "Conditions / applicability",
       "concepts": [
         {
-          "id": "10-conditions-applicability-intro",
-          "title": "10. Conditions / applicability",
+          "id": "conditions-applicability-intro",
+          "title": "Conditions / applicability",
           "body": [
             {
               "type": "list",
@@ -303,12 +276,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "11-worked-reasoning-examples",
-      "heading": "11. Worked reasoning examples",
+      "id": "worked-reasoning-examples",
+      "heading": "Worked reasoning examples",
       "concepts": [
         {
-          "id": "11-worked-reasoning-examples-intro",
-          "title": "11. Worked reasoning examples",
+          "id": "worked-reasoning-examples-intro",
+          "title": "Worked reasoning examples",
           "body": [
             {
               "type": "list",
@@ -337,12 +310,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "12-common-execution-errors",
-      "heading": "12. Common execution errors",
+      "id": "common-execution-errors",
+      "heading": "Common execution errors",
       "concepts": [
         {
-          "id": "12-common-execution-errors-intro",
-          "title": "12. Common execution errors",
+          "id": "common-execution-errors-intro",
+          "title": "Common execution errors",
           "body": [
             {
               "type": "list",
@@ -380,12 +353,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "13-manual-pi-v1-1-error-mapping",
-      "heading": "13. Manual PI v1.1 error mapping",
+      "id": "manual-pi-v1-1-error-mapping",
+      "heading": "Manual PI v1.1 error mapping",
       "concepts": [
         {
-          "id": "13-manual-pi-v1-1-error-mapping-intro",
-          "title": "13. Manual PI v1.1 error mapping",
+          "id": "manual-pi-v1-1-error-mapping-intro",
+          "title": "Manual PI v1.1 error mapping",
           "body": [
             {
               "type": "list",
@@ -452,12 +425,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "14-exam-specific-question-approach",
-      "heading": "14. Exam-specific question approach",
+      "id": "exam-specific-question-approach",
+      "heading": "Exam-specific question approach",
       "concepts": [
         {
-          "id": "14-exam-specific-question-approach-intro",
-          "title": "14. Exam-specific question approach",
+          "id": "exam-specific-question-approach-intro",
+          "title": "Exam-specific question approach",
           "body": [
             {
               "type": "paragraph",
@@ -481,130 +454,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "15-internal-links",
-      "heading": "15. Internal links",
+      "id": "official-sources",
+      "heading": "Official sources",
       "concepts": [
         {
-          "id": "15-internal-links-intro",
-          "title": "15. Internal links",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "/nda/syllabus/mathematics"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/mathematics/algebra"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/mathematics/quadratic-equations"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/previous-year-papers"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Mock-test actions must remain disabled or hidden until "
-                },
-                {
-                  "text": "/nda/mock-tests"
-                },
-                {
-                  "text": " has a verified functioning product."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "16-metadata",
-      "heading": "16. Metadata",
-      "concepts": [
-        {
-          "id": "16-metadata-intro",
-          "title": "16. Metadata",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "SEO title: NDA Complex Numbers 2026: Concepts, Formulas & Exam Approach | Rank Sarthi"
-                  }
-                ],
-                [
-                  {
-                    "text": "Meta description: Learn the NDA-specific Complex Numbers scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage."
-                  }
-                ],
-                [
-                  {
-                    "text": "Canonical: https://ranksarthi.com/nda/mathematics/complex-numbers"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "17-aeo",
-      "heading": "17. AEO",
-      "concepts": [
-        {
-          "id": "17-aeo-intro",
-          "title": "17. AEO",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Question:",
-                  "bold": true
-                },
-                {
-                  "text": " What should I know for NDA Complex Numbers? "
-                },
-                {
-                  "text": "Answer:",
-                  "bold": true
-                },
-                {
-                  "text": " NDA Complex Numbers covers a+ib form, conjugates, modulus, argument and cube roots of unity as part of official Algebra."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "18-official-sources",
-      "heading": "18. Official sources",
-      "concepts": [
-        {
-          "id": "18-official-sources-intro",
-          "title": "18. Official sources",
+          "id": "official-sources-intro",
+          "title": "Official sources",
           "body": [
             {
               "type": "list",
@@ -627,12 +482,12 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "19-reviewer-requirement",
-      "heading": "19. Reviewer requirement",
+      "id": "reviewer-requirement",
+      "heading": "Reviewer requirement",
       "concepts": [
         {
-          "id": "19-reviewer-requirement-intro",
-          "title": "19. Reviewer requirement",
+          "id": "reviewer-requirement-intro",
+          "title": "Reviewer requirement",
           "body": [
             {
               "type": "list",
@@ -667,104 +522,6 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
           ]
         }
       ]
-    },
-    {
-      "kind": "prose",
-      "id": "20-schema-recommendation",
-      "heading": "20. Schema recommendation",
-      "concepts": [
-        {
-          "id": "20-schema-recommendation-intro",
-          "title": "20. Schema recommendation",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Article + LearningResource + BreadcrumbList. This is a content-level recommendation for the frozen T08 page and does not request a Lovable architecture change. No Person schema for unassigned contributors."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "21-indexation",
-      "heading": "21. Indexation",
-      "concepts": [
-        {
-          "id": "21-indexation-intro",
-          "title": "21. Indexation",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "draft noindex Hold until human academic review and rendered-page QA."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "22-qa",
-      "heading": "22. QA",
-      "concepts": [
-        {
-          "id": "22-qa-intro",
-          "title": "22. QA",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "NDA scope only, not copied from JEE depth."
-                  }
-                ],
-                [
-                  {
-                    "text": "Formula conditions are stated beside formulas where material."
-                  }
-                ],
-                [
-                  {
-                    "text": "Worked examples are instructional examples, not claimed PYQs."
-                  }
-                ],
-                [
-                  {
-                    "text": "No chapter-frequency, high-weightage or guaranteed-marks claim."
-                  }
-                ],
-                [
-                  {
-                    "text": "No invented product action."
-                  }
-                ],
-                [
-                  {
-                    "text": "Zero em dash rule applied."
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "relatedLinks": [
@@ -784,7 +541,25 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "faqs": [
+    {
+      "question": "What should I know for NDA Complex Numbers?",
+      "answer": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "NDA Complex Numbers covers a+ib form, conjugates, modulus, argument and cube roots of unity as part of official Algebra."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-upsc-gov-in-sites-default-files-notif-nda-ii-202"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Written by: UNASSIGNED",
@@ -793,8 +568,8 @@ export const ndaMathematicsComplexNumbers: InfoPageContent = {
   ],
   "lastVerified": "12 September 2026",
   "seo": {
-    "title": "None | Rank Sarthi",
-    "description": "",
+    "title": "NDA Complex Numbers 2026: Concepts, Formulas & Exam Approach | Rank Sarthi",
+    "description": "Learn the NDA-specific Complex Numbers scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage.",
     "ogType": "article"
   }
 };

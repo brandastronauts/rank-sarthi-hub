@@ -249,160 +249,6 @@ export const ndaLifeAfterNda: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Army wing: "
-                  },
-                  {
-                    "text": "/nda/wings/army"
-                  }
-                ],
-                [
-                  {
-                    "text": "Navy wing: "
-                  },
-                  {
-                    "text": "/nda/wings/navy"
-                  }
-                ],
-                [
-                  {
-                    "text": "Air Force wing: "
-                  },
-                  {
-                    "text": "/nda/wings/air-force"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " defence-career / official-source review required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / official-source reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC training pathway plus official service training sources; no unverified salary or branch-promise claims."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official UPSC and IAF training sources located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / official-source review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and material training/career pathway change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-training"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.joinindiannavy.gov.in/files/Indian_Navy_Calendar_2025.pdf"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -429,12 +275,21 @@ export const ndaLifeAfterNda: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-careerairforce-gov-in-nda-training",
+    "nda-www-joinindiannavy-gov-in-files-indian-navy-calendar"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Defence-career / official-source reviewer",
+    "Evidence Required: Current UPSC training pathway plus official service training sources; no unverified salary or branch-promise claims.",
+    "Current Evidence State: Official UPSC and IAF training sources located; reviewer unassigned.",
+    "Publication Blocker: Defence-career / official-source review.",
+    "Refresh Trigger: Every NDA notification cycle and material training/career pathway change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

@@ -45,7 +45,8 @@ export const ndaWingsNavy: InfoPageContent = {
                   "text": "Official Indian Navy material describes NDA/NA as a Permanent Commission officer-entry route and requires the applicable 10+2 science qualification for the naval entry. Keep the exact current-cycle wording on "
                 },
                 {
-                  "text": "/nda/eligibility"
+                  "text": "/nda/eligibility",
+                  "code": true
                 },
                 {
                   "text": " and in the UPSC notification."
@@ -228,160 +229,6 @@ export const ndaWingsNavy: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "NDA eligibility: "
-                  },
-                  {
-                    "text": "/nda/eligibility"
-                  }
-                ],
-                [
-                  {
-                    "text": "Life after NDA: "
-                  },
-                  {
-                    "text": "/nda/life-after-nda"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "Air Force wing comparison: "
-                  },
-                  {
-                    "text": "/nda/wings/air-force"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " Navy / defence-career official-source review required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / official-source reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC Navy pathway and official Indian Navy entry context; distinguish NDA Naval Wing from other Naval Academy entry schemes."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC source and official Navy entry reference located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Navy/defence-career official-source review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and material Navy entry/training change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.joinindiannavy.gov.in/files/Indian_Navy_Calendar_2025.pdf"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.joinindiannavy.gov.in/"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -408,12 +255,21 @@ export const ndaWingsNavy: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-joinindiannavy-gov-in-files-indian-navy-calendar",
+    "nda-www-joinindiannavy-gov-in"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Defence-career / official-source reviewer",
+    "Evidence Required: Current UPSC Navy pathway and official Indian Navy entry context; distinguish NDA Naval Wing from other Naval Academy entry schemes.",
+    "Current Evidence State: Current UPSC source and official Navy entry reference located; reviewer unassigned.",
+    "Publication Blocker: Navy/defence-career official-source review.",
+    "Refresh Trigger: Every NDA notification cycle and material Navy entry/training change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

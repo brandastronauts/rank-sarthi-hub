@@ -264,7 +264,8 @@ export const ndaSsbInterviewQuestions: InfoPageContent = {
                   "text": "Use "
                 },
                 {
-                  "text": "/nda/gat/current-affairs"
+                  "text": "/nda/gat/current-affairs",
+                  "code": true
                 },
                 {
                   "text": " for the current-affairs owner page and the archive only when a verified dataset exists."
@@ -431,147 +432,6 @@ export const ndaSsbInterviewQuestions: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Complete SSB process: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical and medical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "CPSS for Flying: "
-                  },
-                  {
-                    "text": "/nda/pabt-test"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " SSB / defence-selection SME required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " SSB / defence-selection SME"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official SSB/AFSB process context; candidate-facing reflection prompts only; no answer bank or assessor-scoring claims."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official stage source located; question framework is editorial and clearly labelled; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " SSB / defence-selection SME sign-off."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Annual review and any material official SSB/AFSB process change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://careerairforce.gov.in/air-force-selection-board-afsb-testing"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -593,12 +453,20 @@ export const ndaSsbInterviewQuestions: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-careerairforce-gov-in-air-force-selection-board-afsb"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: SSB / defence-selection SME",
+    "Evidence Required: Official SSB/AFSB process context; candidate-facing reflection prompts only; no answer bank or assessor-scoring claims.",
+    "Current Evidence State: Official stage source located; question framework is editorial and clearly labelled; reviewer unassigned.",
+    "Publication Blocker: SSB / defence-selection SME sign-off.",
+    "Refresh Trigger: Annual review and any material official SSB/AFSB process change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

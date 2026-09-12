@@ -131,7 +131,8 @@ export const ndaWingsAirForce: InfoPageContent = {
                   "text": "The frozen Rank Sarthi URL "
                 },
                 {
-                  "text": "/nda/pabt-test"
+                  "text": "/nda/pabt-test",
+                  "code": true
                 },
                 {
                   "text": " exists for architecture/search continuity, but visible content there must lead with CPSS."
@@ -187,7 +188,8 @@ export const ndaWingsAirForce: InfoPageContent = {
                   "text": "Aviation roles can carry additional medical and anthropometric requirements. Keep exact current standards on "
                 },
                 {
-                  "text": "/nda/physical-standards"
+                  "text": "/nda/physical-standards",
+                  "code": true
                 },
                 {
                   "text": " with a medical-review gate. Never infer Flying fitness from a single height or eyesight value."
@@ -246,170 +248,6 @@ export const ndaWingsAirForce: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "CPSS / legacy PABT guide: "
-                  },
-                  {
-                    "text": "/nda/pabt-test"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB/AFSB guide: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "Life after NDA: "
-                  },
-                  {
-                    "text": "/nda/life-after-nda"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " Air Force / defence-career official-source review required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / Air Force / official-source reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC notification; official IAF NDA entry, AFSB and training pages; CPSS/flying caveats."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official IAF sources located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Air Force / defence-career review and current-cycle branch/vacancy cross-check."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and any IAF entry/training/CPSS change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-entry"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://careerairforce.gov.in/air-force-selection-board-afsb-testing"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-training"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://careerairforce.gov.in/flying-training"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -436,12 +274,23 @@ export const ndaWingsAirForce: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-careerairforce-gov-in-nda-entry",
+    "nda-careerairforce-gov-in-air-force-selection-board-afsb",
+    "nda-www-careerairforce-gov-in-nda-training",
+    "nda-careerairforce-gov-in-flying-training"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Defence-career / Air Force / official-source reviewer",
+    "Evidence Required: Current UPSC notification; official IAF NDA entry, AFSB and training pages; CPSS/flying caveats.",
+    "Current Evidence State: Official IAF sources located; reviewer unassigned.",
+    "Publication Blocker: Air Force / defence-career review and current-cycle branch/vacancy cross-check.",
+    "Refresh Trigger: Every NDA notification cycle and any IAF entry/training/CPSS change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

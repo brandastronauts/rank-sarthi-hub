@@ -11,9 +11,9 @@ export const ndaMathematicsIntegration: InfoPageContent = {
   "slug": "mathematics/integration",
   "exam": "NDA & NA (II) 2026",
   "contentStatus": "draft",
-  "title": "FINAL READINESS REPORT",
+  "title": "NDA Integration: Standard Integrals, Substitution, Parts and Definite Integrals",
   "eyebrow": "Integration",
-  "intent": "",
+  "intent": "Learn the NDA-specific Integration scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage.",
   "answer": [
     {
       "type": "paragraph",
@@ -55,12 +55,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
   "blocks": [
     {
       "kind": "prose",
-      "id": "1-url",
-      "heading": "1. URL",
+      "id": "url",
+      "heading": "URL",
       "concepts": [
         {
-          "id": "1-url-intro",
-          "title": "1. URL",
+          "id": "url-intro",
+          "title": "URL",
           "body": [
             {
               "type": "paragraph",
@@ -76,12 +76,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "2-frozen-route-name",
-      "heading": "2. Frozen route name",
+      "id": "frozen-route-name",
+      "heading": "Frozen route name",
       "concepts": [
         {
-          "id": "2-frozen-route-name-intro",
-          "title": "2. Frozen route name",
+          "id": "frozen-route-name-intro",
+          "title": "Frozen route name",
           "body": [
             {
               "type": "paragraph",
@@ -97,12 +97,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "3-official-syllabus-ownership",
-      "heading": "3. Official syllabus ownership",
+      "id": "official-syllabus-ownership",
+      "heading": "Official syllabus ownership",
       "concepts": [
         {
-          "id": "3-official-syllabus-ownership-intro",
-          "title": "3. Official syllabus ownership",
+          "id": "official-syllabus-ownership-intro",
+          "title": "Official syllabus ownership",
           "body": [
             {
               "type": "paragraph",
@@ -118,54 +118,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "4-h1",
-      "heading": "4. H1",
+      "id": "exact-nda-relevant-scope",
+      "heading": "Exact NDA-relevant scope",
       "concepts": [
         {
-          "id": "4-h1-intro",
-          "title": "4. H1",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "NDA Integration: Standard Integrals, Substitution, Parts and Definite Integrals"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "5-direct-answer",
-      "heading": "5. Direct answer",
-      "concepts": [
-        {
-          "id": "5-direct-answer-intro",
-          "title": "5. Direct answer",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "NDA Integration covers antiderivatives, substitution, integration by parts, standard integrals, definite integrals and elementary area applications."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "6-exact-nda-relevant-scope",
-      "heading": "6. Exact NDA-relevant scope",
-      "concepts": [
-        {
-          "id": "6-exact-nda-relevant-scope-intro",
-          "title": "6. Exact NDA-relevant scope",
+          "id": "exact-nda-relevant-scope-intro",
+          "title": "Exact NDA-relevant scope",
           "body": [
             {
               "type": "paragraph",
@@ -181,12 +139,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "7-prerequisite-concepts",
-      "heading": "7. Prerequisite concepts",
+      "id": "prerequisite-concepts",
+      "heading": "Prerequisite concepts",
       "concepts": [
         {
-          "id": "7-prerequisite-concepts-intro",
-          "title": "7. Prerequisite concepts",
+          "id": "prerequisite-concepts-intro",
+          "title": "Prerequisite concepts",
           "body": [
             {
               "type": "paragraph",
@@ -202,12 +160,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "8-core-definitions",
-      "heading": "8. Core definitions",
+      "id": "core-definitions",
+      "heading": "Core definitions",
       "concepts": [
         {
-          "id": "8-core-definitions-intro",
-          "title": "8. Core definitions",
+          "id": "core-definitions-intro",
+          "title": "Core definitions",
           "body": [
             {
               "type": "list",
@@ -240,44 +198,50 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "9-formula-set",
-      "heading": "9. Formula set",
+      "id": "formula-set",
+      "heading": "Formula set",
       "concepts": [
         {
-          "id": "9-formula-set-intro",
-          "title": "9. Formula set",
+          "id": "formula-set-intro",
+          "title": "Formula set",
           "body": [
             {
               "type": "list",
               "items": [
                 [
                   {
-                    "text": "int x^n dx=x^(n+1)/(n+1)+C, n!=-1"
+                    "text": "int x^n dx=x^(n+1)/(n+1)+C, n!=-1",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "int 1/x dx=ln|x|+C"
+                    "text": "int 1/x dx=ln|x|+C",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "int e^x dx=e^x+C"
+                    "text": "int e^x dx=e^x+C",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "int sin x dx=-cos x+C; int cos x dx=sin x+C"
+                    "text": "int sin x dx=-cos x+C; int cos x dx=sin x+C",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "Integration by parts: int u dv = uv - int v du"
+                    "text": "Integration by parts: int u dv = uv - int v du",
+                    "code": true
                   }
                 ],
                 [
                   {
-                    "text": "Definite integral: int_a^b f(x)dx=F(b)-F(a) when F'=f"
+                    "text": "Definite integral: int_a^b f(x)dx=F(b)-F(a) when F'=f",
+                    "code": true
                   }
                 ]
               ]
@@ -288,12 +252,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "10-conditions-applicability",
-      "heading": "10. Conditions / applicability",
+      "id": "conditions-applicability",
+      "heading": "Conditions / applicability",
       "concepts": [
         {
-          "id": "10-conditions-applicability-intro",
-          "title": "10. Conditions / applicability",
+          "id": "conditions-applicability-intro",
+          "title": "Conditions / applicability",
           "body": [
             {
               "type": "list",
@@ -331,12 +295,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "11-worked-reasoning-examples",
-      "heading": "11. Worked reasoning examples",
+      "id": "worked-reasoning-examples",
+      "heading": "Worked reasoning examples",
       "concepts": [
         {
-          "id": "11-worked-reasoning-examples-intro",
-          "title": "11. Worked reasoning examples",
+          "id": "worked-reasoning-examples-intro",
+          "title": "Worked reasoning examples",
           "body": [
             {
               "type": "list",
@@ -365,12 +329,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "12-common-execution-errors",
-      "heading": "12. Common execution errors",
+      "id": "common-execution-errors",
+      "heading": "Common execution errors",
       "concepts": [
         {
-          "id": "12-common-execution-errors-intro",
-          "title": "12. Common execution errors",
+          "id": "common-execution-errors-intro",
+          "title": "Common execution errors",
           "body": [
             {
               "type": "list",
@@ -408,12 +372,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "13-manual-pi-v1-1-error-mapping",
-      "heading": "13. Manual PI v1.1 error mapping",
+      "id": "manual-pi-v1-1-error-mapping",
+      "heading": "Manual PI v1.1 error mapping",
       "concepts": [
         {
-          "id": "13-manual-pi-v1-1-error-mapping-intro",
-          "title": "13. Manual PI v1.1 error mapping",
+          "id": "manual-pi-v1-1-error-mapping-intro",
+          "title": "Manual PI v1.1 error mapping",
           "body": [
             {
               "type": "list",
@@ -480,12 +444,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "14-exam-specific-question-approach",
-      "heading": "14. Exam-specific question approach",
+      "id": "exam-specific-question-approach",
+      "heading": "Exam-specific question approach",
       "concepts": [
         {
-          "id": "14-exam-specific-question-approach-intro",
-          "title": "14. Exam-specific question approach",
+          "id": "exam-specific-question-approach-intro",
+          "title": "Exam-specific question approach",
           "body": [
             {
               "type": "paragraph",
@@ -509,136 +473,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "15-internal-links",
-      "heading": "15. Internal links",
+      "id": "official-sources",
+      "heading": "Official sources",
       "concepts": [
         {
-          "id": "15-internal-links-intro",
-          "title": "15. Internal links",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "/nda/syllabus/mathematics"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/mathematics/calculus"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/mathematics/differential-equations"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/mathematics/trigonometry"
-                },
-                {
-                  "text": ", "
-                },
-                {
-                  "text": "/nda/previous-year-papers"
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Mock-test actions must remain disabled or hidden until "
-                },
-                {
-                  "text": "/nda/mock-tests"
-                },
-                {
-                  "text": " has a verified functioning product."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "16-metadata",
-      "heading": "16. Metadata",
-      "concepts": [
-        {
-          "id": "16-metadata-intro",
-          "title": "16. Metadata",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "SEO title: NDA Integration 2026: Concepts, Formulas & Exam Approach | Rank Sarthi"
-                  }
-                ],
-                [
-                  {
-                    "text": "Meta description: Learn the NDA-specific Integration scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage."
-                  }
-                ],
-                [
-                  {
-                    "text": "Canonical: https://ranksarthi.com/nda/mathematics/integration"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "17-aeo",
-      "heading": "17. AEO",
-      "concepts": [
-        {
-          "id": "17-aeo-intro",
-          "title": "17. AEO",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Question:",
-                  "bold": true
-                },
-                {
-                  "text": " What should I know for NDA Integration? "
-                },
-                {
-                  "text": "Answer:",
-                  "bold": true
-                },
-                {
-                  "text": " NDA Integration covers antiderivatives, substitution, integration by parts, standard integrals, definite integrals and elementary area applications."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "18-official-sources",
-      "heading": "18. Official sources",
-      "concepts": [
-        {
-          "id": "18-official-sources-intro",
-          "title": "18. Official sources",
+          "id": "official-sources-intro",
+          "title": "Official sources",
           "body": [
             {
               "type": "list",
@@ -661,12 +501,12 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "19-reviewer-requirement",
-      "heading": "19. Reviewer requirement",
+      "id": "reviewer-requirement",
+      "heading": "Reviewer requirement",
       "concepts": [
         {
-          "id": "19-reviewer-requirement-intro",
-          "title": "19. Reviewer requirement",
+          "id": "reviewer-requirement-intro",
+          "title": "Reviewer requirement",
           "body": [
             {
               "type": "list",
@@ -704,104 +544,6 @@ export const ndaMathematicsIntegration: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "20-schema-recommendation",
-      "heading": "20. Schema recommendation",
-      "concepts": [
-        {
-          "id": "20-schema-recommendation-intro",
-          "title": "20. Schema recommendation",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Article + LearningResource + BreadcrumbList. This is a content-level recommendation for the frozen T08 page and does not request a Lovable architecture change. No Person schema for unassigned contributors."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "21-indexation",
-      "heading": "21. Indexation",
-      "concepts": [
-        {
-          "id": "21-indexation-intro",
-          "title": "21. Indexation",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "draft noindex Hold until human academic review and rendered-page QA."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "22-qa",
-      "heading": "22. QA",
-      "concepts": [
-        {
-          "id": "22-qa-intro",
-          "title": "22. QA",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "NDA scope only, not copied from JEE depth."
-                  }
-                ],
-                [
-                  {
-                    "text": "Formula conditions are stated beside formulas where material."
-                  }
-                ],
-                [
-                  {
-                    "text": "Worked examples are instructional examples, not claimed PYQs."
-                  }
-                ],
-                [
-                  {
-                    "text": "No chapter-frequency, high-weightage or guaranteed-marks claim."
-                  }
-                ],
-                [
-                  {
-                    "text": "No invented product action."
-                  }
-                ],
-                [
-                  {
-                    "text": "Zero em dash rule applied."
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
       "id": "blocked-route-summary",
       "heading": "Blocked-route summary",
       "concepts": [
@@ -814,7 +556,8 @@ export const ndaMathematicsIntegration: InfoPageContent = {
               "items": [
                 [
                   {
-                    "text": "/nda/mock-tests"
+                    "text": "/nda/mock-tests",
+                    "code": true
                   },
                   {
                     "text": " -> PRODUCT_BLOCKED: no functioning NDA mock engine evidenced."
@@ -822,7 +565,8 @@ export const ndaMathematicsIntegration: InfoPageContent = {
                 ],
                 [
                   {
-                    "text": "/nda/toppers"
+                    "text": "/nda/toppers",
+                    "code": true
                   },
                   {
                     "text": " -> EVIDENCE_BLOCKED: no verified Rank Sarthi NDA result / topper proof supplied."
@@ -830,7 +574,8 @@ export const ndaMathematicsIntegration: InfoPageContent = {
                 ],
                 [
                   {
-                    "text": "/nda/pricing"
+                    "text": "/nda/pricing",
+                    "code": true
                   },
                   {
                     "text": " -> COMMERCIAL_INPUT_BLOCKED: no approved NDA commercial plan / pricing input supplied."
@@ -873,7 +618,25 @@ export const ndaMathematicsIntegration: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "faqs": [
+    {
+      "question": "What should I know for NDA Integration?",
+      "answer": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "NDA Integration covers antiderivatives, substitution, integration by parts, standard integrals, definite integrals and elementary area applications."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-upsc-gov-in-sites-default-files-notif-nda-ii-202"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Written by: UNASSIGNED",
@@ -882,8 +645,8 @@ export const ndaMathematicsIntegration: InfoPageContent = {
   ],
   "lastVerified": "12 September 2026",
   "seo": {
-    "title": "FINAL READINESS REPORT | Rank Sarthi",
-    "description": "",
+    "title": "NDA Integration 2026: Concepts, Formulas & Exam Approach | Rank Sarthi",
+    "description": "Learn the NDA-specific Integration scope, formulas, conditions, worked reasoning, common errors and question approach without invented weightage.",
     "ogType": "article"
   }
 };

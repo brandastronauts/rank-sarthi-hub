@@ -351,49 +351,6 @@ export const ndaPhysicalStandards: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Physical conditioning for academy readiness: "
-                  },
-                  {
-                    "text": "/nda/physical-fitness"
-                  }
-                ],
-                [
-                  {
-                    "text": "Girls in NDA: "
-                  },
-                  {
-                    "text": "/nda/girls-in-nda"
-                  }
-                ],
-                [
-                  {
-                    "text": "Air Force pathway and CPSS: "
-                  },
-                  {
-                    "text": "/nda/wings/air-force"
-                  }
-                ],
-                [
-                  {
-                    "text": "Selection process: "
-                  },
-                  {
-                    "text": "/nda/selection-process"
-                  }
-                ]
-              ]
-            }
-          ]
         }
       ]
     },
@@ -413,7 +370,8 @@ export const ndaPhysicalStandards: InfoPageContent = {
                   "text": "Before release, the medical/physical reviewer must check every visible numerical value against the current NDA II 2026 notification. Store each row with: "
                 },
                 {
-                  "text": "service | branch | sex/category | measure | minimum/maximum | exception/footnote | source page | reviewed date"
+                  "text": "service | branch | sex/category | measure | minimum/maximum | exception/footnote | source page | reviewed date",
+                  "code": true
                 },
                 {
                   "text": "."
@@ -437,100 +395,6 @@ export const ndaPhysicalStandards: InfoPageContent = {
                 },
                 {
                   "text": " qualified appropriate medical/physical reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Qualified appropriate medical/physical reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current NDA II 2026 official medical/physical appendices, service-specific standards and medical-board process; exact numerical tables must be checked against current notification before publication."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC 2026 source located; publication copy deliberately avoids unsupported self-diagnosis; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Qualified medical/physical review plus current-cycle table verification."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and whenever a service medical standard changes."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.careerairforce.gov.in/nda-entry"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
                 }
               ]
             }
@@ -561,12 +425,20 @@ export const ndaPhysicalStandards: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-careerairforce-gov-in-nda-entry"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Qualified appropriate medical/physical reviewer",
+    "Evidence Required: Current NDA II 2026 official medical/physical appendices, service-specific standards and medical-board process; exact numerical tables must be checked against current notification before publication.",
+    "Current Evidence State: Current UPSC 2026 source located; publication copy deliberately avoids unsupported self-diagnosis; reviewer unassigned.",
+    "Publication Blocker: Qualified medical/physical review plus current-cycle table verification.",
+    "Refresh Trigger: Every NDA notification cycle and whenever a service medical standard changes."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

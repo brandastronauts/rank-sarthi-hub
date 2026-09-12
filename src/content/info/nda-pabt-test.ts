@@ -22,7 +22,8 @@ export const ndaPabtTest: InfoPageContent = {
           "text": "The frozen Rank Sarthi URL remains "
         },
         {
-          "text": "/nda/pabt-test"
+          "text": "/nda/pabt-test",
+          "code": true
         },
         {
           "text": ", but the visible page must use the current official terminology: "
@@ -291,147 +292,6 @@ export const ndaPabtTest: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Air Force wing: "
-                  },
-                  {
-                    "text": "/nda/wings/air-force"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB interview: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical and medical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " aviation / CPSS reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Aviation / CPSS reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC and IAF terminology and eligibility consequences; frozen URL retained while visible copy uses CPSS."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official IAF source confirms CPSS terminology and once-in-a-lifetime rule; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Aviation/CPSS reviewer and current NDA-notification cross-check."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and any official CPSS policy change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://careerairforce.gov.in/air-force-selection-board-afsb-testing"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -453,12 +313,20 @@ export const ndaPabtTest: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-careerairforce-gov-in-air-force-selection-board-afsb"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Aviation / CPSS reviewer",
+    "Evidence Required: Current UPSC and IAF terminology and eligibility consequences; frozen URL retained while visible copy uses CPSS.",
+    "Current Evidence State: Official IAF source confirms CPSS terminology and once-in-a-lifetime rule; reviewer unassigned.",
+    "Publication Blocker: Aviation/CPSS reviewer and current NDA-notification cross-check.",
+    "Refresh Trigger: Every NDA notification cycle and any official CPSS policy change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

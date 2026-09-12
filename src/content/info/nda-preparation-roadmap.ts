@@ -482,170 +482,6 @@ export const ndaPreparationRoadmap: InfoPageContent = {
       ]
     },
     {
-      "kind": "prose",
-      "id": "a-manual-planning-board-2",
-      "heading": "A manual planning board",
-      "concepts": [
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Complete NDA syllabus: "
-                  },
-                  {
-                    "text": "/nda/syllabus"
-                  }
-                ],
-                [
-                  {
-                    "text": "Mathematics: "
-                  },
-                  {
-                    "text": "/nda/mathematics"
-                  }
-                ],
-                [
-                  {
-                    "text": "GAT: "
-                  },
-                  {
-                    "text": "/nda/gat"
-                  }
-                ],
-                [
-                  {
-                    "text": "Previous-year papers: "
-                  },
-                  {
-                    "text": "/nda/previous-year-papers"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB interview: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " NDA academic strategy reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " NDA academic strategy reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current official syllabus/notification and official PYQs; preparation framework labelled as Rank Sarthi editorial guidance."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC notification and PYQ repository located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Academic strategy review and internal-link QA."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA syllabus/pattern change; annual framework review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/previous-question-papers"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "kind": "table",
       "id": "a-manual-planning-board",
       "heading": "A manual planning board",
@@ -711,12 +547,20 @@ export const ndaPreparationRoadmap: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-www-upsc-gov-in-examinations-previous-question-paper"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: NDA academic strategy reviewer",
+    "Evidence Required: Current official syllabus/notification and official PYQs; preparation framework labelled as Rank Sarthi editorial guidance.",
+    "Current Evidence State: Current UPSC notification and PYQ repository located; reviewer unassigned.",
+    "Publication Blocker: Academic strategy review and internal-link QA.",
+    "Refresh Trigger: Every NDA syllabus/pattern change; annual framework review."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

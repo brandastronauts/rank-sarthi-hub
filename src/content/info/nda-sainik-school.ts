@@ -224,155 +224,6 @@ export const ndaSainikSchool: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "NDA eligibility: "
-                  },
-                  {
-                    "text": "/nda/eligibility"
-                  }
-                ],
-                [
-                  {
-                    "text": "NDA preparation roadmap: "
-                  },
-                  {
-                    "text": "/nda/preparation-roadmap"
-                  }
-                ],
-                [
-                  {
-                    "text": "Girls in NDA: "
-                  },
-                  {
-                    "text": "/nda/girls-in-nda"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB interview: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " defence-education / official-source review required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-education / official-source reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Sainik Schools Society official admissions context plus current UPSC NDA eligibility; explicit myth correction that Sainik School is not required."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official Sainik Schools Society and UPSC sources located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official-source review and internal-link QA."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " AISSEE/Sainik School policy change or NDA eligibility change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://sainikschoolsociety.in/"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -399,12 +250,20 @@ export const ndaSainikSchool: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-sainikschoolsociety-in",
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Defence-education / official-source reviewer",
+    "Evidence Required: Sainik Schools Society official admissions context plus current UPSC NDA eligibility; explicit myth correction that Sainik School is not required.",
+    "Current Evidence State: Official Sainik Schools Society and UPSC sources located; reviewer unassigned.",
+    "Publication Blocker: Official-source review and internal-link QA.",
+    "Refresh Trigger: AISSEE/Sainik School policy change or NDA eligibility change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

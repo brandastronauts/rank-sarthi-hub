@@ -193,7 +193,8 @@ export const ndaSelectionProcess: InfoPageContent = {
                   "text": "SSB recommendation alone does not create final admission. Candidates must meet the notified medical and physical standards applicable to the service / course for which they are being considered. Detailed standards belong on "
                 },
                 {
-                  "text": "/nda/physical-standards"
+                  "text": "/nda/physical-standards",
+                  "code": true
                 },
                 {
                   "text": "; this page should not compress medical rules into a simplistic pass/fail checklist."

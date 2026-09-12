@@ -347,151 +347,11 @@ export const ndaPhysicalFitness: InfoPageContent = {
                   "text": "Use "
                 },
                 {
-                  "text": "/nda/physical-standards"
+                  "text": "/nda/physical-standards",
+                  "code": true
                 },
                 {
                   "text": " for official-rule orientation and the official medical board for the actual decision."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Physical and medical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB interview: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ],
-                [
-                  {
-                    "text": "Life after NDA: "
-                  },
-                  {
-                    "text": "/nda/life-after-nda"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " qualified appropriate medical/physical reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Qualified appropriate medical/physical reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official NDA joining-instruction conditioning guidance, clearly separated from medical eligibility; progressive training safety review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Official NDA joining-instruction guidance located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Medical/physical reviewer sign-off and latest joining-instruction recheck."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " When NDA joining instructions change; otherwise annual review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://nda.nic.in/docs/JI_151_Course.pdf"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://nda.nic.in/"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
                 }
               ]
             }
@@ -517,12 +377,20 @@ export const ndaPhysicalFitness: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-nda-nic-in-docs-ji-151-course-pdf",
+    "nda-nda-nic-in"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Qualified appropriate medical/physical reviewer",
+    "Evidence Required: Official NDA joining-instruction conditioning guidance, clearly separated from medical eligibility; progressive training safety review.",
+    "Current Evidence State: Official NDA joining-instruction guidance located; reviewer unassigned.",
+    "Publication Blocker: Medical/physical reviewer sign-off and latest joining-instruction recheck.",
+    "Refresh Trigger: When NDA joining instructions change; otherwise annual review."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

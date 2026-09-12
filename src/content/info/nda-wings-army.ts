@@ -45,7 +45,8 @@ export const ndaWingsArmy: InfoPageContent = {
                   "text": "The current UPSC NDA notification is the authority for Army Wing educational eligibility, age conditions, vacancies and selection rules. Keep exact eligibility on "
                 },
                 {
-                  "text": "/nda/eligibility"
+                  "text": "/nda/eligibility",
+                  "code": true
                 },
                 {
                   "text": "; this page should link to it rather than duplicate the full rule set."
@@ -220,7 +221,8 @@ export const ndaWingsArmy: InfoPageContent = {
                   "text": " Route the candidate to the current "
                 },
                 {
-                  "text": "/nda/eligibility"
+                  "text": "/nda/eligibility",
+                  "code": true
                 },
                 {
                   "text": " page and current UPSC notification. Do not reuse Navy/Air Force education rules."
@@ -252,155 +254,6 @@ export const ndaWingsArmy: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "NDA eligibility: "
-                  },
-                  {
-                    "text": "/nda/eligibility"
-                  }
-                ],
-                [
-                  {
-                    "text": "Life after NDA: "
-                  },
-                  {
-                    "text": "/nda/life-after-nda"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "SSB interview: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview"
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " defence-career / official-source review required before indexation."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / official-source reviewer"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC Army eligibility/training progression and official NDA/service context; preference/allocation caveats."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current UPSC source located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Defence-career / official-source review."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Every NDA notification cycle and material Army training pathway change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://nda.nic.in/"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     }
@@ -427,12 +280,20 @@ export const ndaWingsArmy: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-nda-nic-in"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: Defence-career / official-source reviewer",
+    "Evidence Required: Current UPSC Army eligibility/training progression and official NDA/service context; preference/allocation caveats.",
+    "Current Evidence State: Current UPSC source located; reviewer unassigned.",
+    "Publication Blocker: Defence-career / official-source review.",
+    "Refresh Trigger: Every NDA notification cycle and material Army training pathway change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {

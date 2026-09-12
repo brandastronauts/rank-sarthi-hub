@@ -522,150 +522,6 @@ export const ndaSsbInterview: InfoPageContent = {
               ]
             }
           ]
-        },
-        {
-          "id": "next-useful-links",
-          "title": "Next useful links",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "SSB question preparation: "
-                  },
-                  {
-                    "text": "/nda/ssb-interview/questions"
-                  }
-                ],
-                [
-                  {
-                    "text": "Physical and medical standards: "
-                  },
-                  {
-                    "text": "/nda/physical-standards"
-                  }
-                ],
-                [
-                  {
-                    "text": "CPSS and the legacy PABT term: "
-                  },
-                  {
-                    "text": "/nda/pabt-test"
-                  }
-                ],
-                [
-                  {
-                    "text": "Full selection process: "
-                  },
-                  {
-                    "text": "/nda/selection-process"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "information-gain-asset-ssb-practice-audit-2",
-      "heading": "Information-gain asset: SSB practice audit",
-      "concepts": [
-        {
-          "id": "evidence-and-release-gate",
-          "title": "Evidence and release gate",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "Reviewer type:",
-                    "bold": true
-                  },
-                  {
-                    "text": " SSB / defence-selection SME"
-                  }
-                ],
-                [
-                  {
-                    "text": "Evidence required:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Current official SSB/AFSB stage descriptions; current NDA II 2026 notification; human review of all candidate-facing interpretation."
-                  }
-                ],
-                [
-                  {
-                    "text": "Current evidence state:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Primary official process sources located; reviewer unassigned."
-                  }
-                ],
-                [
-                  {
-                    "text": "Publication blocker:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Human SSB / defence-selection review and rendered-page QA."
-                  }
-                ],
-                [
-                  {
-                    "text": "Refresh trigger:",
-                    "bold": true
-                  },
-                  {
-                    "text": " Annual review and any material official SSB/AFSB process change."
-                  }
-                ],
-                [
-                  {
-                    "text": "Primary/supporting source URLs:",
-                    "bold": true
-                  }
-                ],
-                [
-                  {
-                    "text": "https://www.upsc.gov.in/examinations/National%20Defence%20Academy%20and%20Naval%20Academy%20Examination%20%28II%29%2C%202026"
-                  }
-                ],
-                [
-                  {
-                    "text": "https://careerairforce.gov.in/air-force-selection-board-afsb-testing"
-                  }
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          "id": "structured-data-implementation-note",
-          "title": "Structured-data / implementation note",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Use the frozen template implementation and only mark up content that is visibly present and supported. Do not add FAQPage markup merely to chase rich results. Do not create dead product CTAs. Internal links must route to the canonical owner pages."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "---"
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -730,12 +586,20 @@ export const ndaSsbInterview: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceRefs": [],
+  "sourceRefs": [
+    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
+    "nda-careerairforce-gov-in-air-force-selection-board-afsb"
+  ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
     "Author: UNASSIGNED",
     "Reviewer: UNASSIGNED",
-    "Last Reviewed: pending human review"
+    "Last Reviewed: pending human review",
+    "Reviewer Type: SSB / defence-selection SME",
+    "Evidence Required: Current official SSB/AFSB stage descriptions; current NDA II 2026 notification; human review of all candidate-facing interpretation.",
+    "Current Evidence State: Primary official process sources located; reviewer unassigned.",
+    "Publication Blocker: Human SSB / defence-selection review and rendered-page QA.",
+    "Refresh Trigger: Annual review and any material official SSB/AFSB process change."
   ],
   "lastVerified": "12 September 2026",
   "seo": {
