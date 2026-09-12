@@ -718,7 +718,8 @@ export type InfoBlock =
 export interface InfoPageContent {
   /** Registry path, e.g. "/jee/exam-dates". */
   url: string;
-  platform: Exclude<Platform, "main">;
+  /** Owning platform. Core site pages such as /about use "main". */
+  platform: Platform;
   /** Second path segment, e.g. "exam-dates". */
   slug: string;
   exam: string;

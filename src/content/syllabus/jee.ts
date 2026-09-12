@@ -520,6 +520,10 @@ export const jeeSyllabus: SyllabusContent = {
 
   relatedLinks: [
     { label: "JEE overview", url: "/jee", relation: "up", description: "Exam, process and product overview." },
+    { label: "JEE Main Physics syllabus", url: "/jee/syllabus/physics", relation: "forward", description: "Official JEE Main 2026 Physics unit map." },
+    { label: "JEE Main Chemistry syllabus", url: "/jee/syllabus/chemistry", relation: "forward", description: "Official JEE Main 2026 Chemistry unit map." },
+    { label: "JEE Main Mathematics syllabus", url: "/jee/syllabus/mathematics", relation: "forward", description: "Official JEE Main 2026 Mathematics unit map." },
+    { label: "JEE Advanced syllabus", url: "/jee/jee-advanced/syllabus", relation: "related", description: "Official JEE Advanced 2026 scope, kept separate from Main." },
     { label: "JEE Physics", url: "/jee/physics", relation: "related", description: "Physics subject hub with all mapped chapter pages." },
     { label: "JEE Chemistry", url: "/jee/chemistry", relation: "related", description: "Chemistry subject hub with all mapped chapter pages." },
     { label: "JEE Mathematics", url: "/jee/mathematics", relation: "related", description: "Mathematics subject hub with all mapped chapter pages." },

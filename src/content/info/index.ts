@@ -1,4 +1,33 @@
 import type { InfoPageContent } from "@/content/types";
+import { jeeSyllabusPhysics } from "./jee-syllabus-physics";
+import { jeeSyllabusChemistry } from "./jee-syllabus-chemistry";
+import { jeeSyllabusMathematics } from "./jee-syllabus-mathematics";
+import { jeeAdvancedSyllabus } from "./jee-advanced-syllabus";
+import { jeeAdvancedResult } from "./jee-advanced-result";
+import { jeeAdvancedEligibility } from "./jee-advanced-eligibility";
+import { jeeAdvancedThermodynamicsAdvanced } from "./jee-advanced-thermodynamics-advanced";
+import { jeeAdvancedElectrostaticsAdvanced } from "./jee-advanced-electrostatics-advanced";
+import { jeeAdvancedRotationalDynamics } from "./jee-advanced-rotational-dynamics";
+import { jeeAdvancedOrganicChemistryAdvanced } from "./jee-advanced-organic-chemistry-advanced";
+import { jeeAdvancedCoordinationChemistryAdvanced } from "./jee-advanced-coordination-chemistry-advanced";
+import { jeeAdvancedCalculusAdvanced } from "./jee-advanced-calculus-advanced";
+import { jeeAdvancedVectors3dAdvanced } from "./jee-advanced-vectors-3d-advanced";
+import { jeeAdvancedProbabilityAdvanced } from "./jee-advanced-probability-advanced";
+import { jeeAdvancedComplexNumbersAdvanced } from "./jee-advanced-complex-numbers-advanced";
+import { jeeAdvancedMechanicsAdvanced } from "./jee-advanced-mechanics-advanced";
+import { jeeAdvancedModernPhysicsAdvanced } from "./jee-advanced-modern-physics-advanced";
+import { jeeAdvancedChemicalEquilibriumAdvanced } from "./jee-advanced-chemical-equilibrium-advanced";
+import { jeeAdvancedElectrochemistryAdvanced } from "./jee-advanced-electrochemistry-advanced";
+import { jeeAdvancedCoordinateGeometryAdvanced } from "./jee-advanced-coordinate-geometry-advanced";
+import { jeeAdvancedIntegralCalculusAdvanced } from "./jee-advanced-integral-calculus-advanced";
+import { jeeBlog } from "./jee-blog";
+import { mainAbout } from "./main-about";
+import { mainHowItWorks } from "./main-how-it-works";
+import { mainBlog } from "./main-blog";
+import { mainFaq } from "./main-faq";
+import { mainResources } from "./main-resources";
+import { mainForInstitutes } from "./main-for-institutes";
+import { main404 } from "./main-404";
 import { jeeMain } from "./jee-main";
 import { jeeAdvanced } from "./jee-advanced";
 import { jeePreviousYearPapers } from "./jee-previous-year-papers";
@@ -84,6 +113,35 @@ import { ndaMeritList } from "./nda-merit-list";
  * is registered here AND its registry record is built.
  */
 export const infoPages: InfoPageContent[] = [
+  jeeSyllabusPhysics,
+  jeeSyllabusChemistry,
+  jeeSyllabusMathematics,
+  jeeAdvancedSyllabus,
+  jeeAdvancedResult,
+  jeeAdvancedEligibility,
+  jeeAdvancedThermodynamicsAdvanced,
+  jeeAdvancedElectrostaticsAdvanced,
+  jeeAdvancedRotationalDynamics,
+  jeeAdvancedOrganicChemistryAdvanced,
+  jeeAdvancedCoordinationChemistryAdvanced,
+  jeeAdvancedCalculusAdvanced,
+  jeeAdvancedVectors3dAdvanced,
+  jeeAdvancedProbabilityAdvanced,
+  jeeAdvancedComplexNumbersAdvanced,
+  jeeAdvancedMechanicsAdvanced,
+  jeeAdvancedModernPhysicsAdvanced,
+  jeeAdvancedChemicalEquilibriumAdvanced,
+  jeeAdvancedElectrochemistryAdvanced,
+  jeeAdvancedCoordinateGeometryAdvanced,
+  jeeAdvancedIntegralCalculusAdvanced,
+  jeeBlog,
+  mainAbout,
+  mainHowItWorks,
+  mainBlog,
+  mainFaq,
+  mainResources,
+  mainForInstitutes,
+  main404,
   ndaExamDates,
   ndaGatCurrentAffairs,
   ndaGatHistory,

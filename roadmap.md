@@ -5,3 +5,6 @@
 - [x] J02: integrate only the shared JEE Main resource data, two year-page records, two registry activations, and parent related links; preserve all locked systems.
 
 - [x] NDA A+C bulk integration: 35 routes built (22 NDA-A, 13 NDA-C), all draft/noindex; 6 blocked routes left unbuilt.
+
+- [x] NDA-B final integration: 19 routes built, 7 gated.
+- [x] Final JEE + Main buildable batch: 29 routes built (22 JEE, 7 core), all draft/noindex; 20 Main/JEE routes left blocked.
