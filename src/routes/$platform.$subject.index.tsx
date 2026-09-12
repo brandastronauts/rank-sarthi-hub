@@ -9,7 +9,7 @@ import { getSubjectHub } from "@/content/subjects";
 import { getInfoPage } from "@/content/info";
 import { getUrl } from "@/content/registry";
 import { buildHead } from "@/lib/seo";
-import { breadcrumbSchema, collectionPageSchema } from "@/lib/schema";
+import { breadcrumbSchema, collectionPageSchema, infoPageSchema } from "@/lib/schema";
 import { jumpItemsFor } from "@/lib/jump-nav";
 import type { PageRecipe } from "@/lib/recipe";
 import type { InfoPageContent, SubjectHubContent } from "@/content/types";
@@ -55,11 +55,13 @@ export const Route = createFileRoute("/$platform/$subject/")({
         ...(content.seo?.ogTitle ? { ogTitle: content.seo.ogTitle } : {}),
         ...(content.seo?.ogDescription ? { ogDescription: content.seo.ogDescription } : {}),
         jsonLd: [
-          collectionPageSchema({
+          infoPageSchema({
             url,
-            name: content.title,
+            title: content.title,
             description,
-            items: (content.relatedLinks ?? []).map((l) => ({ name: l.label, url: l.url })),
+            blocks: content.blocks,
+            ...(content.relatedLinks ? { relatedLinks: content.relatedLinks } : {}),
+            ...(content.lastVerified ? { lastVerified: content.lastVerified } : {}),
           }),
           breadcrumbSchema(url),
         ].filter(Boolean),

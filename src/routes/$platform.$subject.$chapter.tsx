@@ -13,6 +13,7 @@ import {
   articleSchema,
   breadcrumbSchema,
   collectionPageSchema,
+  infoPageSchema,
   learningResourceSchema,
 } from "@/lib/schema";
 import { jumpItemsFor } from "@/lib/jump-nav";
@@ -58,11 +59,13 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
         ...(info.seo?.ogTitle ? { ogTitle: info.seo.ogTitle } : {}),
         ...(info.seo?.ogDescription ? { ogDescription: info.seo.ogDescription } : {}),
         jsonLd: [
-          collectionPageSchema({
+          infoPageSchema({
             url: info.url,
-            name: info.title,
+            title: info.title,
             description,
-            items: (info.relatedLinks ?? []).map((l) => ({ name: l.label, url: l.url })),
+            blocks: info.blocks,
+            ...(info.relatedLinks ? { relatedLinks: info.relatedLinks } : {}),
+            ...(info.lastVerified ? { lastVerified: info.lastVerified } : {}),
           }),
           breadcrumbSchema(info.url),
         ],
