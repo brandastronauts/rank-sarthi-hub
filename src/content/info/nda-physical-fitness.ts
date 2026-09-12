@@ -262,7 +262,7 @@ export const ndaPhysicalFitness: InfoPageContent = {
     },
     {
       "kind": "table",
-      "id": "a-simple-readiness-log",
+      "id": "a-simple-readiness-log-table",
       "heading": "A simple readiness log",
       "columns": [
         "Area",
@@ -378,8 +378,8 @@ export const ndaPhysicalFitness: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-nda-nic-in-docs-ji-151-course-pdf",
-    "nda-nda-nic-in"
+    "nda-joining-instructions-151",
+    "nda-official-site"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

@@ -251,8 +251,8 @@ export const ndaSainikSchool: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-sainikschoolsociety-in",
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac"
+    "sainik-schools-society",
+    "upsc-nda-ii-2026-exam-page"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

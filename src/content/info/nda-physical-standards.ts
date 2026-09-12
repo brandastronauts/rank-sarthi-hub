@@ -353,54 +353,6 @@ export const ndaPhysicalStandards: InfoPageContent = {
           ]
         }
       ]
-    },
-    {
-      "kind": "prose",
-      "id": "production-data-requirement-for-the-visible-standards-table",
-      "heading": "Production data requirement for the visible standards table",
-      "concepts": [
-        {
-          "id": "production-data-requirement-for-the-visible-standards-table-intro",
-          "title": "Production data requirement for the visible standards table",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Before release, the medical/physical reviewer must check every visible numerical value against the current NDA II 2026 notification. Store each row with: "
-                },
-                {
-                  "text": "service | branch | sex/category | measure | minimum/maximum | exception/footnote | source page | reviewed date",
-                  "code": true
-                },
-                {
-                  "text": "."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Do not index if any row lacks its current-cycle source."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Reviewer gate:",
-                  "bold": true
-                },
-                {
-                  "text": " qualified appropriate medical/physical reviewer required before indexation."
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "relatedLinks": [
@@ -426,8 +378,8 @@ export const ndaPhysicalStandards: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-www-careerairforce-gov-in-nda-entry"
+    "upsc-nda-ii-2026-exam-page",
+    "iaf-nda-entry"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

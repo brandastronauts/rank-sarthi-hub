@@ -187,8 +187,8 @@ export const ndaSyllabusMathematics: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-sites-default-files-notif-nda-ii-202",
-    "nda-www-upsc-gov-in-examinations-previous-question-paper"
+    "upsc-nda-ii-2026-notification",
+    "upsc-previous-question-papers"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

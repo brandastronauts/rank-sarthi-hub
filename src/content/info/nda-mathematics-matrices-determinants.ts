@@ -31,48 +31,6 @@ export const ndaMathematicsMatricesDeterminants: InfoPageContent = {
   "blocks": [
     {
       "kind": "prose",
-      "id": "url",
-      "heading": "URL",
-      "concepts": [
-        {
-          "id": "url-intro",
-          "title": "URL",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "https://ranksarthi.com/nda/mathematics/matrices-determinants"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
-      "id": "frozen-route-name",
-      "heading": "Frozen route name",
-      "concepts": [
-        {
-          "id": "frozen-route-name-intro",
-          "title": "Frozen route name",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Matrices Determinants"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "prose",
       "id": "official-syllabus-ownership",
       "heading": "Official syllabus ownership",
       "concepts": [
@@ -540,8 +498,8 @@ export const ndaMathematicsMatricesDeterminants: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-www-upsc-gov-in-sites-default-files-notif-nda-ii-202"
+    "upsc-nda-ii-2026-exam-page",
+    "upsc-nda-ii-2026-notification"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

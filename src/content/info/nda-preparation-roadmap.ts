@@ -483,7 +483,7 @@ export const ndaPreparationRoadmap: InfoPageContent = {
     },
     {
       "kind": "table",
-      "id": "a-manual-planning-board",
+      "id": "a-manual-planning-board-table",
       "heading": "A manual planning board",
       "columns": [
         "Area",
@@ -548,8 +548,8 @@ export const ndaPreparationRoadmap: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-www-upsc-gov-in-examinations-previous-question-paper"
+    "upsc-nda-ii-2026-exam-page",
+    "upsc-previous-question-papers"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

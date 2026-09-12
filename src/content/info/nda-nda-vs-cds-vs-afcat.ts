@@ -31,7 +31,7 @@ export const ndaNdaVsCdsVsAfcat: InfoPageContent = {
   "blocks": [
     {
       "kind": "table",
-      "id": "comparison",
+      "id": "comparison-table",
       "heading": "Comparison",
       "columns": [
         "Dimension",
@@ -155,11 +155,11 @@ export const ndaNdaVsCdsVsAfcat: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-www-upsc-gov-in-sites-default-files-notif-nda-ii-202",
-    "nda-www-upsc-gov-in-examinations-combined-20defence-20se",
-    "nda-www-careerairforce-gov-in-sites-default-files-inline",
-    "nda-careerairforce-gov-in-afcat-entry"
+    "upsc-nda-ii-2026-exam-page",
+    "upsc-nda-ii-2026-notification",
+    "upsc-cds-ii-2026-exam-page",
+    "iaf-afcat-02-2026-notification",
+    "iaf-afcat-entry"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

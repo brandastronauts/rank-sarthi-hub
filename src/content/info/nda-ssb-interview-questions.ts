@@ -454,8 +454,8 @@ export const ndaSsbInterviewQuestions: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-careerairforce-gov-in-air-force-selection-board-afsb"
+    "upsc-nda-ii-2026-exam-page",
+    "iaf-afsb-testing"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

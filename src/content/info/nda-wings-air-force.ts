@@ -275,11 +275,11 @@ export const ndaWingsAirForce: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-www-careerairforce-gov-in-nda-entry",
-    "nda-careerairforce-gov-in-air-force-selection-board-afsb",
-    "nda-www-careerairforce-gov-in-nda-training",
-    "nda-careerairforce-gov-in-flying-training"
+    "upsc-nda-ii-2026-exam-page",
+    "iaf-nda-entry",
+    "iaf-afsb-testing",
+    "iaf-nda-training",
+    "iaf-flying-training"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

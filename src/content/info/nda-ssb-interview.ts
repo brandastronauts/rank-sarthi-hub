@@ -527,7 +527,7 @@ export const ndaSsbInterview: InfoPageContent = {
     },
     {
       "kind": "table",
-      "id": "information-gain-asset-ssb-practice-audit",
+      "id": "information-gain-asset-ssb-practice-audit-table",
       "heading": "Information-gain asset: SSB practice audit",
       "columns": [
         "Practice area",
@@ -587,8 +587,8 @@ export const ndaSsbInterview: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-careerairforce-gov-in-air-force-selection-board-afsb"
+    "upsc-nda-ii-2026-exam-page",
+    "iaf-afsb-testing"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [

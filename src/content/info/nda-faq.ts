@@ -407,7 +407,7 @@ export const ndaFaq: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "final-qa-2",
+      "id": "final-qa",
       "heading": "FINAL QA",
       "concepts": [
         {
@@ -529,7 +529,7 @@ export const ndaFaq: InfoPageContent = {
     },
     {
       "kind": "table",
-      "id": "final-qa",
+      "id": "final-qa-table",
       "heading": "FINAL QA",
       "columns": [
         "Control",
@@ -623,9 +623,9 @@ export const ndaFaq: InfoPageContent = {
     }
   ],
   "sourceRefs": [
-    "nda-www-upsc-gov-in-examinations-national-20defence-20ac",
-    "nda-careerairforce-gov-in-air-force-selection-board-afsb",
-    "nda-sainikschoolsociety-in"
+    "upsc-nda-ii-2026-exam-page",
+    "iaf-afsb-testing",
+    "sainik-schools-society"
   ],
   "sourceNote": "Official UPSC and Armed Forces sources are the authority for every exam fact on this page. Rank Sarthi explanation is kept separate from official wording.",
   "contributorPolicy": [
