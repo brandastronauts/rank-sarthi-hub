@@ -17,7 +17,7 @@ import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabu
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
 import { Route as ApiPublicFreshnessRefreshRouteImport } from './routes/api/public/freshness-refresh'
-import { Route as PlatformSubjectChapterTopicRouteImport } from './routes/$platform.$subject.$chapter.$topic'
+import { Route as PlatformSubjectChapterTopicRouteImport } from './routes/$platform.$subject.$chapter_.$topic'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -62,9 +62,9 @@ const ApiPublicFreshnessRefreshRoute =
   } as any)
 const PlatformSubjectChapterTopicRoute =
   PlatformSubjectChapterTopicRouteImport.update({
-    id: '/$topic',
-    path: '/$topic',
-    getParentRoute: () => PlatformSubjectChapterRoute,
+    id: '/$platform/$subject/$chapter_/$topic',
+    path: '/$platform/$subject/$chapter/$topic',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -73,7 +73,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
-  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRouteWithChildren
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
   '/$platform/$subject/$chapter/$topic': typeof PlatformSubjectChapterTopicRoute
@@ -84,7 +84,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform': typeof PlatformIndexRoute
-  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRouteWithChildren
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject': typeof PlatformSubjectIndexRoute
   '/$platform/$subject/$chapter/$topic': typeof PlatformSubjectChapterTopicRoute
@@ -96,10 +96,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/$platform/': typeof PlatformIndexRoute
-  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRouteWithChildren
+  '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
-  '/$platform/$subject/$chapter/$topic': typeof PlatformSubjectChapterTopicRoute
+  '/$platform/$subject/$chapter_/$topic': typeof PlatformSubjectChapterTopicRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,7 +134,7 @@ export interface FileRouteTypes {
     | '/$platform/$subject/$chapter'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
-    | '/$platform/$subject/$chapter/$topic'
+    | '/$platform/$subject/$chapter_/$topic'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -143,9 +143,10 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   PlatformSyllabusRoute: typeof PlatformSyllabusRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
-  PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRouteWithChildren
+  PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
   ApiPublicFreshnessRefreshRoute: typeof ApiPublicFreshnessRefreshRoute
   PlatformSubjectIndexRoute: typeof PlatformSubjectIndexRoute
+  PlatformSubjectChapterTopicRoute: typeof PlatformSubjectChapterTopicRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -206,29 +207,15 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicFreshnessRefreshRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$platform/$subject/$chapter/$topic': {
-      id: '/$platform/$subject/$chapter/$topic'
-      path: '/$topic'
+    '/$platform/$subject/$chapter_/$topic': {
+      id: '/$platform/$subject/$chapter_/$topic'
+      path: '/$platform/$subject/$chapter/$topic'
       fullPath: '/$platform/$subject/$chapter/$topic'
       preLoaderRoute: typeof PlatformSubjectChapterTopicRouteImport
-      parentRoute: typeof PlatformSubjectChapterRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface PlatformSubjectChapterRouteChildren {
-  PlatformSubjectChapterTopicRoute: typeof PlatformSubjectChapterTopicRoute
-}
-
-const PlatformSubjectChapterRouteChildren: PlatformSubjectChapterRouteChildren =
-  {
-    PlatformSubjectChapterTopicRoute: PlatformSubjectChapterTopicRoute,
-  }
-
-const PlatformSubjectChapterRouteWithChildren =
-  PlatformSubjectChapterRoute._addFileChildren(
-    PlatformSubjectChapterRouteChildren,
-  )
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -236,9 +223,10 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   PlatformSyllabusRoute: PlatformSyllabusRoute,
   PlatformIndexRoute: PlatformIndexRoute,
-  PlatformSubjectChapterRoute: PlatformSubjectChapterRouteWithChildren,
+  PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
   ApiPublicFreshnessRefreshRoute: ApiPublicFreshnessRefreshRoute,
   PlatformSubjectIndexRoute: PlatformSubjectIndexRoute,
+  PlatformSubjectChapterTopicRoute: PlatformSubjectChapterTopicRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
