@@ -11,7 +11,10 @@ function Inline({ nodes }: { nodes: InlineText[] }) {
     <>
       {nodes.map((node, i) => {
         let content: React.ReactNode = node.text;
-        if (node.code) content = <code className="rounded bg-muted px-1.5 py-0.5 text-[0.95em]">{content}</code>;
+        if (node.code)
+          content = (
+            <code className="break-words rounded bg-muted px-1.5 py-0.5 text-[0.95em]">{content}</code>
+          );
         if (node.bold) content = <strong className="font-semibold text-primary">{content}</strong>;
         if (node.italic) content = <em>{content}</em>;
         if (node.href) {
