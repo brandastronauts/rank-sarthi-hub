@@ -59,12 +59,50 @@ import { ndaWingsAirForce } from "./nda-wings-air-force";
 import { ndaPhysicalFitness } from "./nda-physical-fitness";
 import { ndaSainikSchool } from "./nda-sainik-school";
 import { ndaFaq } from "./nda-faq";
+import { ndaExamDates } from "./nda-exam-dates";
+import { ndaGatCurrentAffairs } from "./nda-gat-current-affairs";
+import { ndaGatHistory } from "./nda-gat-history";
+import { ndaGatGeography } from "./nda-gat-geography";
+import { ndaGatGeneralScience } from "./nda-gat-general-science";
+import { ndaGatPolity } from "./nda-gat-polity";
+import { ndaGatPhysics } from "./nda-gat-physics";
+import { ndaGatChemistry } from "./nda-gat-chemistry";
+import { ndaGatBiology } from "./nda-gat-biology";
+import { ndaGatEnglishGrammar } from "./nda-gat-english-grammar";
+import { ndaGatEnglishVocabulary } from "./nda-gat-english-vocabulary";
+import { ndaGatEnglishComprehension } from "./nda-gat-english-comprehension";
+import { ndaPreviousYearPapers } from "./nda-previous-year-papers";
+import { ndaPreviousYearPapers20261 } from "./nda-previous-year-papers-2026-1";
+import { ndaCutoff } from "./nda-cutoff";
+import { ndaResult } from "./nda-result";
+import { ndaAdmitCard } from "./nda-admit-card";
+import { ndaApplicationForm } from "./nda-application-form";
+import { ndaMeritList } from "./nda-merit-list";
 
 /**
  * Exam information pages, keyed by registry path. A page renders only when it
  * is registered here AND its registry record is built.
  */
 export const infoPages: InfoPageContent[] = [
+  ndaExamDates,
+  ndaGatCurrentAffairs,
+  ndaGatHistory,
+  ndaGatGeography,
+  ndaGatGeneralScience,
+  ndaGatPolity,
+  ndaGatPhysics,
+  ndaGatChemistry,
+  ndaGatBiology,
+  ndaGatEnglishGrammar,
+  ndaGatEnglishVocabulary,
+  ndaGatEnglishComprehension,
+  ndaPreviousYearPapers,
+  ndaPreviousYearPapers20261,
+  ndaCutoff,
+  ndaResult,
+  ndaAdmitCard,
+  ndaApplicationForm,
+  ndaMeritList,
   jeeMain,
   jeeAdvanced,
   jeePreviousYearPapers,
