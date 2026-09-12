@@ -16,7 +16,7 @@ import { jumpItemsFor } from "@/lib/jump-nav";
  * page. Adding a fourth-level page is a data change (one InfoPageContent
  * record plus its registry entry).
  */
-export const Route = createFileRoute("/$platform/$subject/$chapter/$topic")({
+export const Route = createFileRoute("/$platform/$subject/$chapter_/$topic")({
   loader: ({ params }) => {
     const url = `/${params.platform}/${params.subject}/${params.chapter}/${params.topic}`;
     const record = getUrl(url);
