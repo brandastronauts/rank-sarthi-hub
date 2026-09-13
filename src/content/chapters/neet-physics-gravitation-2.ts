@@ -96,7 +96,7 @@ export const neetPhysicsGravitation2: ChapterContent = {
           "type": "paragraph",
           "children": [
             {
-              "text": "P01 does not change routes, canonicals, redirects or Lovable architecture. A later SEO/product governance decision may choose a redirect/canonical/bridge implementation based on technical constraints and search evidence. Until then, the content state remains DUPLICATE_INTENT_REVIEW_REQUIRED, draft and noindex."
+              "text": "P01 does not change routes, canonicals, redirects or application architecture. A later SEO/product governance decision may choose a redirect/canonical/bridge implementation based on technical constraints and search evidence. Until then, the content state remains DUPLICATE_INTENT_REVIEW_REQUIRED, draft and noindex."
             }
           ]
         }

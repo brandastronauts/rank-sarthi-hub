@@ -3,7 +3,7 @@ import { z } from "zod";
 /**
  * Runtime contracts for Content Engine payloads.
  *
- * Lovable owns the SHAPE; the Rank Sarthi Content Engine owns the WORDS.
+ * Runtime schemas own the SHAPE; the Rank Sarthi Content Engine owns the WORDS.
  * Every academic field is optional-by-design: a missing field must make its
  * block disappear, never produce invented filler.
  */
