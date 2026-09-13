@@ -47,7 +47,7 @@ export const Route = createFileRoute("/blog/$slug")({
     return {
       ...head,
       meta: head.meta
-        .map((entry) => entry.property === "og:url" ? { ...entry, content: canonical } : entry)
+        .map((entry) => entry["property"] === "og:url" ? { ...entry, content: canonical } : entry)
         .concat({ name: "robots", content: "noindex, follow" }),
       links: [{ rel: "canonical", href: canonical }],
     };
