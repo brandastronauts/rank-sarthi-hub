@@ -34,6 +34,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) return { meta: [{ title: "Article not found | Rank Sarthi" }, { name: "robots", content: "noindex, follow" }] };
     const { article } = loaderData;
     const url = `/blog/${params.slug}`;
+    const canonical = article.canonicalOverride ?? absolute(url);
     const head = buildHead({
       url,
       title: article.seoTitle,
@@ -43,7 +44,13 @@ export const Route = createFileRoute("/blog/$slug")({
       ogType: "article",
       jsonLd: [articleSchema({ url, headline: article.title, description: article.excerpt, ...(article.publishedAt ? { published: article.publishedAt } : {}), ...(article.updatedAt ? { updated: article.updatedAt } : {}) }), dynamicBreadcrumbSchema(article.title, article.category, url)],
     });
-    return { ...head, meta: [...head.meta, { name: "robots", content: "noindex, follow" }] };
+    return {
+      ...head,
+      meta: head.meta
+        .map((entry) => entry.property === "og:url" ? { ...entry, content: canonical } : entry)
+        .concat({ name: "robots", content: "noindex, follow" }),
+      links: [{ rel: "canonical", href: canonical }],
+    };
   },
   component: BlogArticlePage,
 });
