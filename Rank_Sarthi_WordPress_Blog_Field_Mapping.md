@@ -2,6 +2,8 @@
 
 This specification describes a future adapter from a headless WordPress CMS to the Rank Sarthi `BlogArticle` contract. WordPress is not connected in the current implementation.
 
+The six local sample records are development-only. Production uses an empty provider until WordPress is connected, so no sample cards render and sample slugs return the normal 404. Replacing the provider does not require changes to the frontend components.
+
 | Frontend field | WordPress field | Required | Validation | Fallback |
 |---|---|---:|---|---|
 | `id` | `id` | Yes | Stable non-empty string or number converted to string | Reject record |

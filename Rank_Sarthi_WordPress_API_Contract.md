@@ -69,7 +69,16 @@ The provider supplies the `BlogArticle` contract documented in `Rank_Sarthi_Word
 - Public production lists and detail requests expose only approved published records.
 - Draft, pending, private, trashed, and scheduled posts are not public.
 - Preview support, if added later, must require authenticated server-side access and must remain noindex.
-- The current local development articles remain draft and explicitly noindex.
+- The six local sample articles are exposed only by `LocalBlogDataProvider` when `import.meta.env.DEV` is true.
+- Before WordPress is connected, production uses an empty provider: `/blog` shows the neutral editorial-team state and every sample `/blog/{slug}` returns the normal 404.
+- `noindex` is supplementary protection and is not the access control for local sample content.
+- A future WordPress provider replaces the selected provider at this boundary without changing presentation components.
+
+## Route ownership
+
+- The dedicated `/blog` index route owns hub rendering and the dedicated `/blog/{slug}` route owns article rendering.
+- The generic first-level resolver does not render `/blog`; the exact static route takes precedence.
+- The frozen `/blog` URL registry record remains authoritative for hub canonical, indexation, breadcrumbs, and navigation.
 
 ## Security and sanitisation
 
