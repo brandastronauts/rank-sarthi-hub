@@ -14,6 +14,8 @@ import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
 import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabus'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
 import { Route as ApiPublicFreshnessRefreshRouteImport } from './routes/api/public/freshness-refresh'
@@ -44,6 +46,16 @@ const PlatformSyllabusRoute = PlatformSyllabusRouteImport.update({
   path: '/$platform/syllabus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlatformSubjectIndexRoute = PlatformSubjectIndexRouteImport.update({
   id: '/$platform/$subject/',
   path: '/$platform/$subject/',
@@ -72,7 +84,9 @@ export interface FileRoutesByFullPath {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/$platform/': typeof PlatformIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
@@ -83,7 +97,9 @@ export interface FileRoutesByTo {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/$platform': typeof PlatformIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject': typeof PlatformSubjectIndexRoute
@@ -95,7 +111,9 @@ export interface FileRoutesById {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/$platform/': typeof PlatformIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
@@ -108,7 +126,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/$platform/syllabus'
+    | '/blog/$slug'
     | '/$platform/'
+    | '/blog/'
     | '/$platform/$subject/$chapter'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
@@ -119,7 +139,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/$platform/syllabus'
+    | '/blog/$slug'
     | '/$platform'
+    | '/blog'
     | '/$platform/$subject/$chapter'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject'
@@ -130,7 +152,9 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/$platform/syllabus'
+    | '/blog/$slug'
     | '/$platform/'
+    | '/blog/'
     | '/$platform/$subject/$chapter'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
@@ -142,7 +166,9 @@ export interface RootRouteChildren {
   SitemapRoute: typeof SitemapRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   PlatformSyllabusRoute: typeof PlatformSyllabusRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
   ApiPublicFreshnessRefreshRoute: typeof ApiPublicFreshnessRefreshRoute
   PlatformSubjectIndexRoute: typeof PlatformSubjectIndexRoute
@@ -186,6 +212,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformSyllabusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$platform/$subject/': {
       id: '/$platform/$subject/'
       path: '/$platform/$subject'
@@ -222,7 +262,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapRoute: SitemapRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   PlatformSyllabusRoute: PlatformSyllabusRoute,
+  BlogSlugRoute: BlogSlugRoute,
   PlatformIndexRoute: PlatformIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
   PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
   ApiPublicFreshnessRefreshRoute: ApiPublicFreshnessRefreshRoute,
   PlatformSubjectIndexRoute: PlatformSubjectIndexRoute,

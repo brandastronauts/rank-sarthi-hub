@@ -8,3 +8,4 @@
 
 - [x] NDA-B final integration: 19 routes built, 7 gated.
 - [x] Final JEE + Main buildable batch: 29 routes built (22 JEE, 7 core), all draft/noindex; 20 Main/JEE routes left blocked.
+- [x] Build the WordPress-ready public blog home, generic article renderer, local provider, handoff documents, and QA without connecting WordPress.
