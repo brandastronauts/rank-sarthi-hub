@@ -517,7 +517,7 @@ export const ndaMathematicsIntegration: InfoPageContent = {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "STOP. No Lovable integration performed. NDA-B not started. NDA-C not started."
+                  "text": "STOP. No platform integration performed. NDA-B not started. NDA-C not started."
                 }
               ]
             }
