@@ -77,7 +77,9 @@ export function articleSchema(opts: {
   url: string;
   headline: string;
   description: string;
+  published?: string;
   updated?: string;
+  image?: string;
   authorId?: string;
   reviewerId?: string;
 }) {
@@ -90,7 +92,9 @@ export function articleSchema(opts: {
     inLanguage: "en-IN",
     publisher: { "@type": "Organization", name: site.legalName, url: `${site.origin}/` },
   };
+  if (opts.published) schema["datePublished"] = opts.published;
   if (opts.updated) schema["dateModified"] = opts.updated;
+  if (opts.image) schema["image"] = opts.image;
 
   const author = getPerson(opts.authorId);
   if (author) schema["author"] = { "@type": "Person", name: author.name, jobTitle: author.role };
