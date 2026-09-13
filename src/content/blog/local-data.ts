@@ -18,6 +18,7 @@ const internalRoutes: Record<BlogExam, string[]> = {
 };
 
 function body(exam: BlogExam, focus: string): BlogContentNode[] {
+  const firstRoute = internalRoutes[exam][0] ?? "/";
   return [
     {
       type: "paragraph",
@@ -28,7 +29,7 @@ function body(exam: BlogExam, focus: string): BlogContentNode[] {
       type: "paragraph",
       children: [
         { text: "Begin with the relevant official material, then use the matching " },
-        { text: `${exam === "GENERAL" ? "exam" : exam} resource`, bold: true, href: internalRoutes[exam][0] },
+        { text: `${exam === "GENERAL" ? "exam" : exam} resource`, bold: true, href: firstRoute },
         { text: " to organise the next step." },
       ],
     },
