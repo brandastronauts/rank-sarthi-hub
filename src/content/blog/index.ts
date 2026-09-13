@@ -1,4 +1,4 @@
-export { blogDataProvider, LocalBlogDataProvider } from "./provider";
+export { blogDataProvider, EmptyBlogDataProvider, LocalBlogDataProvider } from "./provider";
 export type {
   BlogArticle,
   BlogCategory,

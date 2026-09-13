@@ -1,14 +1,29 @@
-import { localBlogArticles } from "./local-data";
 import type { BlogArticle, BlogDataProvider } from "./types";
 
 export class LocalBlogDataProvider implements BlogDataProvider {
   async listArticles(): Promise<BlogArticle[]> {
+    if (!import.meta.env.DEV) return [];
+    const { localBlogArticles } = await import("./local-data");
     return localBlogArticles;
   }
 
   async getArticleBySlug(slug: string): Promise<BlogArticle | undefined> {
+    if (!import.meta.env.DEV) return undefined;
+    const { localBlogArticles } = await import("./local-data");
     return localBlogArticles.find((article) => article.slug === slug);
   }
 }
 
-export const blogDataProvider: BlogDataProvider = new LocalBlogDataProvider();
+export class EmptyBlogDataProvider implements BlogDataProvider {
+  async listArticles(): Promise<BlogArticle[]> {
+    return [];
+  }
+
+  async getArticleBySlug(): Promise<BlogArticle | undefined> {
+    return undefined;
+  }
+}
+
+export const blogDataProvider: BlogDataProvider = import.meta.env.DEV
+  ? new LocalBlogDataProvider()
+  : new EmptyBlogDataProvider();
