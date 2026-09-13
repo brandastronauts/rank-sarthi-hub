@@ -24,6 +24,8 @@ export class EmptyBlogDataProvider implements BlogDataProvider {
   }
 }
 
-export const blogDataProvider: BlogDataProvider = import.meta.env.DEV
-  ? new LocalBlogDataProvider()
-  : new EmptyBlogDataProvider();
+export function selectBlogDataProvider(isDevelopment: boolean): BlogDataProvider {
+  return isDevelopment ? new LocalBlogDataProvider() : new EmptyBlogDataProvider();
+}
+
+export const blogDataProvider: BlogDataProvider = selectBlogDataProvider(import.meta.env.DEV);
