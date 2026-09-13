@@ -48,7 +48,7 @@ export function BlogHome({ articles }: { articles: BlogArticle[] }) {
         {filter === "All" ? <div className="mt-20 space-y-20"><EditorialSection title="JEE Insights" articles={byExam("JEE")} /><EditorialSection title="NEET Insights" articles={byExam("NEET")} /><EditorialSection title="NDA Insights" articles={byExam("NDA")} /><EditorialSection title="Preparation Guides" articles={preparation} /></div> : null}
       </div>
 
-      <section className="bg-navy-deep text-primary-foreground"><div className="container-page py-12 text-center md:py-16"><h2 className="text-2xl font-bold">Preparing for an exam?</h2><div className="mt-6 flex flex-wrap justify-center gap-3">{(["jee", "neet", "nda"] as const).map((exam) => <Button key={exam} asChild variant="secondary"><Link to={`/${exam}`}>{exam.toUpperCase()}</Link></Button>)}</div></div></section>
+      <section className="bg-navy-deep text-primary-foreground"><div className="container-page py-12 text-center md:py-16"><h2 className="text-2xl font-bold">Preparing for an exam?</h2><div className="mt-6 flex flex-wrap justify-center gap-3">{(["jee", "neet", "nda"] as const).map((exam) => <Button key={exam} asChild variant="secondary"><Link to="/$platform" params={{ platform: exam }}>{exam.toUpperCase()}</Link></Button>)}</div></div></section>
     </>
   );
 }
