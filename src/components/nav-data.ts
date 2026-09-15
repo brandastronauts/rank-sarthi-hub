@@ -206,6 +206,10 @@ export const navItems: NavItem[] = [
       },
     ],
   },
+  {
+    label: "Tools",
+    href: "/tools",
+  },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -231,6 +235,7 @@ export const footerGroups: MenuColumn[] = [
       { label: "Previous year papers", href: "/jee/previous-year-papers" },
       { label: "Mock tests", href: "/jee/mock-tests" },
       { label: "Free resources", href: "/resources" },
+      { label: "Calculators & tools", href: "/tools" },
     ],
   },
   {
