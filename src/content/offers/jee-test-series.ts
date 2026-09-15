@@ -2,8 +2,10 @@ import type {
   OfferCtaData,
   OfferHighlight,
   OfferPackage,
+  PartTestRecord,
   PartTestSyllabusData,
 } from "@/content/types";
+import { jeeAdvancedPartTests } from "@/content/offers/jee-advanced-part-tests";
 
 /**
  * JEE Test Series 2026 — inaugural offer.
