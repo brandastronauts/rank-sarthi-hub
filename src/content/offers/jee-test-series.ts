@@ -136,6 +136,68 @@ export const jeeTestSeriesPartTestSyllabus: PartTestSyllabusData = {
 export const jeeTestSeriesCta: OfferCtaData = {
   heading: "Interested in the JEE Test Series?",
   body: "Compare the inaugural packages and check the part-test structure while enrolment is being finalised.",
-  inPage: { label: "View Packages", href: "#packages" },
+  inPage: { label: "Proceed with Pricing", href: "#packages" },
   pendingNote: "Enrolment details will be available here once confirmed.",
+};
+
+/**
+ * JEE Advanced test-pattern allocation, as supplied by the academic team.
+ *
+ * Pattern 3's supplied component counts (4 + 4 + 2 passages × 2 + 4 + 2 + 2)
+ * total 20 while the document labels it an 18-question paper. The components are
+ * preserved here for the academic team, but the page must NOT publish a
+ * contradictory Pattern 3 total until that is confirmed.
+ */
+export const jeeAdvancedTestPatterns = [
+  {
+    id: "pattern-1",
+    label: "Pattern 1",
+    papers: "Papers 1, 4, 7",
+    components: [
+      "Single Option Correct: 5",
+      "Multiple Option Correct: 3",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 3",
+      "Multiple Statement Questions: 1 (single option correct)",
+      "Match the Column: 2",
+    ],
+    total: "18 questions",
+    confirmed: true,
+  },
+  {
+    id: "pattern-2",
+    label: "Pattern 2",
+    papers: "Papers 2, 5, 8, 10",
+    components: [
+      "Multiple Option Correct: 7",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 3",
+      "Multiple Statement Questions: 2",
+      "Match the Column: 2",
+    ],
+    total: "18 questions",
+    confirmed: true,
+  },
+  {
+    id: "pattern-3",
+    label: "Pattern 3",
+    papers: "Papers 3, 6, 9",
+    /** Held for the academic team; deliberately not published on the page. */
+    components: [
+      "Single Option Correct: 4",
+      "Multiple Option Correct: 4",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 4",
+      "Multiple Statement Questions: 2",
+      "Match the Column: 2",
+    ],
+    total: "Academic confirmation pending",
+    confirmed: false,
+  },
+] as const;
+
+/** JEE Main pattern exactly as supplied. No marks, negative marking or duration. */
+export const jeeMainTestPattern = {
+  perSubject: "25 Questions",
+  components: ["20 MCQs", "5 Numerical Type"],
 };
