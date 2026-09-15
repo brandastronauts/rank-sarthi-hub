@@ -116,7 +116,7 @@ export const jeeMockTests: InfoPageContent = {
         pattern.confirmed ? pattern.components.join("; ") : "Academic confirmation pending",
         pattern.total,
       ]),
-      note: "Pattern 3 distribution: Academic confirmation pending. The supplied Pattern 3 component counts do not reconcile with the stated 18-question paper, so no Pattern 3 total is published until the academic team confirms it.",
+      note: "Pattern totals as confirmed by the academic team: Pattern 1 and Pattern 2 are 18-question papers; Pattern 3 is a 20-question paper.",
     },
 
     {
