@@ -26,7 +26,12 @@ export function PartTestSyllabus({
   note?: string;
 }) {
   const tracks = data?.tracks ?? [];
-  const [active, setActive] = useState(0);
+  // Default to the first track that actually has a supplied allocation.
+  const defaultTrack = Math.max(
+    0,
+    tracks.findIndex((t) => t.tests.some((test) => test.subjects.some((s) => s.groups.length > 0))),
+  );
+  const [active, setActive] = useState(defaultTrack);
   const [openTest, setOpenTest] = useState<string | null>(null);
 
   if (!tracks.length) return null;
