@@ -704,7 +704,18 @@ export type InfoBlock =
       id: string;
       heading: string;
       intro?: string;
-      tool: "neet-score-calculator" | "neet-study-planner";
+      tool: ToolMountId;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Tool directory grid with client-side filters (B54). */
+      kind: "tools-grid";
+      id: string;
+      heading: string;
+      intro?: string;
+      filters: string[];
+      items: ToolCard[];
       note?: string;
       jump?: boolean;
     }
@@ -746,6 +757,32 @@ export type InfoBlock =
       cta: OfferCtaData;
       jump?: boolean;
     };
+
+/** Registered interactive tool ids (B49 mounts). */
+export type ToolMountId =
+  | "neet-score-calculator"
+  | "neet-study-planner"
+  | "jee-main-score-calculator"
+  | "jee-advanced-score-calculator"
+  | "nda-score-calculator"
+  | "negative-marking-calculator"
+  | "accuracy-calculator"
+  | "target-score-calculator"
+  | "correct-answers-needed-calculator"
+  | "study-time-calculator"
+  | "daily-question-target-calculator";
+
+/** One card in the tools directory grid (B54). */
+export interface ToolCard {
+  url: string;
+  name: string;
+  tagline: string;
+  /** Filter keys this tool belongs to, matching the block's filter list. */
+  filters: string[];
+  badges: string[];
+  cta?: string;
+  featured?: boolean;
+}
 
 /* ------------------------------------------------------------------ */
 /* Commercial offer contracts (test series / packages)                 */

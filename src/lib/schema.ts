@@ -157,7 +157,34 @@ export function infoPageSchema(opts: {
   relatedLinks?: { label: string; url: string }[];
   lastVerified?: string;
 }) {
-  const blocks = opts.blocks ?? [];
+  const blocks = (opts.blocks ?? []) as { kind: string; items?: { name?: string; label?: string; url: string }[] }[];
+
+  // Tool directory: CollectionPage + ItemList of the real tool URLs.
+  const grid = blocks
+    .filter((b) => b.kind === "tools-grid" && (b.items?.length ?? 0) > 0)
+    .sort((a, b) => (b.items?.length ?? 0) - (a.items?.length ?? 0))[0];
+  if (grid) {
+    return collectionPageSchema({
+      url: opts.url,
+      name: opts.title,
+      description: opts.description,
+      items: (grid.items ?? []).map((item) => ({ name: item.name ?? item.label ?? item.url, url: item.url })),
+    });
+  }
+
+  // Interactive calculator page: plain WebPage. No SoftwareApplication,
+  // Product, Offer, Review, AggregateRating or Dataset is ever emitted.
+  if (blocks.some((b) => b.kind === "tool")) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: opts.title,
+      description: opts.description,
+      url: absolute(opts.url),
+      inLanguage: "en-IN",
+    };
+  }
+
   const listy = blocks.filter((b) => b.kind === "resources" || b.kind === "links").length;
   const prose = blocks.filter((b) => b.kind === "prose" || b.kind === "table").length;
   const isCollection = blocks.length === 0 || listy >= prose;

@@ -49,6 +49,7 @@ import { ToolBlock } from "@/components/blocks/ToolBlock";
 import { OfferHighlight } from "@/components/blocks/OfferHighlight";
 import { OfferPackages } from "@/components/blocks/OfferPackages";
 import { PartTestSyllabus } from "@/components/blocks/PartTestSyllabus";
+import { ToolsGrid } from "@/components/blocks/ToolsGrid";
 import { OfferCta } from "@/components/blocks/OfferCta";
 
 
@@ -92,6 +93,7 @@ export function ensureBlocksRegistered() {
     B51: OfferPackages,
     B52: PartTestSyllabus,
     B53: OfferCta,
+    B54: ToolsGrid,
 
     B26: SyllabusExplorer,
     B27: TrendTable,
