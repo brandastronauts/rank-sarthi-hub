@@ -160,7 +160,9 @@ export function infoPageSchema(opts: {
   const blocks = (opts.blocks ?? []) as { kind: string; items?: { name?: string; label?: string; url: string }[] }[];
 
   // Tool directory: CollectionPage + ItemList of the real tool URLs.
-  const grid = blocks.find((b) => b.kind === "tools-grid" && (b.items?.length ?? 0) > 0);
+  const grid = blocks
+    .filter((b) => b.kind === "tools-grid" && (b.items?.length ?? 0) > 0)
+    .sort((a, b) => (b.items?.length ?? 0) - (a.items?.length ?? 0))[0];
   if (grid) {
     return collectionPageSchema({
       url: opts.url,
