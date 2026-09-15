@@ -88,6 +88,16 @@ import { ndaWingsNavy } from "./nda-wings-navy";
 import { ndaWingsAirForce } from "./nda-wings-air-force";
 import { ndaPhysicalFitness } from "./nda-physical-fitness";
 import { ndaSainikSchool } from "./nda-sainik-school";
+import { mainTools } from "./tools";
+import { toolsJeeMainScoreCalculator } from "./tools-jee-main-score-calculator";
+import { toolsJeeAdvancedScoreCalculator } from "./tools-jee-advanced-score-calculator";
+import { toolsNegativeMarkingCalculator } from "./tools-negative-marking-calculator";
+import { toolsAccuracyCalculator } from "./tools-accuracy-calculator";
+import { toolsTargetScoreCalculator } from "./tools-target-score-calculator";
+import { toolsCorrectAnswersNeededCalculator } from "./tools-correct-answers-needed-calculator";
+import { toolsStudyTimeCalculator } from "./tools-study-time-calculator";
+import { toolsDailyQuestionTargetCalculator } from "./tools-daily-question-target-calculator";
+import { ndaScoreCalculator } from "./nda-score-calculator";
 import { ndaFaq } from "./nda-faq";
 import { ndaExamDates } from "./nda-exam-dates";
 import { ndaGatCurrentAffairs } from "./nda-gat-current-affairs";
@@ -223,6 +233,16 @@ export const infoPages: InfoPageContent[] = [
   ndaPhysicalFitness,
   ndaSainikSchool,
   ndaFaq,
+  mainTools,
+  toolsJeeMainScoreCalculator,
+  toolsJeeAdvancedScoreCalculator,
+  toolsNegativeMarkingCalculator,
+  toolsAccuracyCalculator,
+  toolsTargetScoreCalculator,
+  toolsCorrectAnswersNeededCalculator,
+  toolsStudyTimeCalculator,
+  toolsDailyQuestionTargetCalculator,
+  ndaScoreCalculator,
 ];
 
 const byUrl = new Map(infoPages.map((p) => [p.url, p]));
