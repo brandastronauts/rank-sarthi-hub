@@ -37,6 +37,7 @@ import { jeeAnswerKey } from "./jee-answer-key";
 import { jeeAnalysis } from "./jee-analysis";
 import { jeeCutoff } from "./jee-cutoff";
 import { jeeExamDates } from "./jee-exam-dates";
+import { jeeMockTests } from "./jee-mock-tests";
 import { jeeAdvancedPreviousYearPapers } from "./jee-advanced-previous-year-papers";
 import { jeeAdvancedAnswerKey } from "./jee-advanced-answer-key";
 import { jeeAdvancedCutoff } from "./jee-advanced-cutoff";
@@ -170,6 +171,7 @@ export const infoPages: InfoPageContent[] = [
   jeeAnalysis,
   jeeCutoff,
   jeeExamDates,
+  jeeMockTests,
   jeeAdvancedPreviousYearPapers,
   jeeAdvancedAnswerKey,
   jeeAdvancedCutoff,

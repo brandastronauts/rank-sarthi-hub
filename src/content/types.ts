@@ -707,7 +707,112 @@ export type InfoBlock =
       tool: "neet-score-calculator" | "neet-study-planner";
       note?: string;
       jump?: boolean;
+    }
+  | {
+      /** Featured commercial offer card (B50). Copy is commercially approved. */
+      kind: "offer-highlight";
+      id: string;
+      heading?: string;
+      highlight: OfferHighlight;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Package comparison cards (B51). */
+      kind: "offer-packages";
+      id: string;
+      heading: string;
+      intro?: string;
+      packages: OfferPackage[];
+      valueCallout?: string;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Part-test syllabus tabs (B52). Topics may be empty until approved. */
+      kind: "part-test-syllabus";
+      id: string;
+      heading: string;
+      intro?: string;
+      data: PartTestSyllabusData;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Offer / enrolment call to action (B53). */
+      kind: "offer-cta";
+      id: string;
+      heading?: string;
+      cta: OfferCtaData;
+      jump?: boolean;
     };
+
+/* ------------------------------------------------------------------ */
+/* Commercial offer contracts (test series / packages)                 */
+/* ------------------------------------------------------------------ */
+
+/** Featured offer, rendered by B50. Every field is commercially approved copy. */
+export interface OfferHighlight {
+  badge: string;
+  title: string;
+  support?: string;
+  includes: string[];
+  bonus?: string;
+  price: string;
+  priceLabel?: string;
+  /** In-page actions only until a real enrolment destination exists. */
+  primary: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+
+/** One purchasable package, rendered by B51. */
+export interface OfferPackage {
+  id: string;
+  name: string;
+  /** Short ribbon, e.g. "Recommended". */
+  badge?: string;
+  price: string;
+  includes?: string[];
+  /** Tiered choices inside one package, e.g. CBT session / year / archive. */
+  options?: { label: string; detail?: string; price: string }[];
+  bestFor?: string;
+  featured?: boolean;
+}
+
+/** One part test and its per-subject scope. Empty topics render as pending. */
+export interface PartTestRecord {
+  id: string;
+  name: string;
+  subjects: { subject: string; topics: string[] }[];
+}
+
+export interface PartTestSyllabusTrack {
+  id: string;
+  label: string;
+  tests: PartTestRecord[];
+}
+
+export interface PartTestSyllabusData {
+  /** Neutral status line shown while no track has approved topics. */
+  statusMessage: string;
+  tracks: PartTestSyllabusTrack[];
+}
+
+/**
+ * Enrolment CTA contract. The payment/enrolment URL is optional so it can be
+ * supplied later without changing the page architecture.
+ */
+export interface OfferCtaData {
+  heading: string;
+  body?: string;
+  /** Always available in-page action. */
+  inPage: { label: string; href: string };
+  /** Real payment/enrolment destination, when one exists. */
+  enrolmentUrl?: string;
+  enrolmentLabel?: string;
+  /** Shown instead of an enrolment button while the destination is pending. */
+  pendingNote?: string;
+}
 
 
 /**
