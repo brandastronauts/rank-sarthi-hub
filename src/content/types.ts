@@ -780,20 +780,46 @@ export interface OfferPackage {
 }
 
 /** One part test and its per-subject scope. Empty topics render as pending. */
+/**
+ * One chapter/topic group inside a part-test subject allocation.
+ * `topics` are inclusions; `excluding` statements are rendered as a visually
+ * distinct exclusion note so they can never read as positive scope.
+ */
+export interface PartTestTopicGroup {
+  /** Source heading exactly as supplied by the academic team. */
+  heading?: string;
+  topics: string[];
+  excluding?: string[];
+  /** Academic-team note that travels with this group. */
+  note?: string;
+}
+
+export interface PartTestSubjectAllocation {
+  subject: string;
+  /** Empty until the academic team supplies this subject's allocation. */
+  groups: PartTestTopicGroup[];
+}
+
 export interface PartTestRecord {
   id: string;
   name: string;
-  subjects: { subject: string; topics: string[] }[];
+  subjects: PartTestSubjectAllocation[];
 }
 
 export interface PartTestSyllabusTrack {
   id: string;
   label: string;
   tests: PartTestRecord[];
+  /** Track-specific neutral status line while no allocation is supplied. */
+  statusMessage?: string;
+  /** Provenance label, e.g. "Academic-team supplied syllabus". */
+  sourceLabel?: string;
+  /** Review state shown with the allocation. */
+  reviewNote?: string;
 }
 
 export interface PartTestSyllabusData {
-  /** Neutral status line shown while no track has approved topics. */
+  /** Neutral status line shown while a track has no approved allocation. */
   statusMessage: string;
   tracks: PartTestSyllabusTrack[];
 }
