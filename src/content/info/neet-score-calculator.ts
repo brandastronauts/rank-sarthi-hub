@@ -12,7 +12,7 @@ export const neetScoreCalculator: InfoPageContent = {
   slug: "score-calculator",
   exam: "NEET (UG)",
   contentStatus: "draft",
-  title: "NEET Score Calculator: Official +4 / −1 Marks Calculation",
+  title: "NEET Score Calculator 2026",
   eyebrow: "Interactive tool",
   intent: "Convert your answer counts into an official NEET marks total out of 720",
   chips: ["180 questions", "720 marks", "No rank prediction"],
@@ -157,7 +157,7 @@ export const neetScoreCalculator: InfoPageContent = {
     "The marking rule is implemented exactly as officially published; no house scoring variant is added.",
   ],
   seo: {
-    title: "NEET Score Calculator (720 Marks, +4 / −1) | Rank Sarthi",
+    title: "NEET Score Calculator 2026: Calculate Marks Out of 720 | Rank Sarthi",
     description:
       "Calculate your NEET (UG) marks out of 720 using the official +4 / −1 rule, including all-candidate bonus questions from the final answer key. Marks only — no rank prediction.",
   },
