@@ -23,7 +23,6 @@ export const jeeMockTests: InfoPageContent = {
   platform: "jee",
   slug: "mock-tests",
   exam: "JEE",
-  slugTitleGuard: undefined,
   contentStatus: "draft",
   title: "JEE Test Series 2026",
   eyebrow: "Inaugural offer",
