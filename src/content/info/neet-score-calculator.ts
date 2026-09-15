@@ -116,6 +116,17 @@ export const neetScoreCalculator: InfoPageContent = {
         },
       ],
     },
+    {
+      kind: "links",
+      id: "related-calculators",
+      heading: "Related Calculators",
+      items: [
+        { url: "/tools/negative-marking-calculator", label: "Negative Marking Calculator", type: "Calculator" },
+        { url: "/tools/accuracy-calculator", label: "Exam Accuracy Calculator", type: "Calculator" },
+        { url: "/tools/target-score-calculator", label: "Target Score Calculator", type: "Calculator" },
+        { url: "/tools", label: "All free calculators and tools", type: "Tool Hub" },
+      ],
+    },
   ],
   relatedLinks: [
     { label: "NEET answer keys", url: "/neet/answer-key", relation: "related", description: "Check your responses against the official provisional and final keys." },
