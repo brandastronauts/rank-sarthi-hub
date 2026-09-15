@@ -76,6 +76,62 @@ export function infoPageRecipe(
       };
     }
 
+    if (block.kind === "offer-highlight") {
+      return {
+        block: "B50",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          highlight: block.highlight,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+      };
+    }
+
+    if (block.kind === "offer-packages") {
+      return {
+        block: "B51",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          packages: block.packages,
+          valueCallout: block.valueCallout,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+        when: block.packages.length > 0,
+      };
+    }
+
+    if (block.kind === "part-test-syllabus") {
+      return {
+        block: "B52",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          data: block.data,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+        when: block.data.tracks.length > 0,
+      };
+    }
+
+    if (block.kind === "offer-cta") {
+      return {
+        block: "B53",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          cta: block.cta,
+          jumpHidden: block.jump === false,
+        },
+      };
+    }
+
     return {
       block: "B35",
       id: block.id,
