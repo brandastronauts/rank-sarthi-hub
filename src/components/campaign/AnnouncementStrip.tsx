@@ -8,7 +8,8 @@ import { jeeAnnouncement } from "@/content/offers/campaign";
  * point at a planned route. Wraps safely at 390px with no horizontal overflow.
  */
 export function AnnouncementStrip() {
-  const record = getUrl(jeeAnnouncement.href);
+  const href: string = jeeAnnouncement.href;
+  const record = getUrl(href);
   if (record?.buildStatus !== "built") return null;
 
   return (
