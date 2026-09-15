@@ -132,6 +132,22 @@ export function infoPageRecipe(
       };
     }
 
+    if (block.kind === "tools-grid") {
+      return {
+        block: "B54",
+        id: block.id,
+        props: {
+          heading: block.heading,
+          intro: block.intro,
+          filters: block.filters,
+          items: block.items,
+          note: block.note,
+          jumpHidden: block.jump === false,
+        },
+        when: block.items.length > 0,
+      };
+    }
+
     return {
       block: "B35",
       id: block.id,
