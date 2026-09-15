@@ -42,6 +42,8 @@ const LABELS: Record<string, string> = {
   "what-you-get": "What you receive",
   packages: "Packages",
   "part-test-syllabus": "Part-Test Syllabus",
+  "test-pattern": "Test Pattern",
+  "jee-main-pattern": "JEE Main pattern",
   "full-tests": "Full tests",
   "cbt-practice": "CBT previous-year practice",
   "why-rank-sarthi": "Why Rank Sarthi",

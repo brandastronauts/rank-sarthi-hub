@@ -2,8 +2,10 @@ import type {
   OfferCtaData,
   OfferHighlight,
   OfferPackage,
+  PartTestRecord,
   PartTestSyllabusData,
 } from "@/content/types";
+import { jeeAdvancedPartTests } from "@/content/offers/jee-advanced-part-tests";
 
 /**
  * JEE Test Series 2026 — inaugural offer.
@@ -92,24 +94,37 @@ export const jeeTestSeriesTerms =
 const PART_TEST_SUBJECTS = ["Physics", "Chemistry", "Mathematics"] as const;
 
 /**
- * Ten part-test records per track, each with its three subject slots and an
- * EMPTY topic list. The academic team populates `topics` later; the page
- * architecture does not change when they do.
+ * Ten part-test records with three EMPTY subject allocations. Used for JEE Main,
+ * whose test-wise syllabus has not been supplied yet. The academic team fills
+ * `groups` later; the page architecture does not change when they do.
  */
-function partTests(trackId: string) {
+function emptyPartTests(trackId: string): PartTestRecord[] {
   return Array.from({ length: 10 }, (_, i) => ({
     id: `${trackId}-part-test-${i + 1}`,
     name: `Part Test ${i + 1}`,
-    subjects: PART_TEST_SUBJECTS.map((subject) => ({ subject, topics: [] as string[] })),
+    subjects: PART_TEST_SUBJECTS.map((subject) => ({ subject, groups: [] })),
   }));
 }
 
 export const jeeTestSeriesPartTestSyllabus: PartTestSyllabusData = {
   statusMessage:
-    "Detailed Part-Test syllabus will be published here once finalised by the academic team.",
+    "Detailed JEE Main Part-Test syllabus is awaiting final academic confirmation.",
   tracks: [
-    { id: "jee-main", label: "JEE Main Part Tests", tests: partTests("jee-main") },
-    { id: "jee-advanced", label: "JEE Advanced Part Tests", tests: partTests("jee-advanced") },
+    {
+      id: "jee-main",
+      label: "JEE Main Part Tests",
+      tests: emptyPartTests("jee-main"),
+      statusMessage:
+        "Detailed JEE Main Part-Test syllabus is awaiting final academic confirmation.",
+    },
+    {
+      id: "jee-advanced",
+      label: "JEE Advanced Part Tests",
+      tests: jeeAdvancedPartTests,
+      sourceLabel: "Academic-team supplied syllabus",
+      reviewNote:
+        "Human review pending. This is the Rank Sarthi Part-Test allocation, not the official JEE Advanced syllabus document, even where topics derive from official exam scope.",
+    },
   ],
 };
 
@@ -121,6 +136,68 @@ export const jeeTestSeriesPartTestSyllabus: PartTestSyllabusData = {
 export const jeeTestSeriesCta: OfferCtaData = {
   heading: "Interested in the JEE Test Series?",
   body: "Compare the inaugural packages and check the part-test structure while enrolment is being finalised.",
-  inPage: { label: "View Packages", href: "#packages" },
+  inPage: { label: "Proceed with Pricing", href: "#packages" },
   pendingNote: "Enrolment details will be available here once confirmed.",
+};
+
+/**
+ * JEE Advanced test-pattern allocation, as supplied by the academic team.
+ *
+ * Pattern 3's supplied component counts (4 + 4 + 2 passages × 2 + 4 + 2 + 2)
+ * total 20 while the document labels it an 18-question paper. The components are
+ * preserved here for the academic team, but the page must NOT publish a
+ * contradictory Pattern 3 total until that is confirmed.
+ */
+export const jeeAdvancedTestPatterns = [
+  {
+    id: "pattern-1",
+    label: "Pattern 1",
+    papers: "Papers 1, 4, 7",
+    components: [
+      "Single Option Correct: 5",
+      "Multiple Option Correct: 3",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 3",
+      "Multiple Statement Questions: 1 (single option correct)",
+      "Match the Column: 2",
+    ],
+    total: "18 questions",
+    confirmed: true,
+  },
+  {
+    id: "pattern-2",
+    label: "Pattern 2",
+    papers: "Papers 2, 5, 8, 10",
+    components: [
+      "Multiple Option Correct: 7",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 3",
+      "Multiple Statement Questions: 2",
+      "Match the Column: 2",
+    ],
+    total: "18 questions",
+    confirmed: true,
+  },
+  {
+    id: "pattern-3",
+    label: "Pattern 3",
+    papers: "Papers 3, 6, 9",
+    /** Held for the academic team; deliberately not published on the page. */
+    components: [
+      "Single Option Correct: 4",
+      "Multiple Option Correct: 4",
+      "Comprehension Based: 2 passages (each with 2 questions)",
+      "Integer/Numerical Type: 4",
+      "Multiple Statement Questions: 2",
+      "Match the Column: 2",
+    ],
+    total: "Academic confirmation pending",
+    confirmed: false,
+  },
+] as const;
+
+/** JEE Main pattern exactly as supplied. No marks, negative marking or duration. */
+export const jeeMainTestPattern = {
+  perSubject: "25 Questions",
+  components: ["20 MCQs", "5 Numerical Type"],
 };

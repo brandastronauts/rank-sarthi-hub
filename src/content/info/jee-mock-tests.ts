@@ -1,5 +1,7 @@
 import type { InfoPageContent } from "../types";
 import {
+  jeeAdvancedTestPatterns,
+  jeeMainTestPattern,
   jeeTestSeriesCta,
   jeeTestSeriesHighlight,
   jeeTestSeriesPackages,
@@ -96,8 +98,41 @@ export const jeeMockTests: InfoPageContent = {
       id: "part-test-syllabus",
       heading: "Part-Test Syllabus",
       intro:
-        "The detailed test-wise syllabus for JEE Main and JEE Advanced Part Tests is currently being finalised by the academic team.",
+        "JEE Advanced Part Test 1\u201310 allocation is published below as supplied by the academic team. The JEE Main test-wise syllabus is still being finalised.",
       data: jeeTestSeriesPartTestSyllabus,
+      note: "Academic-team supplied syllabus \u2014 human review pending. EXCLUDING statements are part of the allocation and are shown separately from included scope.",
+    },
+
+    {
+      kind: "table",
+      id: "test-pattern",
+      heading: "Test Pattern",
+      intro:
+        "JEE Advanced part-test pattern allocation, as supplied by the academic team.",
+      columns: ["Pattern", "Papers", "Question distribution", "Total"],
+      rows: jeeAdvancedTestPatterns.map((pattern) => [
+        pattern.label,
+        pattern.papers,
+        pattern.confirmed ? pattern.components.join("; ") : "Academic confirmation pending",
+        pattern.total,
+      ]),
+      note: "Pattern 3 distribution: Academic confirmation pending. The supplied Pattern 3 component counts do not reconcile with the stated 18-question paper, so no Pattern 3 total is published until the academic team confirms it.",
+    },
+
+    {
+      kind: "table",
+      id: "jee-main-pattern",
+      heading: "JEE Main pattern",
+      intro: "Current academic-team supplied JEE Main pattern.",
+      columns: ["Scope", "Questions", "Distribution"],
+      rows: [
+        [
+          "Per subject",
+          jeeMainTestPattern.perSubject,
+          jeeMainTestPattern.components.join("; "),
+        ],
+      ],
+      note: "Marks, negative marking, duration and total paper marks are not supplied yet and are not shown.",
     },
 
     {
@@ -110,7 +145,7 @@ export const jeeMockTests: InfoPageContent = {
         ["JEE Main", "10 full-syllabus tests"],
         ["JEE Advanced", "5 full-syllabus tests"],
       ],
-      note: "Schedule, dates, question counts, marks and durations are not published yet and will appear here only once confirmed.",
+      note: "Full-syllabus test details will be updated after final academic confirmation. Schedule, dates, question counts, marks and durations are not published yet.",
     },
 
     {
