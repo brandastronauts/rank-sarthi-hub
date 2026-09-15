@@ -92,24 +92,37 @@ export const jeeTestSeriesTerms =
 const PART_TEST_SUBJECTS = ["Physics", "Chemistry", "Mathematics"] as const;
 
 /**
- * Ten part-test records per track, each with its three subject slots and an
- * EMPTY topic list. The academic team populates `topics` later; the page
- * architecture does not change when they do.
+ * Ten part-test records with three EMPTY subject allocations. Used for JEE Main,
+ * whose test-wise syllabus has not been supplied yet. The academic team fills
+ * `groups` later; the page architecture does not change when they do.
  */
-function partTests(trackId: string) {
+function emptyPartTests(trackId: string): PartTestRecord[] {
   return Array.from({ length: 10 }, (_, i) => ({
     id: `${trackId}-part-test-${i + 1}`,
     name: `Part Test ${i + 1}`,
-    subjects: PART_TEST_SUBJECTS.map((subject) => ({ subject, topics: [] as string[] })),
+    subjects: PART_TEST_SUBJECTS.map((subject) => ({ subject, groups: [] })),
   }));
 }
 
 export const jeeTestSeriesPartTestSyllabus: PartTestSyllabusData = {
   statusMessage:
-    "Detailed Part-Test syllabus will be published here once finalised by the academic team.",
+    "Detailed JEE Main Part-Test syllabus is awaiting final academic confirmation.",
   tracks: [
-    { id: "jee-main", label: "JEE Main Part Tests", tests: partTests("jee-main") },
-    { id: "jee-advanced", label: "JEE Advanced Part Tests", tests: partTests("jee-advanced") },
+    {
+      id: "jee-main",
+      label: "JEE Main Part Tests",
+      tests: emptyPartTests("jee-main"),
+      statusMessage:
+        "Detailed JEE Main Part-Test syllabus is awaiting final academic confirmation.",
+    },
+    {
+      id: "jee-advanced",
+      label: "JEE Advanced Part Tests",
+      tests: jeeAdvancedPartTests,
+      sourceLabel: "Academic-team supplied syllabus",
+      reviewNote:
+        "Human review pending. This is the Rank Sarthi Part-Test allocation, not the official JEE Advanced syllabus document, even where topics derive from official exam scope.",
+    },
   ],
 };
 
