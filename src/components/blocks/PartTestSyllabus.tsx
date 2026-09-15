@@ -152,15 +152,19 @@ function SubjectAllocation({ subject }: { subject: PartTestSubjectAllocation }) 
                 <p className="text-sm font-bold text-primary">{group.heading}</p>
               ) : null}
 
+              {/* A single bullet identical to its heading is the source's own
+                  chapter label; render it once rather than twice. */}
               <ul className="mt-2 space-y-1.5">
-                {group.topics.map((topic, t) => (
-                  <li key={t} className="flex gap-2 text-sm leading-relaxed text-ink/85">
-                    <span aria-hidden="true" className="mt-[3px] text-accent">
-                      •
-                    </span>
-                    <span>{topic}</span>
-                  </li>
-                ))}
+                {group.topics
+                  .filter((topic) => topic !== group.heading)
+                  .map((topic, t) => (
+                    <li key={t} className="flex gap-2 text-sm leading-relaxed text-ink/85">
+                      <span aria-hidden="true" className="mt-[3px] text-accent">
+                        •
+                      </span>
+                      <span>{topic}</span>
+                    </li>
+                  ))}
               </ul>
 
               {group.excluding?.length ? (
