@@ -27,7 +27,7 @@ export const mainAbout: InfoPageContent = {
       "tone": "caution",
       "children": [
         {
-          "text": "This page intentionally omits leadership and reviewer identities until they are verified."
+          "text": "Academic profiles publish only approved information. Evidence-pending claims remain unpublished, and reviewer-pool membership does not indicate review of a specific page."
         }
       ]
     }

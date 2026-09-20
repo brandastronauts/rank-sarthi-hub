@@ -159,6 +159,19 @@ export function infoPageSchema(opts: {
 }) {
   const blocks = (opts.blocks ?? []) as { kind: string; items?: { name?: string; label?: string; url: string }[] }[];
 
+  // The established About page remains an AboutPage while its academic-team
+  // section is represented as visible page content, not identity schema.
+  if (opts.url === "/about") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: opts.title,
+      description: opts.description,
+      url: absolute(opts.url),
+      inLanguage: "en-IN",
+    };
+  }
+
   // Tool directory: CollectionPage + ItemList of the real tool URLs.
   const grid = blocks
     .filter((b) => b.kind === "tools-grid" && (b.items?.length ?? 0) > 0)
