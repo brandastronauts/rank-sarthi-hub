@@ -10,7 +10,7 @@ export const jeeSyllabusChemistry: InfoPageContent = {
   "platform": "jee",
   "slug": "syllabus/chemistry",
   "exam": "JEE Main 2026",
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "title": "JEE Main Chemistry Syllabus 2026",
   "eyebrow": "Official syllabus",
   "intent": "See the official JEE Main 2026 Chemistry syllabus unit map with clear scope boundaries.",

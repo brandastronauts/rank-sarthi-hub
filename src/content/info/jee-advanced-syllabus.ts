@@ -10,7 +10,7 @@ export const jeeAdvancedSyllabus: InfoPageContent = {
   "platform": "jee",
   "slug": "jee-advanced/syllabus",
   "exam": "JEE Advanced 2026",
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "title": "JEE Advanced Syllabus 2026: Physics, Chemistry and Mathematics",
   "eyebrow": "Official syllabus",
   "intent": "See the official JEE Advanced 2026 scope for Physics, Chemistry and Mathematics, kept separate from JEE Main.",

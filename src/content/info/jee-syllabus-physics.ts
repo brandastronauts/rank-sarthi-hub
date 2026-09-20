@@ -10,7 +10,7 @@ export const jeeSyllabusPhysics: InfoPageContent = {
   "platform": "jee",
   "slug": "syllabus/physics",
   "exam": "JEE Main 2026",
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "title": "JEE Main Physics Syllabus 2026",
   "eyebrow": "Official syllabus",
   "intent": "See the official JEE Main 2026 Physics syllabus unit map with clear scope boundaries.",

@@ -22,7 +22,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
       ]
     }
   ],
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "chips": [
     "Official NEET UG 2026 Physics units",
     "29 registered Physics routes reconciled",

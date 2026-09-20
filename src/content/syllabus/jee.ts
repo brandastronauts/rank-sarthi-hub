@@ -38,7 +38,7 @@ function advUnit(id: string, group: string, name: string, scope: string): Syllab
 export const jeeSyllabus: SyllabusContent = {
   exam: "JEE",
   platform: "jee",
-  contentStatus: "draft",
+  contentStatus: "verified",
   title: "JEE syllabus: latest official Main and Advanced PCM topics",
   lastVerified: "27 August 2026",
 
