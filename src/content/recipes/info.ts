@@ -174,6 +174,7 @@ export function infoPageRecipe(
       props: {
         heading: block.heading,
         concepts: block.concepts,
+        linkScope,
         jumpHidden: block.jump === false,
       },
       when: block.concepts.length > 0,
