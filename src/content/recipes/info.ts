@@ -225,9 +225,10 @@ export function infoPageRecipe(
           sources: content.sourceRefs ?? [],
           note: content.sourceNote,
           contributorPolicy: content.contributorPolicy,
+          pageReview: content.pageReview,
           updated: content.lastVerified,
         },
-        when: !!content.sourceRefs?.length || !!content.contributorPolicy?.length,
+        when: !!content.sourceRefs?.length || !!content.contributorPolicy?.length || !!content.pageReview,
       },
     ] as BlockSlot[],
   };
