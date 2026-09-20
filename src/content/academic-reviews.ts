@@ -51,7 +51,12 @@ export const academicReviews: Record<string, PageReview> = {
     "sachin-garg",
   ]),
   "/jee/syllabus": reviewed("ashwin-m", ["adarsh-kumar", "sachin-garg"]),
-  "/neet/syllabus": reviewed("ashwin-m", ["vinod-kumar"]),
+  /**
+   * /neet/syllabus carries Biology, Physics and Chemistry scope. No Biology
+   * reviewer is confirmed, so no page-level reviewer is claimed for the NEET
+   * syllabus hub. Physics and Chemistry attribution stays on their own
+   * subject syllabus pages.
+   */
 };
 
 export function reviewFor(url: string): PageReview | undefined {

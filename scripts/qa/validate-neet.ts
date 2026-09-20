@@ -37,7 +37,7 @@ for (const url of target) {
   const r = getUrl(url);
   ok(!!r, `missing registry record ${url}`);
   ok(r?.buildStatus === "built", `${url} not built`);
-  ok(r?.indexation === "noindex", `${url} not noindex`);
+  ok(r?.indexation === "index", `${url} not indexable`);
 }
 
 // Content presence

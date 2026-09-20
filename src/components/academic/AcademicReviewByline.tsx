@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { getAcademicProfile } from "@/content/academic-profiles";
 import type { PageReview } from "@/content/types";
+import { FacultyPhoto } from "./FacultyPhoto";
 
 /**
  * Compact public reviewer attribution.
@@ -25,13 +26,7 @@ export function AcademicReviewByline({ review, id = "academic-review" }: { revie
       </p>
       <div className="mt-3 flex flex-wrap items-center gap-4">
         <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border bg-secondary">
-          {primary.photo ? (
-            <img src={primary.photo} alt={primary.imageAlt ?? ""} className="h-full w-full object-cover object-top" loading="lazy" />
-          ) : (
-            <div className="flex h-full items-center justify-center">
-              <span className="font-display text-lg font-bold text-primary">{primary.initials}</span>
-            </div>
-          )}
+          <FacultyPhoto profile={primary} initialsClassName="text-lg" />
         </div>
         <div className="min-w-0">
           <p className="text-base font-bold text-primary">

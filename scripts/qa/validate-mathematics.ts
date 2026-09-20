@@ -14,7 +14,7 @@ for (const c of math) {
     console.log("ZOD FAIL", c.url, JSON.stringify(r.error.issues.slice(0, 3)));
   }
   const rec = getUrl(c.url);
-  if (!rec || rec.buildStatus !== "built" || rec.indexation !== "noindex") {
+  if (!rec || rec.buildStatus !== "built" || rec.indexation !== "index") {
     fail++;
     console.log("STATE FAIL", c.url, rec?.buildStatus, rec?.indexation);
   }

@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { AcademicProfile } from "@/content/types";
 import { Button } from "@/components/ui/button";
 import { getUrl } from "@/content/registry";
+import { FacultyPhoto } from "./FacultyPhoto";
 
 /**
  * Public faculty profile page.
@@ -38,13 +39,7 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
           </ul>
         </div>
         <div className="mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-lg border border-border bg-secondary shadow-card">
-          {profile.photo ? (
-            <img src={profile.photo} alt={profile.imageAlt ?? ""} className="h-full w-full object-cover object-top" />
-          ) : (
-            <div className="flex h-full items-center justify-center" aria-label={`${profile.name} initials`}>
-              <span className="font-display text-6xl font-bold text-primary">{profile.initials}</span>
-            </div>
-          )}
+          <FacultyPhoto profile={profile} initialsClassName="text-6xl" />
         </div>
       </header>
 

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { academicProfiles } from "@/content/academic-profiles";
+import { FacultyPhoto } from "./FacultyPhoto";
 import { Button } from "@/components/ui/button";
 
 export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
@@ -15,13 +16,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
         {academicProfiles.map((profile) => (
           <li key={profile.id} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
             <div className="aspect-[4/3] overflow-hidden bg-secondary">
-              {profile.photo ? (
-                <img src={profile.photo} alt={profile.imageAlt ?? ""} className="h-full w-full object-cover object-top" loading="lazy" />
-              ) : (
-                <div className="flex h-full items-center justify-center" aria-label={`${profile.name} initials`}>
-                  <span className="font-display text-5xl font-bold text-primary">{profile.initials}</span>
-                </div>
-              )}
+              <FacultyPhoto profile={profile} initialsClassName="text-5xl" />
             </div>
             <div className="p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-accent">{profile.subject}</p>
@@ -29,7 +24,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
               <p className="mt-1 text-sm font-semibold text-ink/80">{profile.title}</p>
               <p className="mt-4 line-clamp-5 text-sm leading-relaxed text-muted-foreground">{profile.shortProfile}</p>
               <Button asChild variant="link" className="mt-4 h-auto px-0 text-accent">
-                <Link to="/about/faculty/$slug" params={{ slug: profile.slug }} rel="nofollow">
+                <Link to="/about/faculty/$slug" params={{ slug: profile.slug }}>
                   View profile <ArrowRight aria-hidden />
                 </Link>
               </Button>

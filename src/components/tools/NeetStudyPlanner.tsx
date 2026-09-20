@@ -349,7 +349,6 @@ export function NeetStudyPlanner() {
               <li key={r.url}>
                 <Link
                   to={r.url}
-                  rel="nofollow"
                   className="inline-block rounded-full border border-border bg-ivory px-3 py-1 text-xs font-semibold text-ink/85 hover:border-accent/50"
                 >
                   {r.label}
