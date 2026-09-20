@@ -131,6 +131,7 @@ export function syllabusRecipe(
           sourceRefs: h.sourceRefs,
           verifiedOn: h.verifiedOn,
           hideVariants: true,
+          linkPlatform: content.platform,
         },
         when: h.sections.length > 0,
       })),

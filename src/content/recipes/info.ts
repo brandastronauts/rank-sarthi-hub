@@ -18,6 +18,14 @@ export function infoPageRecipe(
   /* Confirmed assignment wins; page-level data is a fallback. */
   const pageReview = reviewFor(content.url) ?? content.pageReview;
 
+  /* Registry-driven syllabus links: subject comes from the page path, so a
+     label can only resolve inside its own platform + subject. */
+  const subjectSegment = content.url.split("/").filter(Boolean).pop();
+  const linkScope =
+    content.platform === "main"
+      ? undefined
+      : { platform: content.platform, subject: subjectSegment };
+
   const bodySlots: BlockSlot[] = content.blocks.map((block) => {
     if (block.kind === "academic-team") {
       return {
@@ -37,6 +45,7 @@ export function infoPageRecipe(
           columns: block.columns,
           rows: block.rows,
           note: block.note,
+          linkScope,
           jumpHidden: block.jump === false,
         },
         when: block.rows.length > 0,
