@@ -43,9 +43,9 @@ export function DocumentMasthead({
         </dl>
       ) : null}
 
-      {chips?.length ? (
+      {publicChips.length ? (
         <ul className="mt-6 flex flex-wrap gap-2">
-          {chips.map((chip) => (
+          {publicChips.map((chip) => (
             <li
               key={chip}
               className="rounded-full border border-border bg-ivory px-3 py-1 text-xs font-semibold text-ink/80"
@@ -56,12 +56,6 @@ export function DocumentMasthead({
         </ul>
       ) : null}
 
-      {contentStatus && contentStatus !== "verified" ? (
-        <p className="mt-6 rounded-lg border border-warning/30 bg-warning/10 px-4 py-3 text-sm text-ink">
-          Content status: <strong className="font-semibold">{contentStatus}</strong>. Verified academic content
-          for this page has not been loaded yet, so the page is excluded from search indexing and the sitemap.
-        </p>
-      ) : null}
 
       {answer?.length ? (
         <div className="mt-8 rounded-2xl border border-border bg-ivory p-6 md:p-8">
