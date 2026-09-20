@@ -129,6 +129,12 @@ export function resolveTopicRoute(
 
   const wanted = scope.subject ? subjectKey(scope.subject) : undefined;
 
+  /* A label that is itself a registry path links only when that route is built. */
+  if (clean.startsWith("/")) {
+    const record = getUrl(clean);
+    return record?.buildStatus === "built" ? record : undefined;
+  }
+
   for (const index of [byName, byTight]) {
     const key = index === byName ? normalise(clean) : tight(clean);
     const list = index.get(`${scope.platform}|${key}`);
