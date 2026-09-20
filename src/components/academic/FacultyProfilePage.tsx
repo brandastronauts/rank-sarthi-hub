@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { AcademicProfile } from "@/content/types";
 import { Button } from "@/components/ui/button";
 import { getUrl } from "@/content/registry";
+import { FacultyPhoto } from "./FacultyPhoto";
 
 /**
  * Public faculty profile page.
