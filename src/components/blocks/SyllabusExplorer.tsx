@@ -116,7 +116,16 @@ export function SyllabusExplorer({
                     ) : null}
 
                     <div className="mt-1 flex flex-wrap items-baseline justify-between gap-2">
-                      <p className="text-sm font-bold text-primary">{unit.name}</p>
+                      <p className="text-sm font-bold text-primary">
+                        {linkPlatform && !chapters.length ? (
+                          <TopicLink
+                            label={unit.name}
+                            scope={{ platform: linkPlatform, subject: section.subject }}
+                          />
+                        ) : (
+                          unit.name
+                        )}
+                      </p>
                       {!hideVariants && unit.variant && unit.variant !== "both" ? (
                         <span className="rounded-full bg-ice px-2 py-0.5 text-[11px] font-semibold uppercase text-primary">
                           {unit.variant}
