@@ -10,7 +10,7 @@ for(const p of infoPages){ if(seen.has(p.url)){console.log("DUP",p.url);fail++;}
 for(const u of target){
   const rec=byUrl.get(u); const page=infoPages.find(p=>p.url===u);
   if(!page){console.log("NO CONTENT",u);fail++;continue;}
-  if(rec?.buildStatus!=="built"||rec?.indexation!=="noindex"){console.log("STATE",u,rec?.buildStatus,rec?.indexation);fail++;}
+  if(rec?.buildStatus!=="built"||rec?.indexation!=="index"){console.log("STATE",u,rec?.buildStatus,rec?.indexation);fail++;}
   if(page.contentStatus!=="draft"){console.log("NOT DRAFT",u);fail++;}
   for(const s of page.sourceRefs??[]) if(!sources[s]){console.log("BAD SOURCE",u,s);fail++;}
   const bad=(page.relatedLinks??[]).filter(l=>!byUrl.has(l.url));
