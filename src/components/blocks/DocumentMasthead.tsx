@@ -1,9 +1,15 @@
 import { RichText } from "@/components/content/RichText";
+import { publicLabels } from "@/lib/public-copy";
 import type { ContentStatus, RichText as RichTextNodes } from "@/content/types";
 
 /**
  * B34 — Document masthead + answer-first block.
  * Shared by T05 and T06; the only H1 on the page.
+ *
+ * Internal production state (content status, review workflow) is never shown
+ * here: chips are filtered through the public-copy guard, and the former draft
+ * status banner has been removed from the public UI. Indexation continues to be
+ * controlled by the URL registry, not by visible copy.
  */
 export function DocumentMasthead({
   id = "top",
