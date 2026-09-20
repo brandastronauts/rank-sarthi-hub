@@ -149,5 +149,14 @@ export function resolveTopicRoute(
     }
   }
 
+  /* Alias fallback: official wording differs from the Rank Sarthi route title. */
+  const aliasSlugs = aliasIndex.get(`${wanted ?? ""}|${normalise(clean)}`);
+  if (aliasSlugs) {
+    for (const slug of aliasSlugs) {
+      const record = resolveSlug(scope.platform, slug, wanted);
+      if (record) return record;
+    }
+  }
+
   return undefined;
 }
