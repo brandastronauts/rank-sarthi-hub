@@ -49,7 +49,7 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
       </section>
 
       <Button asChild variant="outline" className="mt-10">
-        <Link to="/about"><ArrowLeft aria-hidden /> Back to About Rank Sarthi</Link>
+        <Link to="/$platform" params={{ platform: "about" }}><ArrowLeft aria-hidden /> Back to About Rank Sarthi</Link>
       </Button>
     </article>
   );

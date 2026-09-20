@@ -51,6 +51,7 @@ import { OfferPackages } from "@/components/blocks/OfferPackages";
 import { PartTestSyllabus } from "@/components/blocks/PartTestSyllabus";
 import { ToolsGrid } from "@/components/blocks/ToolsGrid";
 import { OfferCta } from "@/components/blocks/OfferCta";
+import { AcademicTeam } from "@/components/academic/AcademicTeam";
 
 
 /* Platform template blocks (B38–B43) */
@@ -94,6 +95,7 @@ export function ensureBlocksRegistered() {
     B52: PartTestSyllabus,
     B53: OfferCta,
     B54: ToolsGrid,
+    B55: AcademicTeam,
 
     B26: SyllabusExplorer,
     B27: TrendTable,

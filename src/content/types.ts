@@ -697,6 +697,12 @@ export interface ResourceRow {
 /** One ordered content block on an information page. */
 export type InfoBlock =
   | {
+      /** Approved academic-team cards sourced from the faculty master. */
+      kind: "academic-team";
+      id: string;
+      jump?: boolean;
+    }
+  | {
       kind: "table";
       id: string;
       heading: string;
@@ -941,6 +947,7 @@ export interface InfoPageContent {
   sourceRefs?: string[];
   sourceNote?: string;
   contributorPolicy?: string[];
+  pageReview?: PageReview;
   lastVerified?: string;
   seo?: PageMeta;
 }

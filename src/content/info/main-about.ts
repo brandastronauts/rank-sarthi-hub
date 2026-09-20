@@ -157,25 +157,8 @@ export const mainAbout: InfoPageContent = {
       ]
     },
     {
-      "kind": "prose",
-      "id": "people-and-academic-review",
-      "heading": "People and academic review",
-      "concepts": [
-        {
-          "id": "people-intro",
-          "title": "People and academic review",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "Verified leadership, academic reviewers and advisors will appear on this page once the separate profile-verification queue is completed. Until then Rank Sarthi shows no placeholder people cards, stock portraits, invented titles or unsupported credentials."
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "kind": "academic-team",
+      "id": "academic-team"
     },
     {
       "kind": "links",
@@ -237,7 +220,7 @@ export const mainAbout: InfoPageContent = {
       "relation": "related"
     }
   ],
-  "sourceNote": "This page establishes brand purpose, methodology and trust rules. It does not claim founders, faculty, awards, years of experience, patents, institution customers, result proof or product usage statistics.",
+  "sourceNote": "This page establishes brand purpose, methodology, academic-team profiles and trust rules. It does not publish evidence-pending qualifications, employment histories, awards, ranks, patents, outcomes or contact details.",
   "contributorPolicy": [
     "Written by: UNASSIGNED",
     "Academically reviewed by: UNASSIGNED",
