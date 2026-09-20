@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { getUrl } from "@/content/registry";
 import { getSources } from "@/content/sources";
-import type { SyllabusSection } from "@/content/types";
+import { TopicLink } from "@/components/blocks/TopicLink";
+import type { Platform, SyllabusSection } from "@/content/types";
 
 /**
  * B26 — Syllabus explorer.
