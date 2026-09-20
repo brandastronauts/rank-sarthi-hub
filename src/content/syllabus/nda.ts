@@ -48,7 +48,7 @@ export const ndaSyllabus: SyllabusContent = {
       tone: "source",
       children: [
         {
-          text: "Official syllabus families and section names are preserved as issued by UPSC. Rank Sarthi's topic routes are a separate learning and navigation layer. Written by: UNASSIGNED. Academically reviewed by: UNASSIGNED. Last reviewed: pending human review.",
+          text: "Official syllabus families and section names are preserved as issued by UPSC. Rank Sarthi's topic routes are a separate learning and navigation layer.",
         },
       ],
     },

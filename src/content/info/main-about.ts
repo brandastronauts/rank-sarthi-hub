@@ -33,7 +33,6 @@ export const mainAbout: InfoPageContent = {
     }
   ],
   "chips": [
-    "Methodology stated",
     "Human review pending"
   ],
   "blocks": [
