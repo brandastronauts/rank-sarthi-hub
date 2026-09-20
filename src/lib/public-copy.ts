@@ -27,6 +27,9 @@ const INTERNAL_PATTERNS: RegExp[] = [
   /academically reviewed by:/i,
   /last reviewed:/i,
   /review_pending|reviewer_assigned/i,
+  /no page review is claimed/i,
+  /^author:\s*$|^author:\s*unassigned/i,
+  /^reviewer:/i,
 ];
 
 /** True when a label is internal workflow state rather than student content. */
