@@ -371,9 +371,9 @@ export const neetChemistryCarboxylicAcids: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Carboxylic Acids: Acidity and Factors Affecting Acid Stre | Rank Sarthi",
+    "title": "NEET Carboxylic Acids: Acidity and Factors Affecting Acid Strength | Rank Sarthi",
     "description": "Learn Carboxylic Acids for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Carboxylic Acids: Acidity and Factors Affecting Acid Stre | Rank Sarthi",
+    "ogTitle": "NEET Carboxylic Acids: Acidity and Factors Affecting Acid Strength | Rank Sarthi",
     "ogDescription": "Learn Carboxylic Acids for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },

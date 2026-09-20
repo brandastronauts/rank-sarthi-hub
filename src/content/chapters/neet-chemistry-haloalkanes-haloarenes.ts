@@ -390,9 +390,9 @@ export const neetChemistryHaloalkanesHaloarenes: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Haloalkanes and Haloarenes: C-X Bond, Substitution and El | Rank Sarthi",
+    "title": "NEET Haloalkanes and Haloarenes: C-X Bond, Substitution and Elimination | Rank Sarthi",
     "description": "Learn Haloalkanes and Haloarenes for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Haloalkanes and Haloarenes: C-X Bond, Substitution and El | Rank Sarthi",
+    "ogTitle": "NEET Haloalkanes and Haloarenes: C-X Bond, Substitution and Elimination | Rank Sarthi",
     "ogDescription": "Learn Haloalkanes and Haloarenes for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },

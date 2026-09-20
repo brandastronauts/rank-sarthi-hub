@@ -410,7 +410,7 @@ export const jeeSyllabus: SyllabusContent = {
       heading: "Chemistry prerequisite paths",
       columns: ["Chemistry path", "Recommended sequence", "Why the relationship matters"],
       rows: [
-        ["Atomic foundation", "Mole Concept > Atomic Structure > Periodicity > Chemical Bonding", "Counting particles, electron structure, periodic trends and bonding form the vocabulary used across later chemistry."],
+        ["Atomic foundation", "Mole Concept > Atomic Structure > Periodicity > Chemical Bonding", "Counting particles, electronic structure, periodic trends and bonding form the vocabulary used across later chemistry."],
         ["Physical chemistry", "Mole Concept > Thermodynamics > Equilibrium > Solutions > Electrochemistry > Chemical Kinetics", "Concentration, energy and equilibrium relationships recur in solutions, cells and reaction-rate calculations."],
         ["Inorganic chemistry", "Periodicity > Chemical Bonding > p-Block and d/f-Block > Coordination Compounds", "Trends and bonding explain structure, oxidation states, colour, magnetism and complex formation."],
         ["Organic chemistry", "Basic Principles of Organic Chemistry > Hydrocarbons > Halogen Compounds > Oxygen Compounds > Nitrogen Compounds > Biomolecules", "Nomenclature, electronic effects and reaction intermediates must be stable before reaction families are layered."],

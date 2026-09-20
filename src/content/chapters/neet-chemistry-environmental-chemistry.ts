@@ -266,9 +266,9 @@ export const neetChemistryEnvironmentalChemistry: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "Environmental Chemistry: Foundation Concepts and NEET 2026 Sta | Rank Sarthi",
+    "title": "Environmental Chemistry: Foundation Concepts and NEET 2026 Status | Rank Sarthi",
     "description": "See the current NEET UG 2026 status of Environmental Chemistry, with contextual foundation content, clear scope boundaries and no fabricated exam relevance.",
-    "ogTitle": "Environmental Chemistry: Foundation Concepts and NEET 2026 Sta | Rank Sarthi",
+    "ogTitle": "Environmental Chemistry: Foundation Concepts and NEET 2026 Status | Rank Sarthi",
     "ogDescription": "See the current NEET UG 2026 status of Environmental Chemistry, with contextual foundation content, clear scope boundaries and no fabricated exam relevance.",
     "ogType": "article"
   },
