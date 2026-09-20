@@ -47,3 +47,23 @@ for (const [page, rs] of byPage) {
   console.log("\n##", page, nc.length);
   for (const r of nc) console.log(` [${r.subject}] ${r.label}`);
 }
+
+/* --- QA: destination integrity --- */
+const recs = new Map(urlRecords.map((r)=>[r.url,r] as const));
+let bad = 0;
+for (const r of rows) {
+  if (!r.url) continue;
+  const rec = recs.get(r.url)!;
+  const platform = r.page.split("/")[1];
+  if (!rec) { console.log("QA MISSING", r.url); bad++; continue; }
+  if (rec.buildStatus !== "built") { console.log("QA UNBUILT", r.url); bad++; }
+  if (rec.platform !== platform) { console.log("QA WRONG EXAM", r.page, r.label, r.url); bad++; }
+}
+console.log("\nQA problems:", bad);
+for (const [page, rs] of byPage) {
+  const seen = new Map<string,string[]>();
+  rs.filter(r=>r.url).forEach(r=>{ (seen.get(r.url!) ?? seen.set(r.url!,[]).get(r.url!)!).push(r.label); });
+  const dupes = [...seen].filter(([,l])=>new Set(l).size>1);
+  if (dupes.length) { console.log("\nshared destinations on", page); dupes.forEach(([u,l])=>console.log("  ",u,"←",[...new Set(l)].join(" | "))); }
+}
+console.log("\nUNIQUE DESTINATIONS:", new Set(rows.filter(r=>r.url).map(r=>r.url)).size);
