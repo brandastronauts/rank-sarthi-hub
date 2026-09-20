@@ -84,6 +84,32 @@ for (const candidate of candidates) {
   }
 }
 
+/**
+ * Alias index: `${subjectKey}|${normalisedLabel}` → ordered candidate slugs.
+ * Aliases only point at slugs that must still resolve to a BUILT route.
+ */
+const aliasIndex = new Map<string, string[]>();
+for (const alias of topicAliases) {
+  for (const label of alias.labels) {
+    aliasIndex.set(`${alias.subject}|${normalise(label)}`, alias.slugs);
+  }
+}
+
+/** First built candidate owning `slug` for this platform (and subject, if scoped). */
+function resolveSlug(
+  platform: Platform,
+  slug: string,
+  wanted: string | undefined,
+): UrlRecord | undefined {
+  const matches = candidates.filter(
+    (c) =>
+      c.record.platform === platform &&
+      c.record.url.endsWith(`/${slug}`) &&
+      (!wanted || c.subjects.includes(wanted)),
+  );
+  return matches.length === 1 ? matches[0]!.record : undefined;
+}
+
 export type TopicLinkScope = {
   platform: Platform;
   /** Restrict to one subject when the page is subject-scoped. */
