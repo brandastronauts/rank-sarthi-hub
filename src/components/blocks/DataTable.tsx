@@ -7,7 +7,7 @@ import { TopicLink } from "@/components/blocks/TopicLink";
 import type { TopicLinkScope } from "@/content/topic-links";
 
 /** Column headers whose cells hold syllabus unit/topic/chapter labels. */
-const LINKABLE_COLUMN = /unit|topic|chapter/i;
+const LINKABLE_COLUMN = /unit|topic|chapter|route/i;
 
 export function DataTable({
   id,
