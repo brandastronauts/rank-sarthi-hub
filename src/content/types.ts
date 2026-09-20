@@ -92,6 +92,39 @@ export interface Person {
   image?: string;
 }
 
+/** Publication-safe faculty record. Pending evidence is retained internally, never rendered publicly. */
+export interface AcademicProfile {
+  id: string;
+  slug: string;
+  name: string;
+  title: string;
+  subject: "Physics" | "Chemistry" | "Mathematics";
+  role: string;
+  shortProfile: string;
+  /** Only defensible, publication-safe paragraphs from the approved master. */
+  detailedProfile: string[];
+  expertise: string[];
+  verificationStatus: "PARTIALLY_VERIFIED" | "PENDING" | "VERIFIED";
+  photo: string | null;
+  photoFilename: string | null;
+  imageAlt: string | null;
+  initials: string;
+  /** Internal-only evidence queue. Never display these as established facts. */
+  claimsRequiringEvidence: string[];
+}
+
+export type AcademicSubject = AcademicProfile["subject"];
+export type ReviewStatus = "UNASSIGNED" | "REVIEWER_ASSIGNED" | "REVIEW_PENDING" | "REVIEWED";
+
+/** Review belongs to a specific content version. Pool membership alone never creates this record. */
+export interface PageReview {
+  reviewerProfileId?: string;
+  reviewStatus: ReviewStatus;
+  reviewedAt?: string;
+  contentVersion?: string;
+  reviewVersion?: string;
+}
+
 /* ------------------------------------------------------------------ */
 /* Platform / exam / subject / syllabus                                */
 /* ------------------------------------------------------------------ */
@@ -531,6 +564,7 @@ export interface ChapterContent {
   contributorPolicy?: string[];
   reviewerId?: string;
   authorId?: string;
+  pageReview?: PageReview;
   updated?: string;
   faqs?: FaqItem[];
   workedExamples?: WorkedExample[];
@@ -662,6 +696,12 @@ export interface ResourceRow {
 
 /** One ordered content block on an information page. */
 export type InfoBlock =
+  | {
+      /** Approved academic-team cards sourced from the faculty master. */
+      kind: "academic-team";
+      id: string;
+      jump?: boolean;
+    }
   | {
       kind: "table";
       id: string;
@@ -907,6 +947,7 @@ export interface InfoPageContent {
   sourceRefs?: string[];
   sourceNote?: string;
   contributorPolicy?: string[];
+  pageReview?: PageReview;
   lastVerified?: string;
   seo?: PageMeta;
 }

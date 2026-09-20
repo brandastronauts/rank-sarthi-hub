@@ -18,6 +18,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
+import { Route as AboutFacultySlugRouteImport } from './routes/about.faculty.$slug'
 import { Route as ApiPublicFreshnessRefreshRouteImport } from './routes/api/public/freshness-refresh'
 import { Route as PlatformSubjectChapterTopicRouteImport } from './routes/$platform.$subject.$chapter_.$topic'
 
@@ -66,6 +67,11 @@ const PlatformSubjectChapterRoute = PlatformSubjectChapterRouteImport.update({
   path: '/$platform/$subject/$chapter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutFacultySlugRoute = AboutFacultySlugRouteImport.update({
+  id: '/about/faculty/$slug',
+  path: '/about/faculty/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicFreshnessRefreshRoute =
   ApiPublicFreshnessRefreshRouteImport.update({
     id: '/api/public/freshness-refresh',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
   '/$platform/$subject/$chapter/$topic': typeof PlatformSubjectChapterTopicRoute
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/$platform': typeof PlatformIndexRoute
   '/blog': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject': typeof PlatformSubjectIndexRoute
   '/$platform/$subject/$chapter/$topic': typeof PlatformSubjectChapterTopicRoute
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/freshness-refresh': typeof ApiPublicFreshnessRefreshRoute
   '/$platform/$subject/': typeof PlatformSubjectIndexRoute
   '/$platform/$subject/$chapter_/$topic': typeof PlatformSubjectChapterTopicRoute
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/$platform/'
     | '/blog/'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
     | '/$platform/$subject/$chapter/$topic'
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/$platform'
     | '/blog'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject'
     | '/$platform/$subject/$chapter/$topic'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/$platform/'
     | '/blog/'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/freshness-refresh'
     | '/$platform/$subject/'
     | '/$platform/$subject/$chapter_/$topic'
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   PlatformIndexRoute: typeof PlatformIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
+  AboutFacultySlugRoute: typeof AboutFacultySlugRoute
   ApiPublicFreshnessRefreshRoute: typeof ApiPublicFreshnessRefreshRoute
   PlatformSubjectIndexRoute: typeof PlatformSubjectIndexRoute
   PlatformSubjectChapterTopicRoute: typeof PlatformSubjectChapterTopicRoute
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/faculty/$slug': {
+      id: '/about/faculty/$slug'
+      path: '/about/faculty/$slug'
+      fullPath: '/about/faculty/$slug'
+      preLoaderRoute: typeof AboutFacultySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/freshness-refresh': {
       id: '/api/public/freshness-refresh'
       path: '/api/public/freshness-refresh'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlatformIndexRoute: PlatformIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
+  AboutFacultySlugRoute: AboutFacultySlugRoute,
   ApiPublicFreshnessRefreshRoute: ApiPublicFreshnessRefreshRoute,
   PlatformSubjectIndexRoute: PlatformSubjectIndexRoute,
   PlatformSubjectChapterTopicRoute: PlatformSubjectChapterTopicRoute,

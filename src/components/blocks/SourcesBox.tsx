@@ -1,5 +1,7 @@
 import { getSource } from "@/content/sources";
 import { getPerson } from "@/content/people";
+import { ReviewerSnippet } from "@/components/academic/ReviewerSnippet";
+import type { PageReview } from "@/content/types";
 
 /**
  * B37 — Author / reviewer / sources box.
@@ -16,6 +18,7 @@ export function SourcesBox({
   heading = "Sources and provenance",
   note,
   contributorPolicy = [],
+  pageReview,
 }: {
   id?: string;
   sources?: string[];
@@ -25,12 +28,13 @@ export function SourcesBox({
   heading?: string;
   note?: string;
   contributorPolicy?: string[];
+  pageReview?: PageReview;
 }) {
   const refs = sources.map(getSource).filter(Boolean);
   const reviewer = reviewerId ? getPerson(reviewerId) : undefined;
   const author = authorId ? getPerson(authorId) : undefined;
 
-  if (!refs.length && !reviewer && !author && !updated && !note && !contributorPolicy.length) return null;
+  if (!refs.length && !reviewer && !author && !updated && !note && !contributorPolicy.length && !pageReview) return null;
 
   return (
     <section id={id} className="scroll-mt-28 rounded-2xl border border-border bg-ivory p-6">
@@ -86,6 +90,8 @@ export function SourcesBox({
           </div>
         ) : null}
       </dl>
+
+      {pageReview ? <div className="mt-4"><ReviewerSnippet review={pageReview} /></div> : null}
 
       {contributorPolicy.length ? (
         <div className="mt-5 rounded-xl border border-border bg-white p-4">

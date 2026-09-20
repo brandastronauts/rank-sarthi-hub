@@ -16,6 +16,14 @@ export function infoPageRecipe(
   const changes = changeLogForPage(content.url);
 
   const bodySlots: BlockSlot[] = content.blocks.map((block) => {
+    if (block.kind === "academic-team") {
+      return {
+        block: "B55",
+        id: block.id,
+        props: { jumpHidden: block.jump === false },
+      };
+    }
+
     if (block.kind === "table") {
       return {
         block: "B25",
@@ -217,9 +225,10 @@ export function infoPageRecipe(
           sources: content.sourceRefs ?? [],
           note: content.sourceNote,
           contributorPolicy: content.contributorPolicy,
+          pageReview: content.pageReview,
           updated: content.lastVerified,
         },
-        when: !!content.sourceRefs?.length || !!content.contributorPolicy?.length,
+        when: !!content.sourceRefs?.length || !!content.contributorPolicy?.length || !!content.pageReview,
       },
     ] as BlockSlot[],
   };
