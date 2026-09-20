@@ -41,7 +41,7 @@ export function syllabusRecipe(
         {
           block: "B26",
           id: "syllabus",
-          props: { sections: content.sections },
+          props: { sections: content.sections, linkPlatform: content.platform },
           when: content.sections.length > 0,
         },
       ];
