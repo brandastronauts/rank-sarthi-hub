@@ -15,6 +15,8 @@ export function infoPageRecipe(
 ): PageRecipe {
   const freshRecords = content.freshness ? recordsByIds(content.freshness.recordIds) : [];
   const changes = changeLogForPage(content.url);
+  /* Confirmed assignment wins; page-level data is a fallback. */
+  const pageReview = reviewFor(content.url) ?? content.pageReview;
 
   const bodySlots: BlockSlot[] = content.blocks.map((block) => {
     if (block.kind === "academic-team") {
