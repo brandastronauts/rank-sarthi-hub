@@ -25,6 +25,7 @@ export function SyllabusExplorer({
   sourceRefs = [],
   verifiedOn,
   hideVariants = false,
+  linkPlatform,
 }: {
   id?: string;
   sections?: SyllabusSection[];
