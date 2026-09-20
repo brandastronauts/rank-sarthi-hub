@@ -1,7 +1,10 @@
-# Full-site spelling and language audit
+# Academic team and faculty profiles
 
-- [ ] Inventory visible textual files and records
-- [ ] Audit spelling, typography, grammar-surface, terminology, names, metadata, and encoding
-- [ ] Apply only safe meaning-preserving corrections
-- [ ] Run homepage, route, link, schema, indexation, and exam/tools regressions
-- [ ] Produce the requested 14-point stop report
+- [ ] Parse and validate the approved faculty master document
+- [ ] Add eight reusable academic profiles and seven approved images
+- [ ] Add the Academic Team section to About
+- [ ] Add one dynamic faculty profile route with draft/noindex metadata
+- [ ] Add reviewer pools, page-level review states, and compact reviewer UI
+- [ ] Update registry and human sitemap without XML sitemap entries
+- [ ] Run profile, responsive, accessibility, link, schema, and regression QA
+- [ ] Produce the requested 25-point stop report
