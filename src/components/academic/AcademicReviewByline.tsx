@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { getAcademicProfile } from "@/content/academic-profiles";
 import type { PageReview } from "@/content/types";
+import { FacultyPhoto } from "./FacultyPhoto";
 
 /**
  * Compact public reviewer attribution.
