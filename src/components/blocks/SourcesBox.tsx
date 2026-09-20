@@ -35,8 +35,9 @@ export function SourcesBox({
   const refs = sources.map(getSource).filter(Boolean);
   const reviewer = reviewerId ? getPerson(reviewerId) : undefined;
   const author = authorId ? getPerson(authorId) : undefined;
+  const publicPolicy = publicLabels(contributorPolicy);
 
-  if (!refs.length && !reviewer && !author && !updated && !note && !contributorPolicy.length && !pageReview) return null;
+  if (!refs.length && !reviewer && !author && !updated && !note && !publicPolicy.length && !pageReview) return null;
 
   return (
     <section id={id} className="scroll-mt-28 rounded-2xl border border-border bg-ivory p-6">
@@ -93,15 +94,19 @@ export function SourcesBox({
         ) : null}
       </dl>
 
-      {pageReview ? <div className="mt-4"><ReviewerSnippet review={pageReview} /></div> : null}
+      {pageReview ? (
+        <div className="mt-4">
+          <AcademicReviewByline review={pageReview} id={`${id}-review`} />
+        </div>
+      ) : null}
 
-      {contributorPolicy.length ? (
+      {publicPolicy.length ? (
         <div className="mt-5 rounded-xl border border-border bg-white p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Contributor requirements for this page
           </p>
           <ul className="mt-2 space-y-1.5">
-            {contributorPolicy.map((c) => (
+            {publicPolicy.map((c) => (
               <li key={c} className="text-sm text-ink/85">
                 {c}
               </li>
