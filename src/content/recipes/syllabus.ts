@@ -1,6 +1,7 @@
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { SyllabusContent, SyllabusTable } from "@/content/types";
 import { getSource } from "@/content/sources";
+import { reviewFor } from "@/content/academic-reviews";
 
 /**
  * T05 — Syllabus recipe.
@@ -79,6 +80,13 @@ export function syllabusRecipe(
           ],
           chips: content.hero?.chips,
         },
+      },
+      /* Public reviewer attribution — rendered only for a completed review. */
+      {
+        block: "B56",
+        id: "academic-review",
+        props: { review: reviewFor(`/${content.platform}/syllabus`) },
+        when: !!reviewFor(`/${content.platform}/syllabus`),
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
 
