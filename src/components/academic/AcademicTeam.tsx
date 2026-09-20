@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { academicProfiles } from "@/content/academic-profiles";
+import { FacultyPhoto } from "./FacultyPhoto";
 import { Button } from "@/components/ui/button";
 
 export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
