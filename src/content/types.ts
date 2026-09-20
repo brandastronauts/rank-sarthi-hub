@@ -92,6 +92,12 @@ export interface Person {
   image?: string;
 }
 
+/** One optional verified credential row. Rendered only when real data exists. */
+export interface AcademicCredential {
+  label: string;
+  value: string;
+}
+
 /** Publication-safe faculty record. Pending evidence is retained internally, never rendered publicly. */
 export interface AcademicProfile {
   id: string;
@@ -103,7 +109,24 @@ export interface AcademicProfile {
   shortProfile: string;
   /** Only defensible, publication-safe paragraphs from the approved master. */
   detailedProfile: string[];
+  /** Structured academic focus summary derived from approved data. */
+  academicFocus: string[];
   expertise: string[];
+  /** Confirmed exam / subject scope only. */
+  examScope: string[];
+  /** Approved contribution statements for Rank Sarthi academic work. */
+  contribution: string[];
+  /** Public "Academic Areas" list. Never states that a page was reviewed. */
+  reviewAreas: string[];
+  /** Registry URLs of relevant built academic pages. */
+  relatedPages?: string[];
+  /** Rendered only when verified values exist; otherwise the section is hidden. */
+  credentials?: AcademicCredential[];
+  publications?: string[];
+  research?: string[];
+  linkedin?: string;
+  email?: string;
+  /** Internal only. Never rendered. */
   verificationStatus: "PARTIALLY_VERIFIED" | "PENDING" | "VERIFIED";
   photo: string | null;
   photoFilename: string | null;
@@ -119,10 +142,14 @@ export type ReviewStatus = "UNASSIGNED" | "REVIEWER_ASSIGNED" | "REVIEW_PENDING"
 /** Review belongs to a specific content version. Pool membership alone never creates this record. */
 export interface PageReview {
   reviewerProfileId?: string;
+  /** Additional confirmed subject contributors for this content version. */
+  contributorProfileIds?: string[];
   reviewStatus: ReviewStatus;
   reviewedAt?: string;
   contentVersion?: string;
   reviewVersion?: string;
+  /** Public scope wording, e.g. "Reviewed for the 2026 syllabus". */
+  scopeLabel?: string;
 }
 
 /* ------------------------------------------------------------------ */
