@@ -16,6 +16,9 @@ import type { Platform, UrlRecord } from "./types";
 function normalise(label: string): string {
   const base = label
     .toLowerCase()
+    /* Paper/part prefixes are structural, not part of the academic name. */
+    .replace(/^part\s+[a-z]\s*[:\-–]\s*/i, "")
+    .replace(/\(advanced\)/g, " ")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\b(and|the|of|in|a|an|to|its)\b/g, " ");
