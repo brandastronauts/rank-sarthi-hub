@@ -18,6 +18,18 @@ export function infoPageRecipe(
   /* Confirmed assignment wins; page-level data is a fallback. */
   const pageReview = reviewFor(content.url) ?? content.pageReview;
 
+  /* Registry-driven syllabus links: subject comes from the page path, so a
+     label can only resolve inside its own platform + subject. */
+  const lastSegment = content.url.split("/").filter(Boolean).pop();
+  /* Generic path tails carry no subject; leaving the scope open lets the
+     resolver fall back to platform scope with its ambiguity guard. */
+  const subjectSegment =
+    lastSegment && /^(syllabus|jee-advanced|jee-main)$/.test(lastSegment) ? undefined : lastSegment;
+  const linkScope =
+    content.platform === "main"
+      ? undefined
+      : { platform: content.platform, subject: subjectSegment };
+
   const bodySlots: BlockSlot[] = content.blocks.map((block) => {
     if (block.kind === "academic-team") {
       return {
@@ -37,6 +49,7 @@ export function infoPageRecipe(
           columns: block.columns,
           rows: block.rows,
           note: block.note,
+          linkScope,
           jumpHidden: block.jump === false,
         },
         when: block.rows.length > 0,
@@ -165,6 +178,7 @@ export function infoPageRecipe(
       props: {
         heading: block.heading,
         concepts: block.concepts,
+        linkScope,
         jumpHidden: block.jump === false,
       },
       when: block.concepts.length > 0,

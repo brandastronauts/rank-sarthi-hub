@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { getUrl } from "@/content/registry";
 import { getSources } from "@/content/sources";
-import type { SyllabusSection } from "@/content/types";
+import { TopicLink } from "@/components/blocks/TopicLink";
+import type { Platform, SyllabusSection } from "@/content/types";
 
 /**
  * B26 — Syllabus explorer.
@@ -24,6 +25,7 @@ export function SyllabusExplorer({
   sourceRefs = [],
   verifiedOn,
   hideVariants = false,
+  linkPlatform,
 }: {
   id?: string;
   sections?: SyllabusSection[];
@@ -36,6 +38,8 @@ export function SyllabusExplorer({
   verifiedOn?: string;
   /** Exam-scoped explorers already state their exam; per-unit badges add noise. */
   hideVariants?: boolean;
+  /** Enables registry-driven topic links, scoped to this platform. */
+  linkPlatform?: Platform;
 }) {
   if (!sections.length) return null;
   const refs = getSources(sourceRefs);
@@ -112,7 +116,16 @@ export function SyllabusExplorer({
                     ) : null}
 
                     <div className="mt-1 flex flex-wrap items-baseline justify-between gap-2">
-                      <p className="text-sm font-bold text-primary">{unit.name}</p>
+                      <p className="text-sm font-bold text-primary">
+                        {linkPlatform && !chapters.length ? (
+                          <TopicLink
+                            label={unit.name}
+                            scope={{ platform: linkPlatform, subject: section.subject }}
+                          />
+                        ) : (
+                          unit.name
+                        )}
+                      </p>
                       {!hideVariants && unit.variant && unit.variant !== "both" ? (
                         <span className="rounded-full bg-ice px-2 py-0.5 text-[11px] font-semibold uppercase text-primary">
                           {unit.variant}
@@ -126,7 +139,14 @@ export function SyllabusExplorer({
                       <ul className="mt-3 flex flex-wrap gap-1.5">
                         {unit.topics.map((topic) => (
                           <li key={topic} className="rounded-md bg-ivory px-2 py-1 text-xs text-ink/80">
-                            {topic}
+                            {linkPlatform ? (
+                              <TopicLink
+                                label={topic}
+                                scope={{ platform: linkPlatform, subject: section.subject }}
+                              />
+                            ) : (
+                              topic
+                            )}
                           </li>
                         ))}
                       </ul>
