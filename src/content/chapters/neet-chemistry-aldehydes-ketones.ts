@@ -459,9 +459,9 @@ export const neetChemistryAldehydesKetones: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Aldehydes and Ketones: Carbonyl Reactivity and Named Reac | Rank Sarthi",
+    "title": "NEET Aldehydes and Ketones: Carbonyl Reactivity and Named Reactions | Rank Sarthi",
     "description": "Learn Aldehydes and Ketones for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Aldehydes and Ketones: Carbonyl Reactivity and Named Reac | Rank Sarthi",
+    "ogTitle": "NEET Aldehydes and Ketones: Carbonyl Reactivity and Named Reactions | Rank Sarthi",
     "ogDescription": "Learn Aldehydes and Ketones for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },
