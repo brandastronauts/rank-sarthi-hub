@@ -20,7 +20,11 @@ export function infoPageRecipe(
 
   /* Registry-driven syllabus links: subject comes from the page path, so a
      label can only resolve inside its own platform + subject. */
-  const subjectSegment = content.url.split("/").filter(Boolean).pop();
+  const lastSegment = content.url.split("/").filter(Boolean).pop();
+  /* Generic path tails carry no subject; leaving the scope open lets the
+     resolver fall back to platform scope with its ambiguity guard. */
+  const subjectSegment =
+    lastSegment && /^(syllabus|jee-advanced|jee-main)$/.test(lastSegment) ? undefined : lastSegment;
   const linkScope =
     content.platform === "main"
       ? undefined
