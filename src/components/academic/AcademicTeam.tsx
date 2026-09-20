@@ -24,7 +24,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
               <p className="mt-1 text-sm font-semibold text-ink/80">{profile.title}</p>
               <p className="mt-4 line-clamp-5 text-sm leading-relaxed text-muted-foreground">{profile.shortProfile}</p>
               <Button asChild variant="link" className="mt-4 h-auto px-0 text-accent">
-                <Link to="/about/faculty/$slug" params={{ slug: profile.slug }} rel="nofollow">
+                <Link to="/about/faculty/$slug" params={{ slug: profile.slug }}>
                   View profile <ArrowRight aria-hidden />
                 </Link>
               </Button>
