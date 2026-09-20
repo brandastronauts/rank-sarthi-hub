@@ -139,7 +139,14 @@ export function SyllabusExplorer({
                       <ul className="mt-3 flex flex-wrap gap-1.5">
                         {unit.topics.map((topic) => (
                           <li key={topic} className="rounded-md bg-ivory px-2 py-1 text-xs text-ink/80">
-                            {topic}
+                            {linkPlatform ? (
+                              <TopicLink
+                                label={topic}
+                                scope={{ platform: linkPlatform, subject: section.subject }}
+                              />
+                            ) : (
+                              topic
+                            )}
                           </li>
                         ))}
                       </ul>
