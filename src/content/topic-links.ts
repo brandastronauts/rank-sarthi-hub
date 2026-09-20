@@ -1,4 +1,6 @@
 import { urlRecords } from "./urls";
+import { topicAliases } from "./topic-aliases";
+import { getUrl } from "./registry";
 import type { Platform, UrlRecord } from "./types";
 
 /**
