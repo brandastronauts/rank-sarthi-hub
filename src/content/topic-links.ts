@@ -1,4 +1,6 @@
 import { urlRecords } from "./urls";
+import { topicAliases } from "./topic-aliases";
+import { getUrl } from "./registry";
 import type { Platform, UrlRecord } from "./types";
 
 /**
@@ -14,6 +16,9 @@ import type { Platform, UrlRecord } from "./types";
 function normalise(label: string): string {
   const base = label
     .toLowerCase()
+    /* Paper/part prefixes are structural, not part of the academic name. */
+    .replace(/^part\s+[a-z]\s*[:\-–]\s*/i, "")
+    .replace(/\(advanced\)/g, " ")
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\b(and|the|of|in|a|an|to|its)\b/g, " ");
@@ -79,6 +84,32 @@ for (const candidate of candidates) {
   }
 }
 
+/**
+ * Alias index: `${subjectKey}|${normalisedLabel}` → ordered candidate slugs.
+ * Aliases only point at slugs that must still resolve to a BUILT route.
+ */
+const aliasIndex = new Map<string, string[]>();
+for (const alias of topicAliases) {
+  for (const label of alias.labels) {
+    aliasIndex.set(`${alias.subject}|${normalise(label)}`, alias.slugs);
+  }
+}
+
+/** First built candidate owning `slug` for this platform (and subject, if scoped). */
+function resolveSlug(
+  platform: Platform,
+  slug: string,
+  wanted: string | undefined,
+): UrlRecord | undefined {
+  const matches = candidates.filter(
+    (c) =>
+      c.record.platform === platform &&
+      c.record.url.endsWith(`/${slug}`) &&
+      (!wanted || c.subjects.includes(wanted)),
+  );
+  return matches.length === 1 ? matches[0]!.record : undefined;
+}
+
 export type TopicLinkScope = {
   platform: Platform;
   /** Restrict to one subject when the page is subject-scoped. */
@@ -98,6 +129,12 @@ export function resolveTopicRoute(
 
   const wanted = scope.subject ? subjectKey(scope.subject) : undefined;
 
+  /* A label that is itself a registry path links only when that route is built. */
+  if (clean.startsWith("/")) {
+    const record = getUrl(clean);
+    return record?.buildStatus === "built" ? record : undefined;
+  }
+
   for (const index of [byName, byTight]) {
     const key = index === byName ? normalise(clean) : tight(clean);
     const list = index.get(`${scope.platform}|${key}`);
@@ -109,6 +146,15 @@ export function resolveTopicRoute(
     if (pool.length > 1) {
       const unique = new Set(pool.map((c) => c.record.url));
       if (unique.size === 1) return pool[0]!.record;
+    }
+  }
+
+  /* Alias fallback: official wording differs from the Rank Sarthi route title. */
+  const aliasSlugs = aliasIndex.get(`${wanted ?? ""}|${normalise(clean)}`);
+  if (aliasSlugs) {
+    for (const slug of aliasSlugs) {
+      const record = resolveSlug(scope.platform, slug, wanted);
+      if (record) return record;
     }
   }
 
