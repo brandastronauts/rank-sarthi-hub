@@ -1,6 +1,7 @@
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { InfoPageContent } from "@/content/types";
 import { changeLogForPage, recordsByIds } from "@/content/freshness/panel";
+import { reviewFor } from "@/content/academic-reviews";
 
 /**
  * Generic exam-information recipe (JEE Main, Advanced, papers, keys,
@@ -14,6 +15,8 @@ export function infoPageRecipe(
 ): PageRecipe {
   const freshRecords = content.freshness ? recordsByIds(content.freshness.recordIds) : [];
   const changes = changeLogForPage(content.url);
+  /* Confirmed assignment wins; page-level data is a fallback. */
+  const pageReview = reviewFor(content.url) ?? content.pageReview;
 
   const bodySlots: BlockSlot[] = content.blocks.map((block) => {
     if (block.kind === "academic-team") {
@@ -191,6 +194,13 @@ export function infoPageRecipe(
           ],
         },
       },
+      /* Public reviewer attribution — rendered only for a completed review. */
+      {
+        block: "B56",
+        id: "academic-review",
+        props: { review: pageReview },
+        when: !!pageReview,
+      },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
       {
         block: "B45",
@@ -225,7 +235,7 @@ export function infoPageRecipe(
           sources: content.sourceRefs ?? [],
           note: content.sourceNote,
           contributorPolicy: content.contributorPolicy,
-          pageReview: content.pageReview,
+          pageReview: undefined,
           updated: content.lastVerified,
         },
         when: !!content.sourceRefs?.length || !!content.contributorPolicy?.length || !!content.pageReview,

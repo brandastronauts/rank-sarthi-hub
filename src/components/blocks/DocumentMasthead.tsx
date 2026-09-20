@@ -1,9 +1,15 @@
 import { RichText } from "@/components/content/RichText";
+import { publicLabels } from "@/lib/public-copy";
 import type { ContentStatus, RichText as RichTextNodes } from "@/content/types";
 
 /**
  * B34 — Document masthead + answer-first block.
  * Shared by T05 and T06; the only H1 on the page.
+ *
+ * Internal production state (content status, review workflow) is never shown
+ * here: chips are filtered through the public-copy guard, and the former draft
+ * status banner has been removed from the public UI. Indexation continues to be
+ * controlled by the URL registry, not by visible copy.
  */
 export function DocumentMasthead({
   id = "top",
@@ -24,6 +30,8 @@ export function DocumentMasthead({
   meta?: { label: string; value: string }[];
   chips?: string[];
 }) {
+  void contentStatus;
+  const publicChips = publicLabels(chips);
   return (
     <header id={id} className="scroll-mt-28">
       {eyebrow ? <p className="eyebrow text-accent">{eyebrow}</p> : null}
@@ -43,9 +51,9 @@ export function DocumentMasthead({
         </dl>
       ) : null}
 
-      {chips?.length ? (
+      {publicChips.length ? (
         <ul className="mt-6 flex flex-wrap gap-2">
-          {chips.map((chip) => (
+          {publicChips.map((chip) => (
             <li
               key={chip}
               className="rounded-full border border-border bg-ivory px-3 py-1 text-xs font-semibold text-ink/80"
@@ -56,12 +64,6 @@ export function DocumentMasthead({
         </ul>
       ) : null}
 
-      {contentStatus && contentStatus !== "verified" ? (
-        <p className="mt-6 rounded-lg border border-warning/30 bg-warning/10 px-4 py-3 text-sm text-ink">
-          Content status: <strong className="font-semibold">{contentStatus}</strong>. Verified academic content
-          for this page has not been loaded yet, so the page is excluded from search indexing and the sitemap.
-        </p>
-      ) : null}
 
       {answer?.length ? (
         <div className="mt-8 rounded-2xl border border-border bg-ivory p-6 md:p-8">

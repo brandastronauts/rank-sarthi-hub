@@ -24,7 +24,7 @@ function unit(id: string, name: string, scope: string): SyllabusUnit {
 export const neetSyllabus: SyllabusContent = {
   exam: "NEET (UG)",
   platform: "neet",
-  contentStatus: "draft",
+  contentStatus: "verified",
   title: "NEET UG 2026 Syllabus: Official Physics, Chemistry and Biology Structure",
   lastVerified: "9 September 2026",
 

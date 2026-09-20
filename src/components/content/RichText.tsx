@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { isInternalGovernanceLabel } from "@/lib/public-copy";
 import type { InlineText, RichText as RichTextNodes } from "@/content/types";
 
 /**
@@ -44,12 +45,38 @@ const noteTone = {
   source: "border-border bg-ivory text-muted-foreground",
 } as const;
 
+const plain = (nodes: InlineText[]) => nodes.map((n) => n.text).join(" ").trim();
+
+/**
+ * Drops internal production/governance lines (unassigned contributors, pending
+ * review notes) from public prose. Legitimate academic content is untouched.
+ */
+function publicNodes(nodes: RichTextNodes): RichTextNodes {
+  const result: RichTextNodes = [];
+  for (const node of nodes) {
+    if (node.type === "paragraph" || node.type === "note") {
+      if (isInternalGovernanceLabel(plain(node.children))) continue;
+      result.push(node);
+      continue;
+    }
+    if (node.type === "list") {
+      const items = node.items.filter((item) => !isInternalGovernanceLabel(plain(item)));
+      if (!items.length) continue;
+      result.push({ ...node, items });
+      continue;
+    }
+    result.push(node);
+  }
+  return result;
+}
+
 export function RichText({ nodes, className = "" }: { nodes?: RichTextNodes; className?: string }) {
-  if (!nodes?.length) return null;
+  const visible = nodes?.length ? publicNodes(nodes) : [];
+  if (!visible.length) return null;
 
   return (
     <div className={`space-y-4 text-base leading-relaxed text-ink/85 ${className}`}>
-      {nodes.map((node, i) => {
+      {visible.map((node, i) => {
         switch (node.type) {
           case "paragraph":
             return (

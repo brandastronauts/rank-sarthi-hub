@@ -100,7 +100,7 @@ export const jeeMockTests: InfoPageContent = {
       intro:
         "JEE Advanced Part Test 1\u201310 allocation is published below as supplied by the academic team. The JEE Main test-wise syllabus is still being finalised.",
       data: jeeTestSeriesPartTestSyllabus,
-      note: "Academic-team supplied syllabus \u2014 human review pending. EXCLUDING statements are part of the allocation and are shown separately from included scope.",
+      note: "Academic-team supplied syllabus. EXCLUDING statements are part of the allocation and are shown separately from included scope.",
     },
 
     {
