@@ -123,7 +123,7 @@ export const jeeTestSeriesPartTestSyllabus: PartTestSyllabusData = {
       tests: jeeAdvancedPartTests,
       sourceLabel: "Academic-team supplied syllabus",
       reviewNote:
-        "Human review pending. This is the Rank Sarthi Part-Test allocation, not the official JEE Advanced syllabus document, even where topics derive from official exam scope.",
+        "This is the Rank Sarthi Part-Test allocation, not the official JEE Advanced syllabus document, even where topics derive from official exam scope.",
     },
   ],
 };
