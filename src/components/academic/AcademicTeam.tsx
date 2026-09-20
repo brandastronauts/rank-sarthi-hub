@@ -9,7 +9,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
       <p className="eyebrow text-accent">Academic Team</p>
       <h2 className="mt-3 text-display-md text-primary">Meet the subject specialists shaping Rank Sarthi</h2>
       <p className="mt-3 max-w-3xl text-sm text-ink/80">
-        These profiles use the approved faculty master. Selected biography claims remain unpublished while supporting evidence is pending.
+        Subject specialists in Physics, Chemistry and Mathematics who build and check Rank Sarthi academic content.
       </p>
       <ul className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {academicProfiles.map((profile) => (
@@ -37,9 +37,10 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
           </li>
         ))}
       </ul>
-      <p className="mt-5 rounded-lg border border-warning/30 bg-warning/10 px-4 py-3 text-sm text-ink">
-        Reviewer-pool membership indicates subject suitability only. It does not mean a faculty member reviewed any specific page.
+      <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+        Review attribution is shown on an individual page only after that specific content version has been reviewed.
       </p>
+
     </section>
   );
 }
