@@ -15,13 +15,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
         {academicProfiles.map((profile) => (
           <li key={profile.id} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
             <div className="aspect-[4/3] overflow-hidden bg-secondary">
-              {profile.photo ? (
-                <img src={profile.photo} alt={profile.imageAlt ?? ""} className="h-full w-full object-cover object-top" loading="lazy" />
-              ) : (
-                <div className="flex h-full items-center justify-center" aria-label={`${profile.name} initials`}>
-                  <span className="font-display text-5xl font-bold text-primary">{profile.initials}</span>
-                </div>
-              )}
+              <FacultyPhoto profile={profile} initialsClassName="text-5xl" />
             </div>
             <div className="p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-accent">{profile.subject}</p>
