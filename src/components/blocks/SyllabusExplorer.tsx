@@ -38,6 +38,8 @@ export function SyllabusExplorer({
   verifiedOn?: string;
   /** Exam-scoped explorers already state their exam; per-unit badges add noise. */
   hideVariants?: boolean;
+  /** Enables registry-driven topic links, scoped to this platform. */
+  linkPlatform?: Platform;
 }) {
   if (!sections.length) return null;
   const refs = getSources(sourceRefs);
