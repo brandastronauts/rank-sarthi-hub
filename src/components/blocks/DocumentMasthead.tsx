@@ -30,6 +30,8 @@ export function DocumentMasthead({
   meta?: { label: string; value: string }[];
   chips?: string[];
 }) {
+  void contentStatus;
+  const publicChips = publicLabels(chips);
   return (
     <header id={id} className="scroll-mt-28">
       {eyebrow ? <p className="eyebrow text-accent">{eyebrow}</p> : null}

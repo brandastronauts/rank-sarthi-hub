@@ -1,13 +1,15 @@
 import { getSource } from "@/content/sources";
 import { getPerson } from "@/content/people";
-import { ReviewerSnippet } from "@/components/academic/ReviewerSnippet";
+import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
+import { publicLabels } from "@/lib/public-copy";
 import type { PageReview } from "@/content/types";
 
 /**
  * B37 — Author / reviewer / sources box.
  * Renders only resolvable sources and only VERIFIED real people. When no
  * verified reviewer exists the reviewer line is omitted entirely — the page
- * never asserts human review that has not happened.
+ * never asserts human review that has not happened. Internal governance lines
+ * (UNASSIGNED writers, pending-review notes) are filtered out of public copy.
  */
 export function SourcesBox({
   id = "sources",
