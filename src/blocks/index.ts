@@ -46,6 +46,13 @@ import { SubjectChapterMap } from "@/components/blocks/SubjectChapterMap";
 import { ResourceLibrary } from "@/components/blocks/ResourceLibrary";
 import { LinkCardGrid } from "@/components/blocks/LinkCardGrid";
 import { ToolBlock } from "@/components/blocks/ToolBlock";
+import { OfferHighlight } from "@/components/blocks/OfferHighlight";
+import { OfferPackages } from "@/components/blocks/OfferPackages";
+import { PartTestSyllabus } from "@/components/blocks/PartTestSyllabus";
+import { ToolsGrid } from "@/components/blocks/ToolsGrid";
+import { OfferCta } from "@/components/blocks/OfferCta";
+import { AcademicTeam } from "@/components/academic/AcademicTeam";
+import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
 
 
 /* Platform template blocks (B38–B43) */
@@ -84,6 +91,13 @@ export function ensureBlocksRegistered() {
     B47: ResourceLibrary,
     B48: LinkCardGrid,
     B49: ToolBlock,
+    B50: OfferHighlight,
+    B51: OfferPackages,
+    B52: PartTestSyllabus,
+    B53: OfferCta,
+    B54: ToolsGrid,
+    B55: AcademicTeam,
+    B56: AcademicReviewByline,
 
     B26: SyllabusExplorer,
     B27: TrendTable,

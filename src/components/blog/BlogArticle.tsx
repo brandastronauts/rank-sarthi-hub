@@ -94,7 +94,7 @@ export function BlogArticle({
             {article.publishedAt && formatDate(article.publishedAt) ? <div><dt className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Published</dt><dd className="mt-1 font-medium text-primary"><time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time></dd></div> : null}
             {article.updatedAt && article.updatedAt !== article.publishedAt && formatDate(article.updatedAt) ? <div><dt className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Updated</dt><dd className="mt-1 font-medium text-primary"><time dateTime={article.updatedAt}>{formatDate(article.updatedAt)}</time></dd></div> : null}
           </dl>
-          {article.reviewStatus === "REVIEW_PENDING" ? <p className="mt-6 w-fit rounded-lg border border-warning/30 bg-warning/10 px-4 py-2 text-sm font-medium text-ink">Human review pending</p> : null}
+          {/* Internal review state is never surfaced publicly. */}
           <img src={article.featuredImage} alt={article.featuredImageAlt} className="mt-8 aspect-[16/8] w-full rounded-xl object-cover shadow-card" fetchPriority="high" />
         </header>
 

@@ -1,4 +1,6 @@
 import { RichText } from "@/components/content/RichText";
+import { TopicLink } from "@/components/blocks/TopicLink";
+import type { TopicLinkScope } from "@/content/topic-links";
 import type { ConceptBlock } from "@/content/types";
 
 /**
@@ -10,10 +12,13 @@ export function ConceptSections({
   id = "concepts",
   concepts = [],
   heading = "Concepts in this chapter",
+  linkScope,
 }: {
   id?: string;
   concepts?: ConceptBlock[];
   heading?: string;
+  /** Enables registry-driven links on official unit/topic headings. */
+  linkScope?: TopicLinkScope;
 }) {
   if (!concepts.length) return null;
 
@@ -23,7 +28,11 @@ export function ConceptSections({
       <div className="mt-6 space-y-10">
         {concepts.map((c) => (
           <article key={c.id} id={c.id} className="scroll-mt-28">
-            {c.title ? <h3 className="text-lg font-bold text-primary">{c.title}</h3> : null}
+            {c.title ? (
+              <h3 className="text-lg font-bold text-primary">
+                {linkScope ? <TopicLink label={c.title} scope={linkScope} /> : c.title}
+              </h3>
+            ) : null}
             {c.keyIdea ? (
               <p className="mt-2 border-l-2 border-accent pl-4 text-sm font-medium text-ink">{c.keyIdea}</p>
             ) : null}

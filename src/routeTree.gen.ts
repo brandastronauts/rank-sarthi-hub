@@ -20,6 +20,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
+import { Route as AboutFacultySlugRouteImport } from './routes/about.faculty.$slug'
 import { Route as ApiPublicBlogArticleRouteImport } from './routes/api/public/blog-article'
 import { Route as ApiPublicBlogCommentsRouteImport } from './routes/api/public/blog-comments'
 import { Route as ApiPublicBlogListRouteImport } from './routes/api/public/blog-list'
@@ -81,6 +82,11 @@ const PlatformSubjectChapterRoute = PlatformSubjectChapterRouteImport.update({
   path: '/$platform/$subject/$chapter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutFacultySlugRoute = AboutFacultySlugRouteImport.update({
+  id: '/about/faculty/$slug',
+  path: '/about/faculty/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicBlogArticleRoute = ApiPublicBlogArticleRouteImport.update({
   id: '/api/public/blog-article',
   path: '/api/public/blog-article',
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
   '/api/public/blog-comments': typeof ApiPublicBlogCommentsRoute
   '/api/public/blog-list': typeof ApiPublicBlogListRoute
@@ -138,6 +145,7 @@ export interface FileRoutesByTo {
   '/$platform': typeof PlatformIndexRoute
   '/blog': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
   '/api/public/blog-comments': typeof ApiPublicBlogCommentsRoute
   '/api/public/blog-list': typeof ApiPublicBlogListRoute
@@ -157,6 +165,7 @@ export interface FileRoutesById {
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
+  '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
   '/api/public/blog-comments': typeof ApiPublicBlogCommentsRoute
   '/api/public/blog-list': typeof ApiPublicBlogListRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/$platform/'
     | '/blog/'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/blog-article'
     | '/api/public/blog-comments'
     | '/api/public/blog-list'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/$platform'
     | '/blog'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/blog-article'
     | '/api/public/blog-comments'
     | '/api/public/blog-list'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/$platform/'
     | '/blog/'
     | '/$platform/$subject/$chapter'
+    | '/about/faculty/$slug'
     | '/api/public/blog-article'
     | '/api/public/blog-comments'
     | '/api/public/blog-list'
@@ -232,6 +244,7 @@ export interface RootRouteChildren {
   PlatformIndexRoute: typeof PlatformIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
+  AboutFacultySlugRoute: typeof AboutFacultySlugRoute
   ApiPublicBlogArticleRoute: typeof ApiPublicBlogArticleRoute
   ApiPublicBlogCommentsRoute: typeof ApiPublicBlogCommentsRoute
   ApiPublicBlogListRoute: typeof ApiPublicBlogListRoute
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/faculty/$slug': {
+      id: '/about/faculty/$slug'
+      path: '/about/faculty/$slug'
+      fullPath: '/about/faculty/$slug'
+      preLoaderRoute: typeof AboutFacultySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/blog-article': {
       id: '/api/public/blog-article'
       path: '/api/public/blog-article'
@@ -368,6 +388,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlatformIndexRoute: PlatformIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
+  AboutFacultySlugRoute: AboutFacultySlugRoute,
   ApiPublicBlogArticleRoute: ApiPublicBlogArticleRoute,
   ApiPublicBlogCommentsRoute: ApiPublicBlogCommentsRoute,
   ApiPublicBlogListRoute: ApiPublicBlogListRoute,

@@ -1,11 +1,15 @@
 import { getSource } from "@/content/sources";
 import { getPerson } from "@/content/people";
+import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
+import { publicLabels } from "@/lib/public-copy";
+import type { PageReview } from "@/content/types";
 
 /**
  * B37 — Author / reviewer / sources box.
  * Renders only resolvable sources and only VERIFIED real people. When no
  * verified reviewer exists the reviewer line is omitted entirely — the page
- * never asserts human review that has not happened.
+ * never asserts human review that has not happened. Internal governance lines
+ * (UNASSIGNED writers, pending-review notes) are filtered out of public copy.
  */
 export function SourcesBox({
   id = "sources",
@@ -16,6 +20,7 @@ export function SourcesBox({
   heading = "Sources and provenance",
   note,
   contributorPolicy = [],
+  pageReview,
 }: {
   id?: string;
   sources?: string[];
@@ -25,12 +30,14 @@ export function SourcesBox({
   heading?: string;
   note?: string;
   contributorPolicy?: string[];
+  pageReview?: PageReview;
 }) {
   const refs = sources.map(getSource).filter(Boolean);
   const reviewer = reviewerId ? getPerson(reviewerId) : undefined;
   const author = authorId ? getPerson(authorId) : undefined;
+  const publicPolicy = publicLabels(contributorPolicy);
 
-  if (!refs.length && !reviewer && !author && !updated && !note && !contributorPolicy.length) return null;
+  if (!refs.length && !reviewer && !author && !updated && !note && !publicPolicy.length && !pageReview) return null;
 
   return (
     <section id={id} className="scroll-mt-28 rounded-2xl border border-border bg-ivory p-6">
@@ -87,13 +94,19 @@ export function SourcesBox({
         ) : null}
       </dl>
 
-      {contributorPolicy.length ? (
+      {pageReview ? (
+        <div className="mt-4">
+          <AcademicReviewByline review={pageReview} id={`${id}-review`} />
+        </div>
+      ) : null}
+
+      {publicPolicy.length ? (
         <div className="mt-5 rounded-xl border border-border bg-white p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Contributor requirements for this page
           </p>
           <ul className="mt-2 space-y-1.5">
-            {contributorPolicy.map((c) => (
+            {publicPolicy.map((c) => (
               <li key={c} className="text-sm text-ink/85">
                 {c}
               </li>

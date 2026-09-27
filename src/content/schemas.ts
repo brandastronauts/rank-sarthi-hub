@@ -215,6 +215,15 @@ export const chapterContentSchema = z.object({
   contributorPolicy: z.array(z.string()).optional(),
   reviewerId: z.string().optional(),
   authorId: z.string().optional(),
+  pageReview: z
+    .object({
+      reviewerProfileId: z.string().optional(),
+      reviewStatus: z.enum(["UNASSIGNED", "REVIEWER_ASSIGNED", "REVIEW_PENDING", "REVIEWED"]),
+      reviewedAt: z.string().optional(),
+      contentVersion: z.string().optional(),
+      reviewVersion: z.string().optional(),
+    })
+    .optional(),
   updated: z.string().optional(),
   contentFlags: z.array(z.string()).optional(),
   contentStatus: contentStatusSchema,

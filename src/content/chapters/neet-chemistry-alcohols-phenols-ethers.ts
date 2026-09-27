@@ -379,9 +379,9 @@ export const neetChemistryAlcoholsPhenolsEthers: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Alcohols, Phenols and Ethers: Structure, Acidity and Reac | Rank Sarthi",
+    "title": "NEET Alcohols, Phenols and Ethers: Structure, Acidity and Reactions | Rank Sarthi",
     "description": "Learn Alcohols, Phenols and Ethers for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Alcohols, Phenols and Ethers: Structure, Acidity and Reac | Rank Sarthi",
+    "ogTitle": "NEET Alcohols, Phenols and Ethers: Structure, Acidity and Reactions | Rank Sarthi",
     "ogDescription": "Learn Alcohols, Phenols and Ethers for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },

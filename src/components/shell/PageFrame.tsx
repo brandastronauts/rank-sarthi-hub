@@ -2,6 +2,9 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs } from "./Breadcrumbs";
+import { AnnouncementStrip } from "@/components/campaign/AnnouncementStrip";
+import { OfferPopup } from "@/components/campaign/OfferPopup";
+import { showJeeAnnouncement, showJeeOfferPopup } from "@/content/offers/campaign";
 
 /**
  * Global page frames.
@@ -11,6 +14,9 @@ import { Breadcrumbs } from "./Breadcrumbs";
  * F2 — document frame (syllabus, chapter, guides): breadcrumb band + contained
  *      content column.
  * F3 — dense two-column frame: breadcrumb band + sticky aside slot.
+ *
+ * Campaign surfaces (JEE announcement strip, JEE offer popup) are scoped by
+ * URL, so NEET and NDA pages never carry JEE commercial copy.
  */
 export type FrameId = "F1" | "F2" | "F3";
 
@@ -31,10 +37,18 @@ interface PageFrameProps {
 }
 
 export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBackdrop = false }: PageFrameProps) {
+  const strip = showJeeAnnouncement(url);
+  const popup = showJeeOfferPopup(url);
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <SiteHeader transparentAtTop={heroBackdrop} />
       <main id="main" className="flex-1">
+        {strip ? (
+          <div className="pt-20 md:pt-24">
+            <AnnouncementStrip />
+          </div>
+        ) : null}
         {frame === "F1" ? (
           <>
             {masthead}
@@ -42,7 +56,9 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
           </>
         ) : (
           <>
-            <div className="border-b border-border bg-ivory pt-20 md:pt-24">
+            <div
+              className={`border-b border-border bg-ivory ${strip ? "pt-5" : "pt-20 md:pt-24"}`}
+            >
               <div className="container-page">
                 <Breadcrumbs url={url} />
               </div>
@@ -62,6 +78,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
         )}
       </main>
       <SiteFooter />
+      {popup ? <OfferPopup /> : null}
     </div>
   );
 }

@@ -1,11 +1,30 @@
 import { NeetScoreCalculator } from "@/components/tools/NeetScoreCalculator";
 import { NeetStudyPlanner } from "@/components/tools/NeetStudyPlanner";
+import { JeeMainScoreCalculator } from "@/components/tools/JeeMainScoreCalculator";
+import { JeeAdvancedScoreCalculator } from "@/components/tools/JeeAdvancedScoreCalculator";
+import { NdaScoreCalculator } from "@/components/tools/NdaScoreCalculator";
+import { NegativeMarkingCalculator } from "@/components/tools/NegativeMarkingCalculator";
+import { AccuracyCalculator } from "@/components/tools/AccuracyCalculator";
+import { TargetScoreCalculator } from "@/components/tools/TargetScoreCalculator";
+import { CorrectAnswersNeededCalculator } from "@/components/tools/CorrectAnswersNeededCalculator";
+import { StudyTimeCalculator } from "@/components/tools/StudyTimeCalculator";
+import { DailyQuestionTargetCalculator } from "@/components/tools/DailyQuestionTargetCalculator";
+import type { ToolMountId } from "@/content/types";
 
-export type ToolId = "neet-score-calculator" | "neet-study-planner";
+export type ToolId = ToolMountId;
 
 const TOOLS: Record<ToolId, React.ComponentType> = {
   "neet-score-calculator": NeetScoreCalculator,
   "neet-study-planner": NeetStudyPlanner,
+  "jee-main-score-calculator": JeeMainScoreCalculator,
+  "jee-advanced-score-calculator": JeeAdvancedScoreCalculator,
+  "nda-score-calculator": NdaScoreCalculator,
+  "negative-marking-calculator": NegativeMarkingCalculator,
+  "accuracy-calculator": AccuracyCalculator,
+  "target-score-calculator": TargetScoreCalculator,
+  "correct-answers-needed-calculator": CorrectAnswersNeededCalculator,
+  "study-time-calculator": StudyTimeCalculator,
+  "daily-question-target-calculator": DailyQuestionTargetCalculator,
 };
 
 /**

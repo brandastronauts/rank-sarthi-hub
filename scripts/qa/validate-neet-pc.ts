@@ -11,7 +11,7 @@ for (const c of recs) {
   const r = chapterContentSchema.safeParse(c);
   if (!r.success) { fail++; console.log("ZOD", c.url, JSON.stringify(r.error.issues.slice(0,2))); }
   const rec = getUrl(c.url);
-  if (!rec || rec.buildStatus !== "built" || rec.indexation !== "noindex") { fail++; console.log("STATE", c.url, rec?.buildStatus, rec?.indexation); }
+  if (!rec || rec.buildStatus !== "built" || rec.indexation !== "index") { fail++; console.log("STATE", c.url, rec?.buildStatus, rec?.indexation); }
   for (const id of c.sources) if (!(sources as any)[id]) { fail++; console.log("SRC", c.url, id); }
 }
 for (const h of allSubjectHubs().filter(h => h.url.startsWith("/neet/") && h.slug !== "biology")) {

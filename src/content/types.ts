@@ -92,6 +92,66 @@ export interface Person {
   image?: string;
 }
 
+/** One optional verified credential row. Rendered only when real data exists. */
+export interface AcademicCredential {
+  label: string;
+  value: string;
+}
+
+/** Publication-safe faculty record. Pending evidence is retained internally, never rendered publicly. */
+export interface AcademicProfile {
+  id: string;
+  slug: string;
+  name: string;
+  title: string;
+  subject: "Physics" | "Chemistry" | "Mathematics";
+  role: string;
+  shortProfile: string;
+  /** Only defensible, publication-safe paragraphs from the approved master. */
+  detailedProfile: string[];
+  /** Structured academic focus summary derived from approved data. */
+  academicFocus: string[];
+  expertise: string[];
+  /** Confirmed exam / subject scope only. */
+  examScope: string[];
+  /** Approved contribution statements for Rank Sarthi academic work. */
+  contribution: string[];
+  /** Public "Academic Areas" list. Never states that a page was reviewed. */
+  reviewAreas: string[];
+  /** Registry URLs of relevant built academic pages. */
+  relatedPages?: string[];
+  /** Rendered only when verified values exist; otherwise the section is hidden. */
+  credentials?: AcademicCredential[];
+  publications?: string[];
+  research?: string[];
+  linkedin?: string;
+  email?: string;
+  /** Internal only. Never rendered. */
+  verificationStatus: "PARTIALLY_VERIFIED" | "PENDING" | "VERIFIED";
+  photo: string | null;
+  photoFilename: string | null;
+  imageAlt: string | null;
+  initials: string;
+  /** Internal-only evidence queue. Never display these as established facts. */
+  claimsRequiringEvidence: string[];
+}
+
+export type AcademicSubject = AcademicProfile["subject"];
+export type ReviewStatus = "UNASSIGNED" | "REVIEWER_ASSIGNED" | "REVIEW_PENDING" | "REVIEWED";
+
+/** Review belongs to a specific content version. Pool membership alone never creates this record. */
+export interface PageReview {
+  reviewerProfileId?: string;
+  /** Additional confirmed subject contributors for this content version. */
+  contributorProfileIds?: string[];
+  reviewStatus: ReviewStatus;
+  reviewedAt?: string;
+  contentVersion?: string;
+  reviewVersion?: string;
+  /** Public scope wording, e.g. "Reviewed for the 2026 syllabus". */
+  scopeLabel?: string;
+}
+
 /* ------------------------------------------------------------------ */
 /* Platform / exam / subject / syllabus                                */
 /* ------------------------------------------------------------------ */
@@ -531,6 +591,7 @@ export interface ChapterContent {
   contributorPolicy?: string[];
   reviewerId?: string;
   authorId?: string;
+  pageReview?: PageReview;
   updated?: string;
   faqs?: FaqItem[];
   workedExamples?: WorkedExample[];
@@ -664,6 +725,12 @@ export interface ResourceRow {
 /** One ordered content block on an information page. */
 export type InfoBlock =
   | {
+      /** Approved academic-team cards sourced from the faculty master. */
+      kind: "academic-team";
+      id: string;
+      jump?: boolean;
+    }
+  | {
       kind: "table";
       id: string;
       heading: string;
@@ -705,10 +772,178 @@ export type InfoBlock =
       id: string;
       heading: string;
       intro?: string;
-      tool: "neet-score-calculator" | "neet-study-planner";
+      tool: ToolMountId;
       note?: string;
       jump?: boolean;
+    }
+  | {
+      /** Tool directory grid with client-side filters (B54). */
+      kind: "tools-grid";
+      id: string;
+      heading: string;
+      intro?: string;
+      filters: string[];
+      items: ToolCard[];
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Featured commercial offer card (B50). Copy is commercially approved. */
+      kind: "offer-highlight";
+      id: string;
+      heading?: string;
+      highlight: OfferHighlight;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Package comparison cards (B51). */
+      kind: "offer-packages";
+      id: string;
+      heading: string;
+      intro?: string;
+      packages: OfferPackage[];
+      valueCallout?: string;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Part-test syllabus tabs (B52). Topics may be empty until approved. */
+      kind: "part-test-syllabus";
+      id: string;
+      heading: string;
+      intro?: string;
+      data: PartTestSyllabusData;
+      note?: string;
+      jump?: boolean;
+    }
+  | {
+      /** Offer / enrolment call to action (B53). */
+      kind: "offer-cta";
+      id: string;
+      heading?: string;
+      cta: OfferCtaData;
+      jump?: boolean;
     };
+
+/** Registered interactive tool ids (B49 mounts). */
+export type ToolMountId =
+  | "neet-score-calculator"
+  | "neet-study-planner"
+  | "jee-main-score-calculator"
+  | "jee-advanced-score-calculator"
+  | "nda-score-calculator"
+  | "negative-marking-calculator"
+  | "accuracy-calculator"
+  | "target-score-calculator"
+  | "correct-answers-needed-calculator"
+  | "study-time-calculator"
+  | "daily-question-target-calculator";
+
+/** One card in the tools directory grid (B54). */
+export interface ToolCard {
+  url: string;
+  name: string;
+  tagline: string;
+  /** Filter keys this tool belongs to, matching the block's filter list. */
+  filters: string[];
+  badges: string[];
+  cta?: string;
+  featured?: boolean;
+}
+
+/* ------------------------------------------------------------------ */
+/* Commercial offer contracts (test series / packages)                 */
+/* ------------------------------------------------------------------ */
+
+/** Featured offer, rendered by B50. Every field is commercially approved copy. */
+export interface OfferHighlight {
+  badge: string;
+  title: string;
+  support?: string;
+  includes: string[];
+  bonus?: string;
+  price: string;
+  priceLabel?: string;
+  /** In-page actions only until a real enrolment destination exists. */
+  primary: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+
+/** One purchasable package, rendered by B51. */
+export interface OfferPackage {
+  id: string;
+  name: string;
+  /** Short ribbon, e.g. "Recommended". */
+  badge?: string;
+  price: string;
+  includes?: string[];
+  /** Tiered choices inside one package, e.g. CBT session / year / archive. */
+  options?: { label: string; detail?: string; price: string }[];
+  bestFor?: string;
+  featured?: boolean;
+}
+
+/** One part test and its per-subject scope. Empty topics render as pending. */
+/**
+ * One chapter/topic group inside a part-test subject allocation.
+ * `topics` are inclusions; `excluding` statements are rendered as a visually
+ * distinct exclusion note so they can never read as positive scope.
+ */
+export interface PartTestTopicGroup {
+  /** Source heading exactly as supplied by the academic team. */
+  heading?: string;
+  topics: string[];
+  excluding?: string[];
+  /** Academic-team note that travels with this group. */
+  note?: string;
+}
+
+export interface PartTestSubjectAllocation {
+  subject: string;
+  /** Empty until the academic team supplies this subject's allocation. */
+  groups: PartTestTopicGroup[];
+}
+
+export interface PartTestRecord {
+  id: string;
+  name: string;
+  subjects: PartTestSubjectAllocation[];
+}
+
+export interface PartTestSyllabusTrack {
+  id: string;
+  label: string;
+  tests: PartTestRecord[];
+  /** Track-specific neutral status line while no allocation is supplied. */
+  statusMessage?: string;
+  /** Provenance label, e.g. "Academic-team supplied syllabus". */
+  sourceLabel?: string;
+  /** Review state shown with the allocation. */
+  reviewNote?: string;
+}
+
+export interface PartTestSyllabusData {
+  /** Neutral status line shown while a track has no approved allocation. */
+  statusMessage: string;
+  tracks: PartTestSyllabusTrack[];
+}
+
+/**
+ * Enrolment CTA contract. The payment/enrolment URL is optional so it can be
+ * supplied later without changing the page architecture.
+ */
+export interface OfferCtaData {
+  heading: string;
+  body?: string;
+  /** Always available in-page action. */
+  inPage: { label: string; href: string };
+  /** Real payment/enrolment destination, when one exists. */
+  enrolmentUrl?: string;
+  enrolmentLabel?: string;
+  /** Shown instead of an enrolment button while the destination is pending. */
+  pendingNote?: string;
+}
 
 
 /**
@@ -740,6 +975,7 @@ export interface InfoPageContent {
   sourceRefs?: string[];
   sourceNote?: string;
   contributorPolicy?: string[];
+  pageReview?: PageReview;
   lastVerified?: string;
   seo?: PageMeta;
 }

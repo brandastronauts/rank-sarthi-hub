@@ -178,6 +178,7 @@ export function chapterRecipe(
           updated: content.updated,
           note: content.sourceNote,
           contributorPolicy: content.contributorPolicy ?? [],
+          pageReview: content.pageReview,
         },
       },
     ],

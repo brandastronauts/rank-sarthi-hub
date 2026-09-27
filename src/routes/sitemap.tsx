@@ -38,6 +38,7 @@ function jeeBucket(record: UrlRecord): string {
 function buildGroups(records: UrlRecord[]): Group[] {
   const order = [
     "Main",
+    "Academic Team",
     "JEE — General & Syllabus",
     "JEE — Physics",
     "JEE — Chemistry",
@@ -49,7 +50,8 @@ function buildGroups(records: UrlRecord[]): Group[] {
 
   for (const record of records) {
     let heading: string;
-    if (record.platform === "jee") heading = jeeBucket(record);
+    if (record.url.startsWith("/about/faculty/")) heading = "Academic Team";
+    else if (record.platform === "jee") heading = jeeBucket(record);
     else if (record.platform === "neet") heading = "NEET";
     else if (record.platform === "nda") heading = "NDA";
     else heading = "Main";

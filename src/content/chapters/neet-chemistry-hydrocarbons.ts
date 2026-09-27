@@ -479,9 +479,9 @@ export const neetChemistryHydrocarbons: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Hydr | Rank Sarthi",
+    "title": "NEET Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Hydrocarbons | Rank Sarthi",
     "description": "Learn Hydrocarbons for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Hydr | Rank Sarthi",
+    "ogTitle": "NEET Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Hydrocarbons | Rank Sarthi",
     "ogDescription": "Learn Hydrocarbons for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },

@@ -22,7 +22,7 @@ export const neetSyllabusChemistry: InfoPageContent = {
       ]
     }
   ],
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "chips": [
     "Official NEET UG 2026 Chemistry units",
     "30 registered Chemistry routes reconciled",

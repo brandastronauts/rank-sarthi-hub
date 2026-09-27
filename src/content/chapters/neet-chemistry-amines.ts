@@ -366,9 +366,9 @@ export const neetChemistryAmines: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Amines and Diazonium Salts: Basicity, Identification and | Rank Sarthi",
+    "title": "NEET Amines and Diazonium Salts: Basicity, Identification and Reactions | Rank Sarthi",
     "description": "Learn Amines and Diazonium Salts for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
-    "ogTitle": "NEET Amines and Diazonium Salts: Basicity, Identification and | Rank Sarthi",
+    "ogTitle": "NEET Amines and Diazonium Salts: Basicity, Identification and Reactions | Rank Sarthi",
     "ogDescription": "Learn Amines and Diazonium Salts for NEET UG 2026 with verified scope, concept logic, reaction conditions, mistakes, reasoning checks and source-led boundaries.",
     "ogType": "article"
   },
