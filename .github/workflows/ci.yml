@@ -1,10 +1,11 @@
-name: CI
+name: CI/CD
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -32,3 +33,33 @@ jobs:
       - name: Lint (non-blocking)
         run: npm run lint
         continue-on-error: true
+
+  # Deploys ranksarthi.com (droplet ranksarthi-hub) once the build is green.
+  # The DEPLOY_SSH_KEY secret is restricted on the droplet to running
+  # /var/www/ranksarthi-hub/deploy.sh (git pull, npm ci, build, restart).
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to droplet
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "143.110.246.194 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZaCJflSd1jb9UNHktp9xsg1zDc3DK15Nv9HEAbDKNO" > ~/.ssh/known_hosts
+          ssh -i ~/.ssh/deploy_key root@143.110.246.194
+
+      - name: Smoke test
+        run: |
+          for p in / /contact /jee/syllabus; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://ranksarthi.com$p")
+            echo "$code $p"
+            [ "$code" = 200 ] || exit 1
+          done
