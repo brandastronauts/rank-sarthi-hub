@@ -17,7 +17,6 @@ export const homeRecipe: PageRecipe = {
     { block: "B07", id: "moment" },
     { block: "B08", id: "methodology" },
     { block: "B16", id: "people" },
-    { block: "B02", id: "review-circle" },
     { block: "B09", id: "depth" },
     { block: "B10", id: "numbers" },
     { block: "B17", id: "how" },
