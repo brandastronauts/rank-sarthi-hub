@@ -79,7 +79,7 @@ export function syllabusRecipe(
               : []),
             ...(content.lastVerified ? [{ label: "Last verified", value: content.lastVerified }] : []),
           ]),
-          chips: content.hero?.chips,
+          chips: publicMastheadChips(content.url, content.hero?.chips),
         },
       },
       /* Public reviewer attribution — rendered only for a completed review. */
