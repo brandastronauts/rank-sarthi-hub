@@ -1,3 +1,4 @@
+import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { InfoPageContent } from "@/content/types";
 import { changeLogForPage, recordsByIds } from "@/content/freshness/panel";
@@ -201,12 +202,12 @@ export function infoPageRecipe(
           intent: content.intent,
           answer: content.answer,
           contentStatus: content.contentStatus,
-          chips: content.chips,
-          meta: [
+          chips: publicMastheadChips(content.url, content.chips),
+          meta: publicMastheadMeta(content.url, [
             { label: "Exam", value: content.exam },
             ...(content.meta ?? []),
             ...(content.lastVerified ? [{ label: "Last verified", value: content.lastVerified }] : []),
-          ],
+          ]),
         },
       },
       /* Public reviewer attribution — rendered only for a completed review. */

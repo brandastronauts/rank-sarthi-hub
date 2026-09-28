@@ -1,3 +1,4 @@
+import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { SyllabusContent, SyllabusTable } from "@/content/types";
 import { getSource } from "@/content/sources";
@@ -70,14 +71,14 @@ export function syllabusRecipe(
           intent: content.hero?.intent,
           answer: content.intro,
           contentStatus: content.contentStatus,
-          meta: [
+          meta: publicMastheadMeta(content.url, [
             { label: "Exam", value: content.exam },
             { label: "Official source", value: content.officialSource.publisher },
             ...(content.cycleStatus?.cycleState
               ? [{ label: "Cycle", value: content.cycleStatus.cycleState }]
               : []),
             ...(content.lastVerified ? [{ label: "Last verified", value: content.lastVerified }] : []),
-          ],
+          ]),
           chips: content.hero?.chips,
         },
       },
