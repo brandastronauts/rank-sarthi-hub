@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { resolveTopicRoute, type TopicLinkScope } from "@/content/topic-links";
+import { resolveTopicHash, resolveTopicRoute, type TopicLinkScope } from "@/content/topic-links";
 
 /**
  * Renders a syllabus unit/topic label as an internal link when the registry
@@ -21,6 +21,7 @@ export function TopicLink({
   return (
     <Link
       to={record.url}
+      hash={scope ? resolveTopicHash(label, scope) : undefined}
       rel={record.indexation === "index" ? undefined : "nofollow"}
       className={
         className ??

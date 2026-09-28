@@ -20,6 +20,8 @@ export type TopicAlias = {
   labels: string[];
   /** Candidate route slugs, in ownership order. */
   slugs: string[];
+  /** Optional in-page anchor on the resolved destination. */
+  hash?: string;
 };
 
 export const topicAliases: TopicAlias[] = [
@@ -51,6 +53,7 @@ export const topicAliases: TopicAlias[] = [
   },
 
   /* ---------------- Physics ---------------- */
+  { subject: "physics", labels: ["Experimental Skills"], slugs: ["experimental-skills"] },
   { subject: "physics", labels: ["Physics and Measurement"], slugs: ["units-measurements", "units-and-measurements"] },
   { subject: "physics", labels: ["Properties of Solids and Liquids"], slugs: ["properties-of-matter"] },
   { subject: "physics", labels: ["Kinetic Theory of Gases"], slugs: ["kinetic-theory", "kinetic-theory-of-gases"] },
@@ -79,6 +82,11 @@ export const topicAliases: TopicAlias[] = [
     labels: ["Some Basic Concepts in Chemistry", "Some Basic Concepts of Chemistry"],
     slugs: ["some-basic-concepts", "mole-concept"],
   },
+  /* Final syllabus-gap routes (2026-09-28). */
+  { subject: "chemistry", labels: ["Purification and Characterisation of Organic Compounds"], slugs: ["purification-characterisation-organic-compounds"] },
+  { subject: "chemistry", labels: ["Principles Related to Practical Chemistry"], slugs: ["practical-chemistry"] },
+  { subject: "chemistry", labels: ["Principles of Qualitative Analysis"], slugs: ["practical-chemistry"], hash: "qualitative-analysis" },
+  { subject: "chemistry", labels: ["Practical Organic Chemistry"], slugs: ["practical-chemistry"], hash: "practical-organic-chemistry" },
   { subject: "chemistry", labels: ["Chemical Bonding and Molecular Structure"], slugs: ["chemical-bonding"] },
   { subject: "chemistry", labels: ["Chemical Thermodynamics"], slugs: ["thermodynamics"] },
   { subject: "chemistry", labels: ["Redox Reactions and Electrochemistry"], slugs: ["redox-reactions"] },
