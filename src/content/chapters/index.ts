@@ -46,6 +46,11 @@ import { jeeChemistryEquilibrium } from "./jee-chemistry-equilibrium";
 import { jeeChemistryGaseousState } from "./jee-chemistry-gaseous-state";
 import { jeeChemistryHaloalkanesHaloarenes } from "./jee-chemistry-haloalkanes-haloarenes";
 import { jeeChemistryHydrocarbons } from "./jee-chemistry-hydrocarbons";
+import { jeePhysicsExperimentalSkills } from "./jee-physics-experimental-skills";
+import { jeeChemistryPurificationCharacterisation } from "./jee-chemistry-purification-characterisation-organic-compounds";
+import { jeeChemistryPracticalChemistry } from "./jee-chemistry-practical-chemistry";
+import { jeeChemistryHydrogen } from "./jee-chemistry-hydrogen";
+import { jeeChemistryIsolationOfMetals } from "./jee-chemistry-isolation-of-metals";
 import { jeeChemistryIonicEquilibrium } from "./jee-chemistry-ionic-equilibrium";
 import { jeeChemistryMoleConcept } from "./jee-chemistry-mole-concept";
 import { jeeChemistryOrganicBasics } from "./jee-chemistry-organic-basics";
@@ -245,6 +250,11 @@ const chapters: ChapterContent[] = [
   jeeChemistryGaseousState,
   jeeChemistryHaloalkanesHaloarenes,
   jeeChemistryHydrocarbons,
+  jeePhysicsExperimentalSkills,
+  jeeChemistryPurificationCharacterisation,
+  jeeChemistryPracticalChemistry,
+  jeeChemistryHydrogen,
+  jeeChemistryIsolationOfMetals,
   jeeChemistryIonicEquilibrium,
   jeeChemistryMoleConcept,
   jeeChemistryOrganicBasics,

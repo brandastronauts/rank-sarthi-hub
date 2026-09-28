@@ -89,9 +89,11 @@ for (const candidate of candidates) {
  * Aliases only point at slugs that must still resolve to a BUILT route.
  */
 const aliasIndex = new Map<string, string[]>();
+const aliasHash = new Map<string, string>();
 for (const alias of topicAliases) {
   for (const label of alias.labels) {
     aliasIndex.set(`${alias.subject}|${normalise(label)}`, alias.slugs);
+    if (alias.hash) aliasHash.set(`${alias.subject}|${normalise(label)}`, alias.hash);
   }
 }
 
@@ -159,4 +161,10 @@ export function resolveTopicRoute(
   }
 
   return undefined;
+}
+
+/** In-page anchor for a label whose alias targets a section of its destination. */
+export function resolveTopicHash(label: string, scope: TopicLinkScope): string | undefined {
+  const wanted = scope.subject ? subjectKey(scope.subject) : "";
+  return aliasHash.get(`${wanted}|${normalise(label.trim())}`);
 }

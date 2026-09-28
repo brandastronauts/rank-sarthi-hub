@@ -20,6 +20,8 @@ export type TopicAlias = {
   labels: string[];
   /** Candidate route slugs, in ownership order. */
   slugs: string[];
+  /** Optional in-page anchor on the resolved destination. */
+  hash?: string;
 };
 
 export const topicAliases: TopicAlias[] = [
@@ -51,6 +53,24 @@ export const topicAliases: TopicAlias[] = [
   },
 
   /* ---------------- Physics ---------------- */
+  { subject: "physics", labels: ["Experimental Skills"], slugs: ["experimental-skills"] },
+  { subject: "physics", labels: ["Vernier callipers"], slugs: ["experimental-skills"], hash: "vernier-callipers" },
+  { subject: "physics", labels: ["Screw gauge"], slugs: ["experimental-skills"], hash: "screw-gauge" },
+  { subject: "physics", labels: ["Pendulum energy loss"], slugs: ["experimental-skills"], hash: "simple-pendulum" },
+  { subject: "physics", labels: ["Principle of moments"], slugs: ["experimental-skills"], hash: "metre-scale" },
+  { subject: "physics", labels: ["Young's modulus"], slugs: ["experimental-skills"], hash: "youngs-modulus-of-a-metallic-wire" },
+  { subject: "physics", labels: ["Viscosity"], slugs: ["experimental-skills"], hash: "coefficient-of-viscosity" },
+  { subject: "physics", labels: ["Resonance-tube sound speed"], slugs: ["experimental-skills"], hash: "speed-of-sound" },
+  { subject: "physics", labels: ["Specific heat by mixtures"], slugs: ["experimental-skills"], hash: "specific-heat-capacity" },
+  { subject: "physics", labels: ["Metre-bridge resistivity"], slugs: ["experimental-skills"], hash: "resistivity" },
+  { subject: "physics", labels: ["Ohm-law resistance"], slugs: ["experimental-skills"], hash: "resistance" },
+  { subject: "physics", labels: ["Galvanometer resistance and figure of merit"], slugs: ["experimental-skills"], hash: "galvanometer-resistance-and-figure-of-merit" },
+  { subject: "physics", labels: ["Focal-length measurements"], slugs: ["experimental-skills"], hash: "focal-length-of-convex-mirror-concave-mirror-and-convex-lens" },
+  { subject: "physics", labels: ["Prism deviation"], slugs: ["experimental-skills"], hash: "prism" },
+  { subject: "physics", labels: ["Glass-slab refractive index"], slugs: ["experimental-skills"], hash: "refractive-index-of-a-glass-slab" },
+  { subject: "physics", labels: ["p-n diode curve"], slugs: ["experimental-skills"], hash: "characteristic-curve-of-a-p-n-junction-diode" },
+  { subject: "physics", labels: ["Zener curve and breakdown voltage"], slugs: ["experimental-skills"], hash: "characteristic-curve-of-a-zener-diode-and-reverse-breakdown" },
+  { subject: "physics", labels: ["Identification of diode, LED, resistor and capacitor"], slugs: ["experimental-skills"], hash: "identification-of-diode-led-resistor-and-capacitor" },
   { subject: "physics", labels: ["Physics and Measurement"], slugs: ["units-measurements", "units-and-measurements"] },
   { subject: "physics", labels: ["Properties of Solids and Liquids"], slugs: ["properties-of-matter"] },
   { subject: "physics", labels: ["Kinetic Theory of Gases"], slugs: ["kinetic-theory", "kinetic-theory-of-gases"] },
@@ -79,6 +99,11 @@ export const topicAliases: TopicAlias[] = [
     labels: ["Some Basic Concepts in Chemistry", "Some Basic Concepts of Chemistry"],
     slugs: ["some-basic-concepts", "mole-concept"],
   },
+  /* Final syllabus-gap routes (2026-09-28). */
+  { subject: "chemistry", labels: ["Purification and Characterisation of Organic Compounds"], slugs: ["purification-characterisation-organic-compounds"] },
+  { subject: "chemistry", labels: ["Principles Related to Practical Chemistry"], slugs: ["practical-chemistry"] },
+  { subject: "chemistry", labels: ["Principles of Qualitative Analysis"], slugs: ["practical-chemistry"], hash: "qualitative-analysis" },
+  { subject: "chemistry", labels: ["Practical Organic Chemistry"], slugs: ["practical-chemistry"], hash: "practical-organic-chemistry" },
   { subject: "chemistry", labels: ["Chemical Bonding and Molecular Structure"], slugs: ["chemical-bonding"] },
   { subject: "chemistry", labels: ["Chemical Thermodynamics"], slugs: ["thermodynamics"] },
   { subject: "chemistry", labels: ["Redox Reactions and Electrochemistry"], slugs: ["redox-reactions"] },
