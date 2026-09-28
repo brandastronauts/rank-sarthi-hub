@@ -69,7 +69,7 @@ export function ParentBand() {
               <p className="flex items-center justify-between text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 Parent view
                 <span className="rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[0.625rem] font-bold tracking-[0.14em] text-gold">
-                  Sample view
+                  Example view
                 </span>
               </p>
               <ul className="mt-5 space-y-3.5">
@@ -84,7 +84,7 @@ export function ParentBand() {
                 ))}
               </ul>
               <p className="mt-5 border-t border-border pt-4 text-xs leading-relaxed text-muted-foreground">
-                Sample view for illustration. This is not a real student&rsquo;s data.
+                Example report layout — not a specific student&rsquo;s data.
               </p>
             </div>
           </div>

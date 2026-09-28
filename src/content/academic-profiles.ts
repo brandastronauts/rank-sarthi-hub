@@ -128,6 +128,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "adarsh-kumar",
+    education: "Chaudhary Charan Singh University",
     slug: "adarsh-kumar",
     name: "Adarsh Kumar",
     title: "Senior Chemistry Faculty",
@@ -365,6 +366,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "prabhat-kumar",
+    education: "Chaudhary Charan Singh University",
     slug: "prabhat-kumar",
     name: "Prabhat Kumar",
     title: "Senior Chemistry Faculty",
@@ -419,6 +421,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "hardik-agrawal",
+    education: "Indian Institute of Technology Delhi",
     slug: "hardik-agrawal",
     name: "Hardik Agrawal",
     title: "Physics Expert",

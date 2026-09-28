@@ -29,7 +29,7 @@ export function Situations({ id }: { id?: string }) {
           <p className="eyebrow text-accent">Example scenarios</p>
           <h2 className="mt-5 text-display-lg text-primary">Situations Rank Sarthi is designed for.</h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            These are illustrative preparation situations, not customer testimonials.
+            These are common preparation situations, not customer testimonials.
           </p>
         </Reveal>
 

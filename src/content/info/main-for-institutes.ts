@@ -148,7 +148,7 @@ export const mainForInstitutes: InfoPageContent = {
                 ],
                 [
                   {
-                    "text": "Once a verified contact or demo destination exists, the enquiry option will appear here."
+                    "text": "Explore the subject syllabus pages and the academic team to see how content is structured and checked."
                   }
                 ]
               ],

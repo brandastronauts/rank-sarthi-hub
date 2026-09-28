@@ -55,7 +55,7 @@ export function ProductShowcase({ id, platform }: { id?: string; platform?: Plat
                 Diagnostic report
               </span>
               <span className="ml-auto rounded-full border border-white/15 px-2.5 py-0.5 text-[10px] font-semibold text-primary-foreground/50">
-                Illustrative view
+                Example view
               </span>
             </div>
 
@@ -132,7 +132,7 @@ export function ProductShowcase({ id, platform }: { id?: string; platform?: Plat
 
         <Reveal delay={200}>
           <p className="mt-6 text-xs text-muted-foreground">
-            Interface shown is an illustrative diagnostic view, not a specific student&rsquo;s result.
+            Interface shown is an example diagnostic view, not a specific student&rsquo;s result.
           </p>
         </Reveal>
       </div>

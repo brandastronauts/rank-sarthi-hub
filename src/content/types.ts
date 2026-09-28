@@ -120,6 +120,8 @@ export interface AcademicProfile {
   reviewAreas: string[];
   /** Registry URLs of relevant built academic pages. */
   relatedPages?: string[];
+  /** Confirmed education institution only. Individual background — never an affiliation. */
+  education?: string;
   /** Rendered only when verified values exist; otherwise the section is hidden. */
   credentials?: AcademicCredential[];
   publications?: string[];
