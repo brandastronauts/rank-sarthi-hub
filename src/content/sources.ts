@@ -14,14 +14,6 @@ export const sources: Record<string, SourceRef> = {
     sourceType: "official",
     lastVerified: "27 August 2026",
   },
-  "nta-jee-main-2026-syllabus-pdf": {
-    id: "nta-jee-main-2026-syllabus-pdf",
-    label: "JEE (Main) 2026 syllabus (PDF)",
-    publisher: "National Testing Agency (NTA)",
-    url: "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf",
-    sourceType: "official-pdf",
-    lastVerified: "28 September 2026",
-  },
   "jee-advanced-syllabus": {
     id: "jee-advanced-syllabus",
     label: "JEE (Advanced) 2026 Syllabus (PDF)",
