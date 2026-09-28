@@ -75,10 +75,10 @@ export function DataTable({
             <dl className="space-y-2">
               {row.map((cell, j) => (
                 <div key={j} className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-3">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  <dt className="min-w-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground [overflow-wrap:anywhere]">
                     {columns[j]}
                   </dt>
-                  <dd className="text-sm text-ink/85">{renderCell(cell, j)}</dd>
+                  <dd className="min-w-0 text-sm text-ink/85 [overflow-wrap:anywhere]">{renderCell(cell, j)}</dd>
                 </div>
               ))}
             </dl>
