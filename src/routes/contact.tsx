@@ -155,7 +155,7 @@ function ContactPage() {
                 <Link to="/" className="inline-flex min-h-11 items-center rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground">
                   Back to Home
                 </Link>
-                <Link to="/resources" className="inline-flex min-h-11 items-center rounded-md border border-border px-5 text-sm font-semibold text-foreground">
+                <Link to="/$platform" params={{ platform: "resources" }} className="inline-flex min-h-11 items-center rounded-md border border-border px-5 text-sm font-semibold text-foreground">
                   Explore Resources
                 </Link>
               </div>
