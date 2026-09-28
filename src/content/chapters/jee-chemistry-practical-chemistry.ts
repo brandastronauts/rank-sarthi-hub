@@ -1390,7 +1390,7 @@ export const jeeChemistryPracticalChemistry: ChapterContent = {
     "jee-advanced-syllabus",
     "ncert-textbooks-index"
   ],
-  "sourceNote": "Official scope: JEE Main: Unit 20 Principles Related to Practical Chemistry; JEE Advanced: Principles of Qualitative Analysis; Practical Organic Chemistry; Concept support: Acid-base/redox/equilibrium/organic/thermochemistry/kinetics concepts. NCERT is concept support only; the official 2026 syllabus controls exam ownership. All sources checked 28 September 2026.",
+  "sourceNote": "Official scope: JEE Main: Unit 20 Principles Related to Practical Chemistry; JEE Advanced: Principles of Qualitative Analysis; Practical Organic Chemistry; Concept support: Acid-base, redox, equilibrium, organic, thermochemistry and kinetics concepts. NCERT is concept support only; the official 2026 syllabus controls exam ownership. All sources checked 28 September 2026.",
   "pageReview": {
     "reviewerProfileId": "prabhat-kumar",
     "contributorProfileIds": [
