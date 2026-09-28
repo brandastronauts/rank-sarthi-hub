@@ -71,7 +71,7 @@ export function syllabusRecipe(
           intent: content.hero?.intent,
           answer: content.intro,
           contentStatus: content.contentStatus,
-          meta: publicMastheadMeta(content.url, [
+          meta: publicMastheadMeta(`/${content.platform}/syllabus`, [
             { label: "Exam", value: content.exam },
             { label: "Official source", value: content.officialSource.publisher },
             ...(content.cycleStatus?.cycleState
@@ -79,7 +79,7 @@ export function syllabusRecipe(
               : []),
             ...(content.lastVerified ? [{ label: "Last verified", value: content.lastVerified }] : []),
           ]),
-          chips: publicMastheadChips(content.url, content.hero?.chips),
+          chips: publicMastheadChips(`/${content.platform}/syllabus`, content.hero?.chips),
         },
       },
       /* Public reviewer attribution — rendered only for a completed review. */
