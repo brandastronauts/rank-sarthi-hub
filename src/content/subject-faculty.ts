@@ -13,6 +13,9 @@ import type { AcademicProfile } from "./types";
 const SUBJECTS = new Set(["physics", "chemistry", "mathematics", "biology"]);
 const PLATFORMS = new Set(["jee", "neet"]);
 
+/** Extra confirmed subject-faculty pool members beyond the syllabus reviewers. */
+const EXTRA_POOL: Record<string, string[]> = { "jee/chemistry": ["prabhat-kumar"] };
+
 export type SubjectFaculty = { primary: AcademicProfile; contributors: AcademicProfile[] };
 
 export function subjectFacultyFor(url: string): SubjectFaculty | undefined {
@@ -22,7 +25,7 @@ export function subjectFacultyFor(url: string): SubjectFaculty | undefined {
   const assignment = reviewFor(`/${platform}/syllabus/${subject}`);
   const primary = assignment?.reviewerProfileId ? getAcademicProfile(assignment.reviewerProfileId) : undefined;
   if (!primary) return undefined;
-  const contributors = (assignment?.contributorProfileIds ?? [])
+  const contributors = [...(assignment?.contributorProfileIds ?? []), ...(EXTRA_POOL[`${platform}/${subject}`] ?? [])]
     .map(getAcademicProfile)
     .filter((p): p is AcademicProfile => !!p && p.slug !== primary.slug);
   return { primary, contributors };
