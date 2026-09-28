@@ -99,7 +99,7 @@ export function ExamTracks() {
 
                   <div className="mt-6 rounded-xl border border-border bg-secondary/40 p-4">
                     <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-muted-foreground">
-                      Illustrative mark-loss split
+                      Example mark-loss split
                     </p>
                     <div className="mt-3 space-y-2.5">
                       {c.split.map((s) => (

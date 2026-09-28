@@ -1,66 +1,51 @@
-import { Quote } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { educatorReview, educatorReviewNote } from "@/content/trust";
+import { academicReviews } from "@/content/academic-reviews";
+import { getAcademicProfile } from "@/content/academic-profiles";
+import { getUrl } from "@/content/registry";
 
 /**
- * Editorial expert-commentary moment — deliberately NOT styled like a
- * testimonial card. Academic commentary, not user experience.
+ * Confirmed academic reviews only — generated from the same assignment
+ * data that drives the "Academically reviewed by" byline. No quotes.
  */
 export function EducatorReview({ id }: { id?: string }) {
-  return (
-    <section id={id} aria-label="An educator's view" className="section-pad bg-ivory">
-      <div className="container-page">
-        {educatorReview ? (
-          <figure className="grid items-center gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-16">
-            <Reveal className="flex flex-col items-start">
-              <p className="eyebrow text-accent">Reviewed through an educator&rsquo;s lens</p>
-              <div className="relative mt-8 w-fit">
-                {educatorReview.photo ? (
-                  <img
-                    src={educatorReview.photo}
-                    alt={educatorReview.name}
-                    loading="lazy"
-                    width={640}
-                    height={640}
-                    className="size-40 rounded-2xl object-cover shadow-elevated sm:size-48"
-                  />
-                ) : null}
-                <span
-                  aria-hidden="true"
-                  className="absolute -right-4 -top-4 flex size-12 items-center justify-center rounded-full bg-gold text-navy-deep shadow-card"
-                >
-                  <Quote className="size-5" />
-                </span>
-              </div>
-              <figcaption className="mt-6">
-                <p className="font-display text-lg font-bold text-primary">{educatorReview.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{educatorReview.role}</p>
-                <p className="mt-0.5 text-sm text-muted-foreground">{educatorReview.organisation}</p>
-              </figcaption>
-            </Reveal>
+  const rows = Object.entries(academicReviews)
+    .map(([url, review]) => ({
+      url,
+      name: getUrl(url)?.name ?? url,
+      reviewer: review.reviewerProfileId ? getAcademicProfile(review.reviewerProfileId) : undefined,
+      built: getUrl(url)?.buildStatus === "built",
+    }))
+    .filter((r) => r.reviewer && r.built);
 
-            <Reveal delay={120}>
-              <div className="border-l-2 border-gold/60 pl-6 sm:pl-10">
-                <blockquote className="text-display-editorial text-primary">
-                  &ldquo;{educatorReview.quote}&rdquo;
-                </blockquote>
-                <p className="mt-8 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  {educatorReviewNote}
-                </p>
-              </div>
-            </Reveal>
-          </figure>
-        ) : (
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow text-accent">Reviewed through an educator&rsquo;s lens</p>
-            <p className="placeholder-slot mx-auto mt-8 block max-w-2xl px-6 py-10 text-[0.8125rem] leading-relaxed">
-              [Real educator comment required]
-            </p>
-            <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              {educatorReviewNote}
-            </p>
-          </Reveal>
-        )}
+  return (
+    <section id={id} aria-label="Academically reviewed syllabus pages" className="section-pad bg-ivory">
+      <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <Reveal>
+          <p className="eyebrow text-accent">Academic review</p>
+          <h2 className="mt-5 text-display-lg text-primary">Syllabus pages academically reviewed by subject faculty.</h2>
+          <p className="mt-6 text-lede text-muted-foreground">
+            Each page below names the faculty member who reviewed it for the 2026 syllabus. Other pages carry a
+            reviewer name only once that review is complete.
+          </p>
+        </Reveal>
+        <Reveal delay={120}>
+          <ul className="divide-y divide-border rounded-xl border border-border bg-card">
+            {rows.map((r) => (
+              <li key={r.url} className="flex flex-wrap items-baseline justify-between gap-2 px-5 py-4">
+                <a href={r.url} className="font-semibold text-primary underline-offset-4 hover:underline">
+                  {r.name}
+                </a>
+                <span className="text-sm text-muted-foreground">
+                  Academically reviewed by{" "}
+                  <Link to="/about/faculty/$slug" params={{ slug: r.reviewer!.slug }} className="text-accent underline-offset-4 hover:underline">
+                    {r.reviewer!.name}
+                  </Link>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

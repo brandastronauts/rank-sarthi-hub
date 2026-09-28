@@ -71,7 +71,8 @@ function SyllabusPage() {
       aside={<JumpNav items={jump} />}
     >
       <div className="space-y-12 md:space-y-16">
-        <RecipeRenderer recipe={recipe} />
+        {/* Anchor list: F3 aside on desktop, inline B23 below lg. */}
+        <RecipeRenderer recipe={syllabusRecipe(content, jump)} />
       </div>
     </PageFrame>
   );

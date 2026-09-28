@@ -6,13 +6,6 @@
  * renders a clearly marked development placeholder instead of a claim.
  */
 
-import personAcademicLead from "@/assets/person-academic-lead.jpg";
-import personMathsFaculty from "@/assets/person-maths-faculty.jpg";
-import personNdaSpecialist from "@/assets/person-nda-specialist.jpg";
-import personProductData from "@/assets/person-product-data.jpg";
-import voiceAspirant from "@/assets/voice-aspirant.jpg";
-import voiceParent from "@/assets/voice-parent.jpg";
-import voiceEducator from "@/assets/voice-educator.jpg";
 
 export type Institution = {
   /** Exact registered name of the school / academy / coaching institute */
@@ -49,14 +42,7 @@ export type ReviewCircle = {
   detail: string;
 };
 
-export const reviewCircles: ReviewCircle[] = [
-  { monogram: "KT", label: "Coaching faculty, Kota", detail: "JEE Physics & Maths teachers" },
-  { monogram: "NG", label: "NEET institute, Nagpur", detail: "Biology and Chemistry leads" },
-  { monogram: "SS", label: "Ex-Armed Forces mentors", detail: "NDA written & SSB guidance" },
-  { monogram: "IIT", label: "IIT-alumni maths panel", detail: "Question quality review" },
-  { monogram: "SB", label: "School boards, Tier-2 cities", detail: "Class XI–XII coordinators" },
-  { monogram: "PR", label: "Parents in review sessions", detail: "Report clarity feedback" },
-];
+export const reviewCircles: ReviewCircle[] = [];
 
 export type ExpertReview = {
   quote: string;
@@ -68,14 +54,7 @@ export type ExpertReview = {
 };
 
 /** Featured academic commentary shown after the product demonstration. */
-export const educatorReview: ExpertReview | null = {
-  quote:
-    "Most platforms hand a student a score and call it feedback. What matters is the sentence after the score — was this a concept the student never built, a method they applied wrongly, or a paper they attempted in the wrong order? Rank Sarthi is the first system I have reviewed that separates those three cleanly, attempt after attempt.",
-  name: "Dr. Ananya Iyer",
-  role: "Academic Lead, Rank Sarthi",
-  organisation: "PhD Physics · 12 years teaching JEE",
-  photo: personAcademicLead,
-};
+export const educatorReview: ExpertReview | null = null;
 
 export const educatorReviewNote =
   "Independent reviews with external faculty are in progress. Any comment published here will carry a real name, position and institution — or it will not appear at all.";
@@ -91,40 +70,11 @@ export type Voice = {
 };
 
 /**
- * ILLUSTRATIVE CONTENT — shown in the UI as representative review-stage
- * feedback. Replace with named, permissioned quotes before publishing.
+ * Named, permissioned quotes only. Empty until real ones are supplied.
  */
-export const isDemoContent = true;
+export const isDemoContent = false;
 
-export const voices: Voice[] = [
-  {
-    kind: "aspirant",
-    quote:
-      "I used to finish a mock and only see the score. The report showed me that most of my lost marks came from three chapters and one habit — rushing the first ten questions.",
-    name: "Aarav Mehta",
-    role: "JEE Aspirant, Class XII",
-    organisation: "Review participant, Kota",
-    photo: voiceAspirant,
-  },
-  {
-    kind: "parent",
-    quote:
-      "I could finally see whether the hours were working, without asking her about every test.",
-    name: "Sunita Rao",
-    role: "Parent of a NEET aspirant",
-    organisation: "Review participant, Nagpur",
-    photo: voiceParent,
-  },
-  {
-    kind: "educator",
-    quote:
-      "The error-type tagging is what a good teacher does by hand — done consistently across every attempt.",
-    name: "Rakesh Verma",
-    role: "Physics Faculty",
-    organisation: "Review participant",
-    photo: voiceEducator,
-  },
-];
+export const voices: Voice[] = [];
 
 export type ProductNumber = {
   label: string;
@@ -186,34 +136,5 @@ export type Person = {
   photo?: string;
 };
 
-/** ILLUSTRATIVE PROFILES — replace with confirmed team members before launch. */
-export const people: Person[] = [
-  {
-    name: "Dr. Ananya Iyer",
-    photo: personAcademicLead,
-    role: "Academic Lead",
-    qualification: "PhD, Physics",
-    experience: "12 years teaching JEE Physics",
-  },
-  {
-    name: "Mohit Bansal",
-    photo: personMathsFaculty,
-    role: "Subject Faculty — Mathematics",
-    qualification: "B.Tech",
-    experience: "9 years in competitive Maths",
-  },
-  {
-    name: "Cdr. Vikram Singh (Retd.)",
-    photo: personNdaSpecialist,
-    role: "NDA Specialist",
-    qualification: "Ex-Armed Forces",
-    experience: "8 years mentoring NDA aspirants",
-  },
-  {
-    name: "Priya Nair",
-    photo: personProductData,
-    role: "Product & Data",
-    qualification: "M.Sc, Data Science",
-    experience: "7 years in learning analytics",
-  },
-];
+/** Superseded by academic-profiles.ts; kept empty. */
+export const people: Person[] = [];

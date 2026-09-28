@@ -1,11 +1,4 @@
 import type { AcademicProfile, AcademicSubject } from "./types";
-import sachinPhoto from "@/assets/sachin-garg-senior-mathematics-faculty-rank-sarthi.webp.asset.json";
-import gandharvaPhoto from "@/assets/gandharva-saxena-senior-physics-faculty-rank-sarthi.webp.asset.json";
-import adarshPhoto from "@/assets/adarsh-kumar-senior-chemistry-faculty-rank-sarthi.webp.asset.json";
-import ashwinPhoto from "@/assets/ashwin-m-senior-physics-faculty-rank-sarthi.webp.asset.json";
-import ashutoshPhoto from "@/assets/ashutosh-pande-senior-mathematics-faculty-rank-sarthi.webp.asset.json";
-import prabhatPhoto from "@/assets/prabhat-kumar-senior-chemistry-faculty-rank-sarthi.webp.asset.json";
-import hardikPhoto from "@/assets/hardik-agrawal-physics-expert-rank-sarthi.webp.asset.json";
 
 /**
  * Approved faculty records.
@@ -60,7 +53,7 @@ export const academicProfiles: AcademicProfile[] = [
     reviewAreas: ["Mathematics", "JEE Main Mathematics", "JEE Advanced Mathematics", "Curriculum Structuring", "Problem Solving"],
     relatedPages: ["/jee/syllabus/mathematics", "/jee/mathematics", "/jee/syllabus"],
     verificationStatus: partial,
-    photo: sachinPhoto.url,
+    photo: "/faculty/sachin-garg-senior-mathematics-faculty-rank-sarthi.webp",
     photoFilename: "sachin-garg-senior-mathematics-faculty-rank-sarthi.webp",
     imageAlt: "Sachin Garg, Senior Mathematics Faculty at Rank Sarthi",
     initials: "SG",
@@ -113,7 +106,7 @@ export const academicProfiles: AcademicProfile[] = [
     reviewAreas: ["Physics", "JEE Physics", "NEET Physics", "Conceptual Physics", "Scientific Reasoning"],
     relatedPages: ["/jee/syllabus/physics", "/jee/physics", "/neet/syllabus/physics", "/neet/physics"],
     verificationStatus: partial,
-    photo: gandharvaPhoto.url,
+    photo: "/faculty/gandharva-saxena-senior-physics-faculty-rank-sarthi.webp",
     photoFilename: "gandharva-saxena-senior-physics-faculty-rank-sarthi.webp",
     imageAlt: "Gandharva Saxena, Senior Physics Faculty at Rank Sarthi",
     initials: "GS",
@@ -128,6 +121,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "adarsh-kumar",
+    education: "Chaudhary Charan Singh University",
     slug: "adarsh-kumar",
     name: "Adarsh Kumar",
     title: "Senior Chemistry Faculty",
@@ -178,7 +172,7 @@ export const academicProfiles: AcademicProfile[] = [
     ],
     relatedPages: ["/jee/syllabus/chemistry", "/jee/chemistry", "/neet/syllabus/chemistry", "/neet/chemistry"],
     verificationStatus: partial,
-    photo: adarshPhoto.url,
+    photo: "/faculty/adarsh-kumar-senior-chemistry-faculty-rank-sarthi.webp",
     photoFilename: "adarsh-kumar-senior-chemistry-faculty-rank-sarthi.webp",
     imageAlt: "Adarsh Kumar, Senior Chemistry Faculty at Rank Sarthi",
     initials: "AK",
@@ -288,7 +282,7 @@ export const academicProfiles: AcademicProfile[] = [
     reviewAreas: ["Physics", "JEE Physics", "NEET Physics", "Conceptual Learning", "Competitive Exam Physics"],
     relatedPages: ["/jee/syllabus/physics", "/jee/physics", "/neet/syllabus/physics", "/neet/physics"],
     verificationStatus: partial,
-    photo: ashwinPhoto.url,
+    photo: "/faculty/ashwin-m-senior-physics-faculty-rank-sarthi.webp",
     photoFilename: "ashwin-m-senior-physics-faculty-rank-sarthi.webp",
     imageAlt: "Ashwin M., Senior Physics Faculty at Rank Sarthi",
     initials: "AM",
@@ -350,7 +344,7 @@ export const academicProfiles: AcademicProfile[] = [
     ],
     relatedPages: ["/jee/jee-advanced/syllabus", "/jee/syllabus/mathematics", "/jee/mathematics"],
     verificationStatus: partial,
-    photo: ashutoshPhoto.url,
+    photo: "/faculty/ashutosh-pande-senior-mathematics-faculty-rank-sarthi.webp",
     photoFilename: "ashutosh-pande-senior-mathematics-faculty-rank-sarthi.webp",
     imageAlt: "Ashutosh Pande, Senior Mathematics Faculty at Rank Sarthi",
     initials: "AP",
@@ -365,6 +359,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "prabhat-kumar",
+    education: "Chaudhary Charan Singh University",
     slug: "prabhat-kumar",
     name: "Prabhat Kumar",
     title: "Senior Chemistry Faculty",
@@ -403,7 +398,7 @@ export const academicProfiles: AcademicProfile[] = [
     reviewAreas: ["Chemistry", "JEE Chemistry", "NEET Chemistry", "Curriculum Development", "Academic Writing"],
     relatedPages: ["/neet/syllabus/chemistry", "/neet/chemistry", "/jee/chemistry"],
     verificationStatus: partial,
-    photo: prabhatPhoto.url,
+    photo: "/faculty/prabhat-kumar-senior-chemistry-faculty-rank-sarthi.webp",
     photoFilename: "prabhat-kumar-senior-chemistry-faculty-rank-sarthi.webp",
     imageAlt: "Prabhat Kumar, Senior Chemistry Faculty at Rank Sarthi",
     initials: "PK",
@@ -419,6 +414,7 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "hardik-agrawal",
+    education: "Indian Institute of Technology Delhi",
     slug: "hardik-agrawal",
     name: "Hardik Agrawal",
     title: "Physics Expert",
@@ -456,7 +452,7 @@ export const academicProfiles: AcademicProfile[] = [
     reviewAreas: ["Physics", "JEE Physics", "Competitive Problem Solving", "Digital Learning Systems"],
     relatedPages: ["/jee/syllabus/physics", "/jee/physics", "/jee/jee-advanced/syllabus"],
     verificationStatus: partial,
-    photo: hardikPhoto.url,
+    photo: "/faculty/hardik-agrawal-physics-expert-rank-sarthi.webp",
     photoFilename: "hardik-agrawal-physics-expert-rank-sarthi.webp",
     imageAlt: "Hardik Agrawal, Physics Expert at Rank Sarthi",
     initials: "HA",

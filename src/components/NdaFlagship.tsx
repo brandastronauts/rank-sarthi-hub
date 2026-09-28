@@ -57,16 +57,7 @@ export function NdaFlagship() {
                 {ndaVoice.name} · {ndaVoice.role}
               </figcaption>
             </figure>
-          ) : (
-            <div className="mt-12 max-w-xl border-l-2 border-white/20 pl-6">
-              <p className="inline-block rounded-lg border border-dashed border-white/30 px-4 py-3 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-primary-foreground/50">
-                [Real NDA aspirant comment required]
-              </p>
-              <p className="mt-3 text-sm text-primary-foreground/55">
-                No selections, no defence-academy claims — only a real aspirant&rsquo;s words, once we have them.
-              </p>
-            </div>
-          )}
+          ) : null}
         </Reveal>
       </div>
     </section>

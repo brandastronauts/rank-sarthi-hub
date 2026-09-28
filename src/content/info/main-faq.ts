@@ -12,7 +12,7 @@ export const mainFaq: InfoPageContent = {
   "contentStatus": "draft",
   "title": "Rank Sarthi FAQ",
   "eyebrow": "FAQ",
-  "intent": "Short answers about exam coverage, sources, method and what is not live yet.",
+  "intent": "Find quick answers about Rank Sarthi, JEE, NEET, NDA, academic resources, test preparation, tools and how the platform works.",
   "answer": [
     {
       "type": "paragraph",

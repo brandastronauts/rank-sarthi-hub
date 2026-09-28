@@ -1,5 +1,7 @@
+import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { PageRecipe } from "@/lib/recipe";
 import type { ChapterContent, ChapterSlot } from "@/content/types";
+import { subjectFacultyFor } from "@/content/subject-faculty";
 
 /**
  * T06 — Chapter recipe.
@@ -56,13 +58,19 @@ export function chapterRecipe(
           intent: content.canonicalIntent,
           answer: content.directAnswer,
           contentStatus: content.contentStatus,
-          meta: [
+          meta: publicMastheadMeta(content.url, [
             { label: "Subject", value: content.subject },
             { label: "Syllabus unit", value: content.syllabusMapping.unit },
             ...(content.updated ? [{ label: "Updated", value: content.updated }] : []),
-          ],
-          chips: content.heroChips ?? [],
+          ]),
+          chips: publicMastheadChips(content.url, content.heroChips ?? []),
         },
+      },
+      {
+        block: "B57",
+        id: "subject-faculty",
+        props: { url: content.url },
+        when: !!subjectFacultyFor(content.url),
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
       {

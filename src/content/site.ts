@@ -12,7 +12,7 @@ import logoAsset from "@/assets/rank-sarthi-logo.png.asset.json";
  */
 export const site = {
   name: "Rank Sarthi",
-  legalName: "Rank Sarthi",
+  legalName: "Rank Sarthi Next Gen Private Limited",
   origin: SITE_ORIGIN,
   tagline: "Preparation intelligence for JEE, NEET and NDA aspirants.",
   description:

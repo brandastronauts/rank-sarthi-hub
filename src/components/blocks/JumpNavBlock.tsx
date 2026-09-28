@@ -14,7 +14,7 @@ export function JumpNavBlock({
 }) {
   if (!items.length) return null;
   return (
-    <div id={id} className="scroll-mt-28">
+    <div id={id} className="scroll-mt-28 lg:hidden">
       <JumpNav items={items} sticky={false} />
     </div>
   );

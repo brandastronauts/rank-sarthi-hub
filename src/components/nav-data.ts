@@ -260,9 +260,9 @@ export const footerGroups: MenuColumn[] = [
   {
     title: "Legal",
     links: [
-      { label: "Privacy policy", href: "/privacy-policy" },
-      { label: "Terms of service", href: "/terms" },
-      { label: "Refund policy", href: "/refund-policy" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms" },
+      { label: "Refund Policy", href: "/refund-policy" },
     ],
   },
 ];

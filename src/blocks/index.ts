@@ -2,7 +2,6 @@ import { registerBlocks } from "@/lib/recipe";
 
 /* Marketing / brand blocks (B01–B24) */
 import { Hero } from "@/components/Hero";
-import { InstitutionStrip } from "@/components/InstitutionStrip";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { EducatorReview } from "@/components/EducatorReview";
 import { DiagnosticIdea } from "@/components/DiagnosticIdea";
@@ -53,6 +52,7 @@ import { ToolsGrid } from "@/components/blocks/ToolsGrid";
 import { OfferCta } from "@/components/blocks/OfferCta";
 import { AcademicTeam } from "@/components/academic/AcademicTeam";
 import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
+import { FacultyAttribution } from "@/components/academic/FacultyAttribution";
 
 
 /* Platform template blocks (B38–B43) */
@@ -98,6 +98,7 @@ export function ensureBlocksRegistered() {
     B54: ToolsGrid,
     B55: AcademicTeam,
     B56: AcademicReviewByline,
+    B57: FacultyAttribution,
 
     B26: SyllabusExplorer,
     B27: TrendTable,
@@ -111,7 +112,6 @@ export function ensureBlocksRegistered() {
     B35: ConceptSections,
     B36: RelatedRail,
     B37: SourcesBox,
-    B02: InstitutionStrip,
     B03: ProductShowcase,
     B04: EducatorReview,
     B05: DiagnosticIdea,

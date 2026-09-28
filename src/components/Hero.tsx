@@ -86,7 +86,7 @@ export function Hero() {
                 <span className="font-bold text-gold">Review concept first</span>
               </div>
               <p className="mt-5 border-t border-white/10 pt-4 text-[0.6875rem] text-primary-foreground/45">
-                Illustrative product view — not a student result.
+                Example product view — not a student result.
               </p>
             </div>
           </Reveal>

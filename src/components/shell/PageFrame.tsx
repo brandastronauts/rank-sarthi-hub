@@ -67,7 +67,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
             <div className="container-page py-10 md:py-14">
               {frame === "F3" && aside ? (
                 <div className="grid gap-10 lg:grid-cols-[260px_minmax(0,1fr)]">
-                  <aside className="lg:pt-1">{aside}</aside>
+                  <aside className="hidden lg:block lg:pt-1">{aside}</aside>
                   <div className="min-w-0">{children}</div>
                 </div>
               ) : (
