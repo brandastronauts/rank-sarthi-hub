@@ -80,6 +80,7 @@ export const jeePreviousYearPapers: InfoPageContent = {
     { label: "Paper Analysis", url: "/jee/analysis", relation: "related", description: "See what evidence exists before any analysis claim" },
     { label: "Exam Dates", url: "/jee/exam-dates", relation: "related", description: "Check the official 2026 session timeline" },
     { label: "Cutoff", url: "/jee/cutoff", relation: "related", description: "See the official Advanced-eligibility NTA Score threshold" },
+    { label: "JEE Blog", url: "/jee/blog", relation: "related", description: "JEE preparation articles and resources" },
   ],
   faqs: [
     { question: "Why can I not download the January 2026 papers here?", answer: [{ type: "paragraph", children: [{ text: "Because no exact public authority-hosted question-paper PDF was verified for those ten events. The date and shift identity is confirmed from the official final answer key, so the events are listed honestly instead of being filled with a coaching reconstruction." }] }] },

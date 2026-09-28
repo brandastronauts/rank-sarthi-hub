@@ -114,7 +114,26 @@ export const ndaSyllabusEnglish: InfoPageContent = {
       ]
     }
   ],
-  "relatedLinks": [],
+  "relatedLinks": [
+    {
+      "label": "NDA English Grammar",
+      "url": "/nda/gat/english/grammar",
+      "relation": "related",
+      "description": "Practise grammar within the English syllabus"
+    },
+    {
+      "label": "NDA English Vocabulary",
+      "url": "/nda/gat/english/vocabulary",
+      "relation": "related",
+      "description": "Build vocabulary for the English section"
+    },
+    {
+      "label": "NDA English Comprehension",
+      "url": "/nda/gat/english/comprehension",
+      "relation": "related",
+      "description": "Practise reading comprehension for the English section"
+    }
+  ],
   "faqs": [
     {
       "question": "What does UPSC test in NDA English?",
