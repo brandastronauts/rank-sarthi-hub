@@ -189,6 +189,12 @@ export const ndaSyllabusGeneralKnowledge: InfoPageContent = {
           ]
         }
       ]
+    },
+    {
+      "label": "NDA GAT Polity",
+      "url": "/nda/gat/polity",
+      "relation": "related",
+      "description": "Study Indian Polity within the GAT General Knowledge scope"
     }
   ],
   "sourceRefs": [

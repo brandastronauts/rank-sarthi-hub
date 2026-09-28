@@ -187,6 +187,18 @@ export const ndaNdaExam: InfoPageContent = {
       "label": "Selection Process",
       "url": "/nda/selection-process",
       "relation": "related"
+    },
+    {
+      "label": "NDA vs CDS vs AFCAT",
+      "url": "/nda/nda-vs-cds-vs-afcat",
+      "relation": "related",
+      "description": "Compare NDA with other defence entry routes"
+    },
+    {
+      "label": "NDA FAQ",
+      "url": "/nda/faq",
+      "relation": "related",
+      "description": "Brief answers to common NDA questions"
     }
   ],
   "faqs": [
