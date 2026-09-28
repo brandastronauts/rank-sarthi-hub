@@ -25,7 +25,7 @@ export const mainResources: InfoPageContent = {
   ],
   "chips": [
     "Registry-verified destinations",
-    "No placeholder downloads"
+    "No sign-up to download"
   ],
   "blocks": [
     {
@@ -175,7 +175,7 @@ export const mainResources: InfoPageContent = {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "No placeholder PDF thumbnails, file sizes, download counts, gates or email-capture flow."
+                  "text": "No invented file sizes, download counts, sign-up gates or email capture."
                 }
               ]
             }
