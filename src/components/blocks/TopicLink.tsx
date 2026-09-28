@@ -17,11 +17,12 @@ export function TopicLink({
 }) {
   const record = scope ? resolveTopicRoute(label, scope) : undefined;
   if (!record) return <>{label}</>;
+  const hash = scope ? resolveTopicHash(label, scope) : undefined;
 
   return (
     <Link
       to={record.url}
-      hash={scope ? resolveTopicHash(label, scope) : undefined}
+      {...(hash ? { hash } : {})}
       rel={record.indexation === "index" ? undefined : "nofollow"}
       className={
         className ??
