@@ -41,3 +41,23 @@ export function isInternalGovernanceLabel(value: string): boolean {
 export function publicLabels(values?: string[]): string[] {
   return (values ?? []).filter((value) => !isInternalGovernanceLabel(value));
 }
+
+/**
+ * Time-sensitive pages (dates, keys, cutoffs, results, forms, current events)
+ * keep their verification metadata. Evergreen pages drop generic status chips
+ * and "Exam" / "Last verified" / "Updated" masthead meta.
+ */
+const TIME_SENSITIVE = /(exam-dates|answer-key|cutoff|result|application-form|admit-card|merit-list|current-affairs)/;
+const GENERIC_META = new Set(["Exam", "Last verified", "Updated"]);
+
+export function isTimeSensitivePage(url: string): boolean {
+  return TIME_SENSITIVE.test(url);
+}
+
+export function publicMastheadMeta<T extends { label: string }>(url: string, meta: T[]): T[] {
+  return isTimeSensitivePage(url) ? meta : meta.filter((m) => !GENERIC_META.has(m.label));
+}
+
+export function publicMastheadChips(url: string, chips: string[] | undefined): string[] | undefined {
+  return isTimeSensitivePage(url) ? chips : undefined;
+}

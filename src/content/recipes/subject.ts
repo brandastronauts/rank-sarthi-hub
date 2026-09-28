@@ -1,3 +1,4 @@
+import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { SubjectHubContent, SyllabusTable } from "@/content/types";
 import { childrenOf } from "@/content/registry";
@@ -68,13 +69,13 @@ export function subjectHubRecipe(
           intent: content.intent,
           answer: content.answer,
           contentStatus: content.contentStatus,
-          chips: content.chips,
-          meta: [
+          chips: publicMastheadChips(content.url, content.chips),
+          meta: publicMastheadMeta(content.url, [
             { label: "Exam", value: content.exam },
             { label: "Subject", value: content.subject },
             { label: "Chapter routes", value: String(entries.length) },
             ...(content.lastVerified ? [{ label: "Last verified", value: content.lastVerified }] : []),
-          ],
+          ]),
         },
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },

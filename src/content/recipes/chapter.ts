@@ -1,3 +1,4 @@
+import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { PageRecipe } from "@/lib/recipe";
 import type { ChapterContent, ChapterSlot } from "@/content/types";
 import { subjectFacultyFor } from "@/content/subject-faculty";
@@ -52,12 +53,12 @@ export function chapterRecipe(
           intent: content.canonicalIntent,
           answer: content.directAnswer,
           contentStatus: content.contentStatus,
-          meta: [
+          meta: publicMastheadMeta(content.url, [
             { label: "Subject", value: content.subject },
             { label: "Syllabus unit", value: content.syllabusMapping.unit },
             ...(content.updated ? [{ label: "Updated", value: content.updated }] : []),
-          ],
-          chips: content.heroChips ?? [],
+          ]),
+          chips: publicMastheadChips(content.url, content.heroChips ?? []),
         },
       },
       {
