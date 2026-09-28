@@ -11,8 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
 import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabus'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -33,6 +36,16 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapRoute = SitemapRouteImport.update({
   id: '/sitemap',
   path: '/sitemap',
@@ -41,6 +54,11 @@ const SitemapRoute = SitemapRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlatformIndexRoute = PlatformIndexRouteImport.update({
@@ -94,8 +112,11 @@ const PlatformSubjectChapterTopicRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/$platform/': typeof PlatformIndexRoute
@@ -109,8 +130,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/$platform': typeof PlatformIndexRoute
@@ -125,8 +149,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/$platform/': typeof PlatformIndexRoute
@@ -142,8 +169,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sitemap'
     | '/sitemap.xml'
+    | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
     | '/$platform/'
@@ -157,8 +187,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sitemap'
     | '/sitemap.xml'
+    | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
     | '/$platform'
@@ -172,8 +205,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/privacy-policy'
+    | '/refund-policy'
     | '/sitemap'
     | '/sitemap.xml'
+    | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
     | '/$platform/'
@@ -188,8 +224,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   SitemapRoute: typeof SitemapRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   PlatformSyllabusRoute: typeof PlatformSyllabusRoute
   BlogSlugRoute: typeof BlogSlugRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
@@ -217,6 +256,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap': {
       id: '/sitemap'
       path: '/sitemap'
@@ -229,6 +282,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$platform/': {
@@ -300,8 +360,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   SitemapRoute: SitemapRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   PlatformSyllabusRoute: PlatformSyllabusRoute,
   BlogSlugRoute: BlogSlugRoute,
   PlatformIndexRoute: PlatformIndexRoute,
