@@ -114,21 +114,7 @@ export const ndaSyllabusEnglish: InfoPageContent = {
       ]
     }
   ],
-  "relatedLinks": [],
-  "faqs": [
-    {
-      "question": "What does UPSC test in NDA English?",
-      "answer": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "Grammar and usage, vocabulary, comprehension and cohesion in extended text, with 200 marks allocated to GAT Part A."
-            }
-          ]
-        }
-      ]
-    },
+  "relatedLinks": [
     {
       "label": "NDA English Grammar",
       "url": "/nda/gat/english/grammar",
@@ -146,6 +132,21 @@ export const ndaSyllabusEnglish: InfoPageContent = {
       "url": "/nda/gat/english/comprehension",
       "relation": "related",
       "description": "Practise reading comprehension for the English section"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does UPSC test in NDA English?",
+      "answer": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Grammar and usage, vocabulary, comprehension and cohesion in extended text, with 200 marks allocated to GAT Part A."
+            }
+          ]
+        }
+      ]
     }
   ],
   "sourceRefs": [

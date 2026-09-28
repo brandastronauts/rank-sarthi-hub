@@ -175,7 +175,14 @@ export const ndaSyllabusGeneralKnowledge: InfoPageContent = {
       ]
     }
   ],
-  "relatedLinks": [],
+  "relatedLinks": [
+    {
+      "label": "NDA GAT Polity",
+      "url": "/nda/gat/polity",
+      "relation": "related",
+      "description": "Study Indian Polity within the GAT General Knowledge scope"
+    }
+  ],
   "faqs": [
     {
       "question": "What subjects make up NDA General Knowledge?",
@@ -189,12 +196,6 @@ export const ndaSyllabusGeneralKnowledge: InfoPageContent = {
           ]
         }
       ]
-    },
-    {
-      "label": "NDA GAT Polity",
-      "url": "/nda/gat/polity",
-      "relation": "related",
-      "description": "Study Indian Polity within the GAT General Knowledge scope"
     }
   ],
   "sourceRefs": [
