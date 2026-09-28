@@ -266,7 +266,7 @@ function ContactPage() {
                 <a href={`mailto:${company.email}`} className="break-all font-medium hover:underline">{company.email}</a>
               </li>
             </ul>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               <a href={company.phoneHref} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground">
                 <Phone className="h-4 w-4" aria-hidden /> Call Us
               </a>
