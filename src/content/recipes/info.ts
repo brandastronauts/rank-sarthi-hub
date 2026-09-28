@@ -2,6 +2,7 @@ import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { InfoPageContent } from "@/content/types";
 import { changeLogForPage, recordsByIds } from "@/content/freshness/panel";
 import { reviewFor } from "@/content/academic-reviews";
+import { subjectFacultyFor } from "@/content/subject-faculty";
 
 /**
  * Generic exam-information recipe (JEE Main, Advanced, papers, keys,
@@ -214,6 +215,13 @@ export function infoPageRecipe(
         id: "academic-review",
         props: { review: pageReview },
         when: !!pageReview,
+      },
+      /* Deterministic subject-faculty byline for topic pages without a completed review. */
+      {
+        block: "B57",
+        id: "subject-faculty",
+        props: { url: content.url },
+        when: !pageReview && !!subjectFacultyFor(content.url),
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
       {
