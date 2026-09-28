@@ -11,6 +11,7 @@ export function FacultyAttribution({ url, id = "subject-faculty" }: { url: strin
   const faculty = subjectFacultyFor(url);
   if (!faculty) return null;
   const { primary, contributors } = faculty;
+  const exam = url.split("/").filter(Boolean)[0]?.toUpperCase();
   return (
     <section id={id} aria-label="Subject faculty" className="rounded-lg border border-border bg-ivory p-4 sm:p-5">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Subject faculty</p>
@@ -25,6 +26,10 @@ export function FacultyAttribution({ url, id = "subject-faculty" }: { url: strin
             </Link>
           </p>
           <p className="text-sm text-ink/80">{primary.title}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{primary.subject} • {exam}</p>
+          <Link to="/about/faculty/$slug" params={{ slug: primary.slug }} className="mt-1 inline-block text-sm font-semibold text-accent underline-offset-4 hover:underline">
+            View academic profile
+          </Link>
         </div>
       </div>
       {contributors.length ? (
