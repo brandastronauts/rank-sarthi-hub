@@ -2,7 +2,6 @@ import { registerBlocks } from "@/lib/recipe";
 
 /* Marketing / brand blocks (B01–B24) */
 import { Hero } from "@/components/Hero";
-import { InstitutionStrip } from "@/components/InstitutionStrip";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { EducatorReview } from "@/components/EducatorReview";
 import { DiagnosticIdea } from "@/components/DiagnosticIdea";
@@ -113,7 +112,6 @@ export function ensureBlocksRegistered() {
     B35: ConceptSections,
     B36: RelatedRail,
     B37: SourcesBox,
-    B02: InstitutionStrip,
     B03: ProductShowcase,
     B04: EducatorReview,
     B05: DiagnosticIdea,

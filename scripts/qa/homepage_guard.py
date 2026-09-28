@@ -36,7 +36,6 @@ SHOTS.mkdir(parents=True, exist_ok=True)
 # src/content/recipes/home.ts and are the anchor ids rendered on the page.
 REQUIRED_SECTIONS = [
     "home",             # B01 Hero
-    "review-circle",    # B02
     "product",          # B03
     "educator-review",  # B04
     "idea",             # B05
