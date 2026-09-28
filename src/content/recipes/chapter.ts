@@ -1,5 +1,6 @@
 import type { PageRecipe } from "@/lib/recipe";
 import type { ChapterContent, ChapterSlot } from "@/content/types";
+import { subjectFacultyFor } from "@/content/subject-faculty";
 
 /**
  * T06 — Chapter recipe.
@@ -58,6 +59,12 @@ export function chapterRecipe(
           ],
           chips: content.heroChips ?? [],
         },
+      },
+      {
+        block: "B57",
+        id: "subject-faculty",
+        props: { url: content.url },
+        when: !!subjectFacultyFor(content.url),
       },
       { block: "B23", id: "contents", props: { items: jumpItems }, when: jumpItems.length > 0 },
       {

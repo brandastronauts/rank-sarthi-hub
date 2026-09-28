@@ -1,8 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 import { academicProfiles } from "@/content/academic-profiles";
-import { FacultyPhoto } from "./FacultyPhoto";
-import { Button } from "@/components/ui/button";
+import { FacultyCard } from "./FacultyCard";
 
 export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
   return (
@@ -14,28 +11,11 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
       </p>
       <ul className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {academicProfiles.map((profile) => (
-          <li key={profile.id} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
-            <div className="aspect-[4/3] overflow-hidden bg-secondary">
-              <FacultyPhoto profile={profile} initialsClassName="text-5xl" />
-            </div>
-            <div className="p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">{profile.subject}</p>
-              <h3 className="mt-1 text-xl font-bold text-primary">{profile.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-ink/80">{profile.title}</p>
-              <p className="mt-4 line-clamp-5 text-sm leading-relaxed text-muted-foreground">{profile.shortProfile}</p>
-              <Button asChild variant="link" className="mt-4 h-auto px-0 text-accent">
-                <Link to="/about/faculty/$slug" params={{ slug: profile.slug }}>
-                  View profile <ArrowRight aria-hidden />
-                </Link>
-              </Button>
-            </div>
+          <li key={profile.id}>
+            <FacultyCard profile={profile} />
           </li>
         ))}
       </ul>
-      <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-        Review attribution is shown on an individual page only after that specific content version has been reviewed.
-      </p>
-
     </section>
   );
 }

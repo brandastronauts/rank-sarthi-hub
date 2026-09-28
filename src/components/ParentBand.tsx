@@ -52,14 +52,7 @@ export function ParentBand() {
                 {parentVoice.name} · {parentVoice.role}
               </figcaption>
             </figure>
-          ) : (
-            <div className="mt-10 border-l-2 border-border pl-6">
-              <p className="placeholder-slot inline-block px-4 py-3">[Real parent comment required]</p>
-              <p className="mt-3 max-w-md text-sm text-muted-foreground">
-                A parent&rsquo;s own words will sit here once a real family has used the product.
-              </p>
-            </div>
-          )}
+          ) : null}
         </Reveal>
 
         <Reveal delay={140}>
