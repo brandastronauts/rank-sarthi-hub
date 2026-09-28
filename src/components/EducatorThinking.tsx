@@ -46,11 +46,6 @@ export function EducatorThinking({ id }: { id?: string }) {
           ))}
         </div>
 
-        <Reveal delay={200}>
-          <p className="mt-8 text-sm text-muted-foreground">
-            Educator profiles will appear here once they are confirmed and verifiable.
-          </p>
-        </Reveal>
       </div>
     </section>
   );
