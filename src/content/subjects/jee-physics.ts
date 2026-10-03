@@ -19,7 +19,7 @@ export const jeePhysicsHub: SubjectHubContent = {
   intent:
     "Browse every approved JEE Physics chapter route, understand how chapters connect, and choose the next learning or repair action.",
   contentStatus: "draft",
-  chips: ["JEE Main 2026", "JEE Advanced 2026", "30 chapter routes"],
+  chips: ["JEE Main 2026", "JEE Advanced 2026", "20 official Main units"],
   answer: [
     {
       type: "paragraph",
@@ -107,13 +107,13 @@ export const jeePhysicsHub: SubjectHubContent = {
   },
 
   chapterMap: {
-    heading: "All approved Physics chapter routes",
+    heading: "Supporting topic guides and study guides",
     scopeNote:
       "Scope labels: Both means the topic is present in the current official Main and Advanced syllabi. Main means explicit current Main scope without a corresponding explicit Advanced topic. No current mapping means neither checked 2026 syllabus lists the registry topic. Labels describe scope, not weightage or difficulty.",
     contextualHeading: "Contextual resource, not current 2026 syllabus",
     contextualNote:
       "This route has no current JEE Main 2026 or JEE Advanced 2026 mapping. It is kept as a contextual and historical reference only and must not be treated as current exam scope.",
-    expectedCount: 30,
+    expectedCount: 31,
     notes: [
       {
         url: "/jee/physics/laws-of-motion",
@@ -129,9 +129,9 @@ export const jeePhysicsHub: SubjectHubContent = {
       },
       {
         url: "/jee/physics/modern-physics",
-        scope: "Both, umbrella route",
+        scope: "Overview",
         order: 3,
-        note: "Organises dual nature, atomic, nuclear, and related modern models.",
+        note: "Study-guide overview, not an official unit. Covers Unit 17 Dual Nature of Matter and Radiation and Unit 18 Atoms and Nuclei.",
       },
       {
         url: "/jee/physics/current-electricity",
@@ -141,7 +141,7 @@ export const jeePhysicsHub: SubjectHubContent = {
       },
       {
         url: "/jee/physics/optics",
-        scope: "Both, umbrella route",
+        scope: "Both",
         order: 5,
         note: "Separates geometric and wave descriptions of light.",
       },
@@ -292,9 +292,15 @@ export const jeePhysicsHub: SubjectHubContent = {
       {
         url: "/jee/physics/communication-systems",
         scope: "No current mapping",
-        order: 30,
+        order: 31,
         contextual: true,
-        note: "Approved registry route kept for context only. It is not current JEE Main 2026 or JEE Advanced 2026 syllabus content.",
+        note: "Not part of the current JEE Main 2026 syllabus. Kept as background reading only.",
+      },
+      {
+        url: "/jee/physics/experimental-skills",
+        scope: "Main",
+        order: 30,
+        note: "Official JEE Main 2026 Unit 20: the 18 listed measurement and laboratory activities.",
       },
     ],
   },
@@ -361,13 +367,13 @@ export const jeePhysicsHub: SubjectHubContent = {
       ],
     },
     {
-      question: "Are all 30 registry chapters current JEE syllabus chapters?",
+      question: "Is every Physics page a current JEE syllabus chapter?",
       answer: [
         {
           type: "paragraph",
           children: [
             {
-              text: "No. Some routes split or group official units for learning, and Communication Systems has no current 2026 Main or Advanced mapping. The hub labels that distinction.",
+              text: "No. JEE Main 2026 has 20 official Physics units, listed first on this page. Some guides split or group those units for learning, and Communication Systems is not part of the current JEE Main 2026 syllabus.",
             },
           ],
         },
