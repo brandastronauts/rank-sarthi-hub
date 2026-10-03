@@ -453,10 +453,30 @@
   color: color-mix(in oklab, var(--navy) 78%, transparent);
 }
 
+@keyframes rs-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: rs-marquee 16s linear infinite;
+}
+
+.marquee-pause:hover .marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
   .shimmer-gold,
-  .animate-pop {
+  .animate-pop,
+  .marquee-track {
     animation: none;
   }
 }
