@@ -18,7 +18,7 @@ export type BlockId =
   | "B21" | "B22" | "B23" | "B24" | "B25" | "B26" | "B27" | "B28" | "B29" | "B30"
   | "B31" | "B32" | "B33" | "B34" | "B35" | "B36" | "B37" | "B38" | "B39" | "B40"
   | "B41" | "B42" | "B43" | "B44" | "B45" | "B46" | "B47" | "B48" | "B49"
-  | "B50" | "B51" | "B52" | "B53" | "B54" | "B55" | "B56" | "B57";
+  | "B50" | "B51" | "B52" | "B53" | "B54" | "B55" | "B56" | "B57" | "B58";
 
 export interface BlockSlot<P = Record<string, unknown>> {
   block: BlockId;

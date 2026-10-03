@@ -34,7 +34,7 @@ export function FaqBlock({
   if (!items.length) return null;
 
   return (
-    <section id={id} className="section-pad bg-ivory">
+    <section id={id} className="bg-ivory py-14 sm:py-20">
       <div className="container-page grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
         <Reveal>
           <p className="eyebrow text-accent">{eyebrow}</p>

@@ -53,6 +53,7 @@ import { OfferCta } from "@/components/blocks/OfferCta";
 import { AcademicTeam } from "@/components/academic/AcademicTeam";
 import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
 import { FacultyAttribution } from "@/components/academic/FacultyAttribution";
+import { ResourcePathways } from "@/components/acquisition/ResourcePathways";
 
 
 /* Platform template blocks (B38–B43) */
@@ -99,6 +100,7 @@ export function ensureBlocksRegistered() {
     B55: AcademicTeam,
     B56: AcademicReviewByline,
     B57: FacultyAttribution,
+    B58: ResourcePathways,
 
     B26: SyllabusExplorer,
     B27: TrendTable,

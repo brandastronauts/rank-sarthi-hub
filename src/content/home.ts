@@ -40,16 +40,16 @@ export const homeFaqs = [
 ];
 
 export const howItWorksSteps = [
-  { n: "01", title: "Attempt", body: "Take a Rank Sarthi diagnostic or a supported assessment in exam conditions." },
+  { n: "01", title: "Choose your exam", body: "Select JEE Main, NEET UG or NDA on Rank Sarthi." },
   {
     n: "02",
-    title: "Diagnose",
-    body: "Understand the concepts, mistakes and performance patterns influencing your score.",
+    title: "Continue to RankUp",
+    body: "Move to the dedicated RankUp product that owns your diagnostic experience.",
   },
   {
     n: "03",
-    title: "Improve",
-    body: "Focus preparation on what deserves attention next, then measure whether it actually changed.",
+    title: "Act on the diagnosis",
+    body: "Use the result to focus preparation on the gaps that deserve attention next.",
   },
 ];
 

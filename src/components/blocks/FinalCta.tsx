@@ -1,7 +1,7 @@
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
+import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 
 /** B24 — Closing conversion band. */
 export function FinalCta({
@@ -24,23 +24,26 @@ export function FinalCta({
   platform?: "jee" | "neet" | "nda";
 }) {
   return (
-    <section id={id} className="relative overflow-hidden bg-navy-deep py-24 text-primary-foreground sm:py-32">
+    <section id={id} className="relative overflow-hidden bg-navy-deep py-16 text-primary-foreground sm:py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-40" />
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-accent" />
       <div className="container-page relative text-center">
         <Reveal>
           <p className="eyebrow text-gold">{eyebrow}</p>
-          <h2 className="mx-auto mt-6 max-w-4xl text-[clamp(2.5rem,5vw,5rem)] font-bold leading-none">{heading}</h2>
+          <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold leading-none sm:text-5xl">{heading}</h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-primary-foreground/70">{body}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <CtaLink
-              d={destinations.diagnostic("Take your first diagnostic", platform)}
-              className="btn-press inline-flex items-center gap-2 rounded-md bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
-            >
-              <span className="inline-flex items-center gap-2">
-                Take your first diagnostic <ArrowRight className="size-4" aria-hidden="true" />
-              </span>
-            </CtaLink>
+            {platform ? (
+              <CtaLink
+                d={destinations.diagnostic("Take your first diagnostic", platform)}
+                className="btn-press inline-flex items-center gap-2 rounded-md bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
+              />
+            ) : (
+              <DiagnosticLauncher
+                ctaLocation="final_cta"
+                className="min-h-12 bg-accent px-8 font-bold text-accent-foreground shadow-elevated hover:bg-red-hover"
+              />
+            )}
             <CtaLink
               d={destinations.nav(secondaryLabel, secondaryHref)}
               className="btn-press inline-flex items-center rounded-md border border-white/35 px-8 py-4 text-sm font-bold hover:bg-white/10"
