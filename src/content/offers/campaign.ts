@@ -30,23 +30,37 @@ export const jeeOfferPopup = {
   href: OFFER_URL,
 } as const;
 
-export type AnnouncementCampaign = typeof jeeAnnouncement | typeof neetCampaign.announcement;
-export type PopupCampaign = (typeof jeeOfferPopup & { ariaLabel?: string }) | typeof neetCampaign.popup;
+/**
+ * One common Rank Sarthi inaugural campaign (presentation only). Exam
+ * commercial data stays in the JEE and NEET offer sources above.
+ */
+export const commonOfferChoices = [
+  { exam: "jee", label: "View JEE Offers", href: OFFER_URL },
+  { exam: "neet", label: "View NEET Offers", href: neetCampaign.popup.href },
+] as const;
 
-/** True for JEE routes other than the offer page itself. */
-function isJeeSurface(url: string): boolean {
-  const path = url.length > 1 && url.endsWith("/") ? url.slice(0, -1) : url;
-  if (path === OFFER_URL) return false;
-  return path === "/jee" || path.startsWith("/jee/");
-}
+export const commonAnnouncement = {
+  ariaLabel: "Rank Sarthi inaugural offers",
+  message: "2026 Inaugural Offers Live — Explore JEE & NEET Test Series",
+  ctaLabel: "View Offers",
+  choices: commonOfferChoices,
+} as const;
 
-export function showJeeAnnouncement(url: string): boolean {
-  return isJeeSurface(url);
-}
+export const commonOfferPopup = {
+  ariaLabel: "Rank Sarthi Inaugural Offers 2026",
+  /** One display per browser session, shared by every page. */
+  sessionKey: "rs-inaugural-offers-popup",
+  delayMs: 5000,
+  title: "Rank Sarthi Inaugural Offers 2026",
+  subtitle: "Choose your exam to explore the current launch offers.",
+  choices: commonOfferChoices,
+} as const;
 
-export function showJeeOfferPopup(url: string): boolean {
-  return isJeeSurface(url);
-}
+export type AnnouncementCampaign = typeof commonAnnouncement;
+export type PopupCampaign = typeof commonOfferPopup;
+
+/** Commercial destinations never promote themselves. */
+const SUPPRESSED = new Set([OFFER_URL, "/jee/pricing", neetCampaign.popup.href, "/neet/pricing"]);
 
 function pathOnly(url: string): string {
   const path = url.split(/[?#]/, 1)[0] ?? url;
@@ -58,11 +72,8 @@ export function campaignFor(url: string): {
   popup?: PopupCampaign;
 } {
   const path = pathOnly(url);
-  if (isJeeSurface(path)) return { announcement: jeeAnnouncement, popup: jeeOfferPopup };
-  if (path === "/neet" || path.startsWith("/neet/")) {
-    if (path === neetCampaign.announcement.href) return {};
-    if (path === "/neet/pricing") return { announcement: neetCampaign.announcement };
-    return { announcement: neetCampaign.announcement, popup: neetCampaign.popup };
-  }
-  return {};
+  if (SUPPRESSED.has(path)) return {};
+  // No approved NDA package: avoid implying an NDA offer.
+  if (path === "/nda" || path.startsWith("/nda/")) return {};
+  return { announcement: commonAnnouncement, popup: commonOfferPopup };
 }

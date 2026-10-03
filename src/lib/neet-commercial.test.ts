@@ -6,7 +6,7 @@ import {
   neetStarterAdditionalPapers,
   neetStarterTopUpTotal,
 } from "@/content/offers/neet-test-series";
-import { campaignFor, jeeAnnouncement, jeeOfferPopup } from "@/content/offers/campaign";
+import { campaignFor, commonAnnouncement, commonOfferPopup } from "@/content/offers/campaign";
 
 describe("NEET inaugural commercial rules", () => {
   it("uses the approved package prices", () => {
@@ -26,17 +26,16 @@ describe("NEET inaugural commercial rules", () => {
     expect(formatInr(neetStarterTopUpTotal)).toBe("₹1,849");
   });
 
-  it("keeps NEET promotions scoped away from commercial destinations", () => {
-    expect(campaignFor("/neet").announcement?.href).toBe("/neet/mock-tests");
-    expect(campaignFor("/neet").popup?.href).toBe("/neet/mock-tests");
-    expect(campaignFor("/neet/mock-tests")).toEqual({});
-    expect(campaignFor("/neet/pricing").announcement?.href).toBe("/neet/mock-tests");
-    expect(campaignFor("/neet/pricing").popup).toBeUndefined();
-    expect(campaignFor("/nda")).toEqual({});
+  it("shows one common JEE + NEET campaign on general and exam pages", () => {
+    for (const url of ["/", "/jee", "/neet", "/jee/syllabus", "/about"]) {
+      expect(campaignFor(url)).toEqual({ announcement: commonAnnouncement, popup: commonOfferPopup });
+    }
+    expect(commonOfferPopup.choices.map((c) => c.href)).toEqual(["/jee/mock-tests", "/neet/mock-tests"]);
   });
 
-  it("preserves the approved JEE campaign configuration", () => {
-    expect(campaignFor("/jee")).toEqual({ announcement: jeeAnnouncement, popup: jeeOfferPopup });
-    expect(campaignFor("/jee/mock-tests")).toEqual({});
+  it("suppresses promotions on commercial destinations and NDA pages", () => {
+    for (const url of ["/jee/mock-tests", "/jee/pricing", "/neet/mock-tests", "/neet/pricing", "/nda", "/nda/syllabus"]) {
+      expect(campaignFor(url)).toEqual({});
+    }
   });
 });

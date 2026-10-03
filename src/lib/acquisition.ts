@@ -16,6 +16,22 @@ const ATTRIBUTION_KEYS = new Set([
   "fbclid",
 ]);
 
+/** Controlled rs_cta vocabulary shared with the RankUp team. */
+export const RS_CTA_VALUES = ["header", "hero", "sticky", "section", "final", "pricing", "offer"] as const;
+export type RsCta = (typeof RS_CTA_VALUES)[number];
+
+const CTA_ALIASES: Record<string, RsCta> = {
+  mobile_menu: "header",
+  mobile_sticky: "sticky",
+  final_cta: "final",
+  diagnostic_page: "section",
+};
+
+export function normaliseCta(cta: string): RsCta {
+  if ((RS_CTA_VALUES as readonly string[]).includes(cta)) return cta as RsCta;
+  return CTA_ALIASES[cta] ?? "section";
+}
+
 export function buildRankUpHandoff({
   exam,
   search = "",
@@ -37,7 +53,7 @@ export function buildRankUpHandoff({
   destination.searchParams.set("rs_source", "ranksarthi");
   destination.searchParams.set("rs_exam", exam);
   destination.searchParams.set("rs_entry_path", normaliseEntryPath(entryPath));
-  destination.searchParams.set("rs_cta", cta);
+  destination.searchParams.set("rs_cta", normaliseCta(cta));
   return destination.toString();
 }
 

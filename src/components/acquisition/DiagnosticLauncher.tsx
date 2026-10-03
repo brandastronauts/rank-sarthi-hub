@@ -21,7 +21,7 @@ const exams = [
 export function DiagnosticLauncher({
   ctaLocation,
   className,
-  label = "Start Free Diagnostic",
+  label = "Start My Free Diagnostic",
 }: {
   ctaLocation: string;
   className?: string;

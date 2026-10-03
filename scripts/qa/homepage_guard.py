@@ -36,7 +36,7 @@ SHOTS.mkdir(parents=True, exist_ok=True)
 # src/content/recipes/home.ts and are the anchor ids rendered on the page.
 REQUIRED_SECTIONS = [
     "home", "idea", "product", "patterns", "moment", "exams", "how", "breakdown",
-    "proof", "situations", "resources", "people", "methodology", "neet-pricing", "faq", "cta",
+    "proof", "situations", "resources", "people", "methodology", "pricing", "faq", "cta",
 ]
 
 NAV_LABELS = ["JEE", "NEET", "NDA", "Institutes", "Resources", "Blog"]
@@ -135,7 +135,7 @@ async def main() -> int:
         )
         check(bool(logo_ok), "official header logo image loads")
 
-        diagnostic_labels = await page.get_by_text("Start Free Diagnostic", exact=True).count()
+        diagnostic_labels = await page.get_by_text("Start My Free Diagnostic", exact=True).count()
         check(diagnostic_labels >= 2, f"diagnostic CTA is repeated consistently ({diagnostic_labels})")
 
         # 7. Responsive overflow + screenshots.

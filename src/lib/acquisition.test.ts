@@ -39,4 +39,19 @@ describe("RankUp diagnostic handoff", () => {
     expect(url.searchParams.has("name")).toBe(false);
     expect(url.searchParams.has("coupon")).toBe(false);
   });
+
+  it("normalises rs_cta to the controlled vocabulary", () => {
+    const cta = (c: string) => new URL(buildRankUpHandoff({ exam: "jee", entryPath: "/", cta: c })).searchParams.get("rs_cta");
+    expect(cta("mobile_sticky")).toBe("sticky");
+    expect(cta("final_cta")).toBe("final");
+    expect(cta("mobile_menu")).toBe("header");
+    expect(cta("pricing")).toBe("pricing");
+    expect(cta("anything_else")).toBe("section");
+  });
+
+  it("keeps Google UTMs intact alongside Rank Sarthi fields", () => {
+    const url = buildRankUpHandoff({ exam: "jee", search: "?utm_source=google&utm_campaign=jee_search", entryPath: "/jee", cta: "hero" });
+    expect(url).toBe("https://jeerankup.com/?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero");
+  });
 });
+
