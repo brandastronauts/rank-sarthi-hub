@@ -18,6 +18,6 @@ export const homeRecipe: PageRecipe = {
     { block: "B58", id: "resources" },
     { block: "B16", id: "people" },
     { block: "B22", id: "faq", props: { items: homeFaqs.slice(0, 5) } },
-    { block: "B24", id: "cta" },
+    { block: "B24", id: "cta", props: { secondaryHref: "#how", secondaryLabel: "How it works" } },
   ],
 };

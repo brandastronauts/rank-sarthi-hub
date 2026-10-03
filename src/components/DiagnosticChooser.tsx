@@ -47,7 +47,14 @@ export function DiagnosticChooser() {
                   <a
                     href={buildRankUpHandoff({ exam: slug, entryPath: "/diagnostic", cta: "diagnostic_page" })}
                     rel="noopener noreferrer"
-                    onClick={() => {
+                    onClick={(event) => {
+                      event.preventDefault();
+                      const href = buildRankUpHandoff({
+                        exam: slug,
+                        search: window.location.search,
+                        entryPath: window.location.pathname,
+                        cta: "diagnostic_page",
+                      });
                       const properties = {
                         exam: slug,
                         entry_path: window.location.pathname,
@@ -56,6 +63,7 @@ export function DiagnosticChooser() {
                       };
                       emitAcquisitionEvent("exam_selected", properties);
                       emitAcquisitionEvent("rankup_handoff", properties);
+                      window.location.assign(href);
                     }}
                     className="btn-press mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
                   >

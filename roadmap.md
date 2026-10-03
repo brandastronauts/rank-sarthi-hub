@@ -28,5 +28,5 @@
 - [x] Instrument Rank Sarthi-owned funnel events without claiming an analytics receiver is configured
 - [x] Add a compact mobile sticky diagnostic action and subject-led faculty scroller
 - [x] Preserve resource discovery, all SEO routes, PYQ work, syllabus content, canonicals, sitemap, and robots
-- [ ] Validate mobile, desktop, handoff destinations, attribution, events, links, and regressions
-- [ ] Report the missing community destination and RankUp-owned funnel dependencies
+- [x] Validate mobile, desktop, handoff destinations, attribution, events, links, and regressions
+- [x] Report the missing community destination and RankUp-owned funnel dependencies
