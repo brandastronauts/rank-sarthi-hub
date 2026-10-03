@@ -7,60 +7,36 @@ import type {
   BlogListParams,
   BlogListResult,
 } from "./types";
+import { getBlogArticleFn, listBlogArticlesFn, listBlogCommentsFn } from "./blog.functions";
 
 /**
- * All reads and writes go through real /api/public/* endpoints (see
- * src/routes/api/public/) rather than createServerOnlyFn: a route loader
- * using this provider can re-run client-side during a SPA navigation (e.g.
- * clicking "Blog" while already on /blog), and createServerOnlyFn throws by
- * design when called outside a server request context. A plain fetch works
- * the same way whether it runs during SSR or in the browser.
- *
- * Server-side, fetch() has no implicit base URL, so requests go over
- * loopback to this same process; client-side, a relative path resolves
- * against the page origin.
+ * Reads go through server functions: they run in-process during SSR (the
+ * hosted server runtime cannot make loopback HTTP calls to itself) and over
+ * RPC during client-side navigation. Comment submission only happens from a
+ * browser form, so it posts to the public endpoint with a relative URL.
  */
-function apiBase(): string {
-  if (typeof window !== "undefined") return "";
-  const port = process.env["PORT"] ?? "3000";
-  return `http://127.0.0.1:${port}`;
-}
-
 export class WordPressBlogDataProvider implements BlogDataProvider {
   async listArticles(params?: BlogListParams): Promise<BlogListResult> {
-    const query = new URLSearchParams();
-    if (params?.page) query.set("page", String(params.page));
-    if (params?.perPage) query.set("perPage", String(params.perPage));
-    if (params?.category) query.set("category", params.category);
-    if (params?.tag) query.set("tag", params.tag);
-    const res = await fetch(`${apiBase()}/api/public/blog-list?${query.toString()}`);
-    if (!res.ok) throw new Error(`Failed to load blog list (${res.status}).`);
-    return (await res.json()) as BlogListResult;
+    return (await listBlogArticlesFn({ data: params ?? {} })) as BlogListResult;
   }
 
   async getArticleBySlug(slug: string): Promise<BlogArticle | undefined> {
-    const res = await fetch(`${apiBase()}/api/public/blog-article?slug=${encodeURIComponent(slug)}`);
-    if (res.status === 404) return undefined;
-    if (!res.ok) throw new Error(`Failed to load blog article (${res.status}).`);
-    const body = (await res.json()) as BlogArticle | null;
-    return body ?? undefined;
+    const article = (await getBlogArticleFn({ data: { slug } })) as BlogArticle | null;
+    return article ?? undefined;
   }
 
   async listComments(articleId: string): Promise<BlogComment[]> {
-    const res = await fetch(`${apiBase()}/api/public/blog-comments?postId=${encodeURIComponent(articleId)}`);
-    if (!res.ok) throw new Error(`Failed to load comments (${res.status}).`);
-    return (await res.json()) as BlogComment[];
+    return (await listBlogCommentsFn({ data: { postId: articleId } })) as BlogComment[];
   }
 
   async submitComment(input: BlogCommentInput): Promise<BlogCommentResult> {
     try {
-      const res = await fetch(`${apiBase()}/api/public/blog-comments`, {
+      const res = await fetch(`/api/public/blog-comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
       });
-      const body = (await res.json()) as BlogCommentResult;
-      return body;
+      return (await res.json()) as BlogCommentResult;
     } catch {
       return { ok: false, reason: "Your comment could not be submitted. Please try again." };
     }

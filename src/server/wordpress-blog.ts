@@ -1,4 +1,4 @@
-import * as cheerio from "cheerio";
+import * as cheerio from "cheerio/slim";
 import type { AnyNode } from "domhandler";
 import { getUrl } from "@/content/registry";
 import type {
