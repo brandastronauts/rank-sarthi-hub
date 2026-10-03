@@ -34,11 +34,12 @@ export default defineConfig(({ command }) => ({
     ...(command === "build"
       ? [
           nitro({
-            // Defaults to a plain Node.js server (VM/container deploys).
-            // Set NITRO_PRESET=cloudflare-module to build for Cloudflare Workers instead.
-            preset: process.env["NITRO_PRESET"] ?? "node-server",
+            // The host runs Cloudflare Workers, so the build must emit a
+            // worker module with a fetch handler. Set NITRO_PRESET=node-server
+            // only for VM/container deploys.
+            preset: process.env["NITRO_PRESET"] ?? "cloudflare-module",
             output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
-            ...(process.env["NITRO_PRESET"] === "cloudflare-module"
+            ...((process.env["NITRO_PRESET"] ?? "cloudflare-module") === "cloudflare-module"
               ? { cloudflare: { nodeCompat: true, deployConfig: true } }
               : {}),
           }),
