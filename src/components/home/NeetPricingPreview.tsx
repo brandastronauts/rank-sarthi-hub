@@ -25,9 +25,8 @@ export function NeetPricingPreview({ id }: { id?: string }) {
         </Reveal>
 
         <div className="-mx-5 mt-6 flex snap-x gap-3 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
-          {neetTestSeriesPackages.map((plan, index) => (
-            <Reveal key={plan.id} delay={index * 80} className="w-[82%] shrink-0 snap-start md:w-auto">
-              <article className={`flex h-full flex-col rounded-lg border bg-background p-4 sm:p-5 ${plan.featured ? "border-neet shadow-card" : "border-border"}`}>
+          {neetTestSeriesPackages.map((plan) => (
+              <article key={plan.id} className={`flex w-[82%] shrink-0 snap-start flex-col rounded-lg border bg-background p-4 sm:p-5 md:w-auto ${plan.featured ? "border-neet shadow-card" : "border-border"}`}>
                 <p className="text-xs font-bold uppercase text-neet">{plan.badge ?? "NEET plan"}</p>
                 <h3 className="mt-2 text-lg font-bold text-primary">{plan.name}</h3>
                 <p className="mt-2 text-3xl font-extrabold text-primary">{plan.price}</p>
@@ -40,7 +39,6 @@ export function NeetPricingPreview({ id }: { id?: string }) {
                   ))}
                 </ul>
               </article>
-            </Reveal>
           ))}
         </div>
 

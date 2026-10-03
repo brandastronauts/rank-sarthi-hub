@@ -4,7 +4,7 @@ import { getUrl, isIndexable } from "@/content/registry";
 import type { PopupCampaign } from "@/content/offers/campaign";
 
 /**
- * Controlled JEE offer popup.
+ * Controlled exam-offer popup.
  * Shows at most once per browser session, after a short delay, and never
  * immediately on navigation. Dismissal is remembered in sessionStorage, so it
  * does not reopen while the student keeps browsing.

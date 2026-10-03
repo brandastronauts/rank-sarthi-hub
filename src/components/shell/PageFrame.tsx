@@ -16,8 +16,8 @@ import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisitio
  *      content column.
  * F3 — dense two-column frame: breadcrumb band + sticky aside slot.
  *
- * Campaign surfaces (JEE announcement strip, JEE offer popup) are scoped by
- * URL, so NEET and NDA pages never carry JEE commercial copy.
+ * Campaign surfaces are scoped by URL, so each exam sees only its approved
+ * commercial copy and offer pages do not promote themselves.
  */
 export type FrameId = "F1" | "F2" | "F3";
 

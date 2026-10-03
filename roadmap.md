@@ -44,4 +44,4 @@
 - [x] Extend the existing scoped offer strip and session popup for NEET
 - [x] Add accurate lower-funnel NEET pricing to the V3.1 homepage
 - [x] Audit and remove legacy NEET add-on and Starter top-up references
-- [ ] Validate responsive pages, JEE protection, RankUp handoff, PYQ, syllabus, and SEO protections
+- [x] Validate responsive pages, JEE protection, RankUp handoff, PYQ, syllabus, and SEO protections
