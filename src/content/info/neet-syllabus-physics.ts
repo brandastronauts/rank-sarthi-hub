@@ -407,9 +407,9 @@ export const neetSyllabusPhysics: InfoPageContent = {
           "Focused child inside official Unit 2: Kinematics."
         ],
         [
-          "gravitation-​2",
-          "Duplicate Intent Review Required",
-          "No second official Gravitation unit or separate NCERT Gravitation chapter supports an independent near-duplicate page."
+          "experimental-​skills",
+          "Current Official Scope",
+          "Official Unit 20: Experimental Skills."
         ],
         [
           "thermal-​properties",
@@ -490,9 +490,9 @@ export const neetSyllabusPhysics: InfoPageContent = {
   "lastVerified": "10 September 2026",
   "seo": {
     "title": "NEET Physics Syllabus 2026: 20 Official Units & Topic Map | Rank Sarthi",
-    "description": "View the official NEET UG 2026 Physics syllabus, all 20 units, and the status of every frozen Rank Sarthi Physics route without unsupported weightage claims.",
+    "description": "View the official NEET UG 2026 Physics syllabus, all 20 units, and how every Rank Sarthi Physics page maps to them without unsupported weightage claims.",
     "ogTitle": "NEET Physics Syllabus 2026: 20 Official Units & Topic Map | Rank Sarthi",
-    "ogDescription": "View the official NEET UG 2026 Physics syllabus, all 20 units, and the status of every frozen Rank Sarthi Physics route without unsupported weightage claims.",
+    "ogDescription": "View the official NEET UG 2026 Physics syllabus, all 20 units, and how every Rank Sarthi Physics page maps to them without unsupported weightage claims.",
     "ogType": "website"
   }
 };
