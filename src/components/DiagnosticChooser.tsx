@@ -4,6 +4,8 @@ import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 import { platformOrigins } from "@/content/site";
 import { getPlatform } from "@/content/platforms";
+import { buildRankUpHandoff } from "@/lib/acquisition";
+import { emitAcquisitionEvent } from "@/lib/acquisition-analytics";
 
 const tint: Record<"jee" | "neet" | "nda", { text: string; bar: string; chip: string }> = {
   jee: { text: "text-jee", bar: "bg-jee", chip: "bg-jee/10 text-jee" },
@@ -45,7 +47,20 @@ export function DiagnosticChooser() {
                   <h2 className="mt-5 font-display text-xl font-bold text-primary">{platform!.productName}</h2>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{platform!.tagline}</p>
                   <CtaLink
-                    d={destinations.external(`Go to ${platform!.productName}`, platformOrigins[slug])}
+                    d={destinations.external(
+                      `Go to ${platform!.productName}`,
+                      buildRankUpHandoff({ exam: slug, entryPath: "/diagnostic", cta: "diagnostic_page" }),
+                    )}
+                    onClick={() => {
+                      const properties = {
+                        exam: slug,
+                        entry_path: window.location.pathname,
+                        cta: "diagnostic_page",
+                        destination_origin: platformOrigins[slug],
+                      };
+                      emitAcquisitionEvent("exam_selected", properties);
+                      emitAcquisitionEvent("rankup_handoff", properties);
+                    }}
                     className="btn-press mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-navy-soft"
                   >
                     <span className="inline-flex items-center gap-2">

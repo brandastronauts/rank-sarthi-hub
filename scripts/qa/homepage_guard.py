@@ -7,7 +7,7 @@ global CSS or the page shell must re-run this guard before "build complete".
 
 Checks
   1. GET / returns 200 and is server-rendered (not an empty shell).
-  2. Every frozen T01 section (B01..B24 slot ids) mounts and has non-zero height.
+  2. Every diagnostic-first T01 section mounts and has non-zero height.
   3. Blank-white-page guard: header + footer alone is a FAIL. The main content
      column must have real height and real text.
   4. Exactly one <h1>.
@@ -32,29 +32,16 @@ BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8080"
 SHOTS = Path(__file__).parent / "screenshots"
 SHOTS.mkdir(parents=True, exist_ok=True)
 
-# Frozen T01 recipe: B01 -> B24, in order. Slot ids come from
+# Diagnostic-first T01 recipe, in order. Slot ids come from
 # src/content/recipes/home.ts and are the anchor ids rendered on the page.
 REQUIRED_SECTIONS = [
     "home",             # B01 Hero
-    "product",          # B03
-    "educator-review",  # B04
     "idea",             # B05
-    "platforms",        # B06
     "moment",           # B07
-    "methodology",      # B08
-    "depth",            # B09
-    "numbers",          # B10
-    "situations",       # B11
-    "educator-thinking",# B12
-    "parents",          # B13
-    "voices",           # B14
-    "nda",              # B15
-    "people",           # B16
     "how",              # B17
-    "institutes",       # B18
-    "trust",            # B19
-    "pricing",          # B21
-    "brand-trust",      # B20
+    "methodology",      # B08
+    "resources",        # B58
+    "people",           # B16
     "faq",              # B22
     "cta",              # B24
 ]
@@ -124,9 +111,9 @@ async def main() -> int:
         )
         check(main_state is not None, "<main> exists")
         if main_state:
-            check(main_state["h"] > 3000, f"main body height is real ({round(main_state['h'])}px)")
-            check(main_state["text"] > 2000, f"main body has copy ({main_state['text']} chars)")
-            check(main_state["sections"] >= 15, f"main renders block sections ({main_state['sections']})")
+            check(main_state["h"] > 2500, f"main body height is real ({round(main_state['h'])}px)")
+            check(main_state["text"] > 1000, f"main body has copy ({main_state['text']} chars)")
+            check(main_state["sections"] == len(REQUIRED_SECTIONS), f"main renders the concise section contract ({main_state['sections']})")
 
         # 4. Exactly one H1.
         h1s = await page.eval_on_selector_all("h1", "els => els.map(e => e.innerText.trim())")
@@ -154,6 +141,9 @@ async def main() -> int:
             }"""
         )
         check(bool(logo_ok), "official header logo image loads")
+
+        diagnostic_labels = await page.get_by_text("Start Free Diagnostic", exact=True).count()
+        check(diagnostic_labels >= 2, f"diagnostic CTA is repeated consistently ({diagnostic_labels})")
 
         # 7. Responsive overflow + screenshots.
         for width in (1440, 768, 390):
