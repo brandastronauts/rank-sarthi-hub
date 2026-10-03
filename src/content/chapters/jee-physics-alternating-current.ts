@@ -591,12 +591,6 @@ export const jeePhysicsAlternatingCurrent: ChapterContent = {
       description: "Extend frequency-dependent reasoning to signal generation and propagation.",
     },
     {
-      label: "Communication Systems",
-      url: "/jee/physics/communication-systems",
-      relation: "forward",
-      description: "Apply AC and frequency concepts to signal transmission.",
-    },
-    {
       label: "Current Electricity",
       url: "/jee/physics/current-electricity",
       relation: "prerequisite",
