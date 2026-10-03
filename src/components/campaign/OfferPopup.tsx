@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { getUrl, isIndexable } from "@/content/registry";
-import { jeeOfferPopup } from "@/content/offers/campaign";
+import type { PopupCampaign } from "@/content/offers/campaign";
 
 /**
  * Controlled JEE offer popup.
@@ -9,22 +9,22 @@ import { jeeOfferPopup } from "@/content/offers/campaign";
  * immediately on navigation. Dismissal is remembered in sessionStorage, so it
  * does not reopen while the student keeps browsing.
  */
-export function OfferPopup() {
+export function OfferPopup({ campaign }: { campaign: PopupCampaign }) {
   const [open, setOpen] = useState(false);
-  const href: string = jeeOfferPopup.href;
+  const href: string = campaign.href;
   const record = getUrl(href);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(jeeOfferPopup.sessionKey)) return;
+    if (sessionStorage.getItem(campaign.sessionKey)) return;
 
     const timer = window.setTimeout(() => {
-      sessionStorage.setItem(jeeOfferPopup.sessionKey, "shown");
+      sessionStorage.setItem(campaign.sessionKey, "shown");
       setOpen(true);
-    }, jeeOfferPopup.delayMs);
+    }, campaign.delayMs);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [campaign.delayMs, campaign.sessionKey]);
 
   useEffect(() => {
     if (!open) return;
@@ -41,12 +41,12 @@ export function OfferPopup() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="JEE Test Series 2026 offer"
+      aria-label={"ariaLabel" in campaign ? campaign.ariaLabel : "JEE Test Series 2026 offer"}
       className="fixed inset-0 z-[70] flex items-end justify-center bg-primary/40 p-4 sm:items-center"
     >
       <div className="w-full max-w-sm rounded-2xl border border-border bg-white p-6 shadow-elevated">
         <div className="flex items-start justify-between gap-3">
-          <p className="eyebrow text-accent">{jeeOfferPopup.eyebrow}</p>
+          <p className="eyebrow text-accent">{campaign.eyebrow}</p>
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -57,11 +57,11 @@ export function OfferPopup() {
           </button>
         </div>
 
-        <p className="mt-2 text-lg font-extrabold text-primary">{jeeOfferPopup.title}</p>
-        <p className="mt-1 text-sm text-ink/80">{jeeOfferPopup.subtitle}</p>
+        <p className="mt-2 text-lg font-extrabold text-primary">{campaign.title}</p>
+        <p className="mt-1 text-sm text-ink/80">{campaign.subtitle}</p>
 
         <ul className="mt-4 space-y-1.5">
-          {jeeOfferPopup.points.map((point) => (
+          {campaign.points.map((point) => (
             <li key={point} className="flex gap-2 text-sm text-ink/85">
               <span aria-hidden="true" className="mt-[2px] font-bold text-accent">
                 •
@@ -72,9 +72,9 @@ export function OfferPopup() {
         </ul>
 
         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          {jeeOfferPopup.priceLabel}
+          {campaign.priceLabel}
         </p>
-        <p className="text-2xl font-extrabold text-primary">{jeeOfferPopup.price}</p>
+        <p className="text-2xl font-extrabold text-primary">{campaign.price}</p>
 
         <Link
           to={href}
@@ -82,7 +82,7 @@ export function OfferPopup() {
           onClick={() => setOpen(false)}
           className="btn-press mt-5 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
-          {jeeOfferPopup.ctaLabel}
+          {campaign.ctaLabel}
         </Link>
       </div>
     </div>

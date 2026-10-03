@@ -42,7 +42,7 @@ export const navItems: NavItem[] = [
           { label: "JEE Main", href: "/jee/jee-main" },
           { label: "JEE Advanced", href: "/jee/jee-advanced" },
           { label: "How it works", href: "/how-it-works" },
-          { label: "Pricing", href: "/#pricing" },
+          { label: "Pricing", href: "/neet/pricing" },
         ],
       },
       {

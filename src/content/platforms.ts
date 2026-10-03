@@ -824,6 +824,8 @@ export const platforms: Record<string, PlatformData> = {
       "/neet/score-calculator",
       "/neet/study-plan",
       "/neet/blog",
+      "/neet/mock-tests",
+      "/neet/pricing",
     ],
 
     showPricing: false,

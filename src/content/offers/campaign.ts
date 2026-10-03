@@ -1,10 +1,6 @@
-/**
- * Campaign surfaces for the approved JEE Test Series inaugural offer.
- *
- * Scope rule: the JEE promotional strip and popup appear on JEE pages only.
- * NEET and NDA learning pages never carry JEE commercial copy. The offer page
- * itself does not promote itself.
- */
+import { neetCampaign } from "@/content/offers/neet-test-series";
+
+/** Campaign surfaces for approved JEE and NEET inaugural offers. */
 
 export const OFFER_URL = "/jee/mock-tests";
 
@@ -34,6 +30,9 @@ export const jeeOfferPopup = {
   href: OFFER_URL,
 } as const;
 
+export type AnnouncementCampaign = typeof jeeAnnouncement | typeof neetCampaign.announcement;
+export type PopupCampaign = (typeof jeeOfferPopup & { ariaLabel?: string }) | typeof neetCampaign.popup;
+
 /** True for JEE routes other than the offer page itself. */
 function isJeeSurface(url: string): boolean {
   const path = url.length > 1 && url.endsWith("/") ? url.slice(0, -1) : url;
@@ -47,4 +46,23 @@ export function showJeeAnnouncement(url: string): boolean {
 
 export function showJeeOfferPopup(url: string): boolean {
   return isJeeSurface(url);
+}
+
+function pathOnly(url: string): string {
+  const path = url.split(/[?#]/, 1)[0] ?? url;
+  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+}
+
+export function campaignFor(url: string): {
+  announcement?: AnnouncementCampaign;
+  popup?: PopupCampaign;
+} {
+  const path = pathOnly(url);
+  if (isJeeSurface(path)) return { announcement: jeeAnnouncement, popup: jeeOfferPopup };
+  if (path === "/neet" || path.startsWith("/neet/")) {
+    const announcement = path === neetCampaign.announcement.href ? undefined : neetCampaign.announcement;
+    const popup = path === neetCampaign.announcement.href || path === "/neet/pricing" ? undefined : neetCampaign.popup;
+    return { announcement, popup };
+  }
+  return {};
 }
