@@ -35,15 +35,8 @@ SHOTS.mkdir(parents=True, exist_ok=True)
 # Diagnostic-first T01 recipe, in order. Slot ids come from
 # src/content/recipes/home.ts and are the anchor ids rendered on the page.
 REQUIRED_SECTIONS = [
-    "home",             # B01 Hero
-    "idea",             # B05
-    "moment",           # B07
-    "how",              # B17
-    "methodology",      # B08
-    "resources",        # B58
-    "people",           # B16
-    "faq",              # B22
-    "cta",              # B24
+    "home", "idea", "product", "patterns", "moment", "exams", "how", "breakdown",
+    "proof", "situations", "resources", "people", "methodology", "faq", "cta",
 ]
 
 NAV_LABELS = ["JEE", "NEET", "NDA", "Institutes", "Resources", "Blog"]

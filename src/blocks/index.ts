@@ -1,3 +1,4 @@
+import { HomeProductShowcase, ScorePatterns, ExamExamples, MarksBreakdown, AnalysisProof } from "@/components/home/HomeV3Sections";
 import { registerBlocks } from "@/lib/recipe";
 
 /* Marketing / brand blocks (B01–B24) */
@@ -101,6 +102,11 @@ export function ensureBlocksRegistered() {
     B56: AcademicReviewByline,
     B57: FacultyAttribution,
     B58: ResourcePathways,
+    B59: HomeProductShowcase,
+    B60: ScorePatterns,
+    B61: ExamExamples,
+    B62: MarksBreakdown,
+    B63: AnalysisProof,
 
     B26: SyllabusExplorer,
     B27: TrendTable,

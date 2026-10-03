@@ -1,59 +1,44 @@
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-
 
 const scenarios = [
   {
     q: "My mock scores aren't moving.",
-    a: "You may be working hard but repeatedly revising weaknesses that are not causing the biggest performance loss. Diagnosis ranks gaps by the marks they actually cost.",
+    a: "You may be revising weaknesses that are not causing the biggest loss. Diagnosis ranks gaps by the marks they cost.",
   },
   {
     q: "I know the chapter, but I still get questions wrong.",
-    a: "The problem may be application, execution or exam behaviour rather than understanding. Separating the two changes what you should practise next.",
+    a: "The problem may be application or exam behaviour rather than understanding — which changes what to practise.",
   },
   {
     q: "I run out of time in every paper.",
-    a: "Time is often lost on a small number of questions. Looking at pace and attempt order shows where the minutes are actually going.",
+    a: "Time is often lost on a few questions. Pace and attempt order show where the minutes go.",
   },
   {
     q: "I don't know what to revise tonight.",
-    a: "Rank Sarthi converts performance patterns into a clear preparation priority, so a study session starts with a decision already made.",
+    a: "Performance patterns become a clear priority, so a study session starts with a decision already made.",
   },
 ];
 
+/** B11 — compact student situations (example scenarios, not testimonials). */
 export function Situations({ id }: { id?: string }) {
   return (
-    <section id={id} className="section-pad bg-background">
+    <section id={id} className="bg-background py-14 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow text-accent">Example scenarios</p>
-          <h2 className="mt-5 text-display-lg text-primary">Situations Rank Sarthi is designed for.</h2>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            These are common preparation situations, not customer testimonials.
-          </p>
+          <p className="eyebrow text-accent">Sound familiar?</p>
+          <h2 className="mt-4 text-display-lg text-primary">Situations Rank Sarthi is designed for.</h2>
+          <p className="mt-3 text-sm text-muted-foreground">Common preparation situations, not customer testimonials.</p>
         </Reveal>
-
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {scenarios.map((s, i) => (
-            <Reveal key={s.q} delay={i * 90}>
-              <div className="card-lift flex h-full flex-col rounded-2xl border border-border bg-card p-8">
-                <span className="w-fit rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold">
-                  Example scenario
-                </span>
-                <p className="mt-5 font-display text-xl font-semibold tracking-tight text-primary">
-                  &ldquo;{s.q}&rdquo;
-                </p>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{s.a}</p>
-                <a
-                  href="#idea"
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-bold text-accent transition-all hover:gap-3"
-                >
-                  See how diagnosis helps <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
+        <ul className="-mx-4 mt-8 flex snap-x gap-3 overflow-x-auto px-4 pb-3 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
+          {scenarios.map((s) => (
+            <li key={s.q} className="w-[80%] shrink-0 snap-start md:w-auto">
+              <div className="h-full rounded-lg border border-border bg-card p-5">
+                <p className="font-display text-base font-semibold text-primary">&ldquo;{s.q}&rdquo;</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.a}</p>
               </div>
-            </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
