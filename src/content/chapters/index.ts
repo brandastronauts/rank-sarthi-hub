@@ -165,6 +165,7 @@ import { neetPhysicsElectromagneticWaves } from "./neet-physics-electromagnetic-
 import { neetPhysicsElectrostatics } from "./neet-physics-electrostatics";
 import { neetPhysicsGravitation } from "./neet-physics-gravitation";
 import { neetPhysicsGravitation2 } from "./neet-physics-gravitation-2";
+import { neetPhysicsExperimentalSkills } from "./neet-physics-experimental-skills";
 import { neetPhysicsKinematics } from "./neet-physics-kinematics";
 import { neetPhysicsKineticTheory } from "./neet-physics-kinetic-theory";
 import { neetPhysicsLawsOfMotion } from "./neet-physics-laws-of-motion";
@@ -360,6 +361,7 @@ const chapters: ChapterContent[] = [
   neetPhysicsElectrostatics,
   neetPhysicsGravitation,
   neetPhysicsGravitation2,
+  neetPhysicsExperimentalSkills,
   neetPhysicsKinematics,
   neetPhysicsKineticTheory,
   neetPhysicsLawsOfMotion,
