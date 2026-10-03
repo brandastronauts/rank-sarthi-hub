@@ -32,7 +32,7 @@ export function chapterMapEntries(content: SubjectHubContent): ChapterMapEntry[]
   const notes = new Map(content.chapterMap.notes.map((n) => [n.url, n]));
 
   return childrenOf(content.url)
-    .filter((r) => r.template === "T06")
+    .filter((r) => r.template === "T06" && !r.redirectTo)
     .map((record) => {
       const note = notes.get(record.url);
       return {

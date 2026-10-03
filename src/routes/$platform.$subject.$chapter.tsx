@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ensureBlocksRegistered } from "@/blocks";
 import { PageFrame } from "@/components/shell/PageFrame";
 import { JumpNav } from "@/components/shell/JumpNav";
@@ -25,6 +25,7 @@ export const Route = createFileRoute("/$platform/$subject/$chapter")({
   loader: ({ params }) => {
     const url = `/${params.platform}/${params.subject}/${params.chapter}`;
     const record = getUrl(url);
+    if (record?.redirectTo) throw redirect({ href: record.redirectTo, statusCode: 301 });
     if (record?.buildStatus !== "built") throw notFound();
 
     const content = getChapter(params.platform, params.subject, params.chapter);
