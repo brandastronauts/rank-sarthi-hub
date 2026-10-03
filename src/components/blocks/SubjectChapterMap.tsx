@@ -11,6 +11,13 @@ export interface ChapterMapEntry {
   live: boolean;
 }
 
+export interface OfficialUnitEntry {
+  n: number;
+  name: string;
+  primary: { url: string; name: string; live: boolean };
+  parts: { url: string; name: string; live: boolean }[];
+}
+
 /**
  * B44 — Subject chapter map.
  *
@@ -26,6 +33,7 @@ export function SubjectChapterMap({
   entries = [],
   contextualHeading,
   contextualNote,
+  officialUnits = [],
 }: {
   id?: string;
   heading: string;
@@ -33,6 +41,7 @@ export function SubjectChapterMap({
   entries?: ChapterMapEntry[];
   contextualHeading?: string;
   contextualNote?: string;
+  officialUnits?: OfficialUnitEntry[];
 }) {
   if (!entries.length) return null;
 
@@ -41,7 +50,8 @@ export function SubjectChapterMap({
 
   return (
     <section id={id} className="scroll-mt-28">
-      <h2 className="text-display-md text-primary">{heading}</h2>
+      {officialUnits.length ? <OfficialUnits units={officialUnits} /> : null}
+      <h2 className={`text-display-md text-primary${officialUnits.length ? " mt-12" : ""}`}>{heading}</h2>
       {scopeNote ? <p className="mt-3 max-w-3xl text-sm text-ink/80">{scopeNote}</p> : null}
 
       <Grid entries={current} />
@@ -103,5 +113,54 @@ function Grid({ entries }: { entries: ChapterMapEntry[] }) {
         );
       })}
     </ol>
+  );
+}
+
+function UnitLink({ link, className }: { link: OfficialUnitEntry["primary"]; className: string }) {
+  if (!link.live) return <span className="text-muted-foreground">{link.name}</span>;
+  return (
+    <Link
+      to={link.url}
+      rel={isIndexable(getUrl(link.url)) ? undefined : "nofollow"}
+      className={className}
+    >
+      {link.name}
+    </Link>
+  );
+}
+
+function OfficialUnits({ units }: { units: OfficialUnitEntry[] }) {
+  return (
+    <div>
+      <h2 className="text-display-md text-primary">Official 2026 syllabus units</h2>
+      <p className="mt-3 max-w-3xl text-sm text-ink/80">
+        All {units.length} official units in official order and wording, each linked to its main study page.
+      </p>
+      <ol className="mt-5 grid gap-3 md:grid-cols-2">
+        {units.map((u) => (
+          <li key={u.n} className="rounded-xl border border-border bg-white p-4">
+            <p className="text-sm font-bold text-primary">
+              <span className="mr-2 text-muted-foreground">{u.n}.</span>
+              {u.name}
+            </p>
+            <p className="mt-2 text-xs text-ink/75">
+              Main page:{" "}
+              <UnitLink link={u.primary} className="font-semibold text-accent underline underline-offset-4" />
+            </p>
+            {u.parts.length ? (
+              <p className="mt-1 text-xs text-ink/75">
+                Also part of this unit:{" "}
+                {u.parts.map((p, i) => (
+                  <span key={p.url}>
+                    {i > 0 ? ", " : ""}
+                    <UnitLink link={p} className="text-accent underline underline-offset-4" />
+                  </span>
+                ))}
+              </p>
+            ) : null}
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
