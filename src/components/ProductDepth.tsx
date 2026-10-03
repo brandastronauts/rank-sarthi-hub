@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Eye, Target, BookOpen, Layers, FileQuestion, AlertTriangle, Clock, TrendingUp, ArrowRight, ChevronRight } from "lucide-react";
 
-const layers = [
+export const layers = [
   { l: "Your performance", d: "Everything begins with an attempted paper.", icon: Eye },
   { l: "Score", d: "The number every other platform stops at.", icon: Target },
   { l: "Subject", d: "Where the loss is concentrated.", icon: Layers },

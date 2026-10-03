@@ -5,7 +5,7 @@ import { destinations } from "@/content/destinations";
 import ndaAspirant from "@/assets/nda-aspirant.jpg";
 
 
-const cards = [
+export const cards = [
   {
     name: "JeeRankUp",
     mark: "JEE",
