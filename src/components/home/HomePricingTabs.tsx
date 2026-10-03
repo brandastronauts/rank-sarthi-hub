@@ -20,6 +20,7 @@ const tabs = {
     border: "border-jee",
     packages: jeeTestSeriesPackages,
     note: "All active inaugural JEE packages.",
+    offerLabel: "View JEE Offers",
     offer: destinations.page("View JEE Offers", JEE_OFFER_URL),
     compare: null,
   },
@@ -29,6 +30,7 @@ const tabs = {
     border: "border-neet",
     packages: neetTestSeriesPackages,
     note: `Starter students can add an eligible test for ${formatInr(neetPricing.addOnTest)}.`,
+    offerLabel: "View NEET Offers",
     offer: destinations.page("View NEET Offers", NEET_OFFER_URL),
     compare: destinations.page("Compare NEET Plans", "/neet/pricing"),
   },
@@ -109,11 +111,11 @@ export function HomePricingTabs({ id }: { id?: string }) {
 
         <div className="mt-5 flex flex-wrap items-center gap-3">
           <CtaLink d={tab.offer} className="btn-press inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground">
-            {tab.offer.label} <ArrowRight className="size-4" aria-hidden="true" />
+            {tab.offerLabel} <ArrowRight className="size-4" aria-hidden="true" />
           </CtaLink>
           {tab.compare ? (
             <CtaLink d={tab.compare} className="btn-press inline-flex items-center rounded-md border border-primary/25 bg-background px-5 py-3 text-sm font-bold text-primary">
-              {tab.compare.label}
+              Compare NEET Plans
             </CtaLink>
           ) : null}
         </div>
