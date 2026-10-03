@@ -12,14 +12,14 @@ export const neetPhysicsHub: SubjectHubContent = {
   "subject": "Physics",
   "exam": "NEET (UG)",
   "eyebrow": "NEET · Physics",
-  "title": "NEET Physics: 29-Route Learning Map, Formula Discipline and Study Paths",
-  "intent": "Own NEET Physics subject-level navigation, organize all 29 frozen routes into useful learning clusters, distinguish direct official owners from editorial umbrellas and merged routes, and route students to focused content without a weightage table.",
+  "title": "NEET Physics: 20 Official Units, Topic Guides and Study Paths",
+  "intent": "Own NEET Physics subject-level navigation, organize all 30 Physics routes into useful learning clusters, distinguish direct official owners from editorial umbrellas and merged routes, and route students to focused content without a weightage table.",
   "answer": [
     {
       "type": "paragraph",
       "children": [
         {
-          "text": "Rank Sarthi NEET Physics organizes all 29 frozen topic routes around the official 2026 syllabus, but it does not pretend the URL list is the official unit list. Use the hub to move from physical situation to concept, model, formula, conditions, units, diagram, method choice and error diagnosis. Weightage and predicted-question claims are intentionally absent."
+          "text": "Rank Sarthi NEET Physics lists the 20 official NEET UG 2026 units first, then organizes its 30 Physics topic pages around the official 2026 syllabus, but it does not pretend the URL list is the official unit list. Use the hub to move from physical situation to concept, model, formula, conditions, units, diagram, method choice and error diagnosis. Weightage and predicted-question claims are intentionally absent."
         }
       ]
     },
@@ -27,7 +27,7 @@ export const neetPhysicsHub: SubjectHubContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Mechanics: Mechanics umbrella, Units & Measurements, Kinematics, Motion in Plane, Laws of Motion, Work Energy Power, Rotational Motion, Gravitation, Gravitation 2 bridge, Properties of Matter."
+          "text": "Mechanics: Mechanics overview, Physics and Measurement, Kinematics, Motion in Plane, Laws of Motion, Work, Energy, and Power, Rotational Motion, Gravitation, Properties of Solids and Liquids."
         }
       ]
     },
@@ -35,7 +35,7 @@ export const neetPhysicsHub: SubjectHubContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Thermal Physics: Thermal Properties, Thermodynamics, Kinetic Theory."
+          "text": "Thermal Physics: Thermal Properties, Thermodynamics, Kinetic Theory of Gases."
         }
       ]
     },
@@ -83,7 +83,7 @@ export const neetPhysicsHub: SubjectHubContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Modern Physics and Electronics: Modern Physics umbrella, Dual Nature Radiation, Atoms, Nuclei, Semiconductor Electronics."
+          "text": "Modern Physics and Electronics: Modern Physics overview, Dual Nature of Matter and Radiation, Atoms, Nuclei, Electronic Devices."
         }
       ]
     },
@@ -123,7 +123,7 @@ export const neetPhysicsHub: SubjectHubContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Mechanics and Modern Physics are editorial umbrellas. Motion in Plane, Properties of Matter, Thermal Properties, Oscillations, Waves, EMI, AC, Ray Optics, Wave Optics, Atoms and Nuclei are focused splits of combined official units. Gravitation 2 is not a second chapter; it remains a transparent bridge/review route."
+          "text": "Mechanics and Modern Physics are study-guide overviews, not official units. Motion in Plane, Thermal Properties, Oscillations, Waves, EMI, AC, Ray Optics, Wave Optics, Atoms and Nuclei are focused parts of combined official units, and each page names its official unit."
         }
       ]
     },
@@ -131,29 +131,29 @@ export const neetPhysicsHub: SubjectHubContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Official Experimental Skills should be surfaced as a cross-cutting practice layer, for example measurement instruments under Units & Measurements, Young modulus under Properties of Matter, specific heat under Thermal Properties, pendulum under Oscillations and resonance tube under Waves. This does not create a new route."
+          "text": "Official Unit 20, Experimental Skills, has its own page covering every listed activity, from Vernier callipers to identifying a diode, LED, resistor and capacitor."
         }
       ]
     }
   ],
   "contentStatus": "draft",
   "chips": [
-    "14 current official scope routes",
-    "29 registered Physics routes reconciled",
+    "20 official NEET UG 2026 units",
+    "30 Physics topic pages",
     "Draft: pending human academic review"
   ],
   "chapterMap": {
-    "heading": "All 29 registered Physics routes",
-    "scopeNote": "Scope labels follow the accepted route-ownership reconciliation. Current official scope means the route owns content explicit in the official NEET UG 2026 syllabus. Partial or merged official scope means the route covers part of a current unit or merges official wording. Contextual umbrella route means the route is a navigation layer, not an official heading. Not currently listed means the topic is not explicit in the current official syllabus. Duplicate-intent routes are held under route review.",
+    "heading": "Supporting topic guides and study guides",
+    "scopeNote": "Scope labels follow the accepted route-ownership reconciliation. Current official scope means the route owns content explicit in the official NEET UG 2026 syllabus. Partial or merged official scope means the route covers part of a current unit or merges official wording. Contextual umbrella route means the route is a navigation layer, not an official heading. Not currently listed means the topic is not explicit in the current official syllabus. Overview means a study guide spanning several official units.",
     "contextualHeading": "Contextual / historical routes",
     "contextualNote": "These routes are not current official NEET UG 2026 headings. They are preserved for context or route control only and must not be treated as current exam scope.",
-    "expectedCount": 29,
+    "expectedCount": 30,
     "notes": [
       {
         "url": "/neet/physics/mechanics",
-        "scope": "contextual umbrella route",
+        "scope": "Overview",
         "order": 1,
-        "note": "Rank Sarthi mechanics navigation umbrella over current mechanics foundations; not an official unit title."
+        "note": "Study-guide overview, not an official unit. Covers Units 1 to 6."
       },
       {
         "url": "/neet/physics/thermodynamics",
@@ -187,9 +187,9 @@ export const neetPhysicsHub: SubjectHubContent = {
       },
       {
         "url": "/neet/physics/modern-physics",
-        "scope": "contextual umbrella route",
+        "scope": "Overview",
         "order": 7,
-        "note": "Rank Sarthi umbrella over official Units 17-19."
+        "note": "Study-guide overview, not an official unit. Covers Units 17 to 19."
       },
       {
         "url": "/neet/physics/waves",
@@ -312,11 +312,10 @@ export const neetPhysicsHub: SubjectHubContent = {
         "note": "Focused child inside official Unit 2: Kinematics."
       },
       {
-        "url": "/neet/physics/gravitation-2",
-        "scope": "duplicate-intent route under review",
+        "url": "/neet/physics/experimental-skills",
+        "scope": "current official scope",
         "order": 28,
-        "note": "No second official Gravitation unit or separate NCERT Gravitation chapter supports an independent near-duplicate page.",
-        "contextual": true
+        "note": "Official Unit 20: Experimental Skills."
       },
       {
         "url": "/neet/physics/thermal-properties",
@@ -328,13 +327,13 @@ export const neetPhysicsHub: SubjectHubContent = {
   },
   "faqs": [
     {
-      "question": "How many frozen Physics topic routes does Rank Sarthi have?",
+      "question": "How many Physics topic pages does Rank Sarthi have?",
       "answer": [
         {
           "type": "paragraph",
           "children": [
             {
-              "text": "Twenty-nine."
+              "text": "Thirty topic pages, organised under the 20 official NEET UG 2026 Physics units."
             }
           ]
         }
@@ -367,13 +366,13 @@ export const neetPhysicsHub: SubjectHubContent = {
       ]
     },
     {
-      "question": "What does Gravitation 2 do?",
+      "question": "Where is Experimental Skills covered?",
       "answer": [
         {
           "type": "paragraph",
           "children": [
             {
-              "text": "It remains a duplicate-intent review/bridge route and does not duplicate the canonical Gravitation article."
+              "text": "Official Unit 20 has its own NEET Experimental Skills page listing every official activity."
             }
           ]
         }
@@ -388,10 +387,10 @@ export const neetPhysicsHub: SubjectHubContent = {
   ],
   "lastVerified": "10 September 2026",
   "seo": {
-    "title": "NEET Physics: 29 Topics, Formulas & Learning Paths | Rank Sarthi",
-    "description": "Navigate all 29 NEET Physics routes with official-scope labels, formula-condition discipline, learning clusters and error diagnosis.",
-    "ogTitle": "NEET Physics: 29 Topics, Formulas & Learning Paths | Rank Sarthi",
-    "ogDescription": "Navigate all 29 NEET Physics routes with official-scope labels, formula-condition discipline, learning clusters and error diagnosis.",
+    "title": "NEET Physics: 20 Official Units & Topic Guides | Rank Sarthi",
+    "description": "Navigate the 20 official NEET Physics units and 30 topic guides with official-scope labels, formula-condition discipline, learning clusters and error diagnosis.",
+    "ogTitle": "NEET Physics: 20 Official Units & Topic Guides | Rank Sarthi",
+    "ogDescription": "Navigate the 20 official NEET Physics units and 30 topic guides with official-scope labels, formula-condition discipline, learning clusters and error diagnosis.",
     "ogType": "website"
   }
 };

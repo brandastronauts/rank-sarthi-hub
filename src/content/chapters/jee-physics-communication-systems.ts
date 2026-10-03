@@ -25,14 +25,14 @@ export const jeePhysicsCommunicationSystems: ChapterContent = {
   platform: "jee",
   subject: "Physics",
   subjectSlug: "physics",
-  chapter: "Communication Systems",
+  chapter: "Communication Systems (not in JEE Main 2026)",
   slug: "communication-systems",
   url: "/jee/physics/communication-systems",
   canonicalIntent:
     "Explain, for background and conceptual learning only, how signals are transmitted using elements of a communication system, propagation modes and amplitude modulation, while stating clearly that this topic is not confirmed as part of the current official JEE Main or JEE Advanced syllabus.",
 
   heroChips: [
-    "Not found in the current official JEE Main or JEE Advanced syllabus documents checked",
+    "Not part of the current JEE Main 2026 syllabus",
     "Written here as background/historical learning only, not exam preparation",
     "No weightage, PYQ or trend claims are made on this page",
   ],
@@ -549,7 +549,7 @@ export const jeePhysicsCommunicationSystems: ChapterContent = {
   ],
 
   meta: {
-    title: "Communication Systems (JEE Physics) - Scope Status and Concept Overview | Rank Sarthi",
+    title: "Communication Systems: Not in the JEE Main 2026 Syllabus | Rank Sarthi",
     description:
       "Communication Systems was not found in the JEE Main syllabus document currently published by NTA or in the JEE Advanced 2026 syllabus PDF. This page explains the concepts as background learning only, with no weightage or exam-relevance claims.",
     ogTitle: "Communication Systems: Scope Status and Concepts (JEE Physics)",

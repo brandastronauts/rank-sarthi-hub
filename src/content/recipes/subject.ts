@@ -1,8 +1,24 @@
 import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { BlockSlot, PageRecipe } from "@/lib/recipe";
 import type { SubjectHubContent, SyllabusTable } from "@/content/types";
-import { childrenOf } from "@/content/registry";
-import type { ChapterMapEntry } from "@/components/blocks/SubjectChapterMap";
+import { childrenOf, getUrl } from "@/content/registry";
+import { physicsUnitsFor } from "@/content/physics-units";
+import type { ChapterMapEntry, OfficialUnitEntry } from "@/components/blocks/SubjectChapterMap";
+
+/** Official 2026 units with explicit primary and split routes (Physics). */
+export function officialUnitEntries(content: SubjectHubContent): OfficialUnitEntry[] {
+  if (content.slug !== "physics") return [];
+  const link = (url: string) => {
+    const r = getUrl(url);
+    return { url, name: r?.name ?? url, live: r?.buildStatus === "built" };
+  };
+  return (physicsUnitsFor(content.platform) ?? []).map((u) => ({
+    n: u.n,
+    name: u.name,
+    primary: link(u.primary),
+    parts: (u.parts ?? []).map(link),
+  }));
+}
 
 /**
  * T04 — Subject hub recipe.
@@ -32,7 +48,7 @@ export function chapterMapEntries(content: SubjectHubContent): ChapterMapEntry[]
   const notes = new Map(content.chapterMap.notes.map((n) => [n.url, n]));
 
   return childrenOf(content.url)
-    .filter((r) => r.template === "T06")
+    .filter((r) => r.template === "T06" && !r.redirectTo)
     .map((record) => {
       const note = notes.get(record.url);
       return {
@@ -92,6 +108,7 @@ export function subjectHubRecipe(
           contextualHeading: content.chapterMap.contextualHeading,
           contextualNote: content.chapterMap.contextualNote,
           entries,
+          officialUnits: officialUnitEntries(content),
         },
         when: entries.length > 0,
       },

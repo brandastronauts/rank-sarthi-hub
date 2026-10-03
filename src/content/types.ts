@@ -41,6 +41,8 @@ export interface UrlRecord {
   sourceRequirement: string;
   /** ISO date the factual content was last verified against sources. */
   lastVerified?: string;
+  /** Retired duplicate: permanently redirect to this registry path. */
+  redirectTo?: string;
 }
 
 /* ------------------------------------------------------------------ */

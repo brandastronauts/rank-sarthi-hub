@@ -10,7 +10,7 @@ export const neetPhysicsPropertiesOfMatter: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Properties of Matter: Elasticity, Fluids, Viscosity and Surface Tension",
+  "chapter": "NEET Properties of Solids and Liquids: Elasticity, Fluids, Viscosity and Surface Tension",
   "slug": "properties-of-matter",
   "url": "/neet/physics/properties-of-matter",
   "canonicalIntent": "Own the mechanical solids-and-fluids portion of official Unit 7: elasticity, fluid pressure, Pascal law, viscosity, Stokes/terminal velocity, streamline/turbulent flow, Bernoulli and surface tension/capillarity. Thermal content is carved out to Thermal Properties.",
@@ -204,9 +204,9 @@ export const neetPhysicsPropertiesOfMatter: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Properties of Matter: Solids, Fluids & Surface Tension | Rank Sarthi",
+    "title": "NEET Properties of Solids and Liquids: Fluids & Surface Tension | Rank Sarthi",
     "description": "Study NEET elasticity, fluid pressure, viscosity, Bernoulli, surface tension and capillarity with model conditions and Unit 7 boundaries.",
-    "ogTitle": "NEET Properties of Matter: Solids, Fluids & Surface Tension | Rank Sarthi",
+    "ogTitle": "NEET Properties of Solids and Liquids: Fluids & Surface Tension | Rank Sarthi",
     "ogDescription": "Study NEET elasticity, fluid pressure, viscosity, Bernoulli, surface tension and capillarity with model conditions and Unit 7 boundaries.",
     "ogType": "article"
   },

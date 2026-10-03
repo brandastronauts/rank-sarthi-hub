@@ -11,13 +11,13 @@ export const neetSyllabusPhysics: InfoPageContent = {
   "exam": "NEET (UG)",
   "title": "NEET Physics Syllabus 2026: Official Units and Rank Sarthi Route Map",
   "eyebrow": "NEET · Syllabus · Physics",
-  "intent": "Own the official-scope truth map for NEET UG 2026 Physics, expose all 20 official units, map all 29 frozen Rank Sarthi Physics topic routes, and make overlaps or merged ownership explicit without manufacturing weightage.",
+  "intent": "Own the official-scope truth map for NEET UG 2026 Physics, expose all 20 official units, map all 30 Rank Sarthi Physics topic pages to their official units without manufacturing weightage.",
   "answer": [
     {
       "type": "paragraph",
       "children": [
         {
-          "text": "The official NEET UG 2026 Physics syllabus contains 20 units, beginning with Physics and Measurement and ending with Experimental Skills. Rank Sarthi has 29 frozen Physics topic routes. Those routes are a learning/navigation architecture, not a copy of the official unit list, so this page labels each route as current, contextual, partial/merged, or duplicate-intent review required."
+          "text": "The official NEET UG 2026 Physics syllabus contains 20 units, beginning with Physics and Measurement and ending with Experimental Skills. Rank Sarthi has 30 Physics topic pages, and each one names the official unit it belongs to."
         }
       ]
     }
@@ -25,7 +25,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
   "contentStatus": "verified",
   "chips": [
     "Official NEET UG 2026 Physics units",
-    "29 registered Physics routes reconciled",
+    "30 Physics topic pages mapped",
     "No unsupported weightage"
   ],
   "blocks": [
@@ -52,102 +52,122 @@ export const neetSyllabusPhysics: InfoPageContent = {
               "items": [
                 [
                   {
-                    "text": "Physics and Measurement"
+                    "text": "Physics and Measurement",
+                    "href": "/neet/physics/units-measurements"
                   }
                 ],
                 [
                   {
-                    "text": "Kinematics"
+                    "text": "Kinematics",
+                    "href": "/neet/physics/kinematics"
                   }
                 ],
                 [
                   {
-                    "text": "Laws of Motion"
+                    "text": "Laws of Motion",
+                    "href": "/neet/physics/laws-of-motion"
                   }
                 ],
                 [
                   {
-                    "text": "Work, Energy, and Power"
+                    "text": "Work, Energy, and Power",
+                    "href": "/neet/physics/work-energy-power"
                   }
                 ],
                 [
                   {
-                    "text": "Rotational Motion"
+                    "text": "Rotational Motion",
+                    "href": "/neet/physics/rotational-motion"
                   }
                 ],
                 [
                   {
-                    "text": "Gravitation"
+                    "text": "Gravitation",
+                    "href": "/neet/physics/gravitation"
                   }
                 ],
                 [
                   {
-                    "text": "Properties of Solids and Liquids"
+                    "text": "Properties of Solids and Liquids",
+                    "href": "/neet/physics/properties-of-matter"
                   }
                 ],
                 [
                   {
-                    "text": "Thermodynamics"
+                    "text": "Thermodynamics",
+                    "href": "/neet/physics/thermodynamics"
                   }
                 ],
                 [
                   {
-                    "text": "Kinetic Theory of Gases"
+                    "text": "Kinetic Theory of Gases",
+                    "href": "/neet/physics/kinetic-theory"
                   }
                 ],
                 [
                   {
-                    "text": "Oscillations and Waves"
+                    "text": "Oscillations and Waves",
+                    "href": "/neet/physics/oscillations"
                   }
                 ],
                 [
                   {
-                    "text": "Electrostatics"
+                    "text": "Electrostatics",
+                    "href": "/neet/physics/electrostatics"
                   }
                 ],
                 [
                   {
-                    "text": "Current Electricity"
+                    "text": "Current Electricity",
+                    "href": "/neet/physics/current-electricity"
                   }
                 ],
                 [
                   {
-                    "text": "Magnetic Effects of Current and Magnetism"
+                    "text": "Magnetic Effects of Current and Magnetism",
+                    "href": "/neet/physics/magnetism"
                   }
                 ],
                 [
                   {
-                    "text": "Electromagnetic Induction and Alternating Currents"
+                    "text": "Electromagnetic Induction and Alternating Currents",
+                    "href": "/neet/physics/electromagnetic-induction"
                   }
                 ],
                 [
                   {
-                    "text": "Electromagnetic Waves"
+                    "text": "Electromagnetic Waves",
+                    "href": "/neet/physics/electromagnetic-waves"
                   }
                 ],
                 [
                   {
-                    "text": "Optics"
+                    "text": "Optics",
+                    "href": "/neet/physics/optics"
                   }
                 ],
                 [
                   {
-                    "text": "Dual Nature of Matter and Radiation"
+                    "text": "Dual Nature of Matter and Radiation",
+                    "href": "/neet/physics/dual-nature-radiation"
                   }
                 ],
                 [
                   {
-                    "text": "Atoms and Nuclei"
+                    "text": "Atoms and Nuclei",
+                    "href": "/neet/physics/atoms"
                   }
                 ],
                 [
                   {
-                    "text": "Electronic Devices"
+                    "text": "Electronic Devices",
+                    "href": "/neet/physics/semiconductor-electronics"
                   }
                 ],
                 [
                   {
-                    "text": "Experimental Skills"
+                    "text": "Experimental Skills",
+                    "href": "/neet/physics/experimental-skills"
                   }
                 ]
               ]
@@ -169,7 +189,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "The frozen Rank Sarthi registry has 29 Physics topic routes. Some match an official unit directly, some split a combined official unit into focused pages, and some are editorial umbrellas. One route, /neet/physics/gravitation-2, has no second official Gravitation owner and no separate NCERT Gravitation chapter that would justify a second near-identical article. It is therefore retained in the registry but marked for duplicate-intent review."
+                  "text": "Rank Sarthi has 30 Physics topic pages. Some match an official unit directly, some cover part of a combined official unit, and two are study-guide overviews (Mechanics; Modern Physics). Each page states its official syllabus unit. The official syllabus has one Unit 6: Gravitation, covered by the NEET Gravitation page."
                 }
               ]
             }
@@ -180,17 +200,18 @@ export const neetSyllabusPhysics: InfoPageContent = {
     {
       "kind": "prose",
       "id": "physics-syl-p3",
-      "heading": "Experimental Skills control",
+      "heading": "Experimental Skills",
       "concepts": [
         {
           "id": "physics-syl-c3",
-          "title": "Experimental Skills control",
+          "title": "Experimental Skills",
           "body": [
             {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "Official Unit 20 is real scope even though the 29-topic frozen Physics inventory has no dedicated /experimental-skills topic route. Do not invent a new route in P01. The syllabus page must expose Unit 20 and the subject hub can surface practical-skill links or annotations inside the relevant existing topic families. This is an ownership note, not a missing-registry error."
+                  "text": "Official Unit 20 lists measurement and laboratory activities, from Vernier callipers and the screw gauge to diode and Zener characteristics. They are covered on the NEET Experimental Skills page.",
+                  "href": "/neet/physics/experimental-skills"
                 }
               ]
             }
@@ -211,7 +232,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "The complete 29-route map appears in the shared reconciliation section above and is the canonical ownership layer for P01. P02-owned routes are not authored here; they are classified only enough to keep the syllabus and subject hub truthful."
+                  "text": "The NEET Physics hub lists all 20 official units first, each linked to its main page, and then the supporting topic guides."
                 }
               ]
             }
@@ -252,7 +273,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
       "rows": [
         [
           "mechanics",
-          "Contextual Umbrella",
+          "Study-Guide Overview",
           "Rank Sarthi mechanics navigation umbrella over current mechanics foundations; not an official unit title."
         ],
         [
@@ -282,7 +303,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
         ],
         [
           "modern-​physics",
-          "Contextual Umbrella",
+          "Study-Guide Overview",
           "Rank Sarthi umbrella over official Units 17-19."
         ],
         [
@@ -386,9 +407,9 @@ export const neetSyllabusPhysics: InfoPageContent = {
           "Focused child inside official Unit 2: Kinematics."
         ],
         [
-          "gravitation-​2",
-          "Duplicate Intent Review Required",
-          "No second official Gravitation unit or separate NCERT Gravitation chapter supports an independent near-duplicate page."
+          "experimental-​skills",
+          "Current Official Scope",
+          "Official Unit 20: Experimental Skills."
         ],
         [
           "thermal-​properties",
@@ -414,20 +435,20 @@ export const neetSyllabusPhysics: InfoPageContent = {
       ]
     },
     {
-      "question": "Are all 29 Rank Sarthi Physics routes official syllabus units?",
+      "question": "Is every Rank Sarthi Physics page an official syllabus unit?",
       "answer": [
         {
           "type": "paragraph",
           "children": [
             {
-              "text": "No. The registry contains direct owners, focused splits, editorial umbrellas and one duplicate-intent review route."
+              "text": "No. Some pages match an official unit, some cover part of one, and two are study-guide overviews."
             }
           ]
         }
       ]
     },
     {
-      "question": "Is Gravitation 2 an official NEET UG 2026 unit?",
+      "question": "Does NEET Physics have more than one Gravitation unit?",
       "answer": [
         {
           "type": "paragraph",
@@ -446,7 +467,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
           "type": "paragraph",
           "children": [
             {
-              "text": "It is official Unit 20 and is shown on the syllabus/hub without inventing a new frozen topic route."
+              "text": "It is official Unit 20 and has its own NEET Experimental Skills page."
             }
           ]
         }
@@ -468,10 +489,10 @@ export const neetSyllabusPhysics: InfoPageContent = {
   ],
   "lastVerified": "10 September 2026",
   "seo": {
-    "title": "NEET Physics Syllabus 2026: 20 Units & 29-Route Map | Rank Sarthi",
-    "description": "View the official NEET UG 2026 Physics syllabus, all 20 units, and the status of every frozen Rank Sarthi Physics route without unsupported weightage claims.",
-    "ogTitle": "NEET Physics Syllabus 2026: 20 Units & 29-Route Map | Rank Sarthi",
-    "ogDescription": "View the official NEET UG 2026 Physics syllabus, all 20 units, and the status of every frozen Rank Sarthi Physics route without unsupported weightage claims.",
+    "title": "NEET Physics Syllabus 2026: 20 Official Units & Topic Map | Rank Sarthi",
+    "description": "View the official NEET UG 2026 Physics syllabus, all 20 units, and how every Rank Sarthi Physics page maps to them without unsupported weightage claims.",
+    "ogTitle": "NEET Physics Syllabus 2026: 20 Official Units & Topic Map | Rank Sarthi",
+    "ogDescription": "View the official NEET UG 2026 Physics syllabus, all 20 units, and how every Rank Sarthi Physics page maps to them without unsupported weightage claims.",
     "ogType": "website"
   }
 };

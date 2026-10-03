@@ -15,7 +15,7 @@ export const jeePhysicsSemiconductors: ChapterContent = {
   platform: "jee",
   subject: "Physics",
   subjectSlug: "physics",
-  chapter: "Semiconductors",
+  chapter: "Electronic Devices",
   slug: "semiconductors",
   url: "/jee/physics/semiconductors",
   canonicalIntent:
@@ -599,12 +599,6 @@ export const jeePhysicsSemiconductors: ChapterContent = {
 
   relatedChapters: [
     {
-      label: "Communication Systems",
-      url: "/jee/physics/communication-systems",
-      relation: "forward",
-      description: "Apply diode and device behaviour to signal transmission.",
-    },
-    {
       label: "Electromagnetic Waves",
       url: "/jee/physics/electromagnetic-waves",
       relation: "forward",
@@ -680,7 +674,7 @@ export const jeePhysicsSemiconductors: ChapterContent = {
   contentFlags: ["weightage-suppressed", "trend-suppressed", "no-verified-reviewer"],
 
   meta: {
-    title: "Semiconductors for JEE Main: Diodes, Devices, Logic",
+    title: "Electronic Devices for JEE Main: Diodes, Semiconductors, Logic",
     description:
       "Learn JEE Main semiconductors through carriers, p-n junction bias, diode curves, rectifiers, Zener regulation, light devices, logic gates, and traps.",
     ogTitle: "Semiconductors for JEE Main",

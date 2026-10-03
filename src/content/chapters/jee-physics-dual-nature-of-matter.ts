@@ -18,7 +18,7 @@ export const jeePhysicsDualNatureOfMatter: ChapterContent = {
   platform: "jee",
   subject: "Physics",
   subjectSlug: "physics",
-  chapter: "Dual Nature of Matter",
+  chapter: "Dual Nature of Matter and Radiation",
   slug: "dual-nature-of-matter",
   url: "/jee/physics/dual-nature-of-matter",
   canonicalIntent:
@@ -632,7 +632,7 @@ export const jeePhysicsDualNatureOfMatter: ChapterContent = {
   contentFlags: ["weightage-suppressed", "trend-suppressed", "no-verified-reviewer"],
 
   meta: {
-    title: "Dual Nature of Matter for JEE: Photoelectric, de Broglie",
+    title: "Dual Nature of Matter and Radiation for JEE: Photoelectric, de Broglie",
     description:
       "Learn JEE dual nature through photoelectric observations, photon energy, stopping potential, de Broglie wavelength, conditions, reasoning, and traps.",
     ogTitle: "Dual Nature of Matter for JEE",

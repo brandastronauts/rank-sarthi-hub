@@ -10,7 +10,7 @@ export const neetPhysicsUnitsMeasurements: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Units and Measurements: SI Units, Errors, Significant Figures and Dimensions",
+  "chapter": "NEET Physics and Measurement: SI Units, Errors, Significant Figures and Dimensions",
   "slug": "units-measurements",
   "url": "/neet/physics/units-measurements",
   "canonicalIntent": "Teach official Unit 1 measurement concepts with SI units, significant figures, errors, dimensions and dimensional analysis, emphasizing how measurement precision constrains later Physics calculations.",
@@ -179,9 +179,9 @@ export const neetPhysicsUnitsMeasurements: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Units and Measurements: Errors, SI Units & Dimensions | Rank Sarthi",
+    "title": "NEET Physics and Measurement: Errors, SI Units & Dimensions | Rank Sarthi",
     "description": "Master NEET Units and Measurements with SI units, significant figures, measurement errors, dimensional analysis and condition-aware examples.",
-    "ogTitle": "NEET Units and Measurements: Errors, SI Units & Dimensions | Rank Sarthi",
+    "ogTitle": "NEET Physics and Measurement: Errors, SI Units & Dimensions | Rank Sarthi",
     "ogDescription": "Master NEET Units and Measurements with SI units, significant figures, measurement errors, dimensional analysis and condition-aware examples.",
     "ogType": "article"
   },

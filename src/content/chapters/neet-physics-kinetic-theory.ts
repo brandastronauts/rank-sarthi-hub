@@ -184,9 +184,9 @@ export const neetPhysicsKineticTheory: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Kinetic Theory: RMS Speed & Equipartition | Rank Sarthi",
+    "title": "NEET Kinetic Theory of Gases: RMS Speed & Equipartition | Rank Sarthi",
     "description": "Learn NEET Kinetic Theory with ideal-gas assumptions, pressure relation, RMS speed, degrees of freedom, equipartition and mean free path.",
-    "ogTitle": "NEET Kinetic Theory: RMS Speed & Equipartition | Rank Sarthi",
+    "ogTitle": "NEET Kinetic Theory of Gases: RMS Speed & Equipartition | Rank Sarthi",
     "ogDescription": "Learn NEET Kinetic Theory with ideal-gas assumptions, pressure relation, RMS speed, degrees of freedom, equipartition and mean free path.",
     "ogType": "article"
   },

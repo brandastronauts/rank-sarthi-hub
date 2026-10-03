@@ -10,7 +10,7 @@ export const neetPhysicsOscillations: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Oscillations: SHM, Spring Energy and Simple Pendulum Conditions",
+  "chapter": "NEET Oscillations and Waves: SHM, Spring Energy and Simple Pendulum Conditions",
   "slug": "oscillations",
   "url": "/neet/physics/oscillations",
   "canonicalIntent": "Own the oscillation/SHM portion of official Unit 10: periodic motion, period/frequency/phase, ideal SHM equation, spring oscillator, SHM energy and simple pendulum with small-angle conditions.",
@@ -189,9 +189,9 @@ export const neetPhysicsOscillations: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Oscillations: SHM, Springs & Pendulum | Rank Sarthi",
+    "title": "NEET Oscillations and Waves: SHM, Springs & Pendulum | Rank Sarthi",
     "description": "Study NEET oscillations with SHM equations, phase, energy, spring period and simple-pendulum small-angle conditions.",
-    "ogTitle": "NEET Oscillations: SHM, Springs & Pendulum | Rank Sarthi",
+    "ogTitle": "NEET Oscillations and Waves: SHM, Springs & Pendulum | Rank Sarthi",
     "ogDescription": "Study NEET oscillations with SHM equations, phase, energy, spring period and simple-pendulum small-angle conditions.",
     "ogType": "article"
   },

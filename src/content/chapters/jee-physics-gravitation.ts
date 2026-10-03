@@ -636,12 +636,6 @@ export const jeePhysicsGravitation: ChapterContent = {
       relation: "same-unit",
       description: "Extend circular-motion reasoning used for satellite orbits.",
     },
-    {
-      label: "Communication Systems",
-      url: "/jee/physics/communication-systems",
-      relation: "forward",
-      description: "See the later application context of satellites, without moving orbit theory out of this page.",
-    },
   ],
   links: [
     {

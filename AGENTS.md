@@ -10,3 +10,5 @@
 - NEET commercial surfaces consume one shared offer configuration. Why: approved prices, add-ons, calculations, and terms must stay consistent sitewide.
 - One common JEE + NEET campaign (strip + once-per-session popup) is configured in src/content/offers/campaign.ts and suppressed on commercial destinations and NDA pages. Why: no stacked or exam-conflicting promotions, and no implied NDA offer.
 - All RankUp handoffs go through buildRankUpHandoff with the controlled rs_cta vocabulary; the contract lives in docs/rankup-handoff-contract.md. Why: one link rule the RankUp team can rely on.
+- Official Physics unit wording and unit-to-route ownership for JEE Main and NEET live only in src/content/physics-units.ts; syllabus maps, hubs and chapter "Official syllabus unit" labels read it. Why: unit navigation must never depend on fuzzy name matching or drift between exams.
+- Retired duplicate routes use UrlRecord.redirectTo (301 in the chapter loader, excluded from hubs and sitemaps) instead of deletion. Why: keeps old links working with no 404s.

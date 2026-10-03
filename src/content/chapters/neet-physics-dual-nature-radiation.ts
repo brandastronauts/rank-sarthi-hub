@@ -266,9 +266,9 @@ export const neetPhysicsDualNatureRadiation: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Dual Nature: Photoelectric Effect & de Broglie | Rank Sarthi",
+    "title": "NEET Dual Nature of Matter and Radiation: Photoelectric & de Broglie | Rank Sarthi",
     "description": "Learn NEET photoelectric effect, Einstein equation, threshold frequency, stopping potential and de Broglie matter waves with conditions and traps.",
-    "ogTitle": "NEET Dual Nature: Photoelectric Effect & de Broglie | Rank Sarthi",
+    "ogTitle": "NEET Dual Nature of Matter and Radiation: Photoelectric & de Broglie | Rank Sarthi",
     "ogDescription": "Learn NEET photoelectric effect, Einstein equation, threshold frequency, stopping potential and de Broglie matter waves with conditions and traps.",
     "ogType": "article"
   },

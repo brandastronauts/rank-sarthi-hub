@@ -1,6 +1,7 @@
 import { urlRecords } from "./urls";
 import { topicAliases } from "./topic-aliases";
 import { getUrl } from "./registry";
+import { physicsUnitRoute } from "./physics-units";
 import type { Platform, UrlRecord } from "./types";
 
 /**
@@ -135,6 +136,15 @@ export function resolveTopicRoute(
   if (clean.startsWith("/")) {
     const record = getUrl(clean);
     return record?.buildStatus === "built" ? record : undefined;
+  }
+
+  /* Official Physics units resolve explicitly, never by name matching. */
+  if (wanted === "physics") {
+    const explicit = physicsUnitRoute(scope.platform, clean);
+    if (explicit) {
+      const record = getUrl(explicit);
+      if (record?.buildStatus === "built") return record;
+    }
   }
 
   for (const index of [byName, byTight]) {
