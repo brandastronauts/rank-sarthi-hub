@@ -135,7 +135,7 @@ async def main() -> int:
         )
         check(bool(logo_ok), "official header logo image loads")
 
-        diagnostic_labels = await page.get_by_text("Start Free Diagnostic", exact=True).count()
+        diagnostic_labels = await page.get_by_text("Start My Free Diagnostic", exact=True).count()
         check(diagnostic_labels >= 2, f"diagnostic CTA is repeated consistently ({diagnostic_labels})")
 
         # 7. Responsive overflow + screenshots.
