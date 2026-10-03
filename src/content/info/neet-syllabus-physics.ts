@@ -273,7 +273,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
       "rows": [
         [
           "mechanics",
-          "Contextual Umbrella",
+          "Study-Guide Overview",
           "Rank Sarthi mechanics navigation umbrella over current mechanics foundations; not an official unit title."
         ],
         [
@@ -303,7 +303,7 @@ export const neetSyllabusPhysics: InfoPageContent = {
         ],
         [
           "modern-​physics",
-          "Contextual Umbrella",
+          "Study-Guide Overview",
           "Rank Sarthi umbrella over official Units 17-19."
         ],
         [
