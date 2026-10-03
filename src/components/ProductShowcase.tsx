@@ -63,29 +63,29 @@ export function ProductShowcase({ id, platform }: { id?: string; platform?: Plat
 /** Example diagnostic report visual (labelled example, not a real result). Shared by B03 and the homepage showcase. */
 export function DiagnosticReportVisual({ compact = false }: { compact?: boolean } = {}) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-navy-gradient p-3 shadow-elevated sm:p-5">
-      <div className="mb-3 flex items-center gap-1.5 px-2">
+    <div className="overflow-hidden rounded-xl border border-border bg-navy-gradient p-2.5 shadow-elevated sm:rounded-2xl sm:p-5">
+      <div className="mb-2 flex items-center gap-1.5 px-1 sm:mb-3 sm:px-2">
         <span className="size-2.5 rounded-full bg-white/25" aria-hidden="true" />
         <span className="size-2.5 rounded-full bg-white/20" aria-hidden="true" />
         <span className="size-2.5 rounded-full bg-white/15" aria-hidden="true" />
-        <span className="ml-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-foreground/50">
+        <span className="ml-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground/50 sm:ml-3 sm:text-[11px]">
           Diagnostic report
         </span>
-        <span className="ml-auto rounded-full border border-white/15 px-2.5 py-0.5 text-[10px] font-semibold text-primary-foreground/50">
+        <span className="ml-auto rounded-full border border-white/15 px-2 py-0.5 text-[9px] font-semibold text-primary-foreground/50 sm:px-2.5 sm:text-[10px]">
           Example view
         </span>
       </div>
   
-      <div className={compact ? "rounded-xl bg-card p-4 sm:p-6" : "rounded-xl bg-card p-5 sm:p-8"}>
-        <div className={compact ? "grid gap-6" : "grid gap-6 lg:grid-cols-[1.35fr_0.65fr]"}>
+      <div className={compact ? "rounded-lg bg-card p-3 sm:rounded-xl sm:p-6" : "rounded-xl bg-card p-5 sm:p-8"}>
+        <div className={compact ? "grid gap-4 sm:gap-6" : "grid gap-6 lg:grid-cols-[1.35fr_0.65fr]"}>
           <div>
-            <div className="flex flex-wrap items-end justify-between gap-4 rounded-xl border border-border bg-secondary p-5">
+            <div className="flex flex-wrap items-end justify-between gap-3 rounded-lg border border-border bg-secondary p-3 sm:rounded-xl sm:p-5">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
                   Full-length diagnostic · Attempt 14
                 </p>
                 <p className="mt-1.5 flex items-end gap-1.5">
-                  <span className="font-display text-5xl font-bold leading-none text-primary">212</span>
+                  <span className="font-display text-4xl font-bold leading-none text-primary sm:text-5xl">212</span>
                   <span className="pb-1.5 text-sm text-muted-foreground">/ 300</span>
                 </p>
               </div>
@@ -99,16 +99,16 @@ export function DiagnosticReportVisual({ compact = false }: { compact?: boolean 
               </div>
             </div>
   
-            <div className="mt-6 flex items-center justify-between">
+            <div className="mt-4 flex items-center justify-between gap-3 sm:mt-6">
               <p className="inline-flex items-center gap-2 text-sm font-bold text-primary">
                 <TrendingDown className="size-4 text-accent" aria-hidden="true" /> Where the marks went
               </p>
               <span className="text-xs font-semibold text-muted-foreground">16 marks recoverable</span>
             </div>
   
-            <div className="mt-4 space-y-3">
+            <div className="mt-3 space-y-2 sm:mt-4 sm:space-y-3">
               {weaknesses.map((w) => (
-                <div key={w.concept} className="rounded-xl border border-border p-4">
+                <div key={w.concept} className="rounded-lg border border-border p-3 sm:rounded-xl sm:p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-semibold text-primary">
                       {w.concept}
@@ -116,7 +116,7 @@ export function DiagnosticReportVisual({ compact = false }: { compact?: boolean 
                     </p>
                     <span className="text-xs font-bold text-accent">{w.lost} marks lost</span>
                   </div>
-                  <div className="mt-3 flex items-center gap-3">
+                  <div className="mt-2 flex items-center gap-2 sm:mt-3 sm:gap-3">
                     <div className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
                       <div className={`h-full rounded-full ${w.bar}`} style={{ width: `${w.pct}%` }} />
                     </div>

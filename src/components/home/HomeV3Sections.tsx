@@ -15,14 +15,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 /** B59 — product showcase: text + example report side by side. */
 export function HomeProductShowcase({ id }: { id?: string }) {
   return (
-    <section id={id} className="bg-background py-14 sm:py-20">
-      <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14">
+    <section id={id} className="bg-background py-10 sm:py-20">
+      <div className="container-page grid gap-6 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14">
         <Reveal>
           <p className="eyebrow text-accent">Not just another score</p>
-          <h2 className="mt-4 text-display-lg text-primary">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">
             A score tells you what happened. Rank Sarthi tells you why.
           </h2>
-          <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-4">
+          <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-3 sm:mt-6 sm:gap-x-4 sm:gap-y-4">
             {callouts.map((c) => (
               <li key={c.t} className="border-l-2 border-gold/70 pl-3">
                 <p className="text-sm font-bold text-primary">{c.t}</p>
@@ -33,7 +33,7 @@ export function HomeProductShowcase({ id }: { id?: string }) {
         </Reveal>
         <Reveal delay={120}>
           <DiagnosticReportVisual compact />
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="mt-2 text-xs text-muted-foreground sm:mt-3">
             Interface shown is an example diagnostic view, not a specific student&rsquo;s result.
           </p>
         </Reveal>
@@ -69,19 +69,19 @@ const territories = [
 /** B60 — why a score alone is not enough (restored "Marks are the outcome" idea). */
 export function ScorePatterns({ id }: { id?: string }) {
   return (
-    <section id={id} className="bg-paleblue py-14 sm:py-20">
+    <section id={id} className="bg-paleblue py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Why a score is not enough</p>
-          <h2 className="mt-4 text-display-lg text-primary">Marks are the outcome. Patterns are the problem.</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Marks are the outcome. Patterns are the problem.</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-4">
             Three different reasons can sit behind the same score. Most preparation only addresses the first.
           </p>
         </Reveal>
-        <ol className="-mx-4 mt-8 flex snap-x gap-3 overflow-x-auto px-4 pb-3 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+        <ol className="-mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mt-8 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
           {territories.map((t, i) => (
-            <li key={t.label} className="w-[80%] shrink-0 snap-start md:w-auto">
-              <div className="h-full rounded-lg border border-border bg-background p-5">
+            <li key={t.label} className="w-[84%] shrink-0 snap-start md:w-auto">
+              <div className="h-full rounded-lg border border-border bg-background p-4 sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="font-display text-sm font-bold text-primary/40">0{i + 1}</span>
                   <t.icon className={`size-5 ${t.tint}`} aria-hidden="true" />
@@ -129,13 +129,13 @@ const examTabs = [
 /** B61 — JEE / NEET / NDA diagnostic examples (restored from exam tracks), as tabs. */
 export function ExamExamples({ id }: { id?: string }) {
   return (
-    <section id={id} className="bg-background py-14 sm:py-20">
+    <section id={id} className="bg-background py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Different exam journeys</p>
-          <h2 className="mt-4 text-display-lg text-primary">Built around the exam you&rsquo;re preparing for.</h2>
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Built around the exam you&rsquo;re preparing for.</h2>
         </Reveal>
-        <Tabs defaultValue="jee" className="mt-8">
+        <Tabs defaultValue="jee" className="mt-6 sm:mt-8">
           <TabsList className="grid w-full max-w-md grid-cols-3">
             {examTabs.map((t) => (
               <TabsTrigger key={t.key} value={t.key}>
@@ -144,12 +144,12 @@ export function ExamExamples({ id }: { id?: string }) {
             ))}
           </TabsList>
           {examTabs.map((t) => (
-            <TabsContent key={t.key} value={t.key} className="mt-4">
-              <div className="grid gap-5 rounded-lg border border-border bg-card p-5 sm:p-7 md:grid-cols-2 md:gap-8">
+            <TabsContent key={t.key} value={t.key} className="mt-3 sm:mt-4">
+              <div className="grid gap-4 rounded-lg border border-border bg-card p-4 sm:gap-5 sm:p-7 md:grid-cols-2 md:gap-8">
                 <div>
                   <p className={`text-xs font-bold uppercase ${t.text}`}>{t.exam}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t.line}</p>
-                  <ul className="mt-4 space-y-2">
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/80 sm:mt-3">{t.line}</p>
+                  <ul className="mt-3 space-y-1.5 sm:mt-4 sm:space-y-2">
                     {t.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-2.5 text-sm text-foreground/80">
                         <Check className={`mt-0.5 size-4 shrink-0 ${t.text}`} aria-hidden="true" />
@@ -160,7 +160,7 @@ export function ExamExamples({ id }: { id?: string }) {
                   <Link
                     to="/$platform"
                     params={{ platform: t.key }}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-accent sm:mt-5"
                   >
                     {t.tab} preparation hub <ArrowRight className="size-4" aria-hidden="true" />
                   </Link>
@@ -204,20 +204,20 @@ export function ExamExamples({ id }: { id?: string }) {
 /** B62 — worked breakdown: the layers beneath the score (restored product depth). */
 export function MarksBreakdown({ id }: { id?: string }) {
   return (
-    <section id={id} className="relative overflow-hidden bg-navy-gradient py-14 text-primary-foreground sm:py-20">
+    <section id={id} className="relative overflow-hidden bg-navy-gradient py-10 text-primary-foreground sm:py-20">
       <div className="container-page relative">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-gold">Beneath the score</p>
-          <h2 className="mt-4 text-display-lg">Why did I lose marks, and what do I do next?</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-primary-foreground/70">
+          <h2 className="mt-3 text-display-lg sm:mt-4">Why did I lose marks, and what do I do next?</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-foreground/70 sm:mt-4">
             Each layer narrows the question from &ldquo;how did I do?&rdquo; to &ldquo;what exactly do I do next?&rdquo;
           </p>
         </Reveal>
-        <ol className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+        <ol className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:grid-cols-3 lg:grid-cols-5">
           {layers.map((ly, i) => (
             <li
               key={ly.l}
-              className={`rounded-lg border p-3 sm:p-4 ${i >= 8 ? "border-gold/50 bg-white/10" : "border-white/10 bg-white/[0.04]"}`}
+              className={`rounded-lg border p-2.5 sm:p-4 ${i >= 8 ? "border-gold/50 bg-white/10" : "border-white/10 bg-white/[0.04]"}`}
             >
               <span className="font-display text-xs font-bold text-gold">{String(i + 1).padStart(2, "0")}</span>
               <p className="mt-1 text-sm font-semibold">{ly.l}</p>
@@ -243,23 +243,23 @@ export function AnalysisProof({ id }: { id?: string }) {
     { k: "Action", v: "Next study session", d: "Start with the gap costing the most marks, then re-measure." },
   ];
   return (
-    <section id={id} className="bg-ivory py-14 sm:py-20">
+    <section id={id} className="bg-ivory py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">From result to plan</p>
-          <h2 className="mt-4 text-display-lg text-primary">Diagnosis. Priority. Action.</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Diagnosis. Priority. Action.</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-4">
             One line from the example report, traced from raw performance to what to do next.
           </p>
         </Reveal>
-        <ol className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 lg:grid-cols-4">
           {steps.map((s, i) => (
-            <li key={s.k} className="relative rounded-lg border border-border bg-background p-5">
+            <li key={s.k} className="relative rounded-lg border border-border bg-background p-3.5 sm:p-5">
               <p className="text-xs font-bold uppercase text-muted-foreground">
                 {String(i + 1).padStart(2, "0")} · {s.k}
               </p>
-              <p className="mt-3 font-display text-lg font-bold text-primary">{s.v}</p>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+              <p className="mt-2 font-display text-base font-bold text-primary sm:mt-3 sm:text-lg">{s.v}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">{s.d}</p>
             </li>
           ))}
         </ol>

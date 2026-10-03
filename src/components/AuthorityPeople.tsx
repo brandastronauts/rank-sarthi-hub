@@ -6,16 +6,16 @@ import { Link } from "@tanstack/react-router";
 /** Homepage Academic Team — the same approved faculty records as /about. */
 export function AuthorityPeople({ id }: { id?: string }) {
   return (
-    <section id={id} aria-label="Academic Team" className="bg-ivory py-14 sm:py-20">
+    <section id={id} aria-label="Academic Team" className="bg-ivory py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Academic Team</p>
-          <h2 className="mt-4 text-display-lg text-primary">Meet the Academic Team</h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Meet the Academic Team</h2>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:mt-4">
             Subject specialists across Physics, Chemistry and Mathematics.
           </p>
         </Reveal>
-        <ul className="-mx-4 mt-8 flex snap-x gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6">
+        <ul className="-mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6">
           {publicAcademicProfiles.map((profile, i) => (
             <Reveal key={profile.id} as="li" delay={(i % 4) * 70} className="w-[9rem] shrink-0 snap-start sm:w-auto">
               <Link

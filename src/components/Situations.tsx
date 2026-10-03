@@ -22,17 +22,17 @@ const scenarios = [
 /** B11 — compact student situations (example scenarios, not testimonials). */
 export function Situations({ id }: { id?: string }) {
   return (
-    <section id={id} className="bg-background py-14 sm:py-20">
+    <section id={id} className="bg-background py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Sound familiar?</p>
-          <h2 className="mt-4 text-display-lg text-primary">Situations Rank Sarthi is designed for.</h2>
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Situations Rank Sarthi is designed for.</h2>
           <p className="mt-3 text-sm text-muted-foreground">Common preparation situations, not customer testimonials.</p>
         </Reveal>
-        <ul className="-mx-4 mt-8 flex snap-x gap-3 overflow-x-auto px-4 pb-3 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
+        <ul className="-mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mt-8 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
           {scenarios.map((s) => (
-            <li key={s.q} className="w-[80%] shrink-0 snap-start md:w-auto">
-              <div className="h-full rounded-lg border border-border bg-card p-5">
+            <li key={s.q} className="w-[84%] shrink-0 snap-start md:w-auto">
+              <div className="h-full rounded-lg border border-border bg-card p-4 sm:p-5">
                 <p className="font-display text-base font-semibold text-primary">&ldquo;{s.q}&rdquo;</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.a}</p>
               </div>

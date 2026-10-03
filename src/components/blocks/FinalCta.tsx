@@ -24,15 +24,15 @@ export function FinalCta({
   platform?: "jee" | "neet" | "nda";
 }) {
   return (
-    <section id={id} className="relative overflow-hidden bg-navy-deep py-16 text-primary-foreground sm:py-24">
+    <section id={id} className="relative overflow-hidden bg-navy-deep py-12 text-primary-foreground sm:py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-40" />
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-accent" />
       <div className="container-page relative text-center">
         <Reveal>
           <p className="eyebrow text-gold">{eyebrow}</p>
-          <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-bold leading-none sm:text-5xl">{heading}</h2>
-          <p className="mx-auto mt-6 max-w-xl text-base text-primary-foreground/70">{body}</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-bold leading-none sm:mt-5 sm:text-5xl">{heading}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-primary-foreground/70 sm:mt-6">{body}</p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3 sm:mt-10">
             {platform ? (
               <CtaLink
                 d={destinations.diagnostic("Take your first diagnostic", platform)}
@@ -49,7 +49,7 @@ export function FinalCta({
               className="btn-press inline-flex items-center rounded-md border border-white/35 px-8 py-4 text-sm font-bold hover:bg-white/10"
             />
           </div>
-          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground/45">
+          <p className="mt-7 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground/45 sm:mt-10">
             {footnote}
           </p>
         </Reveal>

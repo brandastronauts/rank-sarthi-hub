@@ -28,21 +28,21 @@ export function Methodology({ id }: { id?: string }) {
   return (
     <section
       id={id ?? "method"}
-      className="relative overflow-hidden bg-navy-gradient-soft py-14 text-primary-foreground sm:py-20"
+      className="relative overflow-hidden bg-navy-gradient-soft py-10 text-primary-foreground sm:py-20"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-faint opacity-60" />
       <div className="container-page relative">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-gold">Methodology</p>
-          <h2 className="mt-4 text-display-lg">Built around how serious aspirants actually improve.</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-primary-foreground/70">
+          <h2 className="mt-3 text-display-lg sm:mt-4">Built around how serious aspirants actually improve.</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-foreground/70 sm:mt-4">
             Four principles shape the diagnostic logic, alongside subject faculty who understand how each exam is
             examined.
           </p>
         </Reveal>
-        <div className="mt-8 grid gap-x-10 gap-y-5 md:grid-cols-2">
+        <div className="mt-6 grid gap-x-6 gap-y-3 sm:mt-8 sm:gap-x-10 sm:gap-y-5 md:grid-cols-2">
           {principles.map((pr) => (
-            <div key={pr.n} className="flex gap-4 border-t border-white/12 pt-5">
+            <div key={pr.n} className="flex gap-3 border-t border-white/12 pt-3 sm:gap-4 sm:pt-5">
               <span className="font-display text-lg font-bold text-gold/70">{pr.n}</span>
               <div>
                 <h3 className="text-base font-bold">{pr.title}</h3>

@@ -30,3 +30,9 @@
 - [x] Preserve resource discovery, all SEO routes, PYQ work, syllabus content, canonicals, sitemap, and robots
 - [x] Validate mobile, desktop, handoff destinations, attribution, events, links, and regressions
 - [x] Report the missing community destination and RankUp-owned funnel dependencies
+
+## V3.1 mobile compaction
+- [x] Preserve all 15 V3 sections while reducing mobile scroll depth
+- [x] Rework How It Works into four compact Choose → Diagnose → Understand → Act steps
+- [x] Compact product proof, comparison, examples, resources, faculty, methodology, FAQ, and final CTA spacing
+- [x] Validate mobile and desktop screenshots, RankUp handoff, homepage, JEE/NEET, and syllabus links
