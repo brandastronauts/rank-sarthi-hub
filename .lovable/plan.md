@@ -82,18 +82,17 @@ Associated routes and content remain untouched.
   - JEE Main → `https://jeerankup.com/`
   - NEET UG → `https://neetrankup.com/`
   - NDA → `https://ndarankup.com/`
-- Preserve existing valid campaign parameters rather than overwrite them.
-- Add Rank Sarthi referral context when absent, using a documented allowlist of non-sensitive parameters such as:
-  - `utm_source=ranksarthi`
-  - `utm_medium=referral`
-  - `utm_campaign=free_diagnostic`
-  - exam context
-  - originating Rank Sarthi path / CTA location where safely supported
+- Preserve existing valid campaign parameters without overwriting them.
+- Add separate Rank Sarthi referral context using documented non-sensitive fields:
+  - `rs_source=ranksarthi`
+  - `rs_exam=jee|neet|nda`
+  - `rs_entry_path`
+  - `rs_cta`
 - Keep referral data in the URL only; do not include personal data.
 - External RankUp destinations remain the existing production domains—no proxy, imitation, or invented API.
 
 ## Rank Sarthi measurement
-Create one lightweight internal event interface so the UI is not tied to a vendor. It will emit through an already-present browser analytics object if available and otherwise fail safely without blocking navigation.
+Create one lightweight internal event interface so the UI is not tied to a vendor. It will emit through an already-present browser analytics object if available and otherwise fail safely without blocking navigation. Instrumented events will not be reported as actively tracked unless a real receiver is configured.
 
 Rank Sarthi-owned stages:
 - `homepage_view`
@@ -138,6 +137,7 @@ Each RankUp product will need to:
 - Add the attribution-preserving outbound URL helper and focused tests for parameter precedence, exam mapping, and absence of personal data.
 - Add the lightweight Rank Sarthi event interface and instrument the five owned funnel stages.
 - Preserve the existing destination registry as the source of truth for RankUp origins.
+- Retain a subtle community entry point only if a real destination exists; otherwise report the missing destination as a future dependency.
 - Record the acquisition/product ownership boundary in the project architecture notes.
 
 ## Explicitly unchanged
