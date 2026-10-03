@@ -12,9 +12,6 @@ import type { InfoPageContent, ResourceAction } from "../types";
  * required disclosure line. An unverified paper never becomes a link.
  */
 
-const RECONSTRUCTION_NOTE =
-  "This is a third-party reconstruction/reference resource, not an official NTA-hosted question paper.";
-
 function sourcePending(detail: string): ResourceAction {
   return {
     provenance: "SOURCE_NOT_VERIFIED",
@@ -89,7 +86,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
       type: "paragraph",
       children: [
         {
-          text: "Practise real NEET papers and check them against verified official answer keys. Authority-hosted question-paper files are verified for the 2020 examination. For 2021 to 2026 no authority-hosted paper file was verified, so those events show a validated third-party paper copy, clearly labelled as a copy with its source owner, and never as an official NTA paper.",
+          text: "Practise real NEET papers and check them against verified official answer keys. Authority-hosted question-paper files are verified for the 2020 examination. For 2021 to 2026 no authority-hosted paper file was verified, so those events show Paper source verification pending. A coaching or third-party copy is never substituted.",
         },
       ],
     },
@@ -98,7 +95,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
       tone: "caution",
       children: [
         {
-          text: "Official Question Paper means the file is hosted by NTA or the official NEET archive. A Verified Paper Scan or Verified Paper Reconstruction is a third-party copy that Rank Sarthi validated against the event, paper code and paper structure. They are not the same thing.",
+          text: "Official Question Paper means the file is hosted by NTA or the official NEET archive. Where no official file is verified, the event shows Paper source verification pending instead of a third-party copy.",
         },
       ],
     },
@@ -378,23 +375,13 @@ export const neetPreviousYearPapers: InfoPageContent = {
       kind: "table",
       id: "how-to-read-labels",
       heading: "How to read the paper labels",
-      intro: "Every paper action on this page carries one of these four states.",
+      intro: "Every paper action on this page carries one of these two states.",
       columns: ["Label", "What it means", "Action shown"],
       rows: [
         [
           "Official Question Paper",
           "The file is hosted by NTA or the official NEET archive.",
           "View Official Paper",
-        ],
-        [
-          "Verified Paper Scan",
-          "A third-party hosted scan of the test booklet, validated against the event, code and paper structure.",
-          "View Paper, with the source owner shown",
-        ],
-        [
-          "Verified Paper Reconstruction",
-          "A third-party questions-and-answers reproduction of the paper, validated against the event and structure. Not an authority file.",
-          "View Paper, with the source owner and a reconstruction disclosure",
         ],
         [
           "Paper source verification pending",
@@ -509,7 +496,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           type: "paragraph",
           children: [
             {
-              text: "Authority-hosted NEET question papers are verified for the 2020 examination and are linked here by paper code. For 2021 to 2026, no authority-hosted paper file was verified, so this page links a validated third-party copy instead and labels it as a copy.",
+              text: "Authority-hosted NEET question papers are verified for the 2020 examination and are linked here by paper code. For 2021 to 2026, no authority-hosted paper file was verified, so those events stay marked Paper source verification pending.",
             },
           ],
         },
