@@ -1,6 +1,7 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Calculator, FileText, Library } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { CtaLink } from "@/components/CtaLink";
+import { destinations } from "@/content/destinations";
 
 const resources = [
   { title: "Previous year papers", body: "Find verified JEE, NEET and NDA question papers.", href: "/resources/previous-year-papers", icon: FileText },
@@ -20,8 +21,8 @@ export function ResourcePathways({ id = "resources" }: { id?: string }) {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {resources.map((item, index) => (
             <Reveal key={item.href} delay={index * 70}>
-              <Link
-                to={item.href}
+              <CtaLink
+                d={destinations.page(item.title, item.href)}
                 className="group flex h-full flex-col rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/30"
               >
                 <item.icon className="size-5 text-accent" aria-hidden="true" />
@@ -30,7 +31,7 @@ export function ResourcePathways({ id = "resources" }: { id?: string }) {
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-accent">
                   Explore <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </span>
-              </Link>
+              </CtaLink>
             </Reveal>
           ))}
         </div>

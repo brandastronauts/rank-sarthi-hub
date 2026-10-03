@@ -46,11 +46,9 @@ export function DiagnosticChooser() {
                   </span>
                   <h2 className="mt-5 font-display text-xl font-bold text-primary">{platform!.productName}</h2>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{platform!.tagline}</p>
-                  <CtaLink
-                    d={destinations.external(
-                      `Go to ${platform!.productName}`,
-                      buildRankUpHandoff({ exam: slug, entryPath: "/diagnostic", cta: "diagnostic_page" }),
-                    )}
+                  <a
+                    href={buildRankUpHandoff({ exam: slug, entryPath: "/diagnostic", cta: "diagnostic_page" })}
+                    rel="noopener noreferrer"
                     onClick={() => {
                       const properties = {
                         exam: slug,
@@ -66,7 +64,7 @@ export function DiagnosticChooser() {
                     <span className="inline-flex items-center gap-2">
                       Go to {platform!.productName} <ArrowUpRight className="size-4" aria-hidden="true" />
                     </span>
-                  </CtaLink>
+                  </a>
                 </div>
               </div>
             </Reveal>
