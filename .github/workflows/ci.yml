@@ -23,8 +23,12 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit -p .
 
+      # vite.config defaults to the Cloudflare Workers preset for Lovable's
+      # host; build what the droplet runs (deploy.sh sets the same preset).
       - name: Build
         run: npx vite build
+        env:
+          NITRO_PRESET: node-server
 
       # The repo currently has a large pre-existing gap between its source
       # formatting and the configured prettier rules (unrelated to
