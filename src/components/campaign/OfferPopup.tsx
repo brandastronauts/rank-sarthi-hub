@@ -62,7 +62,7 @@ export function OfferPopup({ campaign }: { campaign: PopupCampaign }) {
           {choices.map((c) => (
             <Link
               key={c.exam}
-              to={c.href}
+              to="/$platform/$subject" params={{ platform: c.exam, subject: "mock-tests" }}
               onClick={() => setOpen(false)}
               className="btn-press inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >

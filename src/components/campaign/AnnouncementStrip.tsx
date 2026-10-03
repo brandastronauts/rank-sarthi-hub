@@ -47,7 +47,7 @@ export function AnnouncementStrip({ campaign }: { campaign: AnnouncementCampaign
               {choices.map((c) => (
                 <Link
                   key={c.exam}
-                  to={c.href}
+                  to="/$platform/$subject" params={{ platform: c.exam, subject: "mock-tests" }}
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-3 py-2 text-sm font-semibold text-primary hover:bg-secondary"
                 >
