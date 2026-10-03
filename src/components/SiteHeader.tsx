@@ -4,6 +4,7 @@ import { navItems, type NavItem, type NavLink } from "./nav-data";
 import { CtaLink, NavLinkOrText } from "@/components/CtaLink";
 import { BrandLogo } from "@/components/BrandLogo";
 import { destinations } from "@/content/destinations";
+import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 
 const tintStyles: Record<string, { bar: string; heading: string; chip: string }> = {
   jee: { bar: "bg-jee", heading: "text-jee", chip: "bg-jee/10 text-jee" },
@@ -136,10 +137,9 @@ export function SiteHeader({ transparentAtTop = false }: { transparentAtTop?: bo
               d={destinations.nav("Log in", "/login")}
               className="rounded-md px-3 py-2 text-sm font-semibold text-primary-foreground/85 transition-colors hover:bg-white/10 hover:text-primary-foreground"
             />
-            <CtaLink
-              d={destinations.diagnostic("Take a diagnostic")}
-              className="rounded-md bg-accent px-5 py-2.5 text-sm font-bold text-accent-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
-              disabledClassName="hover:translate-y-0"
+            <DiagnosticLauncher
+              ctaLocation="header"
+              className="bg-accent px-5 font-bold text-accent-foreground shadow-elevated hover:bg-red-hover"
             />
           </div>
 
@@ -251,9 +251,9 @@ export function SiteHeader({ transparentAtTop = false }: { transparentAtTop?: bo
                 d={destinations.nav("Log in", "/login")}
                 className="block rounded-lg border border-white/20 px-5 py-3 text-center text-sm font-semibold"
               />
-              <CtaLink
-                d={destinations.diagnostic("Take a diagnostic")}
-                className="block rounded-lg bg-accent px-5 py-3 text-center text-sm font-bold text-accent-foreground"
+              <DiagnosticLauncher
+                ctaLocation="mobile_menu"
+                className="min-h-11 w-full bg-accent font-bold text-accent-foreground hover:bg-red-hover"
               />
             </div>
           </nav>

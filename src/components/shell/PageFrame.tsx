@@ -5,6 +5,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { AnnouncementStrip } from "@/components/campaign/AnnouncementStrip";
 import { OfferPopup } from "@/components/campaign/OfferPopup";
 import { showJeeAnnouncement, showJeeOfferPopup } from "@/content/offers/campaign";
+import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisition";
 
 /**
  * Global page frames.
@@ -78,6 +79,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
         )}
       </main>
       <SiteFooter />
+      {url === "/" ? <HomepageAcquisition /> : null}
       {popup ? <OfferPopup /> : null}
     </div>
   );

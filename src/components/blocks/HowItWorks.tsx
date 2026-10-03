@@ -1,22 +1,22 @@
 import { Reveal } from "@/components/Reveal";
 import { howItWorksSteps } from "@/content/home";
 
-/** B17 — Three-step process band. */
+/** B17 — Diagnostic journey. */
 export function HowItWorks({ id = "how" }: { id?: string }) {
   return (
-    <section id={id} className="section-pad bg-background">
+    <section id={id} className="bg-background py-14 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-2xl">
           <p className="eyebrow text-accent">How it works</p>
-          <h2 className="mt-5 text-display-lg text-primary">
-            Test. Diagnose. <span className="text-accent">Improve.</span>
+          <h2 className="mt-4 text-display-lg text-primary">
+            Choose. Diagnose. <span className="text-accent">Improve.</span>
           </h2>
         </Reveal>
-        <ol className="mt-14 grid gap-10 md:grid-cols-3">
+        <ol className="mt-8 grid gap-4 md:grid-cols-3">
           {howItWorksSteps.map((s, i) => (
             <Reveal key={s.n} delay={i * 120} as="li">
-              <div className="border-t border-border pt-6">
-                <span className="font-display text-5xl font-bold tracking-tight text-secondary-foreground/15">
+              <div className="h-full rounded-lg border border-border p-5">
+                <span className="font-display text-3xl font-bold text-secondary-foreground/20">
                   {s.n}
                 </span>
                 <h3 className="mt-4 text-display-md text-primary">{s.title}</h3>

@@ -6,3 +6,4 @@
 
 - Contact enquiries are stored in the contact_enquiries table via a server function (service role only, no client access); company details live in src/content/company.ts. Why: one source for approved details, no public read of personal data.
 - Public faculty discovery and attribution must use the filtered public profile collection; direct profile lookup remains separate. Why: profiles can be temporarily hidden without deleting approved records or internal assignments.
+- Rank Sarthi owns acquisition through a referral-safe outbound handoff; each RankUp site owns diagnostics, accounts, results, plans, and payments. Why: marketing must not duplicate product logic it cannot verify.
