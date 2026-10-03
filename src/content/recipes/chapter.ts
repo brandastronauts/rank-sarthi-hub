@@ -2,6 +2,7 @@ import { publicMastheadChips, publicMastheadMeta } from "@/lib/public-copy";
 import type { PageRecipe } from "@/lib/recipe";
 import type { ChapterContent, ChapterSlot } from "@/content/types";
 import { subjectFacultyFor } from "@/content/subject-faculty";
+import { officialUnitLabel } from "@/content/physics-units";
 
 /**
  * T06 — Chapter recipe.
@@ -60,7 +61,9 @@ export function chapterRecipe(
           contentStatus: content.contentStatus,
           meta: publicMastheadMeta(content.url, [
             { label: "Subject", value: content.subject },
-            { label: "Syllabus unit", value: content.syllabusMapping.unit },
+            officialUnitLabel(content.url)
+              ? { label: "Official syllabus unit", value: officialUnitLabel(content.url)! }
+              : { label: "Syllabus unit", value: content.syllabusMapping.unit },
             ...(content.updated ? [{ label: "Updated", value: content.updated }] : []),
           ]),
           chips: publicMastheadChips(content.url, content.heroChips ?? []),
