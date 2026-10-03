@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { academicProfiles } from "@/content/academic-profiles";
+import { publicAcademicProfiles } from "@/content/academic-profiles";
 import { FacultyCard } from "@/components/academic/FacultyCard";
 
 /** Homepage Academic Team — the same approved faculty records as /about. */
@@ -17,7 +17,7 @@ export function AuthorityPeople({ id }: { id?: string }) {
           </p>
         </Reveal>
         <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {academicProfiles.map((profile, i) => (
+          {publicAcademicProfiles.map((profile, i) => (
             <Reveal key={profile.id} as="li" delay={(i % 4) * 70}>
               <FacultyCard profile={profile} compact />
             </Reveal>

@@ -468,10 +468,22 @@ export const academicProfiles: AcademicProfile[] = [
   },
 ];
 
+/** Profiles temporarily hidden from all public discovery and attribution UI. */
+const hiddenPublicProfileSlugs = new Set(["prabhat-kumar", "vinod-kumar"]);
+
+export const publicAcademicProfiles = academicProfiles.filter(
+  (profile) => !hiddenPublicProfileSlugs.has(profile.slug),
+);
+
 const profilesBySlug = new Map(academicProfiles.map((profile) => [profile.slug, profile]));
 
 export function getAcademicProfile(slug: string): AcademicProfile | undefined {
   return profilesBySlug.get(slug);
+}
+
+export function getPublicAcademicProfile(slug: string): AcademicProfile | undefined {
+  const profile = getAcademicProfile(slug);
+  return profile && !hiddenPublicProfileSlugs.has(profile.slug) ? profile : undefined;
 }
 
 /** Internal subject suitability pools. Never rendered as page-level review evidence. */

@@ -1,4 +1,4 @@
-import { academicProfiles } from "@/content/academic-profiles";
+import { publicAcademicProfiles } from "@/content/academic-profiles";
 import { FacultyCard } from "./FacultyCard";
 
 export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
@@ -10,7 +10,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
         Subject specialists in Physics, Chemistry and Mathematics who build and check Rank Sarthi academic content.
       </p>
       <ul className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {academicProfiles.map((profile) => (
+        {publicAcademicProfiles.map((profile) => (
           <li key={profile.id}>
             <FacultyCard profile={profile} />
           </li>

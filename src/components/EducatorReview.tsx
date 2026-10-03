@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { academicReviews } from "@/content/academic-reviews";
-import { getAcademicProfile } from "@/content/academic-profiles";
+import { getPublicAcademicProfile } from "@/content/academic-profiles";
 import { getUrl } from "@/content/registry";
 
 /**
@@ -13,7 +13,7 @@ export function EducatorReview({ id }: { id?: string }) {
     .map(([url, review]) => ({
       url,
       name: getUrl(url)?.name ?? url,
-      reviewer: review.reviewerProfileId ? getAcademicProfile(review.reviewerProfileId) : undefined,
+      reviewer: review.reviewerProfileId ? getPublicAcademicProfile(review.reviewerProfileId) : undefined,
       built: getUrl(url)?.buildStatus === "built",
     }))
     .filter((r) => r.reviewer && r.built);

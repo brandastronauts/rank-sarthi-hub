@@ -76,7 +76,9 @@ function buildGroups(records: UrlRecord[]): Group[] {
 }
 
 function SitemapPage() {
-  const records = builtUrls();
+  const records = builtUrls().filter(
+    (record) => record.url !== "/about/faculty/prabhat-kumar" && record.url !== "/about/faculty/vinod-kumar",
+  );
   const groups = buildGroups(records);
 
   return (

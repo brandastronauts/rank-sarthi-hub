@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { getAcademicProfile } from "@/content/academic-profiles";
+import { getPublicAcademicProfile } from "@/content/academic-profiles";
 import type { PageReview } from "@/content/types";
 import { FacultyPhoto } from "./FacultyPhoto";
 
@@ -12,11 +12,11 @@ import { FacultyPhoto } from "./FacultyPhoto";
  */
 export function AcademicReviewByline({ review, id = "academic-review" }: { review?: PageReview; id?: string }) {
   if (!review || review.reviewStatus !== "REVIEWED" || !review.reviewedAt || !review.reviewVersion) return null;
-  const primary = review.reviewerProfileId ? getAcademicProfile(review.reviewerProfileId) : undefined;
+  const primary = review.reviewerProfileId ? getPublicAcademicProfile(review.reviewerProfileId) : undefined;
   if (!primary) return null;
 
   const contributors = (review.contributorProfileIds ?? [])
-    .map(getAcademicProfile)
+    .map(getPublicAcademicProfile)
     .filter((profile): profile is NonNullable<typeof profile> => !!profile && profile.slug !== primary.slug);
 
   return (

@@ -1,5 +1,5 @@
 import { reviewFor } from "./academic-reviews";
-import { getAcademicProfile } from "./academic-profiles";
+import { getPublicAcademicProfile } from "./academic-profiles";
 import type { AcademicProfile } from "./types";
 
 /**
@@ -23,10 +23,10 @@ export function subjectFacultyFor(url: string): SubjectFaculty | undefined {
   if (!platform || !subject || !chapter) return undefined;
   if (!PLATFORMS.has(platform) || !SUBJECTS.has(subject)) return undefined;
   const assignment = reviewFor(`/${platform}/syllabus/${subject}`);
-  const primary = assignment?.reviewerProfileId ? getAcademicProfile(assignment.reviewerProfileId) : undefined;
+  const primary = assignment?.reviewerProfileId ? getPublicAcademicProfile(assignment.reviewerProfileId) : undefined;
   if (!primary) return undefined;
   const contributors = [...(assignment?.contributorProfileIds ?? []), ...(EXTRA_POOL[`${platform}/${subject}`] ?? [])]
-    .map(getAcademicProfile)
+    .map(getPublicAcademicProfile)
     .filter((p): p is AcademicProfile => !!p && p.slug !== primary.slug);
   return { primary, contributors };
 }
