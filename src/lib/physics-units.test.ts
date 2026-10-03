@@ -33,9 +33,11 @@ describe("official 2026 Physics units", () => {
     expect(getUrl("/neet/physics/gravitation-2")?.redirectTo).toBe("/neet/physics/gravitation");
     expect(isIndexable(getUrl("/neet/physics/gravitation-2"))).toBe(false);
   });
-  it("both Experimental Skills pages are indexable", () => {
+  it("JEE Experimental Skills indexable; NEET held noindex pending faculty review", () => {
     expect(isIndexable(getUrl("/jee/physics/experimental-skills"))).toBe(true);
-    expect(isIndexable(getUrl("/neet/physics/experimental-skills"))).toBe(true);
+    expect(isIndexable(getUrl("/neet/physics/experimental-skills"))).toBe(false);
+    expect(getUrl("/neet/physics/experimental-skills")?.internalStatus).toBe("FACULTY_REVIEW_PENDING");
+    expect(getUrl("/neet/physics/experimental-skills")?.buildStatus).toBe("built");
   });
   it("split pages name their official unit", () => {
     expect(officialUnitLabel("/jee/physics/surface-tension")).toBe("Unit 7: Properties of Solids and Liquids");

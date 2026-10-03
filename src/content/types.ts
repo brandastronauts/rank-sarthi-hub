@@ -43,6 +43,8 @@ export interface UrlRecord {
   lastVerified?: string;
   /** Retired duplicate: permanently redirect to this registry path. */
   redirectTo?: string;
+  /** Internal-only status note; never rendered publicly. */
+  internalStatus?: "FACULTY_REVIEW_PENDING";
 }
 
 /* ------------------------------------------------------------------ */
