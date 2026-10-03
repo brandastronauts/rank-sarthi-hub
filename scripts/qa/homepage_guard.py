@@ -36,7 +36,7 @@ SHOTS.mkdir(parents=True, exist_ok=True)
 # src/content/recipes/home.ts and are the anchor ids rendered on the page.
 REQUIRED_SECTIONS = [
     "home", "idea", "product", "patterns", "moment", "exams", "how", "breakdown",
-    "proof", "situations", "resources", "people", "methodology", "neet-pricing", "faq", "cta",
+    "proof", "situations", "resources", "people", "methodology", "pricing", "faq", "cta",
 ]
 
 NAV_LABELS = ["JEE", "NEET", "NDA", "Institutes", "Resources", "Blog"]
