@@ -12,3 +12,4 @@
 - All RankUp handoffs go through buildRankUpHandoff with the controlled rs_cta vocabulary; the contract lives in docs/rankup-handoff-contract.md. Why: one link rule the RankUp team can rely on.
 - Official Physics unit wording and unit-to-route ownership for JEE Main and NEET live only in src/content/physics-units.ts; syllabus maps, hubs and chapter "Official syllabus unit" labels read it. Why: unit navigation must never depend on fuzzy name matching or drift between exams.
 - Retired duplicate routes use UrlRecord.redirectTo (301 in the chapter loader, excluded from hubs and sitemaps) instead of deletion. Why: keeps old links working with no 404s.
+- Server-side code must be Worker-safe: import cheerio only as "cheerio/slim" and never make loopback HTTP calls to the app's own API from SSR (use createServerFn instead). Why: both crash every page on the published host while working in the preview.
