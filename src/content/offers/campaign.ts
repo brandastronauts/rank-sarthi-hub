@@ -60,9 +60,9 @@ export function campaignFor(url: string): {
   const path = pathOnly(url);
   if (isJeeSurface(path)) return { announcement: jeeAnnouncement, popup: jeeOfferPopup };
   if (path === "/neet" || path.startsWith("/neet/")) {
-    const announcement = path === neetCampaign.announcement.href ? undefined : neetCampaign.announcement;
-    const popup = path === neetCampaign.announcement.href || path === "/neet/pricing" ? undefined : neetCampaign.popup;
-    return { announcement, popup };
+    if (path === neetCampaign.announcement.href) return {};
+    if (path === "/neet/pricing") return { announcement: neetCampaign.announcement };
+    return { announcement: neetCampaign.announcement, popup: neetCampaign.popup };
   }
   return {};
 }

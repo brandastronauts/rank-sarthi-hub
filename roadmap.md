@@ -38,10 +38,10 @@
 - [x] Validate mobile and desktop screenshots, RankUp handoff, homepage, JEE/NEET, and syllabus links
 
 ## NEET inaugural offers + sitewide pricing rollout
-- [ ] Parse the approved NEET offer document and apply the ₹50 business override
-- [ ] Create one central NEET commercial configuration
-- [ ] Build `/neet/mock-tests` and `/neet/pricing` using shared offer architecture
-- [ ] Extend the existing scoped offer strip and session popup for NEET
-- [ ] Add accurate lower-funnel NEET pricing to the V3.1 homepage
-- [ ] Audit and remove stale NEET ₹100 and ₹3,199 references
+- [x] Parse the approved NEET offer document and apply the current add-on business override
+- [x] Create one central NEET commercial configuration
+- [x] Build `/neet/mock-tests` and `/neet/pricing` using shared offer architecture
+- [x] Extend the existing scoped offer strip and session popup for NEET
+- [x] Add accurate lower-funnel NEET pricing to the V3.1 homepage
+- [x] Audit and remove legacy NEET add-on and Starter top-up references
 - [ ] Validate responsive pages, JEE protection, RankUp handoff, PYQ, syllabus, and SEO protections

@@ -6,6 +6,7 @@ import {
   neetStarterAdditionalPapers,
   neetStarterTopUpTotal,
 } from "@/content/offers/neet-test-series";
+import { campaignFor, jeeAnnouncement, jeeOfferPopup } from "@/content/offers/campaign";
 
 describe("NEET inaugural commercial rules", () => {
   it("uses the approved package prices", () => {
@@ -23,5 +24,19 @@ describe("NEET inaugural commercial rules", () => {
     expect(neetStarterAdditionalPapers).toBe(27);
     expect(neetStarterTopUpTotal).toBe(1849);
     expect(formatInr(neetStarterTopUpTotal)).toBe("₹1,849");
+  });
+
+  it("keeps NEET promotions scoped away from commercial destinations", () => {
+    expect(campaignFor("/neet").announcement?.href).toBe("/neet/mock-tests");
+    expect(campaignFor("/neet").popup?.href).toBe("/neet/mock-tests");
+    expect(campaignFor("/neet/mock-tests")).toEqual({});
+    expect(campaignFor("/neet/pricing").announcement?.href).toBe("/neet/mock-tests");
+    expect(campaignFor("/neet/pricing").popup).toBeUndefined();
+    expect(campaignFor("/nda")).toEqual({});
+  });
+
+  it("preserves the approved JEE campaign configuration", () => {
+    expect(campaignFor("/jee")).toEqual({ announcement: jeeAnnouncement, popup: jeeOfferPopup });
+    expect(campaignFor("/jee/mock-tests")).toEqual({});
   });
 });
