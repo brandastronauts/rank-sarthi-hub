@@ -47,11 +47,15 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
       <SiteHeader transparentAtTop={heroBackdrop && !campaign.announcement} />
       <main id="main" className="flex-1">
         {campaign.announcement ? (
-          // Spacer under the fixed header is taller than the header itself;
-          // match the header so no white band shows above the strip.
-          <div className="bg-navy-deep pt-20 md:pt-24">
-            <AnnouncementStrip campaign={campaign.announcement} />
-          </div>
+          <>
+            {/* Spacer under the fixed header: reserves the offset so the
+                sticky strip never hides behind the header. */}
+            <div className="bg-navy-deep pt-20 md:pt-24" aria-hidden="true" />
+            {/* Offer strip sticks below the fixed header for the whole page. */}
+            <div className="sticky top-[4.375rem] z-30 min-[900px]:top-20">
+              <AnnouncementStrip campaign={campaign.announcement} />
+            </div>
+          </>
         ) : null}
         {frame === "F1" ? (
           <>

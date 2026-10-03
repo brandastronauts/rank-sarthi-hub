@@ -31,7 +31,14 @@ export function AnnouncementStrip({ campaign }: { campaign: AnnouncementCampaign
   return (
     <aside aria-label={campaign.ariaLabel} className="bg-primary text-primary-foreground">
       <div className="container-page flex flex-col items-start gap-2 py-2.5 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
-        <p className="min-w-0 break-words text-xs font-medium leading-snug sm:text-sm">{campaign.message}</p>
+        <div className="marquee-pause min-w-0 flex-1 overflow-hidden">
+          <div className="marquee-track">
+            <p className="whitespace-nowrap pr-10 text-xs font-medium leading-snug sm:text-sm">{campaign.message}</p>
+            <p aria-hidden="true" className="whitespace-nowrap pr-10 text-xs font-medium leading-snug sm:text-sm">
+              {campaign.message}
+            </p>
+          </div>
+        </div>
         <div ref={ref} className="relative shrink-0">
           <button
             type="button"
