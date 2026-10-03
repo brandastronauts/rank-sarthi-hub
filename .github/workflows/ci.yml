@@ -16,9 +16,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
-      - run: npm ci
+      # Lovable keeps bun.lock current but not package-lock.json, so install
+      # from bun.lock (deploy.sh does the same); the build still runs on Node.
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+
+      - run: bun install --frozen-lockfile
 
       - name: Typecheck
         run: npx tsc --noEmit -p .
@@ -40,7 +45,7 @@ jobs:
 
   # Deploys ranksarthi.com (droplet ranksarthi-hub) once the build is green.
   # The DEPLOY_SSH_KEY secret is restricted on the droplet to running
-  # /var/www/ranksarthi-hub/deploy.sh (git pull, npm ci, build, restart).
+  # /var/www/ranksarthi-hub/deploy.sh (git pull, bun install, build, restart).
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
