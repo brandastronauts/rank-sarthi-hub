@@ -1,7 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { CtaLink } from "@/components/CtaLink";
-import { destinations } from "@/content/destinations";
 import { platformOrigins } from "@/content/site";
 import { getPlatform } from "@/content/platforms";
 import { buildRankUpHandoff } from "@/lib/acquisition";
