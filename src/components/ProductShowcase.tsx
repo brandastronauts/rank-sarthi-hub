@@ -61,7 +61,7 @@ export function ProductShowcase({ id, platform }: { id?: string; platform?: Plat
 
 
 /** Example diagnostic report visual (labelled example, not a real result). Shared by B03 and the homepage showcase. */
-export function DiagnosticReportVisual() {
+export function DiagnosticReportVisual({ compact = false }: { compact?: boolean } = {}) {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-navy-gradient p-3 shadow-elevated sm:p-5">
       <div className="mb-3 flex items-center gap-1.5 px-2">
@@ -76,8 +76,8 @@ export function DiagnosticReportVisual() {
         </span>
       </div>
   
-      <div className="rounded-xl bg-card p-5 sm:p-8">
-        <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+      <div className={compact ? "rounded-xl bg-card p-4 sm:p-6" : "rounded-xl bg-card p-5 sm:p-8"}>
+        <div className={compact ? "grid gap-6" : "grid gap-6 lg:grid-cols-[1.35fr_0.65fr]"}>
           <div>
             <div className="flex flex-wrap items-end justify-between gap-4 rounded-xl border border-border bg-secondary p-5">
               <div>
@@ -129,6 +129,7 @@ export function DiagnosticReportVisual() {
             </div>
           </div>
   
+          {!compact && (
           <div className="rounded-xl border border-border bg-secondary p-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
               What the report reads
@@ -142,6 +143,7 @@ export function DiagnosticReportVisual() {
               ))}
             </ul>
           </div>
+          )}
         </div>
       </div>
     </div>
