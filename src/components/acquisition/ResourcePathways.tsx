@@ -4,8 +4,8 @@ import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 
 const resources = [
-  { title: "Previous year papers", body: "Find verified JEE, NEET and NDA question papers.", href: "/resources/previous-year-papers", icon: FileText },
-  { title: "Syllabus", body: "Browse exam, subject and chapter-level syllabus resources.", href: "/resources/syllabus", icon: BookOpen },
+  { title: "Previous year papers", body: "Find verified JEE, NEET and NDA question papers.", href: "/jee/previous-year-papers", icon: FileText },
+  { title: "Syllabus", body: "Browse exam, subject and chapter-level syllabus resources.", href: "/jee/syllabus", icon: BookOpen },
   { title: "Free tools", body: "Use deterministic score, rank and study calculators.", href: "/tools", icon: Calculator },
   { title: "Resource library", body: "Explore exam guidance and preparation resources.", href: "/resources", icon: Library },
 ] as const;
