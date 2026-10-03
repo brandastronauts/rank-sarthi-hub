@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { AnnouncementStrip } from "@/components/campaign/AnnouncementStrip";
 import { OfferPopup } from "@/components/campaign/OfferPopup";
-import { showJeeAnnouncement, showJeeOfferPopup } from "@/content/offers/campaign";
+import { campaignFor } from "@/content/offers/campaign";
 import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisition";
 
 /**
@@ -16,8 +16,8 @@ import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisitio
  *      content column.
  * F3 — dense two-column frame: breadcrumb band + sticky aside slot.
  *
- * Campaign surfaces (JEE announcement strip, JEE offer popup) are scoped by
- * URL, so NEET and NDA pages never carry JEE commercial copy.
+ * Campaign surfaces are scoped by URL, so each exam sees only its approved
+ * commercial copy and offer pages do not promote themselves.
  */
 export type FrameId = "F1" | "F2" | "F3";
 
@@ -38,16 +38,15 @@ interface PageFrameProps {
 }
 
 export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBackdrop = false }: PageFrameProps) {
-  const strip = showJeeAnnouncement(url);
-  const popup = showJeeOfferPopup(url);
+  const campaign = campaignFor(url);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <SiteHeader transparentAtTop={heroBackdrop} />
       <main id="main" className="flex-1">
-        {strip ? (
+        {campaign.announcement ? (
           <div className="pt-20 md:pt-24">
-            <AnnouncementStrip />
+            <AnnouncementStrip campaign={campaign.announcement} />
           </div>
         ) : null}
         {frame === "F1" ? (
@@ -58,7 +57,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
         ) : (
           <>
             <div
-              className={`border-b border-border bg-ivory ${strip ? "pt-5" : "pt-20 md:pt-24"}`}
+              className={`border-b border-border bg-ivory ${campaign.announcement ? "pt-5" : "pt-20 md:pt-24"}`}
             >
               <div className="container-page">
                 <Breadcrumbs url={url} />
@@ -80,7 +79,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
       </main>
       <SiteFooter />
       {url === "/" ? <HomepageAcquisition /> : null}
-      {popup ? <OfferPopup /> : null}
+      {campaign.popup ? <OfferPopup campaign={campaign.popup} /> : null}
     </div>
   );
 }

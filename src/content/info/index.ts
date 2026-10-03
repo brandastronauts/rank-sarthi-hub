@@ -55,6 +55,8 @@ import { neetExamDates } from "./neet-exam-dates";
 import { neetBlog } from "./neet-blog";
 import { neetScoreCalculator } from "./neet-score-calculator";
 import { neetStudyPlan } from "./neet-study-plan";
+import { neetMockTests } from "./neet-mock-tests";
+import { neetPricingPage } from "./neet-pricing";
 import { ndaNdaExam } from "./nda-nda-exam";
 import { ndaSelectionProcess } from "./nda-selection-process";
 import { ndaNdaVsCdsVsAfcat } from "./nda-nda-vs-cds-vs-afcat";
@@ -199,6 +201,8 @@ export const infoPages: InfoPageContent[] = [
   neetBlog,
   neetScoreCalculator,
   neetStudyPlan,
+  neetMockTests,
+  neetPricingPage,
   ndaNdaExam,
   ndaSelectionProcess,
   ndaNdaVsCdsVsAfcat,
