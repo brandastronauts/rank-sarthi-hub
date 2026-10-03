@@ -16,7 +16,7 @@ export const jeePhysicsModernPhysics: ChapterContent = {
   platform: "jee",
   subject: "Physics",
   subjectSlug: "physics",
-  chapter: "Modern Physics",
+  chapter: "Modern Physics Overview: Dual Nature, Atoms and Nuclei",
   slug: "modern-physics",
   url: "/jee/physics/modern-physics",
   canonicalIntent:
@@ -770,7 +770,7 @@ export const jeePhysicsModernPhysics: ChapterContent = {
   contentFlags: ["weightage-suppressed", "trend-suppressed", "no-verified-reviewer"],
 
   meta: {
-    title: "Modern Physics for JEE: Concepts, Formulas and Models",
+    title: "Modern Physics Overview for JEE: Dual Nature, Atoms and Nuclei",
     description:
       "Connect photoelectric effect, de Broglie waves, atomic levels, nuclei and decay for JEE Main and Advanced with formulas, conditions and mistakes.",
     ogTitle: "Modern Physics for JEE, Built Around Evidence",

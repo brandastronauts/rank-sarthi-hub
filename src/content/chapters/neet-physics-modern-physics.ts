@@ -10,7 +10,7 @@ export const neetPhysicsModernPhysics: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Modern Physics: Dual Nature, Atoms, Nuclei and Electronic Devices Map",
+  "chapter": "NEET Modern Physics Overview: Dual Nature, Atoms, Nuclei and Electronic Devices",
   "slug": "modern-physics",
   "url": "/neet/physics/modern-physics",
   "canonicalIntent": "Own the student-facing overview and routing intent commonly described as \"modern physics\" without pretending that \"Modern Physics\" is an official NEET UG 2026 syllabus unit. The page connects the current official Units 17, 18 and 19 to the focused child routes for Dual Nature of Matter and Radiation, Atoms, Nuclei and Semiconductor Electronics.",
@@ -330,9 +330,9 @@ export const neetPhysicsModernPhysics: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Modern Physics: Dual Nature, Atoms, Nuclei & Devices | Rank Sarthi",
+    "title": "NEET Modern Physics Overview: Dual Nature, Atoms, Nuclei & Devices | Rank Sarthi",
     "description": "Map NEET modern-physics intent to the official 2026 units for dual nature, atoms and nuclei, and electronic devices, then open the focused topic owner.",
-    "ogTitle": "NEET Modern Physics: Dual Nature, Atoms, Nuclei & Devices | Rank Sarthi",
+    "ogTitle": "NEET Modern Physics Overview: Dual Nature, Atoms, Nuclei & Devices | Rank Sarthi",
     "ogDescription": "Map NEET modern-physics intent to the official 2026 units for dual nature, atoms and nuclei, and electronic devices, then open the focused topic owner.",
     "ogType": "article"
   },

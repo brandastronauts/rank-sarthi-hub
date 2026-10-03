@@ -10,7 +10,7 @@ export const neetPhysicsMechanics: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Mechanics: Concept Map, Study Order and Problem-Selection Guide",
+  "chapter": "NEET Mechanics Overview: Concept Map, Study Order and Problem-Selection Guide",
   "slug": "mechanics",
   "url": "/neet/physics/mechanics",
   "canonicalIntent": "Serve as a broad mechanics navigation and concept-architecture page. It should connect measurement, motion, force, energy, rotation, gravitation and mechanical properties without duplicating the focused child routes.",
@@ -262,9 +262,9 @@ export const neetPhysicsMechanics: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Mechanics: Concept Map & Study Order | Rank Sarthi",
+    "title": "NEET Mechanics Overview: Concept Map & Study Order | Rank Sarthi",
     "description": "Use a NEET mechanics concept map to choose the right route for motion, forces, energy, rotation, gravitation and mechanical properties.",
-    "ogTitle": "NEET Mechanics: Concept Map & Study Order | Rank Sarthi",
+    "ogTitle": "NEET Mechanics Overview: Concept Map & Study Order | Rank Sarthi",
     "ogDescription": "Use a NEET mechanics concept map to choose the right route for motion, forces, energy, rotation, gravitation and mechanical properties.",
     "ogType": "article"
   },

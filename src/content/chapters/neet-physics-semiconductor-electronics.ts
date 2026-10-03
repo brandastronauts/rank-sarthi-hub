@@ -10,7 +10,7 @@ export const neetPhysicsSemiconductorElectronics: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Semiconductor Electronics: Diodes, Rectifiers, Optoelectronic Devices and Logic Gates",
+  "chapter": "NEET Electronic Devices: Diodes, Rectifiers, Optoelectronic Devices and Logic Gates",
   "slug": "semiconductor-electronics",
   "url": "/neet/physics/semiconductor-electronics",
   "canonicalIntent": "Own the frozen semiconductor route while accurately mapping it to official Unit 19, Electronic Devices. Teach the listed diode/device/logic content and use intrinsic/extrinsic and p-type/n-type ideas only as supporting foundations where academically necessary, not as invented official sub-bullets.",
@@ -358,9 +358,9 @@ export const neetPhysicsSemiconductorElectronics: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Semiconductor Electronics: Diodes, Zener & Logic Gates | Rank Sarthi",
+    "title": "NEET Electronic Devices: Diodes, Zener & Logic Gates | Rank Sarthi",
     "description": "Learn current NEET Electronic Devices scope: diode I-V, rectifier, LED, photodiode, solar cell, Zener regulation and OR/AND/NOT/NAND/NOR gates.",
-    "ogTitle": "NEET Semiconductor Electronics: Diodes, Zener & Logic Gates | Rank Sarthi",
+    "ogTitle": "NEET Electronic Devices: Diodes, Zener & Logic Gates | Rank Sarthi",
     "ogDescription": "Learn current NEET Electronic Devices scope: diode I-V, rectifier, LED, photodiode, solar cell, Zener regulation and OR/AND/NOT/NAND/NOR gates.",
     "ogType": "article"
   },

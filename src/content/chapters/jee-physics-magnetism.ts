@@ -21,7 +21,7 @@ export const jeePhysicsMagnetism: ChapterContent = {
   platform: "jee",
   subject: "Physics",
   subjectSlug: "physics",
-  chapter: "Magnetism",
+  chapter: "Magnetic Effects of Current and Magnetism",
   slug: "magnetism",
   url: "/jee/physics/magnetism",
   canonicalIntent:
@@ -921,7 +921,7 @@ export const jeePhysicsMagnetism: ChapterContent = {
   contentFlags: ["weightage-suppressed", "trend-suppressed", "no-verified-reviewer"],
 
   meta: {
-    title: "Magnetism for JEE: Fields, Forces, Motion and Formulas",
+    title: "Magnetic Effects of Current and Magnetism for JEE",
     description:
       "Learn Magnetism for JEE Main and Advanced by separating field sources from effects. Includes formulas, directions, conditions, reasoning and mistakes.",
     ogTitle: "Magnetism for JEE, From Current to Motion",

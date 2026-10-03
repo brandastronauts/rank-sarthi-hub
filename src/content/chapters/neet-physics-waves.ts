@@ -10,7 +10,7 @@ export const neetPhysicsWaves: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Waves: Progressive Waves, Standing Waves, Organ Pipes and Beats",
+  "chapter": "NEET Oscillations and Waves: Progressive Waves, Standing Waves, Organ Pipes and Beats",
   "slug": "waves",
   "url": "/neet/physics/waves",
   "canonicalIntent": "Own the wave portion of official Unit 10: wave motion, longitudinal/transverse waves, travelling-wave speed/relation, superposition/reflection, standing waves in strings and organ pipes, harmonics and beats.",
@@ -199,9 +199,9 @@ export const neetPhysicsWaves: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Waves: Standing Waves, Organ Pipes & Beats | Rank Sarthi",
+    "title": "NEET Oscillations and Waves: Standing Waves & Beats | Rank Sarthi",
     "description": "Learn NEET Waves with progressive-wave relations, string speed, standing waves, organ-pipe harmonics and beat-frequency conditions.",
-    "ogTitle": "NEET Waves: Standing Waves, Organ Pipes & Beats | Rank Sarthi",
+    "ogTitle": "NEET Oscillations and Waves: Standing Waves & Beats | Rank Sarthi",
     "ogDescription": "Learn NEET Waves with progressive-wave relations, string speed, standing waves, organ-pipe harmonics and beat-frequency conditions.",
     "ogType": "article"
   },

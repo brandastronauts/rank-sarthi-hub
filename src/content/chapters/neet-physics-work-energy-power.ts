@@ -10,7 +10,7 @@ export const neetPhysicsWorkEnergyPower: ChapterContent = {
   "platform": "neet",
   "subject": "Physics",
   "subjectSlug": "physics",
-  "chapter": "NEET Work, Energy and Power: Work-Energy Theorem, Springs and Collisions",
+  "chapter": "NEET Work, Energy, and Power: Work-Energy Theorem, Springs and Collisions",
   "slug": "work-energy-power",
   "url": "/neet/physics/work-energy-power",
   "canonicalIntent": "Teach official Unit 4 with work by constant/variable forces, kinetic/potential energy, work-energy theorem, power, spring energy, mechanical-energy conservation, conservative/non-conservative forces, vertical-circle context and collisions at NEET depth.",
@@ -184,10 +184,10 @@ export const neetPhysicsWorkEnergyPower: ChapterContent = {
   ],
   "contentStatus": "draft",
   "meta": {
-    "title": "NEET Work Energy Power: Theorem, Springs & Collisions | Rank Sarthi",
-    "description": "Study NEET Work, Energy and Power with work-energy theorem, potential energy, springs, power, conservation conditions and collision checks.",
-    "ogTitle": "NEET Work Energy Power: Theorem, Springs & Collisions | Rank Sarthi",
-    "ogDescription": "Study NEET Work, Energy and Power with work-energy theorem, potential energy, springs, power, conservation conditions and collision checks.",
+    "title": "NEET Work, Energy, and Power: Theorem, Springs & Collisions | Rank Sarthi",
+    "description": "Study NEET Work, Energy, and Power with work-energy theorem, potential energy, springs, power, conservation conditions and collision checks.",
+    "ogTitle": "NEET Work, Energy, and Power: Theorem, Springs & Collisions | Rank Sarthi",
+    "ogDescription": "Study NEET Work, Energy, and Power with work-energy theorem, potential energy, springs, power, conservation conditions and collision checks.",
     "ogType": "article"
   },
   "formulas": [

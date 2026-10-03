@@ -2011,7 +2011,7 @@ export const jeePhysicsExperimentalSkills: ChapterContent = {
     "contentVersion": "2026-09-28"
   },
   "updated": "28 September 2026",
-  "contentStatus": "draft",
+  "contentStatus": "verified",
   "meta": {
     "title": "JEE Experimental Skills 2026: Measurements, Graphs & Lab Reasoning | Rank Sarthi",
     "description": "Learn the official JEE Main Experimental Skills unit through measurement principles, least count, error correction, graphs, formulas, observations and the 18 listed activities, with JEE Advanced overlap clearly marked.",
