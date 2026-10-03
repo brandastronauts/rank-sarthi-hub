@@ -15,30 +15,15 @@ import type { InfoPageContent, ResourceAction } from "../types";
 const RECONSTRUCTION_NOTE =
   "This is a third-party reconstruction/reference resource, not an official NTA-hosted question paper.";
 
-const AAKASH = "Aakash Educational Services Limited / Aakash Digital";
-
-function scan(detail: string, href: string): ResourceAction {
+function sourcePending(detail: string): ResourceAction {
   return {
-    provenance: "VERIFIED_TEST_BOOKLET_SCAN",
-    label: "Verified Paper Scan",
-    badge: "Verified reference",
-    cta: "View Paper",
-    href,
-    owner: AAKASH,
+    provenance: "SOURCE_NOT_VERIFIED",
+    label: "Paper source verification pending",
+    badge: "Source pending",
+    cta: "Paper source verification pending",
+    owner: "National Testing Agency (event identity only)",
+    trustNote: "No official NTA-hosted paper is verified for this event. A coaching or third-party copy is never substituted here.",
     detail,
-  };
-}
-
-function reconstruction(detail: string, href: string): ResourceAction {
-  return {
-    provenance: "VERIFIED_PAPER_RECONSTRUCTION",
-    label: "Verified Paper Reconstruction",
-    badge: "Verified reference",
-    cta: "View Paper",
-    href,
-    owner: AAKASH,
-    detail,
-    trustNote: RECONSTRUCTION_NOTE,
   };
 }
 
@@ -137,10 +122,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "21 Jun 2026",
           cells: [
             paperCol([
-              reconstruction(
-                "Code 50 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Questions&Answers_ReNEET-2026_(Code-50).pdf",
-              ),
+              sourcePending("Code 50 · English"),
             ]),
             keyCol([
               officialKey(
@@ -162,10 +144,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "3 May 2026",
           cells: [
             paperCol([
-              reconstruction(
-                "Code 11 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Aakash-Questions&Answers_NEET-2026%20(Code-11).pdf",
-              ),
+              sourcePending("Code 11 · English"),
             ]),
             keyCol([
               officialKey(
@@ -189,10 +168,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "4 May 2025",
           cells: [
             paperCol([
-              scan(
-                "Code 45 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Paper_20251004204701_227d5d1f.pdf",
-              ),
+              sourcePending("Code 45 · English"),
             ]),
             keyCol([
               officialKey(
@@ -213,10 +189,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "5 May 2024",
           cells: [
             paperCol([
-              scan(
-                "Code T1 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Paper_20250124132822.pdf",
-              ),
+              sourcePending("Code T1 · English"),
             ]),
             keyCol([
               officialKey(
@@ -233,10 +206,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "23 Jun 2024",
           cells: [
             paperCol([
-              reconstruction(
-                "Code C1 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Ques&Ans_Re-Examniation%20NEET-2024_(Code-C1)_Revised.pdf",
-              ),
+              sourcePending("Code C1 · English"),
             ]),
             keyCol([
               {
@@ -256,10 +226,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "7 May 2023",
           cells: [
             paperCol([
-              scan(
-                "Code E1 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Paper_20231108004734.pdf",
-              ),
+              sourcePending("Code E1 · English"),
             ]),
             keyCol([
               officialKey(
@@ -299,10 +266,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "17 Jul 2022",
           cells: [
             paperCol([
-              reconstruction(
-                "Code Q1 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/sm_sa/Code-Q1__Ques%20&%20Ans_NEET-2022.pdf",
-              ),
+              sourcePending("Code Q1 · English"),
             ]),
             keyCol([
               officialKey(
@@ -318,10 +282,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventLabel: "NEET UG 2021",
           cells: [
             paperCol([
-              scan(
-                "Code M4 · English",
-                "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/pdf_management_files/target_solutions/Paper_20211218095515.pdf",
-              ),
+              sourcePending("Code M4 · English"),
             ]),
             keyCol([
               officialKey(
