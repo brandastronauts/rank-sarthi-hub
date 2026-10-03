@@ -43,13 +43,18 @@ export const howItWorksSteps = [
   { n: "01", title: "Choose your exam", body: "Select JEE Main, NEET UG or NDA on Rank Sarthi." },
   {
     n: "02",
-    title: "Continue to RankUp",
-    body: "Move to the dedicated RankUp product that owns your diagnostic experience.",
+    title: "Diagnose",
+    body: "Continue to the dedicated RankUp product for your diagnostic.",
   },
   {
     n: "03",
-    title: "Act on the diagnosis",
-    body: "Use the result to focus preparation on the gaps that deserve attention next.",
+    title: "Understand",
+    body: "See the patterns and gaps behind your score.",
+  },
+  {
+    n: "04",
+    title: "Act",
+    body: "Focus preparation on what deserves attention next.",
   },
 ];
 

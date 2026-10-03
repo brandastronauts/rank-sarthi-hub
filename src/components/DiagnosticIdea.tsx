@@ -38,28 +38,28 @@ const territories = [
 
 export function DiagnosticIdea({ id }: { id?: string }) {
   return (
-    <section id={id ?? "diagnosis"} className="bg-paleblue py-14 sm:py-20">
+    <section id={id ?? "diagnosis"} className="bg-paleblue py-10 sm:py-20">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">What you get</p>
-          <h2 className="mt-4 text-display-lg text-primary">Know exactly where you&rsquo;re losing marks.</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-4">Know exactly where you&rsquo;re losing marks.</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-4">
             Go beyond the score and turn each attempt into clearer priorities.
           </p>
         </Reveal>
 
-        <ol className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 lg:grid-cols-4">
           {territories.map((t, i) => (
             <Reveal key={t.label} delay={i * 120} as="li">
-              <div className="h-full rounded-lg border border-border bg-background p-5">
+              <div className="h-full rounded-lg border border-border bg-background p-3.5 sm:p-5">
                   <div className="flex items-center gap-3">
                     <t.icon className={`size-5 ${t.tint}`} aria-hidden="true" />
                     <span className="text-xs font-bold uppercase text-muted-foreground">
                       {t.label}
                     </span>
                   </div>
-                  <p className="mt-4 text-lg font-bold text-primary">{t.human}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
+                  <p className="mt-3 text-sm font-bold text-primary sm:mt-4 sm:text-lg">{t.human}</p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:mt-2 sm:text-sm">{t.body}</p>
               </div>
             </Reveal>
           ))}

@@ -34,12 +34,12 @@ export function FaqBlock({
   if (!items.length) return null;
 
   return (
-    <section id={id} className="bg-ivory py-14 sm:py-20">
-      <div className="container-page grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+    <section id={id} className="bg-ivory py-10 sm:py-20">
+      <div className="container-page grid gap-7 sm:gap-12 lg:grid-cols-[0.7fr_1.3fr]">
         <Reveal>
           <p className="eyebrow text-accent">{eyebrow}</p>
-          <h2 className="mt-5 text-display-lg text-primary">{heading}</h2>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+          <h2 className="mt-3 text-display-lg text-primary sm:mt-5">{heading}</h2>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground sm:mt-5">
             Straight answers about how Rank Sarthi fits into serious exam preparation.
           </p>
         </Reveal>
@@ -56,7 +56,7 @@ export function FaqBlock({
                       aria-expanded={isOpen}
                       aria-controls={`${id}-panel-${i}`}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center justify-between gap-4 py-6 text-left text-base font-semibold text-primary"
+                      className="flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-semibold text-primary sm:py-6 sm:text-base"
                     >
                       {q}
                       <ChevronDown
@@ -70,7 +70,7 @@ export function FaqBlock({
                   <div
                     id={`${id}-panel-${i}`}
                     hidden={!isOpen}
-                    className="max-w-2xl pb-6 pr-10 text-sm leading-relaxed text-muted-foreground"
+                    className="max-w-2xl pb-4 pr-8 text-sm leading-relaxed text-muted-foreground sm:pb-6 sm:pr-10"
                   >
                     {f.a ?? (f.answer ? <RichText nodes={f.answer} /> : null)}
                   </div>
