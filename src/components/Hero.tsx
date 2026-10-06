@@ -34,6 +34,9 @@ export function Hero() {
               <br />
               <span className="text-gold">a reason.</span>
             </h1>
+            <p className="mt-3 font-display text-lg font-semibold text-gold sm:mt-4 sm:text-2xl">
+              Every Arjuna Deserves a Sarthi.
+            </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
               Find out where you&rsquo;re losing marks and what to work on next—for JEE, NEET or NDA.
             </p>
