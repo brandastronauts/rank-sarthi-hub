@@ -83,7 +83,7 @@ export const academicProfiles: AcademicProfile[] = [
     shortProfile:
       "Gandharva Saxena is a Senior Physics Faculty member and academic contributor focused on creating rigorous, conceptually strong and progressively structured Physics learning resources, emphasising scientific reasoning and the systematic application of fundamental principles.",
     detailedProfile: [
-      "Gandharva Saxena is a senior academic contributor in Physics, bringing subject expertise and a strong commitment to scientifically rigorous, conceptually clear and student-focused learning resources.",
+      "Kumar Gandharva Saxena is a senior academic contributor in Physics, bringing subject expertise and a strong commitment to scientifically rigorous, conceptually clear and student-focused learning resources.",
       "He holds a B.Tech in Automation Engineering from NSIT. His confirmed entrance ranks are 655 in the DCE entrance examination and 764 in the Roorkee entrance examination.",
       "His contribution includes the creation, structuring, refinement and continuous enrichment of Physics content so that students progress through a coherent learning sequence instead of a set of disconnected chapters. Mechanics, thermal physics, electromagnetism, optics and modern physics are treated as a connected body of principles that reappear in new contexts.",
       "His academic approach emphasises conceptual understanding before formula application. A physical situation is first described in terms of the principle that governs it — conservation, field behaviour, equilibrium, symmetry — and only then reduced to the equation used to solve it. This makes the relationship between assumptions and results visible to the learner.",
