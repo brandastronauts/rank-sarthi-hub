@@ -298,7 +298,7 @@ India
 
 **Email:** info@ranksarthi.com
 
-**Phone:** +91 75068 59750
+**Phone:** +91 92205 52551
 
 **Contact:** https://ranksarthi.com/contact
 

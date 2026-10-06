@@ -14,3 +14,4 @@
 - Retired duplicate routes use UrlRecord.redirectTo (301 in the chapter loader, excluded from hubs and sitemaps) instead of deletion. Why: keeps old links working with no 404s.
 - Server-side code must be Worker-safe: import cheerio only as "cheerio/slim" and never make loopback HTTP calls to the app's own API from SSR (use createServerFn instead). Why: both crash every page on the published host while working in the preview.
 - Operator-supplied PYQ copies are hosted as CDN assets and mapped only through src/content/resources/pyq-manifest.ts with RANK_SARTHI_HOSTED_COPY provenance. Why: one mapping, and hosted copies are never labelled official NTA.
+- Official company contact details must be consumed from src/content/company.ts wherever rendering supports it. Why: visible contact links and structured business data must not drift.

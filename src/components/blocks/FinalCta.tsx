@@ -32,6 +32,12 @@ export function FinalCta({
           <p className="eyebrow text-gold">{eyebrow}</p>
           <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-bold leading-none sm:mt-5 sm:text-5xl">{heading}</h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-primary-foreground/70 sm:mt-6">{body}</p>
+          <div className="mx-auto mt-6 max-w-xl border-t border-white/15 pt-5 sm:mt-8">
+            <p className="font-display text-xl font-bold text-gold sm:text-2xl">Every Arjuna Deserves a Sarthi.</p>
+            <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">
+              You do the preparation. Rank Sarthi helps you understand where to focus next.
+            </p>
+          </div>
           <div className="mt-7 flex flex-wrap justify-center gap-3 sm:mt-10">
             {platform ? (
               <CtaLink

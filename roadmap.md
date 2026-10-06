@@ -45,3 +45,9 @@
 - [x] Add accurate lower-funnel NEET pricing to the V3.1 homepage
 - [x] Audit and remove legacy NEET add-on and Starter top-up references
 - [x] Validate responsive pages, JEE protection, RankUp handoff, PYQ, syllabus, and SEO protections
+
+## Brand, faculty credentials, and official contact update
+- [x] Add the approved secondary Sarthi brand line without changing homepage order
+- [x] Update faculty expert terminology and the three approved credential records
+- [x] Replace the official Rank Sarthi phone through the central contact source and legal pages
+- [x] Validate mobile, desktop, contact links, profile routes, protected areas, tests, and runtime

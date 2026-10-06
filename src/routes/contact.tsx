@@ -34,7 +34,7 @@ export const Route = createFileRoute("/contact")({
             name: company.legalName,
             url: absolute("/"),
             email: company.email,
-            telephone: company.phoneDisplay,
+            telephone: company.phoneE164,
             address: {
               "@type": "PostalAddress",
               streetAddress: company.streetAddress,
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/contact")({
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer support",
-              telephone: company.phoneDisplay,
+              telephone: company.phoneE164,
               email: company.email,
             },
           },

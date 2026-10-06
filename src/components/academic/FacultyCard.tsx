@@ -11,12 +11,12 @@ export function FacultyCard({ profile, clamp = 5, compact = false }: { profile: 
         <FacultyPhoto profile={profile} initialsClassName="text-5xl" />
       </div>
       <div className={`flex flex-1 flex-col ${compact ? "p-3 sm:p-5" : "p-5"}`}>
-        <p className="text-xs font-semibold uppercase tracking-wide text-accent">{profile.subject}</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-accent">{profile.subject} Expert</p>
         <h3 className={`mt-1 font-bold text-primary ${compact ? "text-base sm:text-lg" : "text-xl"}`}>{profile.name}</h3>
         <p className="mt-1 text-sm font-semibold text-ink/80">{profile.title}</p>
         {compact ? (
-          <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-            {profile.expertise.filter((e) => e !== profile.subject).slice(0, 2).join(" · ")}
+          <p className="mt-3 line-clamp-2 min-h-10 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            {profile.featuredCredential ?? profile.expertise.filter((e) => e !== profile.subject).slice(0, 2).join(" · ")}
           </p>
         ) : (
           <p className={`mt-4 text-sm leading-relaxed text-muted-foreground ${clamp === 3 ? "line-clamp-3" : "line-clamp-5"}`}>

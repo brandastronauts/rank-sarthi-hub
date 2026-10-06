@@ -1,6 +1,7 @@
 import { absolute, ancestorsOf, getUrl } from "@/content/registry";
 import { site } from "@/content/site";
 import { getPerson } from "@/content/people";
+import { company } from "@/content/company";
 import type { UrlRecord } from "@/content/types";
 
 /**
@@ -27,6 +28,14 @@ export function organizationSchema() {
     name: site.legalName,
     url: `${site.origin}/`,
     description: site.tagline,
+    email: company.email,
+    telephone: company.phoneE164,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: company.phoneE164,
+      email: company.email,
+    },
   };
 }
 

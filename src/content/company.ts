@@ -6,8 +6,9 @@ export const company = {
   locality: "New Delhi",
   postalCode: "110030",
   country: "IN",
-  phoneDisplay: "+91 75068 59750",
-  phoneHref: "tel:+917506859750",
+  phoneDisplay: "+91 92205 52551",
+  phoneE164: "+919220552551",
+  phoneHref: "tel:+919220552551",
   email: "info@ranksarthi.com",
   mapQuery: "Harihar Apartments, New Mangalapuri, New Delhi 110030, India",
 } as const;
