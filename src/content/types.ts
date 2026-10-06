@@ -110,6 +110,8 @@ export interface AcademicProfile {
   title: string;
   subject: "Physics" | "Chemistry" | "Mathematics";
   role: string;
+  /** One concise, approved credential or academic-focus line for compact cards. */
+  featuredCredential?: string;
   shortProfile: string;
   /** Only defensible, publication-safe paragraphs from the approved master. */
   detailedProfile: string[];

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { company } from "@/content/company";
 
 /**
  * Renders approved legal markdown (headings, paragraphs, bullet lists, bold,
@@ -53,7 +54,7 @@ export function parseLegal(md: string): Block[] {
 }
 
 const linkCls = "break-words text-accent underline underline-offset-4 hover:text-red-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
-const TOKEN = /(\*\*[^*]+\*\*|https:\/\/ranksarthi\.com\/[a-z-]*|[a-z]+@ranksarthi\.com|\+91 75068 59750)/g;
+const TOKEN = /(\*\*[^*]+\*\*|https:\/\/ranksarthi\.com\/[a-z-]*|[a-z]+@ranksarthi\.com|\+91 92205 52551)/g;
 
 function Inline({ text }: { text: string }) {
   const parts = text.split(TOKEN).filter(Boolean);
@@ -66,7 +67,7 @@ function Inline({ text }: { text: string }) {
           return <Link key={i} to={path} className={linkCls}>{p}</Link>;
         }
         if (p.endsWith("@ranksarthi.com")) return <a key={i} href={`mailto:${p}`} className={linkCls}>{p}</a>;
-        if (p === "+91 75068 59750") return <a key={i} href="tel:+917506859750" className={linkCls}>{p}</a>;
+        if (p === company.phoneDisplay) return <a key={i} href={company.phoneHref} className={linkCls}>{p}</a>;
         return <span key={i}>{p}</span>;
       })}
     </>
