@@ -1,4 +1,5 @@
 import type { ResourceRow } from "@/content/types";
+import { withHostedPaper } from "./pyq-manifest";
 
 /**
  * Shared JEE Main Paper 1 resource registry used by the parent finder and
@@ -495,8 +496,8 @@ const rowsByYearAndSession = {
     ],
   },
   {
-    id: "jee-main-2025-s2-20250403-shift1-p1",
-    eventLabel: "3 Apr 2025 · Shift 1 · Paper 1 B.E./B.Tech",
+    id: "jee-main-2025-s2-20250405-shift1-p1",
+    eventLabel: "5 Apr 2025 · Shift 1 · Paper 1 B.E./B.Tech",
     eventDate: "Session 2 Shift 1",
     cells: [
       { label: "Question paper", actions: [{ provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official NTA schedule and final answer key." }] },
@@ -508,8 +509,8 @@ const rowsByYearAndSession = {
     ],
   },
   {
-    id: "jee-main-2025-s2-20250403-shift2-p1",
-    eventLabel: "3 Apr 2025 · Shift 2 · Paper 1 B.E./B.Tech",
+    id: "jee-main-2025-s2-20250405-shift2-p1",
+    eventLabel: "5 Apr 2025 · Shift 2 · Paper 1 B.E./B.Tech",
     eventDate: "Session 2 Shift 2",
     cells: [
       { label: "Question paper", actions: [{ provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official NTA schedule and final answer key." }] },
@@ -547,8 +548,8 @@ const rowsByYearAndSession = {
     ],
   },
   {
-    id: "jee-main-2025-s2-20250407-shift1-p1",
-    eventLabel: "7 Apr 2025 · Shift 1 · Paper 1 B.E./B.Tech",
+    id: "jee-main-2025-s2-20250406-shift1-p1",
+    eventLabel: "6 Apr 2025 · Shift 1 · Paper 1 B.E./B.Tech",
     eventDate: "Session 2 Shift 1",
     cells: [
       { label: "Question paper", actions: [{ provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official NTA schedule and final answer key." }] },
@@ -560,8 +561,8 @@ const rowsByYearAndSession = {
     ],
   },
   {
-    id: "jee-main-2025-s2-20250407-shift2-p1",
-    eventLabel: "7 Apr 2025 · Shift 2 · Paper 1 B.E./B.Tech",
+    id: "jee-main-2025-s2-20250406-shift2-p1",
+    eventLabel: "6 Apr 2025 · Shift 2 · Paper 1 B.E./B.Tech",
     eventDate: "Session 2 Shift 2",
     cells: [
       { label: "Question paper", actions: [{ provenance: "SOURCE_NOT_VERIFIED", label: "Paper source verification pending", badge: "Source pending", cta: "Paper source verification pending", owner: "National Testing Agency (event identity only)", trustNote: "No exact public authority-hosted paper PDF was activated. A coaching or memory-based reconstruction is never substituted here.", detail: "Date and shift identity verified from the official NTA schedule and final answer key." }] },
@@ -593,5 +594,7 @@ export type JeeMainPaperYear = keyof typeof rowsByYearAndSession;
 export type JeeMainPaperSession = keyof (typeof rowsByYearAndSession)[JeeMainPaperYear];
 
 export function jeeMainRowsFor(year: JeeMainPaperYear, session: JeeMainPaperSession): ResourceRow[] {
-  return [...rowsByYearAndSession[year][session]];
+  return [...rowsByYearAndSession[year][session]]
+    .map(withHostedPaper)
+    .sort((a, b) => a.id.localeCompare(b.id));
 }

@@ -693,6 +693,8 @@ export type ResourceProvenance =
   | "OFFICIAL_AUTHORITY_COPY"
   | "VERIFIED_TEST_BOOKLET_SCAN"
   | "VERIFIED_PAPER_RECONSTRUCTION"
+  /** Operator-supplied copy hosted by Rank Sarthi; never labelled official. */
+  | "RANK_SARTHI_HOSTED_COPY"
   | "SOURCE_NOT_VERIFIED"
   | "NOT_AVAILABLE";
 
