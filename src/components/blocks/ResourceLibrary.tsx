@@ -17,6 +17,7 @@ const BADGE_TONE: Record<string, string> = {
   OFFICIAL_AUTHORITY_COPY: "bg-primary text-primary-foreground",
   VERIFIED_TEST_BOOKLET_SCAN: "bg-ivory text-primary border border-border",
   VERIFIED_PAPER_RECONSTRUCTION: "bg-ivory text-primary border border-border",
+  RANK_SARTHI_HOSTED_COPY: "bg-ivory text-primary border border-border",
   SOURCE_NOT_VERIFIED: "bg-muted text-muted-foreground",
   NOT_AVAILABLE: "bg-muted text-muted-foreground",
 };
@@ -29,6 +30,7 @@ function isRealHref(href?: string): href is string {
 function ActionCard({ action }: { action: ResourceAction }) {
   const linkable = isRealHref(action.href) && !!action.cta;
   const external = action.href?.startsWith("https://");
+  const newTab = external || !!action.href?.toLowerCase().endsWith(".pdf");
 
   return (
     <div className="rounded-xl border border-border bg-white p-4">
@@ -55,11 +57,11 @@ function ActionCard({ action }: { action: ResourceAction }) {
       {linkable ? (
         <a
           href={action.href}
-          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="mt-3 inline-flex items-center rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
         >
           {action.cta}
-          {external ? <span className="sr-only"> (opens in a new tab)</span> : null}
+          {newTab ? <span className="sr-only"> (opens in a new tab)</span> : null}
         </a>
       ) : (
         <p className="mt-3 inline-flex items-center rounded-lg border border-dashed border-border px-3 py-2 text-sm font-medium text-muted-foreground">

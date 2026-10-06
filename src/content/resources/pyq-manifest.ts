@@ -1,3 +1,5 @@
+import type { ResourceAction } from "@/content/types";
+
 /**
  * Single PYQ asset manifest for operator-supplied paper copies hosted by
  * Rank Sarthi. Pages consume this mapping by record id; no component holds a
@@ -82,4 +84,33 @@ export const pyqAssets: PyqAsset[] = [
 const byRecord = new Map(pyqAssets.map((a) => [a.recordId, a]));
 export function pyqAssetFor(recordId: string): PyqAsset | undefined {
   return byRecord.get(recordId);
+}
+
+/** The one active paper action for a Rank Sarthi-hosted copy. */
+export function hostedPaperAction(a: PyqAsset): ResourceAction {
+  const identity = a.exam === "JEE Main"
+    ? `${a.date} · ${a.shift} · Paper 1`
+    : `Code ${a.paperCode} · ${a.examType === "re-exam" ? "Re-Examination" : "Regular examination"}`;
+  return {
+    provenance: a.provenance,
+    label: a.label,
+    badge: "Rank Sarthi-hosted",
+    cta: "View Question Paper",
+    href: a.href,
+    owner: "Rank Sarthi (hosted paper copy)",
+    detail: identity,
+    trustNote: "This is a paper copy hosted by Rank Sarthi, not an NTA-hosted file. Check answers against the official NTA answer key.",
+  };
+}
+
+/** Replace a row's pending question-paper state only when a mapped file exists. */
+export function withHostedPaper<R extends { id: string; cells: { label: string; actions: ResourceAction[] }[] }>(row: R): R {
+  const asset = pyqAssetFor(row.id);
+  if (!asset) return row;
+  return {
+    ...row,
+    cells: row.cells.map((c) =>
+      c.label === "Question paper" ? { ...c, actions: [hostedPaperAction(asset)] } : c,
+    ),
+  };
 }

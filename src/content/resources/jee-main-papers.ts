@@ -1,4 +1,5 @@
 import type { ResourceRow } from "@/content/types";
+import { withHostedPaper } from "./pyq-manifest";
 
 /**
  * Shared JEE Main Paper 1 resource registry used by the parent finder and
@@ -593,5 +594,7 @@ export type JeeMainPaperYear = keyof typeof rowsByYearAndSession;
 export type JeeMainPaperSession = keyof (typeof rowsByYearAndSession)[JeeMainPaperYear];
 
 export function jeeMainRowsFor(year: JeeMainPaperYear, session: JeeMainPaperSession): ResourceRow[] {
-  return [...rowsByYearAndSession[year][session]];
+  return [...rowsByYearAndSession[year][session]]
+    .map(withHostedPaper)
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
