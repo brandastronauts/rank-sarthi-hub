@@ -1,4 +1,5 @@
 import type { InfoPageContent, ResourceAction } from "../types";
+import { withHostedPaper } from "../resources/pyq-manifest";
 
 /**
  * /neet/previous-year-papers — NEET PYQ resource library (T10 treatment on the
@@ -141,7 +142,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "3 May 2026",
           cells: [
             paperCol([
-              sourcePending("Code 11 · English"),
+              sourcePending("Code 12 · English"),
             ]),
             keyCol([
               officialKey(
@@ -263,7 +264,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventDate: "17 Jul 2022",
           cells: [
             paperCol([
-              sourcePending("Code Q1 · English"),
+              sourcePending("Code R1 · English"),
             ]),
             keyCol([
               officialKey(
@@ -279,7 +280,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           eventLabel: "NEET UG 2021",
           cells: [
             paperCol([
-              sourcePending("Code M4 · English"),
+              sourcePending("Code O4 · English"),
             ]),
             keyCol([
               officialKey(
