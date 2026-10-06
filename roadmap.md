@@ -47,7 +47,7 @@
 - [x] Validate responsive pages, JEE protection, RankUp handoff, PYQ, syllabus, and SEO protections
 
 ## Brand, faculty credentials, and official contact update
-- [ ] Add the approved secondary Sarthi brand line without changing homepage order
-- [ ] Update faculty expert terminology and the three approved credential records
-- [ ] Replace the official Rank Sarthi phone through the central contact source and legal pages
-- [ ] Validate mobile, desktop, contact links, profile routes, protected areas, tests, and runtime
+- [x] Add the approved secondary Sarthi brand line without changing homepage order
+- [x] Update faculty expert terminology and the three approved credential records
+- [x] Replace the official Rank Sarthi phone through the central contact source and legal pages
+- [x] Validate mobile, desktop, contact links, profile routes, protected areas, tests, and runtime
