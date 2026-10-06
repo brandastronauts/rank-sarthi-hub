@@ -87,7 +87,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
       type: "paragraph",
       children: [
         {
-          text: "Practise real NEET papers and check them against verified official answer keys. Authority-hosted question-paper files are verified for the 2020 examination. For 2021 to 2026 no authority-hosted paper file was verified, so those events show Paper source verification pending. A coaching or third-party copy is never substituted.",
+          text: "Practise real NEET papers and check them against verified official answer keys. Authority-hosted question-paper files are verified for the 2020 examination. For 2021 to 2026, Rank Sarthi hosts paper copies by code, labelled Rank Sarthi-hosted Question Paper, never as official NTA files. A coaching-site copy is never linked.",
         },
       ],
     },
@@ -96,7 +96,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
       tone: "caution",
       children: [
         {
-          text: "Official Question Paper means the file is hosted by NTA or the official NEET archive. Where no official file is verified, the event shows Paper source verification pending instead of a third-party copy.",
+          text: "Official Question Paper means the file is hosted by NTA or the official NEET archive. A Rank Sarthi-hosted Question Paper is a copy hosted by Rank Sarthi, not by NTA. Where no paper is available, the event shows Paper source verification pending.",
         },
       ],
     },
@@ -320,8 +320,8 @@ export const neetPreviousYearPapers: InfoPageContent = {
             analysisCol,
           ],
         },
-      ],
-      note: "Rank Sarthi does not host these files. Every external resource opens on its owner's site in a new tab. Local rehosting stays blocked pending a rights review.",
+      ].map(withHostedPaper),
+      note: "2020 papers open on the official NTA channel. 2021 to 2026 papers are Rank Sarthi-hosted copies of operator-supplied papers, clearly labelled and never presented as official NTA files. Regular examinations and re-examinations are separate events.",
     },
     {
       kind: "resources",
@@ -376,7 +376,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
       kind: "table",
       id: "how-to-read-labels",
       heading: "How to read the paper labels",
-      intro: "Every paper action on this page carries one of these two states.",
+      intro: "Every paper action on this page carries one of these states.",
       columns: ["Label", "What it means", "Action shown"],
       rows: [
         [
@@ -388,6 +388,11 @@ export const neetPreviousYearPapers: InfoPageContent = {
           "Paper source verification pending",
           "No resource has passed source verification for this event.",
           "No link is shown",
+        ],
+        [
+          "Rank Sarthi-hosted Question Paper",
+          "A paper copy hosted by Rank Sarthi. It is not an NTA-hosted file.",
+          "View Question Paper",
         ],
       ],
     },
@@ -497,7 +502,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           type: "paragraph",
           children: [
             {
-              text: "Authority-hosted NEET question papers are verified for the 2020 examination and are linked here by paper code. For 2021 to 2026, no authority-hosted paper file was verified, so those events stay marked Paper source verification pending.",
+              text: "Authority-hosted NEET question papers are verified for the 2020 examination and are linked here by paper code. For 2021 to 2026, the papers are Rank Sarthi-hosted copies labelled by paper code, kept separate for regular examinations and re-examinations.",
             },
           ],
         },

@@ -9,15 +9,15 @@ export const jeePreviousYearPapers2025: InfoPageContent = {
   title: "JEE Main 2025 Question Papers",
   eyebrow: "Paper 1 resource finder",
   intent: "Browse JEE Main 2025 Paper 1 resources by session, date and shift",
-  chips: ["Session 1", "Session 2", "Source-verified states"],
+  chips: ["Session 1", "Session 2", "Rank Sarthi-hosted papers"],
   contentStatus: "draft",
-  answer: [{ type: "paragraph", children: [{ text: "Official NTA schedules verify 19 JEE Main 2025 Paper 1 examination events: 10 in Session 1 and nine in Session 2. No official NTA-hosted Paper 1 file is verified for these events, so all 19 remain Paper source verification pending. Official final Paper 1 answer keys are verified for both sessions." }] }],
+  answer: [{ type: "paragraph", children: [{ text: "All 19 JEE Main 2025 Paper 1 shift papers are available: 10 in Session 1 and nine in Session 2. They are Rank Sarthi-hosted paper copies, not NTA-hosted files. Official final Paper 1 answer keys from NTA are linked for both sessions." }] }],
   blocks: [
     {
       kind: "resources",
       id: "main-2025-session-1",
-      heading: "JEE Main 2025 Session 1 — event identity verified, paper source pending",
-      intro: "Choose the exact date and shift, then open the available paper and its separate official answer-key record.",
+      heading: "JEE Main 2025 Session 1 — Rank Sarthi-hosted papers",
+      intro: "Choose the exact date and shift, then open the Rank Sarthi-hosted paper and its separate official NTA answer key.",
       rows: jeeMainRowsFor(2025, "Session 1"),
       note: "Analysis remains pending until reviewed question-level ingestion is complete.",
       jump: true,
@@ -25,8 +25,8 @@ export const jeePreviousYearPapers2025: InfoPageContent = {
     {
       kind: "resources",
       id: "main-2025-session-2",
-      heading: "JEE Main 2025 Session 2 — event identity verified, paper source pending",
-      intro: "Choose the exact date and shift, then open the available paper and its separate official answer-key record.",
+      heading: "JEE Main 2025 Session 2 — Rank Sarthi-hosted papers",
+      intro: "Choose the exact date and shift, then open the Rank Sarthi-hosted paper and its separate official NTA answer key.",
       rows: jeeMainRowsFor(2025, "Session 2"),
       note: "Analysis remains pending until reviewed question-level ingestion is complete.",
       jump: true,
@@ -56,9 +56,9 @@ export const jeePreviousYearPapers2025: InfoPageContent = {
   lastVerified: "11 September 2026",
   seo: {
     title: "JEE Main 2025 Question Papers: Session & Shift Resources | Rank Sarthi",
-    description: "Browse JEE Main 2025 Paper 1 resources by session, date and shift, with official answer keys, and honest source-pending paper states.",
+    description: "Browse JEE Main 2025 Paper 1 resources by session, date and shift, with Rank Sarthi-hosted papers and official NTA answer keys.",
     ogTitle: "JEE Main 2025 Question Papers by Session and Shift",
-    ogDescription: "Browse JEE Main 2025 Paper 1 resources by session, date and shift, with official answer keys, and honest source-pending paper states.",
+    ogDescription: "Browse JEE Main 2025 Paper 1 resources by session, date and shift, with Rank Sarthi-hosted papers and official NTA answer keys.",
     ogType: "article",
   },
 };
