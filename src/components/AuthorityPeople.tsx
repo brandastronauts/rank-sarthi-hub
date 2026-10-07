@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import { publicAcademicProfiles } from "@/content/academic-profiles";
 import { FacultyPhoto } from "@/components/academic/FacultyPhoto";
+import { CompactFacultyCredential } from "@/components/academic/InstitutionCredentialBadge";
 import { Link } from "@tanstack/react-router";
 
 /** Homepage subject-matter experts — the same approved faculty records as /about. */
@@ -29,7 +30,7 @@ export function AuthorityPeople({ id }: { id?: string }) {
                 <span className="mt-3 block text-sm font-bold text-primary group-hover:text-accent">{profile.name}</span>
                 <span className="mt-1 block text-xs font-semibold text-ink/80">{profile.subject} Expert</span>
                 <span className="mt-1 line-clamp-2 block min-h-8 text-xs leading-4 text-muted-foreground">
-                  {profile.featuredCredential ?? profile.expertise.filter((item) => item !== profile.subject).slice(0, 2).join(" · ")}
+                  <CompactFacultyCredential profile={profile} />
                 </span>
               </Link>
             </Reveal>
