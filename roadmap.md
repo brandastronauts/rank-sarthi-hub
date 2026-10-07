@@ -51,3 +51,8 @@
 - [x] Update faculty expert terminology and the three approved credential records
 - [x] Replace the official Rank Sarthi phone through the central contact source and legal pages
 - [x] Validate mobile, desktop, contact links, profile routes, protected areas, tests, and runtime
+
+## Faculty enrichment and institution credential treatment
+- [ ] Inspect supplied document artwork and existing Ashwin/Ashwini record
+- [ ] Enrich four existing profiles and share contextual credential badges across faculty views
+- [ ] Validate compact cards, profile pages, approved facts, route protection and build status
