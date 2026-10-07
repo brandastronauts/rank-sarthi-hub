@@ -56,8 +56,10 @@ export const academicProfiles: AcademicProfile[] = [
     relatedPages: ["/jee/syllabus/mathematics", "/jee/mathematics", "/jee/syllabus"],
     education: "IIT Madras",
     credentials: [
-      { label: "Postgraduate degree", value: "M.Sc. Mathematics, IIT Madras — 2009" },
-      { label: "Qualifications", value: "IIT JAM Qualified · GATE Qualified · CSIR-NET/JRF Qualified" },
+      { label: "Postgraduate degree", value: "M.Sc. Mathematics, IIT Madras — 2009", section: "Education", institution: { name: "IIT Madras" } },
+      { label: "IIT JAM", value: "IIT JAM Qualified", section: "Competitive / Academic Qualifications" },
+      { label: "GATE", value: "GATE Qualified", section: "Competitive / Academic Qualifications" },
+      { label: "CSIR-NET/JRF", value: "CSIR-NET/JRF Qualified", section: "Competitive / Academic Qualifications" },
     ],
     verificationStatus: partial,
     photo: "/faculty/sachin-garg-senior-mathematics-faculty-rank-sarthi.webp",
@@ -81,7 +83,7 @@ export const academicProfiles: AcademicProfile[] = [
     role: "Senior Academic Contributor — Physics",
     featuredCredential: "B.Tech, Automation Engineering — NSIT",
     shortProfile:
-      "Gandharva Saxena is a Senior Physics Faculty member and academic contributor focused on creating rigorous, conceptually strong and progressively structured Physics learning resources, emphasising scientific reasoning and the systematic application of fundamental principles.",
+      "Kumar Gandharva Saxena is a Senior Physics Faculty member and academic contributor focused on creating rigorous, conceptually strong and progressively structured Physics learning resources, emphasising scientific reasoning and the systematic application of fundamental principles.",
     detailedProfile: [
       "Kumar Gandharva Saxena is a senior academic contributor in Physics, bringing subject expertise and a strong commitment to scientifically rigorous, conceptually clear and student-focused learning resources.",
       "He holds a B.Tech in Automation Engineering from NSIT. His confirmed entrance ranks are 655 in the DCE entrance examination and 764 in the Roorkee entrance examination.",
@@ -115,9 +117,9 @@ export const academicProfiles: AcademicProfile[] = [
     relatedPages: ["/jee/syllabus/physics", "/jee/physics", "/neet/syllabus/physics", "/neet/physics"],
     education: "NSIT",
     credentials: [
-      { label: "Undergraduate degree", value: "B.Tech in Automation Engineering, NSIT" },
-      { label: "DCE entrance rank", value: "655" },
-      { label: "Roorkee entrance rank", value: "764" },
+      { label: "Undergraduate degree", value: "B.Tech in Automation Engineering, NSIT", section: "Education", institution: { name: "NSIT" } },
+      { label: "DCE entrance rank", value: "655", section: "Entrance Achievements" },
+      { label: "Roorkee entrance rank", value: "764", section: "Entrance Achievements" },
     ],
     verificationStatus: partial,
     photo: "/faculty/gandharva-saxena-senior-physics-faculty-rank-sarthi.webp",
@@ -187,10 +189,11 @@ export const academicProfiles: AcademicProfile[] = [
     ],
     relatedPages: ["/jee/syllabus/chemistry", "/jee/chemistry", "/neet/syllabus/chemistry", "/neet/chemistry"],
     credentials: [
-      { label: "Doctoral research", value: "Pursuing PhD in Environmental Chemistry" },
-      { label: "Qualifications", value: "GATE Qualified · CSIR-NET Qualified" },
-      { label: "Project work", value: "IIT Delhi with Prof. Naresh Bhatnagar — synthesis of a biodegradable polymer" },
-      { label: "Innovation", value: "Patent granted for a zero-waste air-pollution filter system" },
+      { label: "Doctoral research", value: "Pursuing PhD in Environmental Chemistry", section: "Education & Qualifications" },
+      { label: "GATE", value: "GATE Qualified", section: "Education & Qualifications" },
+      { label: "CSIR-NET", value: "CSIR-NET Qualified", section: "Education & Qualifications" },
+      { label: "Project work", value: "IIT Delhi with Prof. Naresh Bhatnagar — synthesis of a biodegradable polymer", section: "Research Experience", institution: { name: "IIT Delhi", context: "Project Research" } },
+      { label: "Innovation", value: "Patent granted for a zero-waste air-pollution filter system", section: "Innovation & Patent" },
     ],
     publications: ["Two papers related to air pollution"],
     research: [
@@ -270,14 +273,15 @@ export const academicProfiles: AcademicProfile[] = [
   {
     id: "ashwin-m",
     slug: "ashwin-m",
-    name: "Ashwin M.",
+    name: "Ashwini M.",
     title: "Physics Expert",
     subject: "Physics",
     role: "Senior Academic Contributor — Physics",
+    featuredCredential: "IIT Madras",
     shortProfile:
-      "Ashwin M. is a Senior Physics Faculty member whose teaching approach centres on making complex Physics intuitive, conceptually clear and analytically rigorous, spanning competitive-exam Physics, structured problem-solving and progressively graded learning resources.",
+      "Ashwini M. is a Senior Physics Faculty member whose teaching approach centres on making complex Physics intuitive, conceptually clear and analytically rigorous, spanning competitive-exam Physics, structured problem-solving and progressively graded learning resources.",
     detailedProfile: [
-      "Ashwin M. is a Physics educator whose academic approach emphasises conceptual understanding, intuitive explanation and structured reasoning rather than mechanical learning.",
+      "Ashwini M. is a Physics educator whose academic approach emphasises conceptual understanding, intuitive explanation and structured reasoning rather than mechanical learning.",
       "His work centres on making complex Physics intuitive without making it imprecise. A topic is introduced through the physical picture — what is changing, what is conserved, what constrains the system — and the mathematics is then attached to that picture rather than presented as the starting point.",
       "He has guided students preparing for advanced school-level and competitive science examinations, and his content reflects that range: the same principle is developed at the depth each examination requires, with the difference in depth made explicit instead of blurred.",
       "Structured reasoning is the core method. Problems are approached as a sequence of decisions — represent the situation, identify the governing law, reduce to solvable form, solve, then validate against limiting cases and dimensions. Learners are trained on the decision sequence, which transfers, rather than on remembered solutions, which do not.",
@@ -306,10 +310,13 @@ export const academicProfiles: AcademicProfile[] = [
     ],
     reviewAreas: ["Physics", "JEE Physics", "NEET Physics", "Conceptual Learning", "Competitive Exam Physics"],
     relatedPages: ["/jee/syllabus/physics", "/jee/physics", "/neet/syllabus/physics", "/neet/physics"],
+    credentials: [
+      { label: "Academic association", value: "IIT Madras", section: "Academic Credentials", institution: { name: "IIT Madras" } },
+    ],
     verificationStatus: partial,
     photo: "/faculty/ashwin-m-senior-physics-faculty-rank-sarthi.webp",
     photoFilename: "ashwin-m-senior-physics-faculty-rank-sarthi.webp",
-    imageAlt: "Ashwin M., Senior Physics Faculty at Rank Sarthi",
+    imageAlt: "Ashwini M., Physics Expert at Rank Sarthi",
     initials: "AM",
     claimsRequiringEvidence: [
       "Final public name",

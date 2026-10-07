@@ -100,6 +100,10 @@ export interface Person {
 export interface AcademicCredential {
   label: string;
   value: string;
+  /** Approved profile section; compact views still use featuredCredential. */
+  section?: string;
+  /** Individual academic connection only, never institutional endorsement. */
+  institution?: { name: "IIT Madras" | "IIT Delhi" | "NSIT"; context?: string };
 }
 
 /** Publication-safe faculty record. Pending evidence is retained internally, never rendered publicly. */
