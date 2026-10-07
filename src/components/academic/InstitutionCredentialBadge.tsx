@@ -1,9 +1,23 @@
 import type { AcademicCredential, AcademicProfile } from "@/content/types";
+import iitDelhiLogo from "@/assets/iit-delhi-credential.png.asset.json";
+import iitMadrasLogo from "@/assets/iit-madras-credential.png.asset.json";
 
-/** Text fallback: scoped to one person's credential, not a brand trust mark. */
+const institutionLogos = {
+  "IIT Delhi": iitDelhiLogo.url,
+  "IIT Madras": iitMadrasLogo.url,
+};
+
+function InstitutionLogo({ name, compact = false }: { name: NonNullable<AcademicCredential["institution"]>["name"]; compact?: boolean }) {
+  const src = name === "NSIT" ? undefined : institutionLogos[name];
+  if (!src) return null;
+  return <img src={src} alt={name} width={compact ? 16 : 28} height={compact ? 16 : 28} loading="lazy" className={compact ? "mr-1 inline-block size-4 object-contain align-middle" : "size-7 shrink-0 object-contain"} />;
+}
+
+/** Artwork is scoped to one person's credential, never a brand trust mark. */
 export function InstitutionCredentialBadge({ institution }: { institution: NonNullable<AcademicCredential["institution"]> }) {
   return (
     <span className="inline-flex max-w-full flex-wrap items-center gap-x-1 rounded border border-border bg-secondary px-2 py-1 text-xs font-medium leading-4 text-ink/80">
+      <InstitutionLogo name={institution.name} />
       <span>{institution.name}</span>
       {institution.context ? <span>— {institution.context}</span> : null}
     </span>
@@ -27,5 +41,5 @@ export function CompactFacultyCredential({ profile }: { profile: AcademicProfile
   const institution = profile.credentials?.find((row) => row.institution && text.includes(row.institution.name))?.institution;
   if (!institution) return <>{text}</>;
   const [before, after] = text.split(institution.name);
-  return <>{before}<span className="rounded border border-border bg-secondary px-1 font-medium text-ink/80">{institution.name}</span>{after}</>;
+  return <>{before}<span className="rounded border border-border bg-secondary px-1 font-medium text-ink/80"><InstitutionLogo name={institution.name} compact />{institution.name}</span>{after}</>;
 }
