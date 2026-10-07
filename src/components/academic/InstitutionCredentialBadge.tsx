@@ -1,10 +1,10 @@
 import type { AcademicCredential, AcademicProfile } from "@/content/types";
-import iitDelhiLogo from "@/assets/iit-delhi-credential.png.asset.json";
-import iitMadrasLogo from "@/assets/iit-madras-credential.png.asset.json";
+import iitDelhiLogo from "@/assets/iit-delhi-credential.png";
+import iitMadrasLogo from "@/assets/iit-madras-credential.png";
 
 const institutionLogos = {
-  "IIT Delhi": iitDelhiLogo.url,
-  "IIT Madras": iitMadrasLogo.url,
+  "IIT Delhi": iitDelhiLogo,
+  "IIT Madras": iitMadrasLogo,
 };
 
 function InstitutionLogo({ name, compact = false }: { name: NonNullable<AcademicCredential["institution"]>["name"]; compact?: boolean }) {
