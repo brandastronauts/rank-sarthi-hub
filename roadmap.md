@@ -53,6 +53,6 @@
 - [x] Validate mobile, desktop, contact links, profile routes, protected areas, tests, and runtime
 
 ## Faculty enrichment and institution credential treatment
-- [ ] Inspect supplied document artwork and existing Ashwin/Ashwini record
-- [ ] Enrich four existing profiles and share contextual credential badges across faculty views
-- [ ] Validate compact cards, profile pages, approved facts, route protection and build status
+- [x] Inspect supplied document artwork and existing Ashwin/Ashwini record — no embedded institution artwork; qualification remains unverified
+- [x] Enrich four existing profiles and share contextual credential badges across faculty views — text badges used
+- [x] Validate compact cards, profile pages, approved facts, route protection and build status — 57 tests and 84 homepage checks passed
