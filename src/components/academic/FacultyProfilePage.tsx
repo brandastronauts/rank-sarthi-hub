@@ -4,6 +4,7 @@ import type { AcademicProfile } from "@/content/types";
 import { Button } from "@/components/ui/button";
 import { getUrl } from "@/content/registry";
 import { FacultyPhoto } from "./FacultyPhoto";
+import { InstitutionCredentialBadge } from "./InstitutionCredentialBadge";
 
 /**
  * Public faculty profile page.
@@ -20,6 +21,7 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
 
   const hasContactInfo = !!(profile.linkedin || profile.email);
   const hasCredentials = !!(profile.credentials?.length || profile.publications?.length || profile.research?.length);
+  const credentialSections = Array.from(new Set(profile.credentials?.map((row) => row.section ?? "Academic Credentials") ?? []));
 
   return (
     <article>
@@ -152,16 +154,22 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
       {hasCredentials ? (
         <section className="mt-10" aria-labelledby="credentials-heading">
           <h2 id="credentials-heading" className="text-xl font-bold text-primary">Credentials and academic record</h2>
-          {profile.credentials?.length ? (
-            <dl className="mt-4 max-w-3xl divide-y divide-border rounded-lg border border-border bg-card">
-              {profile.credentials.map((row) => (
-                <div key={`${row.label}-${row.value}`} className="flex flex-wrap gap-2 px-4 py-3 text-sm">
-                  <dt className="min-w-[140px] font-semibold text-ink/80">{row.label}</dt>
-                  <dd className="text-ink/85">{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          ) : null}
+          {credentialSections.map((section) => (
+            <div key={section} className="mt-6 max-w-3xl">
+              <h3 className="text-lg font-bold text-primary">{section}</h3>
+              <dl className="mt-3 divide-y divide-border border-y border-border">
+                {profile.credentials?.filter((row) => (row.section ?? "Academic Credentials") === section).map((row) => (
+                  <div key={`${row.label}-${row.value}`} className="grid gap-2 py-3 text-sm sm:grid-cols-[180px_minmax(0,1fr)]">
+                    <dt className="font-semibold text-ink/80">{row.label}</dt>
+                    <dd className="min-w-0 space-y-2 text-ink/85">
+                      {row.institution ? <InstitutionCredentialBadge institution={row.institution} /> : null}
+                      <p>{row.value}</p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
           {profile.publications?.length ? (
             <>
               <h3 className="mt-6 text-lg font-bold text-primary">Publications</h3>

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import type { AcademicProfile } from "@/content/types";
 import { FacultyPhoto } from "./FacultyPhoto";
+import { CompactFacultyCredential, FacultyInstitutionCredential } from "./InstitutionCredentialBadge";
 
 /** Shared faculty summary card — used on the homepage and the About page. */
 export function FacultyCard({ profile, clamp = 5, compact = false }: { profile: AcademicProfile; clamp?: 3 | 5; compact?: boolean }) {
@@ -16,13 +17,14 @@ export function FacultyCard({ profile, clamp = 5, compact = false }: { profile: 
         <p className="mt-1 text-sm font-semibold text-ink/80">{profile.title}</p>
         {compact ? (
           <p className="mt-3 line-clamp-2 min-h-10 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-            {profile.featuredCredential ?? profile.expertise.filter((e) => e !== profile.subject).slice(0, 2).join(" · ")}
+            <CompactFacultyCredential profile={profile} />
           </p>
         ) : (
           <p className={`mt-4 text-sm leading-relaxed text-muted-foreground ${clamp === 3 ? "line-clamp-3" : "line-clamp-5"}`}>
             {profile.shortProfile}
           </p>
         )}
+        {!compact ? <FacultyInstitutionCredential profile={profile} /> : null}
         <Link
           to="/about/faculty/$slug"
           params={{ slug: profile.slug }}

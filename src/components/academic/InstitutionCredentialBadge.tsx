@@ -20,3 +20,12 @@ export function FacultyInstitutionCredential({ profile }: { profile: AcademicPro
     </div>
   );
 }
+
+/** A badge replaces institution text already in the concise line; no extra row. */
+export function CompactFacultyCredential({ profile }: { profile: AcademicProfile }) {
+  const text = profile.featuredCredential ?? profile.expertise.filter((item) => item !== profile.subject).slice(0, 2).join(" · ");
+  const institution = profile.credentials?.find((row) => row.institution && text.includes(row.institution.name))?.institution;
+  if (!institution) return <>{text}</>;
+  const [before, after] = text.split(institution.name);
+  return <>{before}<span className="rounded border border-border bg-secondary px-1 font-medium text-ink/80">{institution.name}</span>{after}</>;
+}
