@@ -30,11 +30,13 @@ All diagnostic buttons use one exam chooser and one helper (`buildRankUpHandoff`
 ## Coupon redeem links (`/offers`)
 The offers page lists each platform's public coupons (see `docs/public-coupons.md`). Its "Apply" button uses the same helper with `rs_cta=offer`, sent to the platform's `/redeem` path:
 - The coupon link's own fields (`coupon`, `utm_source=ranksarthi`, `utm_medium=coupon`, `utm_campaign=<CODE>`) are kept exactly and never overwritten.
+- `utm_content=offers-page` is added (unless the platform's link already sets it). The coupon flow records only `coupon` and the five `utm_*` fields, not `rs_*`, so this is how "came from the offers page" reaches RankUp's reports.
 - Inbound marketing fields fill only the gaps (e.g. `utm_term`, click IDs).
 - A redeem link that does not point at the platform's own origin is never followed; the documented shape is rebuilt from the code instead.
+- The three coupon APIs are cached on the server for 60 s (the APIs' own cache time), concurrent requests share one call, and a failed or rate-limited call serves the last good list.
 
 ```
-https://jeerankup.com/redeem?coupon=FIRSTUSER&utm_source=ranksarthi&utm_medium=coupon&utm_campaign=FIRSTUSER&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Foffers&rs_cta=offer
+https://jeerankup.com/redeem?coupon=FIRSTUSER&utm_source=ranksarthi&utm_medium=coupon&utm_campaign=FIRSTUSER&utm_content=offers-page&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Foffers&rs_cta=offer
 ```
 
 ## No-PII rule

@@ -46,6 +46,14 @@ describe("public coupon validation", () => {
     expect(new URLSearchParams(c.redeemQuery).get("utm_campaign")).toBe("DIWALI25");
   });
 
+  it("marks the offers page in utm_content, the field RankUp records", () => {
+    expect(new URLSearchParams(coupon().redeemQuery).get("utm_content")).toBe("offers-page");
+    const own = coupon({
+      redeem_url: "https://jeerankup.com/redeem?coupon=DIWALI25&utm_content=platform-set",
+    });
+    expect(new URLSearchParams(own.redeemQuery).get("utm_content")).toBe("platform-set");
+  });
+
   it("rejects another platform's item, unusable codes and ended statuses", () => {
     expect(normaliseCoupon(sample, "neet")).toBeNull();
     expect(normaliseCoupon({ ...sample, code: "bad code!" }, "jee")).toBeNull();
@@ -61,6 +69,7 @@ describe("public coupon validation", () => {
       utm_source: "ranksarthi",
       utm_medium: "coupon",
       utm_campaign: "DIWALI25",
+      utm_content: "offers-page",
     });
   });
 

@@ -94,14 +94,20 @@ function plansFrom(value: unknown): CouponPlan[] | null {
   return plans.length ? plans : null;
 }
 
+/**
+ * RankUp records only `coupon` and the five utm_* fields, so the entry point
+ * travels in utm_content (unless the platform's link already sets it).
+ */
+export const COUPON_UTM_CONTENT = "offers-page";
+
 /** The documented redeem link shape, used when the API's link cannot be trusted. */
-function defaultRedeemQuery(code: string): string {
+function defaultRedeemParams(code: string): URLSearchParams {
   return new URLSearchParams({
     coupon: code,
     utm_source: "ranksarthi",
     utm_medium: "coupon",
     utm_campaign: code,
-  }).toString();
+  });
 }
 
 function redeemTarget(
@@ -109,15 +115,19 @@ function redeemTarget(
   platform: CouponPlatform,
   code: string,
 ): { path: string; query: string } {
+  let path = "/redeem";
+  let params = defaultRedeemParams(code);
   try {
     const url = new URL(text(value, 2048));
     if (url.origin === platformOrigins[platform] && url.searchParams.get("coupon") === code) {
-      return { path: url.pathname, query: url.searchParams.toString() };
+      path = url.pathname;
+      params = url.searchParams;
     }
   } catch {
-    // fall through to the documented shape
+    // keep the documented shape
   }
-  return { path: "/redeem", query: defaultRedeemQuery(code) };
+  if (!params.has("utm_content")) params.set("utm_content", COUPON_UTM_CONTENT);
+  return { path, query: params.toString() };
 }
 
 function headlineFor(
