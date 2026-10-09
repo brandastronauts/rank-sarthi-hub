@@ -224,6 +224,7 @@ export const footerGroups: MenuColumn[] = [
       { label: "JeeRankUp", href: "/jee" },
       { label: "NeetRankUp", href: "/neet" },
       { label: "NDARankUp", href: "/nda" },
+      { label: "Offers & coupons", href: "/offers" },
     ],
   },
   {

@@ -34,7 +34,7 @@ describe("NEET inaugural commercial rules", () => {
   });
 
   it("suppresses promotions on commercial destinations and NDA pages", () => {
-    for (const url of ["/jee/mock-tests", "/jee/pricing", "/neet/mock-tests", "/neet/pricing", "/nda", "/nda/syllabus"]) {
+    for (const url of ["/jee/mock-tests", "/jee/pricing", "/neet/mock-tests", "/neet/pricing", "/offers", "/nda", "/nda/syllabus"]) {
       expect(campaignFor(url)).toEqual({});
     }
   });

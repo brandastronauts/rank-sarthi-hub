@@ -37,17 +37,31 @@ export function buildRankUpHandoff({
   search = "",
   entryPath,
   cta,
+  path = "/",
+  params,
 }: {
   exam: DiagnosticExam;
   search?: string;
   entryPath: string;
   cta: string;
+  /** Path on the RankUp origin, e.g. "/redeem" for coupon links. */
+  path?: string;
+  /** Fields the RankUp destination itself defines (coupon links); never overwritten. */
+  params?: URLSearchParams;
 }): string {
   const destination = new URL(platformOrigins[exam]);
+  if (path.startsWith("/") && !path.startsWith("//")) destination.pathname = path;
   const inbound = new URLSearchParams(search);
 
+  const fixed = new Set<string>();
+  for (const [key, value] of params ?? []) {
+    if (key.startsWith("rs_")) continue;
+    destination.searchParams.set(key, value);
+    fixed.add(key);
+  }
   for (const [key, value] of inbound) {
-    if (ATTRIBUTION_KEYS.has(key) && value) destination.searchParams.set(key, value);
+    if (ATTRIBUTION_KEYS.has(key) && value && !fixed.has(key))
+      destination.searchParams.set(key, value);
   }
 
   destination.searchParams.set("rs_source", "ranksarthi");

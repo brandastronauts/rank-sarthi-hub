@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiagnosticRouteImport } from './routes/diagnostic'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as OffersRouteImport } from './routes/offers'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as SitemapRouteImport } from './routes/sitemap'
@@ -49,6 +50,11 @@ const DiagnosticRoute = DiagnosticRouteImport.update({
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffersRoute = OffersRouteImport.update({
+  id: '/offers',
+  path: '/offers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -144,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -167,6 +174,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -191,6 +199,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -216,6 +225,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostic'
     | '/llms.txt'
+    | '/offers'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -239,6 +249,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostic'
     | '/llms.txt'
+    | '/offers'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -262,6 +273,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/diagnostic'
     | '/llms.txt'
+    | '/offers'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -286,6 +298,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DiagnosticRoute: typeof DiagnosticRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  OffersRoute: typeof OffersRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   SitemapRoute: typeof SitemapRoute
@@ -333,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/llms.txt'
       fullPath: '/llms.txt'
       preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offers': {
+      id: '/offers'
+      path: '/offers'
+      fullPath: '/offers'
+      preLoaderRoute: typeof OffersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -462,6 +482,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DiagnosticRoute: DiagnosticRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  OffersRoute: OffersRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   SitemapRoute: SitemapRoute,

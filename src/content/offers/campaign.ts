@@ -60,7 +60,7 @@ export type AnnouncementCampaign = typeof commonAnnouncement;
 export type PopupCampaign = typeof commonOfferPopup;
 
 /** Commercial destinations never promote themselves. */
-const SUPPRESSED = new Set([OFFER_URL, "/jee/pricing", neetCampaign.popup.href, "/neet/pricing"]);
+const SUPPRESSED = new Set([OFFER_URL, "/jee/pricing", neetCampaign.popup.href, "/neet/pricing", "/offers"]);
 
 function pathOnly(url: string): string {
   const path = url.split(/[?#]/, 1)[0] ?? url;

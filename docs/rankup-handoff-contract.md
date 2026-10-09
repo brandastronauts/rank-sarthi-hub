@@ -27,6 +27,16 @@ All diagnostic buttons use one exam chooser and one helper (`buildRankUpHandoff`
 | `rs_entry_path` | Rank Sarthi page path where the click happened (no query/hash), e.g. `/`, `/jee` |
 | `rs_cta` | `header` \| `hero` \| `sticky` \| `section` \| `final` \| `pricing` \| `offer` |
 
+## Coupon redeem links (`/offers`)
+The offers page lists each platform's public coupons (see `docs/public-coupons.md`). Its "Apply" button uses the same helper with `rs_cta=offer`, sent to the platform's `/redeem` path:
+- The coupon link's own fields (`coupon`, `utm_source=ranksarthi`, `utm_medium=coupon`, `utm_campaign=<CODE>`) are kept exactly and never overwritten.
+- Inbound marketing fields fill only the gaps (e.g. `utm_term`, click IDs).
+- A redeem link that does not point at the platform's own origin is never followed; the documented shape is rebuilt from the code instead.
+
+```
+https://jeerankup.com/redeem?coupon=FIRSTUSER&utm_source=ranksarthi&utm_medium=coupon&utm_campaign=FIRSTUSER&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Foffers&rs_cta=offer
+```
+
 ## No-PII rule
 Handoff URLs never contain name, email, mobile, password, date of birth, parent details, city, school, scores or any personal data. RankUp collects student information after signup.
 

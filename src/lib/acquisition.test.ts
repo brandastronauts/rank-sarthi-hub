@@ -49,6 +49,26 @@ describe("RankUp diagnostic handoff", () => {
     expect(cta("anything_else")).toBe("section");
   });
 
+  it("builds coupon redeem links without overwriting the coupon's own fields", () => {
+    const url = new URL(buildRankUpHandoff({
+      exam: "jee",
+      search: "?utm_source=google&utm_term=jee+coupon&gclid=abc123&coupon=OTHER",
+      entryPath: "/offers",
+      cta: "offer",
+      path: "/redeem",
+      params: new URLSearchParams("coupon=FIRSTUSER&utm_source=ranksarthi&utm_medium=coupon&utm_campaign=FIRSTUSER&rs_cta=hero"),
+    }));
+
+    expect(url.origin + url.pathname).toBe("https://jeerankup.com/redeem");
+    expect(url.searchParams.get("coupon")).toBe("FIRSTUSER");
+    expect(url.searchParams.get("utm_source")).toBe("ranksarthi");
+    expect(url.searchParams.get("utm_campaign")).toBe("FIRSTUSER");
+    expect(url.searchParams.get("utm_term")).toBe("jee coupon");
+    expect(url.searchParams.get("gclid")).toBe("abc123");
+    expect(url.searchParams.get("rs_cta")).toBe("offer");
+    expect(url.searchParams.get("rs_entry_path")).toBe("/offers");
+  });
+
   it("keeps Google UTMs intact alongside Rank Sarthi fields", () => {
     const url = buildRankUpHandoff({ exam: "jee", search: "?utm_source=google&utm_campaign=jee_search", entryPath: "/jee", cta: "hero" });
     expect(url).toBe("https://jeerankup.com/?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero");
