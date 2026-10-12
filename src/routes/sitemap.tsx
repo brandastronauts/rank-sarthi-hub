@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageFrame } from "@/components/shell/PageFrame";
-import { builtUrls } from "@/content/registry";
+import { sitemapUrls } from "@/content/registry";
+import { blogDataProvider } from "@/content/blog";
 import { buildHead } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 import type { UrlRecord } from "@/content/types";
@@ -20,6 +21,15 @@ export const Route = createFileRoute("/sitemap")({
         "A single index of every page currently live on Rank Sarthi, grouped by exam and subject, for readers and internal content review.",
       jsonLd: [breadcrumbSchema("/sitemap")],
     }),
+  loader: async () => {
+    const posts: { slug: string; title: string }[] = [];
+    for (let page = 1; page <= 20; page++) {
+      const { items, pagination } = await blogDataProvider.listArticles({ page, perPage: 50 });
+      posts.push(...items.map((a) => ({ slug: a.slug, title: a.title })));
+      if (page >= pagination.totalPages || !items.length) break;
+    }
+    return { posts };
+  },
   component: SitemapPage,
 });
 
@@ -76,12 +86,9 @@ function buildGroups(records: UrlRecord[]): Group[] {
 }
 
 function SitemapPage() {
-  const records = builtUrls().filter(
-    (record) =>
-      !record.redirectTo &&
-      record.url !== "/about/faculty/prabhat-kumar" &&
-      record.url !== "/about/faculty/vinod-kumar",
-  );
+  const { posts } = Route.useLoaderData();
+  // Canonical, indexable pages only — the same set as /sitemap.xml.
+  const records = sitemapUrls().filter((record) => !record.redirectTo);
   const groups = buildGroups(records);
 
   return (
@@ -89,12 +96,10 @@ function SitemapPage() {
       <header className="mb-10 max-w-3xl">
         <h1 className="font-display text-3xl font-bold text-navy md:text-4xl">Rank Sarthi Sitemap</h1>
         <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-          Every page currently built on Rank Sarthi, grouped by exam and subject. Pages marked
-          “Draft — review pending” are published for internal academic review and are not yet
-          open to search engines.
+          Every page currently built on Rank Sarthi, grouped by exam and subject.
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          {records.length} pages listed across {groups.length} sections.
+          {records.length + posts.length} pages listed across {groups.length + (posts.length ? 1 : 0)} sections.
         </p>
       </header>
 
@@ -119,13 +124,33 @@ function SitemapPage() {
                   </Link>
                   <span className="block break-words text-xs text-muted-foreground">
                     {record.url}
-                    {record.indexation === "noindex" ? " · Draft — review pending" : null}
                   </span>
                 </li>
               ))}
             </ul>
           </section>
         ))}
+        {posts.length ? (
+          <section aria-labelledby="grp-blog">
+            <h2 id="grp-blog" className="border-b border-border pb-2 font-display text-xl font-semibold text-navy">
+              Blog <span className="text-sm font-normal text-muted-foreground">({posts.length})</span>
+            </h2>
+            <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <li key={post.slug} className="min-w-0 text-sm">
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
+                    className="break-words font-medium text-navy underline-offset-4 hover:text-crimson hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                  <span className="block break-words text-xs text-muted-foreground">/blog/{post.slug}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
       </div>
     </PageFrame>
   );
