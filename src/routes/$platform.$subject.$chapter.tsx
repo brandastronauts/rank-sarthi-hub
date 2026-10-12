@@ -5,8 +5,7 @@ import { JumpNav } from "@/components/shell/JumpNav";
 import { RecipeRenderer, activeSlots } from "@/lib/recipe";
 import { chapterRecipe } from "@/content/recipes/chapter";
 import { infoPageRecipe } from "@/content/recipes/info";
-import { getChapter } from "@/content/chapters";
-import { getInfoPageByUrl } from "@/content/info";
+import { getChapterContentFn, getInfoPageByUrlFn } from "@/content/page-content.functions";
 import { getUrl } from "@/content/registry";
 import { buildHead, infoPageHead, NOT_FOUND_HEAD } from "@/lib/seo";
 import { articleSchema, breadcrumbSchema, learningResourceSchema } from "@/lib/schema";
@@ -22,16 +21,16 @@ import type { InfoPageContent } from "@/content/types";
  * changes per chapter.
  */
 export const Route = createFileRoute("/$platform/$subject/$chapter")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const url = `/${params.platform}/${params.subject}/${params.chapter}`;
     const record = getUrl(url);
     if (record?.redirectTo) throw redirect({ href: record.redirectTo, statusCode: 301 });
     if (record?.buildStatus !== "built") throw notFound();
 
-    const content = getChapter(params.platform, params.subject, params.chapter);
+    const content = await getChapterContentFn({ data: { platform: params.platform, subject: params.subject, slug: params.chapter } });
     if (content) return { kind: "chapter" as const, content };
 
-    const info = getInfoPageByUrl(url);
+    const info = await getInfoPageByUrlFn({ data: { url } });
     if (info) return { kind: "info" as const, info };
 
     throw notFound();

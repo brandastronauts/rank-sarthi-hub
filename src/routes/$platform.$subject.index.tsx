@@ -6,7 +6,7 @@ import { RecipeRenderer, activeSlots } from "@/lib/recipe";
 import { subjectHubRecipe, chapterMapEntries } from "@/content/recipes/subject";
 import { infoPageRecipe } from "@/content/recipes/info";
 import { getSubjectHub } from "@/content/subjects";
-import { getInfoPage } from "@/content/info";
+import { getInfoPageFn } from "@/content/page-content.functions";
 import { getUrl } from "@/content/registry";
 import { buildHead, infoPageHead, NOT_FOUND_HEAD } from "@/lib/seo";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/schema";
@@ -21,7 +21,7 @@ import type { InfoPageContent, SubjectHubContent } from "@/content/types";
  * accident and no page-specific route file is ever needed.
  */
 export const Route = createFileRoute("/$platform/$subject/")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const url = `/${params.platform}/${params.subject}`;
     const record = getUrl(url);
     if (record?.buildStatus !== "built") throw notFound();
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/$platform/$subject/")({
     const hub = getSubjectHub(params.platform, params.subject);
     if (hub) return { kind: "subject" as const, content: hub };
 
-    const info = getInfoPage(params.platform, params.subject);
+    const info = await getInfoPageFn({ data: { platform: params.platform, slug: params.subject } });
     if (info) return { kind: "info" as const, content: info };
 
     throw notFound();
