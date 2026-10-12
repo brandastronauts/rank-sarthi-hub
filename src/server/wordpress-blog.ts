@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio/slim";
 import type { AnyNode } from "domhandler";
 import { getUrl } from "@/content/registry";
+import { isHiddenBlogSlug } from "@/content/blog/visibility";
 import type {
   BlogAlign,
   BlogArticle,
@@ -566,9 +567,11 @@ export async function fetchBlogList(params: BlogListParams = {}): Promise<BlogLi
       const result = await wpFetch(`/wp-json/wp/v2/posts?${query.toString()}`);
       const posts = result && Array.isArray(result.data) ? (result.data as WpPost[]) : [];
       const hierarchy = await getCategoryHierarchy();
-      const items = posts.map((p) => normalisePost(p, hierarchy));
+      const allItems = posts.map((p) => normalisePost(p, hierarchy));
+      // Hidden posts stay reachable by URL but never appear in listings, the sitemap or llms.txt.
+      const items = allItems.filter((a) => !isHiddenBlogSlug(a.slug));
 
-      const totalItems = Number(result?.headers.get("x-wp-total") ?? items.length);
+      const totalItems = Math.max(0, Number(result?.headers.get("x-wp-total") ?? allItems.length) - (allItems.length - items.length));
       const totalPages = Number(result?.headers.get("x-wp-totalpages") ?? 1);
       const data: BlogListResult = { items, pagination: { page, perPage, totalItems, totalPages: totalPages || 1 } };
       listCache.set(key, { data, expires: Date.now() + CACHE_TTL_MS });
