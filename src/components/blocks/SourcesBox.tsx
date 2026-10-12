@@ -1,7 +1,6 @@
 import { getSource } from "@/content/sources";
 import { getPerson } from "@/content/people";
 import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline";
-import { publicLabels } from "@/lib/public-copy";
 import type { PageReview } from "@/content/types";
 
 /**
@@ -19,7 +18,7 @@ export function SourcesBox({
   updated,
   heading = "Sources and provenance",
   note,
-  contributorPolicy = [],
+  contributorPolicy: _contributorPolicy = [],
   pageReview,
 }: {
   id?: string;
