@@ -35,9 +35,8 @@ export function SourcesBox({
   const refs = sources.map(getSource).filter(Boolean);
   const reviewer = reviewerId ? getPerson(reviewerId) : undefined;
   const author = authorId ? getPerson(authorId) : undefined;
-  const publicPolicy = publicLabels(contributorPolicy);
 
-  if (!refs.length && !reviewer && !author && !updated && !note && !publicPolicy.length && !pageReview) return null;
+  if (!refs.length && !reviewer && !author && !updated && !note && !pageReview) return null;
 
   return (
     <section id={id} className="scroll-mt-28 rounded-2xl border border-border bg-ivory p-6">
