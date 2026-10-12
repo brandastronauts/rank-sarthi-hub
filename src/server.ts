@@ -46,6 +46,13 @@ function isH3SwallowedErrorBody(body: string): boolean {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    // Permanent trailing-slash normalisation (canonicals never end in "/"),
+    // replacing the router's temporary 307.
+    const url = new URL(request.url);
+    if (url.pathname.length > 1 && url.pathname.endsWith("/") && (request.method === "GET" || request.method === "HEAD")) {
+      url.pathname = url.pathname.replace(/\/+$/, "") || "/";
+      return new Response(null, { status: 301, headers: { location: url.pathname + url.search } });
+    }
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
