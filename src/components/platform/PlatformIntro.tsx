@@ -53,7 +53,7 @@ export function PlatformIntro({ id = "positioning", platform }: { id?: string; p
                     <h3 className="text-lg font-bold text-primary">{group.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{group.body}</p>
                     <ul className="mt-6 space-y-2">
-                      {group.links.map((link) => (
+                      {group.links.filter((link) => destinations.nav(link.label, link.url).kind !== "disabled").map((link) => (
                         <li key={link.url}>
                           <CtaLink
                             d={destinations.nav(link.label, link.url)}
@@ -71,9 +71,6 @@ export function PlatformIntro({ id = "positioning", platform }: { id?: string; p
                 </Reveal>
               ))}
             </div>
-            <p className="mt-6 text-xs text-muted-foreground">
-              Greyed items are pages that exist in the {platform.slug.toUpperCase()} plan but are not published yet.
-            </p>
           </>
         )}
       </div>

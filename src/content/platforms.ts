@@ -613,7 +613,7 @@ export const platforms: Record<string, PlatformData> = {
     finalCta: {
       eyebrow: "JeeRankUp",
       heading: "Start with the official syllabus",
-      body: "Use the structured JEE syllabus to choose the right subject and chapter path. Product actions appear only when their destinations work and their claims have been verified.",
+      body: "Use the structured JEE syllabus to choose the right subject and chapter path.",
       secondaryHref: "/jee/syllabus",
       secondaryLabel: "Open the JEE syllabus",
     },

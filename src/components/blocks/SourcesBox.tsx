@@ -100,20 +100,6 @@ export function SourcesBox({
         </div>
       ) : null}
 
-      {publicPolicy.length ? (
-        <div className="mt-5 rounded-xl border border-border bg-white p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Contributor requirements for this page
-          </p>
-          <ul className="mt-2 space-y-1.5">
-            {publicPolicy.map((c) => (
-              <li key={c} className="text-sm text-ink/85">
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
     </section>
   );
 }
