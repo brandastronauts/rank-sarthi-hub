@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio/slim";
 import type { AnyNode } from "domhandler";
 import { getUrl } from "@/content/registry";
+import { isHiddenBlogSlug } from "@/content/blog/visibility";
 import type {
   BlogAlign,
   BlogArticle,
@@ -300,9 +301,10 @@ function parseContent(html: string): BlogContentNode[] {
     return nodes;
   };
 
-  // cheerio.load() wraps a fragment in an implicit <html><body>, so the
-  // actual content lives one level below root.
-  const root = $("body").get(0);
+  // Full cheerio wraps a fragment in an implicit <html><body>; cheerio/slim
+  // (htmlparser2, required on the Worker runtime) does not, so the content
+  // sits directly under the document root. Support both.
+  const root = $("body").get(0) ?? $.root().get(0);
   if (!root) return [];
   return processList((root as unknown as { children: AnyNode[] }).children ?? []);
 }
@@ -565,9 +567,11 @@ export async function fetchBlogList(params: BlogListParams = {}): Promise<BlogLi
       const result = await wpFetch(`/wp-json/wp/v2/posts?${query.toString()}`);
       const posts = result && Array.isArray(result.data) ? (result.data as WpPost[]) : [];
       const hierarchy = await getCategoryHierarchy();
-      const items = posts.map((p) => normalisePost(p, hierarchy));
+      const allItems = posts.map((p) => normalisePost(p, hierarchy));
+      // Hidden posts stay reachable by URL but never appear in listings, the sitemap or llms.txt.
+      const items = allItems.filter((a) => !isHiddenBlogSlug(a.slug));
 
-      const totalItems = Number(result?.headers.get("x-wp-total") ?? items.length);
+      const totalItems = Math.max(0, Number(result?.headers.get("x-wp-total") ?? allItems.length) - (allItems.length - items.length));
       const totalPages = Number(result?.headers.get("x-wp-totalpages") ?? 1);
       const data: BlogListResult = { items, pagination: { page, perPage, totalItems, totalPages: totalPages || 1 } };
       listCache.set(key, { data, expires: Date.now() + CACHE_TTL_MS });

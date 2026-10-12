@@ -5,6 +5,7 @@ import { blogDataProvider } from "@/content/blog";
 import { absolute } from "@/content/registry";
 import { articleSchema } from "@/lib/schema";
 import { buildHead } from "@/lib/seo";
+import { isHiddenBlogSlug } from "@/content/blog/visibility";
 
 function dynamicBreadcrumbSchema(title: string, category: string, url: string) {
   return {
@@ -27,7 +28,9 @@ export const Route = createFileRoute("/blog/$slug")({
       Promise.all(article.relatedArticleSlugs.slice(0, 3).map((slug) => blogDataProvider.getArticleBySlug(slug))),
       blogDataProvider.listComments(article.id),
     ]);
-    const relatedArticles = relatedResults.filter((candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate));
+    const relatedArticles = relatedResults.filter(
+      (candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate) && !isHiddenBlogSlug(candidate!.slug),
+    );
     return { article, relatedArticles, comments };
   },
   head: ({ params, loaderData }) => {
@@ -47,9 +50,11 @@ export const Route = createFileRoute("/blog/$slug")({
       ogType: "article",
       jsonLd: [articleSchema({ url, headline: article.title, description: article.excerpt, ...(article.publishedAt ? { published: article.publishedAt } : {}), ...(article.updatedAt ? { updated: article.updatedAt } : {}) }), dynamicBreadcrumbSchema(article.title, article.category, url)],
     });
+    const meta = head.meta.map((entry) => (entry["property"] === "og:url" ? { ...entry, content: canonical } : entry));
+    if (isHiddenBlogSlug(params.slug)) meta.push({ name: "robots", content: "noindex, follow" });
     return {
       ...head,
-      meta: head.meta.map((entry) => (entry["property"] === "og:url" ? { ...entry, content: canonical } : entry)),
+      meta,
       links: [{ rel: "canonical", href: canonical }],
     };
   },

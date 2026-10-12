@@ -4,7 +4,7 @@ import { PageFrame } from "@/components/shell/PageFrame";
 import { JumpNav } from "@/components/shell/JumpNav";
 import { RecipeRenderer, activeSlots } from "@/lib/recipe";
 import { infoPageRecipe } from "@/content/recipes/info";
-import { getInfoPageByUrl } from "@/content/info";
+import { getInfoPageByUrlFn } from "@/content/page-content.functions";
 import { getUrl } from "@/content/registry";
 import { infoPageHead, NOT_FOUND_HEAD } from "@/lib/seo";
 import { jumpItemsFor } from "@/lib/jump-nav";
@@ -16,12 +16,12 @@ import { jumpItemsFor } from "@/lib/jump-nav";
  * record plus its registry entry).
  */
 export const Route = createFileRoute("/$platform/$subject/$chapter_/$topic")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const url = `/${params.platform}/${params.subject}/${params.chapter}/${params.topic}`;
     const record = getUrl(url);
     if (record?.buildStatus !== "built") throw notFound();
 
-    const info = getInfoPageByUrl(url);
+    const info = await getInfoPageByUrlFn({ data: { url } });
     if (!info) throw notFound();
     return { info };
   },

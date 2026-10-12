@@ -8,12 +8,14 @@ import type {
   BlogListResult,
 } from "./types";
 import { WordPressBlogDataProvider } from "./wordpress-provider";
+import { isHiddenBlogSlug } from "./visibility";
 
 const DEFAULT_PER_PAGE = 12;
 
 function paginate(all: BlogArticle[], params: BlogListParams = {}): BlogListResult {
   const filtered = all.filter(
     (a) =>
+      !isHiddenBlogSlug(a.slug) &&
       (!params.category || a.category === params.category) &&
       (!params.tag || a.tags.includes(params.tag)),
   );

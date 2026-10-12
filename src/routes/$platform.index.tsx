@@ -6,7 +6,7 @@ import { RecipeRenderer, activeSlots } from "@/lib/recipe";
 import { platformRecipe } from "@/content/recipes/platform";
 import { infoPageRecipe } from "@/content/recipes/info";
 import { getPlatform } from "@/content/platforms";
-import { getInfoPageByUrl } from "@/content/info";
+import { getInfoPageByUrlFn } from "@/content/page-content.functions";
 import { getUrl } from "@/content/registry";
 import { buildHead, infoPageHead, NOT_FOUND_HEAD } from "@/lib/seo";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/schema";
@@ -22,7 +22,7 @@ import type { InfoPageContent, PlatformData } from "@/content/types";
  * record exists, so no route goes live by accident.
  */
 export const Route = createFileRoute("/$platform/")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const platform = getPlatform(params.platform);
     if (platform) return { kind: "platform" as const, platform };
 
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/$platform/")({
     const record = getUrl(url);
     if (record?.buildStatus !== "built") throw notFound();
 
-    const info = getInfoPageByUrl(url);
+    const info = await getInfoPageByUrlFn({ data: { url } });
     if (info) return { kind: "info" as const, info };
 
     throw notFound();
