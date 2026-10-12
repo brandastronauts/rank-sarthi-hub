@@ -300,9 +300,10 @@ function parseContent(html: string): BlogContentNode[] {
     return nodes;
   };
 
-  // cheerio.load() wraps a fragment in an implicit <html><body>, so the
-  // actual content lives one level below root.
-  const root = $("body").get(0);
+  // Full cheerio wraps a fragment in an implicit <html><body>; cheerio/slim
+  // (htmlparser2, required on the Worker runtime) does not, so the content
+  // sits directly under the document root. Support both.
+  const root = $("body").get(0) ?? $.root().get(0);
   if (!root) return [];
   return processList((root as unknown as { children: AnyNode[] }).children ?? []);
 }
