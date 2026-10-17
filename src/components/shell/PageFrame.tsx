@@ -6,6 +6,7 @@ import { AnnouncementStrip } from "@/components/campaign/AnnouncementStrip";
 import { OfferPopup } from "@/components/campaign/OfferPopup";
 import { campaignFor } from "@/content/offers/campaign";
 import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisition";
+import { INSTITUTE_PATHS } from "@/content/institutes/policy";
 
 /**
  * Global page frames.
@@ -44,7 +45,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
     <div className="flex min-h-screen flex-col bg-background">
       {/* The announcement strip sits between the header and the hero, so the
           hero is no longer directly under the header: keep it solid. */}
-      <SiteHeader transparentAtTop={heroBackdrop && !campaign.announcement} />
+      <SiteHeader transparentAtTop={heroBackdrop && !campaign.announcement} instituteNavigation={INSTITUTE_PATHS.some((path) => path === url)} />
       <main id="main" className="flex-1">
         {campaign.announcement ? (
           <>
