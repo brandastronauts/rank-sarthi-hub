@@ -3,7 +3,7 @@
 ## Planning-only status
 Reviewed both official October 2026 documents, existing project architecture and the live institute journey. No website code, routes, navigation, prices, settings or dependencies have been changed; nothing has been published.
 
-The accompanying **Rank Sarthi Institutes Proposal V1** contains the eight requested deliverables, including complete four-page copy, every major section's desktop/mobile wireframe, SEO metadata, lead workflow and regression criteria. Review the full document before approving this plan.
+The accompanying **Rank Sarthi Institutes Final Content Review V2** contains all four complete page copies, including forms and FAQs, plus exact current metadata, link inventory, SEO migration assessment, wireframes and operating requirements. Direction is approved in principle; actual content and operational arrangements remain subject to approval. Review the full document before approving this plan.
 
 ## Confirmed scope
 - Preserve homepage V3.1, hero/tagline, diagnostic journey, student pricing/offers, RankUp handoff, faculty, PYQs, Physics, syllabus and unrelated SEO systems.
@@ -23,12 +23,20 @@ Keep the four-item For institutes dropdown:
 
 The live B2B pricing link currently points to student pricing at `/#pricing`. The existing live overview is `/for-institutes`; the proposed pages currently return 404. Recommend a one-hop permanent redirect from the old overview and reconciliation of planned legacy child destinations, not duplicate pages.
 
+Verified current overview canonical: `https://ranksarthi.com/for-institutes`; title: “Rank Sarthi for Institutes: Exam Prep Methodology & Platform”. It returns 200 and appears in XML/human sitemaps. Preserve the existing production origin. Proposed 301 mappings: `/for-institutes` → `/institutes`; `/for-institutes/pricing` → `/institutes/pricing`; `/for-institutes/case-studies` → `/institutes/case-studies`; `/for-institutes/demo` → `/institutes/request-demo`. Trailing-slash variants must reach the final destination directly, before generic slash normalisation, without changing unrelated redirects.
+
+Update only institute destinations in dropdown/footer data, two About links, the Contact institute-help link and generated registry/sitemap ownership. Do not re-add the inactive InstituteBand to the homepage. Temporary indexing/visibility fluctuation is possible; no ranking improvement or signal-transfer timing is guaranteed.
+
 Use cases will be explicitly illustrative because no verified published institute cases were found. Recommend suppressing student-offer banners/popups on B2B destinations only, preserving campaign behaviour elsewhere.
+
+Suppression applies to exactly the four canonical B2B pages, normalised for query/fragment/slash matching. B2B visits must not consume the existing student-popup session opportunity. Legacy addresses redirect without rendering campaigns; student timing, keys, offers and other exclusions remain unchanged.
 
 ## Enquiry workflow
 Reuse existing contact presentation, validation, protected storage and basic spam prevention. Add separate demo/quote classification, structured institute fields and bounded incoming attribution without altering RankUp referral handling.
 
 Current general enquiries have no saved UTMs and no configured email notification. Confirm a monitored lead owner and receiving process before active sales-form launch. No CRM, calendar, turnaround deadline or submission destination is assumed. Receipt must mean stored enquiry, not booked meeting or generated quotation.
+
+The team must supply: primary monitored inbox and accountable owner; backup or separate demo/quote recipient if needed; chosen email/CRM/private-review delivery process; approved sender arrangement and optional receipt-email decision; lead-triage/demo/quotation ownership; authorised access and retention/attribution consent; final qualification field approval; production deployment contact and coordinated test recipient. Never request secret credentials in chat. The public contact email is not proof of configured automatic delivery.
 
 ## Visual direction
 Reuse existing typography, colours, header/footer and layout patterns. Prefer readable, benefit-led sections to technical inventories. Only use genuine approved product screenshots with personal data removed; omit images rather than simulate a real interface.
