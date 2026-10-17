@@ -91,7 +91,7 @@ export const mainAbout: InfoPageContent = {
                 ],
                 [
                   {
-                    "text": "Preparation Intelligence methodology"
+                    "text": "Free diagnostic, exam-style practice, Self-Test Builder and detailed performance reports on JEE, NEET and NDA Rank Up"
                   }
                 ],
                 [

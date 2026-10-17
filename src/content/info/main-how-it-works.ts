@@ -24,17 +24,17 @@ export const mainHowItWorks: InfoPageContent = {
     },
     {
       "type": "note",
-      "tone": "caution",
+      "tone": "info",
       "children": [
         {
-          "text": "This page explains the method only. It does not claim that an automated diagnostic product is currently operational."
+          "text": "The method below is what the RankUp platforms (JEE Rank Up, NEET Rank Up and NDA Rank Up) put into practice. Reports and recommendations support your decisions; they do not guarantee a rank or score."
         }
       ]
     }
   ],
   "chips": [
     "Method explained",
-    "Product automation not live"
+    "Live on JEE, NEET and NDA Rank Up"
   ],
   "blocks": [
     {
@@ -108,7 +108,7 @@ export const mainHowItWorks: InfoPageContent = {
               "type": "paragraph",
               "children": [
                 {
-                  "text": "Do not treat every error equally. Prioritise by repeatability, prerequisite impact, severity, time-to-fix and the student's next exam or revision need. The exact automated scoring logic is not invented while the product is not operational."
+                  "text": "Do not treat every error equally. Prioritise by repeatability, prerequisite impact, severity, time-to-fix and the student's next exam or revision need."
                 }
               ]
             }
@@ -132,30 +132,53 @@ export const mainHowItWorks: InfoPageContent = {
     },
     {
       "kind": "prose",
-      "id": "what-is-not-live-here",
-      "heading": "What is not live here",
+      "id": "your-journey-on-rankup",
+      "heading": "Your journey on the RankUp platform",
       "concepts": [
         {
-          "id": "not-live-intro",
-          "title": "What is not live here",
-          "body": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "This page does not provide a working AI diagnosis, mock engine, predictor or personalised recommendation engine. Links to those products stay hidden until they work end to end."
-                }
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "The methodology is real and explainable. Product automation remains a separate verification gate."
-                }
-              ]
-            }
-          ]
+          "id": "journey-1",
+          "title": "1. Choose your target exam",
+          "body": [{ "type": "paragraph", "children": [{ "text": "Pick JEE Main, JEE Advanced, NEET UG or NDA. BITSAT, IISER Aptitude Test and NEST are coming soon and cannot be selected yet." }] }]
+        },
+        {
+          "id": "journey-2",
+          "title": "2. Set your goals",
+          "body": [{ "type": "paragraph", "children": [{ "text": "A four-step goal wizard records your target exams and class, a main goal (rank, percentile or score), any extra goals, and a self-assessment of strengths, weak areas and study hours." }] }]
+        },
+        {
+          "id": "journey-3",
+          "title": "3. Take the free diagnostic",
+          "body": [{ "type": "paragraph", "children": [{ "text": "One free diagnostic test is available per target exam." }] }]
+        },
+        {
+          "id": "journey-4",
+          "title": "4. Understand your result",
+          "body": [{ "type": "paragraph", "children": [{ "text": "The result shows weak areas and suggests the plan that fits you." }] }]
+        },
+        {
+          "id": "journey-5",
+          "title": "5. Choose suitable practice",
+          "body": [{ "type": "paragraph", "children": [{ "text": "Pick full papers, part papers, previous-year papers or topic practice, filtered by exam, year, subject, topic and subtopic. The Self-Test Builder creates a paper from your chosen subjects, topics and difficulty mix, with exam-pattern presets and a \"Practice for my goal\" option that picks your weak topics." }] }]
+        },
+        {
+          "id": "journey-6",
+          "title": "6. Attempt exam-style tests",
+          "body": [{ "type": "paragraph", "children": [{ "text": "Use an NTA-style exam screen with instructions, a question palette, mark-for-review, a timer and section tabs. Answers save automatically, and marking follows each exam's rules, including partial marks where the exam uses them." }] }]
+        },
+        {
+          "id": "journey-7",
+          "title": "7. Review performance and mistakes",
+          "body": [{ "type": "paragraph", "children": [{ "text": "Each attempt produces a report with score, rank, percentile, subject-wise and difficulty-wise accuracy, time per question, mistake analysis and strategy tips, plus a downloadable PDF. AI-generated written feedback and an accuracy heatmap by question nature and difficulty explain what went wrong." }] }]
+        },
+        {
+          "id": "journey-8",
+          "title": "8. Keep preparing with better information",
+          "body": [{ "type": "paragraph", "children": [{ "text": "The performance dashboard tracks trends over time, weak topics with reasons, comparison with other students and the gap to your goal, so the next session starts from evidence." }] }]
+        },
+        {
+          "id": "journey-limits",
+          "title": "What this does not promise",
+          "body": [{ "type": "paragraph", "children": [{ "text": "Reports and AI feedback help you decide what to practise next. They do not guarantee rank improvement, admission or selection. Rank and college predictors are not offered." }] }]
         }
       ]
     },
@@ -215,7 +238,7 @@ export const mainHowItWorks: InfoPageContent = {
   "lastVerified": "13 September 2026",
   "seo": {
     "title": "How Rank Sarthi Works: Preparation Intelligence Method | Rank Sarthi",
-    "description": "See Rank Sarthi's evidence-led Preparation Intelligence method: attempt, diagnose the error type, prioritise the next repair and re-test improvement.",
+    "description": "How Rank Sarthi works: choose your exam, set goals, take the free diagnostic, practise exam-style tests and review detailed reports to decide your next priority.",
     "ogType": "website"
   }
 };
