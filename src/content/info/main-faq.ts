@@ -191,7 +191,7 @@ export const mainFaq: InfoPageContent = {
           "type": "paragraph",
           "children": [
             {
-              "text": "Approved pricing is not published yet, so pricing routes remain blocked until commercial terms are approved."
+              "text": "Each RankUp platform has a Free tier and paid plans with plan-dependent test limits, optional extra-test top-ups, promo codes and GST invoices. Current NEET and JEE plans are listed on their test-series pages; only approved prices are shown."
             }
           ]
         }
