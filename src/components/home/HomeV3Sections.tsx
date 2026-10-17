@@ -30,6 +30,9 @@ export function HomeProductShowcase({ id }: { id?: string }) {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground sm:mt-5">
+            Build your own practice with the Self-Test Builder, and take every result away as a downloadable PDF performance report.
+          </p>
         </Reveal>
         <Reveal delay={120}>
           <DiagnosticReportVisual compact />

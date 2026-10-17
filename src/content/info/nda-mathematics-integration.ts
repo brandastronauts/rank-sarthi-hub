@@ -448,59 +448,6 @@ export const ndaMathematicsIntegration: InfoPageContent = {
         }
       ]
     },
-    {
-      "kind": "prose",
-      "id": "blocked-route-summary",
-      "heading": "Blocked-route summary",
-      "concepts": [
-        {
-          "id": "blocked-route-summary-intro",
-          "title": "Blocked-route summary",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "/nda/mock-tests",
-                    "code": true
-                  },
-                  {
-                    "text": " -> PRODUCT_BLOCKED: no functioning NDA mock engine evidenced."
-                  }
-                ],
-                [
-                  {
-                    "text": "/nda/toppers",
-                    "code": true
-                  },
-                  {
-                    "text": " -> EVIDENCE_BLOCKED: no verified Rank Sarthi NDA result / topper proof supplied."
-                  }
-                ],
-                [
-                  {
-                    "text": "/nda/pricing",
-                    "code": true
-                  },
-                  {
-                    "text": " -> COMMERCIAL_INPUT_BLOCKED: no approved NDA commercial plan / pricing input supplied."
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "STOP. No platform integration performed. NDA-B not started. NDA-C not started."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
   ],
   "relatedLinks": [
     {
