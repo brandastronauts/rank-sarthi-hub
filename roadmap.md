@@ -56,3 +56,10 @@
 - [x] Inspect supplied document artwork and existing Ashwin/Ashwini record — no embedded institution artwork; qualification remains unverified
 - [x] Enrich four existing profiles and share contextual credential badges across faculty views — text badges used
 - [x] Validate compact cards, profile pages, approved facts, route protection and build status — 57 tests and 84 homepage checks passed
+
+## Institutes final content and migration review — no implementation
+- [ ] Provide one complete final four-page content review, including forms and FAQs
+- [ ] Verify current `/for-institutes` metadata, canonical and relevant internal links; specify one-hop migration mappings and SEO risks
+- [ ] Explain current enquiry storage/notification and list exact monitored-recipient requirements
+- [ ] Confirm campaign suppression scope and all institute link updates without changing website behaviour
+- [ ] Return final review and operational dependencies for written approval; do not develop or publish
