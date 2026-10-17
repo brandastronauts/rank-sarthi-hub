@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { instituteEnquirySchema } from "./institute-enquiry-schema";
+import { instituteEnquirySchema, instituteLeadRow } from "./institute-enquiry-schema";
 const { state } = vi.hoisted(() => ({ state: { recipientConfirmed: true, receivingProcessVerified: true, productionActivationApproved: true } }));
 vi.mock("@/content/institutes/policy", async (importOriginal) => {
   const original = await importOriginal<typeof import("@/content/institutes/policy")>();
@@ -10,7 +10,7 @@ const input = instituteEnquirySchema.parse({ intent: "quote", fullName: "QA Revi
 describe("Institute protected intake processor with simulated operational approvals", () => {
   beforeEach(() => { state.recipientConfirmed = true; state.receivingProcessVerified = true; state.productionActivationApproved = true; });
   it("stores a validated quote only after approvals and safe count read", async () => {
-    const insert = vi.fn(async () => true);
+    const insert = vi.fn(async (_row: ReturnType<typeof instituteLeadRow>) => true);
     expect(await processInstituteEnquiry(input, async () => ({ clientHash: "test-hash", store: { count: async () => ({ count: 0, error: false }), insert } }))).toEqual({ ok: true });
     expect(insert).toHaveBeenCalledOnce();
     expect(insert.mock.calls[0]?.[0]).toMatchObject({ enquiry_type: "Institute / Quote", source_page: "/institutes/pricing", client_hash: "test-hash" });
