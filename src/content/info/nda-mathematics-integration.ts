@@ -19,31 +19,7 @@ export const ndaMathematicsIntegration: InfoPageContent = {
       "type": "paragraph",
       "children": [
         {
-          "text": "Expected = 25 Accounted = 25"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "text": "CONTENT_COMPLETE = 22 PRODUCT_BLOCKED = 1 EVIDENCE_BLOCKED = 1 COMMERCIAL_INPUT_BLOCKED = 1 SME_REVIEW_REQUIRED = 0 SOURCE_BLOCKED = 0"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "text": "TOTAL = 25"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "text": "Mathematics topics expected = 12 Mathematics topics production-complete = 12"
+          "text": "NDA Integration covers integration as inverse differentiation, integration by substitution and by parts, standard integrals involving algebraic, trigonometric and exponential functions, definite integrals and elementary area applications."
         }
       ]
     }
@@ -472,59 +448,6 @@ export const ndaMathematicsIntegration: InfoPageContent = {
         }
       ]
     },
-    {
-      "kind": "prose",
-      "id": "blocked-route-summary",
-      "heading": "Blocked-route summary",
-      "concepts": [
-        {
-          "id": "blocked-route-summary-intro",
-          "title": "Blocked-route summary",
-          "body": [
-            {
-              "type": "list",
-              "items": [
-                [
-                  {
-                    "text": "/nda/mock-tests",
-                    "code": true
-                  },
-                  {
-                    "text": " -> PRODUCT_BLOCKED: no functioning NDA mock engine evidenced."
-                  }
-                ],
-                [
-                  {
-                    "text": "/nda/toppers",
-                    "code": true
-                  },
-                  {
-                    "text": " -> EVIDENCE_BLOCKED: no verified Rank Sarthi NDA result / topper proof supplied."
-                  }
-                ],
-                [
-                  {
-                    "text": "/nda/pricing",
-                    "code": true
-                  },
-                  {
-                    "text": " -> COMMERCIAL_INPUT_BLOCKED: no approved NDA commercial plan / pricing input supplied."
-                  }
-                ]
-              ]
-            },
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "STOP. No platform integration performed. NDA-B not started. NDA-C not started."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
   ],
   "relatedLinks": [
     {

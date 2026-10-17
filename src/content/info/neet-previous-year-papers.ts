@@ -528,7 +528,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
           type: "paragraph",
           children: [
             {
-              text: "No. Rank Sarthi links to the file owner and does not rehost any paper. Local hosting stays blocked until a redistribution rights review is complete.",
+              text: "Yes. For the 2020 examination, papers link to verified authority-hosted files. For 2021 to 2026, Rank Sarthi hosts eight paper copies by paper code, labelled Rank Sarthi-hosted Question Paper. These hosted copies are not presented as official NTA files.",
             },
           ],
         },
