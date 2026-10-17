@@ -53,7 +53,7 @@ export function InstitutePage({ url }: { url: InstitutePath }) {
         if (block.type === "paragraph" && /^\*\*.+\?\*\*$/.test(block.text)) entries.push({ question: block.text.replace(/\*\*/g, "").replace(/^\d+\. /, ""), answer: [] });
         else if (block.type === "paragraph") entries[entries.length - 1]?.answer.push(block.text);
       }
-      return <div className="divide-y divide-border border-y border-border">{entries.map((entry) => <details key={entry.question} className="group py-5"><summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-base font-semibold text-primary"><span>{entry.question}</span><ChevronDown className="mt-1 size-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden /></summary><div className="mt-4 space-y-3 text-base leading-relaxed text-muted-foreground">{entry.answer.map((answer) => <p key={answer}><Inline text={answer} /></p>)}</div></details>)}</div>;
+      return <><div className="divide-y divide-border border-y border-border">{entries.map((entry) => <details key={entry.question} className="group py-5"><summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-base font-semibold text-primary"><span>{entry.question}</span><ChevronDown className="mt-1 size-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden /></summary><div className="mt-4 space-y-3 text-base leading-relaxed text-muted-foreground">{entry.answer.map((answer) => <p key={answer}><Inline text={answer} /></p>)}</div></details>)}</div>{blocks.some((b) => b.type === "links") && <div className="mt-6">{action("Request a Demo", "faq-demo")}</div>}</>;
     }
     return <div className="space-y-5">{blocks.map((block, i) => {
       if (block.type === "omit") return null;
@@ -62,9 +62,14 @@ export function InstitutePage({ url }: { url: InstitutePath }) {
       if (block.type === "links") return <div key={i} className="flex flex-wrap gap-3">{action("Explore Institute Plans", `${i}-plans`)}{block.text.includes("Related links") && <Button asChild variant="outline" className="h-12 w-full sm:w-auto"><Link to="/institutes/case-studies" search={search}>View Institute Use Cases<ArrowRight aria-hidden /></Link></Button>}</div>;
       if (block.type === "form") return <InstituteEnquiryForm key={i} intent={block.text === "quote" ? "quote" : "demo"} {...(attribution ? { attribution } : {})} />;
       if (block.type === "bullet") {
-        const match = Object.keys(currentExams).find((e) => block.text.startsWith(`**${e}**`));
-        const destination = match ? currentExams[match] : undefined;
-        return <div key={i} className="flex items-start gap-3 text-base leading-relaxed text-foreground"><Check className="mt-1 size-4 shrink-0 text-gold" aria-hidden />{destination ? <Link to={destination} className="font-semibold text-accent underline underline-offset-4">{block.text.replace(/\*\*/g, "")}</Link> : <span><Inline text={block.text} /></span>}</div>;
+        if (blocks[i - 1]?.type === "bullet") return null;
+        const group: typeof blocks = [];
+        for (let j = i; j < blocks.length; j++) { const item = blocks[j]; if (item?.type !== "bullet") break; group.push(item); }
+        return <ul key={i} className="space-y-3">{group.map((item) => {
+          const match = Object.keys(currentExams).find((e) => item.text.startsWith(`**${e}**`));
+          const destination = match ? currentExams[match] : undefined;
+          return <li key={item.text} className="flex items-start gap-3 text-base leading-relaxed text-foreground"><Check className="mt-1 size-4 shrink-0 text-gold" aria-hidden />{destination ? <Link to={destination} className="font-semibold text-accent underline underline-offset-4">{item.text.replace(/\*\*/g, "")}</Link> : <span><Inline text={item.text} /></span>}</li>;
+        })}</ul>;
       }
       if (/^\*\*[^*]+\*\*$/.test(block.text) && !block.text.includes("illustrative")) return <h3 key={i} className="pt-3 text-lg font-bold text-primary">{block.text.replace(/\*\*/g, "")}</h3>;
       return <p key={i} className="text-base leading-relaxed text-muted-foreground"><Inline text={block.text} /></p>;
