@@ -65,7 +65,7 @@ const HELP_LINKS = [
   { to: "/nda", label: "NDA", text: "Exam, SSB and syllabus guidance" },
   { to: "/jee/mock-tests", label: "Test Series", text: "JEE test series details" },
   { to: "/tools", label: "Free Tools", text: "Score and target calculators" },
-  { to: "/for-institutes", label: "For Institutes", text: "Programmes for institutions" },
+  { to: "/institutes", label: "For Institutes", text: "Programmes for institutions" },
 ].filter((l) => getUrl(l.to)?.buildStatus === "built");
 
 const inputCls =

@@ -26,7 +26,6 @@ import { mainHowItWorks } from "./main-how-it-works";
 import { mainBlog } from "./main-blog";
 import { mainFaq } from "./main-faq";
 import { mainResources } from "./main-resources";
-import { mainForInstitutes } from "./main-for-institutes";
 import { main404 } from "./main-404";
 import { jeeMain } from "./jee-main";
 import { jeeAdvanced } from "./jee-advanced";
@@ -153,7 +152,6 @@ export const infoPages: InfoPageContent[] = [
   mainBlog,
   mainFaq,
   mainResources,
-  mainForInstitutes,
   main404,
   ndaExamDates,
   ndaGatCurrentAffairs,

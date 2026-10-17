@@ -63,3 +63,11 @@
 - [x] Explain current enquiry storage/notification and list exact monitored-recipient requirements
 - [x] Confirm campaign suppression scope and all institute link updates without changing website behaviour
 - [x] Prepare final review and operational dependencies for written approval; no development or publication
+
+## Approved institutes implementation — preview only
+- [x] Build four approved institute pages with final CTA and qualification refinements
+- [x] Apply exact legacy redirects, scoped navigation, metadata and campaign suppression
+- [x] Build validated separate enquiry journeys with protected storage preparation and fail-closed activation
+- [x] Verify four-page screenshots, responsive layouts, redirects, metadata, forms and student regressions
+- [x] Deliver implementation report; do not publish
+- [ ] Activate B2B submissions only after monitored recipient/process verification and separate production approval (blocked on user confirmation)

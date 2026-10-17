@@ -1,4 +1,5 @@
 import { neetCampaign } from "@/content/offers/neet-test-series";
+import { INSTITUTE_PATHS } from "@/content/institutes/policy";
 
 /** Campaign surfaces for approved JEE and NEET inaugural offers. */
 
@@ -60,7 +61,7 @@ export type AnnouncementCampaign = typeof commonAnnouncement;
 export type PopupCampaign = typeof commonOfferPopup;
 
 /** Commercial destinations never promote themselves. */
-const SUPPRESSED = new Set([OFFER_URL, "/jee/pricing", neetCampaign.popup.href, "/neet/pricing", "/offers"]);
+const SUPPRESSED = new Set<string>([OFFER_URL, "/jee/pricing", neetCampaign.popup.href, "/neet/pricing", "/offers", ...INSTITUTE_PATHS]);
 
 function pathOnly(url: string): string {
   const path = url.split(/[?#]/, 1)[0] ?? url;

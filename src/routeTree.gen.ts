@@ -23,6 +23,10 @@ import { Route as PlatformIndexRouteImport } from './routes/$platform.index'
 import { Route as PlatformSyllabusRouteImport } from './routes/$platform.syllabus'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as InstitutesIndexRouteImport } from './routes/institutes.index'
+import { Route as InstitutesCaseStudiesRouteImport } from './routes/institutes.case-studies'
+import { Route as InstitutesPricingRouteImport } from './routes/institutes.pricing'
+import { Route as InstitutesRequestDemoRouteImport } from './routes/institutes.request-demo'
 import { Route as PlatformSubjectIndexRouteImport } from './routes/$platform.$subject.index'
 import { Route as PlatformSubjectChapterRouteImport } from './routes/$platform.$subject.$chapter'
 import { Route as AboutFacultySlugRouteImport } from './routes/about.faculty.$slug'
@@ -102,6 +106,26 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InstitutesIndexRoute = InstitutesIndexRouteImport.update({
+  id: '/institutes/',
+  path: '/institutes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutesCaseStudiesRoute = InstitutesCaseStudiesRouteImport.update({
+  id: '/institutes/case-studies',
+  path: '/institutes/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutesPricingRoute = InstitutesPricingRouteImport.update({
+  id: '/institutes/pricing',
+  path: '/institutes/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutesRequestDemoRoute = InstitutesRequestDemoRouteImport.update({
+  id: '/institutes/request-demo',
+  path: '/institutes/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlatformSubjectIndexRoute = PlatformSubjectIndexRouteImport.update({
   id: '/$platform/$subject/',
   path: '/$platform/$subject/',
@@ -158,8 +182,12 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/institutes/case-studies': typeof InstitutesCaseStudiesRoute
+  '/institutes/pricing': typeof InstitutesPricingRoute
+  '/institutes/request-demo': typeof InstitutesRequestDemoRoute
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/institutes/': typeof InstitutesIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
@@ -182,8 +210,12 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/institutes/case-studies': typeof InstitutesCaseStudiesRoute
+  '/institutes/pricing': typeof InstitutesPricingRoute
+  '/institutes/request-demo': typeof InstitutesRequestDemoRoute
   '/$platform': typeof PlatformIndexRoute
   '/blog': typeof BlogIndexRoute
+  '/institutes': typeof InstitutesIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
@@ -207,8 +239,12 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/$platform/syllabus': typeof PlatformSyllabusRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/institutes/case-studies': typeof InstitutesCaseStudiesRoute
+  '/institutes/pricing': typeof InstitutesPricingRoute
+  '/institutes/request-demo': typeof InstitutesRequestDemoRoute
   '/$platform/': typeof PlatformIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/institutes/': typeof InstitutesIndexRoute
   '/$platform/$subject/$chapter': typeof PlatformSubjectChapterRoute
   '/about/faculty/$slug': typeof AboutFacultySlugRoute
   '/api/public/blog-article': typeof ApiPublicBlogArticleRoute
@@ -233,8 +269,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
+    | '/institutes/case-studies'
+    | '/institutes/pricing'
+    | '/institutes/request-demo'
     | '/$platform/'
     | '/blog/'
+    | '/institutes/'
     | '/$platform/$subject/$chapter'
     | '/about/faculty/$slug'
     | '/api/public/blog-article'
@@ -257,8 +297,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
+    | '/institutes/case-studies'
+    | '/institutes/pricing'
+    | '/institutes/request-demo'
     | '/$platform'
     | '/blog'
+    | '/institutes'
     | '/$platform/$subject/$chapter'
     | '/about/faculty/$slug'
     | '/api/public/blog-article'
@@ -281,8 +325,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/$platform/syllabus'
     | '/blog/$slug'
+    | '/institutes/case-studies'
+    | '/institutes/pricing'
+    | '/institutes/request-demo'
     | '/$platform/'
     | '/blog/'
+    | '/institutes/'
     | '/$platform/$subject/$chapter'
     | '/about/faculty/$slug'
     | '/api/public/blog-article'
@@ -306,8 +354,12 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   PlatformSyllabusRoute: typeof PlatformSyllabusRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  InstitutesCaseStudiesRoute: typeof InstitutesCaseStudiesRoute
+  InstitutesPricingRoute: typeof InstitutesPricingRoute
+  InstitutesRequestDemoRoute: typeof InstitutesRequestDemoRoute
   PlatformIndexRoute: typeof PlatformIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  InstitutesIndexRoute: typeof InstitutesIndexRoute
   PlatformSubjectChapterRoute: typeof PlatformSubjectChapterRoute
   AboutFacultySlugRoute: typeof AboutFacultySlugRoute
   ApiPublicBlogArticleRoute: typeof ApiPublicBlogArticleRoute
@@ -418,6 +470,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institutes/': {
+      id: '/institutes/'
+      path: '/institutes'
+      fullPath: '/institutes/'
+      preLoaderRoute: typeof InstitutesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institutes/case-studies': {
+      id: '/institutes/case-studies'
+      path: '/institutes/case-studies'
+      fullPath: '/institutes/case-studies'
+      preLoaderRoute: typeof InstitutesCaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institutes/pricing': {
+      id: '/institutes/pricing'
+      path: '/institutes/pricing'
+      fullPath: '/institutes/pricing'
+      preLoaderRoute: typeof InstitutesPricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institutes/request-demo': {
+      id: '/institutes/request-demo'
+      path: '/institutes/request-demo'
+      fullPath: '/institutes/request-demo'
+      preLoaderRoute: typeof InstitutesRequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$platform/$subject/': {
       id: '/$platform/$subject/'
       path: '/$platform/$subject'
@@ -490,8 +570,12 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   PlatformSyllabusRoute: PlatformSyllabusRoute,
   BlogSlugRoute: BlogSlugRoute,
+  InstitutesCaseStudiesRoute: InstitutesCaseStudiesRoute,
+  InstitutesPricingRoute: InstitutesPricingRoute,
+  InstitutesRequestDemoRoute: InstitutesRequestDemoRoute,
   PlatformIndexRoute: PlatformIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
+  InstitutesIndexRoute: InstitutesIndexRoute,
   PlatformSubjectChapterRoute: PlatformSubjectChapterRoute,
   AboutFacultySlugRoute: AboutFacultySlugRoute,
   ApiPublicBlogArticleRoute: ApiPublicBlogArticleRoute,

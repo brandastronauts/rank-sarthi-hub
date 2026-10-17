@@ -27,7 +27,7 @@ function Logo({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-export function SiteHeader({ transparentAtTop = false }: { transparentAtTop?: boolean }) {
+export function SiteHeader({ transparentAtTop = false, instituteNavigation = false }: { transparentAtTop?: boolean; instituteNavigation?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -76,7 +76,7 @@ export function SiteHeader({ transparentAtTop = false }: { transparentAtTop?: bo
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 text-primary-foreground transition-[background-color,box-shadow] duration-200 ${
-        solid ? "bg-navy-deep/95 backdrop-blur-md shadow-elevated" : "bg-transparent"
+        solid ? instituteNavigation && mobileOpen ? "bg-navy-deep shadow-elevated" : "bg-navy-deep/95 backdrop-blur-md shadow-elevated" : "bg-transparent"
       }`}
     >
       <nav aria-label="Main navigation" className="container-page relative">
