@@ -449,7 +449,7 @@ export const neetPreviousYearPapers: InfoPageContent = {
                 [{ text: "A copy is never relabelled as an authority file." }],
                 [
                   {
-                    text: "Rank Sarthi does not rehost any of these files: redistribution rights review is still required.",
+                    text: "For the 2020 examination the papers link to verified authority-hosted files. For the 2021 to 2026 events, Rank Sarthi hosts eight question-paper copies by paper code, each labelled Rank Sarthi-hosted Question Paper and never presented as an official NTA file. Hosting a validated copy does not by itself establish permission to redistribute it: the redistribution rights review for those copies is still open.",
                   },
                 ],
               ],
