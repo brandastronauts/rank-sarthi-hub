@@ -6,14 +6,14 @@ vi.mock("@/content/institutes/policy", async (importOriginal) => {
   return { ...original, INSTITUTE_INTAKE: state };
 });
 import { processInstituteEnquiry } from "./institute-enquiry.server";
-const input = instituteEnquirySchema.parse({ intent: "quote", fullName: "QA Reviewer", instituteName: "Preview Test Institute", email: "qa@example.com", phone: "+91 90000 00000", studentCount: "100", exams: ["NEET UG"], consent: true, sourcePage: "/institutes/pricing" });
+const input = instituteEnquirySchema.parse({ intent: "quote", fullName: "QA Reviewer", instituteName: "Preview Test Institute", email: "qa@example.com", phone: "+91 90000 00000", studentCount: "100", exams: ["NEET UG"], consent: true, sourcePage: "/institutes" });
 describe("Institute protected intake processor with simulated operational approvals", () => {
   beforeEach(() => { state.recipientConfirmed = true; state.receivingProcessVerified = true; state.productionActivationApproved = true; });
   it("stores a validated quote only after approvals and safe count read", async () => {
     const insert = vi.fn(async (_row: ReturnType<typeof instituteLeadRow>) => true);
     expect(await processInstituteEnquiry(input, async () => ({ clientHash: "test-hash", store: { count: async () => ({ count: 0, error: false }), insert } }))).toEqual({ ok: true });
     expect(insert).toHaveBeenCalledOnce();
-    expect(insert.mock.calls[0]?.[0]).toMatchObject({ enquiry_type: "Institute / Quote", source_page: "/institutes/pricing", client_hash: "test-hash" });
+    expect(insert.mock.calls[0]?.[0]).toMatchObject({ enquiry_type: "Institute / Quote", source_page: "/institutes", client_hash: "test-hash" });
   });
   it("honeypot never opens storage or returns a fake receipt", async () => {
     const storage = vi.fn();

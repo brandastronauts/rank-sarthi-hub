@@ -36,12 +36,10 @@ export const instituteEnquirySchema = z.object({
   message: z.string().trim().max(2000, "Additional requirements must be under 2,000 characters.").default(""),
   consent: z.literal(true, { errorMap: () => ({ message: "Please acknowledge the Privacy Policy." }) }),
   website: z.string().max(200).default(""),
-  sourcePage: z.enum(["/institutes/pricing", "/institutes/request-demo"]),
+  sourcePage: z.literal("/institutes"),
   attribution: instituteAttributionSchema.optional(),
 }).strict().superRefine((data, ctx) => {
   if (data.intent === "demo" && data.exams.length !== 1) ctx.addIssue({ code: "custom", path: ["exams"], message: "Choose one primary examination for your demo enquiry." });
-  const expected = data.intent === "quote" ? "/institutes/pricing" : "/institutes/request-demo";
-  if (data.sourcePage !== expected) ctx.addIssue({ code: "custom", path: ["sourcePage"], message: "The enquiry source does not match its intent." });
 });
 export type InstituteEnquiry = z.infer<typeof instituteEnquirySchema>;
 

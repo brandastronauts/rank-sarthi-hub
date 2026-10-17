@@ -1,87 +1,43 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Users, BookOpen, Layers, Printer, BarChart3 } from "lucide-react";
 import { PageFrame } from "@/components/shell/PageFrame";
 import { Button } from "@/components/ui/button";
-import { institutePage, type InstitutePath, INSTITUTE_PATHS } from "@/content/institutes/config";
-import { instituteAttributionSchema, pickInstituteAttribution, type InstituteAttribution } from "@/lib/institute-enquiry-schema";
+import { BrandLogo } from "@/components/BrandLogo";
+import { instituteLanding, benefits, capabilities, steps, scenarios, analysis, faqs } from "@/content/institutes/landing";
+import { INSTITUTE_EXAMS, FUTURE_EXAMS, instituteAttributionSchema, pickInstituteAttribution, type InstituteAttribution } from "@/lib/institute-enquiry-schema";
 import { InstituteEnquiryForm } from "./InstituteEnquiryForm";
-import { company } from "@/content/company";
 
-const navigation = ["Overview", "Institute Plans", "Institute Use Cases", "Request a Demo"];
-const currentExams: Record<string, string> = { "JEE Main": "/jee/jee-main", "JEE Advanced": "/jee/jee-advanced", "NEET UG": "/neet/neet-exam", "NDA": "/nda" };
-
-function Inline({ text }: { text: string }) {
-  const clean = text.replace(/\+91 92205 52551/g, company.phoneDisplay).replace(/info@ranksarthi.com/g, company.email);
-  return <>{clean.split(/(\*\*.*?\*\*)/g).filter(Boolean).map((part, i) => part.startsWith("**") ? <strong key={i} className="font-semibold text-primary">{part.slice(2, -2)}</strong> : <Fragment key={i}>{part}</Fragment>)}</>;
+function Section({ id, eyebrow, title, children, alternate = false }: { id: string; eyebrow: string; title: string; children: ReactNode; alternate?: boolean }) {
+  return <section id={id} className={`scroll-mt-28 border-b border-border py-12 md:py-20 ${alternate ? "bg-secondary" : "bg-background"}`}><div className="container-page"><p className="mb-3 text-sm font-semibold text-accent">{eyebrow}</p><h2 className="max-w-3xl font-display text-2xl font-bold leading-snug text-primary md:text-4xl">{title}</h2><div className="mt-8 md:mt-10">{children}</div></div></section>;
 }
-
-export function InstitutePage({ url }: { url: InstitutePath }) {
-  const page = institutePage(url);
+export function InstitutePage({ url = "/institutes" }: { url?: "/institutes" }) {
   const [attribution, setAttribution] = useState<InstituteAttribution>();
   const [search, setSearch] = useState<Record<string, string>>({});
   useEffect(() => {
-    const last = pickInstituteAttribution(window.location.search);
-    setSearch(last);
+    const last = pickInstituteAttribution(window.location.search); setSearch(last);
     try {
-      const key = "rs-b2b-attribution-v1";
-      const existing = sessionStorage.getItem(key);
+      const key = "rs-b2b-attribution-v1"; const existing = sessionStorage.getItem(key);
       const parsed = existing ? instituteAttributionSchema.safeParse(JSON.parse(existing)) : undefined;
-      const next = { first: parsed?.success ? parsed.data.first : last, last: Object.keys(last).length ? last : parsed?.success ? parsed.data.last : {}, entryPath: parsed?.success ? parsed.data.entryPath : url };
+      const next = { first: parsed?.success ? parsed.data.first : last, last: Object.keys(last).length ? last : parsed?.success ? parsed.data.last : {}, entryPath: url };
       sessionStorage.setItem(key, JSON.stringify(next)); setAttribution(next);
     } catch { setAttribution({ first: last, last, entryPath: url }); }
   }, [url]);
-  const action = (label: string, key: string) => {
-    const quote = label === "Request a Quote";
-    const plans = label.includes("Plans");
-    const target = quote ? "/institutes/pricing" : plans ? "/institutes/pricing" : "/institutes/request-demo";
-    const hash = target === url ? quote ? "quote-form" : "demo-form" : undefined;
-    return <Button key={key} asChild variant={plans ? "outline" : "destructive"} className="h-12 w-full whitespace-normal px-6 sm:w-auto"><Link to={target} {...(hash ? { hash } : {})} search={search}>{label}<ArrowRight aria-hidden /></Link></Button>;
-  };
-  const heroEnd = page.blocks.findIndex((block) => block.type === "heading");
-  const hero = page.blocks.slice(0, heroEnd);
-  const rest = page.blocks.slice(heroEnd);
-  const sections: Array<{ title: string; blocks: typeof rest }> = [];
-  for (const block of rest) {
-    if (block.type === "heading" && block.level !== 3) sections.push({ title: block.text, blocks: [] });
-    else sections[sections.length - 1]?.blocks.push(block);
-  }
-  const renderBlocks = (blocks: typeof rest, faq = false) => {
-    if (faq) {
-      const entries: Array<{ question: string; answer: string[] }> = [];
-      for (const block of blocks) {
-        if (block.type === "paragraph" && /^\*\*.+\?\*\*$/.test(block.text)) entries.push({ question: block.text.replace(/\*\*/g, "").replace(/^\d+\. /, ""), answer: [] });
-        else if (block.type === "paragraph") entries[entries.length - 1]?.answer.push(block.text);
-      }
-      return <><div className="divide-y divide-border border-y border-border">{entries.map((entry) => <details key={entry.question} className="group py-5"><summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-base font-semibold text-primary"><span>{entry.question}</span><ChevronDown className="mt-1 size-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden /></summary><div className="mt-4 space-y-3 text-base leading-relaxed text-muted-foreground">{entry.answer.map((answer) => <p key={answer}><Inline text={answer} /></p>)}</div></details>)}</div>{blocks.some((b) => b.type === "links") && <div className="mt-6">{action("Request a Demo", "faq-demo")}</div>}</>;
-    }
-    return <div className="space-y-5">{blocks.map((block, i) => {
-      if (block.type === "omit") return null;
-      if (block.type === "heading") return <h3 key={i} className="pt-3 text-xl font-bold text-primary">{block.text}</h3>;
-      if (block.type === "cta") return action(block.text, String(i));
-      if (block.type === "links") return <div key={i} className="flex flex-wrap gap-3">{action("Explore Institute Plans", `${i}-plans`)}{block.text.includes("Related links") && <Button asChild variant="outline" className="h-12 w-full sm:w-auto"><Link to="/institutes/case-studies" search={search}>View Institute Use Cases<ArrowRight aria-hidden /></Link></Button>}</div>;
-      if (block.type === "form") return <InstituteEnquiryForm key={i} intent={block.text === "quote" ? "quote" : "demo"} {...(attribution ? { attribution } : {})} />;
-      if (block.type === "bullet") {
-        if (blocks[i - 1]?.type === "bullet") return null;
-        const group: typeof blocks = [];
-        for (let j = i; j < blocks.length; j++) { const item = blocks[j]; if (item?.type !== "bullet") break; group.push(item); }
-        return <ul key={i} className="space-y-3">{group.map((item) => {
-          const match = Object.keys(currentExams).find((e) => item.text.startsWith(`**${e}**`));
-          const destination = match ? currentExams[match] : undefined;
-          return <li key={item.text} className="flex items-start gap-3 text-base leading-relaxed text-foreground"><Check className="mt-1 size-4 shrink-0 text-gold" aria-hidden />{destination ? <Link to={destination} className="font-semibold text-accent underline underline-offset-4">{item.text.replace(/\*\*/g, "")}</Link> : <span><Inline text={item.text} /></span>}</li>;
-        })}</ul>;
-      }
-      if (/^\*\*[^*]+\*\*$/.test(block.text) && !block.text.includes("illustrative")) return <h3 key={i} className="pt-3 text-lg font-bold text-primary">{block.text.replace(/\*\*/g, "")}</h3>;
-      return <p key={i} className="text-base leading-relaxed text-muted-foreground"><Inline text={block.text} /></p>;
-    })}</div>;
-  };
+  const actions = (dark = false) => <div className="flex flex-wrap gap-3"><Button asChild variant="destructive" className="h-12 w-full px-6 sm:w-auto"><Link to="/institutes" hash="demo" search={search}>Request a Demo<ArrowRight aria-hidden /></Link></Button><Button asChild variant="outline" className={`h-12 w-full px-6 sm:w-auto ${dark ? "border-gold bg-transparent text-primary-foreground hover:bg-navy-soft hover:text-primary-foreground" : ""}`}><Link to="/institutes" hash="quote" search={search}>Request a Quote<ArrowRight aria-hidden /></Link></Button></div>;
+  const icons = [Users, BarChart3, BookOpen, Printer];
   return <PageFrame frame="F1" url={url}>
-    <header className="border-b border-border bg-secondary pt-28 md:pt-32"><div className="container-page pb-10 md:pb-14">
-      <p className="mb-4 text-sm font-semibold text-accent">{page.eyebrow}</p>
-      <h1 className="max-w-4xl font-display text-3xl font-extrabold leading-tight text-primary md:text-5xl">{page.heading}</h1>
-      <div className="mt-6 max-w-3xl">{renderBlocks(hero)}</div>
-    </div></header>
-    <nav aria-label="Institute pages" className="border-b border-border bg-background"><div className="container-page flex flex-wrap gap-x-7 gap-y-3 py-5">{INSTITUTE_PATHS.map((path, i) => <Button key={path} asChild variant="link" className={`h-auto px-0 py-1 ${path === url ? "text-accent underline" : "text-primary"}`}><Link to={path} search={search} aria-current={path === url ? "page" : undefined}>{navigation[i]}</Link></Button>)}</div></nav>
-    <div>{sections.map((section, i) => <section key={`${i}-${section.title}`} className={`border-b border-border py-10 md:py-14 ${i % 3 === 2 ? "bg-secondary" : "bg-background"}`}><div className="container-page grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16"><h2 className="max-w-lg font-display text-2xl font-bold leading-snug text-primary md:text-3xl">{section.title}</h2><div className="min-w-0">{renderBlocks(section.blocks, /FAQs|Questions from Schools/.test(section.title))}</div></div></section>)}</div>
+    <header className="bg-navy-deep pt-24 text-primary-foreground md:pt-36"><div className="container-page pb-6 md:pb-14"><div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]"><div><p className="mb-4 max-w-xl text-sm font-semibold text-gold">Assessment, Practice & Performance Intelligence for Institutes</p><h1 className="max-w-3xl font-display text-3xl font-extrabold leading-tight md:text-6xl">{instituteLanding.heading}</h1><p className="mt-5 max-w-2xl text-base md:text-lg leading-relaxed text-primary-foreground/80">One dedicated assessment workspace to manage students, conduct entrance-exam practice and understand academic performance across your institute.</p><div className="mt-6">{actions(true)}</div></div><div className="hidden border-l border-gold/40 pl-12 lg:block"><BrandLogo height={140} surface="dark" /><p className="mt-8 text-2xl font-semibold leading-snug">Your institute.<br />One assessment workspace.</p><p className="mt-4 max-w-xs text-base text-primary-foreground/75">From batch organisation to academic follow-up.</p></div></div><dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-gold/30 pt-5 lg:mt-14 lg:grid-cols-4">{[["4", "currently available examinations"], ["13", "question formats"], ["40,000+", "JEE-tagged previous-year questions"], ["1–300", "questions per custom assessment"]].map(([value, label]) => <div key={value}><dt className="font-display text-2xl font-bold text-gold md:text-3xl">{value}</dt><dd className="mt-2 max-w-xs text-sm leading-relaxed text-primary-foreground/80">{label}</dd></div>)}</dl></div></header>
+    <nav aria-label="Institute sections" className="border-b border-border bg-background"><div className="container-page flex flex-wrap gap-x-6 gap-y-3 py-5">{([["capabilities", "Capabilities"], ["performance", "Performance insights"], ["scenarios", "Institute scenarios"], ["quote", "Institute plans"], ["demo", "Request a Demo"]] as const).map(([hash, label]) => <Button key={hash} variant="link" asChild className="h-auto px-0 py-1"><Link to="/institutes" hash={hash} search={search}>{label}</Link></Button>)}</div></nav>
+    <Section id="benefits" eyebrow="Why institutes choose Rank Sarthi" title="See More Than Marks. Understand Every Assessment."><div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">{benefits.map(([title, text]) => <article key={title} className="border-t-2 border-gold pt-5"><h3 className="text-lg font-bold text-primary">{title}</h3><p className="mt-3 text-base text-muted-foreground">{text}</p></article>)}</div></Section>
+    <Section id="capabilities" eyebrow="Platform capabilities" title="One Workspace. The Tools Your Academic Team Needs." alternate><div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{capabilities.map(([title, text], i) => <article key={title} className="rounded-lg border border-border bg-card p-6"><p className="mb-4 text-sm font-semibold text-accent">{String(i + 1).padStart(2, "0")}</p><h3 className="text-lg font-bold text-primary">{title}</h3><p className="mt-3 text-base text-muted-foreground">{text}</p></article>)}</div></Section>
+    <Section id="how-it-works" eyebrow="How Rank Sarthi works" title="From Your First Discussion to Your Next Academic Decision."><ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">{steps.map(([title, text], i) => <li key={title} className="border-t border-gold pt-5"><span className="text-3xl font-bold text-accent">0{i + 1}</span><h3 className="mt-5 text-lg font-bold text-primary">{title}</h3><p className="mt-3 text-base text-muted-foreground">{text}</p></li>)}</ol></Section>
+    <Section id="performance" eyebrow="Academic performance intelligence" title="Turn Every Assessment Into a Clearer Academic Decision." alternate><div className="grid gap-8 lg:grid-cols-2"><div><p className="max-w-xl text-lg text-muted-foreground">An overall mark is a starting point. Look at how students answered, where they spent time and which topics need attention before deciding what comes next.</p><p className="mt-5 max-w-xl text-base text-muted-foreground">Use individual and institute-level reports to support faculty review and academic follow-up, without assuming that an assessment alone guarantees improvement.</p><BarChart3 className="mt-8 size-12 text-accent" aria-hidden /></div><ul className="grid gap-4">{analysis.map((item) => <li key={item} className="flex gap-3 border-b border-border pb-3 text-base font-medium"><Check className="mt-1 size-4 shrink-0 text-accent" aria-hidden />{item}</li>)}</ul></div></Section>
+    <Section id="scenarios" eyebrow="Institute scenarios" title="Built for the Way Institutes Teach, Test and Improve."><div className="grid gap-6 md:grid-cols-2">{scenarios.map((scenario, i) => {const Icon = icons[i] ?? Layers; return <article key={scenario.title} className="rounded-lg border border-border bg-card p-6 md:p-8"><div className="flex items-start justify-between gap-4"><p className="text-sm font-semibold text-accent">{scenario.context}</p><Icon className="size-6 shrink-0 text-primary" aria-hidden /></div><h3 className="mt-5 text-xl font-bold text-primary">{scenario.title}</h3><p className="mt-4 text-base text-muted-foreground">{scenario.challenge}</p><p className="mt-4 text-base text-foreground">{scenario.support}</p><p className="mt-5 border-t border-border pt-4 text-base font-semibold text-primary">{scenario.benefit}</p></article>;})}</div></Section>
+    <Section id="branding" eyebrow="Your institute. Your brand." title="A Familiar Identity, Online and in the Classroom." alternate><div className="grid gap-7 lg:grid-cols-2"><p className="max-w-xl text-lg text-muted-foreground">Bring your institute logo, profile and details into a branded portal experience. Carry that identity through to printable question papers, with separate teacher answer keys for classroom examinations.</p><ul className="grid gap-4 sm:grid-cols-2">{["Institute logo", "Institute profile & details", "Branded portal", "Branded printable papers", "Teacher answer keys", "Online & offline assessment"].map((item) => <li key={item} className="flex items-start gap-3 text-base font-medium"><Check className="mt-1 size-4 text-accent" aria-hidden />{item}</li>)}</ul></div></Section>
+    <Section id="exams" eyebrow="Exam coverage" title="Built for Today’s Exam Preparation. Growing for Tomorrow."><div className="grid gap-8 md:grid-cols-2"><div className="border-t-2 border-accent pt-5"><h3 className="text-lg font-bold text-primary">Available</h3><ul className="mt-4 grid grid-cols-2 gap-3">{INSTITUTE_EXAMS.map((exam) => <li key={exam} className="flex gap-2 text-base"><Check className="mt-1 size-4 text-accent" aria-hidden />{exam}</li>)}</ul></div><div className="border-t-2 border-gold pt-5"><h3 className="text-lg font-bold text-primary">Coming Soon</h3><ul className="mt-4 space-y-2 text-base text-muted-foreground">{FUTURE_EXAMS.map((exam) => <li key={exam}>{exam}</li>)}</ul></div></div></Section>
+    <Section id="quote" eyebrow="Institute plans / Request a Quote" title="Plans Built Around Your Students." alternate><div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]"><div><p className="text-lg text-muted-foreground">Institutional pricing is seat-based. Tell us about your students and examination focus to discuss relevant access, features and test allowances through a quotation.</p><p className="mt-5 text-base text-muted-foreground">Custom-test allowances, activation codes, payment arrangements and GST invoicing are confirmed with the applicable institute plan. No fixed price, minimum seat threshold or subscription period is implied.</p></div><InstituteEnquiryForm intent="quote" {...(attribution ? { attribution } : {})} /></div></Section>
+    <Section id="demo" eyebrow="Request a Demo" title="See What Rank Sarthi Can Do for Your Institute."><div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]"><div><p className="text-lg text-muted-foreground">Explore the assessment workflow with your academic and operations teams.</p><ul className="mt-6 space-y-4">{["Managing students and batches", "Assigning practice tests", "Creating custom tests", "Reviewing student analytics", "Institute branding and printable assessments"].map((item) => <li key={item} className="flex gap-3 text-base"><Check className="mt-1 size-4 shrink-0 text-accent" aria-hidden />{item}</li>)}</ul><p className="mt-6 text-base text-muted-foreground">This is an enquiry, not an automatically confirmed meeting. Arrangements are confirmed separately.</p></div><InstituteEnquiryForm intent="demo" {...(attribution ? { attribution } : {})} /></div></Section>
+    <Section id="faqs" eyebrow="Questions from institutes" title="A Few Details Before You Get Started." alternate><div className="max-w-4xl divide-y divide-border border-y border-border">{faqs.map(([question, answer]) => <details key={question} className="group py-5"><summary className="flex cursor-pointer list-none justify-between gap-4 text-base font-semibold text-primary"><span>{question}</span><ChevronDown className="mt-1 size-4 shrink-0 group-open:rotate-180" aria-hidden /></summary><p className="mt-4 text-base text-muted-foreground">{answer}</p></details>)}</div></Section>
+    <section id="next-step" className="bg-navy-deep py-12 text-primary-foreground md:py-20"><div className="container-page"><h2 className="max-w-3xl font-display text-3xl font-bold leading-snug md:text-4xl">Give Every Batch a Smarter Way to Practise.</h2><div className="mt-6">{actions(true)}</div></div></section>
   </PageFrame>;
 }

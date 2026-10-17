@@ -70,4 +70,11 @@
 - [x] Build validated separate enquiry journeys with protected storage preparation and fail-closed activation
 - [x] Verify four-page screenshots, responsive layouts, redirects, metadata, forms and student regressions
 - [x] Deliver implementation report; do not publish
-- [ ] Activate B2B submissions only after monitored recipient/process verification and separate production approval (blocked on user confirmation)
+- [ ] Activate B2B submissions after Prashant’s integration and monitored recipient/process verification (blocked on developer integration; not a prerequisite to landing-page review)
+
+## Single institutes landing revision — preview only
+- [x] Consolidate twelve approved sections and one direct navigation destination
+- [x] Preserve child/legacy links with one-hop anchors and preview noindex
+- [x] Retain separate validated forms, truthful contact fallback and Prashant handoff
+- [x] Verify responsive sections, redirects, SEO and student regressions
+- [x] Deliver screenshots and report; do not publish
