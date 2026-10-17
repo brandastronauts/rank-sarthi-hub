@@ -2,7 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
-import { instituteRedirect } from "./content/institutes/policy";
+import { instituteRedirectLocation } from "./content/institutes/policy";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -50,9 +50,9 @@ export default {
     // Permanent trailing-slash normalisation (canonicals never end in "/"),
     // replacing the router's temporary 307.
     const url = new URL(request.url);
-    const instituteDestination = instituteRedirect(url.pathname);
+    const instituteDestination = instituteRedirectLocation(url.pathname, url.search);
     if (instituteDestination && (request.method === "GET" || request.method === "HEAD")) {
-      return new Response(null, { status: 301, headers: { location: instituteDestination + url.search } });
+      return new Response(null, { status: 301, headers: { location: instituteDestination } });
     }
     if (url.pathname.length > 1 && url.pathname.endsWith("/") && (request.method === "GET" || request.method === "HEAD")) {
       url.pathname = url.pathname.replace(/\/+$/, "") || "/";

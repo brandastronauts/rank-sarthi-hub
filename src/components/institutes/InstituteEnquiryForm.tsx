@@ -1,12 +1,12 @@
 import { useRef, useState, type FormEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { LockKeyhole, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { INSTITUTE_INTAKE, instituteIntakeReady } from "@/content/institutes/config";
+import { INSTITUTE_INTAKE, instituteIntakeReady } from "@/content/institutes/policy";
 import { INSTITUTE_EXAMS, FUTURE_EXAMS, INSTITUTE_TYPES, instituteEnquirySchema, type InstituteAttribution } from "@/lib/institute-enquiry-schema";
 import { submitInstituteEnquiry } from "@/lib/institute-enquiry.functions";
 import { company } from "@/content/company";
@@ -24,7 +24,7 @@ export function InstituteEnquiryForm({ intent, attribution }: { intent: "quote" 
   async function onSubmit(event: FormEvent) {
     event.preventDefault();
     if (busy.current || status === "sent") return;
-    const result = instituteEnquirySchema.safeParse({ ...values, intent, sourcePage: intent === "quote" ? "/institutes/pricing" : "/institutes/request-demo", ...(attribution ? { attribution } : {}) });
+    const result = instituteEnquirySchema.safeParse({ ...values, intent, sourcePage: "/institutes", ...(attribution ? { attribution } : {}) });
     if (!result.success) {
       const next: Record<string, string> = {};
       for (const issue of result.error.issues) next[String(issue.path[0])] ??= issue.message;
@@ -47,7 +47,7 @@ export function InstituteEnquiryForm({ intent, attribution }: { intent: "quote" 
     ["studentCount", "Approximate number of students", "text", "off", 16],
   ] as const;
   return <form id={`${intent}-form`} onSubmit={onSubmit} noValidate className="mt-7 space-y-6">
-    {!ready && <div role="status" className="flex items-start gap-3 border-l-4 border-gold bg-secondary px-4 py-4 text-sm text-secondary-foreground"><LockKeyhole className="mt-0.5 size-5 shrink-0" aria-hidden /><p>Enquiry submission is not active yet. Requests are not sent or stored from this form.</p></div>}
+    {!ready && <div role="status" className="border-l-4 border-gold bg-secondary px-4 py-4 text-sm text-secondary-foreground"><p>Online enquiries are not connected yet. Please email or call us directly; this form does not send or store requests.</p><div className="mt-3 flex flex-wrap gap-4"><a className="inline-flex items-center gap-2 text-accent underline" href={`mailto:${company.email}?subject=${encodeURIComponent(`Institute ${intent === "quote" ? "quote" : "demo"} enquiry`)}`}><Mail className="size-4" aria-hidden />Email us</a><a className="inline-flex items-center gap-2 text-accent underline" href={`tel:${company.phoneE164}`}><Phone className="size-4" aria-hidden />Call us</a></div></div>}
     <div className="grid gap-5 md:grid-cols-2">{fields.map(([key, text, type, autocomplete, max]) => <div key={key}>
       <label className="mb-2 block text-sm font-semibold text-primary" htmlFor={`${prefix}-${key}`}>{text} <span aria-hidden>*</span></label>
       <Input id={`${prefix}-${key}`} required type={type} autoComplete={autocomplete} inputMode={key === "studentCount" ? "numeric" : undefined} value={values[key]} maxLength={max} onChange={(e) => set(key, e.target.value)} aria-invalid={!!errors[key]} aria-describedby={errors[key] ? `${prefix}-${key}-error` : undefined} className="h-12 text-base md:text-base" />
@@ -63,7 +63,7 @@ export function InstituteEnquiryForm({ intent, attribution }: { intent: "quote" 
     <div className="hidden" aria-hidden><label htmlFor={`${prefix}-website`}>Website</label><input id={`${prefix}-website`} tabIndex={-1} autoComplete="off" value={values.website} maxLength={200} onChange={(e) => set("website", e.target.value)} /></div>
     <div><label className="flex items-start gap-3 text-sm leading-relaxed"><Checkbox id={`${prefix}-consent`} checked={values.consent} onCheckedChange={(checked) => set("consent", checked === true)} className="mt-1 shrink-0" /><span>I have read the <Link to="/privacy-policy" className="text-accent underline underline-offset-4">Privacy Policy</Link> and agree that Rank Sarthi may use these details to respond to my institute enquiry.</span></label>{error("consent")}</div>
     <p className="text-sm text-muted-foreground">Do not include student names, individual results, payment details or other sensitive information in this form.</p>
-    <Button type="submit" variant="destructive" className="h-12 w-full sm:w-auto" disabled={!ready || status === "sending" || status === "sent"}>{label}<ArrowRight aria-hidden /></Button>
+    <Button type="submit" variant="destructive" className="h-12 w-full sm:w-auto" disabled={status === "sending" || status === "sent"}>{label}<ArrowRight aria-hidden /></Button>
     {status === "sent" && <p role="status" className="text-success">Your enquiry has been stored for review. Meeting arrangements and quotation details must be confirmed separately.</p>}
     {["inactive", "server", "spam", "rate_limited"].includes(status) && <p role="alert" className="text-destructive">{status === "inactive" ? "Enquiry submission is not active. Nothing was sent or stored." : status === "rate_limited" ? "Please wait before making another enquiry." : "Your enquiry could not be submitted. Please try again later."}</p>}
     <p className="text-sm text-muted-foreground">Prefer to speak directly? Call <a className="text-accent underline" href={`tel:${company.phoneE164}`}>{company.phoneDisplay}</a> or email <a className="break-all text-accent underline" href={`mailto:${company.email}`}>{company.email}</a>.</p>

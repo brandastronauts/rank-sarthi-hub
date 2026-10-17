@@ -166,16 +166,7 @@ export const navItems: NavItem[] = [
       },
     ],
   },
-  {
-    label: "For institutes",
-    href: "/institutes",
-    simple: [
-      { label: "Overview", href: "/institutes" },
-      { label: "Institute Plans", href: "/institutes/pricing" },
-      { label: "Institute Use Cases", href: "/institutes/case-studies" },
-      { label: "Request a Demo", href: "/institutes/request-demo" },
-    ],
-  },
+  { label: "For Institutes", href: "/institutes" },
   {
     label: "Free resources",
     href: "/resources",

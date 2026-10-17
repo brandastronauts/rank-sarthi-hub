@@ -71,3 +71,10 @@
 - [x] Verify four-page screenshots, responsive layouts, redirects, metadata, forms and student regressions
 - [x] Deliver implementation report; do not publish
 - [ ] Activate B2B submissions only after monitored recipient/process verification and separate production approval (blocked on user confirmation)
+
+## Single institutes landing revision — preview only
+- [ ] Consolidate twelve approved sections and one direct navigation destination
+- [ ] Preserve child/legacy links with one-hop anchors and preview noindex
+- [ ] Retain separate validated forms, truthful contact fallback and Prashant handoff
+- [ ] Verify responsive sections, redirects, SEO and student regressions
+- [ ] Deliver screenshots and report; do not publish
