@@ -43,7 +43,7 @@ export function InstitutePage({ url }: { url: InstitutePath }) {
   const rest = page.blocks.slice(heroEnd);
   const sections: Array<{ title: string; blocks: typeof rest }> = [];
   for (const block of rest) {
-    if (block.type === "heading") sections.push({ title: block.text, blocks: [] });
+    if (block.type === "heading" && block.level !== 3) sections.push({ title: block.text, blocks: [] });
     else sections[sections.length - 1]?.blocks.push(block);
   }
   const renderBlocks = (blocks: typeof rest, faq = false) => {
@@ -56,8 +56,10 @@ export function InstitutePage({ url }: { url: InstitutePath }) {
       return <div className="divide-y divide-border border-y border-border">{entries.map((entry) => <details key={entry.question} className="group py-5"><summary className="flex cursor-pointer list-none items-start justify-between gap-5 text-base font-semibold text-primary"><span>{entry.question}</span><ChevronDown className="mt-1 size-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden /></summary><div className="mt-4 space-y-3 text-base leading-relaxed text-muted-foreground">{entry.answer.map((answer) => <p key={answer}><Inline text={answer} /></p>)}</div></details>)}</div>;
     }
     return <div className="space-y-5">{blocks.map((block, i) => {
+      if (block.type === "omit") return null;
+      if (block.type === "heading") return <h3 key={i} className="pt-3 text-xl font-bold text-primary">{block.text}</h3>;
       if (block.type === "cta") return action(block.text, String(i));
-      if (block.type === "links") return <div key={i} className="flex flex-wrap gap-3">{action("Explore Institute Plans", `${i}-plans`)}{!block.text.includes("Secondary") && action("Request a Demo", `${i}-demo`)}</div>;
+      if (block.type === "links") return <div key={i} className="flex flex-wrap gap-3">{action("Explore Institute Plans", `${i}-plans`)}{block.text.includes("Related links") && <Button asChild variant="outline" className="h-12 w-full sm:w-auto"><Link to="/institutes/case-studies" search={search}>View Institute Use Cases<ArrowRight aria-hidden /></Link></Button>}</div>;
       if (block.type === "form") return <InstituteEnquiryForm key={i} intent={block.text === "quote" ? "quote" : "demo"} {...(attribution ? { attribution } : {})} />;
       if (block.type === "bullet") {
         const match = Object.keys(currentExams).find((e) => block.text.startsWith(`**${e}**`));

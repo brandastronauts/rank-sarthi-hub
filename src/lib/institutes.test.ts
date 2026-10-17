@@ -4,11 +4,7 @@ import { campaignFor } from "@/content/offers/campaign";
 import { instituteEnquirySchema, instituteLeadRow, pickInstituteAttribution } from "./institute-enquiry-schema";
 import { getUrl, sitemapUrls } from "@/content/registry";
 
-vi.mock("@tanstack/react-start", () => ({ createServerFn: () => ({ inputValidator: (validate: (input: unknown) => unknown) => ({ handler: (handler: (args: { data: unknown }) => unknown) => ({ data }: { data: unknown }) => handler({ data: validate(data) }) }) }) }));
-vi.mock("@tanstack/react-start/server", () => ({ getRequest: () => new Request("http://localhost:8080"), getRequestHeader: () => undefined }));
-const adminImport = vi.fn();
-vi.mock("@/integrations/supabase/client.server", () => { adminImport(); return { supabaseAdmin: {} }; });
-import { submitInstituteEnquiry } from "./institute-enquiry.functions";
+import { processInstituteEnquiry } from "./institute-enquiry.server";
 
 const quote = { intent: "quote", fullName: "QA Reviewer", instituteName: "Preview Test Institute", email: "qa@example.com", phone: "+91 90000 00000", studentCount: "0", exams: ["JEE Main"], consent: true, sourcePage: "/institutes/pricing" };
 describe("Approved institutes rules", () => {
@@ -53,8 +49,9 @@ describe("Approved institutes rules", () => {
     expect(instituteIntakeReady(INSTITUTE_INTAKE)).toBe(false);
     for (const missing of ["recipientConfirmed", "receivingProcessVerified", "productionActivationApproved"]) expect(instituteIntakeReady({ recipientConfirmed: true, receivingProcessVerified: true, productionActivationApproved: true, [missing]: false })).toBe(false);
     expect(instituteIntakeReady({ recipientConfirmed: true, receivingProcessVerified: true, productionActivationApproved: true })).toBe(true);
-    expect(await submitInstituteEnquiry({ data: instituteEnquirySchema.parse(quote) })).toEqual({ ok: false, reason: "inactive" });
-    expect(adminImport).not.toHaveBeenCalled();
+    const storage = vi.fn();
+    expect(await processInstituteEnquiry(instituteEnquirySchema.parse(quote), storage)).toEqual({ ok: false, reason: "inactive" });
+    expect(storage).not.toHaveBeenCalled();
   });
   it("stores distinct intent/source and structured qualification without public-read code", () => {
     const row = instituteLeadRow(instituteEnquirySchema.parse(quote), "client-hash");

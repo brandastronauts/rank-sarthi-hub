@@ -24,7 +24,7 @@
         "text": "**Secondary CTA:** Explore Institute Plans"
       },
       {
-        "type": "paragraph",
+        "type": "omit",
         "text": "Compact facts:"
       },
       {
@@ -141,7 +141,7 @@
       {
         "type": "heading",
         "text": "For Coaching Institutes",
-        "level": 2
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -150,7 +150,7 @@
       {
         "type": "heading",
         "text": "For Schools",
-        "level": 2
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -255,7 +255,7 @@
       {
         "type": "heading",
         "text": "Working in a Dedicated Institute Workspace",
-        "level": 2
+        "level": 3
       },
       {
         "type": "paragraph",
