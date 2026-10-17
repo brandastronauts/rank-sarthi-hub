@@ -100,7 +100,7 @@ export const mainFaq: InfoPageContent = {
           "type": "paragraph",
           "children": [
             {
-              "text": "The site has dedicated preparation sections for JEE, NEET and NDA."
+              "text": "JEE Main, JEE Advanced, NEET UG and NDA are available now through JEE Rank Up, NEET Rank Up and NDA Rank Up. BITSAT, IISER Aptitude Test and NEST are coming soon and are not yet available to buy."
             }
           ]
         }
@@ -133,13 +133,13 @@ export const mainFaq: InfoPageContent = {
       ]
     },
     {
-      "question": "Is AI Diagnosis live?",
+      "question": "Are the diagnostic and AI feedback live?",
       "answer": [
         {
           "type": "paragraph",
           "children": [
             {
-              "text": "Not yet as a verified end-to-end product. The Preparation Intelligence methodology is explained on the how-it-works page, but the product route remains blocked until it is operational."
+              "text": "Yes. Each RankUp platform offers one free diagnostic test per target exam, and every attempt gets a report with AI-generated written feedback, an accuracy heatmap and recommended next tests. The feedback supports your decisions; it does not guarantee results."
             }
           ]
         }
