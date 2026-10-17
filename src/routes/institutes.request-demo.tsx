@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { InstitutePage } from "@/components/institutes/InstitutePage";
-import { instituteHead } from "@/lib/institute-seo";
-
-export const Route = createFileRoute("/institutes/request-demo")({ head: () => instituteHead("/institutes/request-demo"), component: Demo });
-function Demo() { return <InstitutePage url="/institutes/request-demo" />; }
+import { createFileRoute, redirect } from "@tanstack/react-router";
+export const Route = createFileRoute("/institutes/request-demo")({
+  beforeLoad: ({ location }) => { throw redirect({ href: `/institutes${location.searchStr}#demo`, statusCode: 301 }); },
+  head: () => ({ meta: [{ title: "Institutes — Moved | Rank Sarthi" }, { name: "robots", content: "noindex, follow" }] }),
+});
