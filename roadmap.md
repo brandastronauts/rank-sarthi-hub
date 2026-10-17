@@ -58,8 +58,8 @@
 - [x] Validate compact cards, profile pages, approved facts, route protection and build status — 57 tests and 84 homepage checks passed
 
 ## Institutes final content and migration review — no implementation
-- [ ] Provide one complete final four-page content review, including forms and FAQs
-- [ ] Verify current `/for-institutes` metadata, canonical and relevant internal links; specify one-hop migration mappings and SEO risks
-- [ ] Explain current enquiry storage/notification and list exact monitored-recipient requirements
-- [ ] Confirm campaign suppression scope and all institute link updates without changing website behaviour
-- [ ] Return final review and operational dependencies for written approval; do not develop or publish
+- [x] Provide one complete final four-page content review, including forms and FAQs
+- [x] Verify current `/for-institutes` metadata, canonical and relevant internal links; specify one-hop migration mappings and SEO risks
+- [x] Explain current enquiry storage/notification and list exact monitored-recipient requirements
+- [x] Confirm campaign suppression scope and all institute link updates without changing website behaviour
+- [x] Prepare final review and operational dependencies for written approval; no development or publication
