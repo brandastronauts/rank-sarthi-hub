@@ -175,7 +175,7 @@ export const mainAbout: InfoPageContent = {
           "type": "Hub"
         },
         {
-          "url": "/for-institutes",
+          "url": "/institutes",
           "label": "For institutes",
           "type": "Institutions"
         },
@@ -215,7 +215,7 @@ export const mainAbout: InfoPageContent = {
     },
     {
       "label": "For institutes",
-      "url": "/for-institutes",
+      "url": "/institutes",
       "relation": "related"
     }
   ],

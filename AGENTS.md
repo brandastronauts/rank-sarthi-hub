@@ -21,3 +21,6 @@
 - The browser Supabase auth attacher is not registered in src/start.ts while no server function uses requireSupabaseAuth. Why: it bundled the whole backend client into every page; re-add it with the first protected function.
 - Blog posts that must stay reachable but undiscoverable are listed in src/content/blog/visibility.ts (noindex,follow; excluded from listings, related posts, sitemaps, llms.txt). Why: one rule instead of per-surface filters.
 - Trailing-slash URLs get a permanent 301 in src/server.ts. Why: canonicals never end in "/" and the router's default is a temporary 307.
+- Institute pages share a scoped content renderer and explicit legacy redirect map, with preview records noindex until release gates pass. Why: four approved destinations stay consistent without changing student content or general SEO ownership.
+- B2B quote/demo intake uses a separate validated server function and versioned structured message in the existing protected enquiry store; activation fails closed until operational and deployment approvals pass. Why: no unmonitored sales leads, no public lead access, and no production schema changes during preview review.
+- B2B campaign eligibility imports only the small institute policy module, not page copy. Why: institute copy must not enter every student page's JavaScript bundle.

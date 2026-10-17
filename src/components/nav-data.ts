@@ -170,10 +170,10 @@ export const navItems: NavItem[] = [
     label: "For institutes",
     href: "/institutes",
     simple: [
-      { label: "Overview", href: "/#institutes" },
-      { label: "B2B pricing", href: "/#pricing" },
-      { label: "Case studies", href: "/for-institutes/case-studies" },
-      { label: "Request a demo", href: "/for-institutes/demo" },
+      { label: "Overview", href: "/institutes" },
+      { label: "Institute Plans", href: "/institutes/pricing" },
+      { label: "Institute Use Cases", href: "/institutes/case-studies" },
+      { label: "Request a Demo", href: "/institutes/request-demo" },
     ],
   },
   {
@@ -247,7 +247,7 @@ export const footerGroups: MenuColumn[] = [
       { label: "How it works", href: "/how-it-works" },
       { label: "Preparation Intelligence", href: "/#idea" },
       { label: "For parents", href: "/#parents" },
-      { label: "For institutes", href: "/for-institutes" },
+      { label: "For institutes", href: "/institutes" },
       { label: "FAQ", href: "/faq" },
       { label: "Blog", href: "/blog" },
     ],
