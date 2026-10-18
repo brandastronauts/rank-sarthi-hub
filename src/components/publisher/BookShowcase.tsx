@@ -6,16 +6,16 @@ import type { PlatformData } from "@/content/types";
 
 function BookGrid({ exam }: { exam: BookExam }) {
   return (
-    <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid auto-rows-fr grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
       {booksForExam(exam).map((book: PublisherBook) => (
-        <article key={book.id} className="flex min-w-0 flex-col rounded-lg border border-border bg-card p-5 text-card-foreground transition-shadow hover:shadow-card motion-reduce:transition-none">
+        <article key={book.id} className="flex min-w-0 flex-col rounded-lg border border-border bg-card p-3 text-card-foreground transition-shadow hover:shadow-card motion-reduce:transition-none sm:p-5">
           {book.cover && (
             <div className="mb-5 flex aspect-[4/5] items-center justify-center bg-muted p-3">
               <img src={book.cover.url} width={book.cover.width} height={book.cover.height} alt={`${book.title} by ${book.author} — front cover`} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
             </div>
           )}
           <p className="text-xs font-semibold uppercase text-accent">{exam === "jee" ? "JEE Main & Advanced" : "NEET UG"}</p>
-          <h3 className="mt-3 text-lg leading-snug text-primary">{book.title}</h3>
+          <h3 className="mt-3 text-base leading-snug text-primary sm:text-lg">{book.title}</h3>
           <p className="mt-3 text-sm text-muted-foreground">{book.author}</p>
           <p className="mb-6 mt-1 text-xs text-muted-foreground">{book.edition}</p>
           <Button asChild variant="outline" className="mt-auto w-full">
