@@ -9,6 +9,7 @@ import { absolute, getUrl } from "@/content/registry";
 import { company, mapsDirectionsUrl, mapsEmbedUrl } from "@/content/company";
 import { contactSchema, ENQUIRY_TYPES, VISITOR_TYPES } from "@/lib/contact-schema";
 import { submitEnquiry } from "@/lib/contact.functions";
+import { SocialLinks } from "@/components/SocialLinks";
 
 const URL_PATH = "/contact";
 const TITLE = "Contact Rank Sarthi | Rank Sarthi Next Gen Private Limited";
@@ -282,6 +283,12 @@ function ContactPage() {
           </div>
         </aside>
       </div>
+
+      <section aria-labelledby="social-heading" className="mt-12">
+        <h2 id="social-heading" className="text-2xl font-bold text-primary">Connect With Rank Sarthi</h2>
+        <p className="mt-2 text-muted-foreground">Follow Rank Sarthi for exam preparation insights, study resources, important updates and more.</p>
+        <div className="mt-5"><SocialLinks labelled /></div>
+      </section>
 
       <section aria-labelledby="map-heading" className="mt-12">
         <h2 id="map-heading" className="text-2xl font-bold text-primary">Find Rank Sarthi</h2>
