@@ -80,8 +80,9 @@
 - [x] Deliver screenshots and report; do not publish
 
 ## Shri Balaji Publications integration — preview only
-- [ ] Verify official covers/logo and record image sources and edition evidence
-- [ ] Add subordinate publisher branding to hero, About and footer
-- [ ] Add shared homepage and exam-specific book showcases
-- [ ] Validate tabs, images, SSR, responsive layouts and diagnostic regressions; deliver report
+- [x] Verify official product-page details and record original cover/logo sources and edition evidence
+- [x] Add subordinate text publisher branding to hero, About and footer
+- [x] Add shared homepage and exam-specific text book showcases
+- [x] Validate tabs, SSR, responsive layouts and diagnostic regressions; deliver report
+- [ ] Complete genuine-cover showcase and publisher logo (blocked: all nine original image requests return 403; upload authorised artwork)
 - [ ] Production asset-use approval and deployment approval (blocked on publisher/user confirmation)
