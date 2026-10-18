@@ -78,3 +78,10 @@
 - [x] Retain separate validated forms, truthful contact fallback and Prashant handoff
 - [x] Verify responsive sections, redirects, SEO and student regressions
 - [x] Deliver screenshots and report; do not publish
+
+## Shri Balaji Publications integration — preview only
+- [ ] Verify official covers/logo and record image sources and edition evidence
+- [ ] Add subordinate publisher branding to hero, About and footer
+- [ ] Add shared homepage and exam-specific book showcases
+- [ ] Validate tabs, images, SSR, responsive layouts and diagnostic regressions; deliver report
+- [ ] Production asset-use approval and deployment approval (blocked on publisher/user confirmation)
