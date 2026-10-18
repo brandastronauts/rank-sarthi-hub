@@ -24,4 +24,4 @@
 - Institutes is one scoped landing page with direct navigation and explicit one-hop legacy/child anchor redirects; its preview record stays noindex until release approval. Why: no duplicate institute content or student journey changes.
 - B2B intake uses a validated server function, testable server-only processor and lazy protected storage; structured messages use the existing enquiry table. Activation fails closed until recipient/process verification and deployment approval. Why: no unmonitored leads or production schema changes.
 - B2B campaign eligibility imports only the small institute policy module, not page copy. Why: institute copy must not enter every student page's JavaScript bundle.
-- Publisher recognition and exam books use one catalogue and shared recipe block; missing genuine artwork stays absent. Why: consistent verified titles, editions and destinations without fabricated covers.
+- Publisher recognition uses one shared lockup and the bundled supplied logo; exam books use one catalogue/block and missing covers stay absent. Why: consistent artwork, details and destinations without fabricated covers.

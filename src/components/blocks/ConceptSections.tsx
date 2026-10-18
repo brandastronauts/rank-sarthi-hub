@@ -2,6 +2,7 @@ import { RichText } from "@/components/content/RichText";
 import { TopicLink } from "@/components/blocks/TopicLink";
 import type { TopicLinkScope } from "@/content/topic-links";
 import type { ConceptBlock } from "@/content/types";
+import { PublisherLockup } from "@/components/publisher/PublisherLockup";
 
 /**
  * B35 — Concept sections.
@@ -25,6 +26,7 @@ export function ConceptSections({
   return (
     <section id={id} className="scroll-mt-28">
       <h2 className="text-display-md text-primary">{heading}</h2>
+      {id === "publisher-association" ? <div className="mt-5"><PublisherLockup /></div> : null}
       <div className="mt-6 space-y-10">
         {concepts.map((c) => (
           <article key={c.id} id={c.id} className="scroll-mt-28">
