@@ -10,7 +10,7 @@ const icons = { Facebook, Instagram, LinkedIn: Linkedin, "X (Twitter)": XMark, Y
 export function SocialLinks({ labelled = false, dark = false }: { labelled?: boolean; dark?: boolean }) {
   return (
     <nav aria-label="Rank Sarthi social media">
-      <ul className={labelled ? "flex flex-wrap gap-3" : "flex gap-2"}>
+      <ul className={labelled ? "flex flex-wrap gap-3" : "flex gap-1"}>
         {socialAccounts.map(({ platform, url }) => {
           const Icon = icons[platform];
           return (
