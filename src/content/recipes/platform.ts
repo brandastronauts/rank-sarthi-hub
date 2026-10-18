@@ -35,6 +35,7 @@ export function platformRecipe(platform: PlatformData): PageRecipe {
       { block: "B42", id: "pathway", props, when: !!platform.pathway?.length },
       { block: "B09", id: "depth" },
       { block: "B43", id: "explore", props, when: !!platform.relatedUrls?.length },
+      { block: "B65", id: "books", props, when: platform.slug === "jee" || platform.slug === "neet" },
       // B19 pricing stays out until plans, prices, inclusions, terms and CTA
       // destinations are commercially verified for this platform.
       { block: "B19", id: "trust", when: platform.showPricing === true },

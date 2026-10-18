@@ -4,6 +4,7 @@ import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 import heroStudent from "@/assets/hero-student.jpg";
+import { PublisherLockup } from "@/components/publisher/PublisherLockup";
 
 const reassurance = ["JEE Main", "NEET UG", "NDA"];
 
@@ -40,6 +41,8 @@ export function Hero() {
             <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
               Find out where you&rsquo;re losing marks and what to work on next—for JEE, NEET or NDA.
             </p>
+
+            <div className="mt-4"><PublisherLockup dark /></div>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <DiagnosticLauncher

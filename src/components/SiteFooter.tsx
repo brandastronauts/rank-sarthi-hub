@@ -3,6 +3,7 @@ import { destinations } from "@/content/destinations";
 import { footerGroups } from "@/components/nav-data";
 import { site } from "@/content/site";
 import { BrandLogo } from "@/components/BrandLogo";
+import { PublisherLockup } from "@/components/publisher/PublisherLockup";
 
 /**
  * The footer communicates the full information architecture. Visibility comes
@@ -21,6 +22,7 @@ export function SiteFooter() {
           <div>
             <BrandLogo height={64} mobileHeight={54} surface="dark" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/80">{BRAND_BLURB}</p>
+            <div className="mt-5"><PublisherLockup dark /></div>
           </div>
 
           {footerGroups.map((group) => (

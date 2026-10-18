@@ -56,6 +56,7 @@ import { AcademicReviewByline } from "@/components/academic/AcademicReviewByline
 import { FacultyAttribution } from "@/components/academic/FacultyAttribution";
 import { ResourcePathways } from "@/components/acquisition/ResourcePathways";
 import { HomePricingTabs } from "@/components/home/HomePricingTabs";
+import { BookShowcase } from "@/components/publisher/BookShowcase";
 
 
 /* Platform template blocks (B38–B43) */
@@ -109,6 +110,7 @@ export function ensureBlocksRegistered() {
     B62: MarksBreakdown,
     B63: AnalysisProof,
     B64: HomePricingTabs,
+    B65: BookShowcase,
 
     B26: SyllabusExplorer,
     B27: TrendTable,

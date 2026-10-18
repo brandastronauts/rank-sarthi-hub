@@ -128,6 +128,36 @@ export const mainAbout: InfoPageContent = {
     },
     {
       "kind": "prose",
+      "id": "publisher-association",
+      "heading": "Powered by Shri Balaji Publications",
+      "concepts": [
+        {
+          "id": "publisher-intro",
+          "title": "Books and diagnostic-led preparation",
+          "body": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "Rank Sarthi is powered by Shri Balaji Publications. Academic books and diagnostic-led preparation serve complementary roles: books support conceptual learning and problem-solving practice, while Rank Sarthi helps students understand their attempt patterns and decide what deserves attention next."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "Visit Shri Balaji Publications",
+                  "href": "https://www.shribalajibooks.com/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prose",
       "id": "product-methodology",
       "heading": "Product methodology",
       "concepts": [
