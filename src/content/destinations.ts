@@ -1,6 +1,6 @@
+import { buildRankUpHandoff, type DiagnosticExam } from "@/lib/acquisition";
 import { featureFlags } from "./flags";
 import { getUrl, isIndexable } from "./registry";
-import { platformOrigins } from "./site";
 
 /**
  * CTA destination contract.
@@ -10,7 +10,7 @@ import { platformOrigins } from "./site";
  */
 export type Destination =
   | { kind: "live"; href: string; label: string }
-  | { kind: "external"; href: string; label: string }
+  | { kind: "external"; href: string; label: string; handoff?: { exam: DiagnosticExam; cta: string } }
   | { kind: "disabled"; label: string; reason: string }
   | { kind: "hidden" };
 
@@ -30,9 +30,19 @@ export const destinations = {
    * platform-scoped CTA resolves straight to that sub-portal's domain. A
    * generic, platform-agnostic CTA (site header, homepage) instead resolves
    * to the in-site chooser page, where the visitor picks their exam.
+   *
+   * The platform href is the signup handoff; CtaLink rebuilds it at click
+   * time with the real entry path and inbound attribution.
    */
-  diagnostic: (label = "Take a diagnostic", platform?: "jee" | "neet" | "nda"): Destination =>
-    platform ? { kind: "external", href: platformOrigins[platform], label } : internal(label, "/diagnostic"),
+  diagnostic: (label = "Take a diagnostic", platform?: DiagnosticExam): Destination =>
+    platform
+      ? {
+          kind: "external",
+          href: buildRankUpHandoff({ exam: platform, entryPath: `/${platform}`, cta: "section" }),
+          label,
+          handoff: { exam: platform, cta: "section" },
+        }
+      : internal(label, "/diagnostic"),
 
   /** Any action that is deliberately visible but not yet available. */
   notYet: (label: string, reason: string): Destination => ({ kind: "disabled", label, reason }),

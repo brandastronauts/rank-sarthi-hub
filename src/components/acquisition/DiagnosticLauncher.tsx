@@ -9,30 +9,58 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { buildRankUpHandoff, type DiagnosticExam } from "@/lib/acquisition";
+import {
+  buildRankUpHandoff,
+  RANKUP_PATHS,
+  type DiagnosticExam,
+  type RankUpIntent,
+} from "@/lib/acquisition";
 import { emitAcquisitionEvent } from "@/lib/acquisition-analytics";
 
 const exams = [
-  { id: "jee", label: "JEE Main", detail: "Continue to JeeRankUp", icon: GraduationCap, accent: "text-jee" },
-  { id: "neet", label: "NEET UG", detail: "Continue to NeetRankUp", icon: Stethoscope, accent: "text-neet" },
-  { id: "nda", label: "NDA", detail: "Continue to NDARankUp", icon: Shield, accent: "text-nda" },
+  { id: "jee", label: "JEE Main", product: "JeeRankUp", icon: GraduationCap, accent: "text-jee" },
+  { id: "neet", label: "NEET UG", product: "NeetRankUp", icon: Stethoscope, accent: "text-neet" },
+  { id: "nda", label: "NDA", product: "NDARankUp", icon: Shield, accent: "text-nda" },
 ] as const;
+
+const copy: Record<RankUpIntent, { title: string; description: string; detail: string; footnote: string }> = {
+  start: {
+    title: "Which exam are you preparing for?",
+    description: "Choose your exam to sign up on its RankUp site and take the free diagnostic.",
+    detail: "Sign up on",
+    footnote: "You will continue on the selected RankUp product. No account is created on this page.",
+  },
+  login: {
+    title: "Log in to your RankUp account",
+    description: "Each exam has its own RankUp site. Choose the one you signed up on.",
+    detail: "Log in to",
+    footnote: "You will log in on the selected RankUp product. Rank Sarthi does not hold your account.",
+  },
+};
 
 export function DiagnosticLauncher({
   ctaLocation,
   className,
-  label = "Start My Free Diagnostic",
+  label,
+  intent = "start",
+  showArrow = intent === "start",
 }: {
   ctaLocation: string;
   className?: string;
   label?: string;
+  /** "start" lands on the RankUp signup page, "login" on its login page. */
+  intent?: RankUpIntent;
+  showArrow?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const text = copy[intent];
+  const path = RANKUP_PATHS[intent];
 
   const openChooser = () => {
     emitAcquisitionEvent("diagnostic_cta_click", {
       entry_path: window.location.pathname,
       cta: ctaLocation,
+      intent,
     });
     setOpen(true);
   };
@@ -42,8 +70,9 @@ export function DiagnosticLauncher({
     emitAcquisitionEvent("exam_chooser_view", {
       entry_path: window.location.pathname,
       cta: ctaLocation,
+      intent,
     });
-  }, [ctaLocation, open]);
+  }, [ctaLocation, intent, open]);
 
   const handoff = (exam: DiagnosticExam) => {
     const href = buildRankUpHandoff({
@@ -51,12 +80,14 @@ export function DiagnosticLauncher({
       search: window.location.search,
       entryPath: window.location.pathname,
       cta: ctaLocation,
+      path,
     });
     const destinationOrigin = new URL(href).origin;
     const properties = {
       exam,
       entry_path: window.location.pathname,
       cta: ctaLocation,
+      intent,
       destination_origin: destinationOrigin,
     };
     emitAcquisitionEvent("exam_selected", properties);
@@ -67,12 +98,13 @@ export function DiagnosticLauncher({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <Button type="button" onClick={openChooser} className={className}>
-        {label} <ArrowRight aria-hidden="true" />
+        {label ?? (intent === "login" ? "Log in" : "Start My Free Diagnostic")}
+        {showArrow && <ArrowRight aria-hidden="true" />}
       </Button>
       <DialogContent className="w-[calc(100%-2rem)] max-w-xl rounded-lg border-border p-5 sm:p-7">
         <DialogHeader>
-          <DialogTitle className="pr-8 text-xl text-primary sm:text-2xl">Which exam are you preparing for?</DialogTitle>
-          <DialogDescription>Choose your exam to continue to its dedicated RankUp diagnostic.</DialogDescription>
+          <DialogTitle className="pr-8 text-xl text-primary sm:text-2xl">{text.title}</DialogTitle>
+          <DialogDescription>{text.description}</DialogDescription>
         </DialogHeader>
         <div className="mt-2 grid gap-3">
           {exams.map((exam) => {
@@ -80,7 +112,7 @@ export function DiagnosticLauncher({
             return (
               <a
                 key={exam.id}
-                href={buildRankUpHandoff({ exam: exam.id, entryPath: "/", cta: ctaLocation })}
+                href={buildRankUpHandoff({ exam: exam.id, entryPath: "/", cta: ctaLocation, path })}
                 onClick={(event) => {
                   event.preventDefault();
                   handoff(exam.id);
@@ -93,16 +125,16 @@ export function DiagnosticLauncher({
                 <Icon className={`size-5 shrink-0 ${exam.accent}`} aria-hidden="true" />
                 <span className="min-w-0">
                   <span className="block font-bold text-primary">{exam.label}</span>
-                  <span className="block text-xs font-normal text-muted-foreground">{exam.detail}</span>
+                  <span className="block text-xs font-normal text-muted-foreground">
+                    {text.detail} {exam.product}
+                  </span>
                 </span>
                 <ArrowRight className="size-4 shrink-0 text-accent" aria-hidden="true" />
               </a>
             );
           })}
         </div>
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          You will continue on the selected RankUp product. No account is created on this page.
-        </p>
+        <p className="text-xs leading-relaxed text-muted-foreground">{text.footnote}</p>
       </DialogContent>
     </Dialog>
   );

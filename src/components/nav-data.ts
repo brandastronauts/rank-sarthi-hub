@@ -6,8 +6,9 @@
  * destination availability (see src/content/destinations.ts) — and it does
  * not decide indexation, which lives on the URL record.
  *
- * A planned route can therefore be visible here, non-clickable in the UI,
- * and absent from the sitemap at the same time.
+ * The header menu shows only links whose page is built (see SiteHeader), so
+ * a planned route listed here stays out of the menu until it ships, with no
+ * edit needed when it does. The footer still renders it non-clickable.
  */
 
 export type NavLink = {
@@ -42,7 +43,7 @@ export const navItems: NavItem[] = [
           { label: "JEE Main", href: "/jee/jee-main" },
           { label: "JEE Advanced", href: "/jee/jee-advanced" },
           { label: "How it works", href: "/how-it-works" },
-          { label: "Pricing", href: "/neet/pricing" },
+          { label: "Offers & coupons", href: "/offers" },
         ],
       },
       {
@@ -86,7 +87,7 @@ export const navItems: NavItem[] = [
           { label: "NEET exam", href: "/neet/neet-exam" },
           { label: "NCERT mapping", href: "/neet/ncert-mapping" },
           { label: "How it works", href: "/how-it-works" },
-          { label: "Pricing", href: "/#pricing" },
+          { label: "Pricing", href: "/neet/pricing" },
         ],
       },
       {
@@ -132,7 +133,7 @@ export const navItems: NavItem[] = [
           { label: "NDA exam", href: "/nda" },
           { label: "Selection process", href: "/nda/selection-process" },
           { label: "Eligibility", href: "/nda/eligibility" },
-          { label: "Pricing", href: "/#pricing" },
+          { label: "Offers & coupons", href: "/offers" },
         ],
       },
       {

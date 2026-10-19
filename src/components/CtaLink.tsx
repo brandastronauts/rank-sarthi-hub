@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { isLinkable, relFor, type Destination } from "@/content/destinations";
+import { buildRankUpHandoff } from "@/lib/acquisition";
+import { emitAcquisitionEvent } from "@/lib/acquisition-analytics";
 
 /**
  * Single CTA contract for the whole site.
@@ -40,6 +42,31 @@ export function CtaLink({
   if (d.href.includes("#")) {
     return (
       <a href={d.href} className={className}>
+        {content}
+      </a>
+    );
+  }
+
+  if (d.kind === "external" && d.handoff) {
+    const { exam, cta } = d.handoff;
+    // Same tab, like the exam chooser; the href is rebuilt before the browser
+    // follows it so the entry path and inbound attribution are real.
+    return (
+      <a
+        href={d.href}
+        className={className}
+        onClick={(event) => {
+          const entryPath = window.location.pathname;
+          event.currentTarget.href = buildRankUpHandoff({ exam, search: window.location.search, entryPath, cta });
+          emitAcquisitionEvent("rankup_handoff", {
+            exam,
+            entry_path: entryPath,
+            cta,
+            intent: "start",
+            destination_origin: new URL(d.href).origin,
+          });
+        }}
+      >
         {content}
       </a>
     );

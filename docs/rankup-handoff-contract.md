@@ -8,13 +8,13 @@ Audience: RankUp technical team. Status: frozen (change only with an approved bu
 - Rank Sarthi has no signup, login, diagnostic engine, result, dashboard, checkout or payment.
 
 ## Destinations
-| Exam | URL |
-|------|-----|
-| JEE  | https://jeerankup.com/ |
-| NEET | https://neetrankup.com/ |
-| NDA  | https://ndarankup.com/ |
+| Exam | Start / sign up | Log in |
+|------|-----------------|--------|
+| JEE  | https://jeerankup.com/signup | https://jeerankup.com/login |
+| NEET | https://neetrankup.com/signup | https://neetrankup.com/login |
+| NDA  | https://ndarankup.com/signup | https://ndarankup.com/login |
 
-All diagnostic buttons use one exam chooser and one helper (`buildRankUpHandoff`), so links cannot drift.
+Handoffs never land on a RankUp homepage. Every "start" button (diagnostic CTAs, exam-page product buttons) goes to `/signup`; the "Log in" button opens the same exam chooser and goes to `/login`. All of them use one helper (`buildRankUpHandoff`, paths in `RANKUP_PATHS`), so links cannot drift.
 
 ## Incoming marketing fields (preserved exactly, never overwritten)
 `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `utm_id`, and click IDs `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`. Every other inbound parameter is dropped.
@@ -26,6 +26,17 @@ All diagnostic buttons use one exam chooser and one helper (`buildRankUpHandoff`
 | `rs_exam` | `jee` \| `neet` \| `nda` |
 | `rs_entry_path` | Rank Sarthi page path where the click happened (no query/hash), e.g. `/`, `/jee` |
 | `rs_cta` | `header` \| `hero` \| `sticky` \| `section` \| `final` \| `pricing` \| `offer` |
+
+## Rank Sarthi utm fields (added only when the visit has no `utm_source`)
+RankUp's sites record attribution from `utm_*` only, so a visitor who reached Rank Sarthi without a campaign of their own is credited to Rank Sarthi:
+
+| Field | Value |
+|-------|-------|
+| `utm_source` | `ranksarthi` |
+| `utm_medium` | the `rs_cta` value: where on the page the button was |
+| `utm_campaign` | the entry path as a slug: `home` for `/`, `jee-physics` for `/jee/physics` |
+
+If the visit already carries a `utm_source` (an ad, a coupon link), none of these are added and the inbound campaign stays exactly as it arrived.
 
 ## Coupon redeem links (`/offers`)
 The offers page lists each platform's public coupons (see `docs/public-coupons.md`). Its "Apply" button uses the same helper with `rs_cta=offer`, sent to the platform's `/redeem` path:
@@ -46,17 +57,17 @@ Handoff URLs never contain name, email, mobile, password, date of birth, parent 
 Visitor arrives from Google, clicks the hero button on `/jee`, picks JEE:
 
 ```
-https://jeerankup.com/?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero
+https://jeerankup.com/signup?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero
 ```
 
 Direct visitor, homepage sticky bar, NEET:
 
 ```
-https://neetrankup.com/?rs_source=ranksarthi&rs_exam=neet&rs_entry_path=%2F&rs_cta=sticky
+https://neetrankup.com/signup?utm_source=ranksarthi&utm_medium=sticky&utm_campaign=home&rs_source=ranksarthi&rs_exam=neet&rs_entry_path=%2F&rs_cta=sticky
 ```
 
 ## Event ownership
-- **Rank Sarthi emits** (to `dataLayer`/analytics only where configured): `diagnostic_cta_click`, `exam_chooser_view`, `exam_selected`, `rankup_handoff`.
+- **Rank Sarthi emits** (to `dataLayer`/analytics only where configured): `diagnostic_cta_click`, `exam_chooser_view`, `exam_selected`, `rankup_handoff`, each with `intent` = `start` | `login`.
 - **RankUp owns:** Rank Sarthi arrival, signup completed, diagnostic started/completed, result viewed, plan viewed, purchase completed. Rank Sarthi does not track these.
 
 ## RankUp dependencies (external)

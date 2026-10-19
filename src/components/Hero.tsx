@@ -1,7 +1,5 @@
 import { Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { CtaLink } from "@/components/CtaLink";
-import { destinations } from "@/content/destinations";
 import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 import heroStudent from "@/assets/hero-student.jpg";
 import { PublisherLockup } from "@/components/publisher/PublisherLockup";
@@ -48,10 +46,6 @@ export function Hero() {
               <DiagnosticLauncher
                 ctaLocation="hero"
                 className="min-h-12 bg-accent px-7 font-bold text-accent-foreground shadow-elevated hover:bg-red-hover"
-              />
-              <CtaLink
-                d={destinations.page("Explore Free Resources", "/resources")}
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/40 bg-navy-deep/25 px-7 text-sm font-bold backdrop-blur-sm hover:bg-white/10"
               />
             </div>
 

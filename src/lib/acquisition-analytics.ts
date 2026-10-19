@@ -1,4 +1,4 @@
-import type { DiagnosticExam } from "./acquisition";
+import type { DiagnosticExam, RankUpIntent } from "./acquisition";
 
 export type AcquisitionEvent =
   | "homepage_view"
@@ -11,6 +11,7 @@ export type AcquisitionProperties = {
   exam?: DiagnosticExam;
   entry_path?: string;
   cta?: string;
+  intent?: RankUpIntent;
   destination_origin?: string;
 };
 

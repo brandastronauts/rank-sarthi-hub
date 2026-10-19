@@ -27,6 +27,10 @@ const CTA_ALIASES: Record<string, RsCta> = {
   diagnostic_page: "section",
 };
 
+/** RankUp pages a handoff lands on; the same paths exist on all three sites. */
+export const RANKUP_PATHS = { start: "/signup", login: "/login" } as const;
+export type RankUpIntent = keyof typeof RANKUP_PATHS;
+
 export function normaliseCta(cta: string): RsCta {
   if ((RS_CTA_VALUES as readonly string[]).includes(cta)) return cta as RsCta;
   return CTA_ALIASES[cta] ?? "section";
@@ -37,14 +41,14 @@ export function buildRankUpHandoff({
   search = "",
   entryPath,
   cta,
-  path = "/",
+  path = RANKUP_PATHS.start,
   params,
 }: {
   exam: DiagnosticExam;
   search?: string;
   entryPath: string;
   cta: string;
-  /** Path on the RankUp origin, e.g. "/redeem" for coupon links. */
+  /** Path on the RankUp origin: signup (default), login, or "/redeem" for coupon links. */
   path?: string;
   /** Fields the RankUp destination itself defines (coupon links); never overwritten. */
   params?: URLSearchParams;
@@ -64,14 +68,31 @@ export function buildRankUpHandoff({
       destination.searchParams.set(key, value);
   }
 
+  const entry = normaliseEntryPath(entryPath);
+  const rsCta = normaliseCta(cta);
+
+  // RankUp records attribution from utm_* only. A visit that arrived without
+  // its own campaign source is credited to Rank Sarthi, by button and page;
+  // an inbound campaign (an ad, a coupon link) is never mixed with ours.
+  if (!destination.searchParams.has("utm_source")) {
+    destination.searchParams.set("utm_source", "ranksarthi");
+    if (!destination.searchParams.has("utm_medium")) destination.searchParams.set("utm_medium", rsCta);
+    if (!destination.searchParams.has("utm_campaign")) destination.searchParams.set("utm_campaign", campaignFor(entry));
+  }
+
   destination.searchParams.set("rs_source", "ranksarthi");
   destination.searchParams.set("rs_exam", exam);
-  destination.searchParams.set("rs_entry_path", normaliseEntryPath(entryPath));
-  destination.searchParams.set("rs_cta", normaliseCta(cta));
+  destination.searchParams.set("rs_entry_path", entry);
+  destination.searchParams.set("rs_cta", rsCta);
   return destination.toString();
 }
 
 function normaliseEntryPath(path: string): string {
   if (!path.startsWith("/") || path.startsWith("//")) return "/";
   return path.split("?")[0]?.split("#")[0] || "/";
+}
+
+/** "/" → "home", "/jee/physics" → "jee-physics": readable in RankUp's reports. */
+function campaignFor(entryPath: string): string {
+  return entryPath.replace(/^\/+|\/+$/g, "").replace(/\//g, "-") || "home";
 }

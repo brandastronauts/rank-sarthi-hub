@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildRankUpHandoff } from "./acquisition";
+import { buildRankUpHandoff, RANKUP_PATHS } from "./acquisition";
 
 describe("RankUp diagnostic handoff", () => {
   it("preserves inbound campaign attribution and adds separate Rank Sarthi fields", () => {
@@ -71,7 +71,42 @@ describe("RankUp diagnostic handoff", () => {
 
   it("keeps Google UTMs intact alongside Rank Sarthi fields", () => {
     const url = buildRankUpHandoff({ exam: "jee", search: "?utm_source=google&utm_campaign=jee_search", entryPath: "/jee", cta: "hero" });
-    expect(url).toBe("https://jeerankup.com/?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero");
+    expect(url).toBe("https://jeerankup.com/signup?utm_source=google&utm_campaign=jee_search&rs_source=ranksarthi&rs_exam=jee&rs_entry_path=%2Fjee&rs_cta=hero");
+  });
+
+  it("credits a direct visit to Rank Sarthi in utm fields, by button and page", () => {
+    const url = new URL(buildRankUpHandoff({ exam: "neet", entryPath: "/neet/cutoff", cta: "mobile_sticky" }));
+    expect(url.searchParams.get("utm_source")).toBe("ranksarthi");
+    expect(url.searchParams.get("utm_medium")).toBe("sticky");
+    expect(url.searchParams.get("utm_campaign")).toBe("neet-cutoff");
+
+    const home = new URL(buildRankUpHandoff({ exam: "jee", entryPath: "/", cta: "hero" }));
+    expect(home.searchParams.get("utm_campaign")).toBe("home");
+  });
+
+  it("never mixes Rank Sarthi utm fields into an inbound campaign", () => {
+    const url = new URL(buildRankUpHandoff({ exam: "jee", search: "?utm_source=google&gclid=abc", entryPath: "/jee", cta: "hero" }));
+    expect(url.searchParams.get("utm_source")).toBe("google");
+    expect(url.searchParams.has("utm_medium")).toBe(false);
+    expect(url.searchParams.has("utm_campaign")).toBe(false);
+
+    const coupon = new URL(buildRankUpHandoff({
+      exam: "jee",
+      entryPath: "/offers",
+      cta: "offer",
+      path: "/redeem",
+      params: new URLSearchParams("coupon=FIRSTUSER&utm_source=ranksarthi&utm_medium=coupon&utm_campaign=FIRSTUSER"),
+    }));
+    expect(coupon.searchParams.get("utm_medium")).toBe("coupon");
+    expect(coupon.searchParams.get("utm_campaign")).toBe("FIRSTUSER");
+  });
+
+  it("lands start links on signup and log-in links on login, never the RankUp homepage", () => {
+    const path = (p?: string) =>
+      new URL(buildRankUpHandoff({ exam: "nda", entryPath: "/", cta: "header", ...(p ? { path: p } : {}) })).pathname;
+    expect(path()).toBe(RANKUP_PATHS.start);
+    expect(path(RANKUP_PATHS.start)).toBe("/signup");
+    expect(path(RANKUP_PATHS.login)).toBe("/login");
   });
 });
 

@@ -17,6 +17,9 @@ export function OfferPopup({ campaign }: { campaign: PopupCampaign }) {
     if (sessionStorage.getItem(campaign.sessionKey)) return;
 
     const timer = window.setTimeout(() => {
+      // Never stack on the exam chooser or the open mobile menu; the session
+      // stays unmarked so the popup can show on a later page instead.
+      if (document.querySelector('[role="dialog"][data-state="open"], [data-mobile-menu][aria-hidden="false"]')) return;
       sessionStorage.setItem(campaign.sessionKey, "shown");
       setOpen(true);
     }, campaign.delayMs);
