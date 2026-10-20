@@ -2,6 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { CtaLink } from "@/components/CtaLink";
 import { destinations } from "@/content/destinations";
 import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
+import { PRIMARY_CTA_LABEL } from "@/lib/acquisition";
 
 /** B24 — Closing conversion band. */
 export function FinalCta({
