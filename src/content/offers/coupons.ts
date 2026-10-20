@@ -10,8 +10,10 @@ import { platformOrigins } from "@/content/site";
  * points at the platform's own origin.
  */
 
-export const COUPON_PLATFORMS = ["jee", "neet", "nda"] as const;
-export type CouponPlatform = (typeof COUPON_PLATFORMS)[number];
+export const ALL_COUPON_PLATFORMS = ["jee", "neet", "nda"] as const;
+export type CouponPlatform = (typeof ALL_COUPON_PLATFORMS)[number];
+/** Platforms whose coupons are listed; NDARankUp onboarding is temporarily withheld. */
+export const COUPON_PLATFORMS: readonly CouponPlatform[] = ["jee", "neet"];
 
 export const couponApiUrls: Record<CouponPlatform, string> = {
   jee: "https://api.jeerankup.com/api/v1/public/coupons",
