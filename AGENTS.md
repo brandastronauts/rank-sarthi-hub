@@ -26,3 +26,4 @@
 - B2B campaign eligibility imports only the small institute policy module, not page copy. Why: institute copy must not enter every student page's JavaScript bundle.
 - Publisher uses a shared lockup/bundled logo and one book catalogue/block; missing covers stay absent. Why: consistent genuine artwork and details.
 - Social links use one account list and shared renderer. Why: footer and Contact destinations stay consistent.
+- Student onboarding is limited to ONBOARDING_EXAMS in src/lib/acquisition.ts; the primary CTA hands off directly on exam pages, opens the chooser on general pages, and sends NDA pages to NDA resources. Why: NDARankUp onboarding is temporarily withheld without touching NDA content.
