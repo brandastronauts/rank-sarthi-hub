@@ -6,7 +6,7 @@ import { buildHead } from "@/lib/seo";
 
 const title = "Take a Diagnostic | Rank Sarthi";
 const description =
-  "Choose JEE, NEET or NDA to continue to that exam's dedicated Rank Sarthi diagnostic.";
+  "Choose JEE or NEET to continue to Rank Up and start improving your score. Explore free NDA preparation resources on Rank Sarthi.";
 
 export const Route = createFileRoute("/diagnostic")({
   head: () =>
