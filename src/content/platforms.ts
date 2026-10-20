@@ -23,7 +23,6 @@ export const platforms: Record<string, PlatformData> = {
       chips: ["Official-source checked", "Written exam plus SSB pathway", "No invented topic weightage"],
       primary: { label: "See what to study first", href: "#positioning" },
       secondary: { label: "View the official exam snapshot", href: "#snapshot" },
-      productCtaLabel: "Analyse your next NDA mock",
     },
     intro: [
       {
