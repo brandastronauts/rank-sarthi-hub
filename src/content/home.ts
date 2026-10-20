@@ -23,15 +23,15 @@ export const homeFaqs = [
   },
   {
     q: "Does Rank Sarthi support JEE, NEET and NDA?",
-    a: "Yes — through JeeRankUp, NeetRankUp and NDARankUp. All three share one diagnostic engine, with exam-specific analysis for each pattern.",
+    a: "JEE and NEET aspirants can sign up on JeeRankUp and NeetRankUp, each with exam-specific diagnostic analysis. NDA educational resources remain free on Rank Sarthi; NDARankUp signup is not currently offered.",
   },
   {
     q: "What can parents see?",
     a: "Parents get a plain-language view of preparation: which areas are strong, which need attention, whether accuracy is trending up and what the current priority is. It is visibility, not surveillance.",
   },
   {
-    q: "How does NDARankUp work?",
-    a: "NDARankUp analyses Mathematics and GAT performance with attention to speed, accuracy and attempt strategy, then highlights the part of preparation that deserves attention next.",
+    q: "What NDA resources are available on Rank Sarthi?",
+    a: "Rank Sarthi offers free NDA resources: the Mathematics and GAT syllabus, previous-year papers, eligibility, exam dates and selection-process guides, and articles on the written exam and SSB. NDARankUp signup is not currently offered.",
   },
   {
     q: "Can coaching institutes use Rank Sarthi?",
