@@ -190,11 +190,11 @@ export function ExamTracks() {
 
               <div className="mt-9 flex flex-wrap gap-3">
                 <CtaLink
-                  d={destinations.nav("Explore NDARankUp", "/nda")}
+                  d={destinations.nav("Explore NDA", "/nda")}
                   className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-bold text-accent-foreground"
                 >
                   <span className="inline-flex items-center gap-2">
-                    Explore NDARankUp <ArrowRight className="size-4" aria-hidden="true" />
+                    Explore NDA <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </CtaLink>
                 <CtaLink

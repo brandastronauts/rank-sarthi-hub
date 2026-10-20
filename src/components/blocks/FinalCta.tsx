@@ -11,7 +11,7 @@ export function FinalCta({
   body = "One diagnostic can show you where your preparation deserves attention next.",
   secondaryHref = "#product",
   secondaryLabel = "See how it works",
-  footnote = "JeeRankUp • NeetRankUp • NDARankUp",
+  footnote = "JeeRankUp • NeetRankUp",
   platform,
 }: {
   id?: string;
@@ -35,7 +35,7 @@ export function FinalCta({
           <div className="mt-7 flex flex-wrap justify-center gap-3 sm:mt-10">
             {platform ? (
               <CtaLink
-                d={destinations.diagnostic("Take your first diagnostic", platform)}
+                d={destinations.diagnostic(PRIMARY_CTA_LABEL, platform)}
                 className="btn-press inline-flex items-center gap-2 rounded-md bg-accent px-8 py-4 text-sm font-bold text-accent-foreground shadow-elevated"
               />
             ) : (

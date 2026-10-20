@@ -53,11 +53,11 @@ export function PlatformMasthead({ id = "top", platform }: { id?: string; platfo
                 </CtaLink>
               ) : (
                 <CtaLink
-                  d={destinations.diagnostic(`Take an ${wordmark} diagnostic`, platform.slug)}
+                  d={primaryCta}
                   className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
                 >
                   <span className="inline-flex items-center gap-2">
-                    Take an {wordmark} diagnostic <ArrowRight className="size-4" aria-hidden="true" />
+                    {"label" in primaryCta ? primaryCta.label : null} <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </CtaLink>
               )}
