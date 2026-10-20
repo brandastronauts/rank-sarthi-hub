@@ -1,4 +1,4 @@
-import { buildRankUpHandoff, type DiagnosticExam } from "@/lib/acquisition";
+import { buildRankUpHandoff, isOnboardingOpen, NDA_RESOURCES_PATH, type DiagnosticExam } from "@/lib/acquisition";
 import { featureFlags } from "./flags";
 import { getUrl, isIndexable } from "./registry";
 
@@ -34,15 +34,17 @@ export const destinations = {
    * The platform href is the signup handoff; CtaLink rebuilds it at click
    * time with the real entry path and inbound attribution.
    */
-  diagnostic: (label = "Take a diagnostic", platform?: DiagnosticExam): Destination =>
-    platform
-      ? {
-          kind: "external",
-          href: buildRankUpHandoff({ exam: platform, entryPath: `/${platform}`, cta: "section" }),
-          label,
-          handoff: { exam: platform, cta: "section" },
-        }
-      : internal(label, "/diagnostic"),
+  diagnostic: (label = "Take a diagnostic", platform?: DiagnosticExam): Destination => {
+    if (!platform) return internal(label, "/diagnostic");
+    // NDARankUp onboarding is withheld: NDA CTAs point at NDA resources instead.
+    if (!isOnboardingOpen(platform)) return internal("Explore NDA resources", NDA_RESOURCES_PATH);
+    return {
+      kind: "external",
+      href: buildRankUpHandoff({ exam: platform, entryPath: `/${platform}`, cta: "section" }),
+      label,
+      handoff: { exam: platform, cta: "section" },
+    };
+  },
 
   /** Any action that is deliberately visible but not yet available. */
   notYet: (label: string, reason: string): Destination => ({ kind: "disabled", label, reason }),

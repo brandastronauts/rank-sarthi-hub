@@ -3,7 +3,7 @@
 Audience: RankUp technical team. Status: frozen (change only with an approved business requirement).
 
 ## Ownership boundary
-- **Rank Sarthi owns:** Discovery → Trust → "Start My Free Diagnostic" → Exam selection → Attributed RankUp handoff.
+- **Rank Sarthi owns:** Discovery → Trust → "Rank Up My Score with Sarthi" → Exam selection → Attributed RankUp handoff.
 - **RankUp owns:** Signup / OTP → Student details → Diagnostic → Result → Dashboard → Plans → Payment.
 - Rank Sarthi has no signup, login, diagnostic engine, result, dashboard, checkout or payment.
 
@@ -12,7 +12,7 @@ Audience: RankUp technical team. Status: frozen (change only with an approved bu
 |------|-----------------|--------|
 | JEE  | https://jeerankup.com/signup | https://jeerankup.com/login |
 | NEET | https://neetrankup.com/signup | https://neetrankup.com/login |
-| NDA  | https://ndarankup.com/signup | https://ndarankup.com/login |
+| NDA  | Temporarily withheld — no signup/login links; NDA pages send students to /nda/previous-year-papers | — |
 
 Handoffs never land on a RankUp homepage. Every "start" button (diagnostic CTAs, exam-page product buttons) goes to `/signup`; the "Log in" button opens the same exam chooser and goes to `/login`. All of them use one helper (`buildRankUpHandoff`, paths in `RANKUP_PATHS`), so links cannot drift.
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, GraduationCap, Shield, Stethoscope } from "lucide-react";
+import { ArrowRight, GraduationCap, Stethoscope } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,6 +11,10 @@ import {
 import { cn } from "@/lib/utils";
 import {
   buildRankUpHandoff,
+  examForPath,
+  isOnboardingOpen,
+  NDA_RESOURCES_PATH,
+  PRIMARY_CTA_LABEL,
   RANKUP_PATHS,
   type DiagnosticExam,
   type RankUpIntent,
@@ -20,8 +24,8 @@ import { emitAcquisitionEvent } from "@/lib/acquisition-analytics";
 const exams = [
   { id: "jee", label: "JEE Main", product: "JeeRankUp", icon: GraduationCap, accent: "text-jee" },
   { id: "neet", label: "NEET UG", product: "NeetRankUp", icon: Stethoscope, accent: "text-neet" },
-  { id: "nda", label: "NDA", product: "NDARankUp", icon: Shield, accent: "text-nda" },
 ] as const;
+// NDARankUp is temporarily withheld from onboarding (see ONBOARDING_EXAMS).
 
 const copy: Record<RankUpIntent, { title: string; description: string; detail: string; footnote: string }> = {
   start: {
@@ -62,6 +66,12 @@ export function DiagnosticLauncher({
       cta: ctaLocation,
       intent,
     });
+    // Exam pages skip the chooser: JEE/NEET pages hand straight off to their
+    // RankUp site; NDA pages send students to NDA resources while NDARankUp
+    // onboarding is withheld. General pages open the chooser.
+    const pageExam = examForPath(window.location.pathname);
+    if (pageExam && isOnboardingOpen(pageExam)) return handoff(pageExam);
+    if (pageExam === "nda" && intent === "start") return window.location.assign(NDA_RESOURCES_PATH);
     setOpen(true);
   };
 
@@ -74,7 +84,7 @@ export function DiagnosticLauncher({
     });
   }, [ctaLocation, intent, open]);
 
-  const handoff = (exam: DiagnosticExam) => {
+  function handoff(exam: DiagnosticExam) {
     const href = buildRankUpHandoff({
       exam,
       search: window.location.search,
@@ -93,12 +103,12 @@ export function DiagnosticLauncher({
     emitAcquisitionEvent("exam_selected", properties);
     emitAcquisitionEvent("rankup_handoff", properties);
     window.location.assign(href);
-  };
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <Button type="button" onClick={openChooser} className={className}>
-        {label ?? (intent === "login" ? "Log in" : "Start My Free Diagnostic")}
+        {label ?? (intent === "login" ? "Log in" : PRIMARY_CTA_LABEL)}
         {showArrow && <ArrowRight aria-hidden="true" />}
       </Button>
       <DialogContent className="w-[calc(100%-2rem)] max-w-xl rounded-lg border-border p-5 sm:p-7">

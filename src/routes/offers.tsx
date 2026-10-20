@@ -49,7 +49,7 @@ function OffersPage() {
       <header className="max-w-3xl">
         <p className="eyebrow text-accent">Offers &amp; coupons</p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary md:text-4xl">
-          Coupon codes for JeeRankUp, NeetRankUp and NDARankUp
+          Coupon codes for JeeRankUp and NeetRankUp
         </h1>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
           Every public coupon the three RankUp platforms are running, in one place. Copy a code, or

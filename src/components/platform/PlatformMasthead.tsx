@@ -3,6 +3,7 @@ import { Reveal } from "@/components/Reveal";
 import { CtaLink } from "@/components/CtaLink";
 import { Breadcrumbs } from "@/components/shell/Breadcrumbs";
 import { destinations } from "@/content/destinations";
+import { PRIMARY_CTA_LABEL } from "@/lib/acquisition";
 import type { PlatformData } from "@/content/types";
 
 const accentText: Record<string, string> = { jee: "text-jee", neet: "text-neet", nda: "text-gold" };
@@ -15,6 +16,7 @@ const accentText: Record<string, string> = { jee: "text-jee", neet: "text-neet",
 export function PlatformMasthead({ id = "top", platform }: { id?: string; platform: PlatformData }) {
   const accent = accentText[platform.accent] ?? "text-gold";
   const wordmark = platform.slug.toUpperCase();
+  const primaryCta = destinations.diagnostic(PRIMARY_CTA_LABEL, platform.slug);
 
   return (
     <section id={id} className="relative overflow-hidden bg-navy-gradient text-primary-foreground">
@@ -53,11 +55,11 @@ export function PlatformMasthead({ id = "top", platform }: { id?: string; platfo
                 </CtaLink>
               ) : (
                 <CtaLink
-                  d={destinations.diagnostic(`Take an ${wordmark} diagnostic`, platform.slug)}
+                  d={primaryCta}
                   className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-bold text-accent-foreground shadow-elevated"
                 >
                   <span className="inline-flex items-center gap-2">
-                    Take an {wordmark} diagnostic <ArrowRight className="size-4" aria-hidden="true" />
+                    {"label" in primaryCta ? primaryCta.label : null} <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </CtaLink>
               )}

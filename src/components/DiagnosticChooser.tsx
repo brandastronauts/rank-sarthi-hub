@@ -11,7 +11,8 @@ const tint: Record<"jee" | "neet" | "nda", { text: string; bar: string; chip: st
   nda: { text: "text-nda", bar: "bg-nda", chip: "bg-nda/15 text-nda" },
 };
 
-const platformSlugs = ["jee", "neet", "nda"] as const;
+// NDARankUp onboarding is temporarily withheld.
+const platformSlugs = ["jee", "neet"] as const;
 
 /**
  * The generic, exam-agnostic "Take a diagnostic" destination (site header,
@@ -28,7 +29,7 @@ export function DiagnosticChooser() {
           <p className="eyebrow text-accent">Take a diagnostic</p>
           <h1 className="mt-5 text-display-lg text-primary">Which exam are you preparing for?</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            JeeRankUp, NeetRankUp and NDARankUp are each a dedicated product with its own diagnostic engine. Pick
+            JeeRankUp and NeetRankUp are each a dedicated product with its own diagnostic engine. Pick
             your exam to continue there.
           </p>
         </Reveal>

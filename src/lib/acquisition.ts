@@ -31,6 +31,28 @@ const CTA_ALIASES: Record<string, RsCta> = {
 export const RANKUP_PATHS = { start: "/signup", login: "/login" } as const;
 export type RankUpIntent = keyof typeof RANKUP_PATHS;
 
+/** Primary student CTA wording, used by every main conversion button. */
+export const PRIMARY_CTA_LABEL = "Rank Up My Score with Sarthi";
+
+/**
+ * RankUp products currently open for student onboarding. NDARankUp is
+ * temporarily withheld by the product team: NDA stays an exam category with
+ * all its content, but no signup, login or offer link points at it.
+ */
+export const ONBOARDING_EXAMS = ["jee", "neet"] as const satisfies readonly DiagnosticExam[];
+export function isOnboardingOpen(exam: DiagnosticExam): boolean {
+  return (ONBOARDING_EXAMS as readonly string[]).includes(exam);
+}
+
+/** Where NDA visitors are sent while NDARankUp onboarding is withheld. */
+export const NDA_RESOURCES_PATH = "/nda/previous-year-papers";
+
+/** Exam a page belongs to, from its path ("/jee/physics" → "jee"); null for general pages. */
+export function examForPath(pathname: string): DiagnosticExam | null {
+  const first = pathname.split("/")[1];
+  return first === "jee" || first === "neet" || first === "nda" ? first : null;
+}
+
 export function normaliseCta(cta: string): RsCta {
   if ((RS_CTA_VALUES as readonly string[]).includes(cta)) return cta as RsCta;
   return CTA_ALIASES[cta] ?? "section";
