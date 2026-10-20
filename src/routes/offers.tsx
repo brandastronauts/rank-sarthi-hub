@@ -8,7 +8,7 @@ import { breadcrumbSchema, collectionPageSchema } from "@/lib/schema";
 const URL_PATH = "/offers";
 const TITLE = "Offers & Coupon Codes for JEE, NEET and NDA | Rank Sarthi";
 const DESCRIPTION =
-  "Current public coupon codes for JeeRankUp, NeetRankUp and NDARankUp in one place. Filter by platform, copy a code, or apply it in one step at checkout.";
+  "Current public coupon codes for JeeRankUp and NeetRankUp in one place. Filter by platform, copy a code, or apply it in one step at checkout.";
 
 const STEPS = [
   {

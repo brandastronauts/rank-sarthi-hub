@@ -37,7 +37,7 @@ export function Hero() {
               Every Arjuna Deserves a Sarthi.
             </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-              Find out where you&rsquo;re losing marks and what to work on next—for JEE, NEET or NDA.
+              Find out where you&rsquo;re losing marks and what to work on next for JEE and NEET. Free NDA resources are on Rank Sarthi too.
             </p>
 
             <div className="mt-4"><PublisherLockup dark compact /></div>
