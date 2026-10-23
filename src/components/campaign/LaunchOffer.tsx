@@ -85,7 +85,7 @@ export function LaunchOfferProvider({ url, enabled, children }: { url: string; e
         setOpen(v);
         if (!v) sessionStorage.setItem(SESSION_KEY, "shown");
       }}>
-        <DialogContent className="max-h-[92svh] w-[calc(100%-1.5rem)] max-w-md overflow-y-auto rounded-2xl border-gold/30 p-0">
+        <DialogContent className="flex max-h-[calc(100svh-1.5rem)] w-[calc(100%-1.5rem)] max-w-[660px] flex-col gap-0 overflow-hidden overscroll-contain rounded-2xl border-gold/30 p-0 sm:max-h-[calc(100dvh-3rem)] [&>button]:text-primary-foreground [&>button]:opacity-90">
           {current ? (
             <OfferBody offers={offers} current={current} onSelect={setSelected} />
           ) : null}
@@ -101,46 +101,48 @@ function OfferBody({ offers, current, onSelect }: { offers: LaunchOffer[]; curre
   const pct = current.maxStudents && current.placesLeft !== null ? Math.max(0, Math.min(100, (current.placesLeft / current.maxStudents) * 100)) : null;
 
   return (
-    <div>
-      <div className="rounded-t-2xl bg-navy-deep px-6 pb-5 pt-6 text-primary-foreground">
-        <p className="eyebrow inline-flex items-center gap-2 text-gold">
-          <Sparkles className="size-3.5" aria-hidden="true" /> Launch offer
-        </p>
-        {offers.length > 1 ? (
-          <div role="tablist" aria-label="Choose your exam" className="mt-4 grid grid-cols-2 gap-1 rounded-lg bg-white/10 p-1">
-            {offers.map((o) => (
-              <button
-                key={o.exam}
-                role="tab"
-                type="button"
-                aria-selected={o.exam === current.exam}
-                onClick={() => onSelect(o.exam)}
-                className={cn(
-                  "min-h-10 rounded-md px-2 text-xs font-semibold transition-colors sm:text-sm",
-                  o.exam === current.exam ? "bg-gold text-navy-deep" : "text-primary-foreground/80 hover:text-primary-foreground",
-                )}
-              >
-                {LAUNCH_OFFER_EXAM_LABEL[o.exam]}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-primary-foreground/70">{LAUNCH_OFFER_EXAM_LABEL[current.exam]}</p>
-        )}
-        <DialogTitle className="mt-4 line-clamp-2 text-xl font-extrabold leading-snug text-primary-foreground">{bundleHeading(current)}</DialogTitle>
+    <>
+      <div className="shrink-0 rounded-t-2xl bg-navy-deep px-5 pb-3.5 pt-4 pr-12 text-primary-foreground sm:px-6">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <p className="eyebrow inline-flex items-center gap-2 text-gold">
+            <Sparkles className="size-3.5" aria-hidden="true" /> Launch offer
+          </p>
+          {offers.length > 1 ? (
+            <div role="tablist" aria-label="Choose your exam" className="grid min-w-0 flex-1 grid-cols-2 gap-1 rounded-lg bg-white/10 p-0.5 sm:max-w-xs">
+              {offers.map((o) => (
+                <button
+                  key={o.exam}
+                  role="tab"
+                  type="button"
+                  aria-selected={o.exam === current.exam}
+                  onClick={() => onSelect(o.exam)}
+                  className={cn(
+                    "min-h-8 truncate rounded-md px-2 text-xs font-semibold transition-colors",
+                    o.exam === current.exam ? "bg-gold text-navy-deep" : "text-primary-foreground/80 hover:text-primary-foreground",
+                  )}
+                >
+                  {LAUNCH_OFFER_EXAM_LABEL[o.exam]}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary-foreground/70">{LAUNCH_OFFER_EXAM_LABEL[current.exam]}</p>
+          )}
+        </div>
+        <DialogTitle className="mt-2.5 line-clamp-2 text-lg font-extrabold leading-snug text-primary-foreground sm:text-xl">{bundleHeading(current)}</DialogTitle>
         {b.subheading ? (
-          <DialogDescription className="mt-2 line-clamp-3 text-sm text-primary-foreground/80">{b.subheading}</DialogDescription>
+          <DialogDescription className="mt-1 line-clamp-2 text-xs text-primary-foreground/80 sm:text-sm">{b.subheading}</DialogDescription>
         ) : (
           <DialogDescription className="sr-only">{current.headline}</DialogDescription>
         )}
       </div>
 
-      <div className="px-6 py-5">
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-2 sm:px-6">
         <ul className="divide-y divide-border">
           {b.items.map((item, i) => (
-            <li key={i} className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 py-2.5">
-              <span className="text-lg font-extrabold text-primary">{item.count}</span>
-              <span className="line-clamp-2 text-sm text-foreground">{item.text}</span>
+            <li key={i} className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 py-1.5">
+              <span className="text-base font-extrabold text-primary">{item.count}</span>
+              <span className="line-clamp-2 text-sm leading-snug text-foreground">{item.text}</span>
               <span className="text-right text-xs">
                 {item.valuePaise !== null ? <s className="mr-1.5 text-muted-foreground">{formatPaise(item.valuePaise)}</s> : null}
                 <span className="font-bold text-accent">FREE</span>
@@ -148,9 +150,11 @@ function OfferBody({ offers, current, onSelect }: { offers: LaunchOffer[]; curre
             </li>
           ))}
         </ul>
+      </div>
 
+      <div className="shrink-0 border-t border-border bg-background px-5 pb-[max(0.875rem,env(safe-area-inset-bottom))] pt-3 sm:px-6">
         {total !== null ? (
-          <div className="mt-3 flex items-center justify-between rounded-lg bg-secondary px-4 py-3">
+          <div className="flex items-center justify-between rounded-lg bg-secondary px-3 py-2">
             <span className="text-sm font-semibold text-primary">Total value</span>
             <span className="text-sm">
               <s className="mr-2 text-muted-foreground">{formatPaise(total)}</s>
@@ -159,32 +163,37 @@ function OfferBody({ offers, current, onSelect }: { offers: LaunchOffer[]; curre
           </div>
         ) : null}
 
-        {pct !== null ? (
-          <div className="mt-4">
-            <p className="text-sm font-semibold text-primary">
-              {current.placesLeft} of {current.maxStudents} places left
-            </p>
-            <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-secondary" aria-hidden="true">
-              <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
+        {pct !== null || current.until ? (
+          <div className="mt-2.5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 text-xs">
+              {pct !== null ? (
+                <p className="text-sm font-semibold text-primary">
+                  {current.placesLeft} of {current.maxStudents} places left
+                </p>
+              ) : <span />}
+              {current.until ? <p className="text-muted-foreground">Valid until {formatUntil(current.until)}</p> : null}
             </div>
+            {pct !== null ? (
+              <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-secondary" aria-hidden="true">
+                <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
+              </div>
+            ) : null}
           </div>
         ) : null}
-
-        {current.until ? <p className="mt-3 text-xs text-muted-foreground">Offer valid until {formatUntil(current.until)}</p> : null}
 
         <a
           href={current.claimUrl}
           target="_blank"
           rel="noopener"
-          className="btn-press mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-elevated transition-colors hover:bg-red-hover"
+          className="btn-press mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 text-base font-bold text-accent-foreground shadow-elevated transition-colors hover:bg-red-hover"
         >
           <Gift className="size-4" aria-hidden="true" /> Claim Free
         </a>
-        <p className="mt-2 text-center text-xs text-muted-foreground">
+        <p className="mt-1.5 text-center text-[11px] leading-snug text-muted-foreground sm:text-xs">
           You'll sign up on {current.exam === "jee" ? "JeeRankUp" : current.exam === "neet" ? "NeetRankUp" : "NDARankUp"} to claim. Eligibility is checked there.
         </p>
       </div>
-    </div>
+    </>
   );
 }
 
