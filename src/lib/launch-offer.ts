@@ -79,33 +79,33 @@ export function isTrustedClaimUrl(exam: LaunchOfferExam, url: string): boolean {
 /** Parse a `{ data, meta }` answer. Returns null for inactive, malformed or untrusted offers. */
 export function parseLaunchOffer(exam: LaunchOfferExam, body: unknown): LaunchOffer | null {
   const data = (body as { data?: Record<string, unknown> } | null)?.data;
-  if (!data || data.active !== true) return null;
-  const claimUrl = str(data.claim_url);
-  const headline = str(data.headline);
+  if (!data || data["active"] !== true) return null;
+  const claimUrl = str(data["claim_url"]);
+  const headline = str(data["headline"]);
   if (!claimUrl || !headline || !isTrustedClaimUrl(exam, claimUrl)) return null;
 
-  const placesLeft = num(data.places_left);
+  const placesLeft = num(data["places_left"]);
   if (placesLeft === 0) return null;
 
-  const b = data.bundle as Record<string, unknown> | null | undefined;
+  const b = data["bundle"] as Record<string, unknown> | null | undefined;
   const items = Array.isArray(b?.items)
-    ? (b!.items as Record<string, unknown>[])
-        .map((i) => ({ count: num(i?.count), text: str(i?.text) ?? str(i?.label), valuePaise: num(i?.value_paise) }))
+    ? (b!["items"] as Record<string, unknown>[])
+        .map((i) => ({ count: num(i?.["count"]), text: str(i?.["text"]) ?? str(i?.["label"]), valuePaise: num(i?.["value_paise"]) }))
         .filter((i): i is LaunchOfferItem => i.count !== null && i.text !== null)
     : [];
 
   return {
     exam,
     headline,
-    maxStudents: num(data.max_students),
+    maxStudents: num(data["max_students"]),
     placesLeft,
-    until: typeof data.until === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.until) ? data.until : null,
+    until: typeof data["until"] === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data["until"]) ? data["until"] : null,
     bundle: b
       ? {
-          heading: str(b.heading),
-          subheading: str(b.subheading),
-          pricePaise: num(b.price_paise),
-          totalValuePaise: num(b.total_value_paise),
+          heading: str(b["heading"]),
+          subheading: str(b["subheading"]),
+          pricePaise: num(b["price_paise"]),
+          totalValuePaise: num(b["total_value_paise"]),
           items,
         }
       : null,
