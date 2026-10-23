@@ -88,7 +88,7 @@ export function parseLaunchOffer(exam: LaunchOfferExam, body: unknown): LaunchOf
   if (placesLeft === 0) return null;
 
   const b = data["bundle"] as Record<string, unknown> | null | undefined;
-  const items = Array.isArray(b?.items)
+  const items = Array.isArray(b?.["items"])
     ? (b!["items"] as Record<string, unknown>[])
         .map((i) => ({ count: num(i?.["count"]), text: str(i?.["text"]) ?? str(i?.["label"]), valuePaise: num(i?.["value_paise"]) }))
         .filter((i): i is LaunchOfferItem => i.count !== null && i.text !== null)
