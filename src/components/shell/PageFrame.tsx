@@ -2,8 +2,7 @@ import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { AnnouncementStrip } from "@/components/campaign/AnnouncementStrip";
-import { OfferPopup } from "@/components/campaign/OfferPopup";
+import { LaunchOfferProvider, LaunchOfferTicker } from "@/components/campaign/LaunchOffer";
 import { campaignFor } from "@/content/offers/campaign";
 import { HomepageAcquisition } from "@/components/acquisition/HomepageAcquisition";
 import { INSTITUTE_PATHS } from "@/content/institutes/policy";
@@ -42,6 +41,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
   const campaign = campaignFor(url);
 
   return (
+    <LaunchOfferProvider url={url} enabled={!!campaign.popup}>
     <div className="flex min-h-screen flex-col bg-background">
       {/* The announcement strip sits between the header and the hero, so the
           hero is no longer directly under the header: keep it solid. */}
@@ -54,7 +54,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
             <div className="bg-navy-deep pt-20 md:pt-24" aria-hidden="true" />
             {/* Offer strip sticks below the fixed header for the whole page. */}
             <div className="sticky top-[4.375rem] z-30 min-[900px]:top-20">
-              <AnnouncementStrip campaign={campaign.announcement} />
+              <LaunchOfferTicker />
             </div>
           </>
         ) : null}
@@ -88,7 +88,7 @@ export function PageFrame({ frame = "F2", url, children, aside, masthead, heroBa
       </main>
       <SiteFooter />
       {url === "/" ? <HomepageAcquisition /> : null}
-      {campaign.popup ? <OfferPopup campaign={campaign.popup} /> : null}
     </div>
+    </LaunchOfferProvider>
   );
 }
