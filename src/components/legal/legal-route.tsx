@@ -29,7 +29,7 @@ export function legalHead(c: LegalPageConfig) {
         url: absolute(c.url),
         description: c.description,
         dateModified: "2026-09-28",
-        publisher: { "@type": "Organization", name: "Rank Sarthi Next Gen Private Limited", url: absolute("/") },
+        publisher: { "@type": "Organization", name: "RANKSARTHI- NEW GEN PRIVATE LIMITED", url: absolute("/") },
       },
       breadcrumbSchema(c.url),
     ].filter(Boolean),

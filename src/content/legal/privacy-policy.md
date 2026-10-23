@@ -1,7 +1,7 @@
 
 **Last updated: 28 September 2026**
 
-This Privacy Policy explains how **Rank Sarthi Next Gen Private Limited**
+This Privacy Policy explains how **RANKSARTHI- NEW GEN PRIVATE LIMITED**
 ("Rank Sarthi", "we", "us" or "our") collects, uses, stores and protects
 personal information when you use **ranksarthi.com**, create an account,
 use our academic resources, assessments, calculators, test-preparation
@@ -289,7 +289,7 @@ the platform or other appropriate channels.
 
 Questions, privacy requests or concerns relating to this policy may be sent to:
 
-**Rank Sarthi Next Gen Private Limited**
+**RANKSARTHI- NEW GEN PRIVATE LIMITED**
 
 Flat No. F2, Harihar Apartments  
 New Mangalapuri  
