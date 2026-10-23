@@ -8,9 +8,8 @@ describe("approved publisher catalogue", () => {
     expect(publisherBooks).toHaveLength(8);
     expect(publisherBooks.some((book) => String(book.exam) === "nda")).toBe(false);
   });
-  it("keeps every book destination on the official publisher", () => {
+  it("keeps the general publisher site but no book-specific shopping links", () => {
     expect(publisher.website).toBe("https://www.shribalajibooks.com/");
-    expect(publisherBooks.map((book) => new URL(book.url).origin)).toEqual(Array(8).fill("https://www.shribalajibooks.com"));
-    expect(new Set(publisherBooks.map((book) => book.url)).size).toBe(8);
+    for (const book of publisherBooks) expect("url" in book).toBe(false);
   });
 });
