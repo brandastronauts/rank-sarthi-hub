@@ -4,7 +4,7 @@
 **Last updated: 28 September 2026**
 
 This Refund Policy applies to eligible paid purchases made directly from
-**Rank Sarthi Next Gen Private Limited** through Rank Sarthi.
+**RANKSARTHI- NEW GEN PRIVATE LIMITED** through Rank Sarthi.
 
 Please review this policy before purchasing a test series, subscription,
 practice package, top-up or other paid digital product.
@@ -145,7 +145,7 @@ adjusted accordingly.
 
 Questions regarding refunds may be sent to:
 
-**Rank Sarthi Next Gen Private Limited**
+**RANKSARTHI- NEW GEN PRIVATE LIMITED**
 
 Flat No. F2, Harihar Apartments  
 New Mangalapuri  

@@ -7,7 +7,7 @@ const c: LegalPageConfig = {
   h1: "Privacy Policy",
   title: "Privacy Policy | Rank Sarthi",
   description:
-    "How Rank Sarthi Next Gen Private Limited collects, uses, stores and protects personal information across ranksarthi.com, accounts, tests, tools and enquiries.",
+    "How RANKSARTHI- NEW GEN PRIVATE LIMITED collects, uses, stores and protects personal information across ranksarthi.com, accounts, tests, tools and enquiries.",
   markdown: md,
   related: [
     { label: "Terms & Conditions", to: "/terms" },

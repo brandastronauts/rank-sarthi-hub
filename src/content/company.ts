@@ -1,6 +1,6 @@
 /** Approved public company contact details. Single source of truth. */
 export const company = {
-  legalName: "Rank Sarthi Next Gen Private Limited",
+  legalName: "RANKSARTHI- NEW GEN PRIVATE LIMITED",
   addressLines: ["Flat No. F2, Harihar Apartments,", "New Mangalapuri,", "New Delhi – 110030,", "India"],
   streetAddress: "Flat No. F2, Harihar Apartments, New Mangalapuri",
   locality: "New Delhi",

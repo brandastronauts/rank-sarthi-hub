@@ -5,8 +5,8 @@
 
 These Terms & Conditions govern your access to and use of Rank Sarthi,
 including ranksarthi.com and related academic, assessment, test-preparation,
-calculator and learning services provided by **Rank Sarthi Next Gen Private
-Limited**.
+calculator and learning services provided by **RANKSARTHI- NEW GEN PRIVATE
+LIMITED**.
 
 By accessing or using Rank Sarthi, you agree to these Terms.
 
@@ -165,7 +165,7 @@ Unless otherwise stated, Rank Sarthi's:
 - databases
 - original written content
 
-are owned by Rank Sarthi Next Gen Private Limited or used under appropriate
+are owned by RANKSARTHI- NEW GEN PRIVATE LIMITED or used under appropriate
 licence.
 
 Access to the platform gives users a limited, personal, non-exclusive and
@@ -237,7 +237,7 @@ rules, assumptions or computational models.
 Users should verify official examination requirements and important decisions
 with the relevant examination authority.
 
-To the extent permitted by law, Rank Sarthi Next Gen Private Limited will not
+To the extent permitted by law, RANKSARTHI- NEW GEN PRIVATE LIMITED will not
 be liable for indirect, incidental, special or consequential loss arising
 solely from use of or inability to use the platform.
 
@@ -289,7 +289,7 @@ Sarthi will be subject to the jurisdiction of the competent courts in
 
 Questions regarding these Terms may be sent to:
 
-**Rank Sarthi Next Gen Private Limited**
+**RANKSARTHI- NEW GEN PRIVATE LIMITED**
 
 Flat No. F2, Harihar Apartments  
 New Mangalapuri  

@@ -12,9 +12,9 @@ import { submitEnquiry } from "@/lib/contact.functions";
 import { SocialLinks } from "@/components/SocialLinks";
 
 const URL_PATH = "/contact";
-const TITLE = "Contact Rank Sarthi | Rank Sarthi Next Gen Private Limited";
+const TITLE = "Contact Rank Sarthi | RANKSARTHI- NEW GEN PRIVATE LIMITED";
 const DESCRIPTION =
-  "Contact Rank Sarthi Next Gen Private Limited in New Delhi for questions about JEE, NEET, NDA, test preparation, academic resources, tools and institutional enquiries.";
+  "Contact RANKSARTHI- NEW GEN PRIVATE LIMITED in New Delhi for questions about JEE, NEET, NDA, test preparation, academic resources, tools and institutional enquiries.";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
