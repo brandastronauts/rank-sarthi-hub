@@ -5,8 +5,8 @@
 
 These Terms & Conditions govern your access to and use of Rank Sarthi,
 including ranksarthi.com and related academic, assessment, test-preparation,
-calculator and learning services provided by **Rank Sarthi Next Gen Private
-Limited**.
+calculator and learning services provided by **RANKSARTHI- NEW GEN PRIVATE
+LIMITED**.
 
 By accessing or using Rank Sarthi, you agree to these Terms.
 
