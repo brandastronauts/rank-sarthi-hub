@@ -12,7 +12,7 @@ describe("approved publisher catalogue", () => {
     expect(publisher.website).toBe("https://www.shribalajibooks.com/");
     for (const book of publisherBooks) expect("url" in book).toBe(false);
   });
-  it("shows genuine supplied covers for every book except the still-missing NEET Inorganic", () => {
-    expect(publisherBooks.filter((b) => !b.cover).map((b) => b.id)).toEqual(["neet-inorganic"]);
+  it("shows genuine supplied covers for every book", () => {
+    expect(publisherBooks.filter((b) => !b.cover).map((b) => b.id)).toEqual([]);
   });
 });
