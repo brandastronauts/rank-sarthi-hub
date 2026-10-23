@@ -203,7 +203,7 @@ export function LaunchOfferTicker() {
       <span className="container-page flex items-center gap-3 py-2.5">
         <span className="marquee-pause min-w-0 flex-1 overflow-hidden">
           <span className="marquee-track">
-            {[0, 1, 2, 3].map((i) => (
+            {[0, 1].map((i) => (
               <span key={i} aria-hidden={i > 0} className="inline-flex items-center gap-2 whitespace-nowrap pr-12 text-xs font-semibold sm:text-sm">
                 <Gift className="size-3.5 text-gold" aria-hidden="true" /> {message}
               </span>
