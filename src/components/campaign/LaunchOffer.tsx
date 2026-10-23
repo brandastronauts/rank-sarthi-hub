@@ -108,7 +108,7 @@ function OfferBody({ offers, current, onSelect }: { offers: LaunchOffer[]; curre
             <Sparkles className="size-3.5" aria-hidden="true" /> Launch offer
           </p>
           {offers.length > 1 ? (
-            <div role="tablist" aria-label="Choose your exam" className="grid min-w-0 flex-1 grid-cols-2 gap-1 rounded-lg bg-white/10 p-0.5 sm:max-w-xs">
+            <div role="tablist" aria-label="Choose your exam" className="grid min-w-0 basis-full grid-cols-2 gap-1 rounded-lg bg-white/10 p-0.5 sm:max-w-xs sm:flex-1 sm:basis-auto">
               {offers.map((o) => (
                 <button
                   key={o.exam}
