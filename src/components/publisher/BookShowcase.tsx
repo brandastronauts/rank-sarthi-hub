@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { booksForExam, publisher, type BookExam, type PublisherBook } from "@/content/publisher";
 import type { PlatformData } from "@/content/types";
@@ -17,10 +15,7 @@ function BookGrid({ exam }: { exam: BookExam }) {
           <p className="text-xs font-semibold uppercase text-accent">{exam === "jee" ? "JEE Main & Advanced" : "NEET UG"}</p>
           <h3 className="mt-3 text-base leading-snug text-primary sm:text-lg">{book.title}</h3>
           <p className="mt-3 text-sm text-muted-foreground">{book.author}</p>
-          <p className="mb-6 mt-1 text-xs text-muted-foreground">{book.edition}</p>
-          <Button asChild variant="outline" className="mt-auto w-full">
-            <a href={book.url} target="_blank" rel="noopener noreferrer" aria-label={`View Book: ${book.title}`}>View Book <ArrowUpRight aria-hidden="true" /></a>
-          </Button>
+          <p className="mt-1 text-xs text-muted-foreground">{book.edition}</p>
         </article>
       ))}
     </div>

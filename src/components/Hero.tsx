@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 import heroStudent from "@/assets/hero-student.jpg";
+import { LaunchOfferHeroButton } from "@/components/campaign/LaunchOffer";
 import { PublisherLockup } from "@/components/publisher/PublisherLockup";
 
 const reassurance = ["JEE Main", "NEET UG", "NDA"];
@@ -47,6 +48,7 @@ export function Hero() {
                 ctaLocation="hero"
                 className="min-h-12 bg-accent px-7 font-bold text-accent-foreground shadow-elevated hover:bg-red-hover"
               />
+              <LaunchOfferHeroButton />
             </div>
 
             <ul className="mt-8 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/15 pt-6">
