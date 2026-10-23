@@ -6,16 +6,24 @@ function BookGrid({ exam }: { exam: BookExam }) {
   return (
     <div className="grid auto-rows-fr grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
       {booksForExam(exam).map((book: PublisherBook) => (
-        <article key={book.id} className="flex min-w-0 flex-col rounded-lg border border-border bg-card p-3 text-card-foreground transition-shadow hover:shadow-card motion-reduce:transition-none sm:p-5">
-          {book.cover && (
-            <div className="mb-5 flex aspect-[4/5] items-center justify-center bg-muted p-3">
-              <img src={book.cover.url} width={book.cover.width} height={book.cover.height} alt={`${book.title} by ${book.author} — front cover`} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
-            </div>
-          )}
-          <p className="text-xs font-semibold uppercase text-accent">{exam === "jee" ? "JEE Main & Advanced" : "NEET UG"}</p>
-          <h3 className="mt-3 text-base leading-snug text-primary sm:text-lg">{book.title}</h3>
-          <p className="mt-3 text-sm text-muted-foreground">{book.author}</p>
-          <p className="mt-1 text-xs text-muted-foreground">{book.edition}</p>
+        <article key={book.id} className="group flex min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-card">
+          <div className="flex aspect-[4/5] items-center justify-center bg-muted p-3 sm:p-5">
+            {book.cover ? (
+              <img src={book.cover.url} width={book.cover.width} height={book.cover.height} alt={`${book.title} by ${book.author} — front cover`} loading="lazy" decoding="async" className="h-full w-auto max-w-full rounded-sm object-contain shadow-elevated transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transition-none" />
+            ) : (
+              <div className="flex h-full w-[78%] flex-col justify-between rounded-sm border border-dashed border-border bg-background p-3 text-left">
+                <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{publisher.name}</span>
+                <span className="text-sm font-semibold leading-snug text-primary">{book.title}</span>
+                <span className="text-xs text-muted-foreground">{book.author}</span>
+              </div>
+            )}
+          </div>
+          <div className="flex flex-1 flex-col p-3 sm:p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-accent">{exam === "jee" ? "JEE Main & Advanced" : "NEET UG"}</p>
+            <h3 className="mt-2 text-sm font-semibold leading-snug text-primary sm:text-base">{book.title}</h3>
+            <p className="mt-2 text-xs text-muted-foreground sm:text-sm">{book.author}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{book.edition}</p>
+          </div>
         </article>
       ))}
     </div>
