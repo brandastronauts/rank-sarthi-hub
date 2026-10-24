@@ -40,7 +40,7 @@ export const homeFaqs = [
 ];
 
 export const howItWorksSteps = [
-  { n: "01", title: "Choose your exam", body: "Select JEE Main, NEET UG or NDA on Rank Sarthi." },
+  { n: "01", title: "Choose your exam", body: "Select JEE Main & Advanced, NEET UG or NDA on Rank Sarthi." },
   {
     n: "02",
     title: "Diagnose",

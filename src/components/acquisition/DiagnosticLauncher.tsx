@@ -22,7 +22,7 @@ import {
 import { emitAcquisitionEvent } from "@/lib/acquisition-analytics";
 
 const exams = [
-  { id: "jee", label: "JEE Mains & Advanced", product: "JeeRankUp", icon: GraduationCap, accent: "text-jee" },
+  { id: "jee", label: "JEE Main & Advanced", product: "JeeRankUp", icon: GraduationCap, accent: "text-jee" },
   { id: "neet", label: "NEET UG", product: "NeetRankUp", icon: Stethoscope, accent: "text-neet" },
 ] as const;
 // NDARankUp is temporarily withheld from onboarding (see ONBOARDING_EXAMS).
