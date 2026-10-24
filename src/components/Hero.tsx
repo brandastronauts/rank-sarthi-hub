@@ -5,7 +5,7 @@ import heroStudent from "@/assets/hero-student.jpg";
 import { LaunchOfferHeroButton } from "@/components/campaign/LaunchOffer";
 import { PublisherLockup } from "@/components/publisher/PublisherLockup";
 
-const reassurance = ["JEE Main", "NEET UG", "NDA"];
+const reassurance = ["JEE Main & Advanced", "NEET UG", "NDA"];
 
 export function Hero() {
   return (

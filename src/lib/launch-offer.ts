@@ -29,7 +29,7 @@ const CLAIM_HOSTS: Record<LaunchOfferExam, string> = {
 };
 
 export const LAUNCH_OFFER_EXAM_LABEL: Record<LaunchOfferExam, string> = {
-  jee: "JEE Mains & Advanced",
+  jee: "JEE Main & Advanced",
   neet: "NEET UG",
   nda: "NDA",
 };
