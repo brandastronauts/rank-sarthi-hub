@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiagnosticRouteImport } from './routes/diagnostic'
+import { Route as FacultyDesignPreviewRouteImport } from './routes/faculty-design-preview'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OffersRouteImport } from './routes/offers'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -49,6 +50,11 @@ const ContactRoute = ContactRouteImport.update({
 const DiagnosticRoute = DiagnosticRouteImport.update({
   id: '/diagnostic',
   path: '/diagnostic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacultyDesignPreviewRoute = FacultyDesignPreviewRouteImport.update({
+  id: '/faculty-design-preview',
+  path: '/faculty-design-preview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
@@ -173,6 +179,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
+  '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -201,6 +208,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
+  '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -230,6 +238,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/diagnostic': typeof DiagnosticRoute
+  '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -260,6 +269,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/diagnostic'
+    | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
     | '/privacy-policy'
@@ -288,6 +298,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/diagnostic'
+    | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
     | '/privacy-policy'
@@ -316,6 +327,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/diagnostic'
+    | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
     | '/privacy-policy'
@@ -345,6 +357,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   DiagnosticRoute: typeof DiagnosticRoute
+  FacultyDesignPreviewRoute: typeof FacultyDesignPreviewRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OffersRoute: typeof OffersRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -391,6 +404,13 @@ declare module '@tanstack/react-router' {
       path: '/diagnostic'
       fullPath: '/diagnostic'
       preLoaderRoute: typeof DiagnosticRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faculty-design-preview': {
+      id: '/faculty-design-preview'
+      path: '/faculty-design-preview'
+      fullPath: '/faculty-design-preview'
+      preLoaderRoute: typeof FacultyDesignPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms.txt': {
@@ -561,6 +581,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   DiagnosticRoute: DiagnosticRoute,
+  FacultyDesignPreviewRoute: FacultyDesignPreviewRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OffersRoute: OffersRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
