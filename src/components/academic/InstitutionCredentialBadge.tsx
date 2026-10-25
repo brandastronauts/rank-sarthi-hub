@@ -7,7 +7,7 @@ const institutionLogos = {
   "IIT Madras": iitMadrasLogo,
 };
 
-function InstitutionLogo({ name, compact = false }: { name: NonNullable<AcademicCredential["institution"]>["name"]; compact?: boolean }) {
+export function InstitutionLogo({ name, compact = false }: { name: NonNullable<AcademicCredential["institution"]>["name"]; compact?: boolean }) {
   const src = name === "NSIT" ? undefined : institutionLogos[name];
   if (!src) return null;
   return <img src={src} alt={name} width={compact ? 16 : 28} height={compact ? 16 : 28} loading="lazy" className={compact ? "mr-1 inline-block size-4 object-contain align-middle" : "size-7 shrink-0 object-contain"} />;

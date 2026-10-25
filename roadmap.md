@@ -3,7 +3,7 @@
 ## Editorial faculty replacement — one-profile approval
 - [x] Build an isolated compact Sachin Garg example with original portrait, supplied IIT Madras logo and verified credentials
 - [x] Verify actual desktop size, mobile readability and profile link; provide uncropped screenshots — 384×265px desktop example, 390/320px mobile checks and 121 tests passed
-- [ ] Roll out to all seven only after example approval (blocked on user approval)
+- [x] Apply approved editorial design to all seven homepage faculty profiles and verify 3/2/1 carousel, credentials, portraits, links and regressions — 121 tests, 88 homepage checks and all-profile keyboard/mobile checks passed; unauthorized NSIT/HBTI artwork withheld
 - [x] Keep homepage, directory, detailed profiles and integrations unchanged during example review; do not publish
 
 ## Faculty showcase redesign — preview only
