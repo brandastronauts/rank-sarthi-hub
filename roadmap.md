@@ -1,5 +1,11 @@
 # Academic team and faculty profiles
 
+## Editorial faculty replacement — one-profile approval
+- [ ] Build an isolated compact Sachin Garg example with original portrait, supplied IIT Madras logo and verified credentials
+- [ ] Verify actual desktop size, mobile readability and profile link; provide uncropped screenshots
+- [ ] Roll out to all seven only after example approval (blocked on user approval)
+- [x] Keep homepage, directory, detailed profiles and integrations unchanged during example review; do not publish
+
 ## Faculty showcase redesign — preview only
 - [x] Replace crowded homepage row with a manual 3/2/1-card accessible carousel
 - [x] Improve the existing About directory and profile presentation without changing approved records
