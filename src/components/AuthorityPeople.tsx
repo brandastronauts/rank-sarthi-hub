@@ -26,7 +26,7 @@ export function AuthorityPeople({ id }: { id?: string }) {
     return () => { carousel.off("select", updateControls).off("reInit", updateControls); };
   }, [carousel, updateControls]);
   return (
-    <section id={id} aria-label="Subject Matter Experts" className="bg-ivory py-10 sm:py-20">
+    <section id={id} aria-label="Subject Matter Experts" className="bg-ivory py-10 sm:py-12">
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-accent">Your Subject Sarthi</p>
@@ -44,10 +44,10 @@ export function AuthorityPeople({ id }: { id?: string }) {
             if (event.key === "End") { event.preventDefault(); carousel?.scrollTo(publicAcademicProfiles.length - 1); }
           }}>
           <div ref={carouselRef} tabIndex={0} aria-label="Faculty cards" className="overflow-clip rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            <ul className="-ml-6 flex touch-pan-y items-stretch pb-4">
+            <ul className="-ml-6 flex touch-pan-y items-start">
               {publicAcademicProfiles.map((profile, index) => (
                 <li key={profile.id} className="min-w-0 shrink-0 grow-0 basis-full pl-6 md:basis-1/2 lg:basis-1/3" aria-label={`${index + 1} of ${publicAcademicProfiles.length}`}>
-                  <FacultyCard profile={profile} />
+                  <FacultyCard profile={profile} editorial />
                 </li>
               ))}
             </ul>
