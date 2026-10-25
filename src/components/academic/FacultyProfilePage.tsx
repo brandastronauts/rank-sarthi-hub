@@ -27,7 +27,7 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
   return (
     <article>
       {/* 1. Hero */}
-      <header className="grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_280px]">
+      <header className="grid items-center gap-8 border-b border-border pb-10 md:grid-cols-[minmax(0,1fr)_280px]">
         <div>
           <p className="eyebrow text-accent">Academic Team · {profile.subject}</p>
           <h1 className="mt-3 text-display-lg text-primary">{profile.name}</h1>
@@ -41,13 +41,13 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
             ))}
           </ul>
         </div>
-        <div className="mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-lg border border-border bg-secondary shadow-card">
+        <div className="order-first mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-lg border border-border bg-secondary shadow-card md:order-last">
           <FacultyPhoto profile={profile} initialsClassName="text-6xl" />
         </div>
       </header>
 
       {/* 2. About */}
-      <section className="mt-12 border-t border-border pt-10" aria-labelledby="about-heading">
+      <section className="mt-10" aria-labelledby="about-heading">
         <h2 id="about-heading" className="text-display-md text-primary">About {profile.name}</h2>
         <div className="mt-5 max-w-3xl space-y-4 text-base leading-relaxed text-ink/85">
           {profile.detailedProfile.map((paragraph) => (

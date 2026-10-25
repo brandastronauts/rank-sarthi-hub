@@ -6,6 +6,7 @@
 
 - Contact enquiries are stored in the contact_enquiries table via a server function (service role only, no client access); all official company details render from src/content/company.ts. Why: no drift in contact/structured data, no public read of personal data.
 - Public faculty discovery and attribution must use the filtered public profile collection; direct profile lookup remains separate. Why: profiles can be temporarily hidden without deleting approved records or internal assignments.
+- Homepage carousel and About directory share FacultyCard summaries derived from approved profile fields, while detailed biographies remain on profile pages. Why: consistent discovery without duplicating academic content or creating another directory route.
 - Faculty discovery includes Biology profiles, but subject-pool membership and page-review assignments remain separately approved. Why: a faculty biography must not imply a syllabus or chapter review occurred.
 - CDN faculty portraits use the verified public asset-serving origin when the pointer is origin-relative. Why: localhost and standalone hosts do not serve Lovable's asset proxy.
 - Rank Sarthi owns acquisition through a referral-safe outbound handoff; each RankUp site owns diagnostics, accounts, results, plans, and payments. Why: marketing must not duplicate product logic it cannot verify.

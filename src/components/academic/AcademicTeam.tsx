@@ -9,7 +9,7 @@ export function AcademicTeam({ id = "academic-team" }: { id?: string }) {
       <p className="mt-3 max-w-3xl text-sm text-ink/80">
         Experienced subject experts who help shape Rank Sarthi&rsquo;s academic content and diagnostic thinking.
       </p>
-      <ul className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className="mt-8 grid auto-rows-fr gap-8 md:grid-cols-2 lg:grid-cols-3">
         {publicAcademicProfiles.map((profile) => (
           <li key={profile.id}>
             <FacultyCard profile={profile} />
