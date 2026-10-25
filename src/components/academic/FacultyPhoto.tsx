@@ -12,9 +12,11 @@ import type { AcademicProfile } from "@/content/types";
 export function FacultyPhoto({
   profile,
   initialsClassName = "text-5xl",
+  contain = false,
 }: {
   profile: AcademicProfile;
   initialsClassName?: string;
+  contain?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
   const ref = useRef<HTMLImageElement | null>(null);
@@ -30,7 +32,7 @@ export function FacultyPhoto({
         ref={ref}
         src={profile.photo}
         alt={profile.imageAlt ?? ""}
-        className="h-full w-full object-cover object-top"
+        className={`h-full w-full object-top ${contain ? "object-contain" : "object-cover"}`}
         onError={() => setFailed(true)}
       />
     );

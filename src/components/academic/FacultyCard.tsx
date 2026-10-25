@@ -10,7 +10,7 @@ export function FacultyCard({ profile }: { profile: AcademicProfile }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-card">
       <div className="h-56 shrink-0 overflow-hidden bg-secondary sm:h-60">
-        <FacultyPhoto profile={profile} initialsClassName="text-5xl" />
+        <FacultyPhoto profile={profile} initialsClassName="text-5xl" contain />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <h3 className="min-h-14 text-xl font-bold leading-7 text-primary">{profile.name}</h3>

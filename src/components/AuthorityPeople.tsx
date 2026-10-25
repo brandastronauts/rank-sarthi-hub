@@ -43,7 +43,7 @@ export function AuthorityPeople({ id }: { id?: string }) {
             if (event.key === "Home") { event.preventDefault(); carousel?.scrollTo(0); }
             if (event.key === "End") { event.preventDefault(); carousel?.scrollTo(publicAcademicProfiles.length - 1); }
           }}>
-          <div ref={carouselRef} tabIndex={0} aria-label="Faculty cards" className="overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <div ref={carouselRef} tabIndex={0} aria-label="Faculty cards" className="overflow-clip rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             <ul className="-ml-6 flex touch-pan-y items-stretch pb-4">
               {publicAcademicProfiles.map((profile, index) => (
                 <li key={profile.id} className="min-w-0 shrink-0 grow-0 basis-full pl-6 md:basis-1/2 lg:basis-1/3" aria-label={`${index + 1} of ${publicAcademicProfiles.length}`}>
