@@ -1,9 +1,10 @@
 import type { AcademicProfile, AcademicSubject } from "./types";
+import pallaviPortrait from "@/assets/pallavi-biology-zoology-expert-rank-sarthi.png.asset.json";
 
 /**
  * Approved faculty records.
  *
- * Content authority: Rank_Sarthi_Faculty_Profile_Master_for_Lovable.docx.
+ * Content authority: approved faculty master and supplied faculty update brief.
  * `shortProfile` is used for About-page cards and compact contexts.
  * `detailedProfile` is the full cleaned academic profile rendered only on the
  * individual profile page. Claims still awaiting evidence stay in
@@ -332,19 +333,18 @@ export const academicProfiles: AcademicProfile[] = [
     id: "ashutosh-pande",
     slug: "ashutosh-pande",
     name: "Ashutosh Pande",
-    title: "Mathematics Expert",
+    title: "Senior Mathematics Faculty",
     subject: "Mathematics",
     role: "Senior Mathematics Faculty / Academic Consultant",
+    featuredCredential: "B.Tech, Chemical Engineering — HBTI, Kanpur",
     shortProfile:
-      "Ashutosh Pande is a Senior Mathematics Faculty member and academic consultant specialising in JEE Main and JEE Advanced Mathematics, focused on concept clarity, multi-step reasoning, structured problem-solving and curriculum design.",
+      "Senior Mathematics educator and academic consultant with a background in engineering and competitive examination preparation. Specializes in conceptual Mathematics, advanced problem-solving, structured assessments and helping JEE aspirants build accuracy and analytical confidence.",
     detailedProfile: [
-      "Ashutosh Pande is a Mathematics educator and Senior Academic Consultant specialising in curriculum design and mentorship for JEE Main and JEE Advanced Mathematics.",
-      "His academic approach centres on concept clarity, systematic problem-solving, multi-step reasoning, analytical agility, speed-accuracy optimisation and examination temperament. These are treated as trainable components rather than traits: each has its own practice structure and its own diagnostic signal.",
-      "Multi-step reasoning is the distinguishing focus of his work. Advanced Mathematics questions rarely fail on a single technique; they fail at the joins between techniques. His content therefore emphasises problems where the difficulty lies in choosing and sequencing methods — algebraic manipulation into calculus, coordinate reformulation into vector reasoning, and similar transitions.",
-      "Curriculum design and content curation form a second strand: deciding what belongs at each stage of preparation, what depth a topic requires for Main as against Advanced, and how a topic should be revisited later at higher difficulty instead of being taught once at maximum depth.",
-      "He also works on question-bank design, assessment blueprints and performance analytics — structuring practice so that results indicate where a learner's method selection, algebraic accuracy or time allocation is failing, rather than only producing a score.",
-      "Speed-accuracy optimisation completes the approach: identifying the routine steps that should become automatic, so that limited examination time is spent on the reasoning that actually carries marks.",
-      "For Rank Sarthi, his profile centres on JEE Mathematics, curriculum design, analytical reasoning and advanced problem-solving.",
+      "Ashutosh Pande is a Senior Mathematics Faculty member and Academic Consultant specializing in JEE Main & Advanced preparation.",
+      "A B.Tech graduate in Chemical Engineering from HBTI, Kanpur and JEE 1998 qualifier, he combines an analytical engineering background with extensive experience in competitive Mathematics education.",
+      "His teaching emphasizes strong mathematical fundamentals, multi-step reasoning, systematic problem-solving and accuracy under examination conditions.",
+      "He has also contributed to curriculum development, question-bank design, assessment planning and performance analysis, helping create structured learning pathways for JEE aspirants.",
+      "His approach focuses on identifying conceptual gaps, strengthening problem-solving techniques and preparing students for the analytical demands of JEE Main & Advanced.",
     ],
     academicFocus: [
       "JEE Main and JEE Advanced Mathematics depth differentiation",
@@ -375,15 +375,19 @@ export const academicProfiles: AcademicProfile[] = [
       "Assessment Planning",
     ],
     relatedPages: ["/jee/jee-advanced/syllabus", "/jee/syllabus/mathematics", "/jee/mathematics"],
+    education: "HBTI, Kanpur",
+    credentials: [
+      { label: "Undergraduate degree", value: "B.Tech in Chemical Engineering, HBTI, Kanpur", section: "Education" },
+      { label: "JEE", value: "JEE 1998 qualifier", section: "Competitive / Academic Qualifications" },
+    ],
     verificationStatus: partial,
     photo: "/faculty/ashutosh-pande-senior-mathematics-faculty-rank-sarthi.webp",
     photoFilename: "ashutosh-pande-senior-mathematics-faculty-rank-sarthi.webp",
     imageAlt: "Ashutosh Pande, Senior Mathematics Faculty at Rank Sarthi",
     initials: "AP",
     claimsRequiringEvidence: [
-      "JEE 1998 qualification",
-      "Degree and institution",
-      "Student rank outcomes",
+      "Student AIR 19, 20, 65 and 85 outcomes: attribution verification and approval required",
+      "HBTI / HBTU logo authorization and exact current institutional wording",
       "Teaching experience",
       "LinkedIn",
       "Professional email",
@@ -446,20 +450,19 @@ export const academicProfiles: AcademicProfile[] = [
   },
   {
     id: "hardik-agrawal",
-    education: "Indian Institute of Technology Delhi",
     slug: "hardik-agrawal",
     name: "Hardik Agrawal",
-    title: "Physics Expert",
+    title: "Physics Expert & Founding Platform Architect",
     subject: "Physics",
-    role: "Physics Expert",
+    role: "Physics Expert & Founding Platform Architect",
     shortProfile:
-      "Hardik Agrawal is a Physics Expert working across competitive Physics and digital learning systems. His academic contribution connects fundamental physical principles with structured mathematical application and multi-step problem-solving for JEE aspirants.",
+      "Physics expert and founding platform architect combining first-hand JEE examination experience with expertise in digital learning technology. Focuses on conceptual Physics, analytical problem-solving and developing effective assessment experiences for competitive aspirants.",
     detailedProfile: [
-      "Hardik Agrawal is a Physics Expert whose academic contribution connects abstract physical laws to structured mathematical application and multi-step problem-solving for JEE Main and JEE Advanced learners.",
-      "His Physics work concentrates on the translation step that most competitive questions actually test: converting a described physical situation into a correct mathematical statement. Free-body reasoning, field and potential arguments, energy accounting and constraint relations are treated as the tools of that translation.",
-      "Multi-step problem-solving follows from it. Advanced Physics problems typically chain two or three principles, and his content emphasises recognising which chain a problem requires, keeping the algebra controlled through the chain, and validating the result dimensionally and in limiting cases.",
-      "He also works on the digital learning systems and learning architecture supporting Rank Sarthi — how content is structured, delivered and kept consistent at scale, including the presentation of mathematical notation and the organisation of interlinked academic material.",
-      "For Rank Sarthi, his contribution combines competitive Physics reasoning with the educational-technology work that keeps that reasoning legible and consistent across the platform.",
+      "Hardik Agrawal is a Physics Expert and one of the founding architects of the Rank Sarthi academic technology framework.",
+      "Having qualified JEE Main and JEE Advanced, he brings first-hand experience of competitive engineering entrance examinations to his work in Physics education.",
+      "His academic focus includes conceptual understanding, mathematical application of physical principles, analytical reasoning and solving multi-step Physics problems.",
+      "Alongside his academic contribution, Hardik works on the architecture of digital learning and assessment systems, bringing together technical engineering and educational requirements.",
+      "His expertise connects accurate academic content with scalable testing experiences and student performance analysis.",
     ],
     academicFocus: [
       "Translating physical situations into correct mathematical statements",
@@ -489,14 +492,48 @@ export const academicProfiles: AcademicProfile[] = [
     imageAlt: "Hardik Agrawal, Physics Expert at Rank Sarthi",
     initials: "HA",
     claimsRequiringEvidence: [
-      "Exact public technology title",
-      "JEE Main result",
-      "JEE Advanced result",
-      "MVPP or JSTSE rank",
-      "Technical responsibilities",
+      "NSIT Delhi / NSUT: exact institutional association, qualification and alumni status require confirmation",
+      "JEE Main: 98.87 percentile requires verification",
+      "JEE Advanced 2024: CRL 11047 requires verification",
+      "MVPP/JSTSE: Rank 18 and exact examination require verification",
       "LinkedIn",
       "Professional email",
     ],
+  },
+  {
+    id: "pallavi",
+    slug: "pallavi",
+    name: "Pallavi",
+    title: "Senior Biology & Zoology Expert",
+    subject: "Biology",
+    role: "Senior Biology & Zoology Expert",
+    featuredCredential: "Bachelor of Physiotherapy (BPT)",
+    shortProfile: "An experienced Biology and Zoology educator with over 15 years in medical entrance preparation. Pallavi brings together a background in physiotherapy, expertise in NCERT-based learning, and experience in curriculum planning to help NEET aspirants strengthen their understanding of Biology.",
+    detailedProfile: [
+      "Pallavi is a senior Biology and Zoology educator with over 15 years of experience in medical entrance examination preparation. With an academic background in Physiotherapy and postgraduate specialization in Healthcare Administration, she brings a practical understanding of human biology and physiology to her teaching.",
+      "Her academic experience includes work with educational organizations such as Narayana IIT/NEET Academy, Aakash Digital, FIITJEE and Studymate, as described in her professional profile.",
+      "Her teaching focuses on building conceptual clarity, interpreting NCERT material accurately, understanding anatomical and physiological processes, and developing effective strategies for solving NEET Biology questions.",
+      "Beyond classroom teaching, she has contributed to curriculum planning, academic coordination, assessment design and student performance analysis.",
+      "Her approach combines conceptual learning, visual understanding, structured revision and examination-oriented practice to help NEET aspirants prepare with greater confidence.",
+    ],
+    academicFocus: ["NCERT-based Biology learning", "Human anatomy and physiology", "Conceptual clarity and visual understanding", "Structured revision and NEET question-solving"],
+    expertise: ["Biology", "Zoology", "NEET UG", "NCERT-based Learning", "Curriculum Planning", "Assessment Design"],
+    examScope: ["NEET UG Biology", "NEET UG Zoology"],
+    contribution: [],
+    reviewAreas: [],
+    relatedPages: ["/neet/biology", "/neet/syllabus/biology", "/neet/syllabus"],
+    credentials: [
+      { label: "Undergraduate degree", value: "Bachelor of Physiotherapy (BPT)", section: "Education" },
+      { label: "Postgraduate specialization", value: "Healthcare Administration", section: "Education" },
+      { label: "Academic experience", value: "Over 15 years", section: "Teaching Experience" },
+      { label: "Previous institutional experience", value: "Narayana IIT/NEET Academy, Aakash Digital, FIITJEE and Studymate", section: "Teaching Experience" },
+    ],
+    verificationStatus: partial,
+    photo: `https://rank-sarthi-hub.lovable.app${pallaviPortrait.url}`,
+    photoFilename: "pallavi-biology-zoology-expert-rank-sarthi.png",
+    imageAlt: "Pallavi, Senior Biology and Zoology Expert at Rank Sarthi",
+    initials: "P",
+    claimsRequiringEvidence: ["Preferred honorific: Mrs. or Dr.; inconsistent Pallavi / Pallavii spelling", "Student numerical achievements and institutional selection claims", "Exact postgraduate program, Medvarsity and Apollo Hospitals association", "Institutional logo rights and employment dates", "Page-specific Biology review assignment"],
   },
 ];
 
@@ -523,4 +560,5 @@ export const reviewerPools: Record<AcademicSubject, string[]> = {
   Physics: ["gandharva-saxena", "ashwin-m", "hardik-agrawal"],
   Chemistry: ["adarsh-kumar", "vinod-kumar", "prabhat-kumar"],
   Mathematics: ["sachin-garg", "ashutosh-pande"],
+  Biology: [],
 };

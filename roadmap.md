@@ -1,5 +1,11 @@
 # Academic team and faculty profiles
 
+## October faculty update — preview only
+- [x] Add Pallavi with supplied portrait, Biology/NEET scope and publication-safe biography
+- [x] Update Ashutosh and Hardik in place; withhold unverified scores, affiliations and logos
+- [x] Preserve compact faculty showcase, routes and student journeys; verify desktop/mobile and regressions
+- [x] Report changed files and pending approvals; do not publish
+
 - [x] Parse and validate the approved faculty master document as the sole profile-content authority
 - [x] Preserve existing truthful About schema; profile pages use WebPage + BreadcrumbList only
 - [x] Keep Vinod Kumar photo-free with initials fallback only

@@ -25,6 +25,7 @@ export const Route = createFileRoute("/about/faculty/$slug")({
       ogTitle: `${profile.name} — ${profile.title}`,
       ogDescription: description,
       ogType: "website",
+      ...(profile.photo?.startsWith("https://") ? { ogImage: profile.photo } : {}),
       jsonLd: [
         { "@context": "https://schema.org", "@type": "WebPage", name: profile.name, description, url: absolute(url), inLanguage: "en-IN" },
         breadcrumbSchema(url),

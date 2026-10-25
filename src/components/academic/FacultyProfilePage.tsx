@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getUrl } from "@/content/registry";
 import { FacultyPhoto } from "./FacultyPhoto";
 import { InstitutionCredentialBadge } from "./InstitutionCredentialBadge";
+import { DiagnosticLauncher } from "@/components/acquisition/DiagnosticLauncher";
 
 /**
  * Public faculty profile page.
@@ -216,7 +217,10 @@ export function FacultyProfilePage({ profile }: { profile: AcademicProfile }) {
         </section>
       ) : null}
 
-      <Button asChild variant="outline" className="mt-10">
+      <div className="mt-10">
+        <DiagnosticLauncher ctaLocation="section" className="h-auto max-w-full whitespace-normal text-center" />
+      </div>
+      <Button asChild variant="outline" className="mt-4">
         <Link to="/$platform" params={{ platform: "about" }}>
           <ArrowLeft aria-hidden /> Back to About Rank Sarthi
         </Link>
