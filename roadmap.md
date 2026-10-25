@@ -1,5 +1,11 @@
 # Academic team and faculty profiles
 
+## Faculty showcase redesign — preview only
+- [x] Replace crowded homepage row with a manual 3/2/1-card accessible carousel
+- [x] Improve the existing About directory and profile presentation without changing approved records
+- [x] Verify five viewport sizes, keyboard controls, all profile links and regression tests; deliver desktop/mobile screenshots — 121 tests and 88 homepage checks passed
+- [x] Keep publication withheld pending approval
+
 ## October faculty update — preview only
 - [x] Add Pallavi with supplied portrait, Biology/NEET scope and publication-safe biography
 - [x] Update Ashutosh and Hardik in place; withhold unverified scores, affiliations and logos
