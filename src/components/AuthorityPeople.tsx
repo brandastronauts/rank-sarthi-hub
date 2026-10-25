@@ -16,7 +16,7 @@ export function AuthorityPeople({ id }: { id?: string }) {
             Experienced subject experts who help shape Rank Sarthi&rsquo;s academic content and diagnostic thinking.
           </p>
         </Reveal>
-        <ul className="-mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6">
+        <ul className="-mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-7">
           {publicAcademicProfiles.map((profile, i) => (
             <Reveal key={profile.id} as="li" delay={(i % 4) * 70} className="w-[9rem] shrink-0 snap-start sm:w-auto">
               <Link
@@ -30,10 +30,10 @@ export function AuthorityPeople({ id }: { id?: string }) {
                 <span className="mt-3 block text-sm font-bold text-primary group-hover:text-accent">{profile.name}</span>
                 <span className="mt-1 block text-xs font-semibold text-ink/80">{profile.title}</span>
                 <span className="mt-1 block text-xs text-muted-foreground">{profile.subject} · {profile.examScope.some((scope) => scope.startsWith("JEE")) ? "JEE" : null}{profile.examScope.some((scope) => scope.startsWith("JEE")) && profile.examScope.some((scope) => scope.startsWith("NEET")) ? " / " : null}{profile.examScope.some((scope) => scope.startsWith("NEET")) ? "NEET UG" : null}</span>
-                <span className="mt-1 line-clamp-2 block min-h-8 text-xs leading-4 text-muted-foreground">
+                <span className="mt-1 line-clamp-2 min-h-8 text-xs leading-4 text-muted-foreground">
                   <CompactFacultyCredential profile={profile} />
                 </span>
-                <span className="mt-2 line-clamp-3 block text-xs leading-4 text-muted-foreground">{profile.shortProfile}</span>
+                <span className="mt-2 line-clamp-3 text-xs leading-4 text-muted-foreground">{profile.shortProfile}</span>
               </Link>
             </Reveal>
           ))}

@@ -529,7 +529,7 @@ export const academicProfiles: AcademicProfile[] = [
       { label: "Previous institutional experience", value: "Narayana IIT/NEET Academy, Aakash Digital, FIITJEE and Studymate", section: "Teaching Experience" },
     ],
     verificationStatus: partial,
-    photo: pallaviPortrait.url,
+    photo: `https://rank-sarthi-hub.lovable.app${pallaviPortrait.url}`,
     photoFilename: "pallavi-biology-zoology-expert-rank-sarthi.png",
     imageAlt: "Pallavi, Senior Biology and Zoology Expert at Rank Sarthi",
     initials: "P",
