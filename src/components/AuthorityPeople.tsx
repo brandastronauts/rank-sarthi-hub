@@ -28,10 +28,12 @@ export function AuthorityPeople({ id }: { id?: string }) {
                   <FacultyPhoto profile={profile} initialsClassName="text-2xl" />
                 </span>
                 <span className="mt-3 block text-sm font-bold text-primary group-hover:text-accent">{profile.name}</span>
-                <span className="mt-1 block text-xs font-semibold text-ink/80">{profile.subject} Expert</span>
+                <span className="mt-1 block text-xs font-semibold text-ink/80">{profile.title}</span>
+                <span className="mt-1 block text-xs text-muted-foreground">{profile.subject} · {profile.examScope.some((scope) => scope.startsWith("JEE")) ? "JEE" : null}{profile.examScope.some((scope) => scope.startsWith("JEE")) && profile.examScope.some((scope) => scope.startsWith("NEET")) ? " / " : null}{profile.examScope.some((scope) => scope.startsWith("NEET")) ? "NEET UG" : null}</span>
                 <span className="mt-1 line-clamp-2 block min-h-8 text-xs leading-4 text-muted-foreground">
                   <CompactFacultyCredential profile={profile} />
                 </span>
+                <span className="mt-2 line-clamp-3 block text-xs leading-4 text-muted-foreground">{profile.shortProfile}</span>
               </Link>
             </Reveal>
           ))}

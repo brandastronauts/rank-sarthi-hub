@@ -112,7 +112,7 @@ export interface AcademicProfile {
   slug: string;
   name: string;
   title: string;
-  subject: "Physics" | "Chemistry" | "Mathematics";
+  subject: "Physics" | "Chemistry" | "Mathematics" | "Biology";
   role: string;
   /** One concise, approved credential or academic-focus line for compact cards. */
   featuredCredential?: string;
