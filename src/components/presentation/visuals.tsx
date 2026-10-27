@@ -230,7 +230,7 @@ export function LearningLoop({ steps, durationSec, paused }: { steps: string[]; 
   );
 }
 
-const OPS_ICONS = [ShieldCheck, FileInput, Users];
+const OPS_ICONS = [ShieldCheck, FileInput, ReceiptText];
 export function Operations({ items, paused, durationSec }: { items: string[]; paused: boolean; durationSec: number }) {
   const [active, setActive] = useState(0);
   useEffect(() => {
@@ -241,7 +241,7 @@ export function Operations({ items, paused, durationSec }: { items: string[]; pa
   return (
     <div className="mx-auto grid w-full max-w-4xl gap-4 sm:grid-cols-3 sm:gap-8">
       {items.map((label, i) => {
-        const Icon = i === 2 ? ReceiptText : OPS_ICONS[i];
+        const Icon = OPS_ICONS[i] ?? Users;
         const on = i === active;
         return (
           <div key={label} className="pres-rise flex items-center gap-4 sm:flex-col sm:text-center" style={{ ["--d" as string]: `${400 + i * 350}ms` }}>
