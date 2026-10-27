@@ -29,3 +29,4 @@
 - B2B campaign eligibility imports only the small institute policy module, not page copy. Why: institute copy must not enter every student page's JavaScript bundle.
 - Publisher uses a shared lockup/bundled logo and one book catalogue/block; missing covers stay absent. Why: consistent genuine artwork and details.
 - Social links use one account list and shared renderer. Why: footer and Contact destinations stay consistent.
+- The /presentation showcase is self-contained: scenes, screenshots and feature inventory live in src/content/presentation/*, components in src/components/presentation/*, and it touches no shared site components. Why: the investor showcase must not alter live site journeys or SEO.
