@@ -235,7 +235,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
         </div>,
       );
     case "screens": {
-      const shots = (scene.screens ?? []).map((id) => SCREEN_BY_ID[id]);
+      const shots = (scene.screens ?? []).map((id) => SCREEN_BY_ID[id]).filter((s): s is Screen => !!s);
       const callouts = scene.overlays ?? [];
       const activeCallout = Math.min(callouts.length - 1, Math.floor(progress * callouts.length));
       return shell(

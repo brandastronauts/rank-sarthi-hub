@@ -16,7 +16,8 @@ export function ScreenshotStage({
   onZoom: (s: Screen) => void;
   durationMs: number;
 }) {
-  const current = shots[index];
+  const current = shots[index] ?? shots[0];
+  if (!current) return null;
   return (
     <div className="w-full">
       <div className="overflow-hidden rounded-xl border border-ivory/15 bg-ivory shadow-[0_40px_120px_-40px_rgba(0,0,0,0.8)]">

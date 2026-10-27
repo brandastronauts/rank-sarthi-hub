@@ -43,7 +43,7 @@ export function PresentationExperience() {
   const [idle, setIdle] = useState(false);
   const [ended, setEnded] = useState(false);
 
-  const scene = SCENES[index];
+  const scene = SCENES[index] ?? SCENES[0]!;
   const durMs = scene.durationSec * 1000;
   const progress = Math.min(1, elapsed / durMs);
   const holding = paused || !!panel || !!zoomShot;
@@ -155,11 +155,11 @@ export function PresentationExperience() {
 
   // Swipe
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const onTouchStart = (e: React.TouchEvent) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY });
+  const onTouchStart = (e: React.TouchEvent) => (touch.current = { x: e.touches[0]!.clientX, y: e.touches[0]!.clientY });
   const onTouchEnd = (e: React.TouchEvent) => {
     if (!touch.current) return;
-    const dx = e.changedTouches[0].clientX - touch.current.x;
-    const dy = e.changedTouches[0].clientY - touch.current.y;
+    const dx = e.changedTouches[0]!.clientX - touch.current.x;
+    const dy = e.changedTouches[0]!.clientY - touch.current.y;
     touch.current = null;
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(index + (dx < 0 ? 1 : -1));
   };

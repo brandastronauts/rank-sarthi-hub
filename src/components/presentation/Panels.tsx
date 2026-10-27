@@ -92,9 +92,9 @@ const DEMONSTRATED: Record<string, { scene: number; mode: "shown" | "described" 
 };
 
 export function FeatureExplorer({ onClose, onGo }: { onClose: () => void; onGo: (sceneIndex: number) => void }) {
-  const [tab, setTab] = useState(FEATURE_PORTALS[0].id);
+  const [tab, setTab] = useState(FEATURE_PORTALS[0]!.id);
   const [q, setQ] = useState("");
-  const portal = FEATURE_PORTALS.find((p) => p.id === tab) ?? FEATURE_PORTALS[0];
+  const portal = FEATURE_PORTALS.find((p) => p.id === tab) ?? FEATURE_PORTALS[0]!;
   const total = FEATURE_PORTALS.reduce((t, p) => t + p.groups.reduce((n, g) => n + g.items.length, 0), 0);
   const groups = useMemo(() => {
     const needle = q.trim().toLowerCase();
