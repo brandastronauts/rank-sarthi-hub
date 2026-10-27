@@ -118,10 +118,10 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
     case "scale":
       return shell(
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-14">
-          <IndiaMap svgClassName="mx-auto h-28 w-auto sm:h-56 lg:h-[min(42vh,500px)]" />
+          <IndiaMap svgClassName="mx-auto h-20 w-auto sm:h-48 lg:h-[min(42vh,500px)]" />
           <div>
-            <Headline className="!text-[clamp(1.8rem,3.6vw,3.6rem)]">{scene.headline}</Headline>
-            <div className="mt-6 sm:mt-8">
+            <Headline className="!text-[clamp(1.6rem,3.2vw,3.2rem)]">{scene.headline}</Headline>
+            <div className="mt-4 lg:mt-6">
               <ParticipationChart />
             </div>
           </div>
@@ -185,7 +185,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
                   className={`pres-rise relative overflow-hidden rounded-2xl transition-all duration-700 ${on ? "opacity-100" : "opacity-45 saturate-50"}`}
                   style={d(400 + i * 200)}
                 >
-                  <img src={PORTRAITS[i]} alt="" width={768} height={1024} loading="lazy" className="h-[min(30vh,300px)] w-full object-cover object-top sm:h-[min(38vh,420px)]" />
+                  <img src={PORTRAITS[i]} alt="" width={768} height={1024} loading="lazy" className="h-[min(17vh,300px)] w-full object-cover object-top sm:h-[min(38vh,420px)]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
                     <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">{who}</span>
