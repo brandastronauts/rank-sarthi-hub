@@ -76,7 +76,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
             <PhotoBackdrop src={s01} dur={10} />
           </div>
         )}
-        <div className="relative flex h-full flex-col justify-end px-6 pb-44 pt-24 sm:px-14 sm:pb-48 lg:px-20">
+        <div style={{ paddingBottom: "var(--pres-bottom, 180px)" }} className="relative flex h-full flex-col justify-end px-6 pt-24 sm:px-14 lg:px-20">
           <div className="max-w-4xl">
             <Headline>{scene.headline}</Headline>
             {scene.secondary && (
@@ -108,7 +108,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
   const shell = (children: React.ReactNode, wide = false) => (
     <div className="absolute inset-0 overflow-y-auto bg-navy-deep">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,color-mix(in_oklab,var(--gold)_14%,transparent),transparent_55%)]" aria-hidden />
-      <div className={`relative mx-auto flex min-h-full w-full flex-col justify-center px-5 pb-44 pt-24 sm:px-10 sm:pb-40 ${wide ? "max-w-[1500px]" : "max-w-6xl"}`}>
+      <div style={{ paddingBottom: "var(--pres-bottom, 180px)" }} className={`relative mx-auto flex min-h-full w-full flex-col justify-center px-5 pt-24 sm:px-10 ${wide ? "max-w-[1500px]" : "max-w-6xl"}`}>
         {children}
       </div>
     </div>
@@ -118,7 +118,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
     case "scale":
       return shell(
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-14">
-          <IndiaMap className="mx-auto h-40 w-auto sm:h-64 lg:h-[min(52vh,540px)]" />
+          <IndiaMap svgClassName="mx-auto h-36 w-auto sm:h-64 lg:h-[min(48vh,520px)]" />
           <div>
             <Headline className="!text-[clamp(1.8rem,3.6vw,3.6rem)]">{scene.headline}</Headline>
             <div className="mt-6 sm:mt-8">

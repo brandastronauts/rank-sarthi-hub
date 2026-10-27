@@ -38,10 +38,10 @@ function useCount(to: number, ms = 1800, decimals = 2) {
   return v.toFixed(decimals);
 }
 
-export function IndiaMap({ className = "" }: { className?: string }) {
+export function IndiaMap({ className = "", svgClassName = "" }: { className?: string; svgClassName?: string }) {
   return (
     <figure className={className}>
-      <svg viewBox={INDIA_VIEWBOX} role="img" aria-label="Outline map of India" className="h-full w-full">
+      <svg viewBox={INDIA_VIEWBOX} role="img" aria-label="Outline map of India" className={`block ${svgClassName}`}>
         <defs>
           <linearGradient id="pres-india-fill" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.16" />
