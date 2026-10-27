@@ -78,12 +78,12 @@ export function ParticipationChart() {
   return (
     <figure className="w-full" aria-label="Candidates who appeared, 2026, in lakh">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">Candidates appeared · 2026 · lakh</p>
-      <div className="mt-4 space-y-4 lg:space-y-6">
+      <div className="mt-3 space-y-3 lg:space-y-4">
         {rows.map((r) => (
           <div key={r.label}>
             <div className="flex items-baseline justify-between gap-3">
               <span className="text-sm font-medium text-ivory/85 sm:text-base">{r.label}</span>
-              <span className="pres-serif text-3xl text-ivory tabular-nums sm:text-5xl">
+              <span className="pres-serif text-3xl text-ivory tabular-nums sm:text-4xl">
                 ~{r.shown}
                 <span className="ml-1 text-sm text-ivory/60 sm:text-base">lakh</span>
               </span>
@@ -114,8 +114,7 @@ export function ParticipationChart() {
       </div>
       <figcaption className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-ivory/50">
         <span className="rounded-full border border-gold/50 px-2 py-0.5 font-semibold text-gold">Provisional · verify</span>
-        Source: 2026 appeared-candidate figures from the Rank Sarthi master content; to be checked against final NTA
-        releases. Exam participation, not market size.
+        Rank Sarthi master content · pending final NTA check · participation, not market size.
       </figcaption>
     </figure>
   );
