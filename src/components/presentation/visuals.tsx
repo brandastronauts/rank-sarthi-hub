@@ -88,7 +88,7 @@ export function ParticipationChart() {
                 <span className="ml-1 text-sm text-ivory/60 sm:text-base">lakh</span>
               </span>
             </div>
-            <div className="relative mt-2 h-3 rounded-full bg-ivory/10">
+            <div className="relative mt-2 h-2.5 rounded-full bg-ivory/10 sm:h-3">
               <div
                 className="pres-grow absolute inset-y-0 left-0 rounded-full bg-gold"
                 style={{ width: `${(r.lakh / max) * 100}%`, ["--d" as string]: `${r.d}ms` }}
@@ -102,13 +102,13 @@ export function ParticipationChart() {
           ))}
         </div>
       </div>
-      <div className="mt-4 grid gap-3 border-t border-ivory/10 pt-5 text-sm text-ivory/75 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-2 gap-3 border-t border-ivory/10 pt-4 text-xs sm:text-sm text-ivory/75 sm:grid-cols-2">
         <p>
-          <span className="pres-serif block text-2xl text-ivory">~{PARTICIPATION.combinedLakh} lakh</span>
+          <span className="pres-serif block text-xl text-ivory sm:text-2xl">~{PARTICIPATION.combinedLakh} lakh</span>
           JEE Main + NEET exam participations — not deduplicated unique students.
         </p>
         <p>
-          <span className="pres-serif block text-2xl text-ivory">NDA</span>
+          <span className="pres-serif block text-xl text-ivory sm:text-2xl">NDA</span>
           A third exam pathway. No numerical comparison until verified.
         </p>
       </div>

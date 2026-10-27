@@ -118,7 +118,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
     case "scale":
       return shell(
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-14">
-          <IndiaMap svgClassName="mx-auto h-36 w-auto sm:h-64 lg:h-[min(48vh,520px)]" />
+          <IndiaMap svgClassName="mx-auto h-28 w-auto sm:h-56 lg:h-[min(42vh,500px)]" />
           <div>
             <Headline className="!text-[clamp(1.8rem,3.6vw,3.6rem)]">{scene.headline}</Headline>
             <div className="mt-6 sm:mt-8">
