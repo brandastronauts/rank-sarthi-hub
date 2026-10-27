@@ -15,6 +15,7 @@ import { Route as DiagnosticRouteImport } from './routes/diagnostic'
 import { Route as FacultyDesignPreviewRouteImport } from './routes/faculty-design-preview'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OffersRouteImport } from './routes/offers'
+import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as SitemapRouteImport } from './routes/sitemap'
@@ -65,6 +66,11 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
 const OffersRoute = OffersRouteImport.update({
   id: '/offers',
   path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -182,6 +188,7 @@ export interface FileRoutesByFullPath {
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
+  '/presentation': typeof PresentationRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -211,6 +218,7 @@ export interface FileRoutesByTo {
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
+  '/presentation': typeof PresentationRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -241,6 +249,7 @@ export interface FileRoutesById {
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/offers': typeof OffersRoute
+  '/presentation': typeof PresentationRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/sitemap': typeof SitemapRoute
@@ -272,6 +281,7 @@ export interface FileRouteTypes {
     | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
+    | '/presentation'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -301,6 +311,7 @@ export interface FileRouteTypes {
     | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
+    | '/presentation'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -330,6 +341,7 @@ export interface FileRouteTypes {
     | '/faculty-design-preview'
     | '/llms.txt'
     | '/offers'
+    | '/presentation'
     | '/privacy-policy'
     | '/refund-policy'
     | '/sitemap'
@@ -360,6 +372,7 @@ export interface RootRouteChildren {
   FacultyDesignPreviewRoute: typeof FacultyDesignPreviewRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OffersRoute: typeof OffersRoute
+  PresentationRoute: typeof PresentationRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   SitemapRoute: typeof SitemapRoute
@@ -425,6 +438,13 @@ declare module '@tanstack/react-router' {
       path: '/offers'
       fullPath: '/offers'
       preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -584,6 +604,7 @@ const rootRouteChildren: RootRouteChildren = {
   FacultyDesignPreviewRoute: FacultyDesignPreviewRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OffersRoute: OffersRoute,
+  PresentationRoute: PresentationRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   SitemapRoute: SitemapRoute,
