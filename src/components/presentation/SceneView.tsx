@@ -118,7 +118,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
     case "scale":
       return shell(
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-14">
-          <IndiaMap className="mx-auto h-44 w-auto sm:h-72 lg:h-[min(60vh,560px)]" />
+          <IndiaMap className="mx-auto h-40 w-auto sm:h-64 lg:h-[min(52vh,540px)]" />
           <div>
             <Headline className="!text-[clamp(1.8rem,3.6vw,3.6rem)]">{scene.headline}</Headline>
             <div className="mt-6 sm:mt-8">
@@ -185,7 +185,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
                   className={`pres-rise relative overflow-hidden rounded-2xl transition-all duration-700 ${on ? "opacity-100" : "opacity-45 saturate-50"}`}
                   style={d(400 + i * 200)}
                 >
-                  <img src={PORTRAITS[i]} alt="" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full object-cover sm:aspect-[4/5]" />
+                  <img src={PORTRAITS[i]} alt="" width={768} height={1024} loading="lazy" className="h-[min(30vh,300px)] w-full object-cover object-top sm:h-[min(38vh,420px)]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
                     <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">{who}</span>
@@ -259,7 +259,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
               ))}
             </ul>
             {scene.id === "s11" && (
-              <ul className="pres-fade mt-5 hidden space-y-1.5 text-sm text-ivory/70 lg:block" style={d(1400)} aria-label="Exam-screen capabilities from the developer's feature list">
+              <ul className="pres-fade mt-5 hidden space-y-1.5 text-sm text-ivory/70 [@media(min-width:1024px)_and_(min-height:960px)]:block" style={d(1400)} aria-label="Exam-screen capabilities from the developer's feature list">
                 {EXAM_SCREEN_FEATURES.map((f) => (
                   <li key={f.title}>
                     <span className="text-ivory">{f.title}</span> — {f.detail}

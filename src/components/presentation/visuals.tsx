@@ -78,7 +78,7 @@ export function ParticipationChart() {
   return (
     <figure className="w-full" aria-label="Candidates who appeared, 2026, in lakh">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">Candidates appeared · 2026 · lakh</p>
-      <div className="mt-5 space-y-6">
+      <div className="mt-4 space-y-4 lg:space-y-6">
         {rows.map((r) => (
           <div key={r.label}>
             <div className="flex items-baseline justify-between gap-3">
@@ -102,7 +102,7 @@ export function ParticipationChart() {
           ))}
         </div>
       </div>
-      <div className="mt-6 grid gap-3 border-t border-ivory/10 pt-5 text-sm text-ivory/75 sm:grid-cols-2">
+      <div className="mt-4 grid gap-3 border-t border-ivory/10 pt-5 text-sm text-ivory/75 sm:grid-cols-2">
         <p>
           <span className="pres-serif block text-2xl text-ivory">~{PARTICIPATION.combinedLakh} lakh</span>
           JEE Main + NEET exam participations — not deduplicated unique students.
