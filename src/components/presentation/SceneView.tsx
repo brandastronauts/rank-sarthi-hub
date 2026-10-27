@@ -203,10 +203,10 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
     case "closing":
       return shell(
         <div className="flex flex-col items-center text-center">
-          <div className="pres-rise rounded-3xl bg-ivory px-8 py-6 shadow-[0_0_120px_-30px_var(--gold)]" style={d(200)}>
-            <Logo className="w-32 sm:w-44" alt="Rank Sarthi — official logo" />
+          <div className="pres-rise rounded-3xl bg-ivory px-6 py-4 shadow-[0_0_120px_-30px_var(--gold)]" style={d(200)}>
+            <Logo className="w-28 sm:w-36" alt="Rank Sarthi — official logo" />
           </div>
-          <p className="pres-serif pres-rise mt-8 text-[clamp(1.8rem,4vw,3.6rem)] leading-tight text-ivory" style={d(1200)}>
+          <p className="pres-serif pres-rise mt-6 text-[clamp(1.8rem,4vw,3.6rem)] leading-tight text-ivory" style={d(1200)}>
             {scene.overlays?.[0]}
           </p>
           <p className="pres-serif pres-rise mt-2 text-[clamp(1.3rem,2.6vw,2.4rem)] italic text-gold" style={d(2400)}>
@@ -215,7 +215,7 @@ export function SceneView({ scene, progress, paused, shotIndex, onShotSelect, on
           <p className="pres-rise mt-5 text-sm tracking-[0.2em] text-ivory/60" style={d(3200)}>
             {scene.overlays?.[2]}
           </p>
-          <div className="pres-rise mt-8 flex flex-col items-center gap-3 sm:flex-row" style={d(3800)}>
+          <div className="pres-rise mt-6 flex flex-col items-center gap-3 sm:flex-row" style={d(3800)}>
             <Link
               to="/diagnostic"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-base font-semibold text-navy-deep transition hover:brightness-110"
