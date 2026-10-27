@@ -42,6 +42,22 @@ export function PresentationExperience() {
   const [soundOpen, setSoundOpen] = useState(false);
   const [idle, setIdle] = useState(false);
   const [ended, setEnded] = useState(false);
+  const controlsRef = useRef<HTMLDivElement | null>(null);
+  const captionRef = useRef<HTMLDivElement | null>(null);
+  const [controlsH, setControlsH] = useState(84);
+  const [captionH, setCaptionH] = useState(0);
+
+  // Reserve room for controls + captions so scene copy never sits underneath them.
+  useEffect(() => {
+    if (!started) return;
+    const ro = new ResizeObserver(() => {
+      setControlsH(controlsRef.current?.offsetHeight ?? 84);
+      setCaptionH(captionRef.current?.offsetHeight ?? 0);
+    });
+    if (controlsRef.current) ro.observe(controlsRef.current);
+    if (captionRef.current) ro.observe(captionRef.current);
+    return () => ro.disconnect();
+  }, [started, captions]);
 
   const scene = SCENES[index] ?? SCENES[0]!;
   const durMs = scene.durationSec * 1000;
@@ -177,7 +193,10 @@ export function PresentationExperience() {
   const elapsedTotal = SCENES.slice(0, index).reduce((t, s) => t + s.durationSec, 0) + elapsed / 1000;
 
   return (
-    <div ref={rootRef} className="fixed inset-0 overflow-hidden bg-navy-deep text-ivory" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <div
+      ref={rootRef}
+      className="fixed inset-0 overflow-hidden bg-navy-deep text-ivory"
+      style={{ ["--pres-bottom" as string]: `${controlsH + (captions ? captionH + 8 : 0) + 20}px` }} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       {!started ? (
         <Intro onStart={start} />
       ) : (
@@ -223,10 +242,12 @@ export function PresentationExperience() {
           {/* Captions */}
           {captions && (
             <div
-              className={`pointer-events-none absolute inset-x-0 z-20 flex justify-center px-4 transition-all duration-500 ${chromeHidden ? "bottom-6" : "bottom-[92px] sm:bottom-24"}`}
+              ref={captionRef}
+              className="pointer-events-none absolute inset-x-0 z-20 flex justify-center px-4"
+              style={{ bottom: controlsH }}
               aria-live="polite"
             >
-              <p key={scene.id} className="pres-fade max-w-3xl rounded-lg bg-navy-deep/75 px-4 py-2 text-center text-[13px] leading-snug text-ivory/90 backdrop-blur sm:text-base">
+              <p key={scene.id} className="pres-fade max-w-3xl rounded-lg bg-navy-deep/75 px-4 py-2 text-center text-[12.5px] leading-snug text-ivory/90 backdrop-blur sm:text-base">
                 {scene.voiceover}
               </p>
             </div>
@@ -234,6 +255,7 @@ export function PresentationExperience() {
 
           {/* Controls */}
           <div
+            ref={controlsRef}
             className={`absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-navy-deep via-navy-deep/90 to-transparent px-3 pb-[max(10px,env(safe-area-inset-bottom))] pt-6 transition-opacity duration-500 sm:px-8 ${chromeHidden ? "pointer-events-none opacity-0" : "opacity-100"}`}
           >
             <div className="flex h-5 items-center gap-[3px]" role="group" aria-label="Scene progress">
