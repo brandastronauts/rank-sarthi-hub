@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DataDeletionRouteImport } from './routes/data-deletion'
 import { Route as DiagnosticRouteImport } from './routes/diagnostic'
 import { Route as FacultyDesignPreviewRouteImport } from './routes/faculty-design-preview'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
@@ -46,6 +47,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataDeletionRoute = DataDeletionRouteImport.update({
+  id: '/data-deletion',
+  path: '/data-deletion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DiagnosticRoute = DiagnosticRouteImport.update({
@@ -184,6 +190,7 @@ const PlatformSubjectChapterTopicRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/data-deletion': typeof DataDeletionRoute
   '/diagnostic': typeof DiagnosticRoute
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -214,6 +221,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/data-deletion': typeof DataDeletionRoute
   '/diagnostic': typeof DiagnosticRoute
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/data-deletion': typeof DataDeletionRoute
   '/diagnostic': typeof DiagnosticRoute
   '/faculty-design-preview': typeof FacultyDesignPreviewRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -277,6 +286,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/data-deletion'
     | '/diagnostic'
     | '/faculty-design-preview'
     | '/llms.txt'
@@ -307,6 +317,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/data-deletion'
     | '/diagnostic'
     | '/faculty-design-preview'
     | '/llms.txt'
@@ -337,6 +348,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/data-deletion'
     | '/diagnostic'
     | '/faculty-design-preview'
     | '/llms.txt'
@@ -368,6 +380,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  DataDeletionRoute: typeof DataDeletionRoute
   DiagnosticRoute: typeof DiagnosticRoute
   FacultyDesignPreviewRoute: typeof FacultyDesignPreviewRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
@@ -410,6 +423,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data-deletion': {
+      id: '/data-deletion'
+      path: '/data-deletion'
+      fullPath: '/data-deletion'
+      preLoaderRoute: typeof DataDeletionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diagnostic': {
@@ -600,6 +620,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  DataDeletionRoute: DataDeletionRoute,
   DiagnosticRoute: DiagnosticRoute,
   FacultyDesignPreviewRoute: FacultyDesignPreviewRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
