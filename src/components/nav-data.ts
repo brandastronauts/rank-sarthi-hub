@@ -258,6 +258,7 @@ export const footerGroups: MenuColumn[] = [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms" },
       { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Data Deletion", href: "/data-deletion" },
     ],
   },
 ];
