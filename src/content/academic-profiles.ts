@@ -1,4 +1,5 @@
 import type { AcademicProfile, AcademicSubject } from "./types";
+import aparnaPortrait from "@/assets/aparna-arya-biology-zoology-faculty-rank-sarthi.png.asset.json";
 import pallaviPortrait from "@/assets/pallavi-biology-zoology-expert-rank-sarthi.png.asset.json";
 
 /**
@@ -534,6 +535,38 @@ export const academicProfiles: AcademicProfile[] = [
     imageAlt: "Pallavi, Senior Biology and Zoology Expert at Rank Sarthi",
     initials: "P",
     claimsRequiringEvidence: ["Preferred honorific: Mrs. or Dr.; inconsistent Pallavi / Pallavii spelling", "Student numerical achievements and institutional selection claims", "Exact postgraduate program, Medvarsity and Apollo Hospitals association", "Institutional logo rights and employment dates", "Page-specific Biology review assignment"],
+  },
+  {
+    id: "aparna-arya",
+    slug: "aparna-arya",
+    name: "Mrs. Aparna Arya",
+    title: "Biology Faculty | Zoology Expert",
+    subject: "Biology",
+    role: "Biology Faculty | Zoology Expert",
+    featuredCredential: "M.Sc., M.Phil. (Zoology) · C.C.S. University, Meerut",
+    shortProfile: "Mrs. Aparna Arya is a Biology and Zoology specialist with an M.Sc. and M.Phil. from C.C.S. University, Meerut. Her experience developing Biology content for Balaji Publications helps her present complex concepts through clear, accurate and structured learning material.",
+    detailedProfile: [
+      "Mrs. Aparna Arya holds an M.Sc. and M.Phil. in Zoology from Chaudhary Charan Singh (C.C.S.) University, Meerut, with qualifications reported as awarded in 2008. Her advanced academic training provides a strong foundation in biological sciences, scientific reasoning and conceptual understanding.",
+      "She has contributed to the development of Biology academic content for Balaji Publications, focusing on simplifying complex topics into accurate, structured and accessible learning material. Her work emphasises conceptual clarity and academic relevance.",
+      "At Rank Sarthi, her contribution supports the development of student-focused Biology learning resources, helping learners strengthen their foundations, improve analytical understanding and approach competitive examination preparation with greater confidence.",
+    ],
+    academicFocus: ["Conceptual clarity in Biology", "Accurate, structured learning material", "Student-focused Biology learning resources"],
+    expertise: ["Biology", "Zoology", "NEET UG", "Biology Content Development"],
+    examScope: ["NEET UG Biology", "NEET UG Zoology"],
+    contribution: [],
+    reviewAreas: [],
+    relatedPages: ["/neet/biology", "/neet/syllabus/biology", "/neet/syllabus"],
+    education: "C.C.S. University, Meerut",
+    credentials: [
+      { label: "Postgraduate degrees", value: "M.Sc., M.Phil. (Zoology), Chaudhary Charan Singh (C.C.S.) University, Meerut", section: "Education", institution: { name: "C.C.S. University, Meerut" } },
+      { label: "Academic association", value: "Biology Content Development – Balaji Publications", section: "Academic Association" },
+    ],
+    verificationStatus: partial,
+    photo: `https://rank-sarthi-hub.lovable.app${aparnaPortrait.url}`,
+    photoFilename: "aparna-arya-biology-zoology-faculty-rank-sarthi.png",
+    imageAlt: "Mrs. Aparna Arya, Biology Faculty and Zoology Expert at Rank Sarthi",
+    initials: "AA",
+    claimsRequiringEvidence: ["Award year 2008 (reported)", "C.C.S. University logo artwork and usage rights", "Page-specific Biology review assignment"],
   },
 ];
 

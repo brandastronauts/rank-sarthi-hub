@@ -103,7 +103,7 @@ export interface AcademicCredential {
   /** Approved profile section; compact views still use featuredCredential. */
   section?: string;
   /** Individual academic connection only, never institutional endorsement. */
-  institution?: { name: "IIT Madras" | "IIT Delhi" | "NSIT"; context?: string };
+  institution?: { name: "IIT Madras" | "IIT Delhi" | "NSIT" | "C.C.S. University, Meerut"; context?: string };
 }
 
 /** Publication-safe faculty record. Pending evidence is retained internally, never rendered publicly. */
