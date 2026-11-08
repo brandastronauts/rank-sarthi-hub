@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getAcademicProfile, publicAcademicProfiles, reviewerPools } from "@/content/academic-profiles";
-import { getUrl } from "@/content/urls";
+import { getUrl } from "@/content/registry";
 
 describe("Mrs. Aparna Arya faculty record", () => {
   it("is public Biology faculty with the supplied name", () => {
