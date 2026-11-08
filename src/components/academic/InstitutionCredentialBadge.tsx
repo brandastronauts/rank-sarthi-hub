@@ -2,13 +2,13 @@ import type { AcademicCredential, AcademicProfile } from "@/content/types";
 import iitDelhiLogo from "@/assets/iit-delhi-credential.png";
 import iitMadrasLogo from "@/assets/iit-madras-credential.png";
 
-const institutionLogos = {
+const institutionLogos: Partial<Record<NonNullable<AcademicCredential["institution"]>["name"], string>> = {
   "IIT Delhi": iitDelhiLogo,
   "IIT Madras": iitMadrasLogo,
 };
 
 export function InstitutionLogo({ name, compact = false }: { name: NonNullable<AcademicCredential["institution"]>["name"]; compact?: boolean }) {
-  const src = name === "NSIT" ? undefined : institutionLogos[name];
+  const src = institutionLogos[name];
   if (!src) return null;
   return <img src={src} alt={name} width={compact ? 16 : 28} height={compact ? 16 : 28} loading="lazy" className={compact ? "mr-1 inline-block size-4 object-contain align-middle" : "size-7 shrink-0 object-contain"} />;
 }
